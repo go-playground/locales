@@ -37,8 +37,8 @@ func(t *{{ .Locale }}) Locale() string {
 	return t.locale
 }
 
-// Plurals returns the list of plurals associated with '{{ .Locale }}'
-func(t *{{ .Locale }}) Plurals() []locales.PluralRule {
+// PluralsCardinal returns the list of cardinal plural rules associated with '{{ .Locale }}'
+func(t *{{ .Locale }}) PluralsCardinal() []locales.PluralRule {
 	return t.plurals
 }
 
