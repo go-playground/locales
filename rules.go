@@ -40,9 +40,13 @@ type Translator interface {
 	// Locale returns the string value of the translator
 	Locale() string
 
-	// Plurals returns an array of plural rules associated
+	// returns an array of cardinal plural rules associated
 	// with this translator
-	Plurals() []PluralRule
+	PluralsCardinal() []PluralRule
+
+	// returns an array of ordinal plural rules associated
+	// with this translator
+	PluralsOrdinal() []PluralRule
 }
 
 // String returns the string value  of PluralRule

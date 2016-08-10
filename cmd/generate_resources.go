@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"regexp"
 	"sort"
 	"strings"
 
@@ -36,19 +37,26 @@ var (
 	globCurrencyIdxMap  = make(map[string]int)      // ["USD"] = 0
 	globalCurrencies    = make([]string, 0, 100)    // array of currency codes index maps to enum
 	tmpl                *template.Template
+	nModRegex           = regexp.MustCompile("(n%[0-9]+)")
+	iModRegex           = regexp.MustCompile("(i%[0-9]+)")
+	wModRegex           = regexp.MustCompile("(w%[0-9]+)")
+	fModRegex           = regexp.MustCompile("(f%[0-9]+)")
+	tModRegex           = regexp.MustCompile("(t%[0-9]+)")
 )
 
 type translator struct {
-	Locale       string
-	BaseLocale   string
-	Plurals      string
-	CardinalFunc string
-	Decimal      string
-	Group        string
-	Minus        string
-	Percent      string
-	PerMille     string
-	Currencies   string
+	Locale         string
+	BaseLocale     string
+	Plurals        string
+	CardinalFunc   string
+	PluralsOrdinal string
+	OrdinalFunc    string
+	Decimal        string
+	Group          string
+	Minus          string
+	Percent        string
+	PerMille       string
+	Currencies     string
 }
 
 func main() {
@@ -147,8 +155,11 @@ func postProcess(cldr *cldr.CLDR) {
 
 		fmt.Println("Post Processing:", trans.Locale)
 
-		// plural rules
+		// cardinal plural rules
 		trans.CardinalFunc, trans.Plurals = parseCardinalPluralRuleFunc(cldr, trans.BaseLocale)
+
+		//ordinal plural rules
+		trans.OrdinalFunc, trans.PluralsOrdinal = parseOrdinalPluralRuleFunc(cldr, trans.BaseLocale)
 
 		// ignore base locales
 		if trans.BaseLocale == trans.Locale {
@@ -479,6 +490,288 @@ func (a ByRank) Less(i, j int) bool { return a[i].Rank < a[j].Rank }
 
 // TODO: cleanup function logic perhaps write a lexer... but it's working right now, and
 // I'm already farther down the rabbit hole than I'd like and so pulling the chute here.
+func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
+
+	var prOrdinal *struct {
+		cldr.Common
+		Locales    string "xml:\"locales,attr\""
+		PluralRule []*struct {
+			cldr.Common
+			Count string "xml:\"count,attr\""
+		} "xml:\"pluralRule\""
+	}
+
+	var pluralArr []locales.PluralRule
+
+	// idx 0 is ordinal rules
+	for _, pr := range current.Supplemental().Plurals[0].PluralRules {
+
+		locs := strings.Split(pr.Locales, " ")
+
+		for _, loc := range locs {
+
+			if loc == baseLocale {
+
+				prOrdinal = pr
+				// for _, pl := range pr.PluralRule {
+				// 	fmt.Println(pl.Count, pl.Common.Data())
+				// }
+			}
+		}
+	}
+
+	// no plural rules for locale
+	if prOrdinal == nil {
+		plurals = "nil"
+		results = "return locales.PluralRuleUnknown"
+		return
+	}
+
+	vals := make(map[string]struct{})
+	first := true
+
+	// pre parse for variables
+	for _, rule := range prOrdinal.PluralRule {
+
+		ps1 := pluralStringToString(rule.Count)
+		psI := pluralStringToInt(rule.Count)
+		pluralArr = append(pluralArr, psI)
+
+		data := strings.Replace(strings.Replace(strings.Replace(strings.TrimSpace(strings.SplitN(rule.Common.Data(), "@", 2)[0]), " = ", " == ", -1), " or ", " || ", -1), " and ", " && ", -1)
+
+		if len(data) == 0 {
+			if len(prOrdinal.PluralRule) == 1 {
+
+				results = "return locales." + ps1
+
+			} else {
+
+				results += "\n\nreturn locales." + ps1
+				// results += "else {\nreturn locales." + locales.PluralStringToString(rule.Count) + ", nil\n}"
+			}
+
+			continue
+		}
+
+		// // All need n, so always add
+		// if strings.Contains(data, "n") {
+		// 	vals[prVarFuncs["n"]] = struct{}{}
+		// }
+
+		if strings.Contains(data, "i") {
+			vals[prVarFuncs["i"]] = struct{}{}
+		}
+
+		// v is inherently avaialable as an argument
+		// if strings.Contains(data, "v") {
+		// 	vals[prVarFuncs["v"]] = struct{}{}
+		// }
+
+		if strings.Contains(data, "w") {
+			vals[prVarFuncs["w"]] = struct{}{}
+		}
+
+		if strings.Contains(data, "f") {
+			vals[prVarFuncs["f"]] = struct{}{}
+		}
+
+		if strings.Contains(data, "t") {
+			vals[prVarFuncs["t"]] = struct{}{}
+		}
+
+		if first {
+			results += "if "
+			first = false
+		} else {
+			results += "else if "
+		}
+
+		stmt := ""
+
+		// real work here
+		//
+		// split by 'or' then by 'and' allowing to better
+		// determine bracketing for formula
+
+		ors := strings.Split(data, "||")
+
+		for _, or := range ors {
+
+			stmt += "("
+
+			ands := strings.Split(strings.TrimSpace(or), "&&")
+
+			for _, and := range ands {
+
+				inArg := false
+				pre := ""
+				lft := ""
+				preOperator := ""
+				args := strings.Split(strings.TrimSpace(and), " ")
+
+				for _, a := range args {
+
+					if inArg {
+						// check to see if is a value range 2..9
+
+						multiRange := strings.Count(a, "..") > 1
+						cargs := strings.Split(strings.TrimSpace(a), ",")
+						hasBracket := len(cargs) > 1
+						bracketAdded := false
+						lastWasRange := false
+
+						for _, carg := range cargs {
+
+							if rng := strings.Split(carg, ".."); len(rng) > 1 {
+
+								if multiRange {
+									pre += " ("
+								} else {
+									pre += " "
+								}
+
+								switch preOperator {
+								case "==":
+									pre += lft + " >= " + rng[0] + " && " + lft + "<=" + rng[1]
+								case "!=":
+									pre += lft + " < " + rng[0] + " && " + lft + " > " + rng[1]
+								}
+
+								if multiRange {
+									pre += ") || "
+								} else {
+									pre += " || "
+								}
+
+								lastWasRange = true
+								continue
+							}
+
+							if lastWasRange {
+								pre = strings.TrimRight(pre, " || ") + " && "
+							}
+
+							lastWasRange = false
+
+							if hasBracket && !bracketAdded {
+								pre += "("
+								bracketAdded = true
+							}
+
+							// single comma separated values
+							switch preOperator {
+							case "==":
+								pre += " " + lft + preOperator + carg + " || "
+							case "!=":
+								pre += " " + lft + preOperator + carg + " && "
+							}
+
+						}
+
+						pre = strings.TrimRight(pre, " || ")
+						pre = strings.TrimRight(pre, " && ")
+						pre = strings.TrimRight(pre, " || ")
+
+						if hasBracket && bracketAdded {
+							pre += ")"
+						}
+
+						continue
+					}
+
+					if strings.Contains(a, "=") || a == ">" || a == "<" {
+						inArg = true
+						preOperator = a
+						continue
+					}
+
+					lft += a
+				}
+
+				stmt += pre + " && "
+			}
+
+			stmt = strings.TrimRight(stmt, " && ") + ") || "
+		}
+
+		stmt = strings.TrimRight(stmt, " || ")
+
+		results += stmt
+
+		results += " {\n"
+
+		// return plural rule here
+		results += "return locales." + ps1 + "\n"
+
+		results += "}"
+	}
+
+	pre := "\n"
+
+	// always needed
+	vals[prVarFuncs["n"]] = struct{}{}
+
+	sorted := make([]sortRank, 0, len(vals))
+
+	for k := range vals {
+		switch k[:1] {
+		case "n":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["n"],
+				Rank:  1,
+			})
+		case "i":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["i"],
+				Rank:  2,
+			})
+		case "w":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["w"],
+				Rank:  3,
+			})
+		case "f":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["f"],
+				Rank:  4,
+			})
+		case "t":
+			sorted = append(sorted, sortRank{
+				Value: prVarFuncs["t"],
+				Rank:  5,
+			})
+		}
+	}
+
+	sort.Sort(ByRank(sorted))
+
+	for _, k := range sorted {
+		pre += k.Value
+	}
+
+	if len(results) == 0 {
+		results = "return locales.PluralRuleUnknown"
+	} else {
+
+		if !strings.HasPrefix(results, "return") {
+
+			results = manyToSingleVars(results)
+			// pre += "\n"
+			results = pre + results
+		}
+	}
+
+	if len(pluralArr) == 0 {
+		plurals = "nil"
+	} else {
+		plurals = fmt.Sprintf("%#v", pluralArr)
+	}
+
+	return
+}
+
+// TODO: cleanup function logic perhaps write a lexer... but it's working right now, and
+// I'm already farther down the rabbit hole than I'd like and so pulling the chute here.
 func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
 
 	var prCardinal *struct {
@@ -492,17 +785,15 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 
 	var pluralArr []locales.PluralRule
 
-	for _, p := range current.Supplemental().Plurals {
+	// idx 2 is cardinal rules
+	for _, pr := range current.Supplemental().Plurals[2].PluralRules {
 
-		for _, pr := range p.PluralRules {
+		locs := strings.Split(pr.Locales, " ")
 
-			locs := strings.Split(pr.Locales, " ")
+		for _, loc := range locs {
 
-			for _, loc := range locs {
-
-				if loc == baseLocale {
-					prCardinal = pr
-				}
+			if loc == baseLocale {
+				prCardinal = pr
 			}
 		}
 	}
@@ -736,13 +1027,14 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 		pre += k.Value
 	}
 
-	pre += "\n"
-
 	if len(results) == 0 {
 		results = "return locales.PluralRuleUnknown"
 	} else {
 
 		if !strings.HasPrefix(results, "return") {
+
+			results = manyToSingleVars(results)
+			// pre += "\n"
 			results = pre + results
 		}
 	}
@@ -752,6 +1044,116 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 	} else {
 		plurals = fmt.Sprintf("%#v", pluralArr)
 	}
+
+	return
+}
+
+func manyToSingleVars(input string) (results string) {
+
+	matches := nModRegex.FindAllString(input, -1)
+	mp := make(map[string][]string) // map of formula to variable
+	var found bool
+	var split []string
+	var variable string
+
+	for _, formula := range matches {
+
+		if _, found = mp[formula]; found {
+			continue
+		}
+
+		split = strings.SplitN(formula, "%", 2)
+
+		mp[formula] = []string{split[1], "math.Mod(" + split[0] + ", " + split[1] + ")"}
+	}
+
+	for k, v := range mp {
+		variable = "nMod" + v[0]
+		results += variable + " := " + v[1] + "\n"
+		input = strings.Replace(input, k, variable, -1)
+	}
+
+	matches = iModRegex.FindAllString(input, -1)
+	mp = make(map[string][]string) // map of formula to variable
+
+	for _, formula := range matches {
+
+		if _, found = mp[formula]; found {
+			continue
+		}
+
+		split = strings.SplitN(formula, "%", 2)
+
+		mp[formula] = []string{split[1], formula}
+	}
+
+	for k, v := range mp {
+		variable = "iMod" + v[0]
+		results += variable + " := " + v[1] + "\n"
+		input = strings.Replace(input, k, variable, -1)
+	}
+
+	matches = wModRegex.FindAllString(input, -1)
+	mp = make(map[string][]string) // map of formula to variable
+
+	for _, formula := range matches {
+
+		if _, found = mp[formula]; found {
+			continue
+		}
+
+		split = strings.SplitN(formula, "%", 2)
+
+		mp[formula] = []string{split[1], formula}
+	}
+
+	for k, v := range mp {
+		variable = "wMod" + v[0]
+		results += variable + " := " + v[1] + "\n"
+		input = strings.Replace(input, k, variable, -1)
+	}
+
+	matches = fModRegex.FindAllString(input, -1)
+	mp = make(map[string][]string) // map of formula to variable
+
+	for _, formula := range matches {
+
+		if _, found = mp[formula]; found {
+			continue
+		}
+
+		split = strings.SplitN(formula, "%", 2)
+
+		mp[formula] = []string{split[1], formula}
+	}
+
+	for k, v := range mp {
+		variable = "fMod" + v[0]
+		results += variable + " := " + v[1] + "\n"
+		input = strings.Replace(input, k, variable, -1)
+	}
+
+	matches = tModRegex.FindAllString(input, -1)
+	mp = make(map[string][]string) // map of formula to variable
+
+	for _, formula := range matches {
+
+		if _, found = mp[formula]; found {
+			continue
+		}
+
+		split = strings.SplitN(formula, "%", 2)
+
+		mp[formula] = []string{split[1], formula}
+	}
+
+	for k, v := range mp {
+		variable = "tMod" + v[0]
+		results += variable + " := " + v[1] + "\n"
+		input = strings.Replace(input, k, variable, -1)
+	}
+
+	results = results + "\n" + input
 
 	return
 }
