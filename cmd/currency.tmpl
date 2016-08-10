@@ -1,0 +1,11 @@
+{{ define "currencies" }}
+package currency
+
+// Currency is the type associated with the locales currency enum
+type Currency int
+
+// locale currencies
+const (
+	{{ . }}
+)
+{{ end }}
