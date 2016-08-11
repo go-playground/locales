@@ -48,8 +48,8 @@ func (en *en_CA) PluralsOrdinal() []locales.PluralRule {
 	return en.pluralsOrdinal
 }
 
-// cardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'en_CA'
-func (en *en_CA) cardinalPluralRule(num float64, v uint64) locales.PluralRule {
+// CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'en_CA'
+func (en *en_CA) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
@@ -61,12 +61,12 @@ func (en *en_CA) cardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	return locales.PluralRuleOther
 }
 
-// ordinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'en_CA'
-func (en *en_CA) ordinalPluralRule(num float64, v uint64) locales.PluralRule {
+// OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'en_CA'
+func (en *en_CA) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod100 := math.Mod(n, 100)
 	nMod10 := math.Mod(n, 10)
+	nMod100 := math.Mod(n, 100)
 
 	if nMod10 == 1 && nMod100 != 11 {
 		return locales.PluralRuleOne
@@ -76,5 +76,10 @@ func (en *en_CA) ordinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleFew
 	}
 
+	return locales.PluralRuleOther
+}
+
+// RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'en_CA'
+func (en *en_CA) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
 	return locales.PluralRuleOther
 }

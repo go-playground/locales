@@ -48,8 +48,8 @@ func (fil *fil) PluralsOrdinal() []locales.PluralRule {
 	return fil.pluralsOrdinal
 }
 
-// cardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'fil'
-func (fil *fil) cardinalPluralRule(num float64, v uint64) locales.PluralRule {
+// CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for 'fil'
+func (fil *fil) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
@@ -64,8 +64,8 @@ func (fil *fil) cardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	return locales.PluralRuleOther
 }
 
-// ordinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'fil'
-func (fil *fil) ordinalPluralRule(num float64, v uint64) locales.PluralRule {
+// OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'fil'
+func (fil *fil) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 
@@ -74,4 +74,22 @@ func (fil *fil) ordinalPluralRule(num float64, v uint64) locales.PluralRule {
 	}
 
 	return locales.PluralRuleOther
+}
+
+// RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'fil'
+func (fil *fil) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
+
+	start := fil.CardinalPluralRule(num1, v1)
+	end := fil.CardinalPluralRule(num2, v2)
+
+	if start == locales.PluralRuleOne && end == locales.PluralRuleOne {
+		return locales.PluralRuleOne
+	} else if start == locales.PluralRuleOne && end == locales.PluralRuleOther {
+		return locales.PluralRuleOther
+	} else if start == locales.PluralRuleOther && end == locales.PluralRuleOne {
+		return locales.PluralRuleOne
+	}
+
+	return locales.PluralRuleOther
+
 }

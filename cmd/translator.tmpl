@@ -49,14 +49,19 @@ func({{ .BaseLocale }} *{{ .Locale }}) PluralsOrdinal() []locales.PluralRule {
 	return {{ .BaseLocale }}.pluralsOrdinal
 }
 
-// cardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for '{{ .Locale }}'
-func({{ .BaseLocale }} *{{ .Locale }}) cardinalPluralRule(num float64, v uint64) locales.PluralRule {
+// CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for '{{ .Locale }}'
+func({{ .BaseLocale }} *{{ .Locale }}) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	{{ .CardinalFunc }}
 }
 
-// ordinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for '{{ .Locale }}'
-func({{ .BaseLocale }} *{{ .Locale }}) ordinalPluralRule(num float64, v uint64) locales.PluralRule {
+// OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for '{{ .Locale }}'
+func({{ .BaseLocale }} *{{ .Locale }}) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 	{{ .OrdinalFunc }}
+}
+
+// RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for '{{ .Locale }}'
+func({{ .BaseLocale }} *{{ .Locale }}) RangePluralRule(num1 float64, v1 uint64,num2 float64, v2 uint64) locales.PluralRule {
+	{{ .RangeFunc }}
 }
 
 {{ end }}

@@ -47,6 +47,15 @@ type Translator interface {
 	// returns an array of ordinal plural rules associated
 	// with this translator
 	PluralsOrdinal() []PluralRule
+
+	// returns the cardinal PluralRule given 'num' and digits/precision of 'v' for locale
+	CardinalPluralRule(num float64, v uint64) PluralRule
+
+	// returns the ordinal PluralRule given 'num' and digits/precision of 'v' for locale
+	OrdinalPluralRule(num float64, v uint64) PluralRule
+
+	// returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for locale
+	RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) PluralRule
 }
 
 // String returns the string value  of PluralRule

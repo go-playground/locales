@@ -51,6 +51,7 @@ type translator struct {
 	CardinalFunc   string
 	PluralsOrdinal string
 	OrdinalFunc    string
+	RangeFunc      string
 	Decimal        string
 	Group          string
 	Minus          string
@@ -160,6 +161,10 @@ func postProcess(cldr *cldr.CLDR) {
 
 		//ordinal plural rules
 		trans.OrdinalFunc, trans.PluralsOrdinal = parseOrdinalPluralRuleFunc(cldr, trans.BaseLocale)
+
+		// if trans.Locale == "en" {
+		trans.RangeFunc = parseRangePluralRuleFunc(cldr, trans.BaseLocale)
+		// }
 
 		// ignore base locales
 		if trans.BaseLocale == trans.Locale {
@@ -487,6 +492,91 @@ type ByRank []sortRank
 func (a ByRank) Len() int           { return len(a) }
 func (a ByRank) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByRank) Less(i, j int) bool { return a[i].Rank < a[j].Rank }
+
+// TODO: refine generated code a bit, some combinations end up with same plural rule,
+// could check all at once; but it works and that's step 1 complete
+func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string) {
+
+	var pluralRange *struct {
+		cldr.Common
+		Locales     string `xml:"locales,attr"`
+		PluralRange []*struct {
+			cldr.Common
+			Start  string `xml:"start,attr"`
+			End    string `xml:"end,attr"`
+			Result string `xml:"result,attr"`
+		} `xml:"pluralRange"`
+	}
+
+	for _, pr := range current.Supplemental().Plurals[1].PluralRanges {
+
+		locs := strings.Split(pr.Locales, " ")
+
+		for _, loc := range locs {
+
+			if loc == baseLocale {
+				pluralRange = pr
+			}
+		}
+	}
+
+	// no range plural rules for locale
+	if pluralRange == nil {
+		results = "return locales.PluralRuleUnknown"
+		return
+	}
+
+	mp := make(map[string]struct{})
+
+	// pre-process if all the same
+	for _, rule := range pluralRange.PluralRange {
+		mp[rule.Result] = struct{}{}
+	}
+
+	if len(mp) == 1 {
+		results += "return locales." + pluralStringToString(pluralRange.PluralRange[0].Result)
+		return
+	}
+
+	multiple := len(pluralRange.PluralRange) > 1
+
+	if multiple {
+		results += "start := " + baseLocale + ".CardinalPluralRule(num1, v1)\n"
+		results += "end := " + baseLocale + ".CardinalPluralRule(num2, v2)\n\n"
+	}
+
+	first := true
+
+	// pre parse for variables
+	for i, rule := range pluralRange.PluralRange {
+
+		if i == len(pluralRange.PluralRange)-1 {
+
+			if multiple {
+				results += "\n\n"
+			}
+			results += "return locales." + pluralStringToString(rule.Result)
+			continue
+		}
+
+		if first {
+			results += "if"
+			first = false
+		} else {
+			results += "else if"
+		}
+
+		results += " start == locales." + pluralStringToString(rule.Start) + " && end == locales." + pluralStringToString(rule.End) + " {\n return locales." + pluralStringToString(rule.Result) + "\n} "
+
+	}
+
+	if multiple {
+		results = "\n" + results + "\n"
+	}
+
+	return
+
+}
 
 // TODO: cleanup function logic perhaps write a lexer... but it's working right now, and
 // I'm already farther down the rabbit hole than I'd like and so pulling the chute here.
