@@ -64,4 +64,78 @@ func({{ .BaseLocale }} *{{ .Locale }}) RangePluralRule(num1 float64, v1 uint64,n
 	{{ .RangeFunc }}
 }
 
+// FmtNumber returns 'num' with digits/precision of 'v' for '{{ .Locale }}' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(num, 'f', int(v), 64)
+	{{ if eq .FmtNumberExists true }}
+	{{ if gt .FmtNumberGroupLen 0 }}
+	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtNumberGroupLen }}
+	count := 0
+	inWhole := v == 0
+	{{ else }}
+	l := len(s) + len({{ .BaseLocale }}.decimal)
+	{{ end }}
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+
+			for j := len({{ .BaseLocale }}.decimal) - 1; j >= 0; j-- {
+				b = append(b, {{ .BaseLocale }}.decimal[j])
+			}
+
+			{{ if gt .FmtNumberGroupLen 0 }}
+			inWhole = true
+			{{ end }}
+			continue
+		}
+
+		{{ if gt .FmtNumberGroupLen 0 }}
+		if inWhole {
+
+			if count == {{ .FmtNumberGroupLen }} {
+
+				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
+					b = append(b, {{ .BaseLocale }}.group[j])
+				}
+
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		{{ end }}
+
+		b = append(b, s[i])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	{{ if gt .FmtNumberMinDecimalLen 0 }}
+	if int(v) < {{ .FmtNumberMinDecimalLen }} {
+
+		if v == 0 {
+			b = append(b, {{ .BaseLocale }}.decimal...)
+		}
+
+		for i := 0; i < {{ .FmtNumberMinDecimalLen }}-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+	{{ end }}
+
+	return b
+	{{ else }}
+	return []byte(s)
+	{{ end }}
+}
+
 {{ end }}

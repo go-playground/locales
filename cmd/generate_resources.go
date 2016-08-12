@@ -31,17 +31,20 @@ var (
 		"t": "t := locales.T(n, v)\n",
 	}
 
-	translators         = make(map[string]*translator)
-	baseTranslators     = make(map[string]*translator)
-	globalCurrenciesMap = make(map[string]struct{}) // ["USD"] = "$" currency code, just all currencies for mapping to enum
-	globCurrencyIdxMap  = make(map[string]int)      // ["USD"] = 0
-	globalCurrencies    = make([]string, 0, 100)    // array of currency codes index maps to enum
-	tmpl                *template.Template
-	nModRegex           = regexp.MustCompile("(n%[0-9]+)")
-	iModRegex           = regexp.MustCompile("(i%[0-9]+)")
-	wModRegex           = regexp.MustCompile("(w%[0-9]+)")
-	fModRegex           = regexp.MustCompile("(f%[0-9]+)")
-	tModRegex           = regexp.MustCompile("(t%[0-9]+)")
+	translators          = make(map[string]*translator)
+	baseTranslators      = make(map[string]*translator)
+	globalCurrenciesMap  = make(map[string]struct{}) // ["USD"] = "$" currency code, just all currencies for mapping to enum
+	globCurrencyIdxMap   = make(map[string]int)      // ["USD"] = 0
+	globalCurrencies     = make([]string, 0, 100)    // array of currency codes index maps to enum
+	tmpl                 *template.Template
+	nModRegex            = regexp.MustCompile("(n%[0-9]+)")
+	iModRegex            = regexp.MustCompile("(i%[0-9]+)")
+	wModRegex            = regexp.MustCompile("(w%[0-9]+)")
+	fModRegex            = regexp.MustCompile("(f%[0-9]+)")
+	tModRegex            = regexp.MustCompile("(t%[0-9]+)")
+	groupLenRegex        = regexp.MustCompile(",([0-9#]+)\\.")
+	requiredNumRegex     = regexp.MustCompile("([0-9]+)\\.")
+	requiredDecimalRegex = regexp.MustCompile("\\.([0-9]+)")
 )
 
 type translator struct {
@@ -58,6 +61,13 @@ type translator struct {
 	Percent        string
 	PerMille       string
 	Currencies     string
+	// FmtNumberFunc  string
+	FmtNumberExists        bool
+	FmtNumberGroupLen      int
+	FmtNumberMinDecimalLen int
+
+	// calculation only fields
+	DecimalNumberFormat string
 }
 
 func main() {
@@ -234,6 +244,14 @@ func postProcess(cldr *cldr.CLDR) {
 		// Currency
 
 		// number values
+
+		if len(trans.DecimalNumberFormat) == 0 {
+
+			if found {
+				trans.DecimalNumberFormat = base.DecimalNumberFormat
+			}
+		}
+
 		ldml := cldr.RawLDML(trans.Locale)
 
 		currencies := make([][]byte, len(globalCurrencies), len(globalCurrencies))
@@ -243,27 +261,32 @@ func postProcess(cldr *cldr.CLDR) {
 		}
 
 		// some just have no data...
-		if ldml.Numbers != nil && ldml.Numbers.Currencies != nil {
+		if ldml.Numbers != nil {
 
-			for _, currency := range ldml.Numbers.Currencies.Currency {
+			if ldml.Numbers.Currencies != nil {
+				for _, currency := range ldml.Numbers.Currencies.Currency {
 
-				if len(currency.Symbol) == 0 {
-					continue
+					if len(currency.Symbol) == 0 {
+						continue
+					}
+
+					if len(currency.Symbol[0].Data()) == 0 {
+						continue
+					}
+
+					if len(currency.Type) == 0 {
+						continue
+					}
+
+					currencies[globCurrencyIdxMap[currency.Type]] = []byte(currency.Symbol[0].Data())
 				}
-
-				if len(currency.Symbol[0].Data()) == 0 {
-					continue
-				}
-
-				if len(currency.Type) == 0 {
-					continue
-				}
-
-				currencies[globCurrencyIdxMap[currency.Type]] = []byte(currency.Symbol[0].Data())
 			}
 		}
 
 		trans.Currencies = fmt.Sprintf("%#v", currencies)
+
+		parseDecimalNumberFormat(trans)
+		// trans.FmtNumberFunc = parseDecimalNumberFormat(trans.DecimalNumberFormat, trans.BaseLocale)
 	}
 }
 
@@ -295,24 +318,27 @@ func preProcess(cldr *cldr.CLDR) {
 		ldml := cldr.RawLDML(l)
 
 		// some just have no data...
-		if ldml.Numbers != nil && len(ldml.Numbers.Symbols) > 0 {
+		if ldml.Numbers != nil {
 
-			symbol := ldml.Numbers.Symbols[0]
+			if len(ldml.Numbers.Symbols) > 0 {
 
-			if len(symbol.Decimal) > 0 {
-				trans.Decimal = fmt.Sprintf("%#v", []byte(symbol.Decimal[0].Data()))
-			}
-			if len(symbol.Group) > 0 {
-				trans.Group = fmt.Sprintf("%#v", []byte(symbol.Group[0].Data()))
-			}
-			if len(symbol.MinusSign) > 0 {
-				trans.Minus = fmt.Sprintf("%#v", []byte(symbol.MinusSign[0].Data()))
-			}
-			if len(symbol.PercentSign) > 0 {
-				trans.Percent = fmt.Sprintf("%#v", []byte(symbol.PercentSign[0].Data()))
-			}
-			if len(symbol.PerMille) > 0 {
-				trans.PerMille = fmt.Sprintf("%#v", []byte(symbol.PerMille[0].Data()))
+				symbol := ldml.Numbers.Symbols[0]
+
+				if len(symbol.Decimal) > 0 {
+					trans.Decimal = fmt.Sprintf("%#v", []byte(symbol.Decimal[0].Data()))
+				}
+				if len(symbol.Group) > 0 {
+					trans.Group = fmt.Sprintf("%#v", []byte(symbol.Group[0].Data()))
+				}
+				if len(symbol.MinusSign) > 0 {
+					trans.Minus = fmt.Sprintf("%#v", []byte(symbol.MinusSign[0].Data()))
+				}
+				if len(symbol.PercentSign) > 0 {
+					trans.Percent = fmt.Sprintf("%#v", []byte(symbol.PercentSign[0].Data()))
+				}
+				if len(symbol.PerMille) > 0 {
+					trans.PerMille = fmt.Sprintf("%#v", []byte(symbol.PerMille[0].Data()))
+				}
 			}
 
 			if ldml.Numbers.Currencies != nil {
@@ -324,6 +350,16 @@ func preProcess(cldr *cldr.CLDR) {
 					}
 
 					globalCurrenciesMap[currency.Type] = struct{}{}
+				}
+			}
+
+			if len(ldml.Numbers.DecimalFormats) > 0 && len(ldml.Numbers.DecimalFormats[0].DecimalFormatLength) > 0 {
+
+				for _, dfl := range ldml.Numbers.DecimalFormats[0].DecimalFormatLength {
+					if len(dfl.Type) == 0 {
+						trans.DecimalNumberFormat = dfl.DecimalFormat[0].Pattern[0].Data()
+						break
+					}
 				}
 			}
 
@@ -365,122 +401,26 @@ func preProcess(cldr *cldr.CLDR) {
 	}
 }
 
-// func parseNumbers(decimal, group, minus, percent, permille, decimalFormat, currencyFormat, currencyAccountingFormat, percentageFormat string) {
+func parseDecimalNumberFormat(trans *translator) (results string) {
 
-// 	if includeDecimalDigits {
+	if len(trans.DecimalNumberFormat) == 0 {
+		return
+	}
 
-// 		nfMutex.RLock()
+	trans.FmtNumberExists = true
 
-// 		if format, exists := numberFormats[pattern]; exists {
-// 			nfMutex.RUnlock()
-// 			return format
-// 		}
+	match := groupLenRegex.FindString(trans.DecimalNumberFormat)
+	if len(match) > 0 {
+		trans.FmtNumberGroupLen = len(match) - 2
+	}
 
-// 		nfMutex.RUnlock()
+	match = requiredDecimalRegex.FindString(trans.DecimalNumberFormat)
+	if len(match) > 0 {
+		trans.FmtNumberMinDecimalLen = len(match) - 1
+	}
 
-// 	} else {
-
-// 		nfndMutex.RLock()
-
-// 		if format, exists := numberFormatsNoDecimals[pattern]; exists {
-// 			nfndMutex.RUnlock()
-// 			return format
-// 		}
-
-// 		nfndMutex.RUnlock()
-// 	}
-
-// 	format := new(numberFormat)
-// 	patterns := strings.Split(pattern, ";")
-
-// 	matches := prefixSuffixRegex.FindAllStringSubmatch(patterns[0], -1)
-// 	if len(matches) > 0 {
-// 		if len(matches[0]) > 1 {
-// 			format.positivePrefix = matches[0][1]
-// 		}
-// 		if len(matches[0]) > 2 {
-// 			format.positiveSuffix = matches[0][2]
-// 		}
-// 	}
-
-// 	// default values for negative prefix & suffix
-// 	format.negativePrefix = string(n.Symbols.Negative) + string(format.positivePrefix)
-// 	format.negativeSuffix = format.positiveSuffix
-
-// 	// see if they are in the pattern
-// 	if len(patterns) > 1 {
-// 		matches = prefixSuffixRegex.FindAllStringSubmatch(patterns[1], -1)
-
-// 		if len(matches) > 0 {
-// 			if len(matches[0]) > 1 {
-// 				format.negativePrefix = matches[0][1]
-// 			}
-// 			if len(matches[0]) > 2 {
-// 				format.negativeSuffix = matches[0][2]
-// 			}
-// 		}
-// 	}
-
-// 	pat := patterns[0]
-
-// 	if strings.Index(pat, "%") != -1 {
-// 		format.multiplier = 100
-// 	} else if strings.Index(pat, "‰") != -1 {
-// 		format.multiplier = 1000
-// 	} else {
-// 		format.multiplier = 1
-// 	}
-
-// 	pos := strings.Index(pat, ".")
-
-// 	if pos != -1 {
-// 		pos2 := strings.LastIndex(pat, "0")
-// 		if pos2 > pos {
-// 			format.minDecimalDigits = pos2 - pos
-// 		}
-
-// 		pos3 := strings.LastIndex(pat, "#")
-// 		if pos3 >= pos2 {
-// 			format.maxDecimalDigits = pos3 - pos
-// 		} else {
-// 			format.maxDecimalDigits = format.minDecimalDigits
-// 		}
-
-// 		pat = pat[0:pos]
-// 	}
-
-// 	p := strings.Replace(pat, ",", "", -1)
-// 	pos = strings.Index(p, "0")
-// 	if pos != -1 {
-// 		format.minIntegerDigits = strings.LastIndex(p, "0") - pos + 1
-// 	}
-
-// 	p = strings.Replace(pat, "#", "0", -1)
-// 	pos = strings.LastIndex(pat, ",")
-// 	if pos != -1 {
-// 		format.groupSizeFinal = strings.LastIndex(p, "0") - pos
-// 		pos2 := strings.LastIndex(p[0:pos], ",")
-// 		if pos2 != -1 {
-// 			format.groupSizeMain = pos - pos2 - 1
-// 		} else {
-// 			format.groupSizeMain = format.groupSizeFinal
-// 		}
-// 	}
-
-// 	if includeDecimalDigits {
-// 		nfMutex.Lock()
-// 		numberFormats[pattern] = format
-// 		nfMutex.Unlock()
-// 		return format
-// 	}
-
-// 	format.maxDecimalDigits = 0
-// 	format.minDecimalDigits = 0
-// 	nfndMutex.Lock()
-// 	numberFormatsNoDecimals[pattern] = format
-// 	nfndMutex.Unlock()
-// 	return format
-// }
+	return
+}
 
 type sortRank struct {
 	Rank  uint8

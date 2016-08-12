@@ -2,6 +2,7 @@ package en
 
 import (
 	"math"
+	"strconv"
 
 	"github.com/go-playground/locales"
 )
@@ -82,4 +83,57 @@ func (en *en) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'en'
 func (en *en) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) locales.PluralRule {
 	return locales.PluralRuleOther
+}
+
+// FmtNumber returns 'num' with digits/precision of 'v' for 'en' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (en *en) FmtNumber(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(num, 'f', int(v), 64)
+
+	l := len(s) + len(en.decimal) + len(en.group)*len(s[:len(s)-int(v)-1])/3
+
+	count := 0
+	inWhole := v == 0
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+
+			for j := len(en.decimal) - 1; j >= 0; j-- {
+				b = append(b, en.decimal[j])
+			}
+
+			inWhole = true
+
+			continue
+		}
+
+		if inWhole {
+
+			if count == 3 {
+
+				for j := len(en.group) - 1; j >= 0; j-- {
+					b = append(b, en.group[j])
+				}
+
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return b
+
 }
