@@ -134,3 +134,45 @@ func (nl *nl_BQ) FmtNumber(num float64, v uint64) []byte {
 
 	return b
 }
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'nl_BQ' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (nl *nl_BQ) FmtPercent(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + len(nl.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(nl.decimal) - 1; j >= 0; j-- {
+				b = append(b, nl.decimal[j])
+			}
+
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		for j := len(nl.minus) - 1; j >= 0; j-- {
+			b = append(b, nl.minus[j])
+		}
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	for j := len(nl.percent) - 1; j >= 0; j-- {
+		b = append(b, nl.percent[j])
+	}
+
+	return b
+}

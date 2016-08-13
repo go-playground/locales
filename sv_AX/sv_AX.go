@@ -66,8 +66,8 @@ func (sv *sv_AX) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (sv *sv_AX) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
+	nMod10 := math.Mod(n, 10)
 
 	if (nMod10 == 1 || nMod10 == 2) && (nMod100 != 11 && nMod100 != 12) {
 		return locales.PluralRuleOne
@@ -128,6 +128,48 @@ func (sv *sv_AX) FmtNumber(num float64, v uint64) []byte {
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
+	}
+
+	return b
+}
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'sv_AX' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (sv *sv_AX) FmtPercent(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + len(sv.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(sv.decimal) - 1; j >= 0; j-- {
+				b = append(b, sv.decimal[j])
+			}
+
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		for j := len(sv.minus) - 1; j >= 0; j-- {
+			b = append(b, sv.minus[j])
+		}
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	for j := len(sv.percent) - 1; j >= 0; j-- {
+		b = append(b, sv.percent[j])
 	}
 
 	return b

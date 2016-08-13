@@ -109,3 +109,13 @@ func (lu *lu) FmtNumber(num float64, v uint64) []byte {
 
 	return b
 }
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'lu' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (lu *lu) FmtPercent(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	return []byte(s)
+}

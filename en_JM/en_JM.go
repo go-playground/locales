@@ -66,8 +66,8 @@ func (en *en_JM) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (en *en_JM) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
+	nMod10 := math.Mod(n, 10)
 
 	if nMod10 == 1 && nMod100 != 11 {
 		return locales.PluralRuleOne
@@ -125,6 +125,41 @@ func (en *en_JM) FmtNumber(num float64, v uint64) []byte {
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
+
+	return b
+}
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'en_JM' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (en *en_JM) FmtPercent(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + len(en.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, en.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, en.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, en.Percent[0])
 
 	return b
 }

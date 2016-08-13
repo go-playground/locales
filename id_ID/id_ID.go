@@ -107,3 +107,38 @@ func (id *id_ID) FmtNumber(num float64, v uint64) []byte {
 
 	return b
 }
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'id_ID' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (id *id_ID) FmtPercent(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + len(id.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, id.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, id.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, id.Percent[0])
+
+	return b
+}

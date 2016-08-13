@@ -61,6 +61,12 @@ type Translator interface {
 	// returned as a []byte just in case the caller wishes to add more and can help
 	// avoid allocations; otherwise just cast as string.
 	FmtNumber(num float64, v uint64) []byte
+
+	// returns 'num' with digits/precision of 'v' for '{{ .Locale }}' and handles both Whole and Real numbers based on 'v'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+	FmtPercent(num float64, v uint64) []byte
 }
 
 // String returns the string value  of PluralRule

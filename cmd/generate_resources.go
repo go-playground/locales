@@ -67,17 +67,23 @@ type translator struct {
 	PerMille       string
 	PerMilleLen    int
 	Currencies     string
-	// FmtNumberFunc  string
-	FmtNumberExists bool
-	FmtNumberPrefix string
-	FmtNumberSuffix string
 
+	// FmtNumber vars
+	FmtNumberExists            bool
 	FmtNumberGroupLen          int
 	FmtNumberSecondaryGroupLen int
 	FmtNumberMinDecimalLen     int
 
+	// FmtPercent vars
+	FmtPercentExists            bool
+	FmtPercentGroupLen          int
+	FmtPercentSecondaryGroupLen int
+	FmtPercentMinDecimalLen     int
+	FmtPercentLeft              bool
+
 	// calculation only fields
 	DecimalNumberFormat string
+	PercentNumberFormat string
 }
 
 func main() {
@@ -272,6 +278,13 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
+		if len(trans.PercentNumberFormat) == 0 {
+
+			if found {
+				trans.PercentNumberFormat = base.PercentNumberFormat
+			}
+		}
+
 		ldml := cldr.RawLDML(trans.Locale)
 
 		currencies := make([][]byte, len(globalCurrencies), len(globalCurrencies))
@@ -306,6 +319,7 @@ func postProcess(cldr *cldr.CLDR) {
 		trans.Currencies = fmt.Sprintf("%#v", currencies)
 
 		parseDecimalNumberFormat(trans)
+		parsePercentNumberFormat(trans)
 		// trans.FmtNumberFunc = parseDecimalNumberFormat(trans.DecimalNumberFormat, trans.BaseLocale)
 	}
 }
@@ -393,6 +407,16 @@ func preProcess(cldr *cldr.CLDR) {
 				}
 			}
 
+			if len(ldml.Numbers.PercentFormats) > 0 && len(ldml.Numbers.PercentFormats[0].PercentFormatLength) > 0 {
+
+				for _, dfl := range ldml.Numbers.PercentFormats[0].PercentFormatLength {
+					if len(dfl.Type) == 0 {
+						trans.PercentNumberFormat = dfl.PercentFormat[0].Pattern[0].Data()
+						break
+					}
+				}
+			}
+
 			// var decimalFormat, currencyFormat, currencyAccountingFormat, percentageFormat string
 
 			// if len(ldml.Numbers.DecimalFormats) > 0 && len(ldml.Numbers.DecimalFormats[0].DecimalFormatLength) > 0 {
@@ -429,6 +453,70 @@ func preProcess(cldr *cldr.CLDR) {
 	for i, loc := range globalCurrencies {
 		globCurrencyIdxMap[loc] = i
 	}
+}
+
+func parsePercentNumberFormat(trans *translator) (results string) {
+
+	if len(trans.PercentNumberFormat) == 0 {
+		return
+	}
+
+	trans.FmtPercentExists = true
+
+	formats := strings.SplitN(trans.PercentNumberFormat, ";", 2)
+
+	// if len(formats) > 1 {
+	// 	trans.FmtNumberHasNegativeFormat = true
+	// }
+
+	match := groupLenRegex.FindString(formats[0])
+	if len(match) > 0 {
+		trans.FmtPercentGroupLen = len(match) - 2
+	}
+
+	match = requiredDecimalRegex.FindString(formats[0])
+	if len(match) > 0 {
+		trans.FmtPercentMinDecimalLen = len(match) - 1
+	}
+
+	match = secondaryGroupLenRegex.FindString(formats[0])
+	if len(match) > 0 {
+		trans.FmtPercentSecondaryGroupLen = len(match) - 2
+	}
+
+	if formats[0][0] == '%' {
+		trans.FmtPercentLeft = true
+	}
+	// trans.FmtPercentLeft
+
+	// start := 0
+	// // prefix := ""
+
+	// // positive prefix
+	// for start = 0; start < len(formats[0]); start++ {
+	// 	if formats[0][start] == '#' || formats[0][start] == '0' {
+	// 		break
+	// 	}
+	// }
+
+	// // if start > 0 {
+	// // 	prefix = formats[0][:start]
+	// // }
+
+	// end := 0
+
+	// // positive prefix
+	// for end = len(formats[0]) - 1; end >= 0; end-- {
+	// 	if formats[0][end] == '#' || formats[0][end] == '0' {
+	// 		end++
+	// 		break
+	// 	}
+	// }
+
+	// fmt.Println(start)
+	// fmt.Println(end)
+
+	return
 }
 
 func parseDecimalNumberFormat(trans *translator) (results string) {

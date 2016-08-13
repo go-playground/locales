@@ -66,9 +66,9 @@ func (az *az_Cyrl_AZ) OrdinalPluralRule(num float64, v uint64) locales.PluralRul
 
 	n := math.Abs(num)
 	i := int64(n)
-	iMod1000 := i % 1000
 	iMod10 := i % 10
 	iMod100 := i % 100
+	iMod1000 := i % 1000
 
 	if (iMod10 == 1 || iMod10 == 2 || iMod10 == 5 || iMod10 == 7 || iMod10 == 8) || (iMod100 == 20 || iMod100 == 50 || iMod100 == 70 || iMod100 == 80) {
 		return locales.PluralRuleOne
@@ -137,6 +137,41 @@ func (az *az_Cyrl_AZ) FmtNumber(num float64, v uint64) []byte {
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
+
+	return b
+}
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'az_Cyrl_AZ' and handles both Whole and Real numbers based on 'v'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (az *az_Cyrl_AZ) FmtPercent(num float64, v uint64) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + len(az.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, az.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, az.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, az.Percent[0])
 
 	return b
 }
