@@ -76,36 +76,24 @@ func (es *es_MX) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 // avoid allocations; otherwise just cast as string.
 func (es *es_MX) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(es.decimal) + len(es.group)*len(s[:len(s)-int(v)-1])/3
-
 	count := 0
 	inWhole := v == 0
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-
-			for j := len(es.decimal) - 1; j >= 0; j-- {
-				b = append(b, es.decimal[j])
-			}
-
+			b = append(b, es.decimal[0])
 			inWhole = true
 
 			continue
 		}
 
 		if inWhole {
-
 			if count == 3 {
-
-				for j := len(es.group) - 1; j >= 0; j-- {
-					b = append(b, es.group[j])
-				}
-
+				b = append(b, es.group[0])
 				count = 1
 			} else {
 				count++
@@ -115,11 +103,14 @@ func (es *es_MX) FmtNumber(num float64, v uint64) []byte {
 		b = append(b, s[i])
 	}
 
+	if num < 0 {
+		b = append(b, es.minus[0])
+	}
+
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
 
 	return b
-
 }

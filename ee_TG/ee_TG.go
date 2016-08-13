@@ -76,8 +76,6 @@ func (ee *ee_TG) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 // avoid allocations; otherwise just cast as string.
 func (ee *ee_TG) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	return []byte(s)
-
 }

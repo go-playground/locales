@@ -101,19 +101,18 @@ func (bn *bn_IN) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 // avoid allocations; otherwise just cast as string.
 func (bn *bn_IN) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(bn.decimal) + len(bn.group)*len(s[:len(s)-int(v)-1])/3
-
 	count := 0
 	inWhole := v == 0
+	inSecondary := false
+	groupThreshold := 3
 
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-
 			for j := len(bn.decimal) - 1; j >= 0; j-- {
 				b = append(b, bn.decimal[j])
 			}
@@ -125,13 +124,17 @@ func (bn *bn_IN) FmtNumber(num float64, v uint64) []byte {
 
 		if inWhole {
 
-			if count == 3 {
-
+			if count == groupThreshold {
 				for j := len(bn.group) - 1; j >= 0; j-- {
 					b = append(b, bn.group[j])
 				}
 
 				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = 2
+				}
 			} else {
 				count++
 			}
@@ -140,11 +143,16 @@ func (bn *bn_IN) FmtNumber(num float64, v uint64) []byte {
 		b = append(b, s[i])
 	}
 
+	if num < 0 {
+		for j := len(bn.minus) - 1; j >= 0; j-- {
+			b = append(b, bn.minus[j])
+		}
+	}
+
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
 
 	return b
-
 }

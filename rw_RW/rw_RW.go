@@ -1,6 +1,7 @@
 package rw_RW
 
 import (
+	"math"
 	"strconv"
 
 	"github.com/go-playground/locales"
@@ -68,8 +69,6 @@ func (rw *rw_RW) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 // avoid allocations; otherwise just cast as string.
 func (rw *rw_RW) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	return []byte(s)
-
 }

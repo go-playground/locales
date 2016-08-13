@@ -88,36 +88,24 @@ func (gl *gl_ES) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint6
 // avoid allocations; otherwise just cast as string.
 func (gl *gl_ES) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gl.decimal) + len(gl.group)*len(s[:len(s)-int(v)-1])/3
-
 	count := 0
 	inWhole := v == 0
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-
-			for j := len(gl.decimal) - 1; j >= 0; j-- {
-				b = append(b, gl.decimal[j])
-			}
-
+			b = append(b, gl.decimal[0])
 			inWhole = true
 
 			continue
 		}
 
 		if inWhole {
-
 			if count == 3 {
-
-				for j := len(gl.group) - 1; j >= 0; j-- {
-					b = append(b, gl.group[j])
-				}
-
+				b = append(b, gl.group[0])
 				count = 1
 			} else {
 				count++
@@ -127,11 +115,14 @@ func (gl *gl_ES) FmtNumber(num float64, v uint64) []byte {
 		b = append(b, s[i])
 	}
 
+	if num < 0 {
+		b = append(b, gl.minus[0])
+	}
+
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
 
 	return b
-
 }

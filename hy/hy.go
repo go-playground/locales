@@ -95,8 +95,7 @@ func (hy *hy) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 // avoid allocations; otherwise just cast as string.
 func (hy *hy) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hy.decimal)
 
 	b := make([]byte, 0, l)
@@ -104,15 +103,15 @@ func (hy *hy) FmtNumber(num float64, v uint64) []byte {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-
-			for j := len(hy.decimal) - 1; j >= 0; j-- {
-				b = append(b, hy.decimal[j])
-			}
-
+			b = append(b, hy.decimal[0])
 			continue
 		}
 
 		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, hy.minus[0])
 	}
 
 	// reverse
@@ -121,5 +120,4 @@ func (hy *hy) FmtNumber(num float64, v uint64) []byte {
 	}
 
 	return b
-
 }

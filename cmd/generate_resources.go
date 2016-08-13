@@ -31,20 +31,21 @@ var (
 		"t": "t := locales.T(n, v)\n",
 	}
 
-	translators          = make(map[string]*translator)
-	baseTranslators      = make(map[string]*translator)
-	globalCurrenciesMap  = make(map[string]struct{}) // ["USD"] = "$" currency code, just all currencies for mapping to enum
-	globCurrencyIdxMap   = make(map[string]int)      // ["USD"] = 0
-	globalCurrencies     = make([]string, 0, 100)    // array of currency codes index maps to enum
-	tmpl                 *template.Template
-	nModRegex            = regexp.MustCompile("(n%[0-9]+)")
-	iModRegex            = regexp.MustCompile("(i%[0-9]+)")
-	wModRegex            = regexp.MustCompile("(w%[0-9]+)")
-	fModRegex            = regexp.MustCompile("(f%[0-9]+)")
-	tModRegex            = regexp.MustCompile("(t%[0-9]+)")
-	groupLenRegex        = regexp.MustCompile(",([0-9#]+)\\.")
-	requiredNumRegex     = regexp.MustCompile("([0-9]+)\\.")
-	requiredDecimalRegex = regexp.MustCompile("\\.([0-9]+)")
+	translators            = make(map[string]*translator)
+	baseTranslators        = make(map[string]*translator)
+	globalCurrenciesMap    = make(map[string]struct{}) // ["USD"] = "$" currency code, just all currencies for mapping to enum
+	globCurrencyIdxMap     = make(map[string]int)      // ["USD"] = 0
+	globalCurrencies       = make([]string, 0, 100)    // array of currency codes index maps to enum
+	tmpl                   *template.Template
+	nModRegex              = regexp.MustCompile("(n%[0-9]+)")
+	iModRegex              = regexp.MustCompile("(i%[0-9]+)")
+	wModRegex              = regexp.MustCompile("(w%[0-9]+)")
+	fModRegex              = regexp.MustCompile("(f%[0-9]+)")
+	tModRegex              = regexp.MustCompile("(t%[0-9]+)")
+	groupLenRegex          = regexp.MustCompile(",([0-9#]+)\\.")
+	secondaryGroupLenRegex = regexp.MustCompile(",([0-9#]+),")
+	requiredNumRegex       = regexp.MustCompile("([0-9]+)\\.")
+	requiredDecimalRegex   = regexp.MustCompile("\\.([0-9]+)")
 )
 
 type translator struct {
@@ -56,15 +57,22 @@ type translator struct {
 	OrdinalFunc    string
 	RangeFunc      string
 	Decimal        string
+	DecimalLen     int
 	Group          string
+	GroupLen       int
 	Minus          string
+	MinusLen       int
 	Percent        string
 	PerMille       string
 	Currencies     string
 	// FmtNumberFunc  string
-	FmtNumberExists        bool
-	FmtNumberGroupLen      int
-	FmtNumberMinDecimalLen int
+	FmtNumberExists bool
+	FmtNumberPrefix string
+	FmtNumberSuffix string
+
+	FmtNumberGroupLen          int
+	FmtNumberSecondaryGroupLen int
+	FmtNumberMinDecimalLen     int
 
 	// calculation only fields
 	DecimalNumberFormat string
@@ -189,10 +197,12 @@ func postProcess(cldr *cldr.CLDR) {
 		if len(trans.Decimal) == 0 {
 
 			if found {
+				trans.DecimalLen = base.DecimalLen
 				trans.Decimal = base.Decimal
 			}
 
 			if len(trans.Decimal) == 0 {
+				trans.DecimalLen = 0
 				trans.Decimal = "[]byte{}"
 			}
 		}
@@ -200,10 +210,12 @@ func postProcess(cldr *cldr.CLDR) {
 		if len(trans.Group) == 0 {
 
 			if found {
+				trans.GroupLen = base.GroupLen
 				trans.Group = base.Group
 			}
 
 			if len(trans.Group) == 0 {
+				trans.GroupLen = 0
 				trans.Group = "[]byte{}"
 			}
 		}
@@ -211,10 +223,12 @@ func postProcess(cldr *cldr.CLDR) {
 		if len(trans.Minus) == 0 {
 
 			if found {
+				trans.MinusLen = base.MinusLen
 				trans.Minus = base.Minus
 			}
 
 			if len(trans.Minus) == 0 {
+				trans.MinusLen = 0
 				trans.Minus = "[]byte{}"
 			}
 		}
@@ -325,13 +339,19 @@ func preProcess(cldr *cldr.CLDR) {
 				symbol := ldml.Numbers.Symbols[0]
 
 				if len(symbol.Decimal) > 0 {
-					trans.Decimal = fmt.Sprintf("%#v", []byte(symbol.Decimal[0].Data()))
+					b := []byte(symbol.Decimal[0].Data())
+					trans.DecimalLen = len(b)
+					trans.Decimal = fmt.Sprintf("%#v", b)
 				}
 				if len(symbol.Group) > 0 {
-					trans.Group = fmt.Sprintf("%#v", []byte(symbol.Group[0].Data()))
+					b := []byte(symbol.Group[0].Data())
+					trans.GroupLen = len(b)
+					trans.Group = fmt.Sprintf("%#v", b)
 				}
 				if len(symbol.MinusSign) > 0 {
-					trans.Minus = fmt.Sprintf("%#v", []byte(symbol.MinusSign[0].Data()))
+					b := []byte(symbol.MinusSign[0].Data())
+					trans.MinusLen = len(b)
+					trans.Minus = fmt.Sprintf("%#v", b)
 				}
 				if len(symbol.PercentSign) > 0 {
 					trans.Percent = fmt.Sprintf("%#v", []byte(symbol.PercentSign[0].Data()))
@@ -409,15 +429,53 @@ func parseDecimalNumberFormat(trans *translator) (results string) {
 
 	trans.FmtNumberExists = true
 
-	match := groupLenRegex.FindString(trans.DecimalNumberFormat)
+	formats := strings.SplitN(trans.DecimalNumberFormat, ";", 2)
+
+	// if len(formats) > 1 {
+	// 	trans.FmtNumberHasNegativeFormat = true
+	// }
+
+	match := groupLenRegex.FindString(formats[0])
 	if len(match) > 0 {
 		trans.FmtNumberGroupLen = len(match) - 2
 	}
 
-	match = requiredDecimalRegex.FindString(trans.DecimalNumberFormat)
+	match = requiredDecimalRegex.FindString(formats[0])
 	if len(match) > 0 {
 		trans.FmtNumberMinDecimalLen = len(match) - 1
 	}
+
+	match = secondaryGroupLenRegex.FindString(formats[0])
+	if len(match) > 0 {
+		trans.FmtNumberSecondaryGroupLen = len(match) - 2
+	}
+
+	// start := 0
+	// // prefix := ""
+
+	// // positive prefix
+	// for start = 0; start < len(formats[0]); start++ {
+	// 	if formats[0][start] == '#' || formats[0][start] == '0' {
+	// 		break
+	// 	}
+	// }
+
+	// // if start > 0 {
+	// // 	prefix = formats[0][:start]
+	// // }
+
+	// end := 0
+
+	// // positive prefix
+	// for end = len(formats[0]) - 1; end >= 0; end-- {
+	// 	if formats[0][end] == '#' || formats[0][end] == '0' {
+	// 		end++
+	// 		break
+	// 	}
+	// }
+
+	// fmt.Println(start)
+	// fmt.Println(end)
 
 	return
 }

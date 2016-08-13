@@ -84,36 +84,24 @@ func (dsb *dsb_DE) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uin
 // avoid allocations; otherwise just cast as string.
 func (dsb *dsb_DE) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dsb.decimal) + len(dsb.group)*len(s[:len(s)-int(v)-1])/3
-
 	count := 0
 	inWhole := v == 0
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-
-			for j := len(dsb.decimal) - 1; j >= 0; j-- {
-				b = append(b, dsb.decimal[j])
-			}
-
+			b = append(b, dsb.decimal[0])
 			inWhole = true
 
 			continue
 		}
 
 		if inWhole {
-
 			if count == 3 {
-
-				for j := len(dsb.group) - 1; j >= 0; j-- {
-					b = append(b, dsb.group[j])
-				}
-
+				b = append(b, dsb.group[0])
 				count = 1
 			} else {
 				count++
@@ -123,11 +111,14 @@ func (dsb *dsb_DE) FmtNumber(num float64, v uint64) []byte {
 		b = append(b, s[i])
 	}
 
+	if num < 0 {
+		b = append(b, dsb.minus[0])
+	}
+
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
 
 	return b
-
 }

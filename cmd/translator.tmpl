@@ -69,12 +69,16 @@ func({{ .BaseLocale }} *{{ .Locale }}) RangePluralRule(num1 float64, v1 uint64,n
 // avoid allocations; otherwise just cast as string.
 func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-	{{ if eq .FmtNumberExists true }}
-	{{ if gt .FmtNumberGroupLen 0 }}
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	{{- if eq .FmtNumberExists true }}
+	{{- if gt .FmtNumberGroupLen 0 }}
 	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtNumberGroupLen }}
 	count := 0
 	inWhole := v == 0
+	{{- if gt .FmtNumberSecondaryGroupLen 0}}
+	inSecondary := false
+	groupThreshold := {{ .FmtNumberGroupLen }}
+	{{ end -}}
 	{{ else }}
 	l := len(s) + len({{ .BaseLocale }}.decimal)
 	{{ end }}
@@ -84,11 +88,14 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 
 		if s[i] == '.' {
 
+			{{- if eq .DecimalLen 1 }}
+			b = append(b, {{ .BaseLocale }}.decimal[0])
+			{{- else }}
 			for j := len({{ .BaseLocale }}.decimal) - 1; j >= 0; j-- {
 				b = append(b, {{ .BaseLocale }}.decimal[j])
 			}
-
-			{{ if gt .FmtNumberGroupLen 0 }}
+			{{ end -}}
+			{{- if gt .FmtNumberGroupLen 0 }}
 			inWhole = true
 			{{ end }}
 			continue
@@ -97,13 +104,33 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 		{{ if gt .FmtNumberGroupLen 0 }}
 		if inWhole {
 
-			if count == {{ .FmtNumberGroupLen }} {
-
+			{{- if gt .FmtNumberSecondaryGroupLen 0}}
+			
+			if count == groupThreshold {
+				{{- if eq .GroupLen 1 }}
+				b = append(b, {{ .BaseLocale }}.group[0])
+				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
 					b = append(b, {{ .BaseLocale }}.group[j])
 				}
-
+				{{ end }}
 				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = {{ .FmtNumberSecondaryGroupLen }}
+				}
+			{{ else }}
+			if count == {{ .FmtNumberGroupLen }} {
+				{{- if eq .GroupLen 1 }}
+				b = append(b, {{ .BaseLocale }}.group[0])
+				{{- else }}
+				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
+					b = append(b, {{ .BaseLocale }}.group[j])
+				}
+				{{ end }}
+				count = 1
+			{{ end -}}
 			} else {
 				count++
 			}
@@ -112,6 +139,16 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 		{{ end }}
 
 		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		{{- if eq .MinusLen 1 }}
+		b = append(b, {{ .BaseLocale }}.minus[0])
+		{{ else }}
+		for j := len({{ .BaseLocale }}.minus) - 1; j >= 0; j-- {
+			b = append(b, {{ .BaseLocale }}.minus[j])
+		}
+		{{ end -}}
 	}
 
 	// reverse
@@ -135,7 +172,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 	return b
 	{{ else }}
 	return []byte(s)
-	{{ end }}
+	{{ end -}}
 }
 
 {{ end }}

@@ -54,10 +54,10 @@ func (lv *lv) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	f := locales.F(n, v)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
-	fMod100 := f % 100
+	nMod10 := math.Mod(n, 10)
 	fMod10 := f % 10
+	fMod100 := f % 100
 
 	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
@@ -106,32 +106,23 @@ func (lv *lv) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) 
 // avoid allocations; otherwise just cast as string.
 func (lv *lv) FmtNumber(num float64, v uint64) []byte {
 
-	s := strconv.FormatFloat(num, 'f', int(v), 64)
-
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lv.decimal) + len(lv.group)*len(s[:len(s)-int(v)-1])/3
-
 	count := 0
 	inWhole := v == 0
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-
-			for j := len(lv.decimal) - 1; j >= 0; j-- {
-				b = append(b, lv.decimal[j])
-			}
-
+			b = append(b, lv.decimal[0])
 			inWhole = true
 
 			continue
 		}
 
 		if inWhole {
-
 			if count == 3 {
-
 				for j := len(lv.group) - 1; j >= 0; j-- {
 					b = append(b, lv.group[j])
 				}
@@ -145,11 +136,14 @@ func (lv *lv) FmtNumber(num float64, v uint64) []byte {
 		b = append(b, s[i])
 	}
 
+	if num < 0 {
+		b = append(b, lv.minus[0])
+	}
+
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
 
 	return b
-
 }

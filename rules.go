@@ -56,6 +56,11 @@ type Translator interface {
 
 	// returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for locale
 	RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) PluralRule
+
+	// returns 'num' with digits/precision of 'v' for 'mr_IN' and handles both Whole and Real numbers based on 'v'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtNumber(num float64, v uint64) []byte
 }
 
 // String returns the string value  of PluralRule
