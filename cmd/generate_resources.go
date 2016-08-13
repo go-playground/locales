@@ -63,7 +63,9 @@ type translator struct {
 	Minus          string
 	MinusLen       int
 	Percent        string
+	PercentLen     int
 	PerMille       string
+	PerMilleLen    int
 	Currencies     string
 	// FmtNumberFunc  string
 	FmtNumberExists bool
@@ -236,10 +238,12 @@ func postProcess(cldr *cldr.CLDR) {
 		if len(trans.Percent) == 0 {
 
 			if found {
+				trans.PercentLen = base.PercentLen
 				trans.Percent = base.Percent
 			}
 
 			if len(trans.Percent) == 0 {
+				trans.PercentLen = 0
 				trans.Percent = "[]byte{}"
 			}
 		}
@@ -247,10 +251,12 @@ func postProcess(cldr *cldr.CLDR) {
 		if len(trans.PerMille) == 0 {
 
 			if found {
+				trans.PerMilleLen = base.PerMilleLen
 				trans.PerMille = base.PerMille
 			}
 
 			if len(trans.PerMille) == 0 {
+				trans.PerMilleLen = 0
 				trans.PerMille = "[]byte{}"
 			}
 		}
@@ -354,10 +360,14 @@ func preProcess(cldr *cldr.CLDR) {
 					trans.Minus = fmt.Sprintf("%#v", b)
 				}
 				if len(symbol.PercentSign) > 0 {
-					trans.Percent = fmt.Sprintf("%#v", []byte(symbol.PercentSign[0].Data()))
+					b := []byte(symbol.PercentSign[0].Data())
+					trans.PercentLen = len(b)
+					trans.Percent = fmt.Sprintf("%#v", b)
 				}
 				if len(symbol.PerMille) > 0 {
-					trans.PerMille = fmt.Sprintf("%#v", []byte(symbol.PerMille[0].Data()))
+					b := []byte(symbol.PerMille[0].Data())
+					trans.PerMilleLen = len(b)
+					trans.PerMille = fmt.Sprintf("%#v", b)
 				}
 			}
 
