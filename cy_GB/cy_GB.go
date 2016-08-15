@@ -226,9 +226,7 @@ func (cy *cy_GB) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(cy.percent) - 1; j >= 0; j-- {
-		b = append(b, cy.percent[j])
-	}
+	b = append(b, cy.percent...)
 
 	return b
 }

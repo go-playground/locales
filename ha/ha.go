@@ -149,9 +149,7 @@ func (ha *ha) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(ha.percent) - 1; j >= 0; j-- {
-		b = append(b, ha.percent[j])
-	}
+	b = append(b, ha.percent...)
 
 	return b
 }

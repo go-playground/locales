@@ -192,9 +192,7 @@ func (gu *gu) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(gu.percent) - 1; j >= 0; j-- {
-		b = append(b, gu.percent[j])
-	}
+	b = append(b, gu.percent...)
 
 	return b
 }

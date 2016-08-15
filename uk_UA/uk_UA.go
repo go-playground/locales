@@ -72,8 +72,8 @@ func (uk *uk_UA) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (uk *uk_UA) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
+	nMod10 := math.Mod(n, 10)
 
 	if nMod10 == 3 && nMod100 != 13 {
 		return locales.PluralRuleFew
@@ -201,7 +201,7 @@ func (uk *uk_UA) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, uk.Percent[0])
+	b = append(b, uk.percent...)
 
 	return b
 }

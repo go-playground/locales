@@ -138,7 +138,7 @@ func (ko *ko_KR) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, ko.Percent[0])
+	b = append(b, ko.percent...)
 
 	return b
 }

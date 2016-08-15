@@ -154,7 +154,7 @@ func (brx *brx) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, brx.Percent[0])
+	b = append(b, brx.percent...)
 
 	return b
 }

@@ -169,7 +169,7 @@ func (fil *fil) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, fil.Percent[0])
+	b = append(b, fil.percent...)
 
 	return b
 }

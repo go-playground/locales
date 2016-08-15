@@ -148,7 +148,7 @@ func (os *os_GE) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, os.Percent[0])
+	b = append(b, os.percent...)
 
 	return b
 }

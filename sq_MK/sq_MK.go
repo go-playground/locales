@@ -65,8 +65,8 @@ func (sq *sq_MK) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (sq *sq_MK) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod100 := math.Mod(n, 100)
 	nMod10 := math.Mod(n, 10)
+	nMod100 := math.Mod(n, 100)
 
 	if n == 1 {
 		return locales.PluralRuleOne
@@ -170,7 +170,7 @@ func (sq *sq_MK) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, sq.Percent[0])
+	b = append(b, sq.percent...)
 
 	return b
 }

@@ -66,8 +66,8 @@ func (sv *sv_AX) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (sv *sv_AX) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod100 := math.Mod(n, 100)
 	nMod10 := math.Mod(n, 10)
+	nMod100 := math.Mod(n, 100)
 
 	if (nMod10 == 1 || nMod10 == 2) && (nMod100 != 11 && nMod100 != 12) {
 		return locales.PluralRuleOne
@@ -168,9 +168,9 @@ func (sv *sv_AX) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(sv.percent) - 1; j >= 0; j-- {
-		b = append(b, sv.percent[j])
-	}
+	b = append(b, " "...)
+
+	b = append(b, sv.percent...)
 
 	return b
 }

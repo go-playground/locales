@@ -157,7 +157,7 @@ func (kn *kn_IN) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, kn.Percent[0])
+	b = append(b, kn.percent...)
 
 	return b
 }

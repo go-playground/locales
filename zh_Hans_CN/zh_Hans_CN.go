@@ -138,7 +138,7 @@ func (zh *zh_Hans_CN) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, zh.Percent[0])
+	b = append(b, zh.percent...)
 
 	return b
 }

@@ -138,7 +138,7 @@ func (yue *yue_HK) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, yue.Percent[0])
+	b = append(b, yue.percent...)
 
 	return b
 }

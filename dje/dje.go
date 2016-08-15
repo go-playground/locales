@@ -145,9 +145,7 @@ func (dje *dje) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(dje.percent) - 1; j >= 0; j-- {
-		b = append(b, dje.percent[j])
-	}
+	b = append(b, dje.percent...)
 
 	return b
 }

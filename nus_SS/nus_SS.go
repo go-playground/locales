@@ -142,9 +142,7 @@ func (nus *nus_SS) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(nus.percent) - 1; j >= 0; j-- {
-		b = append(b, nus.percent[j])
-	}
+	b = append(b, nus.percent...)
 
 	return b
 }

@@ -145,7 +145,9 @@ func (lb *lb_LU) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, lb.Percent[0])
+	b = append(b, " "...)
+
+	b = append(b, lb.percent...)
 
 	return b
 }

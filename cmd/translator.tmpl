@@ -263,9 +263,29 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 		{{ end -}}
 	}
 
-	{{ if eq .FmtPercentLeft true }}
+	{{ if and .FmtPercentInPrefix (not .FmtPercentLeft) }}
 		{{- if eq .PercentLen 1 }}
-		b = append(b, {{ .BaseLocale }}.Percent[0])
+		b = append(b, {{ .BaseLocale }}.percent[0])
+		{{ else }}
+		for j := len({{ .BaseLocale }}.percent) - 1; j >= 0; j-- {
+			b = append(b, {{ .BaseLocale }}.percent[j])
+		}
+		{{ end }}
+	{{ end }}
+
+	{{ if gt (len .FmtPercentPrefix) 0}}
+		{{- if eq (len .FmtPercentPrefix) 1 }}
+		b = append(b, "{{ .FmtPercentPrefix }}"[0])
+		{{ else }}
+		for j := {{ len .FmtPercentPrefix }} - 1; j >= 0; j-- {
+			b = append(b, "{{ .FmtPercentPrefix }}"[j])
+		}
+		{{ end }}
+	{{ end }}
+
+	{{ if and .FmtPercentInPrefix .FmtPercentLeft }}
+		{{- if eq .PercentLen 1 }}
+		b = append(b, {{ .BaseLocale }}.percent[0])
 		{{ else }}
 		for j := len({{ .BaseLocale }}.percent) - 1; j >= 0; j-- {
 			b = append(b, {{ .BaseLocale }}.percent[j])
@@ -278,6 +298,18 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 		b[i], b[j] = b[j], b[i]
 	}
 
+	{{ if and (not .FmtPercentInPrefix) .FmtPercentLeft }}
+		b = append(b, {{ .BaseLocale }}.percent...)
+	{{ end }}
+
+	{{ if gt (len .FmtPercentSuffix) 0}}
+		b = append(b, "{{ .FmtPercentSuffix }}"...)
+	{{ end }}
+
+	{{ if and (not .FmtPercentInPrefix) (not .FmtPercentLeft) }}
+		b = append(b, {{ .BaseLocale }}.percent...)
+	{{ end }}
+
 	{{ if gt .FmtPercentMinDecimalLen 0 }}
 	if int(v) < {{ .FmtPercentMinDecimalLen }} {
 
@@ -289,16 +321,6 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 			b = append(b, '0')
 		}
 	}
-	{{ end }}
-
-	{{ if eq .FmtPercentLeft false }}
-		{{- if eq .PercentLen 1 }}
-		b = append(b, {{ .BaseLocale }}.Percent[0])
-		{{ else }}
-		for j := len({{ .BaseLocale }}.percent) - 1; j >= 0; j-- {
-			b = append(b, {{ .BaseLocale }}.percent[j])
-		}
-		{{ end }}
 	{{ end }}
 
 	return b

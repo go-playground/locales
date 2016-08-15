@@ -154,7 +154,9 @@ func (ksh *ksh) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, ksh.Percent[0])
+	b = append(b, " "...)
+
+	b = append(b, ksh.percent...)
 
 	return b
 }

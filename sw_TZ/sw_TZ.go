@@ -157,7 +157,7 @@ func (sw *sw_TZ) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, sw.Percent[0])
+	b = append(b, sw.percent...)
 
 	return b
 }

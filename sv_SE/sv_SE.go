@@ -168,9 +168,9 @@ func (sv *sv_SE) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(sv.percent) - 1; j >= 0; j-- {
-		b = append(b, sv.percent[j])
-	}
+	b = append(b, " "...)
+
+	b = append(b, sv.percent...)
 
 	return b
 }

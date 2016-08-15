@@ -157,7 +157,7 @@ func (ca *ca_AD) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, ca.Percent[0])
+	b = append(b, ca.percent...)
 
 	return b
 }

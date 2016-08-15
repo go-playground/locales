@@ -196,9 +196,9 @@ func (cs *cs_CZ) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(cs.percent) - 1; j >= 0; j-- {
-		b = append(b, cs.percent[j])
-	}
+	b = append(b, " "...)
+
+	b = append(b, cs.percent...)
 
 	return b
 }

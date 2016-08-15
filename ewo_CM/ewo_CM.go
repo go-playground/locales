@@ -145,9 +145,7 @@ func (ewo *ewo_CM) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(ewo.percent) - 1; j >= 0; j-- {
-		b = append(b, ewo.percent[j])
-	}
+	b = append(b, ewo.percent...)
 
 	return b
 }

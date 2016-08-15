@@ -24,9 +24,4 @@ func TestGrouping(t *testing.T) {
 			t.Errorf("Expected '%s' Got '%s", tt.expected, s)
 		}
 	}
-
-	// num := float64(1123456.5643)
-
-	// s := trans.FmtNumber(num, 2)
-	// fmt.Println(string(s))
 }

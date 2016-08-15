@@ -133,15 +133,27 @@ func (tr *tr_CY) FmtNumber(num float64, v uint64) []byte {
 func (tr *tr_CY) FmtPercent(num float64, v uint64) []byte {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(tr.decimal)
-
+	l := len(s) + len(tr.decimal) + len(tr.group)*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, tr.decimal[0])
+			inWhole = true
+
 			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, tr.group[0])
+				count = 1
+			} else {
+				count++
+			}
 		}
 
 		b = append(b, s[i])
@@ -151,7 +163,7 @@ func (tr *tr_CY) FmtPercent(num float64, v uint64) []byte {
 		b = append(b, tr.minus[0])
 	}
 
-	b = append(b, tr.Percent[0])
+	b = append(b, tr.percent[0])
 
 	// reverse
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {

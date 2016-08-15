@@ -154,7 +154,9 @@ func (se *se_FI) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, se.Percent[0])
+	b = append(b, " "...)
+
+	b = append(b, se.percent...)
 
 	return b
 }

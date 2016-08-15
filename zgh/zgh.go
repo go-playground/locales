@@ -105,9 +105,9 @@ func (zgh *zgh) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(zgh.percent) - 1; j >= 0; j-- {
-		b = append(b, zgh.percent[j])
-	}
+	b = append(b, " "...)
+
+	b = append(b, zgh.percent...)
 
 	return b
 }

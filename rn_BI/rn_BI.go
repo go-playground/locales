@@ -142,9 +142,9 @@ func (rn *rn_BI) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(rn.percent) - 1; j >= 0; j-- {
-		b = append(b, rn.percent[j])
-	}
+	b = append(b, " "...)
+
+	b = append(b, rn.percent...)
 
 	return b
 }

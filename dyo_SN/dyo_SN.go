@@ -145,9 +145,7 @@ func (dyo *dyo_SN) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(dyo.percent) - 1; j >= 0; j-- {
-		b = append(b, dyo.percent[j])
-	}
+	b = append(b, dyo.percent...)
 
 	return b
 }

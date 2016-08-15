@@ -56,8 +56,8 @@ func (prg *prg) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	f := locales.F(n, v)
 	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
-	fMod100 := f % 100
 	fMod10 := f % 10
+	fMod100 := f % 100
 
 	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
@@ -155,7 +155,7 @@ func (prg *prg) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, prg.Percent[0])
+	b = append(b, prg.percent...)
 
 	return b
 }

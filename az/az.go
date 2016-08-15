@@ -66,9 +66,9 @@ func (az *az) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
+	iMod1000 := i % 1000
 	iMod10 := i % 10
 	iMod100 := i % 100
-	iMod1000 := i % 1000
 
 	if (iMod10 == 1 || iMod10 == 2 || iMod10 == 5 || iMod10 == 7 || iMod10 == 8) || (iMod100 == 20 || iMod100 == 50 || iMod100 == 70 || iMod100 == 80) {
 		return locales.PluralRuleOne
@@ -171,7 +171,7 @@ func (az *az) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, az.Percent[0])
+	b = append(b, az.percent...)
 
 	return b
 }

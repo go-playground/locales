@@ -142,9 +142,7 @@ func (mua *mua_CM) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(mua.percent) - 1; j >= 0; j-- {
-		b = append(b, mua.percent[j])
-	}
+	b = append(b, mua.percent...)
 
 	return b
 }

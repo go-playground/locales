@@ -145,7 +145,9 @@ func (kl *kl_GL) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, kl.Percent[0])
+	b = append(b, " "...)
+
+	b = append(b, kl.percent...)
 
 	return b
 }

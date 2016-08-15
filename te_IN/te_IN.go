@@ -165,7 +165,7 @@ func (te *te_IN) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, te.Percent[0])
+	b = append(b, te.percent...)
 
 	return b
 }

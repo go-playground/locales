@@ -157,7 +157,7 @@ func (de *de_LI) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, de.Percent[0])
+	b = append(b, de.percent...)
 
 	return b
 }

@@ -157,7 +157,7 @@ func (gl *gl) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, gl.Percent[0])
+	b = append(b, gl.percent...)
 
 	return b
 }

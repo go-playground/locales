@@ -188,7 +188,7 @@ func (sl *sl_SI) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, sl.Percent[0])
+	b = append(b, sl.percent...)
 
 	return b
 }

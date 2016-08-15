@@ -145,9 +145,9 @@ func (dua *dua) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(dua.percent) - 1; j >= 0; j-- {
-		b = append(b, dua.percent[j])
-	}
+	b = append(b, " "...)
+
+	b = append(b, dua.percent...)
 
 	return b
 }

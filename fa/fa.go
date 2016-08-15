@@ -159,9 +159,7 @@ func (fa *fa) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(fa.percent) - 1; j >= 0; j-- {
-		b = append(b, fa.percent[j])
-	}
+	b = append(b, fa.percent...)
 
 	return b
 }

@@ -186,7 +186,9 @@ func (sk *sk) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, sk.Percent[0])
+	b = append(b, " "...)
+
+	b = append(b, sk.percent...)
 
 	return b
 }

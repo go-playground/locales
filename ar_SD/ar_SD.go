@@ -218,9 +218,7 @@ func (ar *ar_SD) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(ar.percent) - 1; j >= 0; j-- {
-		b = append(b, ar.percent[j])
-	}
+	b = append(b, ar.percent...)
 
 	return b
 }

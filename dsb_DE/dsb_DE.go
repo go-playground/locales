@@ -153,7 +153,9 @@ func (dsb *dsb_DE) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, dsb.Percent[0])
+	b = append(b, " "...)
+
+	b = append(b, dsb.percent...)
 
 	return b
 }

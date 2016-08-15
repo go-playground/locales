@@ -145,7 +145,7 @@ func (mgo *mgo_CM) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, mgo.Percent[0])
+	b = append(b, mgo.percent...)
 
 	return b
 }

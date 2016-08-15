@@ -145,9 +145,7 @@ func (nmg *nmg) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(nmg.percent) - 1; j >= 0; j-- {
-		b = append(b, nmg.percent[j])
-	}
+	b = append(b, nmg.percent...)
 
 	return b
 }

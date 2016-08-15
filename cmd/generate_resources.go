@@ -43,6 +43,7 @@ var (
 	fModRegex              = regexp.MustCompile("(f%[0-9]+)")
 	tModRegex              = regexp.MustCompile("(t%[0-9]+)")
 	groupLenRegex          = regexp.MustCompile(",([0-9#]+)\\.")
+	groupLenPercentRegex   = regexp.MustCompile(",([0-9#]+)$")
 	secondaryGroupLenRegex = regexp.MustCompile(",([0-9#]+),")
 	requiredNumRegex       = regexp.MustCompile("([0-9]+)\\.")
 	requiredDecimalRegex   = regexp.MustCompile("\\.([0-9]+)")
@@ -79,6 +80,9 @@ type translator struct {
 	FmtPercentGroupLen          int
 	FmtPercentSecondaryGroupLen int
 	FmtPercentMinDecimalLen     int
+	FmtPercentPrefix            string
+	FmtPercentSuffix            string
+	FmtPercentInPrefix          bool
 	FmtPercentLeft              bool
 
 	// calculation only fields
@@ -145,7 +149,7 @@ func main() {
 
 	for _, trans := range translators {
 
-		fmt.Println("Writing Data:", trans.Locale)
+		fmt.Println("Writing Data:", trans.PercentNumberFormat, len(trans.FmtPercentPrefix), trans.FmtPercentPrefix, len(trans.FmtPercentSuffix), trans.FmtPercentSuffix, trans.Locale)
 
 		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0777); err != nil {
 			log.Fatal(err)
@@ -463,40 +467,95 @@ func parsePercentNumberFormat(trans *translator) (results string) {
 
 	trans.FmtPercentExists = true
 
-	formats := strings.SplitN(trans.PercentNumberFormat, ";", 2)
+	// formats := strings.SplitN(trans.PercentNumberFormat, ";", 2)
 
 	// if len(formats) > 1 {
 	// 	trans.FmtNumberHasNegativeFormat = true
 	// }
 
-	match := groupLenRegex.FindString(formats[0])
+	match := groupLenPercentRegex.FindString(trans.PercentNumberFormat)
 	if len(match) > 0 {
-		trans.FmtPercentGroupLen = len(match) - 2
+		trans.FmtPercentGroupLen = len(match) - 1
 	}
 
-	match = requiredDecimalRegex.FindString(formats[0])
+	match = requiredDecimalRegex.FindString(trans.PercentNumberFormat)
 	if len(match) > 0 {
 		trans.FmtPercentMinDecimalLen = len(match) - 1
 	}
 
-	match = secondaryGroupLenRegex.FindString(formats[0])
+	match = secondaryGroupLenRegex.FindString(trans.PercentNumberFormat)
 	if len(match) > 0 {
 		trans.FmtPercentSecondaryGroupLen = len(match) - 2
 	}
 
-	if formats[0][0] == '%' {
-		trans.FmtPercentLeft = true
-	}
+	// 	FmtPercentPrefix            string
+	// FmtPercentSuffix            string
+	// FmtPercentInPrefix          bool
+	// FmtPercentLeft              bool
+
+	// if formats[0][0] == '%' {
+	// 	trans.FmtPercentLeft = true
+	// }
+
 	// trans.FmtPercentLeft
 
-	// start := 0
-	// // prefix := ""
+	idx := 0
 
-	// // positive prefix
-	// for start = 0; start < len(formats[0]); start++ {
-	// 	if formats[0][start] == '#' || formats[0][start] == '0' {
-	// 		break
-	// 	}
+	for idx = 0; idx < len(trans.PercentNumberFormat); idx++ {
+		if trans.PercentNumberFormat[idx] == '#' || trans.PercentNumberFormat[idx] == '0' {
+			trans.FmtPercentPrefix = trans.PercentNumberFormat[:idx]
+			break
+		}
+	}
+
+	for idx = len(trans.PercentNumberFormat) - 1; idx >= 0; idx-- {
+		if trans.PercentNumberFormat[idx] == '#' || trans.PercentNumberFormat[idx] == '0' {
+			idx++
+			trans.FmtPercentSuffix = trans.PercentNumberFormat[idx:]
+			break
+		}
+	}
+
+	for idx = 0; idx < len(trans.FmtPercentPrefix); idx++ {
+		if trans.FmtPercentPrefix[idx] == '%' {
+			trans.FmtPercentInPrefix = true
+
+			if idx == 0 {
+				trans.FmtPercentLeft = true
+				trans.FmtPercentPrefix = trans.FmtPercentPrefix[idx+1:]
+			} else {
+				trans.FmtPercentLeft = false
+				trans.FmtPercentPrefix = trans.FmtPercentPrefix[:idx]
+			}
+
+			break
+		}
+	}
+
+	for idx = 0; idx < len(trans.FmtPercentSuffix); idx++ {
+		if trans.FmtPercentSuffix[idx] == '%' {
+			trans.FmtPercentInPrefix = false
+
+			if idx == 0 {
+				trans.FmtPercentLeft = true
+				trans.FmtPercentSuffix = trans.FmtPercentSuffix[idx+1:]
+			} else {
+				trans.FmtPercentLeft = false
+				trans.FmtPercentSuffix = trans.FmtPercentSuffix[:idx]
+			}
+
+			break
+		}
+	}
+
+	// if len(trans.FmtPercentPrefix) == 1 && trans.FmtPercentPrefix[0] == '%' {
+	// 	trans.FmtPercentPrefix = ""
+	// 	trans.FmtPercentInPrefix = true
+	// }
+
+	// if len(trans.FmtPercentSuffix) == 1 && trans.FmtPercentSuffix[0] == '%' {
+	// 	trans.FmtPercentSuffix = ""
+	// 	trans.FmtPercentSuffix = false
 	// }
 
 	// // if start > 0 {

@@ -177,7 +177,7 @@ func (mr *mr_IN) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	b = append(b, mr.Percent[0])
+	b = append(b, mr.percent...)
 
 	return b
 }

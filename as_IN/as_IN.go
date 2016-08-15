@@ -181,9 +181,7 @@ func (as *as_IN) FmtPercent(num float64, v uint64) []byte {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	for j := len(as.percent) - 1; j >= 0; j-- {
-		b = append(b, as.percent[j])
-	}
+	b = append(b, as.percent...)
 
 	return b
 }
