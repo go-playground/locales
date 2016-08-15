@@ -548,6 +548,14 @@ func parsePercentNumberFormat(trans *translator) (results string) {
 		}
 	}
 
+	if len(trans.FmtPercentPrefix) > 0 {
+		trans.FmtPercentPrefix = fmt.Sprintf("%#v", []byte(trans.FmtPercentPrefix))
+	}
+
+	if len(trans.FmtPercentSuffix) > 0 {
+		trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
+	}
+
 	// if len(trans.FmtPercentPrefix) == 1 && trans.FmtPercentPrefix[0] == '%' {
 	// 	trans.FmtPercentPrefix = ""
 	// 	trans.FmtPercentInPrefix = true

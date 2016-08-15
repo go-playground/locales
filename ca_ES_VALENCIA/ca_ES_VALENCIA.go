@@ -15,6 +15,8 @@ type ca_ES_VALENCIA struct {
 	group           []byte
 	minus           []byte
 	percent         []byte
+	percentPrefix   []byte
+	percentSuffix   []byte
 	perMille        []byte
 	currencies      [][]byte // idx = enum of currency code
 }

@@ -15,6 +15,8 @@ type en_150 struct {
 	group           []byte
 	minus           []byte
 	percent         []byte
+	percentPrefix   []byte
+	percentSuffix   []byte
 	perMille        []byte
 	currencies      [][]byte // idx = enum of currency code
 }
@@ -66,8 +68,8 @@ func (en *en_150) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (en *en_150) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod100 := math.Mod(n, 100)
 	nMod10 := math.Mod(n, 10)
+	nMod100 := math.Mod(n, 100)
 
 	if nMod10 == 1 && nMod100 != 11 {
 		return locales.PluralRuleOne

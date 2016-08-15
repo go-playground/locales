@@ -15,6 +15,8 @@ type bs_Cyrl struct {
 	group           []byte
 	minus           []byte
 	percent         []byte
+	percentPrefix   []byte
+	percentSuffix   []byte
 	perMille        []byte
 	currencies      [][]byte // idx = enum of currency code
 }
@@ -55,8 +57,8 @@ func (bs *bs_Cyrl) CardinalPluralRule(num float64, v uint64) locales.PluralRule 
 	n := math.Abs(num)
 	i := int64(n)
 	f := locales.F(n, v)
-	iMod100 := i % 100
 	iMod10 := i % 10
+	iMod100 := i % 100
 	fMod10 := f % 10
 	fMod100 := f % 100
 

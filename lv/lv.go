@@ -15,6 +15,8 @@ type lv struct {
 	group           []byte
 	minus           []byte
 	percent         []byte
+	percentPrefix   []byte
+	percentSuffix   []byte
 	perMille        []byte
 	currencies      [][]byte // idx = enum of currency code
 }
@@ -54,8 +56,8 @@ func (lv *lv) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	f := locales.F(n, v)
-	nMod100 := math.Mod(n, 100)
 	nMod10 := math.Mod(n, 10)
+	nMod100 := math.Mod(n, 100)
 	fMod100 := f % 100
 	fMod10 := f % 10
 

@@ -15,6 +15,8 @@ type {{ .Locale }} struct {
 	group      		[]byte
 	minus      		[]byte
 	percent    		[]byte
+	percentPrefix   []byte
+	percentSuffix   []byte
 	perMille   		[]byte
 	currencies 		[][]byte // idx = enum of currency code
 }
@@ -31,6 +33,12 @@ func New() locales.Translator {
 		percent:  		 {{ .Percent }},
 		perMille:        {{ .PerMille }},
 		currencies:      {{ .Currencies }},
+		{{ if gt (len .FmtPercentPrefix) 0}}
+		percentPrefix:   {{ .FmtPercentPrefix }},
+		{{ end -}}
+		{{ if gt (len .FmtPercentSuffix) 0}}
+		percentSuffix:   {{ .FmtPercentSuffix }},
+		{{ end -}}
 	}
 }
 
@@ -275,10 +283,10 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 
 	{{ if gt (len .FmtPercentPrefix) 0}}
 		{{- if eq (len .FmtPercentPrefix) 1 }}
-		b = append(b, "{{ .FmtPercentPrefix }}"[0])
+		b = append(b, {{ .BaseLocale }}.percentPrefix[0])
 		{{ else }}
-		for j := {{ len .FmtPercentPrefix }} - 1; j >= 0; j-- {
-			b = append(b, "{{ .FmtPercentPrefix }}"[j])
+		for j := len({{ .BaseLocale }}.percentPrefix) - 1; j >= 0; j-- {
+			b = append(b, {{ .BaseLocale }}.percentPrefix[j])
 		}
 		{{ end }}
 	{{ end }}
@@ -303,7 +311,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 	{{ end }}
 
 	{{ if gt (len .FmtPercentSuffix) 0}}
-		b = append(b, "{{ .FmtPercentSuffix }}"...)
+		b = append(b, {{ .BaseLocale }}.percentSuffix...)
 	{{ end }}
 
 	{{ if and (not .FmtPercentInPrefix) (not .FmtPercentLeft) }}

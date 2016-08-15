@@ -15,6 +15,8 @@ type az_Latn_AZ struct {
 	group           []byte
 	minus           []byte
 	percent         []byte
+	percentPrefix   []byte
+	percentSuffix   []byte
 	perMille        []byte
 	currencies      [][]byte // idx = enum of currency code
 }
@@ -66,9 +68,9 @@ func (az *az_Latn_AZ) OrdinalPluralRule(num float64, v uint64) locales.PluralRul
 
 	n := math.Abs(num)
 	i := int64(n)
+	iMod10 := i % 10
 	iMod100 := i % 100
 	iMod1000 := i % 1000
-	iMod10 := i % 10
 
 	if (iMod10 == 1 || iMod10 == 2 || iMod10 == 5 || iMod10 == 7 || iMod10 == 8) || (iMod100 == 20 || iMod100 == 50 || iMod100 == 70 || iMod100 == 80) {
 		return locales.PluralRuleOne
