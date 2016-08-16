@@ -141,3 +141,68 @@ func (ii *ii) FmtCurrency(num float64, v uint64, currency currency.Type) []byte 
 
 	return b
 }
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ii'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (ii *ii) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := ii.currencies[currency]
+	l := len(s) + len(ii.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, ii.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(ii.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, ii.currencyNegativePrefix[j])
+		}
+
+		for j := len(ii.minus) - 1; j >= 0; j-- {
+			b = append(b, ii.minus[j])
+		}
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(ii.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, ii.currencyPositivePrefix[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if num < 0 {
+
+		b = append(b, ii.currencyNegativeSuffix...)
+
+	} else {
+
+		b = append(b, ii.currencyPositiveSuffix...)
+
+	}
+
+	return b
+}

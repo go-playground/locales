@@ -76,6 +76,11 @@ type Translator interface {
 	// returned as a []byte just in case the caller wishes to add more and can help
 	// avoid allocations; otherwise just cast as string.
 	FmtCurrency(num float64, v uint64, currency currency.Type) []byte
+
+	// returns the currency representation of 'num' with digits/precision of 'v' for locale
+	// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtAccounting(num float64, v uint64, currency currency.Type) []byte
 }
 
 // String returns the string value  of PluralRule

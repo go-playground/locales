@@ -249,3 +249,85 @@ func (uz *uz_Arab_AF) FmtCurrency(num float64, v uint64, currency currency.Type)
 
 	return b
 }
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'uz_Arab_AF'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (uz *uz_Arab_AF) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := uz.currencies[currency]
+	l := len(s) + len(uz.decimal) + len(uz.group)*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(uz.decimal) - 1; j >= 0; j-- {
+				b = append(b, uz.decimal[j])
+			}
+
+			inWhole = true
+
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(uz.group) - 1; j >= 0; j-- {
+					b = append(b, uz.group[j])
+				}
+
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(uz.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, uz.currencyNegativePrefix[j])
+		}
+
+		b = append(b, uz.minus[0])
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(uz.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, uz.currencyPositivePrefix[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, uz.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	return b
+}

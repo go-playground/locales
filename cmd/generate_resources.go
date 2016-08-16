@@ -94,6 +94,7 @@ type translator struct {
 	FmtCurrencySuffix            string
 	FmtCurrencyInPrefix          bool
 	FmtCurrencyLeft              bool
+	FmtCurrencyNegativeExists    bool
 	FmtCurrencyNegativePrefix    string
 	FmtCurrencyNegativeSuffix    string
 	FmtCurrencyNegativeInPrefix  bool
@@ -166,11 +167,6 @@ func main() {
 	for _, trans := range translators {
 
 		fmt.Println("Writing Data:", trans.Locale)
-
-		if trans.Locale == "en" {
-			fmt.Println("\t", trans.CurrencyNumberFormat)
-			fmt.Println("\t", trans.NegativeCurrencyNumberFormat)
-		}
 
 		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0777); err != nil {
 			log.Fatal(err)
@@ -584,6 +580,8 @@ func parseCurrencyNumberFormat(trans *translator) {
 
 		return
 	}
+
+	trans.FmtCurrencyNegativeExists = true
 
 	for idx = 0; idx < len(trans.NegativeCurrencyNumberFormat); idx++ {
 		if trans.NegativeCurrencyNumberFormat[idx] == '#' || trans.NegativeCurrencyNumberFormat[idx] == '0' {

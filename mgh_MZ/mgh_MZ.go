@@ -141,3 +141,68 @@ func (mgh *mgh_MZ) FmtCurrency(num float64, v uint64, currency currency.Type) []
 
 	return b
 }
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'mgh_MZ'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (mgh *mgh_MZ) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := mgh.currencies[currency]
+	l := len(s) + len(mgh.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, mgh.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(mgh.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, mgh.currencyNegativePrefix[j])
+		}
+
+		for j := len(mgh.minus) - 1; j >= 0; j-- {
+			b = append(b, mgh.minus[j])
+		}
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(mgh.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, mgh.currencyPositivePrefix[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if num < 0 {
+
+		b = append(b, mgh.currencyNegativeSuffix...)
+
+	} else {
+
+		b = append(b, mgh.currencyPositiveSuffix...)
+
+	}
+
+	return b
+}

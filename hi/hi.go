@@ -258,3 +258,80 @@ func (hi *hi) FmtCurrency(num float64, v uint64, currency currency.Type) []byte 
 
 	return b
 }
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'hi'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (hi *hi) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := hi.currencies[currency]
+	l := len(s) + len(hi.decimal) + len(hi.group)*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	inSecondary := false
+	groupThreshold := 3
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, hi.decimal[0])
+			inWhole = true
+
+			continue
+		}
+
+		if inWhole {
+
+			if count == groupThreshold {
+				b = append(b, hi.group[0])
+				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = 2
+				}
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		b = append(b, hi.minus[0])
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, hi.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	return b
+}

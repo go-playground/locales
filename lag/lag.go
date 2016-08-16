@@ -154,3 +154,71 @@ func (lag *lag) FmtCurrency(num float64, v uint64, currency currency.Type) []byt
 
 	return b
 }
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lag'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (lag *lag) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := lag.currencies[currency]
+	l := len(s) + len(lag.decimal)
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(lag.decimal) - 1; j >= 0; j-- {
+				b = append(b, lag.decimal[j])
+			}
+
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(lag.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, lag.currencyNegativePrefix[j])
+		}
+
+		for j := len(lag.minus) - 1; j >= 0; j-- {
+			b = append(b, lag.minus[j])
+		}
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(lag.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, lag.currencyPositivePrefix[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if num < 0 {
+
+		b = append(b, lag.currencyNegativeSuffix...)
+
+	} else {
+
+		b = append(b, lag.currencyPositiveSuffix...)
+
+	}
+
+	return b
+}

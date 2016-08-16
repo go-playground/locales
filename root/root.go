@@ -96,5 +96,15 @@ func (root *root) FmtCurrency(num float64, v uint64, currency currency.Type) []b
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := root.currencies[currency]
-	return []byte(s)
+	return append(append([]byte{}, symbol...), s...)
+}
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'root'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (root *root) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := root.currencies[currency]
+	return append(append([]byte{}, symbol...), s...)
 }

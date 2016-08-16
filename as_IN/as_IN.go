@@ -276,3 +276,96 @@ func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) []by
 
 	return b
 }
+
+// FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'as_IN'
+// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := as.currencies[currency]
+	l := len(s) + len(as.decimal) + len(as.group)*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	inSecondary := false
+	groupThreshold := 3
+
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(as.decimal) - 1; j >= 0; j-- {
+				b = append(b, as.decimal[j])
+			}
+
+			inWhole = true
+
+			continue
+		}
+
+		if inWhole {
+
+			if count == groupThreshold {
+				for j := len(as.group) - 1; j >= 0; j-- {
+					b = append(b, as.group[j])
+				}
+
+				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = 2
+				}
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(as.currencyNegativePrefix) - 1; j >= 0; j-- {
+			b = append(b, as.currencyNegativePrefix[j])
+		}
+
+		for j := len(as.minus) - 1; j >= 0; j-- {
+			b = append(b, as.minus[j])
+		}
+
+	} else {
+
+		for j := len(symbol) - 1; j >= 0; j-- {
+			b = append(b, symbol[j])
+		}
+
+		for j := len(as.currencyPositivePrefix) - 1; j >= 0; j-- {
+			b = append(b, as.currencyPositivePrefix[j])
+		}
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, as.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	return b
+}
