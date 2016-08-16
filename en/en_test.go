@@ -33,6 +33,16 @@ func TestCurrency(t *testing.T) {
 			v:        3,
 			expected: "-$221,123,456.564",
 		},
+		{
+			num:      0,
+			v:        2,
+			expected: "$0.00",
+		},
+		{
+			num:      -0,
+			v:        2,
+			expected: "$0.00",
+		},
 	}
 
 	trans := New()
@@ -71,6 +81,11 @@ func TestAccounting(t *testing.T) {
 			num:      -221123456.5643,
 			v:        3,
 			expected: "($221,123,456.564)",
+		},
+		{
+			num:      -0,
+			v:        2,
+			expected: "$0.00",
 		},
 	}
 

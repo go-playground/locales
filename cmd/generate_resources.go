@@ -566,10 +566,6 @@ func parseCurrencyNumberFormat(trans *translator) {
 		trans.FmtCurrencySuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencySuffix))
 	}
 
-	// if trans.Locale == "en" {
-	// 	fmt.Println("Equal? ", negativeEqual)
-	// }
-
 	// no need to parse again if true....
 	if negativeEqual {
 
