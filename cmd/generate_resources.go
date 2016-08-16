@@ -85,9 +85,25 @@ type translator struct {
 	FmtPercentInPrefix          bool
 	FmtPercentLeft              bool
 
+	// FmtCurrency vars
+	FmtCurrencyExists            bool
+	FmtCurrencyGroupLen          int
+	FmtCurrencySecondaryGroupLen int
+	FmtCurrencyMinDecimalLen     int
+	FmtCurrencyPrefix            string
+	FmtCurrencySuffix            string
+	FmtCurrencyInPrefix          bool
+	FmtCurrencyLeft              bool
+	FmtCurrencyNegativePrefix    string
+	FmtCurrencyNegativeSuffix    string
+	FmtCurrencyNegativeInPrefix  bool
+	FmtCurrencyNegativeLeft      bool
+
 	// calculation only fields
-	DecimalNumberFormat string
-	PercentNumberFormat string
+	DecimalNumberFormat          string
+	PercentNumberFormat          string
+	CurrencyNumberFormat         string
+	NegativeCurrencyNumberFormat string
 }
 
 func main() {
@@ -116,7 +132,7 @@ func main() {
 	for i, curr := range globalCurrencies {
 
 		if i == 0 {
-			currencies = curr + " Currency = iota\n"
+			currencies = curr + " Type = iota\n"
 			continue
 		}
 
@@ -149,7 +165,12 @@ func main() {
 
 	for _, trans := range translators {
 
-		fmt.Println("Writing Data:", trans.PercentNumberFormat, len(trans.FmtPercentPrefix), trans.FmtPercentPrefix, len(trans.FmtPercentSuffix), trans.FmtPercentSuffix, trans.Locale)
+		fmt.Println("Writing Data:", trans.Locale)
+
+		if trans.Locale == "en" {
+			fmt.Println("\t", trans.CurrencyNumberFormat)
+			fmt.Println("\t", trans.NegativeCurrencyNumberFormat)
+		}
 
 		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0777); err != nil {
 			log.Fatal(err)
@@ -289,6 +310,20 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
+		if len(trans.CurrencyNumberFormat) == 0 {
+
+			if found {
+				trans.CurrencyNumberFormat = base.CurrencyNumberFormat
+			}
+		}
+
+		if len(trans.NegativeCurrencyNumberFormat) == 0 {
+
+			if found {
+				trans.NegativeCurrencyNumberFormat = base.NegativeCurrencyNumberFormat
+			}
+		}
+
 		ldml := cldr.RawLDML(trans.Locale)
 
 		currencies := make([][]byte, len(globalCurrencies), len(globalCurrencies))
@@ -324,6 +359,7 @@ func postProcess(cldr *cldr.CLDR) {
 
 		parseDecimalNumberFormat(trans)
 		parsePercentNumberFormat(trans)
+		parseCurrencyNumberFormat(trans)
 		// trans.FmtNumberFunc = parseDecimalNumberFormat(trans.DecimalNumberFormat, trans.BaseLocale)
 	}
 }
@@ -421,30 +457,24 @@ func preProcess(cldr *cldr.CLDR) {
 				}
 			}
 
-			// var decimalFormat, currencyFormat, currencyAccountingFormat, percentageFormat string
+			if len(ldml.Numbers.CurrencyFormats) > 0 && len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength) > 0 {
 
-			// if len(ldml.Numbers.DecimalFormats) > 0 && len(ldml.Numbers.DecimalFormats[0].DecimalFormatLength) > 0 {
-			// 	decimalFormat = ldml.Numbers.DecimalFormats[0].DecimalFormatLength[0].DecimalFormat[0].Pattern[0].Data()
-			// }
+				if len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat) > 1 {
 
-			// if len(ldml.Numbers.CurrencyFormats) > 0 && len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength) > 0 {
+					split := strings.SplitN(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[1].Pattern[0].Data(), ";", 2)
 
-			// 	currencyFormat = ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[0].Pattern[0].Data()
-			// 	currencyAccountingFormat = currencyFormat
+					trans.CurrencyNumberFormat = split[0]
 
-			// 	if len(ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat) > 1 {
-			// 		currencyAccountingFormat = ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[1].Pattern[0].Data()
-			// 	}
-			// }
-
-			// if len(ldml.Numbers.PercentFormats) > 0 && len(ldml.Numbers.PercentFormats[0].PercentFormatLength) > 0 {
-			// 	percentageFormat = ldml.Numbers.PercentFormats[0].PercentFormatLength[0].PercentFormat[0].Pattern[0].Data()
-			// }
-
-			// // parse Number values
-			// parseNumbers(decimal, group, minus, percent, permille, decimalFormat, currencyFormat, currencyAccountingFormat, percentageFormat)
-
-			// end number values
+					if len(split) > 1 && len(split[1]) > 0 {
+						trans.NegativeCurrencyNumberFormat = split[1]
+					} else {
+						trans.NegativeCurrencyNumberFormat = trans.CurrencyNumberFormat
+					}
+				} else {
+					trans.CurrencyNumberFormat = ldml.Numbers.CurrencyFormats[0].CurrencyFormatLength[0].CurrencyFormat[0].Pattern[0].Data()
+					trans.NegativeCurrencyNumberFormat = trans.CurrencyNumberFormat
+				}
+			}
 		}
 	}
 
@@ -459,19 +489,168 @@ func preProcess(cldr *cldr.CLDR) {
 	}
 }
 
-func parsePercentNumberFormat(trans *translator) (results string) {
+func parseCurrencyNumberFormat(trans *translator) {
+
+	if len(trans.CurrencyNumberFormat) == 0 {
+		return
+	}
+
+	trans.FmtCurrencyExists = true
+	negativeEqual := trans.CurrencyNumberFormat == trans.NegativeCurrencyNumberFormat
+
+	match := groupLenRegex.FindString(trans.CurrencyNumberFormat)
+	if len(match) > 0 {
+		trans.FmtCurrencyGroupLen = len(match) - 2
+	}
+
+	match = requiredDecimalRegex.FindString(trans.CurrencyNumberFormat)
+	if len(match) > 0 {
+		trans.FmtCurrencyMinDecimalLen = len(match) - 1
+	}
+
+	match = secondaryGroupLenRegex.FindString(trans.CurrencyNumberFormat)
+	if len(match) > 0 {
+		trans.FmtCurrencySecondaryGroupLen = len(match) - 2
+	}
+
+	idx := 0
+
+	for idx = 0; idx < len(trans.CurrencyNumberFormat); idx++ {
+		if trans.CurrencyNumberFormat[idx] == '#' || trans.CurrencyNumberFormat[idx] == '0' {
+			trans.FmtCurrencyPrefix = trans.CurrencyNumberFormat[:idx]
+			break
+		}
+	}
+
+	for idx = len(trans.CurrencyNumberFormat) - 1; idx >= 0; idx-- {
+		if trans.CurrencyNumberFormat[idx] == '#' || trans.CurrencyNumberFormat[idx] == '0' {
+			idx++
+			trans.FmtCurrencySuffix = trans.CurrencyNumberFormat[idx:]
+			break
+		}
+	}
+
+	for idx = 0; idx < len(trans.FmtCurrencyPrefix); idx++ {
+		if trans.FmtCurrencyPrefix[idx] == '¤' {
+
+			trans.FmtCurrencyInPrefix = true
+			trans.FmtCurrencyPrefix = strings.Replace(trans.FmtCurrencyPrefix, string(trans.FmtCurrencyPrefix[idx]), "", 1)
+
+			if idx == 0 {
+				trans.FmtCurrencyLeft = true
+			} else {
+				trans.FmtCurrencyLeft = false
+			}
+
+			break
+		}
+	}
+
+	for idx = 0; idx < len(trans.FmtCurrencySuffix); idx++ {
+		if trans.FmtCurrencySuffix[idx] == '¤' {
+
+			trans.FmtCurrencyInPrefix = false
+			trans.FmtCurrencySuffix = strings.Replace(trans.FmtCurrencySuffix, string(trans.FmtCurrencySuffix[idx]), "", 1)
+
+			if idx == 0 {
+				trans.FmtCurrencyLeft = true
+			} else {
+				trans.FmtCurrencyLeft = false
+			}
+
+			break
+		}
+	}
+
+	if len(trans.FmtCurrencyPrefix) > 0 {
+		trans.FmtCurrencyPrefix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyPrefix))
+	}
+
+	if len(trans.FmtCurrencySuffix) > 0 {
+		trans.FmtCurrencySuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencySuffix))
+	}
+
+	// if trans.Locale == "en" {
+	// 	fmt.Println("Equal? ", negativeEqual)
+	// }
+
+	// no need to parse again if true....
+	if negativeEqual {
+
+		trans.FmtCurrencyNegativePrefix = trans.FmtCurrencyPrefix
+		trans.FmtCurrencyNegativeSuffix = trans.FmtCurrencySuffix
+		trans.FmtCurrencyNegativeInPrefix = trans.FmtCurrencyInPrefix
+		trans.FmtCurrencyNegativeLeft = trans.FmtCurrencyLeft
+
+		return
+	}
+
+	for idx = 0; idx < len(trans.NegativeCurrencyNumberFormat); idx++ {
+		if trans.NegativeCurrencyNumberFormat[idx] == '#' || trans.NegativeCurrencyNumberFormat[idx] == '0' {
+
+			trans.FmtCurrencyNegativePrefix = trans.NegativeCurrencyNumberFormat[:idx]
+			break
+		}
+	}
+
+	for idx = len(trans.NegativeCurrencyNumberFormat) - 1; idx >= 0; idx-- {
+		if trans.NegativeCurrencyNumberFormat[idx] == '#' || trans.NegativeCurrencyNumberFormat[idx] == '0' {
+			idx++
+			trans.FmtCurrencyNegativeSuffix = trans.NegativeCurrencyNumberFormat[idx:]
+			break
+		}
+	}
+
+	for idx = 0; idx < len(trans.FmtCurrencyNegativePrefix); idx++ {
+		if trans.FmtCurrencyNegativePrefix[idx] == '¤' {
+
+			trans.FmtCurrencyNegativeInPrefix = true
+			trans.FmtCurrencyNegativePrefix = strings.Replace(trans.FmtCurrencyNegativePrefix, string(trans.FmtCurrencyNegativePrefix[idx]), "", 1)
+
+			if idx == 0 {
+				trans.FmtCurrencyNegativeLeft = true
+			} else {
+				trans.FmtCurrencyNegativeLeft = false
+			}
+
+			break
+		}
+	}
+
+	for idx = 0; idx < len(trans.FmtCurrencyNegativeSuffix); idx++ {
+		if trans.FmtCurrencyNegativeSuffix[idx] == '¤' {
+
+			trans.FmtCurrencyNegativeInPrefix = false
+			trans.FmtCurrencyNegativeSuffix = strings.Replace(trans.FmtCurrencyNegativeSuffix, string(trans.FmtCurrencyNegativeSuffix[idx]), "", 1)
+
+			if idx == 0 {
+				trans.FmtCurrencyNegativeLeft = true
+			} else {
+				trans.FmtCurrencyNegativeLeft = false
+			}
+
+			break
+		}
+	}
+
+	if len(trans.FmtCurrencyNegativePrefix) > 0 {
+		trans.FmtCurrencyNegativePrefix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativePrefix))
+	}
+
+	if len(trans.FmtCurrencyNegativeSuffix) > 0 {
+		trans.FmtCurrencyNegativeSuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativeSuffix))
+	}
+
+	return
+}
+
+func parsePercentNumberFormat(trans *translator) {
 
 	if len(trans.PercentNumberFormat) == 0 {
 		return
 	}
 
 	trans.FmtPercentExists = true
-
-	// formats := strings.SplitN(trans.PercentNumberFormat, ";", 2)
-
-	// if len(formats) > 1 {
-	// 	trans.FmtNumberHasNegativeFormat = true
-	// }
 
 	match := groupLenPercentRegex.FindString(trans.PercentNumberFormat)
 	if len(match) > 0 {
@@ -487,17 +666,6 @@ func parsePercentNumberFormat(trans *translator) (results string) {
 	if len(match) > 0 {
 		trans.FmtPercentSecondaryGroupLen = len(match) - 2
 	}
-
-	// 	FmtPercentPrefix            string
-	// FmtPercentSuffix            string
-	// FmtPercentInPrefix          bool
-	// FmtPercentLeft              bool
-
-	// if formats[0][0] == '%' {
-	// 	trans.FmtPercentLeft = true
-	// }
-
-	// trans.FmtPercentLeft
 
 	idx := 0
 
@@ -518,14 +686,14 @@ func parsePercentNumberFormat(trans *translator) (results string) {
 
 	for idx = 0; idx < len(trans.FmtPercentPrefix); idx++ {
 		if trans.FmtPercentPrefix[idx] == '%' {
+
 			trans.FmtPercentInPrefix = true
+			trans.FmtPercentPrefix = strings.Replace(trans.FmtPercentPrefix, string(trans.FmtPercentPrefix[idx]), "", 1)
 
 			if idx == 0 {
 				trans.FmtPercentLeft = true
-				trans.FmtPercentPrefix = trans.FmtPercentPrefix[idx+1:]
 			} else {
 				trans.FmtPercentLeft = false
-				trans.FmtPercentPrefix = trans.FmtPercentPrefix[:idx]
 			}
 
 			break
@@ -534,14 +702,14 @@ func parsePercentNumberFormat(trans *translator) (results string) {
 
 	for idx = 0; idx < len(trans.FmtPercentSuffix); idx++ {
 		if trans.FmtPercentSuffix[idx] == '%' {
+
 			trans.FmtPercentInPrefix = false
+			trans.FmtPercentSuffix = strings.Replace(trans.FmtPercentSuffix, string(trans.FmtPercentSuffix[idx]), "", 1)
 
 			if idx == 0 {
 				trans.FmtPercentLeft = true
-				trans.FmtPercentSuffix = trans.FmtPercentSuffix[idx+1:]
 			} else {
 				trans.FmtPercentLeft = false
-				trans.FmtPercentSuffix = trans.FmtPercentSuffix[:idx]
 			}
 
 			break
@@ -556,37 +724,10 @@ func parsePercentNumberFormat(trans *translator) (results string) {
 		trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
 	}
 
-	// if len(trans.FmtPercentPrefix) == 1 && trans.FmtPercentPrefix[0] == '%' {
-	// 	trans.FmtPercentPrefix = ""
-	// 	trans.FmtPercentInPrefix = true
-	// }
-
-	// if len(trans.FmtPercentSuffix) == 1 && trans.FmtPercentSuffix[0] == '%' {
-	// 	trans.FmtPercentSuffix = ""
-	// 	trans.FmtPercentSuffix = false
-	// }
-
-	// // if start > 0 {
-	// // 	prefix = formats[0][:start]
-	// // }
-
-	// end := 0
-
-	// // positive prefix
-	// for end = len(formats[0]) - 1; end >= 0; end-- {
-	// 	if formats[0][end] == '#' || formats[0][end] == '0' {
-	// 		end++
-	// 		break
-	// 	}
-	// }
-
-	// fmt.Println(start)
-	// fmt.Println(end)
-
 	return
 }
 
-func parseDecimalNumberFormat(trans *translator) (results string) {
+func parseDecimalNumberFormat(trans *translator) {
 
 	if len(trans.DecimalNumberFormat) == 0 {
 		return
@@ -595,10 +736,6 @@ func parseDecimalNumberFormat(trans *translator) (results string) {
 	trans.FmtNumberExists = true
 
 	formats := strings.SplitN(trans.DecimalNumberFormat, ";", 2)
-
-	// if len(formats) > 1 {
-	// 	trans.FmtNumberHasNegativeFormat = true
-	// }
 
 	match := groupLenRegex.FindString(formats[0])
 	if len(match) > 0 {
@@ -614,33 +751,6 @@ func parseDecimalNumberFormat(trans *translator) (results string) {
 	if len(match) > 0 {
 		trans.FmtNumberSecondaryGroupLen = len(match) - 2
 	}
-
-	// start := 0
-	// // prefix := ""
-
-	// // positive prefix
-	// for start = 0; start < len(formats[0]); start++ {
-	// 	if formats[0][start] == '#' || formats[0][start] == '0' {
-	// 		break
-	// 	}
-	// }
-
-	// // if start > 0 {
-	// // 	prefix = formats[0][:start]
-	// // }
-
-	// end := 0
-
-	// // positive prefix
-	// for end = len(formats[0]) - 1; end >= 0; end-- {
-	// 	if formats[0][end] == '#' || formats[0][end] == '0' {
-	// 		end++
-	// 		break
-	// 	}
-	// }
-
-	// fmt.Println(start)
-	// fmt.Println(end)
 
 	return
 }

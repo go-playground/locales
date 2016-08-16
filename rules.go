@@ -1,6 +1,10 @@
 package locales
 
-import "strconv"
+import (
+	"strconv"
+
+	"github.com/go-playground/locales/currency"
+)
 
 // // ErrBadNumberValue is returned when the number passed for
 // // plural rule determination cannot be parsed
@@ -57,16 +61,21 @@ type Translator interface {
 	// returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for locale
 	RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) PluralRule
 
-	// returns 'num' with digits/precision of 'v' for 'mr_IN' and handles both Whole and Real numbers based on 'v'
+	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
 	// returned as a []byte just in case the caller wishes to add more and can help
 	// avoid allocations; otherwise just cast as string.
 	FmtNumber(num float64, v uint64) []byte
 
-	// returns 'num' with digits/precision of 'v' for '{{ .Locale }}' and handles both Whole and Real numbers based on 'v'
+	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
 	// returned as a []byte just in case the caller wishes to add more and can help
 	// avoid allocations; otherwise just cast as string.
 	// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 	FmtPercent(num float64, v uint64) []byte
+
+	// returns the currency representation of 'num' with digits/precision of 'v' for locale
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtCurrency(num float64, v uint64, currency currency.Type) []byte
 }
 
 // String returns the string value  of PluralRule

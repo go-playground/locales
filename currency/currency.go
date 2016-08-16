@@ -1,11 +1,11 @@
 package currency
 
-// Currency is the type associated with the locales currency enum
-type Currency int
+// Type is the currency type associated with the locales currency enum
+type Type int
 
 // locale currencies
 const (
-	ADP Currency = iota
+	ADP Type = iota
 	AED
 	AFA
 	AFN
