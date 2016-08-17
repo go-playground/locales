@@ -67,6 +67,8 @@ type translator struct {
 	PercentLen     int
 	PerMille       string
 	PerMilleLen    int
+	TimeSeparator  string
+	Infinity       string
 	Currencies     string
 
 	// FmtNumber vars
@@ -339,6 +341,14 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
+		if len(trans.TimeSeparator) == 0 && found {
+			trans.TimeSeparator = base.TimeSeparator
+		}
+
+		if len(trans.Infinity) == 0 && found {
+			trans.Infinity = base.Infinity
+		}
+
 		// Currency
 
 		// number values
@@ -500,6 +510,18 @@ func postProcess(cldr *cldr.CLDR) {
 		parsePercentNumberFormat(trans)
 		parseCurrencyNumberFormat(trans)
 	}
+
+	for _, trans := range translators {
+
+		fmt.Println("Final Processing:", trans.Locale)
+
+		if len(trans.TimeSeparator) == 0 {
+			trans.TimeSeparator = fmt.Sprintf("%#v", []byte(":"))
+		}
+
+		trans.FmtDateShort, trans.FmtDateMedium, trans.FmtDateLong, trans.FmtDateFull = parseDateFormats(trans, trans.FmtDateShort, trans.FmtDateMedium, trans.FmtDateLong, trans.FmtDateFull)
+		trans.FmtTimeShort, trans.FmtTimeMedium, trans.FmtTimeLong, trans.FmtTimeFull = parseDateFormats(trans, trans.FmtTimeShort, trans.FmtTimeMedium, trans.FmtTimeLong, trans.FmtTimeFull)
+	}
 }
 
 // preprocesses maps, array etc... just requires multiple passes no choice....
@@ -560,6 +582,16 @@ func preProcess(cldrVar *cldr.CLDR) {
 					b := []byte(symbol.PerMille[0].Data())
 					trans.PerMilleLen = len(b)
 					trans.PerMille = fmt.Sprintf("%#v", b)
+				}
+
+				if len(symbol.TimeSeparator) > 0 {
+					b := []byte(symbol.TimeSeparator[0].Data())
+					trans.TimeSeparator = fmt.Sprintf("%#v", b)
+				}
+
+				if len(symbol.Infinity) > 0 {
+					b := []byte(symbol.Infinity[0].Data())
+					trans.Infinity = fmt.Sprintf("%#v", b)
 				}
 			}
 
@@ -918,6 +950,444 @@ func preProcess(cldrVar *cldr.CLDR) {
 		globCurrencyIdxMap[loc] = i
 	}
 }
+
+func parseDateFormats(trans *translator, shortFormat, mediumFormat, longFormat, fullFormat string) (short, medium, long, full string) {
+
+	// Short Date Parsing
+
+	short = parseDateTimeFormat(trans.BaseLocale, shortFormat)
+	medium = parseDateTimeFormat(trans.BaseLocale, mediumFormat)
+	long = parseDateTimeFormat(trans.BaseLocale, longFormat)
+	full = parseDateTimeFormat(trans.BaseLocale, fullFormat)
+
+	// End Short Data Parsing
+
+	return
+}
+
+func parseDateTimeFormat(baseLocale, format string) (results string) {
+
+	// rules:
+	// y = four digit year
+	// yy = two digit year
+
+	// var b []byte
+
+	var inConstantText bool
+	var start int
+
+	for i := 0; i < len(format); i++ {
+
+		switch format[i] {
+
+		// time separator
+		case ':':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			results += "b = append(b, " + baseLocale + ".timeSeparator...)"
+		case '\'':
+
+			i++
+
+			// peek to see if ''
+			if len(format) != i && format[i] == '\'' {
+
+				if inConstantText {
+					inConstantText = false
+					results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i-1])) + "...)\n"
+				} else {
+					inConstantText = true
+					start = i - 1
+				}
+
+				continue
+			}
+
+			// not '' so whatever comes between '' is constant
+
+			if len(format) != i {
+				if inConstantText {
+					// inContantText = false // gonna put us right back in so not setting...
+					results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i-2])) + "...)\n"
+					start = i - 1
+				}
+
+				inConstantText = true
+
+				// advance i to the next single quote + 1
+				for ; i < len(format); i++ {
+					if format[i] == '\'' {
+						// i++
+						break
+					}
+				}
+			}
+
+		// 24 hour
+		case 'H':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// peek
+			// two digit hour required?
+			if len(format) != i+1 && format[i+1] == 'H' {
+				i++
+				results += `
+					if t.Hour() < 10 {
+						b = append(b, '0')
+					}
+
+				`
+			}
+
+			results += "b = strconv.AppendInt(b, int64(t.Hour()), 10)\n"
+
+		// hour
+		case 'h':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			results += `
+				h := t.Hour()
+
+				if h > 12 {
+					h -= 12
+				}
+			`
+
+			// peek
+			// two digit hour required?
+			if len(format) != i+1 && format[i+1] == 'h' {
+				i++
+				results += `
+					if h < 10 {
+						b = append(b, '0')
+					}
+
+				`
+			}
+
+			results += "b = strconv.AppendInt(b, int64(h), 10)\n"
+
+		// minute
+		case 'm':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// peek
+			// two digit minute required?
+			if len(format) != i+1 && format[i+1] == 'm' {
+				i++
+				results += `
+					if t.Minute() < 10 {
+						b = append(b, '0')
+					}
+
+				`
+			}
+
+			results += "b = strconv.AppendInt(b, int64(t.Minute()), 10)\n"
+
+		// second
+		case 's':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// peek
+			// two digit minute required?
+			if len(format) != i+1 && format[i+1] == 's' {
+				i++
+				results += `
+					if t.Second() < 10 {
+						b = append(b, '0')
+					}
+
+				`
+			}
+
+			results += "b = strconv.AppendInt(b, int64(t.Second()), 10)\n"
+
+		// day period
+		case 'a':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// only used with 'h', patterns should not contains 'a' without 'h' so not checking
+
+			// choosing to use abbreviated, didn't see any rules about which should be used with which
+			// date format....
+
+			results += `
+				if t.Hour() < 12 {
+					b = append(b, ` + baseLocale + `.periodsAbbreviated[0]...)
+				} else {
+					b = append(b, ` + baseLocale + `.periodsAbbreviated[1]...)
+				}
+
+			`
+
+		// timezone
+		case 'z', 'v':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// consume multiple, only handling Abbrev tz from time.Time for the moment...
+
+			var count int
+
+			if format[i] == 'z' {
+				for j := i; j < len(format); j++ {
+					if format[j] == 'z' {
+						count++
+					} else {
+						break
+					}
+				}
+			}
+
+			if format[i] == 'v' {
+				for j := i; j < len(format); j++ {
+					if format[j] == 'v' {
+						count++
+					} else {
+						break
+					}
+				}
+			}
+
+			i += count - 1
+
+			// using the timezone on the Go time object, eg. EST, EDT, MST.....
+
+			results += `
+				tz, _ := t.Zone()
+				b = append(b, tz...)
+
+			`
+
+		// day
+		case 'd':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// peek
+			// two digit day required?
+			if len(format) != i+1 && format[i+1] == 'd' {
+				i++
+				results += `
+					if t.Day() < 10 {
+						b = append(b, '0')
+					}
+
+				`
+			}
+
+			results += "b = strconv.AppendInt(b, int64(t.Day()), 10)\n"
+
+		// month
+		case 'M':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			var count int
+
+			// count # of M's
+			for j := i; j < len(format); j++ {
+				if format[j] == 'M' {
+					count++
+				} else {
+					break
+				}
+			}
+
+			switch count {
+
+			// Numeric form, at least 1 digit
+			case 1:
+
+				results += "b = strconv.AppendInt(b, int64(t.Month()), 10)\n"
+
+			// Number form, at least 2 digits (padding with 0)
+			case 2:
+
+				results += `
+				if t.Month() < 10 {
+					b = append(b, '0')
+				}
+					
+				b = strconv.AppendInt(b, int64(t.Month()), 10)
+
+				`
+
+			// Abbreviated form
+			case 3:
+
+				results += "b = append(b, " + baseLocale + ".monthsAbbreviated[t.Month()]...)\n"
+
+			// Full/Wide form
+			case 4:
+
+				results += "b = append(b, " + baseLocale + ".monthsWide[t.Month()]...)\n"
+
+			// Narrow form - only used in where context makes it clear, such as headers in a calendar.
+			// Should be one character wherever possible.
+			case 5:
+
+				results += "b = append(b, " + baseLocale + ".monthsNarrow[t.Month()]...)\n"
+			}
+
+			// skip over M's
+			i += count - 1
+
+		// year
+		case 'y':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			// peek
+			// two digit year
+			if len(format) != i+1 && format[i+1] == 'y' {
+				i++
+				results += `
+
+					if t.Year() > 9 {
+						b = append(b, strconv.Itoa(t.Year())[2:]...)
+					} else {
+						b = append(b, strconv.Itoa(t.Year())[1:]...)
+					}
+
+				`
+			} else {
+				// four digit year
+				results += "b = strconv.AppendInt(b, int64(t.Year()), 10)\n"
+			}
+
+		// weekday
+		// I know I only see 'EEEE' in the xml, but just in case handled all posibilities
+		case 'E':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			var count int
+
+			// count # of E's
+			for j := i; j < len(format); j++ {
+				if format[j] == 'E' {
+					count++
+				} else {
+					break
+				}
+			}
+
+			switch count {
+
+			// Narrow
+			case 1:
+
+				results += "b = append(b, " + baseLocale + ".daysNarrow[t.Day()]...)\n"
+
+			// Short
+			case 2:
+
+				results += "b = append(b, " + baseLocale + ".daysShort[t.Day()]...)\n"
+
+			// Abbreviated
+			case 3:
+
+				results += "b = append(b, " + baseLocale + ".daysAbbreviated[t.Day()]...)\n"
+
+			// Full/Wide
+			case 4:
+
+				results += "b = append(b, " + baseLocale + ".daysWide[t.Day()]...)\n"
+			}
+
+			// skip over E's
+			i += count - 1
+
+		// era eg. AD, BC
+		case 'G':
+
+			if inConstantText {
+				inConstantText = false
+				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
+			}
+
+			results += `
+				if t.Year() < 0 {
+					b = append(b, ` + baseLocale + `.erasAbbreviated[0]...)
+				} else {
+					b = append(b, ` + baseLocale + `.erasAbbreviated[1]...)
+				}
+
+			`
+
+		default:
+			// TODO: Chunk THIS up for lease amount of appends
+			// append all non matched text as they are constants
+			// b = append(b, format[i])
+
+			if !inConstantText {
+				inConstantText = true
+				start = i
+			}
+			// results += "b = append(b, '" + fmt.Sprintf("%#v", format[i]) + "')"
+		}
+	}
+
+	// if we were inConstantText when the string ended, add what's left.
+	if inConstantText {
+		// inContantText = false
+		results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:])) + "...)\n"
+	}
+
+	return
+}
+
+// func stringToIndividualBytes(s string) (results string) {
+
+// 	for _, b := range s {
+// 		results += "'" + fmt.Sprintf("%#v", b) + "',"
+// 	}
+
+// 	results = strings.TrimRight(results, ",")
+
+// 	return
+// }
 
 func parseCurrencyNumberFormat(trans *translator) {
 

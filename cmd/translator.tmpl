@@ -3,6 +3,7 @@ package {{ .Locale }}
 
 import (
 	"math"
+	"time"
 
 	"github.com/go-playground/locales"
 	"github.com/go-playground/locales/currency"
@@ -19,6 +20,8 @@ type {{ .Locale }} struct {
 	percentPrefix   	   []byte
 	percentSuffix   	   []byte
 	perMille   			   []byte
+	timeSeparator		   []byte
+	inifinity			   []byte
 	currencies 			   [][]byte // idx = enum of currency code
 	currencyPositivePrefix []byte
 	currencyPositiveSuffix []byte
@@ -52,6 +55,12 @@ func New() locales.Translator {
 		minus:    		 {{ .Minus }},
 		percent:  		 {{ .Percent }},
 		perMille:        {{ .PerMille }},
+		{{- if gt (len .TimeSeparator) 0}}
+		timeSeparator:	 {{ .TimeSeparator }},
+		{{- end}}
+		{{- if gt (len .Infinity) 0}}
+		inifinity:		 {{ .Infinity }},
+		{{- end}}
 		currencies:      {{ .Currencies }},
 		{{- if gt (len .FmtPercentPrefix) 0}}
 		percentPrefix:   {{ .FmtPercentPrefix }},
@@ -115,7 +124,7 @@ func New() locales.Translator {
 		{{- end -}}
 		{{- if gt (len .FmtErasWide) 0 }}
 		erasWide:   {{ .FmtErasWide }},
-		{{- end -}}
+		{{- end}}
 	}
 }
 
@@ -753,6 +762,102 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 	{{ else }}
 	return append(append([]byte{}, symbol...), s...)
 	{{ end -}}
+}
+
+// FmtDateShort returns the short date representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateShort(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtDateShort }}
+
+	return b
+}
+
+// FmtDateMedium returns the medium date representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateMedium(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtDateMedium }}
+
+	return b
+}
+
+// FmtDateLong returns the long date representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateLong(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtDateLong }}
+
+	return b
+}
+
+// FmtDateFull returns the full date representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateFull(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtDateFull }}
+
+	return b
+}
+
+// FmtTimeShort returns the short time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeShort(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtTimeShort }}
+
+	return b
+}
+
+// FmtTimeMedium returns the medium time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeMedium(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtTimeMedium }}
+
+	return b
+}
+
+// FmtTimeLong returns the long time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeLong(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtTimeLong }}
+
+	return b
+}
+
+// FmtTimeFull returns the full time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeFull(t time.Time) []byte {
+	
+	b := make([]byte, 0, 32)
+
+	{{ .FmtTimeFull }}
+
+	return b
 }
 
 {{ end }}

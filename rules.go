@@ -2,6 +2,7 @@ package locales
 
 import (
 	"strconv"
+	"time"
 
 	"github.com/go-playground/locales/currency"
 )
@@ -81,6 +82,46 @@ type Translator interface {
 	// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
 	// avoid allocations; otherwise just cast as string.
 	FmtAccounting(num float64, v uint64, currency currency.Type) []byte
+
+	// returns the short date representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateShort(t time.Time) []byte
+
+	// returns the medium date representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateMedium(t time.Time) []byte
+
+	//  returns the long date representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateLong(t time.Time) []byte
+
+	// returns the full date representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateFull(t time.Time) []byte
+
+	// returns the short time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtTimeShort(t time.Time) []byte
+
+	// returns the medium time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtTimeMedium(t time.Time) []byte
+
+	// returns the long time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtTimeLong(t time.Time) []byte
+
+	// returns the full time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtTimeFull(t time.Time) []byte
 }
 
 // String returns the string value  of PluralRule
