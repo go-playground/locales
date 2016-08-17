@@ -24,6 +24,21 @@ type {{ .Locale }} struct {
 	currencyPositiveSuffix []byte
 	currencyNegativePrefix []byte
 	currencyNegativeSuffix []byte
+	monthsAbbreviated      [][]byte
+	monthsNarrow      	   [][]byte
+	monthsShort      	   [][]byte
+	monthsWide      	   [][]byte
+	daysAbbreviated        [][]byte
+	daysNarrow      	   [][]byte
+	daysShort      	   	   [][]byte
+	daysWide      	   	   [][]byte
+	periodsAbbreviated     [][]byte
+	periodsNarrow      	   [][]byte
+	periodsShort      	   [][]byte
+	periodsWide      	   [][]byte
+	erasAbbreviated        [][]byte
+	erasNarrow      	   [][]byte
+	erasWide      	   	   [][]byte
 }
 
 // New returns a new instance of translator for the '{{ .Locale }}' locale
@@ -40,22 +55,67 @@ func New() locales.Translator {
 		currencies:      {{ .Currencies }},
 		{{- if gt (len .FmtPercentPrefix) 0}}
 		percentPrefix:   {{ .FmtPercentPrefix }},
-		{{ end -}}
+		{{- end -}}
 		{{- if gt (len .FmtPercentSuffix) 0}}
 		percentSuffix:   {{ .FmtPercentSuffix }},
-		{{ end -}}
+		{{- end -}}
 		{{- if gt (len .FmtCurrencyPrefix) 0}}
 		currencyPositivePrefix:   {{ .FmtCurrencyPrefix }},
-		{{ end -}}
+		{{- end -}}
 		{{- if gt (len .FmtCurrencySuffix) 0}}
 		currencyPositiveSuffix:   {{ .FmtCurrencySuffix }},
-		{{ end -}}
+		{{- end -}}
 		{{- if gt (len .FmtCurrencyNegativePrefix) 0}}
 		currencyNegativePrefix:   {{ .FmtCurrencyNegativePrefix }},
-		{{ end -}}
+		{{- end -}}
 		{{- if gt (len .FmtCurrencyNegativeSuffix) 0}}
 		currencyNegativeSuffix:   {{ .FmtCurrencyNegativeSuffix }},
-		{{ end -}}
+		{{- end -}}
+		{{- if gt (len .FmtMonthsAbbreviated) 0 }}
+		monthsAbbreviated:   {{ .FmtMonthsAbbreviated }},
+		{{- end -}}
+		{{- if gt (len .FmtMonthsNarrow) 0 }}
+		monthsNarrow:   {{ .FmtMonthsNarrow }},
+		{{- end -}}
+		{{- if gt (len .FmtMonthsShort) 0 }}
+		monthsShort:   {{ .FmtMonthsShort }},
+		{{- end -}}
+		{{- if gt (len .FmtMonthsWide) 0 }}
+		monthsWide:   {{ .FmtMonthsWide }},
+		{{- end -}}
+		{{- if gt (len .FmtDaysAbbreviated) 0 }}
+		daysAbbreviated:   {{ .FmtDaysAbbreviated }},
+		{{- end -}}
+		{{- if gt (len .FmtDaysNarrow) 0 }}
+		daysNarrow:   {{ .FmtDaysNarrow }},
+		{{- end -}}
+		{{- if gt (len .FmtDaysShort) 0 }}
+		daysShort:   {{ .FmtDaysShort }},
+		{{- end -}}
+		{{- if gt (len .FmtDaysWide) 0 }}
+		daysWide:   {{ .FmtDaysWide }},
+		{{- end -}}
+		{{- if gt (len .FmtPeriodsAbbreviated) 0 }}
+		periodsAbbreviated:   {{ .FmtPeriodsAbbreviated }},
+		{{- end -}}
+		{{- if gt (len .FmtPeriodsNarrow) 0 }}
+		periodsNarrow:   {{ .FmtPeriodsNarrow }},
+		{{- end -}}
+		{{- if gt (len .FmtPeriodsShort) 0 }}
+		periodsShort:   {{ .FmtPeriodsShort }},
+		{{- end -}}
+		{{- if gt (len .FmtPeriodsWide) 0 }}
+		periodsWide:   {{ .FmtPeriodsWide }},
+		{{- end -}}
+		{{- if gt (len .FmtErasAbbreviated) 0 }}
+		erasAbbreviated:   {{ .FmtErasAbbreviated }},
+		{{- end -}}
+		{{- if gt (len .FmtErasNarrow) 0 }}
+		erasNarrow:   {{ .FmtErasNarrow }},
+		{{- end -}}
+		{{- if gt (len .FmtErasWide) 0 }}
+		erasWide:   {{ .FmtErasWide }},
+		{{- end -}}
 	}
 }
 
@@ -122,7 +182,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 			{{ end -}}
 			{{- if gt .FmtNumberGroupLen 0 }}
 			inWhole = true
-			{{ end }}
+			{{- end }}
 			continue
 		}
 
@@ -218,7 +278,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 	{{ end -}}
 	{{ else }}
 	l := len(s) + len({{ .BaseLocale }}.decimal)
-	{{ end }}
+	{{- end }}
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -388,7 +448,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 			{{ end -}}
 			{{- if gt .FmtCurrencyGroupLen 0 }}
 			inWhole = true
-			{{ end }}
+			{{- end }}
 			continue
 		}
 
@@ -534,7 +594,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 			{{ end -}}
 			{{- if gt .FmtCurrencyGroupLen 0 }}
 			inWhole = true
-			{{ end }}
+			{{- end }}
 			continue
 		}
 
@@ -636,7 +696,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 			for j := len(symbol) - 1; j >= 0; j-- {
 				b = append(b, symbol[j])
 			}
-		{{ end }}
+		{{- end }}
 	}
 
 	// reverse
@@ -655,39 +715,39 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 			b = append(b, '0')
 		}
 	}
-	{{ end }}
+	{{- end }}
 
 	{{ if or (not .FmtCurrencyNegativeInPrefix) (gt (len .FmtCurrencyNegativeSuffix) 0)}}
 	if num < 0 {
-	{{ end }}
-		{{ if and (not .FmtCurrencyNegativeInPrefix) .FmtCurrencyNegativeLeft }}
+	{{- end }}
+		{{- if and (not .FmtCurrencyNegativeInPrefix) .FmtCurrencyNegativeLeft }}
 			b = append(b, symbol...)
-		{{ end }}
+		{{- end -}}
 
-		{{ if gt (len .FmtCurrencyNegativeSuffix) 0}}
+		{{- if gt (len .FmtCurrencyNegativeSuffix) 0}}
 			b = append(b, {{ .BaseLocale }}.currencyNegativeSuffix...)
-		{{ end }}
+		{{- end -}}
 
-		{{ if and (not .FmtCurrencyNegativeInPrefix) (not .FmtCurrencyNegativeLeft) }}
+		{{- if and (not .FmtCurrencyNegativeInPrefix) (not .FmtCurrencyNegativeLeft) }}
 			b = append(b, symbol...)
-		{{ end }}
+		{{- end -}}
 	{{ if or (not .FmtCurrencyInPrefix) (gt (len .FmtCurrencySuffix) 0)}}
 	} else {
 	{{ end }}
-		{{ if and (not .FmtCurrencyInPrefix) .FmtCurrencyLeft }}
+		{{- if and (not .FmtCurrencyInPrefix) .FmtCurrencyLeft }}
 			b = append(b, symbol...)
-		{{ end }}
+		{{- end -}}
 
-		{{ if gt (len .FmtCurrencySuffix) 0}}
+		{{- if gt (len .FmtCurrencySuffix) 0}}
 			b = append(b, {{ .BaseLocale }}.currencyPositiveSuffix...)
-		{{ end }}
+		{{- end -}}
 
-		{{ if and (not .FmtCurrencyInPrefix) (not .FmtCurrencyLeft) }}
+		{{- if and (not .FmtCurrencyInPrefix) (not .FmtCurrencyLeft) }}
 			b = append(b, symbol...)
-		{{ end }}
-	{{ if or (not .FmtCurrencyNegativeInPrefix) (gt (len .FmtCurrencyNegativeSuffix) 0)}}
+		{{- end -}}
+	{{- if or (not .FmtCurrencyNegativeInPrefix) (gt (len .FmtCurrencyNegativeSuffix) 0)}}
 	}
-	{{ end }}
+	{{- end }}
 
 	return b
 	{{ else }}
