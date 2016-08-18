@@ -17,16 +17,28 @@ type {{ .Locale }} struct {
 	group      			   []byte
 	minus      			   []byte
 	percent    			   []byte
+	{{- if gt (len .FmtPercentPrefix) 0}}
 	percentPrefix   	   []byte
+	{{- end }}
+	{{- if gt (len .FmtPercentSuffix) 0}}
 	percentSuffix   	   []byte
+	{{- end }}
 	perMille   			   []byte
 	timeSeparator		   []byte
 	inifinity			   []byte
 	currencies 			   [][]byte // idx = enum of currency code
+	{{- if gt (len .FmtCurrencyPrefix) 0}}
 	currencyPositivePrefix []byte
+	{{- end }}
+	{{- if gt (len .FmtCurrencySuffix) 0}}
 	currencyPositiveSuffix []byte
+	{{- end }}
+	{{- if gt (len .FmtCurrencyNegativePrefix) 0}}
 	currencyNegativePrefix []byte
+	{{- end }}
+	{{- if gt (len .FmtCurrencyNegativeSuffix) 0}}
 	currencyNegativeSuffix []byte
+	{{- end }}
 	monthsAbbreviated      [][]byte
 	monthsNarrow      	   [][]byte
 	monthsShort      	   [][]byte
@@ -858,54 +870,6 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeFull(t time.Time) []byte {
 	b := make([]byte, 0, 32)
 
 	{{ .FmtTimeFull }}
-
-	return b
-}
-
-// FmtDateTimeShort returns the short date & time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeShort(t time.Time) []byte {
-	
-	b := {{ .BaseLocale }}.FmtDateShort(t)
-	b = append(b, ' ')
-	b = append(b, {{ .BaseLocale }}.FmtTimeShort(t)...)
-
-	return b
-}
-
-// FmtDateTimeMedium returns the medium date & time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeMedium(t time.Time) []byte {
-	
-	b := {{ .BaseLocale }}.FmtDateMedium(t)
-	b = append(b, ' ')
-	b = append(b, {{ .BaseLocale }}.FmtTimeMedium(t)...)
-
-	return b
-}
-
-// FmtDateTimeLong returns the long date & time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeLong(t time.Time) []byte {
-	
-	b := {{ .BaseLocale }}.FmtDateLong(t)
-	b = append(b, ' ')
-	b = append(b, {{ .BaseLocale }}.FmtTimeLong(t)...)
-
-	return b
-}
-
-// FmtDateTimeFull returns the full date & time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeFull(t time.Time) []byte {
-	
-	b := {{ .BaseLocale }}.FmtDateFull(t)
-	b = append(b, ' ')
-	b = append(b, {{ .BaseLocale }}.FmtTimeFull(t)...)
 
 	return b
 }

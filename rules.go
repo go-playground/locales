@@ -39,8 +39,13 @@ const (
 	pluralsString = "UnknownZeroOneTwoFewManyOther"
 )
 
-// Translator encapsulates an instance of
+// Translator encapsulates an instance of a locale
+// NOTE: some values are returned as a []byte just in case the caller
+// wishes to add more and can help avoid allocations; otherwise just cast as string
 type Translator interface {
+
+	// The following Functions are for overriding, debugging or developing
+	// with a Translator Locale
 
 	// Locale returns the string value of the translator
 	Locale() string
@@ -62,86 +67,45 @@ type Translator interface {
 	// returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for locale
 	RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) PluralRule
 
+	// The following Functions are common Formatting functionsfor the Translator's Locale
+
 	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtNumber(num float64, v uint64) []byte
 
 	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 	FmtPercent(num float64, v uint64) []byte
 
 	// returns the currency representation of 'num' with digits/precision of 'v' for locale
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtCurrency(num float64, v uint64, currency currency.Type) []byte
 
 	// returns the currency representation of 'num' with digits/precision of 'v' for locale
-	// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
+	// in accounting notation.
 	FmtAccounting(num float64, v uint64, currency currency.Type) []byte
 
 	// returns the short date representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtDateShort(t time.Time) []byte
 
 	// returns the medium date representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtDateMedium(t time.Time) []byte
 
 	//  returns the long date representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtDateLong(t time.Time) []byte
 
 	// returns the full date representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtDateFull(t time.Time) []byte
 
 	// returns the short time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtTimeShort(t time.Time) []byte
 
 	// returns the medium time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtTimeMedium(t time.Time) []byte
 
 	// returns the long time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtTimeLong(t time.Time) []byte
 
 	// returns the full time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
 	FmtTimeFull(t time.Time) []byte
-
-	// returns the short date & time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
-	FmtDateTimeShort(t time.Time) []byte
-
-	// returns the medium date & time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
-	FmtDateTimeMedium(t time.Time) []byte
-
-	// returns the long date & time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
-	FmtDateTimeLong(t time.Time) []byte
-
-	// returns the full date & time representation of 't' for '{{ .Locale }}'
-	// returned as a []byte just in case the caller wishes to add more and can help
-	// avoid allocations; otherwise just cast as string.
-	FmtDateTimeFull(t time.Time) []byte
 }
 
 // String returns the string value  of PluralRule
