@@ -124,6 +124,8 @@ type translator struct {
 	FmtErasNarrow      string
 	FmtErasWide        string
 
+	FmtTimezones string
+
 	// calculation only fields below this point...
 	DecimalNumberFormat          string
 	PercentNumberFormat          string
@@ -141,13 +143,17 @@ type translator struct {
 	FmtTimeLong   string
 	FmtTimeMedium string
 	FmtTimeShort  string
+
+	// timezones per locale by type
+	timezones map[string]*zoneAbbrev // key = type eg. America_Eastern zone Abbrev will be long form eg. Eastern Standard Time, Pacific Standard Time.....
 }
 
-// // IdxValue contains the index and string of types eg. months, days...
-// type IdxValue struct {
-// 	Idx   int
-// 	Value string
-// }
+type zoneAbbrev struct {
+	standard string
+	daylight string
+}
+
+var timezones = map[string]*zoneAbbrev{} // key = type eg. America_Eastern zone Abbrev eg. EST & EDT
 
 func main() {
 
@@ -215,6 +221,12 @@ func main() {
 
 		fmt.Println("Writing Data:", trans.Locale)
 
+		// for k, v := range trans.timezones {
+		// 	fmt.Println("\t-", k)
+		// 	fmt.Println("\t\t-", v.standard)
+		// 	fmt.Println("\t\t-", v.daylight)
+		// }
+
 		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0777); err != nil {
 			log.Fatal(err)
 		}
@@ -249,6 +261,14 @@ func main() {
 
 func postProcess(cldr *cldr.CLDR) {
 
+	for _, v := range timezones {
+
+		// no DST
+		if len(v.daylight) == 0 {
+			v.daylight = v.standard
+		}
+	}
+
 	var base *translator
 	var found bool
 
@@ -262,9 +282,8 @@ func postProcess(cldr *cldr.CLDR) {
 		//ordinal plural rules
 		trans.OrdinalFunc, trans.PluralsOrdinal = parseOrdinalPluralRuleFunc(cldr, trans.BaseLocale)
 
-		// if trans.Locale == "en" {
+		// range plural rules
 		trans.RangeFunc = parseRangePluralRuleFunc(cldr, trans.BaseLocale)
-		// }
 
 		// ignore base locales
 		if trans.BaseLocale == trans.Locale {
@@ -506,6 +525,27 @@ func postProcess(cldr *cldr.CLDR) {
 
 		trans.Currencies = fmt.Sprintf("%#v", currencies)
 
+		// timezones
+
+		if (trans.timezones == nil || len(trans.timezones) == 0) && found {
+			trans.timezones = base.timezones
+		}
+
+		// make sure all base timezones are part of sub locale timezones
+		if found {
+
+			var ok bool
+
+			for k, v := range base.timezones {
+
+				if _, ok = trans.timezones[k]; ok {
+					continue
+				}
+
+				trans.timezones[k] = v
+			}
+		}
+
 		parseDecimalNumberFormat(trans)
 		parsePercentNumberFormat(trans)
 		parseCurrencyNumberFormat(trans)
@@ -514,6 +554,27 @@ func postProcess(cldr *cldr.CLDR) {
 	for _, trans := range translators {
 
 		fmt.Println("Final Processing:", trans.Locale)
+
+		// if it's still nill.....
+		if trans.timezones == nil {
+			trans.timezones = make(map[string]*zoneAbbrev)
+		}
+
+		tz := make(map[string][]byte) // key = abbrev locale eg. EST, EDT, MST, PST... value = long locale eg. Eastern Standard Time, Pacific Time.....
+
+		for k, v := range timezones {
+
+			ttz, ok := trans.timezones[k]
+			if !ok {
+				ttz = v
+				trans.timezones[k] = v
+			}
+
+			tz[v.standard] = []byte(ttz.standard)
+			tz[v.daylight] = []byte(ttz.daylight)
+		}
+
+		trans.FmtTimezones = fmt.Sprintf("%#v", tz)
 
 		if len(trans.TimeSeparator) == 0 {
 			trans.TimeSeparator = fmt.Sprintf("%#v", []byte(":"))
@@ -647,294 +708,352 @@ func preProcess(cldrVar *cldr.CLDR) {
 			}
 		}
 
-		if ldml.Dates != nil && ldml.Dates.Calendars != nil {
+		if ldml.Dates != nil {
 
-			var calendar *cldr.Calendar
+			if ldml.Dates.TimeZoneNames != nil {
 
-			for _, cal := range ldml.Dates.Calendars.Calendar {
-				if cal.Type == "gregorian" {
-					calendar = cal
+				for _, zone := range ldml.Dates.TimeZoneNames.Metazone {
+
+					for _, short := range zone.Short {
+
+						if len(short.Standard) > 0 {
+							za, ok := timezones[zone.Type]
+							if !ok {
+								za = new(zoneAbbrev)
+								timezones[zone.Type] = za
+							}
+							za.standard = short.Standard[0].Data()
+						}
+
+						if len(short.Daylight) > 0 {
+							za, ok := timezones[zone.Type]
+							if !ok {
+								za = new(zoneAbbrev)
+								timezones[zone.Type] = za
+							}
+							za.daylight = short.Daylight[0].Data()
+						}
+					}
+
+					for _, long := range zone.Long {
+
+						if trans.timezones == nil {
+							trans.timezones = make(map[string]*zoneAbbrev)
+						}
+
+						if len(long.Standard) > 0 {
+							za, ok := trans.timezones[zone.Type]
+							if !ok {
+								za = new(zoneAbbrev)
+								trans.timezones[zone.Type] = za
+							}
+							za.standard = long.Standard[0].Data()
+						}
+
+						za, ok := trans.timezones[zone.Type]
+						if !ok {
+							za = new(zoneAbbrev)
+							trans.timezones[zone.Type] = za
+						}
+
+						if len(long.Daylight) > 0 {
+							za.daylight = long.Daylight[0].Data()
+						} else {
+							za.daylight = za.standard
+						}
+					}
 				}
 			}
 
-			if calendar != nil {
+			if ldml.Dates.Calendars != nil {
 
-				if calendar.DateFormats != nil {
+				var calendar *cldr.Calendar
 
-					for _, datefmt := range calendar.DateFormats.DateFormatLength {
-
-						switch datefmt.Type {
-						case "full":
-							trans.FmtDateFull = datefmt.DateFormat[0].Pattern[0].Data()
-
-						case "long":
-							trans.FmtDateLong = datefmt.DateFormat[0].Pattern[0].Data()
-
-						case "medium":
-							trans.FmtDateMedium = datefmt.DateFormat[0].Pattern[0].Data()
-
-						case "short":
-							trans.FmtDateShort = datefmt.DateFormat[0].Pattern[0].Data()
-						}
+				for _, cal := range ldml.Dates.Calendars.Calendar {
+					if cal.Type == "gregorian" {
+						calendar = cal
 					}
 				}
 
-				if calendar.TimeFormats != nil {
+				if calendar != nil {
 
-					for _, datefmt := range calendar.TimeFormats.TimeFormatLength {
+					if calendar.DateFormats != nil {
 
-						switch datefmt.Type {
-						case "full":
-							trans.FmtTimeFull = datefmt.TimeFormat[0].Pattern[0].Data()
-						case "long":
-							trans.FmtTimeLong = datefmt.TimeFormat[0].Pattern[0].Data()
-						case "medium":
-							trans.FmtTimeMedium = datefmt.TimeFormat[0].Pattern[0].Data()
-						case "short":
-							trans.FmtTimeShort = datefmt.TimeFormat[0].Pattern[0].Data()
-						}
-					}
-				}
+						for _, datefmt := range calendar.DateFormats.DateFormatLength {
 
-				if calendar.Months != nil {
+							switch datefmt.Type {
+							case "full":
+								trans.FmtDateFull = datefmt.DateFormat[0].Pattern[0].Data()
 
-					// month context starts at 'format', but there is also has 'stand-alone'
-					// I'm making the decision to use the 'stand-alone' if, and only if,
-					// the value does not exist in the 'format' month context
-					var abbrSet, narrSet, shortSet, wideSet bool
+							case "long":
+								trans.FmtDateLong = datefmt.DateFormat[0].Pattern[0].Data()
 
-					for _, monthctx := range calendar.Months.MonthContext {
+							case "medium":
+								trans.FmtDateMedium = datefmt.DateFormat[0].Pattern[0].Data()
 
-						for _, months := range monthctx.MonthWidth {
-
-							var monthData [][]byte
-
-							for _, m := range months.Month {
-
-								if len(m.Data()) == 0 {
-									continue
-								}
-
-								switch m.Type {
-								case "1":
-									monthData = append(monthData, []byte(m.Data()))
-								case "2":
-									monthData = append(monthData, []byte(m.Data()))
-								case "3":
-									monthData = append(monthData, []byte(m.Data()))
-								case "4":
-									monthData = append(monthData, []byte(m.Data()))
-								case "5":
-									monthData = append(monthData, []byte(m.Data()))
-								case "6":
-									monthData = append(monthData, []byte(m.Data()))
-								case "7":
-									monthData = append(monthData, []byte(m.Data()))
-								case "8":
-									monthData = append(monthData, []byte(m.Data()))
-								case "9":
-									monthData = append(monthData, []byte(m.Data()))
-								case "10":
-									monthData = append(monthData, []byte(m.Data()))
-								case "11":
-									monthData = append(monthData, []byte(m.Data()))
-								case "12":
-									monthData = append(monthData, []byte(m.Data()))
-								}
-							}
-
-							if len(monthData) > 0 {
-
-								// making array indexes line up with month values
-								// so I'll have an extra empty value, it's way faster
-								// than a switch over all type values...
-								monthData = append(make([][]byte, 1, len(monthData)+1), monthData...)
-
-								switch months.Type {
-								case "abbreviated":
-									if !abbrSet {
-										abbrSet = true
-										trans.FmtMonthsAbbreviated = fmt.Sprintf("%#v", monthData)
-									}
-								case "narrow":
-									if !narrSet {
-										narrSet = true
-										trans.FmtMonthsNarrow = fmt.Sprintf("%#v", monthData)
-									}
-								case "short":
-									if !shortSet {
-										shortSet = true
-										trans.FmtMonthsShort = fmt.Sprintf("%#v", monthData)
-									}
-								case "wide":
-									if !wideSet {
-										wideSet = true
-										trans.FmtMonthsWide = fmt.Sprintf("%#v", monthData)
-									}
-								}
-							}
-						}
-					}
-				}
-
-				if calendar.Days != nil {
-
-					// day context starts at 'format', but there is also has 'stand-alone'
-					// I'm making the decision to use the 'stand-alone' if, and only if,
-					// the value does not exist in the 'format' day context
-					var abbrSet, narrSet, shortSet, wideSet bool
-
-					for _, dayctx := range calendar.Days.DayContext {
-
-						for _, days := range dayctx.DayWidth {
-
-							var dayData [][]byte
-
-							for _, d := range days.Day {
-
-								switch d.Type {
-								case "sun":
-									dayData = append(dayData, []byte(d.Data()))
-								case "mon":
-									dayData = append(dayData, []byte(d.Data()))
-								case "tue":
-									dayData = append(dayData, []byte(d.Data()))
-								case "wed":
-									dayData = append(dayData, []byte(d.Data()))
-								case "thu":
-									dayData = append(dayData, []byte(d.Data()))
-								case "fri":
-									dayData = append(dayData, []byte(d.Data()))
-								case "sat":
-									dayData = append(dayData, []byte(d.Data()))
-								}
-							}
-
-							if len(dayData) > 0 {
-								switch days.Type {
-								case "abbreviated":
-									if !abbrSet {
-										abbrSet = true
-										trans.FmtDaysAbbreviated = fmt.Sprintf("%#v", dayData)
-									}
-								case "narrow":
-									if !narrSet {
-										narrSet = true
-										trans.FmtDaysNarrow = fmt.Sprintf("%#v", dayData)
-									}
-								case "short":
-									if !shortSet {
-										shortSet = true
-										trans.FmtDaysShort = fmt.Sprintf("%#v", dayData)
-									}
-								case "wide":
-									if !wideSet {
-										wideSet = true
-										trans.FmtDaysWide = fmt.Sprintf("%#v", dayData)
-									}
-								}
-							}
-						}
-					}
-				}
-
-				if calendar.DayPeriods != nil {
-
-					// day periods context starts at 'format', but there is also has 'stand-alone'
-					// I'm making the decision to use the 'stand-alone' if, and only if,
-					// the value does not exist in the 'format' day period context
-					var abbrSet, narrSet, shortSet, wideSet bool
-
-					for _, ctx := range calendar.DayPeriods.DayPeriodContext {
-
-						for _, width := range ctx.DayPeriodWidth {
-
-							// [0] = AM
-							// [0] = PM
-							ampm := make([][]byte, 2, 2)
-
-							for _, d := range width.DayPeriod {
-
-								if d.Type == "am" {
-									ampm[0] = []byte(d.Data())
-									continue
-								}
-
-								if d.Type == "pm" {
-									ampm[1] = []byte(d.Data())
-								}
-							}
-
-							switch width.Type {
-							case "abbreviated":
-								if !abbrSet {
-									abbrSet = true
-									trans.FmtPeriodsAbbreviated = fmt.Sprintf("%#v", ampm)
-								}
-							case "narrow":
-								if !narrSet {
-									narrSet = true
-									trans.FmtPeriodsNarrow = fmt.Sprintf("%#v", ampm)
-								}
 							case "short":
-								if !shortSet {
-									shortSet = true
-									trans.FmtPeriodsShort = fmt.Sprintf("%#v", ampm)
+								trans.FmtDateShort = datefmt.DateFormat[0].Pattern[0].Data()
+							}
+						}
+					}
+
+					if calendar.TimeFormats != nil {
+
+						for _, datefmt := range calendar.TimeFormats.TimeFormatLength {
+
+							switch datefmt.Type {
+							case "full":
+								trans.FmtTimeFull = datefmt.TimeFormat[0].Pattern[0].Data()
+							case "long":
+								trans.FmtTimeLong = datefmt.TimeFormat[0].Pattern[0].Data()
+							case "medium":
+								trans.FmtTimeMedium = datefmt.TimeFormat[0].Pattern[0].Data()
+							case "short":
+								trans.FmtTimeShort = datefmt.TimeFormat[0].Pattern[0].Data()
+							}
+						}
+					}
+
+					if calendar.Months != nil {
+
+						// month context starts at 'format', but there is also has 'stand-alone'
+						// I'm making the decision to use the 'stand-alone' if, and only if,
+						// the value does not exist in the 'format' month context
+						var abbrSet, narrSet, shortSet, wideSet bool
+
+						for _, monthctx := range calendar.Months.MonthContext {
+
+							for _, months := range monthctx.MonthWidth {
+
+								var monthData [][]byte
+
+								for _, m := range months.Month {
+
+									if len(m.Data()) == 0 {
+										continue
+									}
+
+									switch m.Type {
+									case "1":
+										monthData = append(monthData, []byte(m.Data()))
+									case "2":
+										monthData = append(monthData, []byte(m.Data()))
+									case "3":
+										monthData = append(monthData, []byte(m.Data()))
+									case "4":
+										monthData = append(monthData, []byte(m.Data()))
+									case "5":
+										monthData = append(monthData, []byte(m.Data()))
+									case "6":
+										monthData = append(monthData, []byte(m.Data()))
+									case "7":
+										monthData = append(monthData, []byte(m.Data()))
+									case "8":
+										monthData = append(monthData, []byte(m.Data()))
+									case "9":
+										monthData = append(monthData, []byte(m.Data()))
+									case "10":
+										monthData = append(monthData, []byte(m.Data()))
+									case "11":
+										monthData = append(monthData, []byte(m.Data()))
+									case "12":
+										monthData = append(monthData, []byte(m.Data()))
+									}
 								}
-							case "wide":
-								if !wideSet {
-									wideSet = true
-									trans.FmtPeriodsWide = fmt.Sprintf("%#v", ampm)
+
+								if len(monthData) > 0 {
+
+									// making array indexes line up with month values
+									// so I'll have an extra empty value, it's way faster
+									// than a switch over all type values...
+									monthData = append(make([][]byte, 1, len(monthData)+1), monthData...)
+
+									switch months.Type {
+									case "abbreviated":
+										if !abbrSet {
+											abbrSet = true
+											trans.FmtMonthsAbbreviated = fmt.Sprintf("%#v", monthData)
+										}
+									case "narrow":
+										if !narrSet {
+											narrSet = true
+											trans.FmtMonthsNarrow = fmt.Sprintf("%#v", monthData)
+										}
+									case "short":
+										if !shortSet {
+											shortSet = true
+											trans.FmtMonthsShort = fmt.Sprintf("%#v", monthData)
+										}
+									case "wide":
+										if !wideSet {
+											wideSet = true
+											trans.FmtMonthsWide = fmt.Sprintf("%#v", monthData)
+										}
+									}
 								}
 							}
 						}
 					}
-				}
 
-				if calendar.Eras != nil {
+					if calendar.Days != nil {
 
-					// [0] = BC
-					// [0] = AD
-					abbrev := make([][]byte, 2, 2)
-					narr := make([][]byte, 2, 2)
-					wide := make([][]byte, 2, 2)
+						// day context starts at 'format', but there is also has 'stand-alone'
+						// I'm making the decision to use the 'stand-alone' if, and only if,
+						// the value does not exist in the 'format' day context
+						var abbrSet, narrSet, shortSet, wideSet bool
 
-					if calendar.Eras.EraAbbr != nil {
+						for _, dayctx := range calendar.Days.DayContext {
 
-						if len(calendar.Eras.EraAbbr.Era) == 4 {
-							abbrev[0] = []byte(calendar.Eras.EraAbbr.Era[0].Data())
-							abbrev[1] = []byte(calendar.Eras.EraAbbr.Era[2].Data())
-						} else if len(calendar.Eras.EraAbbr.Era) == 2 {
-							abbrev[0] = []byte(calendar.Eras.EraAbbr.Era[0].Data())
-							abbrev[1] = []byte(calendar.Eras.EraAbbr.Era[1].Data())
+							for _, days := range dayctx.DayWidth {
+
+								var dayData [][]byte
+
+								for _, d := range days.Day {
+
+									switch d.Type {
+									case "sun":
+										dayData = append(dayData, []byte(d.Data()))
+									case "mon":
+										dayData = append(dayData, []byte(d.Data()))
+									case "tue":
+										dayData = append(dayData, []byte(d.Data()))
+									case "wed":
+										dayData = append(dayData, []byte(d.Data()))
+									case "thu":
+										dayData = append(dayData, []byte(d.Data()))
+									case "fri":
+										dayData = append(dayData, []byte(d.Data()))
+									case "sat":
+										dayData = append(dayData, []byte(d.Data()))
+									}
+								}
+
+								if len(dayData) > 0 {
+									switch days.Type {
+									case "abbreviated":
+										if !abbrSet {
+											abbrSet = true
+											trans.FmtDaysAbbreviated = fmt.Sprintf("%#v", dayData)
+										}
+									case "narrow":
+										if !narrSet {
+											narrSet = true
+											trans.FmtDaysNarrow = fmt.Sprintf("%#v", dayData)
+										}
+									case "short":
+										if !shortSet {
+											shortSet = true
+											trans.FmtDaysShort = fmt.Sprintf("%#v", dayData)
+										}
+									case "wide":
+										if !wideSet {
+											wideSet = true
+											trans.FmtDaysWide = fmt.Sprintf("%#v", dayData)
+										}
+									}
+								}
+							}
 						}
 					}
 
-					if calendar.Eras.EraNarrow != nil {
+					if calendar.DayPeriods != nil {
 
-						if len(calendar.Eras.EraNarrow.Era) == 4 {
-							narr[0] = []byte(calendar.Eras.EraNarrow.Era[0].Data())
-							narr[1] = []byte(calendar.Eras.EraNarrow.Era[2].Data())
-						} else if len(calendar.Eras.EraNarrow.Era) == 2 {
-							narr[0] = []byte(calendar.Eras.EraNarrow.Era[0].Data())
-							narr[1] = []byte(calendar.Eras.EraNarrow.Era[1].Data())
+						// day periods context starts at 'format', but there is also has 'stand-alone'
+						// I'm making the decision to use the 'stand-alone' if, and only if,
+						// the value does not exist in the 'format' day period context
+						var abbrSet, narrSet, shortSet, wideSet bool
+
+						for _, ctx := range calendar.DayPeriods.DayPeriodContext {
+
+							for _, width := range ctx.DayPeriodWidth {
+
+								// [0] = AM
+								// [0] = PM
+								ampm := make([][]byte, 2, 2)
+
+								for _, d := range width.DayPeriod {
+
+									if d.Type == "am" {
+										ampm[0] = []byte(d.Data())
+										continue
+									}
+
+									if d.Type == "pm" {
+										ampm[1] = []byte(d.Data())
+									}
+								}
+
+								switch width.Type {
+								case "abbreviated":
+									if !abbrSet {
+										abbrSet = true
+										trans.FmtPeriodsAbbreviated = fmt.Sprintf("%#v", ampm)
+									}
+								case "narrow":
+									if !narrSet {
+										narrSet = true
+										trans.FmtPeriodsNarrow = fmt.Sprintf("%#v", ampm)
+									}
+								case "short":
+									if !shortSet {
+										shortSet = true
+										trans.FmtPeriodsShort = fmt.Sprintf("%#v", ampm)
+									}
+								case "wide":
+									if !wideSet {
+										wideSet = true
+										trans.FmtPeriodsWide = fmt.Sprintf("%#v", ampm)
+									}
+								}
+							}
 						}
 					}
 
-					if calendar.Eras.EraNames != nil {
+					if calendar.Eras != nil {
 
-						if len(calendar.Eras.EraNames.Era) == 4 {
-							wide[0] = []byte(calendar.Eras.EraNames.Era[0].Data())
-							wide[1] = []byte(calendar.Eras.EraNames.Era[2].Data())
-						} else if len(calendar.Eras.EraNames.Era) == 2 {
-							wide[0] = []byte(calendar.Eras.EraNames.Era[0].Data())
-							wide[1] = []byte(calendar.Eras.EraNames.Era[1].Data())
+						// [0] = BC
+						// [0] = AD
+						abbrev := make([][]byte, 2, 2)
+						narr := make([][]byte, 2, 2)
+						wide := make([][]byte, 2, 2)
+
+						if calendar.Eras.EraAbbr != nil {
+
+							if len(calendar.Eras.EraAbbr.Era) == 4 {
+								abbrev[0] = []byte(calendar.Eras.EraAbbr.Era[0].Data())
+								abbrev[1] = []byte(calendar.Eras.EraAbbr.Era[2].Data())
+							} else if len(calendar.Eras.EraAbbr.Era) == 2 {
+								abbrev[0] = []byte(calendar.Eras.EraAbbr.Era[0].Data())
+								abbrev[1] = []byte(calendar.Eras.EraAbbr.Era[1].Data())
+							}
 						}
-					}
 
-					trans.FmtErasAbbreviated = fmt.Sprintf("%#v", abbrev)
-					trans.FmtErasNarrow = fmt.Sprintf("%#v", narr)
-					trans.FmtErasWide = fmt.Sprintf("%#v", wide)
+						if calendar.Eras.EraNarrow != nil {
+
+							if len(calendar.Eras.EraNarrow.Era) == 4 {
+								narr[0] = []byte(calendar.Eras.EraNarrow.Era[0].Data())
+								narr[1] = []byte(calendar.Eras.EraNarrow.Era[2].Data())
+							} else if len(calendar.Eras.EraNarrow.Era) == 2 {
+								narr[0] = []byte(calendar.Eras.EraNarrow.Era[0].Data())
+								narr[1] = []byte(calendar.Eras.EraNarrow.Era[1].Data())
+							}
+						}
+
+						if calendar.Eras.EraNames != nil {
+
+							if len(calendar.Eras.EraNames.Era) == 4 {
+								wide[0] = []byte(calendar.Eras.EraNames.Era[0].Data())
+								wide[1] = []byte(calendar.Eras.EraNames.Era[2].Data())
+							} else if len(calendar.Eras.EraNames.Era) == 2 {
+								wide[0] = []byte(calendar.Eras.EraNames.Era[0].Data())
+								wide[1] = []byte(calendar.Eras.EraNames.Era[1].Data())
+							}
+						}
+
+						trans.FmtErasAbbreviated = fmt.Sprintf("%#v", abbrev)
+						trans.FmtErasNarrow = fmt.Sprintf("%#v", narr)
+						trans.FmtErasWide = fmt.Sprintf("%#v", wide)
+					}
 				}
 			}
 		}
@@ -1181,11 +1300,25 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 
 			// using the timezone on the Go time object, eg. EST, EDT, MST.....
 
-			results += `
-				tz, _ := t.Zone()
-				b = append(b, tz...)
+			if count < 4 {
 
-			`
+				results += `
+					tz, _ := t.Zone()
+					b = append(b, tz...)
+
+				`
+			} else {
+
+				results += `
+					tz, _ := t.Zone()
+					if btz, ok := ` + baseLocale + `.timezones[tz]; ok {
+						b = append(b, btz...)
+					} else {
+						b = append(b, tz...)
+					}
+
+				`
+			}
 
 		// day
 		case 'd':

@@ -42,6 +42,7 @@ type {{ .Locale }} struct {
 	erasAbbreviated        [][]byte
 	erasNarrow      	   [][]byte
 	erasWide      	   	   [][]byte
+	timezones 			   map[string][]byte
 }
 
 // New returns a new instance of translator for the '{{ .Locale }}' locale
@@ -124,7 +125,8 @@ func New() locales.Translator {
 		{{- end -}}
 		{{- if gt (len .FmtErasWide) 0 }}
 		erasWide:   {{ .FmtErasWide }},
-		{{- end}}
+		{{- end }}
+		timezones: {{ .FmtTimezones }},
 	}
 }
 

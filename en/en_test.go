@@ -9,13 +9,18 @@ import (
 
 func TestFullTime(t *testing.T) {
 
+	loc, err := time.LoadLocation("America/Toronto")
+	if err != nil {
+		t.Errorf("Expected '<nil>' Got '%s'", err)
+	}
+
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-			expected: "9:05:01 am UTC",
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			expected: "9:05:01 am Eastern Standard Time",
 		},
 	}
 
@@ -31,13 +36,18 @@ func TestFullTime(t *testing.T) {
 
 func TestLongTime(t *testing.T) {
 
+	loc, err := time.LoadLocation("America/Toronto")
+	if err != nil {
+		t.Errorf("Expected '<nil>' Got '%s'", err)
+	}
+
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
 		{
-			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-			expected: "9:05:01 am UTC",
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			expected: "9:05:01 am EST",
 		},
 	}
 
