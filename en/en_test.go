@@ -18,6 +18,47 @@ func TestDaysAbbreviated(t *testing.T) {
 			t.Errorf("Expected '%s' Got '%s'", string(day), s)
 		}
 	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      0,
+			expected: "Sun",
+		},
+		{
+			idx:      1,
+			expected: "Mon",
+		},
+		{
+			idx:      2,
+			expected: "Tue",
+		},
+		{
+			idx:      3,
+			expected: "Wed",
+		},
+		{
+			idx:      4,
+			expected: "Thu",
+		},
+		{
+			idx:      5,
+			expected: "Fri",
+		},
+		{
+			idx:      6,
+			expected: "Sat",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.WeekdayAbbreviated(time.Weekday(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
 }
 
 func TestDaysNarrow(t *testing.T) {
@@ -29,6 +70,47 @@ func TestDaysNarrow(t *testing.T) {
 		s := string(trans.WeekdayNarrow(time.Weekday(i)))
 		if s != string(day) {
 			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		}
+	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      0,
+			expected: "S",
+		},
+		{
+			idx:      1,
+			expected: "M",
+		},
+		{
+			idx:      2,
+			expected: "T",
+		},
+		{
+			idx:      3,
+			expected: "W",
+		},
+		{
+			idx:      4,
+			expected: "T",
+		},
+		{
+			idx:      5,
+			expected: "F",
+		},
+		{
+			idx:      6,
+			expected: "S",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.WeekdayNarrow(time.Weekday(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
 	}
 }
@@ -44,6 +126,47 @@ func TestDaysShort(t *testing.T) {
 			t.Errorf("Expected '%s' Got '%s'", string(day), s)
 		}
 	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      0,
+			expected: "Su",
+		},
+		{
+			idx:      1,
+			expected: "Mo",
+		},
+		{
+			idx:      2,
+			expected: "Tu",
+		},
+		{
+			idx:      3,
+			expected: "We",
+		},
+		{
+			idx:      4,
+			expected: "Th",
+		},
+		{
+			idx:      5,
+			expected: "Fr",
+		},
+		{
+			idx:      6,
+			expected: "Sa",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.WeekdayShort(time.Weekday(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
 }
 
 func TestDaysWide(t *testing.T) {
@@ -55,6 +178,47 @@ func TestDaysWide(t *testing.T) {
 		s := string(trans.WeekdayWide(time.Weekday(i)))
 		if s != string(day) {
 			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		}
+	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      0,
+			expected: "Sunday",
+		},
+		{
+			idx:      1,
+			expected: "Monday",
+		},
+		{
+			idx:      2,
+			expected: "Tuesday",
+		},
+		{
+			idx:      3,
+			expected: "Wednesday",
+		},
+		{
+			idx:      4,
+			expected: "Thursday",
+		},
+		{
+			idx:      5,
+			expected: "Friday",
+		},
+		{
+			idx:      6,
+			expected: "Saturday",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.WeekdayWide(time.Weekday(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
 	}
 }
@@ -70,6 +234,67 @@ func TestMonthsAbbreviated(t *testing.T) {
 			t.Errorf("Expected '%s' Got '%s'", string(month), s)
 		}
 	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      1,
+			expected: "Jan",
+		},
+		{
+			idx:      2,
+			expected: "Feb",
+		},
+		{
+			idx:      3,
+			expected: "Mar",
+		},
+		{
+			idx:      4,
+			expected: "Apr",
+		},
+		{
+			idx:      5,
+			expected: "May",
+		},
+		{
+			idx:      6,
+			expected: "Jun",
+		},
+		{
+			idx:      7,
+			expected: "Jul",
+		},
+		{
+			idx:      8,
+			expected: "Aug",
+		},
+		{
+			idx:      9,
+			expected: "Sep",
+		},
+		{
+			idx:      10,
+			expected: "Oct",
+		},
+		{
+			idx:      11,
+			expected: "Nov",
+		},
+		{
+			idx:      12,
+			expected: "Dec",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.MonthAbbreviated(time.Month(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
 }
 
 func TestMonthsNarrow(t *testing.T) {
@@ -83,6 +308,67 @@ func TestMonthsNarrow(t *testing.T) {
 			t.Errorf("Expected '%s' Got '%s'", string(month), s)
 		}
 	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      1,
+			expected: "J",
+		},
+		{
+			idx:      2,
+			expected: "F",
+		},
+		{
+			idx:      3,
+			expected: "M",
+		},
+		{
+			idx:      4,
+			expected: "A",
+		},
+		{
+			idx:      5,
+			expected: "M",
+		},
+		{
+			idx:      6,
+			expected: "J",
+		},
+		{
+			idx:      7,
+			expected: "J",
+		},
+		{
+			idx:      8,
+			expected: "A",
+		},
+		{
+			idx:      9,
+			expected: "S",
+		},
+		{
+			idx:      10,
+			expected: "O",
+		},
+		{
+			idx:      11,
+			expected: "N",
+		},
+		{
+			idx:      12,
+			expected: "D",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.MonthNarrow(time.Month(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
 }
 
 func TestMonthsWide(t *testing.T) {
@@ -94,6 +380,67 @@ func TestMonthsWide(t *testing.T) {
 		s := string(trans.MonthWide(time.Month(i + 1)))
 		if s != string(month) {
 			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		}
+	}
+
+	tests := []struct {
+		idx      int
+		expected string
+	}{
+		{
+			idx:      1,
+			expected: "January",
+		},
+		{
+			idx:      2,
+			expected: "February",
+		},
+		{
+			idx:      3,
+			expected: "March",
+		},
+		{
+			idx:      4,
+			expected: "April",
+		},
+		{
+			idx:      5,
+			expected: "May",
+		},
+		{
+			idx:      6,
+			expected: "June",
+		},
+		{
+			idx:      7,
+			expected: "July",
+		},
+		{
+			idx:      8,
+			expected: "August",
+		},
+		{
+			idx:      9,
+			expected: "September",
+		},
+		{
+			idx:      10,
+			expected: "October",
+		},
+		{
+			idx:      11,
+			expected: "November",
+		},
+		{
+			idx:      12,
+			expected: "December",
+		},
+	}
+
+	for _, tt := range tests {
+		s := string(trans.MonthWide(time.Month(tt.idx)))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
 	}
 }
