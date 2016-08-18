@@ -122,6 +122,26 @@ type Translator interface {
 	// returned as a []byte just in case the caller wishes to add more and can help
 	// avoid allocations; otherwise just cast as string.
 	FmtTimeFull(t time.Time) []byte
+
+	// returns the short date & time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateTimeShort(t time.Time) []byte
+
+	// returns the medium date & time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateTimeMedium(t time.Time) []byte
+
+	// returns the long date & time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateTimeLong(t time.Time) []byte
+
+	// returns the full date & time representation of 't' for '{{ .Locale }}'
+	// returned as a []byte just in case the caller wishes to add more and can help
+	// avoid allocations; otherwise just cast as string.
+	FmtDateTimeFull(t time.Time) []byte
 }
 
 // String returns the string value  of PluralRule

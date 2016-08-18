@@ -862,4 +862,52 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeFull(t time.Time) []byte {
 	return b
 }
 
+// FmtDateTimeShort returns the short date & time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeShort(t time.Time) []byte {
+	
+	b := {{ .BaseLocale }}.FmtDateShort(t)
+	b = append(b, ' ')
+	b = append(b, {{ .BaseLocale }}.FmtTimeShort(t)...)
+
+	return b
+}
+
+// FmtDateTimeMedium returns the medium date & time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeMedium(t time.Time) []byte {
+	
+	b := {{ .BaseLocale }}.FmtDateMedium(t)
+	b = append(b, ' ')
+	b = append(b, {{ .BaseLocale }}.FmtTimeMedium(t)...)
+
+	return b
+}
+
+// FmtDateTimeLong returns the long date & time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeLong(t time.Time) []byte {
+	
+	b := {{ .BaseLocale }}.FmtDateLong(t)
+	b = append(b, ' ')
+	b = append(b, {{ .BaseLocale }}.FmtTimeLong(t)...)
+
+	return b
+}
+
+// FmtDateTimeFull returns the full date & time representation of 't' for '{{ .Locale }}'
+// returned as a []byte just in case the caller wishes to add more and can help
+// avoid allocations; otherwise just cast as string.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateTimeFull(t time.Time) []byte {
+	
+	b := {{ .BaseLocale }}.FmtDateFull(t)
+	b = append(b, ' ')
+	b = append(b, {{ .BaseLocale }}.FmtTimeFull(t)...)
+
+	return b
+}
+
 {{ end }}

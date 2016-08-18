@@ -221,12 +221,6 @@ func main() {
 
 		fmt.Println("Writing Data:", trans.Locale)
 
-		// for k, v := range trans.timezones {
-		// 	fmt.Println("\t-", k)
-		// 	fmt.Println("\t\t-", v.standard)
-		// 	fmt.Println("\t\t-", v.daylight)
-		// }
-
 		if err = os.MkdirAll(fmt.Sprintf(locDir, trans.Locale), 0777); err != nil {
 			log.Fatal(err)
 		}
@@ -1182,6 +1176,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 				if h > 12 {
 					h -= 12
 				}
+
 			`
 
 			// peek
@@ -1211,6 +1206,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			if len(format) != i+1 && format[i+1] == 'm' {
 				i++
 				results += `
+
 					if t.Minute() < 10 {
 						b = append(b, '0')
 					}
@@ -1233,6 +1229,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			if len(format) != i+1 && format[i+1] == 's' {
 				i++
 				results += `
+
 					if t.Second() < 10 {
 						b = append(b, '0')
 					}
@@ -1256,6 +1253,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			// date format....
 
 			results += `
+
 				if t.Hour() < 12 {
 					b = append(b, ` + baseLocale + `.periodsAbbreviated[0]...)
 				} else {
@@ -1303,6 +1301,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			if count < 4 {
 
 				results += `
+
 					tz, _ := t.Zone()
 					b = append(b, tz...)
 
@@ -1311,6 +1310,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 
 				results += `
 					tz, _ := t.Zone()
+					
 					if btz, ok := ` + baseLocale + `.timezones[tz]; ok {
 						b = append(b, btz...)
 					} else {
@@ -1333,6 +1333,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			if len(format) != i+1 && format[i+1] == 'd' {
 				i++
 				results += `
+
 					if t.Day() < 10 {
 						b = append(b, '0')
 					}
@@ -1372,6 +1373,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			case 2:
 
 				results += `
+
 				if t.Month() < 10 {
 					b = append(b, '0')
 				}
@@ -1481,6 +1483,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			}
 
 			results += `
+
 				if t.Year() < 0 {
 					b = append(b, ` + baseLocale + `.erasAbbreviated[0]...)
 				} else {
@@ -1490,15 +1493,11 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			`
 
 		default:
-			// TODO: Chunk THIS up for lease amount of appends
 			// append all non matched text as they are constants
-			// b = append(b, format[i])
-
 			if !inConstantText {
 				inConstantText = true
 				start = i
 			}
-			// results += "b = append(b, '" + fmt.Sprintf("%#v", format[i]) + "')"
 		}
 	}
 
@@ -1510,17 +1509,6 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 
 	return
 }
-
-// func stringToIndividualBytes(s string) (results string) {
-
-// 	for _, b := range s {
-// 		results += "'" + fmt.Sprintf("%#v", b) + "',"
-// 	}
-
-// 	results = strings.TrimRight(results, ",")
-
-// 	return
-// }
 
 func parseCurrencyNumberFormat(trans *translator) {
 

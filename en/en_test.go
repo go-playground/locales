@@ -7,6 +7,104 @@ import (
 	"github.com/go-playground/locales/currency"
 )
 
+func TestFullDateTime(t *testing.T) {
+
+	loc, err := time.LoadLocation("America/Toronto")
+	if err != nil {
+		t.Errorf("Expected '<nil>' Got '%s'", err)
+	}
+
+	tests := []struct {
+		t        time.Time
+		expected string
+	}{
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			expected: "Wednesday, February 3, 2016 9:05:01 am Eastern Standard Time",
+		},
+	}
+
+	trans := New()
+
+	for _, tt := range tests {
+		s := string(trans.FmtDateTimeFull(tt.t))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
+}
+
+func TestLongDateTime(t *testing.T) {
+
+	loc, err := time.LoadLocation("America/Toronto")
+	if err != nil {
+		t.Errorf("Expected '<nil>' Got '%s'", err)
+	}
+
+	tests := []struct {
+		t        time.Time
+		expected string
+	}{
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			expected: "February 3, 2016 9:05:01 am EST",
+		},
+	}
+
+	trans := New()
+
+	for _, tt := range tests {
+		s := string(trans.FmtDateTimeLong(tt.t))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
+}
+
+func TestMediumDateTime(t *testing.T) {
+
+	tests := []struct {
+		t        time.Time
+		expected string
+	}{
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
+			expected: "Feb 3, 2016 9:05:01 am",
+		},
+	}
+
+	trans := New()
+
+	for _, tt := range tests {
+		s := string(trans.FmtDateTimeMedium(tt.t))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
+}
+
+func TestShortDateTime(t *testing.T) {
+
+	tests := []struct {
+		t        time.Time
+		expected string
+	}{
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
+			expected: "2/3/16 9:05 am",
+		},
+	}
+
+	trans := New()
+
+	for _, tt := range tests {
+		s := string(trans.FmtDateTimeShort(tt.t))
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
+}
+
 func TestFullTime(t *testing.T) {
 
 	loc, err := time.LoadLocation("America/Toronto")
