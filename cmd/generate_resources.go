@@ -107,7 +107,6 @@ type translator struct {
 
 	FmtMonthsAbbreviated string
 	FmtMonthsNarrow      string
-	FmtMonthsShort       string
 	FmtMonthsWide        string
 
 	FmtDaysAbbreviated string
@@ -426,10 +425,6 @@ func postProcess(cldr *cldr.CLDR) {
 
 		if len(trans.FmtMonthsNarrow) == 0 && found {
 			trans.FmtMonthsNarrow = base.FmtMonthsNarrow
-		}
-
-		if len(trans.FmtMonthsShort) == 0 && found {
-			trans.FmtMonthsShort = base.FmtMonthsShort
 		}
 
 		if len(trans.FmtMonthsWide) == 0 && found {
@@ -813,7 +808,7 @@ func preProcess(cldrVar *cldr.CLDR) {
 						// month context starts at 'format', but there is also has 'stand-alone'
 						// I'm making the decision to use the 'stand-alone' if, and only if,
 						// the value does not exist in the 'format' month context
-						var abbrSet, narrSet, shortSet, wideSet bool
+						var abbrSet, narrSet, wideSet bool
 
 						for _, monthctx := range calendar.Months.MonthContext {
 
@@ -872,11 +867,6 @@ func preProcess(cldrVar *cldr.CLDR) {
 										if !narrSet {
 											narrSet = true
 											trans.FmtMonthsNarrow = fmt.Sprintf("%#v", monthData)
-										}
-									case "short":
-										if !shortSet {
-											shortSet = true
-											trans.FmtMonthsShort = fmt.Sprintf("%#v", monthData)
 										}
 									case "wide":
 										if !wideSet {
@@ -1310,7 +1300,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 
 				results += `
 					tz, _ := t.Zone()
-					
+
 					if btz, ok := ` + baseLocale + `.timezones[tz]; ok {
 						b = append(b, btz...)
 					} else {

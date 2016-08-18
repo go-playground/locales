@@ -42,7 +42,6 @@ type {{ .Locale }} struct {
 	{{- end }}
 	monthsAbbreviated      [][]byte
 	monthsNarrow      	   [][]byte
-	monthsShort      	   [][]byte
 	monthsWide      	   [][]byte
 	daysAbbreviated        [][]byte
 	daysNarrow      	   [][]byte
@@ -99,9 +98,6 @@ func New() locales.Translator {
 		{{- end -}}
 		{{- if gt (len .FmtMonthsNarrow) 0 }}
 		monthsNarrow:   {{ .FmtMonthsNarrow }},
-		{{- end -}}
-		{{- if gt (len .FmtMonthsShort) 0 }}
-		monthsShort:   {{ .FmtMonthsShort }},
 		{{- end -}}
 		{{- if gt (len .FmtMonthsWide) 0 }}
 		monthsWide:   {{ .FmtMonthsWide }},
@@ -171,6 +167,76 @@ func({{ .BaseLocale }} *{{ .Locale }}) OrdinalPluralRule(num float64, v uint64) 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for '{{ .Locale }}'
 func({{ .BaseLocale }} *{{ .Locale }}) RangePluralRule(num1 float64, v1 uint64,num2 float64, v2 uint64) locales.PluralRule {
 	{{ .RangeFunc }}
+}
+
+// MonthAbbreviated returns the locales abbreviated month given the 'month' provided
+func({{ .BaseLocale }} *{{ .Locale }}) MonthAbbreviated(month time.Month) []byte {
+	return {{ .BaseLocale }}.monthsAbbreviated[month]
+}
+
+// MonthsAbbreviated returns the locales abbreviated months
+func({{ .BaseLocale }} *{{ .Locale }}) MonthsAbbreviated() [][]byte {
+	return {{ .BaseLocale }}.monthsAbbreviated[1:]
+}
+
+// MonthNarrow returns the locales narrow month given the 'month' provided
+func({{ .BaseLocale }} *{{ .Locale }}) MonthNarrow(month time.Month) []byte {
+	return {{ .BaseLocale }}.monthsNarrow[month]
+}
+
+// MonthsNarrow returns the locales narrow months
+func({{ .BaseLocale }} *{{ .Locale }}) MonthsNarrow() [][]byte {
+	return {{ .BaseLocale }}.monthsNarrow[1:]
+}
+
+// MonthWide returns the locales wide month given the 'month' provided
+func({{ .BaseLocale }} *{{ .Locale }}) MonthWide(month time.Month) []byte {
+	return {{ .BaseLocale }}.monthsWide[month]
+}
+
+// MonthsWide returns the locales wide months
+func({{ .BaseLocale }} *{{ .Locale }}) MonthsWide() [][]byte {
+	return {{ .BaseLocale }}.monthsWide[1:]
+}
+
+// WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayAbbreviated(weekday time.Weekday) []byte {
+	return {{ .BaseLocale }}.daysAbbreviated[weekday]
+}
+
+// WeekdaysAbbreviated returns the locales abbreviated weekdays
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysAbbreviated() [][]byte {
+	return {{ .BaseLocale }}.daysAbbreviated
+}
+
+// WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayNarrow(weekday time.Weekday) []byte {
+	return {{ .BaseLocale }}.daysNarrow[weekday]
+}
+
+// WeekdaysNarrow returns the locales narrow weekdays
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysNarrow() [][]byte {
+	return {{ .BaseLocale }}.daysNarrow
+}
+
+// WeekdayShort returns the locales short weekday given the 'weekday' provided
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayShort(weekday time.Weekday) []byte {
+	return {{ .BaseLocale }}.daysShort[weekday]
+}
+
+// WeekdaysShort returns the locales short weekdays
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysShort() [][]byte {
+	return {{ .BaseLocale }}.daysShort
+}
+
+// WeekdayWide returns the locales wide weekday given the 'weekday' provided
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayWide(weekday time.Weekday) []byte {
+	return {{ .BaseLocale }}.daysWide[weekday]
+}
+
+// WeekdaysWide returns the locales wide weekdays
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysWide() [][]byte {
+	return {{ .BaseLocale }}.daysWide
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for '{{ .Locale }}' and handles both Whole and Real numbers based on 'v'

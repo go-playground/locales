@@ -7,6 +7,97 @@ import (
 	"github.com/go-playground/locales/currency"
 )
 
+func TestDaysAbbreviated(t *testing.T) {
+
+	trans := New()
+	days := trans.WeekdaysAbbreviated()
+
+	for i, day := range days {
+		s := string(trans.WeekdayAbbreviated(time.Weekday(i)))
+		if s != string(day) {
+			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		}
+	}
+}
+
+func TestDaysNarrow(t *testing.T) {
+
+	trans := New()
+	days := trans.WeekdaysNarrow()
+
+	for i, day := range days {
+		s := string(trans.WeekdayNarrow(time.Weekday(i)))
+		if s != string(day) {
+			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		}
+	}
+}
+
+func TestDaysShort(t *testing.T) {
+
+	trans := New()
+	days := trans.WeekdaysShort()
+
+	for i, day := range days {
+		s := string(trans.WeekdayShort(time.Weekday(i)))
+		if s != string(day) {
+			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		}
+	}
+}
+
+func TestDaysWide(t *testing.T) {
+
+	trans := New()
+	days := trans.WeekdaysWide()
+
+	for i, day := range days {
+		s := string(trans.WeekdayWide(time.Weekday(i)))
+		if s != string(day) {
+			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		}
+	}
+}
+
+func TestMonthsAbbreviated(t *testing.T) {
+
+	trans := New()
+	months := trans.MonthsAbbreviated()
+
+	for i, month := range months {
+		s := string(trans.MonthAbbreviated(time.Month(i + 1)))
+		if s != string(month) {
+			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		}
+	}
+}
+
+func TestMonthsNarrow(t *testing.T) {
+
+	trans := New()
+	months := trans.MonthsNarrow()
+
+	for i, month := range months {
+		s := string(trans.MonthNarrow(time.Month(i + 1)))
+		if s != string(month) {
+			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		}
+	}
+}
+
+func TestMonthsWide(t *testing.T) {
+
+	trans := New()
+	months := trans.MonthsWide()
+
+	for i, month := range months {
+		s := string(trans.MonthWide(time.Month(i + 1)))
+		if s != string(month) {
+			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		}
+	}
+}
+
 func TestFullTime(t *testing.T) {
 
 	loc, err := time.LoadLocation("America/Toronto")

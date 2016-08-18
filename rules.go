@@ -67,6 +67,48 @@ type Translator interface {
 	// returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for locale
 	RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) PluralRule
 
+	// returns the locales abbreviated month given the 'month' provided
+	MonthAbbreviated(month time.Month) []byte
+
+	// returns the locales abbreviated months
+	MonthsAbbreviated() [][]byte
+
+	// returns the locales narrow month given the 'month' provided
+	MonthNarrow(month time.Month) []byte
+
+	// returns the locales narrow months
+	MonthsNarrow() [][]byte
+
+	// returns the locales wide month given the 'month' provided
+	MonthWide(month time.Month) []byte
+
+	// returns the locales wide months
+	MonthsWide() [][]byte
+
+	// returns the locales abbreviated weekday given the 'weekday' provided
+	WeekdayAbbreviated(weekday time.Weekday) []byte
+
+	// returns the locales abbreviated weekdays
+	WeekdaysAbbreviated() [][]byte
+
+	// returns the locales narrow weekday given the 'weekday' provided
+	WeekdayNarrow(weekday time.Weekday) []byte
+
+	// WeekdaysNarrowreturns the locales narrow weekdays
+	WeekdaysNarrow() [][]byte
+
+	// returns the locales short weekday given the 'weekday' provided
+	WeekdayShort(weekday time.Weekday) []byte
+
+	// returns the locales short weekdays
+	WeekdaysShort() [][]byte
+
+	// returns the locales wide weekday given the 'weekday' provided
+	WeekdayWide(weekday time.Weekday) []byte
+
+	// returns the locales wide weekdays
+	WeekdaysWide() [][]byte
+
 	// The following Functions are common Formatting functionsfor the Translator's Locale
 
 	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
