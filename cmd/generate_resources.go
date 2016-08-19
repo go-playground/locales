@@ -1058,17 +1058,17 @@ func parseDateFormats(trans *translator, shortFormat, mediumFormat, longFormat, 
 
 	// Short Date Parsing
 
-	short = parseDateTimeFormat(trans.BaseLocale, shortFormat)
-	medium = parseDateTimeFormat(trans.BaseLocale, mediumFormat)
-	long = parseDateTimeFormat(trans.BaseLocale, longFormat)
-	full = parseDateTimeFormat(trans.BaseLocale, fullFormat)
+	short = parseDateTimeFormat(trans.BaseLocale, shortFormat, 2)
+	medium = parseDateTimeFormat(trans.BaseLocale, mediumFormat, 2)
+	long = parseDateTimeFormat(trans.BaseLocale, longFormat, 1)
+	full = parseDateTimeFormat(trans.BaseLocale, fullFormat, 0)
 
 	// End Short Data Parsing
 
 	return
 }
 
-func parseDateTimeFormat(baseLocale, format string) (results string) {
+func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results string) {
 
 	// rules:
 	// y = four digit year
@@ -1443,22 +1443,22 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 			// Narrow
 			case 1:
 
-				results += "b = append(b, " + baseLocale + ".daysNarrow[t.Day()]...)\n"
+				results += "b = append(b, " + baseLocale + ".daysNarrow[t.Weekday()]...)\n"
 
 			// Short
 			case 2:
 
-				results += "b = append(b, " + baseLocale + ".daysShort[t.Day()]...)\n"
+				results += "b = append(b, " + baseLocale + ".daysShort[t.Weekday()]...)\n"
 
 			// Abbreviated
 			case 3:
 
-				results += "b = append(b, " + baseLocale + ".daysAbbreviated[t.Day()]...)\n"
+				results += "b = append(b, " + baseLocale + ".daysAbbreviated[t.Weekday()]...)\n"
 
 			// Full/Wide
 			case 4:
 
-				results += "b = append(b, " + baseLocale + ".daysWide[t.Day()]...)\n"
+				results += "b = append(b, " + baseLocale + ".daysWide[t.Weekday()]...)\n"
 			}
 
 			// skip over E's
@@ -1472,7 +1472,19 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
 			}
 
-			results += `
+			switch eraScore {
+			case 0:
+				results += `
+
+				if t.Year() < 0 {
+					b = append(b, ` + baseLocale + `.erasWide[0]...)
+				} else {
+					b = append(b, ` + baseLocale + `.erasWide[1]...)
+				}
+
+			`
+			case 1, 2:
+				results += `
 
 				if t.Year() < 0 {
 					b = append(b, ` + baseLocale + `.erasAbbreviated[0]...)
@@ -1481,6 +1493,7 @@ func parseDateTimeFormat(baseLocale, format string) (results string) {
 				}
 
 			`
+			}
 
 		default:
 			// append all non matched text as they are constants
