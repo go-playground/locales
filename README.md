@@ -47,118 +47,118 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-playground/universal-translator"
+	"github.com/go-playground/locales/currency"
+	"github.com/go-playground/locales/en_CA"
+)
 
-	// DONE this way to avoid huge compile times + memory for all languages, although it would
-	// be nice for all applications to support all languages... that's not reality
-	_ "github.com/go-playground/universal-translator/resources/locales"
+const (
+	dateTimeString = "Jan 2, 2006 at 3:04:05pm"
 )
 
 func main() {
-	trans, _ := ut.GetTranslator("en")
 
-	trans.PrintPluralRules()
-	// OUTPUT:
-	// Translator locale 'en' supported rules:
-	//- PluralRuleOne
-	//- PluralRuleOther
+	loc, _ := time.LoadLocation("America/Toronto")
+	datetime := time.Date(2016, 02, 03, 9, 0, 1, 0, loc)
 
-	// add a singular translation
-	trans.Add(ut.PluralRuleOne, "homepage", "welcome_msg", "Welcome to site %s")
+	l := en_CA.New()
 
-	// add singular + plural translation(s)
-	trans.Add(ut.PluralRuleOne, "homepage", "day_warning", "You only have %d day left in your trial")
-	trans.Add(ut.PluralRuleOther, "homepage", "day_warning", "You only have %d day's left in your trial")
+	// Dates
+	fmt.Println(string(l.FmtDateFull(datetime)))
+	fmt.Println(string(l.FmtDateLong(datetime)))
+	fmt.Println(string(l.FmtDateMedium(datetime)))
+	fmt.Println(string(l.FmtDateShort(datetime)))
 
-	// translate singular
-	translated := trans.T("welcome_msg", "Joey Bloggs")
-	fmt.Println(translated)
-	// OUTPUT: Welcome to site Joey Bloggs
+	// Times
+	fmt.Println(string(l.FmtTimeFull(datetime)))
+	fmt.Println(string(l.FmtTimeLong(datetime)))
+	fmt.Println(string(l.FmtTimeMedium(datetime)))
+	fmt.Println(string(l.FmtTimeShort(datetime)))
 
-	// What if something went wrong? then translated would output "" (blank)
-	// How do I catch errors?
-	translated, err := trans.TSafe("welcome_m", "Joey Bloggs")
-	fmt.Println(translated)
-	// OUTPUT: ""
-	fmt.Println(err)
-	// OUTPUT: ***** WARNING:***** Translation Key 'welcome_m' Not Found
+	// Months Wide
+	fmt.Println(string(l.MonthWide(time.January)))
+	fmt.Println(string(l.MonthWide(time.February)))
+	fmt.Println(string(l.MonthWide(time.March)))
+	// ...
 
-	// NOTE: there is a Safe variant of most of the Translation and Formatting functions if you need them,
-	// for brevity will be using the non safe ones for the rest of this example
+	// Months Abbreviated
+	fmt.Println(string(l.MonthAbbreviated(time.January)))
+	fmt.Println(string(l.MonthAbbreviated(time.February)))
+	fmt.Println(string(l.MonthAbbreviated(time.March)))
+	// ...
 
-	// The second parameter below, count, is needed as the final variable is a varadic and would not
-	// know which one to use in applying the plural rules.
-	// translate singular/plural
-	translated = trans.P("day_warning", 3, 3)
-	fmt.Println(translated)
-	// OUTPUT: You only have 3 day's left in your trial
+	// Months Narrow
+	fmt.Println(string(l.MonthNarrow(time.January)))
+	fmt.Println(string(l.MonthNarrow(time.February)))
+	fmt.Println(string(l.MonthNarrow(time.March)))
+	// ...
 
-	translated = trans.P("day_warning", 1, 1)
-	fmt.Println(translated)
-	// OUTPUT: You only have 1 day left in your trial
+	// Weekdays Wide
+	fmt.Println(string(l.WeekdayWide(time.Sunday)))
+	fmt.Println(string(l.WeekdayWide(time.Monday)))
+	fmt.Println(string(l.WeekdayWide(time.Tuesday)))
+	// ...
 
-	// There are Full, Long, Medium and Short function for each of the following
-	dtString := "Jan 2, 2006 at 3:04:05pm"
-	dt, _ := time.Parse(dtString, dtString)
+	// Weekdays Abbreviated
+	fmt.Println(string(l.WeekdayAbbreviated(time.Sunday)))
+	fmt.Println(string(l.WeekdayAbbreviated(time.Monday)))
+	fmt.Println(string(l.WeekdayAbbreviated(time.Tuesday)))
+	// ...
 
-	formatted := trans.FmtDateFull(dt)
-	fmt.Println(formatted)
-	// OUTPUT: Monday, January 2, 2006
+	// Weekdays Short
+	fmt.Println(string(l.WeekdayShort(time.Sunday)))
+	fmt.Println(string(l.WeekdayShort(time.Monday)))
+	fmt.Println(string(l.WeekdayShort(time.Tuesday)))
+	// ...
 
-	formatted = trans.FmtDateShort(dt)
-	fmt.Println(formatted)
-	// OUTPUT: 1/2/06
+	// Weekdays Narrow
+	fmt.Println(string(l.WeekdayNarrow(time.Sunday)))
+	fmt.Println(string(l.WeekdayNarrow(time.Monday)))
+	fmt.Println(string(l.WeekdayNarrow(time.Tuesday)))
+	// ...
 
-	formatted = trans.FmtTimeFull(dt)
-	fmt.Println(formatted)
-	// OUTPUT: 3:04:05 PM
+	var f64 float64
 
-	formatted = trans.FmtDateTimeFull(dt)
-	fmt.Println(formatted)
-	// OUTPUT: Monday, January 2, 2006 at 3:04:05 PM
+	f64 = -10356.4523
 
-	formatted = trans.FmtCurrency(ut.CurrencyStandard, "USD", 1234.50)
-	fmt.Println(formatted)
-	// OUTPUT: $1,234.50
+	// Number
+	fmt.Println(string(l.FmtNumber(f64, 2)))
 
-	formatted = trans.FmtCurrency(ut.CurrencyStandard, "USD", -1234.50)
-	fmt.Println(formatted)
-	// OUTPUT: -$1,234.50
+	// Currency
+	fmt.Println(string(l.FmtCurrency(f64, 2, currency.CAD)))
+	fmt.Println(string(l.FmtCurrency(f64, 2, currency.USD)))
 
-	formatted = trans.FmtCurrency(ut.CurrencyAccounting, "USD", -1234.50)
-	fmt.Println(formatted)
-	// OUTPUT: ($1,234.50)
+	// Accounting
+	fmt.Println(string(l.FmtAccounting(f64, 2, currency.CAD)))
+	fmt.Println(string(l.FmtAccounting(f64, 2, currency.USD)))
 
-	formatted = trans.FmtCurrencyWhole(ut.CurrencyStandard, "USD", -1234.50)
-	fmt.Println(formatted)
-	// OUTPUT: -$1,234
+	f64 = 78.12
 
-	formatted = trans.FmtNumber(1234.50)
-	fmt.Println(formatted)
-	// OUTPUT: 1,234.5
+	// Percent
+	fmt.Println(string(l.FmtPercent(f64, 0)))
 
-	formatted = trans.FmtNumberWhole(1234.50)
-	fmt.Println(formatted)
-	// OUTPUT: 1,234
+	// Plural Rules for locale, so you know what rules you must cover
+	fmt.Println(l.PluralsCardinal())
+	fmt.Println(l.PluralsOrdinal())
+
+	// Cardinal Plural Rules
+	fmt.Println(l.CardinalPluralRule(1, 0))
+	fmt.Println(l.CardinalPluralRule(1.0, 0))
+	fmt.Println(l.CardinalPluralRule(1.0, 1))
+	fmt.Println(l.CardinalPluralRule(3, 0))
+
+	// Ordinal Plural Rules
+	fmt.Println(l.OrdinalPluralRule(21, 0)) // 21st
+	fmt.Println(l.OrdinalPluralRule(22, 0)) // 22nd
+	fmt.Println(l.OrdinalPluralRule(33, 0)) // 33rd
+	fmt.Println(l.OrdinalPluralRule(34, 0)) // 34th
+
+	// Range Plural Rules
+	fmt.Println(l.RangePluralRule(1, 0, 1, 0)) // 1-1
+	fmt.Println(l.RangePluralRule(1, 0, 2, 0)) // 1-2
+	fmt.Println(l.RangePluralRule(5, 0, 8, 0)) // 5-8
 }
 ```
 
-Help With Tests
----------------
-To anyone interesting in helping or contributing, I sure could use some help creating tests for each language.
-Please see issue [here](https://github.com/go-playground/universal-translator/issues/1) for details.
-
-Thanks to some help, the following languages have tests:
-
-- [x] en - English US
-- [x] th - Thai thanks to @prideloki
-
-Special Thanks
---------------
-Special thanks to the following libraries that not only inspired, but that I borrowed a bunch of code from to create this.. ultimately there were many changes made and more to come, but without them would have taken forever to just get started.
-* [cldr](https://github.com/theplant/cldr) - A golang i18n tool using CLDR data
-* [i18n](https://github.com/vube/i18n) - golang package for basic i18n features, including message translation and number formatting
-
-Misc
--------
-Library is not at 1.0 yet, but don't forsee any major API changes; will raise to 1.0 once I've used it completely in at least one project without issue.
+License
+------
+Distributed under MIT License, please see license file in code for more details.
