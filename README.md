@@ -1,41 +1,28 @@
-## universal-translator
-<img align="right" src="https://raw.githubusercontent.com/go-playground/universal-translator/master/logo.png">
-![Project status](https://img.shields.io/badge/version-0.9-green.svg)
-[![Build Status](https://semaphoreci.com/api/v1/joeybloggs/universal-translator/branches/master/badge.svg)](https://semaphoreci.com/joeybloggs/universal-translator)
-[![Coverage Status](https://coveralls.io/repos/github/go-playground/universal-translator/badge.svg?branch=master)](https://coveralls.io/github/go-playground/universal-translator?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-playground/universal-translator)](https://goreportcard.com/report/github.com/go-playground/universal-translator)
-[![GoDoc](https://godoc.org/github.com/go-playground/universal-translator?status.svg)](https://godoc.org/github.com/go-playground/universal-translator)
+## locales
+<img align="right" src="https://raw.githubusercontent.com/go-playground/locales/master/logo.png">
+![Project status](https://img.shields.io/badge/version-0.9.0-green.svg)
+[![Build Status](https://semaphoreci.com/api/v1/joeybloggs/locales/branches/master/badge.svg)](https://semaphoreci.com/joeybloggs/locales)
+[![Coverage Status](https://coveralls.io/repos/github/go-playground/locales/badge.svg?branch=master)](https://coveralls.io/github/go-playground/locales?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/go-playground/locales)](https://goreportcard.com/report/github.com/go-playground/locales)
+[![GoDoc](https://godoc.org/github.com/go-playground/locales?status.svg)](https://godoc.org/github.com/go-playground/locales)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
-Universal Translator is an i18n Translator for Go/Golang using CLDR data + pluralization rules
-
-Why another i18n library?
---------------------------
-I noticed that most libraries out there use static files for translations, which I'm not against just there is not option for coding it inline, 
-as well as having formats which do not handle all plural rules, or are overcomplicated. There is also very little in the way of helping the user
-know about what plural translations are needed for each language, no easy grouping to say, display all translations for a page...
+Locales is a set of locales generated from the [Unicode CLDR Project](http://cldr.unicode.org/) which can be used independantly or within
+an i18n package; these were built for use with, but not exclusive to, [Universal Translator](https://github.com/go-playground/universal-translator).
 
 Features
 --------
-- [x] Rules added from [CLDR](http://cldr.unicode.org/index/downloads) data
-- [x] Use fmt.Sprintf() for translation string parsing
-- [x] Add Translations in code
-- [x] Prints the supported plural rules for a given translators locale using translator.PrintPluralRules()
-- [x] Plural Translations
-- [x] Date, Time & DateTime formatting
-- [x] Number, Whole Number formatting
-- [x] Currency both standard & accounting, formatting i.e. -$1,234.50 vs ($1,234.50)
-- [x] Handles BC and AD Dates. i.e. January 2, 300 BC
-- [ ] Support loading translations from files
-- [ ] Exporting translations to file, mainly for getting them professionally translated
-- [ ] Code Generation for translation files -> Go code.. i.e. after it has been professionally translated
-- [ ] Printing of grouped translations, i.e. all transations for the homepage
-- [ ] Tests for all languages, I need help with this one see below
+- [x] Rules added from the latest [CLDR](http://cldr.unicode.org/index/downloads) data, v29
+- [x] Contains Cardinal, Ordinal and Range Plural Rules
+- [x] Contains Month, Weekday and Timezone translations built in
+- [x] Contains Date & Time formatting functions
+- [x] Contains Number, Currency, Accounting and Percent formatting functions
+- [x] Supports the "Gregorian" calendar only ( my time isn't unlimited, had to draw the line somewhere )
 
-Full Language tests
+Full Tests
 --------------------
-I could sure use your help adding tests for every language, it is a huge undertaking and I just don't have the free time to do it all at the moment;
-any help would be **greatly appreciated!!!!** please see [issue](https://github.com/go-playground/universal-translator/issues/1) for details.
+I could sure use your help adding tests for every locale, it is a huge undertaking and I just don't have the free time to do it all at the moment;
+any help would be **greatly appreciated!!!!** please see [issue](https://github.com/go-playground/locales/issues/1) for details.
 
 Installation
 -----------
@@ -43,14 +30,13 @@ Installation
 Use go get 
 
 ```go
-go get github.com/go-playground/universal-translator
-``` 
+go get github.com/go-playground/locales
+```  
 
-or to update
-
-```go
-go get -u github.com/go-playground/universal-translator
-``` 
+NOTES
+--------
+You'll notice most return types are []byte, this is because most of the time the results will be concatenated with a larger body
+of text and can avoid some allocations if already appending to a byte array, otherwise just cast as string.
 
 Usage
 -------

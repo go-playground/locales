@@ -485,8 +485,17 @@ func postProcess(cldr *cldr.CLDR) {
 
 		currencies := make([][]byte, len(globalCurrencies), len(globalCurrencies))
 
+		var kval string
+
+		// add a space for readability for non locale specific currencies eg. -USD<space>10,356.45
 		for k, v := range globCurrencyIdxMap {
-			currencies[v] = []byte(k)
+
+			kval = k
+			if kval[:len(kval)-1] != " " {
+				kval += " "
+			}
+
+			currencies[v] = []byte(kval)
 		}
 
 		// some just have no data...
