@@ -159,6 +159,19 @@ func main() {
 }
 ```
 
+NOTES:
+-------
+These rules were generated from the [Unicode CLDR Project](http://cldr.unicode.org/), if you encounter any issues
+I strongly encourage contributing to the CLDR project to get the locale information corrected and the next time 
+these locales are regenerated the fix will come with.
+
+I do however realize that time constraints are often important and so there are two options:
+
+1. Create your own locale, copy, paste and modify, and ensure it complies with the `Translator` interface.
+2. Add an exception in the locale generation code directly and once regenerated, fix will be in place.
+
+Please to not make fixes inside the locale files, they WILL get overwritten when the locales are regenerated.
+
 License
 ------
 Distributed under MIT License, please see license file in code for more details.
