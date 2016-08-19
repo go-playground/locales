@@ -216,7 +216,12 @@ func main() {
 		log.Panic(err)
 	}
 
+	var locMap string
+
 	for _, trans := range translators {
+
+		locMap += `"` + trans.Locale + `" : ` + trans.Locale + `.New,
+`
 
 		fmt.Println("Writing Data:", trans.Locale)
 
@@ -249,6 +254,37 @@ func main() {
 		if err = cmd.Run(); err != nil {
 			log.Panic(err)
 		}
+	}
+
+	fmt.Println("Writing final locale map")
+
+	if err = os.MkdirAll(fmt.Sprintf(locDir, "locales-list"), 0777); err != nil {
+		log.Fatal(err)
+	}
+
+	filename = fmt.Sprintf(locFilename, "locales-list", "locales")
+
+	output, err = os.Create(filename)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer output.Close()
+
+	if err := tmpl.ExecuteTemplate(output, "localeslist", locMap); err != nil {
+		log.Fatal(err)
+	}
+
+	output.Close()
+
+	// after file written run gofmt on file to ensure best formatting
+	cmd = exec.Command("goimports", "-w", filename)
+	if err = cmd.Run(); err != nil {
+		log.Panic(err)
+	}
+
+	cmd = exec.Command("gofmt", "-s", "-w", filename)
+	if err = cmd.Run(); err != nil {
+		log.Panic(err)
 	}
 }
 
