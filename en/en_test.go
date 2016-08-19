@@ -636,44 +636,63 @@ func TestCurrency(t *testing.T) {
 	tests := []struct {
 		num      float64
 		v        uint64
+		currency currency.Type
 		expected string
 	}{
 		{
 			num:      1123456.5643,
 			v:        2,
+			currency: currency.USD,
 			expected: "$1,123,456.56",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
+			currency: currency.USD,
 			expected: "$1,123,456.60",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
+			currency: currency.USD,
 			expected: "$221,123,456.564",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
+			currency: currency.USD,
 			expected: "-$221,123,456.564",
+		},
+		{
+			num:      -221123456.5643,
+			v:        3,
+			currency: currency.CAD,
+			expected: "-CAD 221,123,456.564",
 		},
 		{
 			num:      0,
 			v:        2,
+			currency: currency.USD,
 			expected: "$0.00",
 		},
 		{
 			num:      -0,
 			v:        2,
+			currency: currency.USD,
 			expected: "$0.00",
+		},
+		{
+			num:      -0,
+			v:        2,
+			currency: currency.CAD,
+			expected: "CAD 0.00",
 		},
 	}
 
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtCurrency(tt.num, tt.v, currency.USD))
+		s := string(trans.FmtCurrency(tt.num, tt.v, tt.currency))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -685,39 +704,57 @@ func TestAccounting(t *testing.T) {
 	tests := []struct {
 		num      float64
 		v        uint64
+		currency currency.Type
 		expected string
 	}{
 		{
 			num:      1123456.5643,
 			v:        2,
+			currency: currency.USD,
 			expected: "$1,123,456.56",
 		},
 		{
 			num:      1123456.5643,
 			v:        1,
+			currency: currency.USD,
 			expected: "$1,123,456.60",
 		},
 		{
 			num:      221123456.5643,
 			v:        3,
+			currency: currency.USD,
 			expected: "$221,123,456.564",
 		},
 		{
 			num:      -221123456.5643,
 			v:        3,
+			currency: currency.USD,
 			expected: "($221,123,456.564)",
+		},
+		{
+			num:      -221123456.5643,
+			v:        3,
+			currency: currency.CAD,
+			expected: "(CAD 221,123,456.564)",
 		},
 		{
 			num:      -0,
 			v:        2,
+			currency: currency.USD,
 			expected: "$0.00",
+		},
+		{
+			num:      -0,
+			v:        2,
+			currency: currency.CAD,
+			expected: "CAD 0.00",
 		},
 	}
 
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtAccounting(tt.num, tt.v, currency.USD))
+		s := string(trans.FmtAccounting(tt.num, tt.v, tt.currency))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
