@@ -58,6 +58,10 @@ type Translator interface {
 	// with this translator
 	PluralsOrdinal() []PluralRule
 
+	// returns an array of range plural rules associated
+	// with this translator
+	PluralsRange() []PluralRule
+
 	// returns the cardinal PluralRule given 'num' and digits/precision of 'v' for locale
 	CardinalPluralRule(num float64, v uint64) PluralRule
 

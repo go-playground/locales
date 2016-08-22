@@ -56,6 +56,7 @@ type translator struct {
 	CardinalFunc   string
 	PluralsOrdinal string
 	OrdinalFunc    string
+	PluralsRange   string
 	RangeFunc      string
 	Decimal        string
 	DecimalLen     int
@@ -312,7 +313,7 @@ func postProcess(cldr *cldr.CLDR) {
 		trans.OrdinalFunc, trans.PluralsOrdinal = parseOrdinalPluralRuleFunc(cldr, trans.BaseLocale)
 
 		// range plural rules
-		trans.RangeFunc = parseRangePluralRuleFunc(cldr, trans.BaseLocale)
+		trans.RangeFunc, trans.PluralsRange = parseRangePluralRuleFunc(cldr, trans.BaseLocale)
 
 		// ignore base locales
 		if trans.BaseLocale == trans.Locale {
@@ -1835,7 +1836,7 @@ func (a ByRank) Less(i, j int) bool { return a[i].Rank < a[j].Rank }
 
 // TODO: refine generated code a bit, some combinations end up with same plural rule,
 // could check all at once; but it works and that's step 1 complete
-func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string) {
+func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
 
 	var pluralRange *struct {
 		cldr.Common
@@ -1847,6 +1848,8 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 			Result string `xml:"result,attr"`
 		} `xml:"pluralRange"`
 	}
+
+	var pluralArr []locales.PluralRule
 
 	for _, pr := range current.Supplemental().Plurals[1].PluralRanges {
 
@@ -1862,6 +1865,7 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 
 	// no range plural rules for locale
 	if pluralRange == nil {
+		plurals = "nil"
 		results = "return locales.PluralRuleUnknown"
 		return
 	}
@@ -1873,8 +1877,14 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 		mp[rule.Result] = struct{}{}
 	}
 
+	for k := range mp {
+		psI := pluralStringToInt(k)
+		pluralArr = append(pluralArr, psI)
+	}
+
 	if len(mp) == 1 {
 		results += "return locales." + pluralStringToString(pluralRange.PluralRange[0].Result)
+		plurals = fmt.Sprintf("%#v", pluralArr)
 		return
 	}
 
@@ -1912,6 +1922,12 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 
 	if multiple {
 		results = "\n" + results + "\n"
+	}
+
+	if len(pluralArr) == 0 {
+		plurals = "nil"
+	} else {
+		plurals = fmt.Sprintf("%#v", pluralArr)
 	}
 
 	return

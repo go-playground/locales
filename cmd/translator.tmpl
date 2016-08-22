@@ -14,6 +14,7 @@ type {{ .Locale }} struct {
 	locale     			   string
 	pluralsCardinal 	   []locales.PluralRule
 	pluralsOrdinal  	   []locales.PluralRule
+	pluralsRange		   []locales.PluralRule
 	decimal    			   []byte
 	group      			   []byte
 	minus      			   []byte
@@ -63,6 +64,7 @@ func New() locales.Translator {
 		locale:   		 "{{ .Locale }}",
 		pluralsCardinal: {{ .Plurals }},
 		pluralsOrdinal:  {{ .PluralsOrdinal }},
+		pluralsRange:    {{ .PluralsRange }},
 		decimal:  		 {{ .Decimal }},
 		group:    		 {{ .Group }},
 		minus:    		 {{ .Minus }},
@@ -152,6 +154,11 @@ func({{ .BaseLocale }} *{{ .Locale }}) PluralsCardinal() []locales.PluralRule {
 // PluralsOrdinal returns the list of ordinal plural rules associated with '{{ .Locale }}'
 func({{ .BaseLocale }} *{{ .Locale }}) PluralsOrdinal() []locales.PluralRule {
 	return {{ .BaseLocale }}.pluralsOrdinal
+}
+
+// PluralsRange returns the list of range plural rules associated with '{{ .Locale }}'
+func({{ .BaseLocale }} *{{ .Locale }}) PluralsRange() []locales.PluralRule {
+	return {{ .BaseLocale }}.pluralsRange
 }
 
 // CardinalPluralRule returns the cardinal PluralRule given 'num' and digits/precision of 'v' for '{{ .Locale }}'
