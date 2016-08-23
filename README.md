@@ -3,7 +3,6 @@
 ![Project status](https://img.shields.io/badge/version-0.9.0-green.svg)
 [![Build Status](https://semaphoreci.com/api/v1/joeybloggs/locales/branches/master/badge.svg)](https://semaphoreci.com/joeybloggs/locales)
 [![Coverage Status](https://coveralls.io/repos/github/go-playground/locales/badge.svg?branch=master)](https://coveralls.io/github/go-playground/locales?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-playground/locales)](https://goreportcard.com/report/github.com/go-playground/locales)
 [![GoDoc](https://godoc.org/github.com/go-playground/locales?status.svg)](https://godoc.org/github.com/go-playground/locales)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
