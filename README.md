@@ -7,7 +7,7 @@
 [![GoDoc](https://godoc.org/github.com/go-playground/locales?status.svg)](https://godoc.org/github.com/go-playground/locales)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
-Locales is a set of locales generated from the [Unicode CLDR Project](http://cldr.unicode.org/) which can be used independantly or within
+Locales is a set of locales generated from the [Unicode CLDR Project](http://cldr.unicode.org/) which can be used independently or within
 an i18n package; these were built for use with, but not exclusive to, [Universal Translator](https://github.com/go-playground/universal-translator).
 
 Features
