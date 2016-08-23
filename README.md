@@ -12,7 +12,7 @@ an i18n package; these were built for use with, but not exclusive to, [Universal
 
 Features
 --------
-- [x] Rules added from the latest [CLDR](http://cldr.unicode.org/index/downloads) data, v29
+- [x] Rules generated from the latest [CLDR](http://cldr.unicode.org/index/downloads) data, v29
 - [x] Contains Cardinal, Ordinal and Range Plural Rules
 - [x] Contains Month, Weekday and Timezone translations built in
 - [x] Contains Date & Time formatting functions
