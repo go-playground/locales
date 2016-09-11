@@ -64,7 +64,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BL", "PB"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Bó Lahlɛ̄", "Pfiɛ Burī"},
-		timezones:              map[string]string{"SAST": "SAST", "AKST": "AKST", "ECT": "ECT", "BOT": "BOT", "UYT": "UYT", "CLST": "CLST", "ChST": "ChST", "GFT": "GFT", "TMST": "TMST", "ACST": "ACST", "CAT": "CAT", "MESZ": "MESZ", "ACDT": "ACDT", "NZDT": "NZDT", "WITA": "WITA", "WARST": "WARST", "PST": "PST", "WEZ": "WEZ", "HADT": "HADT", "EST": "EST", "EDT": "EDT", "HNT": "HNT", "ARST": "ARST", "CHADT": "CHADT", "EAT": "EAT", "HKST": "HKST", "WESZ": "WESZ", "ACWST": "ACWST", "∅∅∅": "∅∅∅", "WIB": "WIB", "OEZ": "OEZ", "WIT": "WIT", "AEST": "AEST", "WART": "WART", "AST": "AST", "HAT": "HAT", "CST": "CST", "ACWDT": "ACWDT", "VET": "VET", "AWDT": "AWDT", "TMT": "TMT", "HAST": "HAST", "JDT": "JDT", "UYST": "UYST", "SRT": "SRT", "MEZ": "MEZ", "AKDT": "AKDT", "LHDT": "LHDT", "COT": "COT", "CLT": "CLT", "WAST": "WAST", "CDT": "CDT", "BT": "BT", "LHST": "LHST", "MST": "MST", "WAT": "WAT", "MYT": "MYT", "GMT": "GMT", "IST": "IST", "MDT": "MDT", "COST": "COST", "AWST": "AWST", "JST": "JST", "NZST": "NZST", "CHAST": "CHAST", "HKT": "HKT", "ART": "ART", "SGT": "SGT", "AEDT": "AEDT", "OESZ": "OESZ", "PDT": "PDT", "GYT": "GYT", "ADT": "ADT"},
+		timezones:              map[string]string{"BOT": "BOT", "CDT": "CDT", "AST": "AST", "HADT": "HADT", "CHADT": "CHADT", "PST": "PST", "∅∅∅": "∅∅∅", "HKST": "HKST", "TMST": "TMST", "MESZ": "MESZ", "WIT": "WIT", "GFT": "GFT", "WAT": "WAT", "AEDT": "AEDT", "SAST": "SAST", "WITA": "WITA", "ART": "ART", "OESZ": "OESZ", "LHDT": "LHDT", "NZST": "NZST", "PDT": "PDT", "MDT": "MDT", "ACWDT": "ACWDT", "MST": "MST", "WAST": "WAST", "COST": "COST", "SGT": "SGT", "AWST": "AWST", "CAT": "CAT", "CLST": "CLST", "CST": "CST", "ARST": "ARST", "UYST": "UYST", "JDT": "JDT", "EST": "EST", "GMT": "GMT", "VET": "VET", "ECT": "ECT", "GYT": "GYT", "AKST": "AKST", "HAST": "HAST", "AWDT": "AWDT", "CHAST": "CHAST", "OEZ": "OEZ", "WEZ": "WEZ", "ACDT": "ACDT", "WIB": "WIB", "TMT": "TMT", "AEST": "AEST", "NZDT": "NZDT", "WESZ": "WESZ", "BT": "BT", "COT": "COT", "ChST": "ChST", "CLT": "CLT", "UYT": "UYT", "SRT": "SRT", "WART": "WART", "IST": "IST", "ACST": "ACST", "HAT": "HAT", "MYT": "MYT", "AKDT": "AKDT", "MEZ": "MEZ", "WARST": "WARST", "ADT": "ADT", "HKT": "HKT", "ACWST": "ACWST", "JST": "JST", "HNT": "HNT", "EDT": "EDT", "LHST": "LHST", "EAT": "EAT"},
 	}
 }
 
@@ -177,7 +177,7 @@ func (nmg *nmg) WeekdaysWide() []string {
 func (nmg *nmg) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(nmg.decimal) + len(nmg.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 1 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -252,7 +252,7 @@ func (nmg *nmg) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nmg.currencies[currency]
-	l := len(s) + len(nmg.decimal) + len(nmg.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -312,7 +312,7 @@ func (nmg *nmg) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nmg.currencies[currency]
-	l := len(s) + len(nmg.decimal) + len(nmg.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 3 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

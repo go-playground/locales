@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"př.Chr.n.", "po Chr.n."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"před Chrystowym narodźenjom", "po Chrystowym narodźenju"},
-		timezones:              map[string]string{"AST": "atlantiski standardny čas", "CST": "sewjeroameriski centralny standardny čas", "WIT": "wuchodoindoneski", "BT": "bhutanski čas", "MYT": "malajziski čas", "PDT": "sewjeroameriski pacifiski lětni čas", "ART": "argentinski standardny čas", "HNT": "nowofundlandski standardny čas", "HKST": "Hongkongski lětni čas", "GFT": "francoskoguyanski čas", "HADT": "hawaiisko-aleutski lětni čas", "JDT": "japanski lětni čas", "UYST": "uruguayski lětni čas", "WAT": "zapadoafriski standardny čas", "AWDT": "zapadoawstralski lětni čas", "HAST": "hawaiisko-aleutski standardny čas", "LHDT": "lětni čas kupy Lord-Howe", "WART": "zapadoargentinski standardny čas", "MST": "MST", "ACWDT": "sjedźozapadny awstralski lětni čas", "EDT": "sewjeroameriski wuchodny lětni čas", "CAT": "centralnoafriski čas", "EST": "sewjeroameriski wuchodny standardny čas", "WESZ": "zapadoeuropski lětni čas", "COT": "kolumbiski standardny čas", "CDT": "sewjeroameriski centralny lětni čas", "SGT": "Singapurski čas", "AEST": "wuchodoawstralski standardny čas", "ARST": "argentinski lětni čas", "MEZ": "srjedźoeuropski standardny čas", "OESZ": "wuchodoeuropski lětni čas", "WARST": "zapadoargentinski lětni čas", "∅∅∅": "Brasiliski lětni čas", "MDT": "MDT", "NZST": "nowoseelandski standardny čas", "HAT": "nowofundlandski lětni čas", "HKT": "Hongkongski standardny čas", "CHAST": "chathamski standardny čas", "LHST": "standardny čas kupy Lord-Howe", "SRT": "surinamski čas", "EAT": "wuchodoafriski čas", "BOT": "boliwiski čas", "ChST": "chamorroski čas", "ACST": "srjedźoawstralski standardny čas", "CHADT": "chathamski lětni čas", "AWST": "zapadoawstralski standardny čas", "NZDT": "nowoseelandski lětni čas", "CLST": "chilski lětni čas", "WITA": "srjedźoindoneski čas", "OEZ": "wuchodoeuropski standardny čas", "WAST": "zapadoafriski lětni čas", "ADT": "atlantiski lětni čas", "AEDT": "wuchodoawstralski lětni čas", "AKST": "alaskaski standardny čas", "AKDT": "alaskaski lětni čas", "SAST": "južnoafriski čas", "COST": "kolumbiski lětni čas", "WEZ": "zapadoeuropski standardny čas", "ACWST": "srjedźozapadny awstralski standardny čas", "UYT": "uruguayski standardny čas", "GYT": "guyanski čas", "IST": "indiski čas", "WIB": "zapadoindoneski čas", "GMT": "Greenwichski čas", "PST": "sewjeroameriski pacifiski standardny čas", "VET": "venezuelski čas", "ACDT": "srjedźoawstralski lětni čas", "TMST": "turkmenski lětni čas", "CLT": "chilski standardny čas", "TMT": "turkmenski standardny čas", "JST": "japanski standardny čas", "ECT": "ekwadorski čas", "MESZ": "srjedźoeuropski lětni čas"},
+		timezones:              map[string]string{"WARST": "zapadoargentinski lětni čas", "BOT": "boliwiski čas", "COST": "kolumbiski lětni čas", "CHADT": "chathamski lětni čas", "AWST": "zapadoawstralski standardny čas", "TMST": "turkmenski lětni čas", "LHDT": "lětni čas kupy Lord-Howe", "ACWDT": "sjedźozapadny awstralski lětni čas", "WART": "zapadoargentinski standardny čas", "JST": "japanski standardny čas", "MST": "MST", "AWDT": "zapadoawstralski lětni čas", "AEST": "wuchodoawstralski standardny čas", "WIT": "wuchodoindoneski", "COT": "kolumbiski standardny čas", "HADT": "hawaiisko-aleutski lětni čas", "WITA": "srjedźoindoneski čas", "ACWST": "srjedźozapadny awstralski standardny čas", "CDT": "sewjeroameriski centralny lětni čas", "AST": "atlantiski standardny čas", "ACDT": "srjedźoawstralski lětni čas", "GYT": "guyanski čas", "WIB": "zapadoindoneski čas", "CAT": "centralnoafriski čas", "VET": "venezuelski čas", "MYT": "malajziski čas", "ADT": "atlantiski lětni čas", "CHAST": "chathamski standardny čas", "SAST": "južnoafriski čas", "OESZ": "wuchodoeuropski lětni čas", "CST": "sewjeroameriski centralny standardny čas", "EST": "sewjeroameriski wuchodny standardny čas", "NZDT": "nowoseelandski lětni čas", "HKST": "Hongkongski lětni čas", "WEZ": "zapadoeuropski standardny čas", "ACST": "srjedźoawstralski standardny čas", "MEZ": "srjedźoeuropski standardny čas", "CLST": "chilski lětni čas", "WAT": "zapadoafriski standardny čas", "WESZ": "zapadoeuropski lětni čas", "ARST": "argentinski lětni čas", "LHST": "standardny čas kupy Lord-Howe", "NZST": "nowoseelandski standardny čas", "PDT": "sewjeroameriski pacifiski lětni čas", "MESZ": "srjedźoeuropski lětni čas", "∅∅∅": "acorski lětni čas", "EDT": "sewjeroameriski wuchodny lětni čas", "AEDT": "wuchodoawstralski lětni čas", "CLT": "chilski standardny čas", "IST": "indiski čas", "HNT": "nowofundlandski standardny čas", "MDT": "MDT", "ChST": "chamorroski čas", "SGT": "Singapurski čas", "BT": "bhutanski čas", "SRT": "surinamski čas", "EAT": "wuchodoafriski čas", "HAT": "nowofundlandski lětni čas", "HKT": "Hongkongski standardny čas", "TMT": "turkmenski standardny čas", "OEZ": "wuchodoeuropski standardny čas", "ECT": "ekwadorski čas", "ART": "argentinski standardny čas", "PST": "sewjeroameriski pacifiski standardny čas", "GMT": "Greenwichski čas", "UYST": "uruguayski lětni čas", "WAST": "zapadoafriski lětni čas", "GFT": "francoskoguyanski čas", "JDT": "japanski lětni čas", "AKST": "alaskaski standardny čas", "AKDT": "alaskaski lětni čas", "HAST": "hawaiisko-aleutski standardny čas", "UYT": "uruguayski standardny čas"},
 	}
 }
 
@@ -201,7 +201,7 @@ func (hsb *hsb) WeekdaysWide() []string {
 func (hsb *hsb) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(hsb.decimal) + len(hsb.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -276,7 +276,7 @@ func (hsb *hsb) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hsb.currencies[currency]
-	l := len(s) + len(hsb.decimal) + len(hsb.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -334,7 +334,7 @@ func (hsb *hsb) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hsb.currencies[currency]
-	l := len(s) + len(hsb.decimal) + len(hsb.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

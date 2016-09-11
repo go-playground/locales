@@ -66,7 +66,7 @@ func New() locales.Translator {
 		daysAbbreviated:        []string{"ýb", "db", "sb", "çb", "pb", "an", "şb"},
 		daysNarrow:             []string{"Ý", "D", "S", "Ç", "P", "A", "Ş"},
 		daysWide:               []string{"ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"},
-		timezones:              map[string]string{"CHADT": "Çatem, tomusky wagt", "JDT": "Ýaponiýa, tomusky wagt", "WEZ": "Günbatar Ýewropa, standart wagt", "MDT": "Daglyk ýeri, tomusky wagt (ABŞ)", "WAT": "Günbatar Afrika, standart wagt", "ARST": "Argentina, tomusky wagt", "SRT": "Surinam", "ChST": "Çamorro", "MEZ": "Merkezi Ýewropa, standart wagt", "HKT": "Gonkong, standart wagt", "CLST": "Çili, tomusky wagt", "SAST": "Günorta Afrika, standart wagt", "IST": "Hindistan", "ECT": "Ekwador", "LHDT": "Lord-Hau, tomusky wagt", "GYT": "Gaýana", "VET": "Wenesuela", "ADT": "Atlantika, tomusky wagt", "ART": "Argentina, standart wagt", "TMT": "Türkmenistan, standart wagt", "AEDT": "Gündogar Awstraliýa, tomusky wagt", "MYT": "Malaýziýa", "MST": "Daglyk ýeri, standart wagt (ABŞ)", "AEST": "Gündogar Awstraliýa, standart wagt", "EST": "Günorta Amerika, standart wagt", "NZST": "Täze Zelandiýa, standart wagt", "OESZ": "Gündogar Ýewropa, tomusky wagt", "BOT": "Boliwiýa", "∅∅∅": "∅∅∅", "HAT": "Nýufaundlend, tomusky wagt", "ACWST": "Merkezi Awstraliýa, günbatar tarap, standart wagt", "HKST": "Gonkong, tomusky wagt", "WIT": "Gündogar Indoneziýa", "GFT": "Fransuz Gwiana", "PST": "Ýuwaş umman, standart wagt", "EAT": "Gündogar Afrika", "WAST": "Günbatar Afrika, tomusky wagt", "CST": "Merkezi Amerika, standart wagt", "MESZ": "Merkezi Ýewropa, tomusky wagt", "HADT": "Gawaý-Aleut, tomusky wagt", "LHST": "Lord-Hau, standart wagt", "WART": "Günbatar Argentina, standart wagt", "ACDT": "Merkezi Awstraliýa, tomusky wagt", "HNT": "Nýufaundlend, standart wagt", "WITA": "Merkezi Indoneziýa", "BT": "Butan", "ACWDT": "Merkezi Awstraliýa, günbatar tarap, tomusky wagt", "AST": "Atlantika, standart wagt", "AWST": "Günbatar Awstraliýa, standart wagt", "TMST": "Türkmenistan, tomusky wagt", "CDT": "Merkezi Amerika, tomusky wagt", "OEZ": "Gündogar Ýewropa, standart wagt", "UYT": "Urugwaý, standart wagt", "UYST": "Urugwaý, tomusky wagt", "COT": "Kolumbiýa, standart wagt", "COST": "Kolumbiýa, tomusky wagt", "CAT": "Merkezi Afrika", "WARST": "Günbatar Argentina, tomusky wagt", "CHAST": "Çatem, standart wagt", "WIB": "Günbatar Indoneziýa", "AKDT": "Alýaska, tomusky wagt", "EDT": "Günorta Amerika, tomusky wagt", "PDT": "Ýuwaş umman, tomusky wagt", "NZDT": "Täze Zelandiýa, tomusky wagt", "SGT": "Singapur, standart wagt", "AKST": "Alýaska, standart wagt", "JST": "Ýaponiýa, standart wagt", "WESZ": "Günbatar Ýewropa, tomusky wagt", "AWDT": "Günbatar Awstraliýa, tomusky wagt", "CLT": "Çili, standart wagt", "HAST": "Gawaý-Aleut, standart wagt", "ACST": "Merkezi Awstraliýa, standart wagt", "GMT": "Grinwiç boýunça orta wagt"},
+		timezones:              map[string]string{"ACWST": "Merkezi Awstraliýa, günbatar tarap, standart wagt", "CHAST": "Çatem, standart wagt", "EDT": "Günorta Amerika, tomusky wagt", "NZDT": "Täze Zelandiýa, tomusky wagt", "MYT": "Malaýziýa", "AKST": "Alýaska, standart wagt", "AWST": "Günbatar Awstraliýa, standart wagt", "ChST": "Çamorro", "WIT": "Gündogar Indoneziýa", "MEZ": "Merkezi Ýewropa, standart wagt", "SRT": "Surinam", "WAT": "Günbatar Afrika, standart wagt", "CDT": "Merkezi Amerika, tomusky wagt", "AWDT": "Günbatar Awstraliýa, tomusky wagt", "SAST": "Günorta Afrika, standart wagt", "PST": "Ýuwaş umman, standart wagt", "BT": "Butan", "WITA": "Merkezi Indoneziýa", "WAST": "Günbatar Afrika, tomusky wagt", "AKDT": "Alýaska, tomusky wagt", "WIB": "Günbatar Indoneziýa", "ACWDT": "Merkezi Awstraliýa, günbatar tarap, tomusky wagt", "WARST": "Günbatar Argentina, tomusky wagt", "CST": "Merkezi Amerika, standart wagt", "ARST": "Argentina, tomusky wagt", "LHDT": "Lord-Hau, tomusky wagt", "CLST": "Çili, tomusky wagt", "MESZ": "Merkezi Ýewropa, tomusky wagt", "GMT": "Grinwiç boýunça orta wagt", "ACST": "Merkezi Awstraliýa, standart wagt", "EST": "Günorta Amerika, standart wagt", "HADT": "Gawaý-Aleut, tomusky wagt", "OEZ": "Gündogar Ýewropa, standart wagt", "WART": "Günbatar Argentina, standart wagt", "CHADT": "Çatem, tomusky wagt", "LHST": "Lord-Hau, standart wagt", "NZST": "Täze Zelandiýa, standart wagt", "JST": "Ýaponiýa, standart wagt", "JDT": "Ýaponiýa, tomusky wagt", "CAT": "Merkezi Afrika", "UYST": "Urugwaý, tomusky wagt", "EAT": "Gündogar Afrika", "CLT": "Çili, standart wagt", "HAT": "Nýufaundlend, tomusky wagt", "ART": "Argentina, standart wagt", "MDT": "MDT", "AEDT": "Gündogar Awstraliýa, tomusky wagt", "GFT": "Fransuz Gwiana", "COST": "Kolumbiýa, tomusky wagt", "SGT": "Singapur, standart wagt", "MST": "MST", "OESZ": "Gündogar Ýewropa, tomusky wagt", "BOT": "Boliwiýa", "VET": "Wenesuela", "HKT": "Gonkong, standart wagt", "AEST": "Gündogar Awstraliýa, standart wagt", "UYT": "Urugwaý, standart wagt", "TMT": "Türkmenistan, standart wagt", "GYT": "Gaýana", "AST": "Atlantika, standart wagt", "HNT": "Nýufaundlend, standart wagt", "WEZ": "Günbatar Ýewropa, standart wagt", "ECT": "Ekwador", "IST": "Hindistan", "PDT": "Ýuwaş umman, tomusky wagt", "WESZ": "Günbatar Ýewropa, tomusky wagt", "ACDT": "Merkezi Awstraliýa, tomusky wagt", "HAST": "Gawaý-Aleut, standart wagt", "HKST": "Gonkong, tomusky wagt", "TMST": "Türkmenistan, tomusky wagt", "∅∅∅": "Amazonka, tomusky wagt", "COT": "Kolumbiýa, standart wagt", "ADT": "Atlantika, tomusky wagt"},
 	}
 }
 
@@ -186,7 +186,7 @@ func (tk *tk) WeekdaysWide() []string {
 func (tk *tk) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(tk.decimal) + len(tk.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -263,7 +263,7 @@ func (tk *tk) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
-	l := len(s) + len(tk.decimal) + len(tk.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -323,7 +323,7 @@ func (tk *tk) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
-	l := len(s) + len(tk.decimal) + len(tk.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

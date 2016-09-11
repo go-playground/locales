@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"紀元前", "西暦"},
 		erasNarrow:             []string{"BC", "AD"},
 		erasWide:               []string{"紀元前", "西暦"},
-		timezones:              map[string]string{"TMST": "トルクメニスタン夏時間", "JST": "日本標準時", "SAST": "南アフリカ標準時", "BT": "ブータン時間", "LHST": "ロードハウ標準時", "EAT": "東アフリカ時間", "WAT": "西アフリカ標準時", "COT": "コロンビア標準時", "HAST": "ハワイ・アリューシャン標準時", "OEZ": "東ヨーロッパ標準時", "EST": "アメリカ東部標準時", "CHAST": "チャタム標準時", "CLT": "チリ標準時", "MST": "マカオ標準時", "AKDT": "アラスカ夏時間", "∅∅∅": "ブラジリア夏時間", "HAT": "ニューファンドランド夏時間", "NZST": "ニュージーランド標準時", "WART": "西部アルゼンチン標準時", "PDT": "アメリカ太平洋夏時間", "VET": "ベネズエラ時間", "AWST": "オーストラリア西部標準時", "CST": "アメリカ中部標準時", "CDT": "アメリカ中部夏時間", "JDT": "日本夏時間", "LHDT": "ロードハウ夏時間", "PST": "アメリカ太平洋標準時", "WAST": "西アフリカ夏時間", "MESZ": "中央ヨーロッパ夏時間", "CAT": "中央アフリカ時間", "CHADT": "チャタム夏時間", "WIT": "インドネシア東部時間", "SRT": "スリナム時間", "AST": "大西洋標準時", "NZDT": "ニュージーランド夏時間", "HKST": "香港夏時間", "ECT": "エクアドル時間", "GMT": "グリニッジ標準時", "MYT": "マレーシア時間", "ARST": "アルゼンチン夏時間", "MEZ": "中央ヨーロッパ標準時", "MDT": "マカオ夏時間", "GYT": "ガイアナ時間", "HNT": "ニューファンドランド標準時", "HADT": "ハワイ・アリューシャン夏時間", "AKST": "アラスカ標準時", "UYST": "ウルグアイ夏時間", "ACST": "オーストラリア中部標準時", "AWDT": "オーストラリア西部夏時間", "TMT": "トルクメニスタン標準時", "ACWDT": "オーストラリア中西部夏時間", "HKT": "香港標準時", "WIB": "インドネシア西部時間", "ACDT": "オーストラリア中部夏時間", "ChST": "チャモロ時間", "AEDT": "オーストラリア東部夏時間", "BOT": "ボリビア時間", "ACWST": "オーストラリア中西部標準時", "OESZ": "東ヨーロッパ夏時間", "WARST": "西部アルゼンチン夏時間", "UYT": "ウルグアイ標準時", "WEZ": "西ヨーロッパ標準時", "COST": "コロンビア夏時間", "ADT": "大西洋夏時間", "WITA": "インドネシア中部時間", "SGT": "シンガポール標準時", "GFT": "仏領ギアナ時間", "EDT": "アメリカ東部夏時間", "IST": "インド標準時", "WESZ": "西ヨーロッパ夏時間", "ART": "アルゼンチン標準時", "CLST": "チリ夏時間", "AEST": "オーストラリア東部標準時"},
+		timezones:              map[string]string{"WAT": "西アフリカ標準時", "WESZ": "西ヨーロッパ夏時間", "EDT": "アメリカ東部夏時間", "HKT": "香港標準時", "UYT": "ウルグアイ標準時", "MYT": "マレーシア時間", "AWDT": "オーストラリア西部夏時間", "TMST": "トルクメニスタン夏時間", "PST": "アメリカ太平洋標準時", "WAST": "西アフリカ夏時間", "ECT": "エクアドル時間", "∅∅∅": "ペルー夏時間", "ARST": "アルゼンチン夏時間", "HAST": "ハワイ・アリューシャン標準時", "IST": "インド標準時", "EST": "アメリカ東部標準時", "HKST": "香港夏時間", "PDT": "アメリカ太平洋夏時間", "SAST": "南アフリカ標準時", "AEDT": "オーストラリア東部夏時間", "NZDT": "ニュージーランド夏時間", "AWST": "オーストラリア西部標準時", "TMT": "トルクメニスタン標準時", "ChST": "チャモロ時間", "WITA": "インドネシア中部時間", "MST": "アメリカ山地標準時", "CST": "アメリカ中部標準時", "CDT": "アメリカ中部夏時間", "AST": "大西洋標準時", "LHDT": "ロードハウ夏時間", "NZST": "ニュージーランド標準時", "JST": "日本標準時", "OESZ": "東ヨーロッパ夏時間", "BT": "ブータン時間", "ACST": "オーストラリア中部標準時", "AEST": "オーストラリア東部標準時", "SRT": "スリナム時間", "MDT": "アメリカ山地夏時間", "VET": "ベネズエラ時間", "COST": "コロンビア夏時間", "HAT": "ニューファンドランド夏時間", "EAT": "東アフリカ時間", "ACWST": "オーストラリア中西部標準時", "WART": "西部アルゼンチン標準時", "CLT": "チリ標準時", "GFT": "仏領ギアナ時間", "GYT": "ガイアナ時間", "GMT": "グリニッジ標準時", "ADT": "大西洋夏時間", "WIB": "インドネシア西部時間", "CHAST": "チャタム標準時", "MEZ": "中央ヨーロッパ標準時", "WIT": "インドネシア東部時間", "CLST": "チリ夏時間", "HNT": "ニューファンドランド標準時", "ART": "アルゼンチン標準時", "OEZ": "東ヨーロッパ標準時", "SGT": "シンガポール標準時", "HADT": "ハワイ・アリューシャン夏時間", "CAT": "中央アフリカ時間", "MESZ": "中央ヨーロッパ夏時間", "ACWDT": "オーストラリア中西部夏時間", "WARST": "西部アルゼンチン夏時間", "BOT": "ボリビア時間", "COT": "コロンビア標準時", "WEZ": "西ヨーロッパ標準時", "AKST": "アラスカ標準時", "AKDT": "アラスカ夏時間", "ACDT": "オーストラリア中部夏時間", "UYST": "ウルグアイ夏時間", "JDT": "日本夏時間", "CHADT": "チャタム夏時間", "LHST": "ロードハウ標準時"},
 	}
 }
 
@@ -184,7 +184,7 @@ func (ja *ja) WeekdaysWide() []string {
 func (ja *ja) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(ja.decimal) + len(ja.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -257,7 +257,7 @@ func (ja *ja) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ja.currencies[currency]
-	l := len(s) + len(ja.decimal) + len(ja.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -315,7 +315,7 @@ func (ja *ja) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ja.currencies[currency]
-	l := len(s) + len(ja.decimal) + len(ja.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

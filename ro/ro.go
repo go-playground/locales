@@ -75,7 +75,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"î.Hr.", "d.Hr."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"înainte de Hristos", "după Hristos"},
-		timezones:              map[string]string{"ART": "Ora standard a Argentinei", "HAT": "Ora de vară din Newfoundland", "WIT": "Ora Indoneziei de Est", "ARST": "Ora de vară a Argentinei", "CHAST": "Ora standard din Chatham", "TMST": "Ora de vară din Turkmenistan", "HAST": "Ora standard din Hawaii-Aleutine", "AEST": "Ora standard a Australiei Orientale", "JST": "Ora standard a Japoniei", "LHDT": "Ora de vară din Lord Howe", "MST": "Ora standard în zona montană nord-americană", "MDT": "Ora de vară în zona montană nord-americană", "AWST": "Ora standard a Australiei Occidentale", "CLT": "Ora standard din Chile", "WIB": "Ora Indoneziei de Vest", "GMT": "Ora de Greenwhich", "WART": "Ora standard a Argentinei Occidentale", "BOT": "Ora Boliviei", "MESZ": "Ora de vară a Europei Centrale", "HNT": "Ora standard din Newfoundland", "HKT": "Ora standard din Hong Kong", "HKST": "Ora de vară din Hong Kong", "CST": "Ora standard centrală nord-americană", "∅∅∅": "Ora de vară a Amazonului", "ACWDT": "Ora de vară a Australiei Central Occidentale", "WAST": "Ora de vară a Africii Occidentale", "NZDT": "Ora de vară a Noii Zeelande", "GFT": "Ora Guianei Franceze", "EDT": "Ora de vară orientală nord-americană", "PDT": "Ora de vară în zona Pacific nord-americană", "ACWST": "Ora standard a Australiei Central Occidentale", "WAT": "Ora standard a Africii Occidentale", "CHADT": "Ora de vară din Chatham", "AEDT": "Ora de vară a Australiei Orientale", "EST": "Ora standard orientală nord-americană", "PST": "Ora standard în zona Pacific nord-americană", "ADT": "Ora de vară în zona Atlantic nord-americană", "AKDT": "Ora de vară din Alaska", "IST": "Ora Indiei", "AST": "Ora standard în zona Atlantic nord-americană", "CAT": "Ora Africii Centrale", "COT": "Ora standard a Columbiei", "COST": "Ora de vară a Columbiei", "HADT": "Ora de vară din Hawaii-Aleutine", "WARST": "Ora de vară a Argentinei Occidentale", "LHST": "Ora standard din Lord Howe", "VET": "Ora Venezuelei", "CDT": "Ora de vară centrală nord-americană", "OESZ": "Ora de vară a Europei de Est", "JDT": "Ora de vară a Japoniei", "UYST": "Ora de vară a Uruguayului", "EAT": "Ora Africii Orientale", "WESZ": "Ora de vară a Europei de Vest", "GYT": "Ora din Guyana", "MEZ": "Ora standard a Europei Centrale", "TMT": "Ora standard din Turkmenistan", "AKST": "Ora standard din Alaska", "OEZ": "Ora standard a Europei de Est", "ACST": "Ora standard a Australiei Centrale", "CLST": "Ora de vară din Chile", "SGT": "Ora din Singapore", "ECT": "Ora Ecuadorului", "BT": "Ora Bhutanului", "AWDT": "Ora de vară a Australiei Occidentale", "NZST": "Ora standard a Noii Zeelande", "ChST": "Ora din Chamorro", "UYT": "Ora standard a Uruguayului", "WEZ": "Ora standard a Europei de Vest", "SRT": "Ora Surinamului", "ACDT": "Ora de vară a Australiei Centrale", "WITA": "Ora Indoneziei Centrale", "SAST": "Ora Africii Meridionale", "MYT": "Ora din Malaysia"},
+		timezones:              map[string]string{"MDT": "Ora de vară în zona montană nord-americană", "PST": "Ora standard în zona Pacific nord-americană", "SRT": "Ora Surinamului", "WART": "Ora standard a Argentinei Occidentale", "VET": "Ora Venezuelei", "COT": "Ora standard a Columbiei", "JST": "Ora standard a Japoniei", "EST": "Ora standard orientală nord-americană", "WITA": "Ora Indoneziei Centrale", "MST": "Ora standard în zona montană nord-americană", "ART": "Ora standard a Argentinei", "WIB": "Ora Indoneziei de Vest", "OEZ": "Ora standard a Europei de Est", "BT": "Ora Bhutanului", "WAT": "Ora standard a Africii Occidentale", "ECT": "Ora Ecuadorului", "HAST": "Ora standard din Hawaii-Aleutine", "AEST": "Ora standard a Australiei Orientale", "CAT": "Ora Africii Centrale", "UYST": "Ora de vară a Uruguayului", "WARST": "Ora de vară a Argentinei Occidentale", "CLST": "Ora de vară din Chile", "AKDT": "Ora de vară din Alaska", "GMT": "Ora de Greenwhich", "∅∅∅": "Ora de vară din Peru", "TMT": "Ora standard din Turkmenistan", "SAST": "Ora Africii Meridionale", "NZDT": "Ora de vară a Noii Zeelande", "WESZ": "Ora de vară a Europei de Vest", "CDT": "Ora de vară centrală nord-americană", "SGT": "Ora din Singapore", "AKST": "Ora standard din Alaska", "HKST": "Ora de vară din Hong Kong", "NZST": "Ora standard a Noii Zeelande", "WAST": "Ora de vară a Africii Occidentale", "ACST": "Ora standard a Australiei Centrale", "HNT": "Ora standard din Newfoundland", "EDT": "Ora de vară orientală nord-americană", "OESZ": "Ora de vară a Europei de Est", "ACWDT": "Ora de vară a Australiei Central Occidentale", "GYT": "Ora din Guyana", "AWST": "Ora standard a Australiei Occidentale", "PDT": "Ora de vară în zona Pacific nord-americană", "MESZ": "Ora de vară a Europei Centrale", "IST": "Ora Indiei", "ADT": "Ora de vară în zona Atlantic nord-americană", "HAT": "Ora de vară din Newfoundland", "HKT": "Ora standard din Hong Kong", "CHADT": "Ora de vară din Chatham", "LHST": "Ora standard din Lord Howe", "TMST": "Ora de vară din Turkmenistan", "AEDT": "Ora de vară a Australiei Orientale", "WIT": "Ora Indoneziei de Est", "ACWST": "Ora standard a Australiei Central Occidentale", "BOT": "Ora Boliviei", "CST": "Ora standard centrală nord-americană", "HADT": "Ora de vară din Hawaii-Aleutine", "AWDT": "Ora de vară a Australiei Occidentale", "GFT": "Ora Guianei Franceze", "COST": "Ora de vară a Columbiei", "AST": "Ora standard în zona Atlantic nord-americană", "MYT": "Ora din Malaysia", "CLT": "Ora standard din Chile", "ARST": "Ora de vară a Argentinei", "CHAST": "Ora standard din Chatham", "UYT": "Ora standard a Uruguayului", "LHDT": "Ora de vară din Lord Howe", "MEZ": "Ora standard a Europei Centrale", "ChST": "Ora din Chamorro", "EAT": "Ora Africii Orientale", "JDT": "Ora de vară a Japoniei", "ACDT": "Ora de vară a Australiei Centrale", "WEZ": "Ora standard a Europei de Vest"},
 	}
 }
 
@@ -225,7 +225,7 @@ func (ro *ro) WeekdaysWide() []string {
 func (ro *ro) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(ro.decimal) + len(ro.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -300,7 +300,7 @@ func (ro *ro) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ro.currencies[currency]
-	l := len(s) + len(ro.decimal) + len(ro.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -358,7 +358,7 @@ func (ro *ro) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ro.currencies[currency]
-	l := len(s) + len(ro.decimal) + len(ro.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

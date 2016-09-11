@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"", ""},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"LHDT": "Lord-Xau yozgi vaqti", "NZDT": "Yangi Zelandiya yozgi vaqti", "CAT": "Markaziy Afrika vaqti", "OEZ": "Sharqiy Yevropa standart vaqti", "HAT": "Nyufaundlend yozgi vaqti", "HKST": "Gonkong yozgi vaqti", "PST": "Shimoliy Amerika Tinch okeani standart vaqti", "WART": "Gʻarbiy Argentina standart vaqti", "COST": "Kolumbiya yozgi vaqti", "IST": "Hindiston vaqti", "LHST": "Lord-Xau standart vaqti", "ARST": "Argentina yozgi vaqti", "CLT": "Chili standart vaqti", "WITA": "Markaziy Indoneziya vaqti", "GMT": "Grinvich o‘rtacha vaqti", "ACWDT": "Markaziy Avstraliya g‘arbiy yozgi vaqti", "MYT": "Malayziya vaqti", "CLST": "Chili yozgi vaqti", "AKDT": "Alyaska yozgi vaqti", "EAT": "Sharqiy Afrika vaqti", "HNT": "Nyufaundlend standart vaqti", "HKT": "Gonkong standart vaqti", "ECT": "Ekvador vaqti", "AKST": "Alyaska standart vaqti", "EDT": "Sharqiy Amerika yozgi vaqti", "ACDT": "Markaziy Avstraliya yozgi vaqti", "ART": "Argentina standart vaqti", "MEZ": "Markaziy Yevropa standart vaqti", "WIT": "Sharqiy Indoneziya vaqti", "GFT": "Fransuz Gvianasi vaqti", "SRT": "Surinam vaqti", "WAT": "Gʻarbiy Afrika standart vaqti", "WAST": "Gʻarbiy Afrika yozgi vaqti", "CHAST": "Chatem standart vaqti", "WESZ": "G‘arbiy Yevropa yozgi vaqti", "SAST": "Janubiy Afrika standart vaqti", "EST": "Sharqiy Amerika standart vaqti", "ACWST": "Markaziy Avstraliya g‘arbiy standart vaqti", "UYST": "Urugvay yozgi vaqti", "AWST": "G‘arbiy Avstraliya standart vaqti", "NZST": "Yangi Zelandiya standart vaqti", "WIB": "Gʻarbiy Indoneziya vaqti", "HADT": "Gavayi-aleut yozgi vaqti", "JST": "Yaponiya standart vaqti", "JDT": "Yaponiya yozgi vaqti", "WARST": "Gʻarbiy Argentina yozgi vaqti", "PDT": "Shimoliy Amerika Tinch okeani yozgi vaqti", "ACST": "Markaziy Avstraliya standart vaqti", "HAST": "Gavayi-aleut standart vaqti", "MST": "Shimoliy Amerika togʻ standart vaqti", "TMT": "Turkmaniston standart vaqti", "ChST": "Chamorro standart vaqti", "VET": "Venesuela vaqti", "ADT": "Atlantika yozgi vaqti", "MESZ": "Markaziy Yevropa yozgi vaqti", "AEDT": "Sharqiy Avstraliya yozgi vaqti", "SGT": "Singapur vaqti", "WEZ": "G‘arbiy Yevropa standart vaqti", "BOT": "Boliviya vaqti", "GYT": "Gayana vaqti", "AWDT": "G‘arbiy Avstraliya yozgi vaqti", "COT": "Kolumbiya standart vaqti", "CDT": "Markaziy Amerika yozgi vaqti", "OESZ": "Sharqiy Yevropa yozgi vaqti", "AST": "Atlantika standart vaqti", "CST": "Markaziy Amerika standart vaqti", "CHADT": "Chatem yozgi vaqti", "MDT": "Shimoliy Amerika togʻ yozgi vaqti", "∅∅∅": "Amazonka yozgi vaqti", "BT": "Butan vaqti", "UYT": "Urugvay standart vaqti", "TMST": "Turkmaniston yozgi vaqti", "AEST": "Sharqiy Avstraliya standart vaqti"},
+		timezones:              map[string]string{"PST": "Shimoliy Amerika Tinch okeani standart vaqti", "GMT": "Grinvich o‘rtacha vaqti", "SRT": "Surinam vaqti", "WIT": "Sharqiy Indoneziya vaqti", "MST": "Shimoliy Amerika togʻ standart vaqti", "CST": "Markaziy Amerika standart vaqti", "WAT": "Gʻarbiy Afrika standart vaqti", "VET": "Venesuela vaqti", "AEDT": "Sharqiy Avstraliya yozgi vaqti", "ACST": "Markaziy Avstraliya standart vaqti", "HKST": "Gonkong yozgi vaqti", "OEZ": "Sharqiy Yevropa standart vaqti", "UYT": "Urugvay standart vaqti", "BT": "Butan vaqti", "WITA": "Markaziy Indoneziya vaqti", "ACWDT": "Markaziy Avstraliya g‘arbiy yozgi vaqti", "ECT": "Ekvador vaqti", "CLT": "Chili standart vaqti", "BOT": "Boliviya vaqti", "GFT": "Fransuz Gvianasi vaqti", "∅∅∅": "Azor orollari yozgi vaqti", "TMST": "Turkmaniston yozgi vaqti", "CLST": "Chili yozgi vaqti", "ACWST": "Markaziy Avstraliya g‘arbiy standart vaqti", "AST": "Atlantika standart vaqti", "CHAST": "Chatem standart vaqti", "WIB": "Gʻarbiy Indoneziya vaqti", "LHST": "Lord-Xau standart vaqti", "MEZ": "Markaziy Yevropa standart vaqti", "WARST": "Gʻarbiy Argentina yozgi vaqti", "WEZ": "G‘arbiy Yevropa standart vaqti", "MYT": "Malayziya vaqti", "SGT": "Singapur vaqti", "ARST": "Argentina yozgi vaqti", "TMT": "Turkmaniston standart vaqti", "NZDT": "Yangi Zelandiya yozgi vaqti", "WAST": "Gʻarbiy Afrika yozgi vaqti", "IST": "Hindiston vaqti", "CDT": "Markaziy Amerika yozgi vaqti", "JDT": "Yaponiya yozgi vaqti", "ADT": "Atlantika yozgi vaqti", "SAST": "Janubiy Afrika standart vaqti", "LHDT": "Lord-Xau yozgi vaqti", "MESZ": "Markaziy Yevropa yozgi vaqti", "COST": "Kolumbiya yozgi vaqti", "JST": "Yaponiya standart vaqti", "AKDT": "Alyaska yozgi vaqti", "AWDT": "G‘arbiy Avstraliya yozgi vaqti", "MDT": "Shimoliy Amerika togʻ yozgi vaqti", "COT": "Kolumbiya standart vaqti", "EDT": "Sharqiy Amerika yozgi vaqti", "EAT": "Sharqiy Afrika vaqti", "AKST": "Alyaska standart vaqti", "EST": "Sharqiy Amerika standart vaqti", "AWST": "G‘arbiy Avstraliya standart vaqti", "WESZ": "G‘arbiy Yevropa yozgi vaqti", "ACDT": "Markaziy Avstraliya yozgi vaqti", "OESZ": "Sharqiy Yevropa yozgi vaqti", "HNT": "Nyufaundlend standart vaqti", "HAT": "Nyufaundlend yozgi vaqti", "GYT": "Gayana vaqti", "CHADT": "Chatem yozgi vaqti", "NZST": "Yangi Zelandiya standart vaqti", "PDT": "Shimoliy Amerika Tinch okeani yozgi vaqti", "ChST": "Chamorro standart vaqti", "ART": "Argentina standart vaqti", "HADT": "Gavayi-aleut yozgi vaqti", "AEST": "Sharqiy Avstraliya standart vaqti", "CAT": "Markaziy Afrika vaqti", "UYST": "Urugvay yozgi vaqti", "WART": "Gʻarbiy Argentina standart vaqti", "HAST": "Gavayi-aleut standart vaqti", "HKT": "Gonkong standart vaqti"},
 	}
 }
 
@@ -202,7 +202,7 @@ func (uz *uz_Cyrl_UZ) WeekdaysWide() []string {
 func (uz *uz_Cyrl_UZ) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(uz.decimal) + len(uz.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 3 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -281,7 +281,7 @@ func (uz *uz_Cyrl_UZ) FmtCurrency(num float64, v uint64, currency currency.Type)
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := uz.currencies[currency]
-	l := len(s) + len(uz.decimal) + len(uz.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 5 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -347,7 +347,7 @@ func (uz *uz_Cyrl_UZ) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := uz.currencies[currency]
-	l := len(s) + len(uz.decimal) + len(uz.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 5 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

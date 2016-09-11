@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"o.Kr.", "m.Kr."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ovdal Kristtusa", "maŋŋel Kristtusa"},
-		timezones:              map[string]string{"HAST": "HAST", "ECT": "ECT", "SRT": "SRT", "ACST": "ACST", "WAST": "WAST", "AST": "AST", "HKT": "HKT", "WESZ": "oarje-Eurohpá geassiáigi", "ChST": "ChST", "CAT": "CAT", "CDT": "CDT", "HKST": "HKST", "LHDT": "LHDT", "MDT": "MDT", "EAT": "EAT", "NZST": "NZST", "NZDT": "NZDT", "PDT": "PDT", "COT": "COT", "ART": "ART", "MST": "MST", "CHAST": "CHAST", "AEDT": "AEDT", "WART": "WART", "GYT": "GYT", "CLT": "CLT", "HADT": "HADT", "AEST": "AEST", "BT": "BT", "UYST": "UYST", "ACWST": "ACWST", "CLST": "CLST", "WIT": "WIT", "JST": "JST", "ARST": "ARST", "IST": "IST", "SAST": "SAST", "EDT": "EDT", "WITA": "WITA", "AKST": "AKST", "GMT": "Greenwich gaskka áigi", "OEZ": "nuorti-Eurohpá dábálašáigi", "JDT": "JDT", "VET": "VET", "HNT": "HNT", "MESZ": "gaska-Eurohpá geassiáigi", "TMST": "TMST", "GFT": "GFT", "CHADT": "CHADT", "TMT": "TMT", "AKDT": "AKDT", "∅∅∅": "∅∅∅", "ACDT": "ACDT", "WAT": "WAT", "COST": "COST", "HAT": "HAT", "OESZ": "nuorti-Eurohpá geassiáigi", "UYT": "UYT", "ACWDT": "ACWDT", "LHST": "LHST", "ADT": "ADT", "BOT": "BOT", "PST": "PST", "AWDT": "AWDT", "WIB": "WIB", "EST": "EST", "WARST": "WARST", "MYT": "MYT", "AWST": "AWST", "WEZ": "oarje-Eurohpá dábálašáigi", "SGT": "SGT", "CST": "CST", "MEZ": "gaska-Eurohpá dábálašáigi"},
+		timezones:              map[string]string{"MDT": "MDT", "ECT": "ECT", "HAST": "HAST", "HADT": "HADT", "AWST": "AWST", "OESZ": "nuorti-Eurohpá geassiáigi", "AEDT": "AEDT", "WART": "WART", "∅∅∅": "∅∅∅", "CHAST": "CHAST", "WARST": "WARST", "CLT": "CLT", "GFT": "GFT", "AWDT": "AWDT", "CHADT": "CHADT", "UYST": "UYST", "COT": "COT", "ACST": "ACST", "SGT": "SGT", "EST": "EST", "ACWST": "ACWST", "BOT": "BOT", "EAT": "EAT", "WAT": "WAT", "AST": "AST", "GYT": "GYT", "ChST": "ChST", "WESZ": "oarje-Eurohpá geassiáigi", "HAT": "HAT", "HKST": "HKST", "AEST": "AEST", "MESZ": "gaska-Eurohpá geassiáigi", "JST": "JST", "AKDT": "AKDT", "ART": "ART", "OEZ": "nuorti-Eurohpá dábálašáigi", "MEZ": "gaska-Eurohpá dábálašáigi", "ACWDT": "ACWDT", "CLST": "CLST", "CST": "CST", "ACDT": "ACDT", "MYT": "MYT", "LHDT": "LHDT", "GMT": "Greenwich gaskka áigi", "VET": "VET", "JDT": "JDT", "HNT": "HNT", "HKT": "HKT", "ADT": "ADT", "AKST": "AKST", "LHST": "LHST", "PDT": "PDT", "UYT": "UYT", "MST": "MST", "WIB": "WIB", "WEZ": "oarje-Eurohpá dábálašáigi", "CDT": "CDT", "IST": "IST", "TMT": "TMT", "WAST": "WAST", "TMST": "TMST", "NZDT": "NZDT", "CAT": "CAT", "ARST": "ARST", "NZST": "NZST", "SAST": "SAST", "PST": "PST", "WITA": "WITA", "BT": "BT", "WIT": "WIT", "COST": "COST", "SRT": "SRT", "EDT": "EDT"},
 	}
 }
 
@@ -193,7 +193,7 @@ func (se *se_SE) WeekdaysWide() []string {
 func (se *se_SE) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(se.decimal) + len(se.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -274,7 +274,7 @@ func (se *se_SE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := se.currencies[currency]
-	l := len(s) + len(se.decimal) + len(se.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -336,7 +336,7 @@ func (se *se_SE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := se.currencies[currency]
-	l := len(s) + len(se.decimal) + len(se.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

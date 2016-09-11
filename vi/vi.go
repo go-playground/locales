@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"tr. CN", "sau CN"},
 		erasNarrow:             []string{"tr. CN", "sau CN"},
 		erasWide:               []string{"tr. CN", "sau CN"},
-		timezones:              map[string]string{"UYST": "Giờ Mùa Hè Uruguay", "AWDT": "Giờ Mùa Hè Miền Tây Nước Úc", "CAT": "Giờ Trung Phi", "AEDT": "Giờ Mùa Hè Miền Đông Nước Úc", "WARST": "Giờ mùa hè miền tây Argentina", "BT": "Giờ Bhutan", "MESZ": "Giờ Mùa Hè Trung Âu", "SGT": "Giờ Singapore", "GFT": "Giờ Guiana thuộc Pháp", "MDT": "Giờ Mùa Hè Ma Cao", "AEST": "Giờ Chuẩn Miền Đông Nước Úc", "JDT": "Giờ Mùa Hè Nhật Bản", "OEZ": "Giờ Chuẩn Đông Âu", "HKST": "Giờ Mùa Hè Hồng Kông", "CHAST": "Giờ Chuẩn Chatham", "CST": "Giờ chuẩn miền trung", "ECT": "Giờ Ecuador", "EDT": "Giờ ban ngày miền đông", "GMT": "Giờ Trung bình Greenwich", "ACWDT": "Giờ Mùa Hè Miền Trung Tây Nước Úc", "WAST": "Giờ Mùa Hè Tây Phi", "HKT": "Giờ Chuẩn Hồng Kông", "CDT": "Giờ ban ngày miền trung", "WITA": "Giờ Miền Trung Indonesia", "GYT": "Giờ Guyana", "HAT": "Giờ Mùa Hè Newfoundland", "CLT": "Giờ Chuẩn Chile", "AKDT": "Giờ Mùa Hè Alaska", "WEZ": "Giờ Chuẩn Tây Âu", "HAST": "Giờ Chuẩn Hawaii-Aleutian", "WAT": "Giờ Chuẩn Tây Phi", "VET": "Giờ Venezuela", "MEZ": "Giờ Chuẩn Trung Âu", "CHADT": "Giờ Mùa Hè Chatham", "OESZ": "Giờ Mùa Hè Đông Âu", "ADT": "Giờ Mùa hè Đại Tây Dương", "IST": "Giờ Chuẩn Ấn Độ", "PDT": "Giờ ban ngày Thái Bình Dương", "WESZ": "Giờ Mùa hè Tây Âu", "HNT": "Giờ Chuẩn Newfoundland", "NZST": "Giờ Chuẩn New Zealand", "MST": "Giờ Chuẩn Ma Cao", "LHST": "Giờ Chuẩn Lord Howe", "ACWST": "Giờ Chuẩn Miền Trung Tây Nước Úc", "LHDT": "Giờ Mùa Hè Lord Howe", "AKST": "Giờ Chuẩn Alaska", "MYT": "Giờ Malaysia", "BOT": "Giờ Bolivia", "PST": "Giờ chuẩn Thái Bình Dương", "SRT": "Giờ Suriname", "CLST": "Giờ Mùa Hè Chile", "TMT": "Giờ Chuẩn Turkmenistan", "∅∅∅": "Giờ Mùa Hè Amazon", "AWST": "Giờ Chuẩn Miền Tây Nước Úc", "ChST": "Giờ Chamorro", "EAT": "Giờ Đông Phi", "ART": "Giờ Chuẩn Argentina", "ARST": "Giờ Mùa Hè Argentina", "COST": "Giờ Mùa Hè Colombia", "AST": "Giờ Chuẩn Đại Tây Dương", "WIT": "Giờ Miền Đông Indonesia", "HADT": "Giờ Mùa Hè Hawaii-Aleutian", "ACDT": "Giờ Mùa Hè Miền Trung Nước Úc", "UYT": "Giờ Chuẩn Uruguay", "ACST": "Giờ Chuẩn Miền Trung Nước Úc", "SAST": "Giờ Chuẩn Nam Phi", "EST": "Giờ chuẩn miền đông", "WART": "Giờ chuẩn miền mây Argentina", "COT": "Giờ Chuẩn Colombia", "NZDT": "Giờ Mùa Hè New Zealand", "TMST": "Giờ Mùa Hè Turkmenistan", "WIB": "Giờ Miền Tây Indonesia", "JST": "Giờ Chuẩn Nhật Bản"},
+		timezones:              map[string]string{"PDT": "Giờ ban ngày Thái Bình Dương", "BT": "Giờ Bhutan", "TMST": "Giờ Mùa Hè Turkmenistan", "NZDT": "Giờ Mùa Hè New Zealand", "WITA": "Giờ Miền Trung Indonesia", "COT": "Giờ Chuẩn Colombia", "CHADT": "Giờ Mùa Hè Chatham", "ART": "Giờ Chuẩn Argentina", "MEZ": "Giờ Chuẩn Trung Âu", "HAST": "Giờ Chuẩn Hawaii-Aleutian", "AWDT": "Giờ Mùa Hè Miền Tây Nước Úc", "CLT": "Giờ Chuẩn Chile", "AKDT": "Giờ Mùa Hè Alaska", "HAT": "Giờ Mùa Hè Newfoundland", "CHAST": "Giờ Chuẩn Chatham", "UYT": "Giờ Chuẩn Uruguay", "EAT": "Giờ Đông Phi", "HADT": "Giờ Mùa Hè Hawaii-Aleutian", "PST": "Giờ chuẩn Thái Bình Dương", "SRT": "Giờ Suriname", "WAT": "Giờ Chuẩn Tây Phi", "CST": "Giờ chuẩn miền trung", "MYT": "Giờ Malaysia", "HKT": "Giờ Chuẩn Hồng Kông", "MESZ": "Giờ Mùa Hè Trung Âu", "NZST": "Giờ Chuẩn New Zealand", "UYST": "Giờ Mùa Hè Uruguay", "WESZ": "Giờ Mùa hè Tây Âu", "AKST": "Giờ Chuẩn Alaska", "ACDT": "Giờ Mùa Hè Miền Trung Nước Úc", "GYT": "Giờ Guyana", "∅∅∅": "Giờ Mùa Hè Azores", "EDT": "Giờ ban ngày miền đông", "ACWST": "Giờ Chuẩn Miền Trung Tây Nước Úc", "WARST": "Giờ mùa hè miền tây Argentina", "ADT": "Giờ Mùa hè Đại Tây Dương", "SAST": "Giờ Chuẩn Nam Phi", "LHDT": "Giờ Mùa Hè Lord Howe", "CLST": "Giờ Mùa Hè Chile", "EST": "Giờ chuẩn miền đông", "TMT": "Giờ Chuẩn Turkmenistan", "BOT": "Giờ Bolivia", "WIT": "Giờ Miền Đông Indonesia", "WEZ": "Giờ Chuẩn Tây Âu", "CDT": "Giờ ban ngày miền trung", "COST": "Giờ Mùa Hè Colombia", "ACST": "Giờ Chuẩn Miền Trung Nước Úc", "HKST": "Giờ Mùa Hè Hồng Kông", "OEZ": "Giờ Chuẩn Đông Âu", "ChST": "Giờ Chamorro", "ACWDT": "Giờ Mùa Hè Miền Trung Tây Nước Úc", "MST": "Giờ chuẩn miền núi", "VET": "Giờ Venezuela", "ARST": "Giờ Mùa Hè Argentina", "OESZ": "Giờ Mùa Hè Đông Âu", "MDT": "Giờ ban ngày miền núi", "IST": "Giờ Chuẩn Ấn Độ", "JDT": "Giờ Mùa Hè Nhật Bản", "CAT": "Giờ Trung Phi", "GFT": "Giờ Guiana thuộc Pháp", "JST": "Giờ Chuẩn Nhật Bản", "AWST": "Giờ Chuẩn Miền Tây Nước Úc", "AEST": "Giờ Chuẩn Miền Đông Nước Úc", "ECT": "Giờ Ecuador", "AST": "Giờ Chuẩn Đại Tây Dương", "HNT": "Giờ Chuẩn Newfoundland", "SGT": "Giờ Singapore", "AEDT": "Giờ Mùa Hè Miền Đông Nước Úc", "GMT": "Giờ Trung bình Greenwich", "WART": "Giờ chuẩn miền mây Argentina", "WAST": "Giờ Mùa Hè Tây Phi", "WIB": "Giờ Miền Tây Indonesia", "LHST": "Giờ Chuẩn Lord Howe"},
 	}
 }
 
@@ -191,7 +191,7 @@ func (vi *vi) WeekdaysWide() []string {
 func (vi *vi) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(vi.decimal) + len(vi.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -264,7 +264,7 @@ func (vi *vi) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := vi.currencies[currency]
-	l := len(s) + len(vi.decimal) + len(vi.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -322,7 +322,7 @@ func (vi *vi) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := vi.currencies[currency]
-	l := len(s) + len(vi.decimal) + len(vi.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

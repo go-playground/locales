@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"S.M.", "TM"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"S.M.", "TM"},
-		timezones:              map[string]string{"LHST": "Waktu Piawai Lord Howe", "BOT": "Waktu Bolivia", "SRT": "Waktu Suriname", "CHADT": "Waktu Siang Chatham", "TMST": "Waktu Musim Panas Turkmenistan", "SAST": "Waktu Piawai Afrika Selatan", "UYT": "Waktu Piawai Uruguay", "WAST": "Waktu Musim Panas Afrika Barat", "AWST": "Waktu Piawai Australia Barat", "CAT": "Waktu Afrika Tengah", "MST": "Waktu Piawai Pergunungan", "HAT": "Waktu Siang Newfoundland", "AWDT": "Waktu Siang Australia Barat", "HAST": "Waktu Piawai Hawaii-Aleutian", "AEST": "Waktu Piawai Timur Australia", "ACWDT": "Waktu Siang Barat Tengah Australia", "WAT": "Waktu Piawai Afrika Barat", "AST": "Waktu Piawai Atlantik", "MDT": "Waktu Hari Siang Pergunungan", "TMT": "Waktu Piawai Turkmenistan", "WIB": "Waktu Indonesia Barat", "EDT": "Waktu Siang Timur", "MYT": "Waktu Malaysia", "UYST": "Waktu Musim Panas Uruguay", "ChST": "Waktu Piawai Chamorro", "ADT": "Waktu Siang Atlantik", "OEZ": "Waktu Piawai Eropah Timur", "ACST": "Waktu Piawai Australia Tengah", "HNT": "Waktu Piawai Newfoundland", "ART": "Waktu Piawai Argentina", "MEZ": "Waktu Piawai Eropah Tengah", "SGT": "Waktu Piawai Singapura", "CST": "Waktu Piawai Pusat", "BT": "Waktu Bhutan", "PST": "Waktu Piawai Pasifik", "VET": "Waktu Venezuela", "GYT": "Waktu Guyana", "COST": "Waktu Musim Panas Colombia", "OESZ": "Waktu Musim Panas Eropah Timur", "ECT": "Waktu Ecuador", "WITA": "Waktu Indonesia Tengah", "PDT": "Waktu Siang Pasifik", "ARST": "Waktu Musim Panas Argentina", "GFT": "Waktu Guyana Perancis", "EST": "Waktu Piawai Timur", "WART": "Waktu Piawai Argentina Barat", "WESZ": "Waktu Musim Panas Eropah Barat", "NZST": "Waktu Piawai New Zealand", "HADT": "Waktu Siang Hawaii-Aleutian", "WARST": "Waktu Musim Panas Argentina Barat", "EAT": "Waktu Afrika Timur", "CHAST": "Waktu Piawai Chatham", "CLT": "Waktu Piawai Chile", "ACDT": "Waktu Siang Australia Tengah", "HKT": "Waktu Piawai Hong Kong", "HKST": "Waktu Musim Panas Hong Kong", "WIT": "Waktu Indonesia Timur", "JST": "Waktu Piawai Jepun", "AKST": "Waktu Piawai Alaska", "AKDT": "Waktu Siang Alaska", "IST": "Waktu Piawai India", "ACWST": "Waktu Piawai Barat Tengah Australia", "JDT": "Waktu Siang Jepun", "WEZ": "Waktu Piawai Eropah Barat", "NZDT": "Waktu Siang New Zealand", "MESZ": "Waktu Musim Panas Eropah Tengah", "CDT": "Waktu Siang Tengah", "AEDT": "Waktu Siang Australia Timur", "GMT": "Waktu Min Greenwich", "LHDT": "Waktu Siang Lord Howe", "∅∅∅": "Waktu Musim Panas Peru", "COT": "Waktu Piawai Colombia", "CLST": "Waktu Musim Panas Chile"},
+		timezones:              map[string]string{"ACWST": "Waktu Piawai Barat Tengah Australia", "WESZ": "Waktu Musim Panas Eropah Barat", "HNT": "Waktu Piawai Newfoundland", "ARST": "Waktu Musim Panas Argentina", "MEZ": "Waktu Piawai Eropah Tengah", "CLT": "Waktu Piawai Chile", "EDT": "Waktu Siang Timur", "BT": "Waktu Bhutan", "ACDT": "Waktu Siang Australia Tengah", "ACWDT": "Waktu Siang Barat Tengah Australia", "JDT": "Waktu Siang Jepun", "ADT": "Waktu Siang Atlantik", "MYT": "Waktu Malaysia", "UYT": "Waktu Piawai Uruguay", "BOT": "Waktu Bolivia", "HKT": "Waktu Piawai Hong Kong", "AEST": "Waktu Piawai Timur Australia", "MST": "Waktu Piawai Pergunungan", "WART": "Waktu Piawai Argentina Barat", "WIT": "Waktu Indonesia Timur", "AKST": "Waktu Piawai Alaska", "EST": "Waktu Piawai Timur", "AKDT": "Waktu Siang Alaska", "GYT": "Waktu Guyana", "OESZ": "Waktu Musim Panas Eropah Timur", "AEDT": "Waktu Siang Australia Timur", "NZST": "Waktu Piawai New Zealand", "∅∅∅": "Waktu Musim Panas Brasilia", "MESZ": "Waktu Musim Panas Eropah Tengah", "EAT": "Waktu Afrika Timur", "CHAST": "Waktu Piawai Chatham", "PDT": "Waktu Siang Pasifik", "CLST": "Waktu Musim Panas Chile", "CST": "Waktu Piawai Pusat", "ART": "Waktu Piawai Argentina", "GMT": "Waktu Min Greenwich", "MDT": "Waktu Hari Siang Pergunungan", "TMST": "Waktu Musim Panas Turkmenistan", "LHST": "Waktu Piawai Lord Howe", "CAT": "Waktu Afrika Tengah", "UYST": "Waktu Musim Panas Uruguay", "VET": "Waktu Venezuela", "COST": "Waktu Musim Panas Colombia", "HAST": "Waktu Piawai Hawaii-Aleutian", "CHADT": "Waktu Siang Chatham", "NZDT": "Waktu Siang New Zealand", "WITA": "Waktu Indonesia Tengah", "SRT": "Waktu Suriname", "WEZ": "Waktu Piawai Eropah Barat", "ACST": "Waktu Piawai Australia Tengah", "SGT": "Waktu Piawai Singapura", "SAST": "Waktu Piawai Afrika Selatan", "WAST": "Waktu Musim Panas Afrika Barat", "ECT": "Waktu Ecuador", "IST": "Waktu Piawai India", "AWST": "Waktu Piawai Australia Barat", "LHDT": "Waktu Siang Lord Howe", "WARST": "Waktu Musim Panas Argentina Barat", "AST": "Waktu Piawai Atlantik", "AWDT": "Waktu Siang Australia Barat", "HKST": "Waktu Musim Panas Hong Kong", "TMT": "Waktu Piawai Turkmenistan", "OEZ": "Waktu Piawai Eropah Timur", "JST": "Waktu Piawai Jepun", "WIB": "Waktu Indonesia Barat", "PST": "Waktu Piawai Pasifik", "ChST": "Waktu Piawai Chamorro", "WAT": "Waktu Piawai Afrika Barat", "CDT": "Waktu Siang Tengah", "HAT": "Waktu Siang Newfoundland", "GFT": "Waktu Guyana Perancis", "COT": "Waktu Piawai Colombia", "HADT": "Waktu Siang Hawaii-Aleutian"},
 	}
 }
 
@@ -191,7 +191,7 @@ func (ms *ms_SG) WeekdaysWide() []string {
 func (ms *ms_SG) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(ms.decimal) + len(ms.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -264,7 +264,7 @@ func (ms *ms_SG) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ms.currencies[currency]
-	l := len(s) + len(ms.decimal) + len(ms.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -322,7 +322,7 @@ func (ms *ms_SG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ms.currencies[currency]
-	l := len(s) + len(ms.decimal) + len(ms.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

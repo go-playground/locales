@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"f.k.", "e.k."},
 		erasWide:               []string{"fyrir Krist", "eftir Krist"},
-		timezones:              map[string]string{"PST": "Staðaltími á Kyrrahafssvæðinu", "CHADT": "Sumartími í Chatham", "WART": "Staðaltími í Vestur-Argentínu", "HAT": "Sumartími á Nýfundnalandi", "COT": "Staðaltími í Kólumbíu", "CLT": "Staðaltími í Síle", "AEST": "Staðaltími í Austur-Ástralíu", "ACST": "Staðaltími í Mið-Ástralíu", "WAT": "Staðaltími í Vestur-Afríku", "ADT": "Sumartími á Atlantshafssvæðinu", "CST": "Staðaltími í miðhluta Bandaríkjanna og Kanada", "HKST": "Sumartími í Hong Kong", "TMST": "Sumartími í Túrkmenistan", "EDT": "Sumartími í austurhluta Bandaríkjanna og Kanada", "AST": "Staðaltími á Atlantshafssvæðinu", "CHAST": "Staðaltími í Chatham", "WEZ": "Staðaltími í Vestur-Evrópu", "UYT": "Staðaltími í Úrúgvæ", "HKT": "Staðaltími í Hong Kong", "WIT": "Austur-Indónesíutími", "AEDT": "Sumartími í Austur-Ástralíu", "GFT": "Tími í Frönsku Gvæjana", "HADT": "Sumartími á Havaí og Aleúta", "ECT": "Ekvadortími", "LHST": "Staðaltími á Lord Howe-eyju", "WARST": "Sumartími í Vestur-Argentínu", "ChST": "Chamorro-staðaltími", "COST": "Sumartími í Kólumbíu", "ACWDT": "Sumartími í miðvesturhluta Ástralíu", "MEZ": "Staðaltími í Mið-Evrópu", "CAT": "Mið-Afríkutími", "AKST": "Staðaltími í Alaska", "BT": "Bútantími", "WAST": "Sumartími í Vestur-Afríku", "ARST": "Sumartími í Argentínu", "CDT": "Sumartími í miðhluta Bandaríkjanna og Kanada", "WITA": "Mið-Indónesíutími", "ACWST": "Staðaltími í miðvesturhluta Ástralíu", "MYT": "Malasíutími", "EAT": "Austur-Afríkutími", "SGT": "Singapúrtími", "JDT": "Sumartími í Japan", "EST": "Staðaltími í austurhluta Bandaríkjanna og Kanada", "IST": "Indlandstími", "MST": "Staðaltími í Klettafjöllum", "AWST": "Staðaltími í Vestur-Ástralíu", "NZDT": "Sumartími á Nýja-Sjálandi", "CLST": "Sumartími í Síle", "HAST": "Staðaltími á Havaí og Aleúta", "SAST": "Suður-Afríkutími", "GMT": "Greenwich-staðaltími", "GYT": "Gvæjanatími", "HNT": "Staðaltími á Nýfundnalandi", "AKDT": "Sumartími í Alaska", "JST": "Staðaltími í Japan", "∅∅∅": "Sumartími í Perú", "UYST": "Sumartími í Úrúgvæ", "PDT": "Sumartími á Kyrrahafssvæðinu", "VET": "Venesúelatími", "AWDT": "Sumartími í Vestur-Ástralíu", "TMT": "Staðaltími í Túrkmenistan", "WIB": "Vestur-Indónesíutími", "OEZ": "Staðaltími í Austur-Evrópu", "LHDT": "Sumartími á Lord Howe-eyju", "OESZ": "Sumartími í Austur-Evrópu", "MDT": "Sumartími í Klettafjöllum", "ART": "Staðaltími í Argentínu", "BOT": "Bólivíutími", "SRT": "Súrinamtími", "ACDT": "Sumartími í Mið-Ástralíu", "NZST": "Staðaltími á Nýja-Sjálandi", "MESZ": "Sumartími í Mið-Evrópu", "WESZ": "Sumartími í Vestur-Evrópu"},
+		timezones:              map[string]string{"HNT": "Staðaltími á Nýfundnalandi", "SRT": "Súrinamtími", "CLT": "Staðaltími í Síle", "TMT": "Staðaltími í Túrkmenistan", "GYT": "Gvæjanatími", "WIB": "Vestur-Indónesíutími", "JST": "Staðaltími í Japan", "CST": "Staðaltími í miðhluta Bandaríkjanna og Kanada", "ACST": "Staðaltími í Mið-Ástralíu", "ACDT": "Sumartími í Mið-Ástralíu", "MYT": "Malasíutími", "LHST": "Staðaltími á Lord Howe-eyju", "ECT": "Ekvadortími", "COST": "Sumartími í Kólumbíu", "VET": "Venesúelatími", "AKST": "Staðaltími í Alaska", "AST": "Staðaltími á Atlantshafssvæðinu", "HKST": "Sumartími í Hong Kong", "ARST": "Sumartími í Argentínu", "PST": "Staðaltími á Kyrrahafssvæðinu", "ChST": "Chamorro-staðaltími", "WIT": "Austur-Indónesíutími", "AWDT": "Sumartími í Vestur-Ástralíu", "EST": "Staðaltími í austurhluta Bandaríkjanna og Kanada", "MEZ": "Staðaltími í Mið-Evrópu", "PDT": "Sumartími á Kyrrahafssvæðinu", "MST": "Staðaltími í Klettafjöllum", "GFT": "Tími í Frönsku Gvæjana", "AWST": "Staðaltími í Vestur-Ástralíu", "AEST": "Staðaltími í Austur-Ástralíu", "OEZ": "Staðaltími í Austur-Evrópu", "UYT": "Staðaltími í Úrúgvæ", "BT": "Bútantími", "NZST": "Staðaltími á Nýja-Sjálandi", "MDT": "Sumartími í Klettafjöllum", "HAST": "Staðaltími á Havaí og Aleúta", "COT": "Staðaltími í Kólumbíu", "HKT": "Staðaltími í Hong Kong", "ART": "Staðaltími í Argentínu", "TMST": "Sumartími í Túrkmenistan", "BOT": "Bólivíutími", "ACWST": "Staðaltími í miðvesturhluta Ástralíu", "CDT": "Sumartími í miðhluta Bandaríkjanna og Kanada", "HAT": "Sumartími á Nýfundnalandi", "ADT": "Sumartími á Atlantshafssvæðinu", "MESZ": "Sumartími í Mið-Evrópu", "JDT": "Sumartími í Japan", "EAT": "Austur-Afríkutími", "AKDT": "Sumartími í Alaska", "ACWDT": "Sumartími í miðvesturhluta Ástralíu", "WEZ": "Staðaltími í Vestur-Evrópu", "CAT": "Mið-Afríkutími", "CLST": "Sumartími í Síle", "IST": "Indlandstími", "∅∅∅": "Sumartími á Asóreyjum", "WESZ": "Sumartími í Vestur-Evrópu", "SGT": "Singapúrtími", "CHAST": "Staðaltími í Chatham", "LHDT": "Sumartími á Lord Howe-eyju", "GMT": "Greenwich-staðaltími", "UYST": "Sumartími í Úrúgvæ", "NZDT": "Sumartími á Nýja-Sjálandi", "HADT": "Sumartími á Havaí og Aleúta", "EDT": "Sumartími í austurhluta Bandaríkjanna og Kanada", "OESZ": "Sumartími í Austur-Evrópu", "WARST": "Sumartími í Vestur-Argentínu", "WAST": "Sumartími í Vestur-Afríku", "WAT": "Staðaltími í Vestur-Afríku", "CHADT": "Sumartími í Chatham", "AEDT": "Sumartími í Austur-Ástralíu", "SAST": "Suður-Afríkutími", "WITA": "Mið-Indónesíutími", "WART": "Staðaltími í Vestur-Argentínu"},
 	}
 }
 
@@ -208,7 +208,7 @@ func (is *is) WeekdaysWide() []string {
 func (is *is) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(is.decimal) + len(is.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -281,7 +281,7 @@ func (is *is) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := is.currencies[currency]
-	l := len(s) + len(is.decimal) + len(is.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -339,7 +339,7 @@ func (is *is) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := is.currencies[currency]
-	l := len(s) + len(is.decimal) + len(is.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

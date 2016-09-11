@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "it_CH",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{5, 6},
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ".",
 		group:                  "'",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a.C.", "d.C."},
 		erasNarrow:             []string{"aC", "dC"},
 		erasWide:               []string{"a.C.", "d.C."},
-		timezones:              map[string]string{"AEDT": "Ora legale dell’Australia orientale", "MST": "Ora standard Montagne Rocciose USA", "COT": "Ora standard della Colombia", "BT": "Ora del Bhutan", "ACST": "Ora standard dell’Australia centrale", "HAT": "Ora legale di Terranova", "∅∅∅": "Ora legale dell’Amazzonia", "OESZ": "Ora legale dell’Europa orientale", "MYT": "Ora della Malesia", "BOT": "Ora della Bolivia", "WAST": "Ora legale dell’Africa occidentale", "NZST": "Ora standard della Nuova Zelanda", "WITA": "Ora dell’Indonesia centrale", "IST": "Ora standard dell’India", "CDT": "Ora legale centrale USA", "CLST": "Ora legale del Cile", "SAST": "Ora dell’Africa meridionale", "ChST": "Ora Chamorro", "WAT": "Ora standard dell’Africa occidentale", "ART": "Ora standard dell’Argentina", "CAT": "Ora dell’Africa centrale", "HADT": "Ora legale delle Isole Hawaii-Aleutine", "WIB": "Ora dell’Indonesia occidentale", "LHST": "Ora standard di Lord Howe", "LHDT": "Ora legale di Lord Howe", "AWST": "Ora standard dell’Australia occidentale", "MESZ": "Ora legale dell’Europa centrale", "OEZ": "Ora standard dell’Europa orientale", "WESZ": "Ora legale dell’Europa occidentale", "WART": "Ora standard dell’Argentina occidentale", "AST": "Ora standard dell’Atlantico", "AWDT": "Ora legale dell’Australia occidentale", "NZDT": "Ora legale della Nuova Zelanda", "COST": "Ora legale della Colombia", "CLT": "Ora standard del Cile", "AEST": "Ora standard dell’Australia orientale", "GFT": "Ora della Guiana francese", "GMT": "Ora del meridiano di Greenwich", "ECT": "Ora dell’Ecuador", "PST": "Ora standard del Pacifico USA", "PDT": "Ora legale del Pacifico USA", "EAT": "Ora dell’Africa orientale", "TMT": "Ora standard del Turkmenistan", "JST": "Ora standard del Giappone", "WARST": "Ora legale dell’Argentina occidentale", "MEZ": "Ora standard dell’Europa centrale", "HKT": "Ora standard di Hong Kong", "WIT": "Ora dell’Indonesia orientale", "HAST": "Ora standard delle Isole Hawaii-Aleutine", "AKDT": "Ora legale dell’Alaska", "WEZ": "Ora standard dell’Europa occidentale", "MDT": "Ora legale Montagne Rocciose USA", "AKST": "Ora standard dell’Alaska", "ACWST": "Ora standard dell’Australia centroccidentale", "SRT": "Ora del Suriname", "JDT": "Ora legale del Giappone", "HKST": "Ora legale di Hong Kong", "UYT": "Ora standard dell’Uruguay", "UYST": "Ora legale dell’Uruguay", "GYT": "Ora della Guyana", "ADT": "Ora legale dell’Atlantico", "HNT": "Ora standard di Terranova", "EST": "Ora standard orientale USA", "EDT": "Ora legale orientale USA", "ACDT": "Ora legale dell’Australia centrale", "ARST": "Ora legale dell’Argentina", "CHAST": "Ora standard delle Chatham", "CHADT": "Ora legale delle Chatham", "ACWDT": "Ora legale dell’Australia centroccidentale", "VET": "Ora del Venezuela", "CST": "Ora standard centrale USA", "SGT": "Ora Singapore", "TMST": "Ora legale del Turkmenistan"},
+		timezones:              map[string]string{"HAST": "Ora standard delle Isole Hawaii-Aleutine", "PST": "Ora standard del Pacifico USA", "SRT": "Ora del Suriname", "HAT": "Ora legale di Terranova", "WAST": "Ora legale dell’Africa occidentale", "ARST": "Ora legale dell’Argentina", "∅∅∅": "Ora legale delle Azzorre", "UYST": "Ora legale dell’Uruguay", "WITA": "Ora dell’Indonesia centrale", "AKST": "Ora standard dell’Alaska", "SGT": "Ora Singapore", "MST": "MST", "COST": "Ora legale della Colombia", "JDT": "Ora legale del Giappone", "ACST": "Ora standard dell’Australia centrale", "HKT": "Ora standard di Hong Kong", "CHADT": "Ora legale delle Chatham", "PDT": "Ora legale del Pacifico USA", "CST": "Ora standard centrale USA", "HADT": "Ora legale delle Isole Hawaii-Aleutine", "AEDT": "Ora legale dell’Australia orientale", "NZST": "Ora standard della Nuova Zelanda", "BT": "Ora del Bhutan", "EAT": "Ora dell’Africa orientale", "WART": "Ora standard dell’Argentina occidentale", "VET": "Ora del Venezuela", "HNT": "Ora standard di Terranova", "GMT": "Ora del meridiano di Greenwich", "ACWST": "Ora standard dell’Australia centroccidentale", "COT": "Ora standard della Colombia", "AWST": "Ora standard dell’Australia occidentale", "ART": "Ora standard dell’Argentina", "MESZ": "Ora legale dell’Europa centrale", "CLT": "Ora standard del Cile", "WIT": "Ora dell’Indonesia orientale", "GFT": "Ora della Guiana francese", "IST": "Ora standard dell’India", "AST": "Ora standard dell’Atlantico", "MDT": "MDT", "NZDT": "Ora legale della Nuova Zelanda", "AKDT": "Ora legale dell’Alaska", "SAST": "Ora dell’Africa meridionale", "CAT": "Ora dell’Africa centrale", "MEZ": "Ora standard dell’Europa centrale", "WESZ": "Ora legale dell’Europa occidentale", "ADT": "Ora legale dell’Atlantico", "EDT": "Ora legale orientale USA", "AWDT": "Ora legale dell’Australia occidentale", "WIB": "Ora dell’Indonesia occidentale", "OEZ": "Ora standard dell’Europa orientale", "WAT": "Ora standard dell’Africa occidentale", "EST": "Ora standard orientale USA", "AEST": "Ora standard dell’Australia orientale", "LHST": "Ora standard di Lord Howe", "LHDT": "Ora legale di Lord Howe", "ACDT": "Ora legale dell’Australia centrale", "WARST": "Ora legale dell’Argentina occidentale", "HKST": "Ora legale di Hong Kong", "ACWDT": "Ora legale dell’Australia centroccidentale", "JST": "Ora standard del Giappone", "ChST": "Ora Chamorro", "TMST": "Ora legale del Turkmenistan", "OESZ": "Ora legale dell’Europa orientale", "UYT": "Ora standard dell’Uruguay", "CLST": "Ora legale del Cile", "CDT": "Ora legale centrale USA", "MYT": "Ora della Malesia", "CHAST": "Ora standard delle Chatham", "TMT": "Ora standard del Turkmenistan", "BOT": "Ora della Bolivia", "WEZ": "Ora standard dell’Europa occidentale", "ECT": "Ora dell’Ecuador", "GYT": "Ora della Guyana"},
 	}
 }
 
@@ -210,7 +210,7 @@ func (it *it_CH) WeekdaysWide() []string {
 func (it *it_CH) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(it.decimal) + len(it.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -283,7 +283,7 @@ func (it *it_CH) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := it.currencies[currency]
-	l := len(s) + len(it.decimal) + len(it.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -345,7 +345,7 @@ func (it *it_CH) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := it.currencies[currency]
-	l := len(s) + len(it.decimal) + len(it.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

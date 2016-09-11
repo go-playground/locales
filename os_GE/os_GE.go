@@ -69,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"н.д.а.", "н.д."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"NZDT": "NZDT", "GMT": "Гринвичы рӕстӕмбис рӕстӕг", "UYT": "UYT", "ACWST": "ACWST", "SRT": "SRT", "ACST": "ACST", "CHAST": "CHAST", "AEDT": "AEDT", "WART": "WART", "JST": "JST", "BOT": "BOT", "CLST": "CLST", "CDT": "CDT", "HKST": "HKST", "WARST": "WARST", "UYST": "UYST", "MYT": "MYT", "GYT": "GYT", "ARST": "ARST", "SGT": "SGT", "AEST": "AEST", "AKDT": "AKDT", "HAST": "HAST", "WESZ": "Ныгъуылӕн Европӕйаг сӕрдыгон рӕстӕг", "CLT": "CLT", "WIT": "WIT", "TMT": "TMT", "PDT": "PDT", "COST": "COST", "HAT": "HAT", "MST": "MST", "HADT": "HADT", "PST": "PST", "HKT": "HKT", "COT": "COT", "CST": "CST", "WITA": "WITA", "LHST": "LHST", "AWDT": "AWDT", "ART": "ART", "CAT": "CAT", "SAST": "SAST", "BT": "BT", "WIB": "WIB", "GFT": "GFT", "WAST": "WAST", "ADT": "ADT", "AWST": "AWST", "CHADT": "CHADT", "MDT": "MDT", "MESZ": "Астӕуккаг Европӕйаг сӕрдыгон рӕстӕг", "NZST": "NZST", "OESZ": "Скӕсӕн Европӕйаг сӕрдыгон рӕстӕг", "EDT": "EDT", "AST": "AST", "LHDT": "LHDT", "EST": "EST", "ECT": "ECT", "ACWDT": "ACWDT", "AKST": "AKST", "ChST": "ChST", "ACDT": "ACDT", "WAT": "WAT", "OEZ": "Скӕсӕн Европӕйаг стандартон рӕстӕг", "JDT": "JDT", "WEZ": "Ныгъуылӕн Европӕйаг стандартон рӕстӕг", "VET": "VET", "EAT": "EAT", "MEZ": "Астӕуккаг Европӕйаг стандартон рӕстӕг", "TMST": "TMST", "IST": "IST", "∅∅∅": "∅∅∅", "HNT": "HNT"},
+		timezones:              map[string]string{"ECT": "ECT", "COT": "COT", "AEDT": "AEDT", "MESZ": "Астӕуккаг Европӕйаг сӕрдыгон рӕстӕг", "HKST": "HKST", "ARST": "ARST", "PDT": "PDT", "HADT": "HADT", "AWDT": "AWDT", "CLST": "CLST", "ACWST": "ACWST", "WAT": "WAT", "OESZ": "Скӕсӕн Европӕйаг сӕрдыгон рӕстӕг", "CLT": "CLT", "GMT": "Гринвичы рӕстӕмбис рӕстӕг", "UYT": "UYT", "ChST": "ChST", "CHAST": "CHAST", "NZST": "NZST", "TMST": "TMST", "BT": "BT", "ACWDT": "ACWDT", "CDT": "CDT", "AWST": "AWST", "MST": "MST", "EST": "EST", "WAST": "WAST", "CST": "CST", "HAT": "HAT", "AKDT": "AKDT", "∅∅∅": "∅∅∅", "VET": "VET", "ACST": "ACST", "BOT": "BOT", "SAST": "SAST", "SRT": "SRT", "WIT": "WIT", "AST": "AST", "TMT": "TMT", "GFT": "GFT", "WEZ": "Ныгъуылӕн Европӕйаг стандартон рӕстӕг", "IST": "IST", "HNT": "HNT", "EDT": "EDT", "CHADT": "CHADT", "WIB": "WIB", "AEST": "AEST", "MEZ": "Астӕуккаг Европӕйаг стандартон рӕстӕг", "WITA": "WITA", "COST": "COST", "MYT": "MYT", "ADT": "ADT", "LHDT": "LHDT", "PST": "PST", "EAT": "EAT", "WESZ": "Ныгъуылӕн Европӕйаг сӕрдыгон рӕстӕг", "JDT": "JDT", "SGT": "SGT", "ART": "ART", "CAT": "CAT", "WART": "WART", "WARST": "WARST", "JST": "JST", "OEZ": "Скӕсӕн Европӕйаг стандартон рӕстӕг", "UYST": "UYST", "LHST": "LHST", "MDT": "MDT", "NZDT": "NZDT", "ACDT": "ACDT", "HKT": "HKT", "HAST": "HAST", "GYT": "GYT", "AKST": "AKST"},
 	}
 }
 
@@ -189,7 +189,7 @@ func (os *os_GE) WeekdaysWide() []string {
 func (os *os_GE) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(os.decimal) + len(os.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -264,7 +264,7 @@ func (os *os_GE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := os.currencies[currency]
-	l := len(s) + len(os.decimal) + len(os.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -328,7 +328,7 @@ func (os *os_GE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := os.currencies[currency]
-	l := len(s) + len(os.decimal) + len(os.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -72,7 +72,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr."},
 		erasNarrow:             []string{"vC", "nC"},
 		erasWide:               []string{"vür Chrestus", "noh Chrestus"},
-		timezones:              map[string]string{"WITA": "WITA", "AEST": "AEST", "JDT": "JDT", "WART": "WART", "HAT": "HAT", "AKST": "AKST", "ECT": "ECT", "ACWST": "ACWST", "MST": "MST", "CHAST": "CHAST", "CAT": "Zentraal-Affrekaanesche Zigg", "HAST": "HAST", "WESZ": "Weß-Europpa sing Summerzick", "ACST": "ACST", "ADT": "ADT", "GYT": "GYT", "SGT": "SGT", "OEZ": "Oß-Europpa sing jewöhnlijje Zick", "BOT": "BOT", "UYT": "UYT", "ChST": "ChST", "EST": "EST", "ARST": "ARST", "HKST": "HKST", "TMT": "TMT", "BT": "BT", "ACWDT": "ACWDT", "HNT": "HNT", "HKT": "HKT", "WAST": "Wäß-Affrekaanesche Sommerzigg", "∅∅∅": "∅∅∅", "SAST": "Söd-Affrekaanesche Zigg", "JST": "JST", "SRT": "SRT", "AKDT": "AKDT", "OESZ": "Oß-Europpa sing Summerzick", "AWDT": "AWDT", "MESZ": "Meddel-Europpa sing Summerzick", "CHADT": "CHADT", "CLT": "CLT", "IST": "IST", "GMT": "Greenwich sing Standat-Zick", "ART": "ART", "NZST": "NZST", "MDT": "MDT", "LHDT": "LHDT", "ACDT": "ACDT", "AST": "AST", "HADT": "HADT", "EDT": "EDT", "MYT": "MYT", "WAT": "Jewöhnlijje Wäß-Affrekaanesche Zigg", "GFT": "GFT", "UYST": "UYST", "CST": "CST", "WIT": "WIT", "WIB": "WIB", "EAT": "Oß-Affrekaanesche Zigg", "NZDT": "NZDT", "TMST": "TMST", "AWST": "AWST", "MEZ": "Meddel-Europpa sing jewöhnlijje Zick", "WEZ": "Weß-Europpa sing jewöhnlijje Zick", "LHST": "LHST", "VET": "VET", "COT": "COT", "COST": "COST", "CLST": "CLST", "CDT": "CDT", "AEDT": "AEDT", "WARST": "WARST", "PST": "PST", "PDT": "PDT"},
+		timezones:              map[string]string{"ACST": "ACST", "MYT": "MYT", "SGT": "SGT", "AEST": "AEST", "NZDT": "NZDT", "WAT": "Jewöhnlijje Wäß-Affrekaanesche Zigg", "WESZ": "Weß-Europpa sing Summerzick", "CDT": "CDT", "WIB": "WIB", "NZST": "NZST", "PDT": "PDT", "EAT": "Oß-Affrekaanesche Zigg", "COT": "COT", "JST": "JST", "∅∅∅": "de Azore ier Summerzick", "ECT": "ECT", "EDT": "EDT", "HKST": "HKST", "AKST": "AKST", "AKDT": "AKDT", "AST": "AST", "OEZ": "Oß-Europpa sing jewöhnlijje Zick", "WIT": "WIT", "HAST": "HAST", "AWDT": "AWDT", "LHDT": "LHDT", "UYST": "UYST", "BOT": "BOT", "IST": "IST", "CLT": "CLT", "ACWST": "ACWST", "HAT": "HAT", "GYT": "GYT", "EST": "EST", "MDT": "MDT", "CHAST": "CHAST", "OESZ": "Oß-Europpa sing Summerzick", "UYT": "UYT", "GFT": "GFT", "TMT": "TMT", "BT": "BT", "CLST": "CLST", "ACDT": "ACDT", "HNT": "HNT", "AWST": "AWST", "SAST": "Söd-Affrekaanesche Zigg", "PST": "PST", "WITA": "WITA", "WARST": "WARST", "ACWDT": "ACWDT", "HADT": "HADT", "CHADT": "CHADT", "ART": "ART", "MESZ": "Meddel-Europpa sing Summerzick", "WAST": "Wäß-Affrekaanesche Sommerzigg", "VET": "VET", "COST": "COST", "ADT": "ADT", "TMST": "TMST", "CAT": "Zentraal-Affrekaanesche Zigg", "ChST": "ChST", "CST": "CST", "HKT": "HKT", "AEDT": "AEDT", "LHST": "LHST", "MEZ": "Meddel-Europpa sing jewöhnlijje Zick", "SRT": "SRT", "WEZ": "Weß-Europpa sing jewöhnlijje Zick", "JDT": "JDT", "MST": "MST", "ARST": "ARST", "GMT": "Greenwich sing Standat-Zick", "WART": "WART"},
 	}
 }
 
@@ -194,7 +194,7 @@ func (ksh *ksh_DE) WeekdaysWide() []string {
 func (ksh *ksh_DE) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(ksh.decimal) + len(ksh.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -275,7 +275,7 @@ func (ksh *ksh_DE) FmtCurrency(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ksh.currencies[currency]
-	l := len(s) + len(ksh.decimal) + len(ksh.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -337,7 +337,7 @@ func (ksh *ksh_DE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ksh.currencies[currency]
-	l := len(s) + len(ksh.decimal) + len(ksh.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

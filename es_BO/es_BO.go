@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a. C.", "d. C."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"antes de Cristo", "después de Cristo"},
-		timezones:              map[string]string{"WAST": "hora de verano de África occidental", "SGT": "hora de Singapur", "ACWDT": "hora de verano de Australia centroccidental", "JDT": "hora de verano de Japón", "EAT": "hora de África oriental", "MDT": "Hora de verano de Macao", "MESZ": "hora de verano de Europa central", "GFT": "hora de la Guayana Francesa", "ACWST": "hora estándar de Australia centroccidental", "VET": "hora de Venezuela", "ADT": "hora de verano del Atlántico", "AKDT": "hora de verano de Alaska", "OESZ": "hora de verano de Europa oriental", "UYST": "hora de verano de Uruguay", "LHDT": "hora de verano de Lord Howe", "GYT": "hora de Guyana", "WAT": "hora estándar de África occidental", "WART": "hora estándar de Argentina occidental", "WESZ": "hora de verano de Europa occidental", "LHST": "hora estándar de Lord Howe", "HNT": "hora estándar de Terranova", "CLST": "hora de verano de Chile", "AKST": "hora estándar de Alaska", "WARST": "hora de verano de Argentina occidental", "SAST": "hora de Sudáfrica", "OEZ": "hora estándar de Europa oriental", "JST": "hora estándar de Japón", "∅∅∅": "hora de verano de Brasilia", "AWDT": "hora de verano de Australia occidental", "NZDT": "hora de verano de Nueva Zelanda", "CAT": "hora de África central", "ECT": "hora de Ecuador", "ACST": "hora estándar de Australia central", "ACDT": "hora de verano de Australia central", "AST": "hora estándar del Atlántico", "TMT": "hora estándar de Turkmenistán", "CLT": "hora estándar de Chile", "CST": "hora estándar central", "EST": "hora estándar oriental", "SRT": "hora de Surinam", "MYT": "hora de Malasia", "ART": "hora estándar de Argentina", "ARST": "hora de verano de Argentina", "AEST": "hora estándar de Australia oriental", "IST": "hora estándar de la India", "TMST": "hora de verano de Turkmenistán", "WITA": "hora de Indonesia central", "EDT": "hora de verano oriental", "AWST": "hora estándar de Australia occidental", "NZST": "hora estándar de Nueva Zelanda", "MST": "Hora estándar de Macao", "WIT": "hora de Indonesia oriental", "CHADT": "hora de verano de Chatham", "CDT": "hora de verano central", "UYT": "hora estándar de Uruguay", "WEZ": "hora estándar de Europa occidental", "ChST": "hora estándar de Chamorro", "CHAST": "hora estándar de Chatham", "MEZ": "hora estándar de Europa central", "WIB": "hora de Indonesia occidental", "BOT": "hora de Bolivia", "BT": "hora de Bután", "COT": "hora estándar de Colombia", "HAT": "hora de verano de Terranova", "HKST": "hora de verano de Hong Kong", "HAST": "hora estándar de Hawái-Aleutiano", "COST": "hora de verano de Colombia", "HADT": "hora de verano de Hawái-Aleutiano", "PST": "hora estándar del Pacífico", "PDT": "hora de verano del Pacífico", "HKT": "hora estándar de Hong Kong", "AEDT": "hora de verano de Australia oriental", "GMT": "hora del meridiano de Greenwich"},
+		timezones:              map[string]string{"WART": "hora estándar de Argentina occidental", "CLT": "hora estándar de Chile", "COST": "hora de verano de Colombia", "AST": "hora estándar del Atlántico", "HNT": "hora estándar de Terranova", "NZST": "hora estándar de Nueva Zelanda", "HAT": "hora de verano de Terranova", "HAST": "hora estándar de Hawái-Aleutiano", "HKT": "hora estándar de Hong Kong", "ECT": "hora de Ecuador", "WITA": "hora de Indonesia central", "COT": "hora estándar de Colombia", "HADT": "hora de verano de Hawái-Aleutiano", "NZDT": "hora de verano de Nueva Zelanda", "ACWDT": "hora de verano de Australia centroccidental", "WIT": "hora de Indonesia oriental", "EST": "hora estándar oriental", "AEST": "hora estándar de Australia oriental", "ChST": "hora estándar de Chamorro", "MDT": "hora de verano de las Montañas", "VET": "hora de Venezuela", "OEZ": "hora estándar de Europa oriental", "AEDT": "hora de verano de Australia oriental", "WESZ": "hora de verano de Europa occidental", "JDT": "hora de verano de Japón", "ACDT": "hora de verano de Australia central", "SGT": "hora de Singapur", "CHADT": "hora de verano de Chatham", "OESZ": "hora de verano de Europa oriental", "ACWST": "hora estándar de Australia centroccidental", "MST": "hora estándar de las Montañas", "AWDT": "hora de verano de Australia occidental", "GMT": "hora del meridiano de Greenwich", "EAT": "hora de África oriental", "GFT": "hora de la Guayana Francesa", "ARST": "hora de verano de Argentina", "MESZ": "hora de verano de Europa central", "BOT": "hora de Bolivia", "MYT": "hora de Malasia", "HKST": "hora de verano de Hong Kong", "CHAST": "hora estándar de Chatham", "TMST": "hora de verano de Turkmenistán", "WARST": "hora de verano de Argentina occidental", "UYST": "hora de verano de Uruguay", "CDT": "hora de verano central", "AKST": "hora estándar de Alaska", "MEZ": "hora estándar de Europa central", "SAST": "hora de Sudáfrica", "WEZ": "hora estándar de Europa occidental", "JST": "hora estándar de Japón", "ACST": "hora estándar de Australia central", "GYT": "hora de Guyana", "AKDT": "hora de verano de Alaska", "AWST": "hora estándar de Australia occidental", "LHDT": "hora de verano de Lord Howe", "∅∅∅": "Hora de verano de Acre", "PST": "hora estándar del Pacífico", "UYT": "hora estándar de Uruguay", "CLST": "hora de verano de Chile", "WAT": "hora estándar de África occidental", "CST": "hora estándar central", "ADT": "hora de verano del Atlántico", "LHST": "hora estándar de Lord Howe", "EDT": "hora de verano oriental", "SRT": "hora de Surinam", "BT": "hora de Bután", "WAST": "hora de verano de África occidental", "ART": "hora estándar de Argentina", "CAT": "hora de África central", "IST": "hora estándar de la India", "WIB": "hora de Indonesia occidental", "PDT": "hora de verano del Pacífico", "TMT": "hora estándar de Turkmenistán"},
 	}
 }
 
@@ -193,7 +193,7 @@ func (es *es_BO) WeekdaysWide() []string {
 func (es *es_BO) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(es.decimal) + len(es.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -268,7 +268,7 @@ func (es *es_BO) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := es.currencies[currency]
-	l := len(s) + len(es.decimal) + len(es.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -326,7 +326,7 @@ func (es *es_BO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := es.currencies[currency]
-	l := len(s) + len(es.decimal) + len(es.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

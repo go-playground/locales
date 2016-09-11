@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"SM", "M"},
 		erasNarrow:         []string{"SM", "M"},
 		erasWide:           []string{"Sebelum Masehi", "M"},
-		timezones:          map[string]string{"AKDT": "Waktu Musim Panas Alaska", "CDT": "Waktu Musim Panas Tengah", "HAT": "Waktu Musim Panas Newfoundland", "GFT": "Waktu Guyana Prancis", "ECT": "Waktu Ekuador", "ACWST": "Waktu Standar Barat Tengah Australia", "WAT": "Waktu Standar Afrika Barat", "AST": "Waktu Standar Atlantik", "AWDT": "Waktu Musim Panas Barat Australia", "TMST": "Waktu Musim Panas Turkmenistan", "WITA": "Waktu Indonesia Tengah", "JDT": "Waktu Musim Panas Jepang", "∅∅∅": "Waktu Musim Panas Acre", "VET": "Waktu Venezuela", "MESZ": "Waktu Musim Panas Eropa Tengah", "HADT": "Waktu Musim Panas Hawaii-Aleutian", "WEZ": "Waktu Standar Eropa Barat", "ChST": "Waktu Chamorro", "NZST": "Waktu Standar Selandia Baru", "ART": "Waktu Standar Argentina", "UYT": "Waktu Standar Uruguay", "PST": "Waktu Standar Pasifik", "GYT": "Waktu Guyana", "CLT": "Waktu Standar Cile", "ACWDT": "Waktu Musim Panas Barat Tengah Australia", "AWST": "Waktu Standar Barat Australia", "CAT": "Waktu Afrika Tengah", "CHAST": "Waktu Standar Chatham", "WIT": "Waktu Indonesia Timur", "TMT": "Waktu Standar Turkmenistan", "ACST": "Waktu Standar Tengah Australia", "AEDT": "Waktu Musim Panas Timur Australia", "UYST": "Waktu Musim Panas Uruguay", "PDT": "Waktu Musim Panas Pasifik", "LHST": "Waktu Standar Lord Howe", "CST": "Waktu Standar Tengah", "MST": "Waktu Standar Pegunungan", "WIB": "Waktu Indonesia Barat", "AKST": "Waktu Standar Alaska", "OEZ": "Waktu Standar Eropa Timur", "WESZ": "Waktu Musim Panas Eropa Barat", "ACDT": "Waktu Musim Panas Tengah Australia", "OESZ": "Waktu Musim Panas Eropa Timur", "GMT": "Waktu Rata-rata Greenwich", "BT": "Waktu Bhutan", "COT": "Waktu Standar Kolombia", "NZDT": "Waktu Musim Panas Selandia Baru", "ARST": "Waktu Musim Panas Argentina", "SGT": "Waktu Standar Singapura", "JST": "Waktu Standar Jepang", "EST": "Waktu Standar Timur", "LHDT": "Waktu Musim Panas Lord Howe", "WARST": "Waktu Musim Panas Argentina Bagian Barat", "EAT": "Waktu Afrika Timur", "SRT": "Waktu Suriname", "HAST": "Waktu Standar Hawaii-Aleutian", "EDT": "Waktu Musim Panas Timur", "BOT": "Waktu Bolivia", "MDT": "Waktu Musim Panas Pegunungan", "HNT": "Waktu Standar Newfoundland", "COST": "Waktu Musim Panas Kolombia", "CLST": "Waktu Musim Panas Cile", "WAST": "Waktu Musim Panas Afrika Barat", "MYT": "Waktu Malaysia", "WART": "Waktu Standar Argentina Bagian Barat", "HKT": "Waktu Standar Hong Kong", "HKST": "Waktu Musim Panas Hong Kong", "CHADT": "Waktu Musim Panas Chatham", "ADT": "Waktu Musim Panas Atlantik", "AEST": "Waktu Standar Timur Australia", "SAST": "Waktu Standar Afrika Selatan", "IST": "Waktu India", "MEZ": "Waktu Standar Eropa Tengah"},
+		timezones:          map[string]string{"IST": "Waktu India", "AWDT": "Waktu Musim Panas Barat Australia", "ACWDT": "Waktu Musim Panas Barat Tengah Australia", "GFT": "Waktu Guyana Prancis", "SGT": "Waktu Standar Singapura", "MDT": "Waktu Musim Panas Makau", "HADT": "Waktu Musim Panas Hawaii-Aleutian", "ARST": "Waktu Musim Panas Argentina", "TMST": "Waktu Musim Panas Turkmenistan", "ChST": "Waktu Chamorro", "WITA": "Waktu Indonesia Tengah", "WEZ": "Waktu Standar Eropa Barat", "OESZ": "Waktu Musim Panas Eropa Timur", "PST": "Waktu Standar Pasifik", "CAT": "Waktu Afrika Tengah", "ACWST": "Waktu Standar Barat Tengah Australia", "WARST": "Waktu Musim Panas Argentina Bagian Barat", "ADT": "Waktu Musim Panas Atlantik", "EAT": "Waktu Afrika Timur", "OEZ": "Waktu Standar Eropa Timur", "ACDT": "Waktu Musim Panas Tengah Australia", "MYT": "Waktu Malaysia", "MST": "Waktu Standar Makau", "WIB": "Waktu Indonesia Barat", "AEDT": "Waktu Musim Panas Timur Australia", "LHDT": "Waktu Musim Panas Lord Howe", "NZDT": "Waktu Musim Panas Selandia Baru", "VET": "Waktu Venezuela", "AWST": "Waktu Standar Barat Australia", "AEST": "Waktu Standar Timur Australia", "MESZ": "Waktu Musim Panas Eropa Tengah", "WART": "Waktu Standar Argentina Bagian Barat", "JST": "Waktu Standar Jepang", "HNT": "Waktu Standar Newfoundland", "GYT": "Waktu Guyana", "UYT": "Waktu Standar Uruguay", "UYST": "Waktu Musim Panas Uruguay", "WAT": "Waktu Standar Afrika Barat", "HKST": "Waktu Musim Panas Hong Kong", "PDT": "Waktu Musim Panas Pasifik", "SRT": "Waktu Suriname", "WAST": "Waktu Musim Panas Afrika Barat", "TMT": "Waktu Standar Turkmenistan", "MEZ": "Waktu Standar Eropa Tengah", "GMT": "Waktu Rata-rata Greenwich", "HAT": "Waktu Musim Panas Newfoundland", "HKT": "Waktu Standar Hong Kong", "CST": "Waktu Standar Tengah", "CHAST": "Waktu Standar Chatham", "COT": "Waktu Standar Kolombia", "ART": "Waktu Standar Argentina", "LHST": "Waktu Standar Lord Howe", "NZST": "Waktu Standar Selandia Baru", "CLST": "Waktu Musim Panas Cile", "CDT": "Waktu Musim Panas Tengah", "EST": "Waktu Standar Timur", "CLT": "Waktu Standar Cile", "AST": "Waktu Standar Atlantik", "ECT": "Waktu Ekuador", "JDT": "Waktu Musim Panas Jepang", "∅∅∅": "Waktu Musim Panas Azores", "AKST": "Waktu Standar Alaska", "CHADT": "Waktu Musim Panas Chatham", "EDT": "Waktu Musim Panas Timur", "SAST": "Waktu Standar Afrika Selatan", "WESZ": "Waktu Musim Panas Eropa Barat", "BT": "Waktu Bhutan", "ACST": "Waktu Standar Tengah Australia", "AKDT": "Waktu Musim Panas Alaska", "HAST": "Waktu Standar Hawaii-Aleutian", "BOT": "Waktu Bolivia", "WIT": "Waktu Indonesia Timur", "COST": "Waktu Musim Panas Kolombia"},
 	}
 }
 
@@ -180,7 +180,7 @@ func (id *id_ID) WeekdaysWide() []string {
 func (id *id_ID) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(id.decimal) + len(id.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -253,7 +253,7 @@ func (id *id_ID) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := id.currencies[currency]
-	l := len(s) + len(id.decimal) + len(id.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -311,7 +311,7 @@ func (id *id_ID) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := id.currencies[currency]
-	l := len(s) + len(id.decimal) + len(id.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

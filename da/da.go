@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"fKr", "eKr"},
 		erasWide:               []string{"f.Kr.", "e.Kr."},
-		timezones:              map[string]string{"COT": "Colombiansk normaltid", "SGT": "Singaporeansk normaltid", "CLT": "Chilensk normaltid", "MYT": "Malaysisk tid", "EAT": "Østafrikansk tid", "AST": "Atlantic-normaltid", "TMT": "Turkmensk normaltid", "ACST": "Centralaustralsk normaltid", "ChST": "Chamorro-tid", "GFT": "Fransk Guyana-tid", "WESZ": "Vesteuropæisk sommertid", "SRT": "Surinam-tid", "CHADT": "Chatham-sommertid", "AWDT": "Vestaustralsk sommertid", "CHAST": "Chatham-normaltid", "HADT": "Hawaii-Aleutian-sommertid", "OESZ": "Østeuropæisk sommertid", "MST": "Mountain-normaltid", "WITA": "Centralindonesisk tid", "HAST": "Hawaii-Aleutian-normaltid", "AEDT": "Østaustralsk sommertid", "LHDT": "Lord Howe-sommertid", "GYT": "Guyana-tid", "VET": "Venezuelansk tid", "HNT": "Newfoundlandsk normaltid", "AKDT": "Alaska-sommertid", "LHST": "Lord Howe-normaltid", "MDT": "Mountain-sommertid", "OEZ": "Østeuropæisk normaltid", "AKST": "Alaska-normaltid", "GMT": "GMT", "BT": "Bhutanesisk tid", "WARST": "Vestargentinsk sommertid", "WAST": "Vestafrikansk sommertid", "CAT": "Centralafrikansk tid", "TMST": "Turkmensk sommertid", "EDT": "Eastern-sommertid", "UYT": "Uruguayansk normaltid", "ADT": "Atlantic-sommertid", "MEZ": "Centraleuropæisk normaltid", "SAST": "Sydafrikansk tid", "ECT": "Ecuadoriansk tid", "EST": "Eastern-normaltid", "NZDT": "Newzealandsk sommertid", "ARST": "Argentinsk sommertid", "MESZ": "Centraleuropæisk sommertid", "HKT": "Hongkong-normaltid", "HKST": "Hongkong-sommertid", "ACWST": "Vestlig centralaustralsk normaltid", "COST": "Colombiansk sommertid", "NZST": "Newzealandsk normaltid", "HAT": "Newfoundlandsk sommertid", "AEST": "Østaustralsk normaltid", "JST": "Japansk normaltid", "∅∅∅": "Peruviansk sommertid", "ACDT": "Centralaustralsk sommertid", "WIB": "Vestindonesisk tid", "JDT": "Japansk sommertid", "IST": "Indisk normaltid", "CST": "Central-normaltid", "CDT": "Central-sommertid", "WEZ": "Vesteuropæisk normaltid", "WAT": "Vestafrikansk normaltid", "ART": "Argentinsk normaltid", "AWST": "Vestaustralsk normaltid", "WART": "Vestargentinsk normaltid", "PST": "Pacific-normaltid", "ACWDT": "Vestlig centralaustralsk sommertid", "PDT": "Pacific-sommertid", "CLST": "Chilensk sommertid", "WIT": "Østindonesisk tid", "BOT": "Boliviansk tid", "UYST": "Uruguayansk sommertid"},
+		timezones:              map[string]string{"WEZ": "Vesteuropæisk normaltid", "ART": "Argentinsk normaltid", "NZST": "Newzealandsk normaltid", "NZDT": "Newzealandsk sommertid", "SRT": "Surinam-tid", "WART": "Vestargentinsk normaltid", "ACWST": "Vestlig centralaustralsk normaltid", "ACWDT": "Vestlig centralaustralsk sommertid", "TMT": "Turkmensk normaltid", "JST": "Japansk normaltid", "SGT": "Singaporeansk normaltid", "HKST": "Hongkong-sommertid", "HADT": "Hawaii-Aleutian-sommertid", "TMST": "Turkmensk sommertid", "LHST": "Lord Howe-normaltid", "MST": "Mountain-normaltid", "WAT": "Vestafrikansk normaltid", "AWDT": "Vestaustralsk sommertid", "AKST": "Alaska-normaltid", "AWST": "Vestaustralsk normaltid", "AEDT": "Østaustralsk sommertid", "WESZ": "Vesteuropæisk sommertid", "JDT": "Japansk sommertid", "AKDT": "Alaska-sommertid", "CST": "Central-normaltid", "AST": "Atlantic-normaltid", "CHAST": "Chatham-normaltid", "WIB": "Vestindonesisk tid", "HAST": "Hawaii-Aleutian-normaltid", "BOT": "Boliviansk tid", "CLST": "Chilensk sommertid", "VET": "Venezuelansk tid", "GFT": "Fransk Guyana-tid", "EDT": "Eastern-sommertid", "UYT": "Uruguayansk normaltid", "∅∅∅": "Azorerne-sommertid", "ADT": "Atlantic-sommertid", "ACDT": "Centralaustralsk sommertid", "HKT": "Hongkong-normaltid", "PDT": "Pacific-sommertid", "BT": "Bhutanesisk tid", "WIT": "Østindonesisk tid", "CDT": "Central-sommertid", "HNT": "Newfoundlandsk normaltid", "GYT": "Guyana-tid", "CHADT": "Chatham-sommertid", "UYST": "Uruguayansk sommertid", "PST": "Pacific-normaltid", "MEZ": "Centraleuropæisk normaltid", "CLT": "Chilensk normaltid", "EAT": "Østafrikansk tid", "IST": "Indisk normaltid", "MESZ": "Centraleuropæisk sommertid", "MDT": "Mountain-sommertid", "OESZ": "Østeuropæisk sommertid", "CAT": "Centralafrikansk tid", "WITA": "Centralindonesisk tid", "WARST": "Vestargentinsk sommertid", "COST": "Colombiansk sommertid", "ChST": "Chamorro-tid", "ARST": "Argentinsk sommertid", "OEZ": "Østeuropæisk normaltid", "WAST": "Vestafrikansk sommertid", "HAT": "Newfoundlandsk sommertid", "ACST": "Centralaustralsk normaltid", "LHDT": "Lord Howe-sommertid", "SAST": "Sydafrikansk tid", "AEST": "Østaustralsk normaltid", "EST": "Eastern-normaltid", "GMT": "GMT", "ECT": "Ecuadoriansk tid", "COT": "Colombiansk normaltid", "MYT": "Malaysisk tid"},
 	}
 }
 
@@ -208,7 +208,7 @@ func (da *da) WeekdaysWide() []string {
 func (da *da) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(da.decimal) + len(da.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -283,7 +283,7 @@ func (da *da) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := da.currencies[currency]
-	l := len(s) + len(da.decimal) + len(da.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -341,7 +341,7 @@ func (da *da) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := da.currencies[currency]
-	l := len(s) + len(da.decimal) + len(da.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.n.e.", "n.e."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"p.n.e.", "n.e."},
-		timezones:              map[string]string{"HNT": "Nowa Fundlandia (czas standardowy)", "EDT": "Czas wschodnioamerykański letni", "GYT": "Gujana", "NZDT": "Nowa Zelandia (czas letni)", "GFT": "Gujana Francuska", "ARST": "Argentyna (czas letni)", "ADT": "Czas atlantycki letni", "WIB": "Indonezja Zachodnia", "MYT": "Malezja", "UYST": "Urugwaj (czas letni)", "∅∅∅": "Peru (czas letni)", "MDT": "Czas górski letni", "AKST": "Alaska (czas standardowy)", "ART": "Argentyna (czas standardowy)", "COT": "Kolumbia (czas standardowy)", "HKST": "Hongkong (czas letni)", "SAST": "Czas południowoafrykański", "NZST": "Nowa Zelandia (czas standardowy)", "WITA": "Indonezja Środkowa", "AKDT": "Alaska (czas letni)", "PST": "Czas pacyficzny standardowy", "ACST": "Czas środkowoaustralijski standardowy", "MST": "Czas górski standardowy", "UYT": "Urugwaj (czas standardowy)", "LHST": "Lord Howe (czas standardowy)", "EAT": "Czas wschodnioafrykański", "TMT": "Turkmenistan (czas standardowy)", "TMST": "Turkmenistan (czas letni)", "WARST": "Argentyna Zachodnia (czas letni)", "WAST": "Czas zachodnioafrykański letni", "AST": "Czas standardowy atlantycki", "CLST": "Chile (czas letni)", "CHAST": "Chatham (czas standardowy)", "SGT": "Singapur", "ECT": "Ekwador", "PDT": "Czas pacyficzny letni", "ChST": "Czamorro", "WAT": "Czas zachodnioafrykański standardowy", "COST": "Kolumbia (czas letni)", "WEZ": "Czas zachodnioeuropejski standardowy", "ACWST": "Czas środkowo-zachodnioaustralijski standardowy", "HAT": "Nowa Fundlandia (czas letni)", "HAST": "Hawaje-Aleuty (czas standardowy)", "AEDT": "Czas wschodnioaustraliski letni", "IST": "Czas indyjski", "EST": "Czas wschodnioamerykański standardowy", "LHDT": "Lord Howe (czas letni)", "VET": "Wenezuela", "CHADT": "Chatham (czas letni)", "CAT": "Czas środkowoafrykański", "WART": "Argentyna Zachodnia (czas standardowy)", "WESZ": "Czas zachodnioeuropejski letni", "ACDT": "Czas środkowoaustralijski letni", "WIT": "Indonezja Wschodnia", "GMT": "Czas uniwersalny", "MESZ": "Czas środkowoeuropejski letni", "AEST": "Czas standardowy wschodnioaustraliski", "OEZ": "Czas wschodnioeuropejski standardowy", "JST": "Japonia (czas standardowy)", "ACWDT": "Czas środkowo-zachodnioaustralijski letni", "AWDT": "Czas zachodnioaustralijski letni", "CDT": "Czas środkowoamerykański letni", "OESZ": "Czas wschodnioeuropejski letni", "BT": "Bhutan", "SRT": "Surinam", "CLT": "Chile (czas standardowy)", "CST": "Czas środkowoamerykański standardowy", "HADT": "Hawaje-Aleuty (czas letni)", "JDT": "Japonia (czas letni)", "BOT": "Boliwia", "AWST": "Czas zachodnioaustralijski standardowy", "HKT": "Hongkong (czas standardowy)", "MEZ": "Czas środkowoeuropejski standardowy"},
+		timezones:              map[string]string{"IST": "Czas indyjski", "MDT": "MDT", "AWDT": "Czas zachodnioaustralijski letni", "HKT": "Hongkong (czas standardowy)", "OESZ": "Czas wschodnioeuropejski letni", "UYT": "Urugwaj (czas standardowy)", "WART": "Argentyna Zachodnia (czas standardowy)", "ACDT": "Czas środkowoaustralijski letni", "AWST": "Czas zachodnioaustralijski standardowy", "TMT": "Turkmenistan (czas standardowy)", "NZDT": "Nowa Zelandia (czas letni)", "WIT": "Indonezja Wschodnia", "WAT": "Czas zachodnioafrykański standardowy", "CDT": "Czas środkowoamerykański letni", "∅∅∅": "Czas amazoński letni", "OEZ": "Czas wschodnioeuropejski standardowy", "MESZ": "Czas środkowoeuropejski letni", "ACWST": "Czas środkowo-zachodnioaustralijski standardowy", "WEZ": "Czas zachodnioeuropejski standardowy", "SGT": "Singapur", "EST": "Czas wschodnioamerykański standardowy", "MST": "MST", "HAST": "Hawaje-Aleuty (czas standardowy)", "WIB": "Indonezja Zachodnia", "NZST": "Nowa Zelandia (czas standardowy)", "COST": "Kolumbia (czas letni)", "WAST": "Czas zachodnioafrykański letni", "JST": "Japonia (czas standardowy)", "HKST": "Hongkong (czas letni)", "CHADT": "Chatham (czas letni)", "PST": "Czas pacyficzny standardowy", "GMT": "Czas uniwersalny", "EAT": "Czas wschodnioafrykański", "CLT": "Chile (czas standardowy)", "HAT": "Nowa Fundlandia (czas letni)", "EDT": "Czas wschodnioamerykański letni", "ART": "Argentyna (czas standardowy)", "WARST": "Argentyna Zachodnia (czas letni)", "WESZ": "Czas zachodnioeuropejski letni", "GYT": "Gujana", "AEST": "Czas standardowy wschodnioaustraliski", "MEZ": "Czas środkowoeuropejski standardowy", "CHAST": "Chatham (czas standardowy)", "ECT": "Ekwador", "TMST": "Turkmenistan (czas letni)", "CST": "Czas środkowoamerykański standardowy", "HNT": "Nowa Fundlandia (czas standardowy)", "MYT": "Malezja", "LHDT": "Lord Howe (czas letni)", "UYST": "Urugwaj (czas letni)", "BT": "Bhutan", "BOT": "Boliwia", "PDT": "Czas pacyficzny letni", "AST": "Czas standardowy atlantycki", "ACST": "Czas środkowoaustralijski standardowy", "JDT": "Japonia (czas letni)", "AKST": "Alaska (czas standardowy)", "SAST": "Czas południowoafrykański", "LHST": "Lord Howe (czas standardowy)", "CAT": "Czas środkowoafrykański", "WITA": "Indonezja Środkowa", "GFT": "Gujana Francuska", "COT": "Kolumbia (czas standardowy)", "AKDT": "Alaska (czas letni)", "ARST": "Argentyna (czas letni)", "CLST": "Chile (czas letni)", "HADT": "Hawaje-Aleuty (czas letni)", "SRT": "Surinam", "VET": "Wenezuela", "AEDT": "Czas wschodnioaustraliski letni", "ACWDT": "Czas środkowo-zachodnioaustralijski letni", "ADT": "Czas atlantycki letni", "ChST": "Czamorro"},
 	}
 }
 
@@ -233,7 +233,7 @@ func (pl *pl_PL) WeekdaysWide() []string {
 func (pl *pl_PL) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(pl.decimal) + len(pl.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -308,7 +308,7 @@ func (pl *pl_PL) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pl.currencies[currency]
-	l := len(s) + len(pl.decimal) + len(pl.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -368,7 +368,7 @@ func (pl *pl_PL) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pl.currencies[currency]
-	l := len(s) + len(pl.decimal) + len(pl.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

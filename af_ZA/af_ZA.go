@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v.C.", "n.C."},
 		erasNarrow:             []string{"v.C.", "n.C."},
 		erasWide:               []string{"voor Christus", "na Christus"},
-		timezones:              map[string]string{"NZST": "Nieu-Seeland-standaardtyd", "HKT": "Hongkong-standaardtyd", "WEZ": "Wes-Europese standaardtyd", "HNT": "Newfoundland-standaardtyd", "MDT": "MDT", "AKDT": "Alaska-dagligtyd", "∅∅∅": "Brasilië somertyd", "WESZ": "Wes-Europese somertyd", "HAT": "Newfoundland-dagligtyd", "SAST": "Suid-Afrika-standaardtyd", "GFT": "Frans-Guiana-tyd", "HAST": "Hawaii-Aleusiër-standaardtyd", "MYT": "Maleisië-tyd", "SGT": "Singapoer-standaardtyd", "CST": "Sentrale standaardtyd", "WIT": "Oos-Indonesië-tyd", "EDT": "Oostelike dagligtyd", "ADT": "Atlantiese dagligtyd", "CLST": "Chili-somertyd", "BT": "Bhoetan-tyd", "CAT": "Sentraal-Afrika-tyd", "AEDT": "Australiese Oostelike dagligtyd", "UYT": "Uruguay-standaardtyd", "PDT": "Pasifiese dagligtyd", "ACDT": "Australiese sentrale dagligtyd", "COST": "Colombië-somertyd", "HKST": "Hongkong-somertyd", "CHAST": "Chatham-standaardtyd", "WAST": "Wes-Afrika-somertyd", "BOT": "Bolivia-tyd", "CHADT": "Chatham-dagligtyd", "OEZ": "Oos-Europese standaardtyd", "GMT": "Greenwich-mediaantyd", "WIB": "Wes-Indonesië-tyd", "JST": "Japan-standaardtyd", "JDT": "Japan-dagligtyd", "OESZ": "Oos-Europese somertyd", "WART": "Wes-Argentinië-standaardtyd", "WAT": "Wes-Afrika-standaardtyd", "AST": "Atlantiese standaardtyd", "AWST": "Australiese Westelike standaardtyd", "NZDT": "Nieu-Seeland-dagligtyd", "LHDT": "Lord Howe-dagligtyd", "UYST": "Uruguay-somertyd", "ChST": "Chamorro-standaardtyd", "TMST": "Turkmenistan-somertyd", "EST": "Oostelike standaardtyd", "LHST": "Lord Howe-standaardtyd", "ACST": "Australiese sentraal-standaardtyd", "GYT": "Guyana-tyd", "ARST": "Argentinië-somertyd", "HADT": "Hawaii-Aleusiër-dagligtyd", "AEST": "Australiese Oostelike standaardtyd", "CDT": "Sentrale dagligtyd", "TMT": "Turkmenistan-standaardtyd", "WITA": "Sentraal Indonesië-tyd", "PST": "Pasifiese standaardtyd", "ACWST": "Australiese sentraal-Westelike standaard-tyd", "EAT": "Oos-Afrika-tyd", "MESZ": "Sentraal-Europese somertyd", "CLT": "Chili-standaardtyd", "MST": "MST", "AKST": "Alaska-standaardtyd", "WARST": "Wes-Argentinië-somertyd", "ACWDT": "Australiese sentraal-Westelike dagligtyd", "VET": "Venezuela-tyd", "ART": "Argentinië-standaardtyd", "COT": "Colombië-standaardtyd", "MEZ": "Sentraal-Europese standaardtyd", "SRT": "Suriname-tyd", "AWDT": "Australiese Westelike dagligtyd", "ECT": "Ecuador-tyd", "IST": "Indië-standaardtyd"},
+		timezones:              map[string]string{"HKST": "Hongkong-somertyd", "CLT": "Chili-standaardtyd", "WART": "Wes-Argentinië-standaardtyd", "MEZ": "Sentraal-Europese standaardtyd", "MESZ": "Sentraal-Europese somertyd", "AKDT": "Alaska-dagligtyd", "ART": "Argentinië-standaardtyd", "TMST": "Turkmenistan-somertyd", "NZST": "Nieu-Seeland-standaardtyd", "WAST": "Wes-Afrika-somertyd", "VET": "Venezuela-tyd", "SAST": "Suid-Afrika-standaardtyd", "HKT": "Hongkong-standaardtyd", "OEZ": "Oos-Europese standaardtyd", "WIT": "Oos-Indonesië-tyd", "WARST": "Wes-Argentinië-somertyd", "MYT": "Maleisië-tyd", "WIB": "Wes-Indonesië-tyd", "AWST": "Australiese Westelike standaardtyd", "SRT": "Suriname-tyd", "WAT": "Wes-Afrika-standaardtyd", "PDT": "Pasifiese dagligtyd", "ChST": "Chamorro-standaardtyd", "CHADT": "Chatham-dagligtyd", "MST": "MST", "AEST": "Australiese Oostelike standaardtyd", "ECT": "Ecuador-tyd", "COT": "Colombië-standaardtyd", "HAT": "Newfoundland-dagligtyd", "PST": "Pasifiese standaardtyd", "ADT": "Atlantiese dagligtyd", "ACDT": "Australiese sentrale dagligtyd", "HAST": "Hawaii-Aleusiër-standaardtyd", "UYT": "Uruguay-standaardtyd", "BOT": "Bolivia-tyd", "JDT": "Japan-dagligtyd", "AWDT": "Australiese Westelike dagligtyd", "OESZ": "Oos-Europese somertyd", "BT": "Bhoetan-tyd", "CLST": "Chili-somertyd", "ACWST": "Australiese sentraal-Westelike standaard-tyd", "CST": "Sentrale standaardtyd", "SGT": "Singapoer-standaardtyd", "HNT": "Newfoundland-standaardtyd", "COST": "Colombië-somertyd", "∅∅∅": "Asore-somertyd", "CAT": "Sentraal-Afrika-tyd", "GMT": "Greenwich-mediaantyd", "EDT": "Oostelike dagligtyd", "HADT": "Hawaii-Aleusiër-dagligtyd", "NZDT": "Nieu-Seeland-dagligtyd", "JST": "Japan-standaardtyd", "ACST": "Australiese sentraal-standaardtyd", "ARST": "Argentinië-somertyd", "LHDT": "Lord Howe-dagligtyd", "WEZ": "Wes-Europese standaardtyd", "WESZ": "Wes-Europese somertyd", "CDT": "Sentrale dagligtyd", "MDT": "MDT", "LHST": "Lord Howe-standaardtyd", "UYST": "Uruguay-somertyd", "ACWDT": "Australiese sentraal-Westelike dagligtyd", "GFT": "Frans-Guiana-tyd", "AST": "Atlantiese standaardtyd", "GYT": "Guyana-tyd", "TMT": "Turkmenistan-standaardtyd", "AEDT": "Australiese Oostelike dagligtyd", "EAT": "Oos-Afrika-tyd", "IST": "Indië-standaardtyd", "CHAST": "Chatham-standaardtyd", "EST": "Oostelike standaardtyd", "AKST": "Alaska-standaardtyd", "WITA": "Sentraal Indonesië-tyd"},
 	}
 }
 
@@ -191,7 +191,7 @@ func (af *af_ZA) WeekdaysWide() []string {
 func (af *af_ZA) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(af.decimal) + len(af.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -266,7 +266,7 @@ func (af *af_ZA) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
-	l := len(s) + len(af.decimal) + len(af.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -326,7 +326,7 @@ func (af *af_ZA) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
-	l := len(s) + len(af.decimal) + len(af.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

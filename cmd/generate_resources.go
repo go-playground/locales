@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/go-playground/locales"
@@ -34,6 +35,15 @@ var (
 			}
 
 			return fmt.Sprintf("%#v", b)
+		},
+		"byte_count": func(s ...string) string {
+			var count int
+
+			for i := 0; i < len(s); i++ {
+				count += len([]byte(s[i]))
+			}
+
+			return strconv.Itoa(count)
 		},
 	}
 	prVarFuncs = map[string]string{

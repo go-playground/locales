@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"i. e.", "i. sz."},
 		erasNarrow:             []string{"ie.", "isz."},
 		erasWide:               []string{"időszámításunk előtt", "időszámításunk szerint"},
-		timezones:              map[string]string{"WAT": "nyugat-afrikai téli idő", "ADT": "atlanti-óceáni nyári idő", "EST": "keleti államokbeli zónaidő", "WESZ": "nyugat-európai nyári idő", "LHDT": "Lord Howe-szigeti nyári idő", "ACST": "közép-ausztráliai téli idő", "MDT": "hegyvidéki nyári idő", "HAT": "új-fundlandi nyári idő", "ARST": "Argentínai nyári idő", "CST": "középső államokbeli zónaidő", "HKST": "hongkongi nyári idő", "SAST": "dél-afrikai téli idő", "WAST": "nyugat-afrikai nyári idő", "CHAST": "chathami téli idő", "EDT": "keleti államokbeli nyári idő", "ACWDT": "közép-nyugat-ausztráliai nyári idő", "UYT": "uruguayi téli idő", "SRT": "szurinámi idő", "ACDT": "közép-ausztráliai nyári idő", "AEDT": "kelet-ausztráliai nyári idő", "ACWST": "közép-nyugat-ausztráliai téli idő", "ChST": "chamorrói téli idő", "GFT": "francia-guianai idő", "WIB": "nyugat-indonéziai téli idő", "BOT": "bolíviai téli idő", "AWDT": "nyugat-ausztráliai nyári idő", "PST": "csendes-óceáni zónaidő", "VET": "venezuelai idő", "AST": "atlanti-óceáni zónaidő", "MEZ": "közép-európai téli idő", "AKST": "alaszkai zónaidő", "AKDT": "alaszkai nyári idő", "LHST": "Lord Howe-szigeti téli idő", "UYST": "uruguayi nyári idő", "AWST": "nyugat-ausztráliai téli idő", "CAT": "közép-afrikai téli idő", "CDT": "középső államokbeli nyári idő", "SGT": "szingapúri téli idő", "WIT": "kelet-indonéziai idő", "GMT": "greenwichi középidő, téli idő", "ECT": "ecuadori téli idő", "NZST": "új-zélandi téli idő", "COT": "kolumbiai téli idő", "COST": "kolumbiai nyári idő", "TMST": "türkmenisztáni nyári idő", "JST": "japán téli idő", "MST": "hegyvidéki zónaidő", "AEST": "kelet-ausztráliai téli idő", "OEZ": "kelet-európai téli idő", "∅∅∅": "Acre nyári idő", "EAT": "kelet-afrikai téli idő", "ART": "argentínai téli idő", "CLST": "chilei nyári idő", "HADT": "hawaii-aleuti nyári idő", "IST": "indiai téli idő", "HNT": "új-fundlandi zónaidő", "CHADT": "chathami nyári idő", "HAST": "hawaii-aleuti téli idő", "PDT": "csendes-óceáni nyári idő", "GYT": "guyanai téli idő", "NZDT": "új-zélandi nyári idő", "MESZ": "közép-európai nyári idő", "CLT": "chilei téli idő", "TMT": "türkmenisztáni téli idő", "OESZ": "kelet-európai nyári idő", "JDT": "japán nyári idő", "BT": "butáni idő", "WEZ": "nyugat-európai téli idő", "MYT": "malajziai idő", "HKT": "hongkongi téli idő", "WITA": "közép-indonéziai idő", "WART": "nyugat-argentínai téli idő", "WARST": "nyugat-argentínai nyári idő"},
+		timezones:              map[string]string{"AWST": "nyugat-ausztráliai téli idő", "ART": "argentínai téli idő", "NZST": "új-zélandi téli idő", "LHDT": "Lord Howe-szigeti nyári idő", "NZDT": "új-zélandi nyári idő", "AEST": "kelet-ausztráliai téli idő", "UYT": "uruguayi téli idő", "UYST": "uruguayi nyári idő", "CHADT": "chathami nyári idő", "MST": "Macaui zónaidő", "HAST": "hawaii-aleuti téli idő", "SRT": "szurinámi idő", "ACWDT": "közép-nyugat-ausztráliai nyári idő", "GYT": "guyanai téli idő", "CAT": "közép-afrikai téli idő", "ACWST": "közép-nyugat-ausztráliai téli idő", "AEDT": "kelet-ausztráliai nyári idő", "GMT": "greenwichi középidő, téli idő", "COT": "kolumbiai téli idő", "COST": "kolumbiai nyári idő", "WARST": "nyugat-argentínai nyári idő", "WEZ": "nyugat-európai téli idő", "CHAST": "chathami téli idő", "OESZ": "kelet-európai nyári idő", "PDT": "csendes-óceáni nyári idő", "MDT": "Macaui nyári idő", "LHST": "Lord Howe-szigeti téli idő", "BT": "butáni idő", "WART": "nyugat-argentínai téli idő", "BOT": "bolíviai téli idő", "EAT": "kelet-afrikai téli idő", "ACST": "közép-ausztráliai téli idő", "EST": "keleti államokbeli zónaidő", "TMT": "türkmenisztáni téli idő", "IST": "indiai téli idő", "VET": "venezuelai idő", "ECT": "ecuadori téli idő", "JST": "japán téli idő", "SAST": "dél-afrikai téli idő", "CLT": "chilei téli idő", "TMST": "türkmenisztáni nyári idő", "HADT": "hawaii-aleuti nyári idő", "ChST": "chamorrói téli idő", "WITA": "közép-indonéziai idő", "WESZ": "nyugat-európai nyári idő", "AKST": "alaszkai zónaidő", "ACDT": "közép-ausztráliai nyári idő", "ARST": "Argentínai nyári idő", "MESZ": "közép-európai nyári idő", "CLST": "chilei nyári idő", "WIT": "kelet-indonéziai idő", "GFT": "francia-guianai idő", "WAT": "nyugat-afrikai téli idő", "HNT": "új-fundlandi zónaidő", "ADT": "atlanti-óceáni nyári idő", "HKT": "hongkongi téli idő", "WAST": "nyugat-afrikai nyári idő", "CST": "középső államokbeli zónaidő", "CDT": "középső államokbeli nyári idő", "JDT": "japán nyári idő", "HKST": "hongkongi nyári idő", "EDT": "keleti államokbeli nyári idő", "PST": "csendes-óceáni zónaidő", "AWDT": "nyugat-ausztráliai nyári idő", "HAT": "új-fundlandi nyári idő", "MYT": "malajziai idő", "AST": "atlanti-óceáni zónaidő", "WIB": "nyugat-indonéziai téli idő", "OEZ": "kelet-európai téli idő", "MEZ": "közép-európai téli idő", "SGT": "szingapúri téli idő", "∅∅∅": "azori nyári idő", "AKDT": "alaszkai nyári idő"},
 	}
 }
 
@@ -209,7 +209,7 @@ func (hu *hu) WeekdaysWide() []string {
 func (hu *hu) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(hu.decimal) + len(hu.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -284,7 +284,7 @@ func (hu *hu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hu.currencies[currency]
-	l := len(s) + len(hu.decimal) + len(hu.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -344,7 +344,7 @@ func (hu *hu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hu.currencies[currency]
-	l := len(s) + len(hu.decimal) + len(hu.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -68,7 +68,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"f.Kr.", "e.Kr."},
 		erasWide:               []string{"före Kristus", "efter Kristus"},
-		timezones:              map[string]string{"UYT": "uruguayansk normaltid", "UYST": "uruguayansk sommartid", "VET": "venezuelansk tid", "ADT": "nordamerikansk atlantsommartid", "NZST": "nyzeeländsk normaltid", "HAT": "Newfoundland, sommartid", "ART": "östargentinsk normaltid", "BOT": "boliviansk tid", "ACWST": "västcentralaustralisk normaltid", "WART": "västargentinsk normaltid", "MST": "Klippiga bergen, normaltid", "CLST": "chilensk sommartid", "MEZ": "centraleuropeisk normaltid", "AEST": "östaustralisk normaltid", "OEZ": "östeuropeisk normaltid", "JST": "japansk normaltid", "MESZ": "centraleuropeisk sommartid", "WIB": "västindonesisk tid", "AKDT": "Alaska, sommartid", "PST": "västnordamerikansk normaltid", "WARST": "västargentinsk sommartid", "OESZ": "östeuropeisk sommartid", "ACWDT": "västcentralaustralisk sommartid", "MDT": "Klippiga bergen, sommartid", "WAT": "västafrikansk normaltid", "AWST": "västaustralisk normaltid", "NZDT": "nyzeeländsk sommartid", "CLT": "chilensk normaltid", "SAST": "sydafrikansk tid", "GYT": "Guyanatid", "EAT": "östafrikansk tid", "CDT": "centralnordamerikansk sommartid", "WIT": "östindonesisk tid", "AKST": "Alaska, normaltid", "GMT": "Greenwichtid", "ACDT": "centralaustralisk sommartid", "CAT": "centralafrikansk tid", "CHAST": "Chatham, normaltid", "TMT": "turkmensk normaltid", "AEDT": "östaustralisk sommartid", "WEZ": "västeuropeisk normaltid", "∅∅∅": "västbrasiliansk sommartid", "AWDT": "västaustralisk sommartid", "CST": "centralnordamerikansk normaltid", "WESZ": "västeuropeisk sommartid", "MYT": "malaysisk tid", "HNT": "Newfoundland, normaltid", "HKST": "Hongkong, sommartid", "WITA": "centralindonesisk tid", "LHST": "Lord Howe, normaltid", "COT": "colombiansk normaltid", "JDT": "japansk sommartid", "EST": "östnordamerikansk normaltid", "HAST": "Honolulu, normaltid", "EDT": "östnordamerikansk sommartid", "WAST": "västafrikansk sommartid", "AST": "nordamerikansk atlantnormaltid", "COST": "colombiansk sommartid", "SGT": "Singaporetid", "HKT": "Hongkong, normaltid", "TMST": "turkmensk sommartid", "ChST": "Chamorrotid", "ECT": "ecuadoriansk tid", "LHDT": "Lord Howe, sommartid", "SRT": "Surinamtid", "CHADT": "Chatham, sommartid", "GFT": "Franska Guyanatid", "PDT": "västnordamerikansk sommartid", "ACST": "centralaustralisk normaltid", "BT": "bhutansk tid", "ARST": "östargentinsk sommartid", "HADT": "Honolulu, sommartid", "IST": "indisk tid"},
+		timezones:              map[string]string{"CHAST": "Chatham, normaltid", "MEZ": "centraleuropeisk normaltid", "WIT": "östindonesisk tid", "HADT": "Honolulu, sommartid", "UYT": "uruguayansk normaltid", "VET": "venezuelansk tid", "GYT": "Guyanatid", "AKDT": "Alaska, sommartid", "AWST": "västaustralisk normaltid", "AWDT": "västaustralisk sommartid", "ARST": "östargentinsk sommartid", "WITA": "centralindonesisk tid", "WART": "västargentinsk normaltid", "ACWDT": "västcentralaustralisk sommartid", "MDT": "Macausommartid", "LHDT": "Lord Howe, sommartid", "NZST": "nyzeeländsk normaltid", "CAT": "centralafrikansk tid", "ChST": "Chamorrotid", "CLST": "chilensk sommartid", "WEZ": "västeuropeisk normaltid", "JST": "japansk normaltid", "HNT": "Newfoundland, normaltid", "HAT": "Newfoundland, sommartid", "ACST": "centralaustralisk normaltid", "ACDT": "centralaustralisk sommartid", "WARST": "västargentinsk sommartid", "COST": "colombiansk sommartid", "EDT": "östnordamerikansk sommartid", "TMST": "turkmensk sommartid", "OEZ": "östeuropeisk normaltid", "CST": "centralnordamerikansk normaltid", "AKST": "Alaska, normaltid", "ART": "östargentinsk normaltid", "EST": "östnordamerikansk normaltid", "EAT": "östafrikansk tid", "ACWST": "västcentralaustralisk normaltid", "COT": "colombiansk normaltid", "MYT": "malaysisk tid", "AST": "nordamerikansk atlantnormaltid", "BT": "bhutansk tid", "GFT": "Franska Guyanatid", "IST": "indisk tid", "HKST": "Hongkong, sommartid", "CHADT": "Chatham, sommartid", "CLT": "chilensk normaltid", "SGT": "Singaporetid", "HAST": "Honolulu, normaltid", "AEST": "östaustralisk normaltid", "WESZ": "västeuropeisk sommartid", "JDT": "japansk sommartid", "∅∅∅": "azorisk sommartid", "WIB": "västindonesisk tid", "OESZ": "östeuropeisk sommartid", "PST": "västnordamerikansk normaltid", "SRT": "Surinamtid", "CDT": "centralnordamerikansk sommartid", "LHST": "Lord Howe, normaltid", "UYST": "uruguayansk sommartid", "PDT": "västnordamerikansk sommartid", "WAST": "västafrikansk sommartid", "ECT": "ecuadoriansk tid", "TMT": "turkmensk normaltid", "AEDT": "östaustralisk sommartid", "MESZ": "centraleuropeisk sommartid", "BOT": "boliviansk tid", "NZDT": "nyzeeländsk sommartid", "SAST": "sydafrikansk tid", "WAT": "västafrikansk normaltid", "ADT": "nordamerikansk atlantsommartid", "HKT": "Hongkong, normaltid", "MST": "Macaunormaltid", "GMT": "Greenwichtid"},
 	}
 }
 
@@ -198,7 +198,7 @@ func (sv *sv_AX) WeekdaysWide() []string {
 func (sv *sv_AX) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(sv.decimal) + len(sv.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 6 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -277,7 +277,7 @@ func (sv *sv_AX) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sv.currencies[currency]
-	l := len(s) + len(sv.decimal) + len(sv.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 8 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -337,7 +337,7 @@ func (sv *sv_AX) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sv.currencies[currency]
-	l := len(s) + len(sv.decimal) + len(sv.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 8 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

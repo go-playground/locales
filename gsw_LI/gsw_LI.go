@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr."},
 		erasNarrow:             []string{"v. Chr.", "n. Chr."},
 		erasWide:               []string{"v. Chr.", "n. Chr."},
-		timezones:              map[string]string{"ACST": "ACST", "HKST": "HKST", "LHDT": "LHDT", "CDT": "Amerika-Zentraal Summerziit", "SAST": "Süüdafrikanischi ziit", "ECT": "ECT", "IST": "IST", "EST": "EST", "ChST": "ChST", "SGT": "SGT", "JST": "JST", "LHST": "LHST", "BOT": "BOT", "MESZ": "Mitteleuropäischi Summerziit", "CST": "Amerika-Zentraal Schtandardziit", "AEST": "AEST", "ACWDT": "ACWDT", "MDT": "MDT", "COT": "COT", "WITA": "WITA", "ACDT": "ACDT", "TMST": "TMST", "WARST": "WARST", "WESZ": "Weschteuropäischi Summerziit", "ACWST": "ACWST", "WAST": "Weschtafrikanischi Summerziit", "AST": "AST", "MEZ": "Mitteleuropäischi Schtandardziit", "CLT": "CLT", "WIB": "WIB", "HADT": "HADT", "JDT": "JDT", "MYT": "MYT", "∅∅∅": "Acre-Summerziit", "NZDT": "NZDT", "CHAST": "CHAST", "UYST": "UYST", "TMT": "TMT", "GMT": "GMT", "AKDT": "Alaska-Summerziit", "OEZ": "Oschteuropäischi Schtandardziit", "HNT": "HNT", "ART": "ART", "AWST": "AWST", "NZST": "NZST", "GFT": "GFT", "BT": "BT", "PDT": "PDT", "HAT": "HAT", "ADT": "ADT", "AWDT": "AWDT", "WAT": "Weschtafrikanischi Schtandardziit", "WIT": "WIT", "MST": "MST", "VET": "VET", "EAT": "Oschtafrikanischi Ziit", "PST": "PST", "GYT": "GYT", "CLST": "CLST", "HAST": "HAST", "AKST": "Alaska-Schtandardziit", "EDT": "EDT", "WART": "WART", "SRT": "SRT", "ARST": "ARST", "HKT": "HKT", "CHADT": "CHADT", "OESZ": "Oschteuropäischi Summerziit", "COST": "COST", "CAT": "Zentralafrikanischi Ziit", "AEDT": "AEDT", "UYT": "UYT", "WEZ": "Weschteuropäischi Schtandardziit"},
+		timezones:              map[string]string{"ECT": "ECT", "HAST": "HAST", "GMT": "GMT", "WITA": "WITA", "MDT": "MDT", "GFT": "GFT", "EDT": "EDT", "PDT": "PDT", "MEZ": "Mitteleuropäischi Schtandardziit", "ACWDT": "ACWDT", "HAT": "HAT", "AEDT": "AEDT", "MST": "MST", "CST": "Amerika-Zentraal Schtandardziit", "HKST": "HKST", "TMT": "TMT", "UYT": "UYT", "MYT": "MYT", "LHST": "LHST", "WIT": "WIT", "WARST": "WARST", "CDT": "Amerika-Zentraal Summerziit", "AST": "AST", "TMST": "TMST", "UYST": "UYST", "ChST": "ChST", "JST": "JST", "CHAST": "CHAST", "ART": "ART", "EST": "EST", "CLT": "CLT", "WART": "WART", "IST": "IST", "JDT": "JDT", "HNT": "HNT", "AWDT": "AWDT", "LHDT": "LHDT", "NZDT": "NZDT", "AKDT": "Alaska-Summerziit", "ARST": "ARST", "SRT": "SRT", "EAT": "Oschtafrikanischi Ziit", "WESZ": "Weschteuropäischi Summerziit", "COT": "COT", "∅∅∅": "∅∅∅", "HKT": "HKT", "OESZ": "Oschteuropäischi Summerziit", "BT": "BT", "ACWST": "ACWST", "BOT": "BOT", "COST": "COST", "GYT": "GYT", "SGT": "SGT", "WIB": "WIB", "CAT": "Zentralafrikanischi Ziit", "AWST": "AWST", "AEST": "AEST", "MESZ": "Mitteleuropäischi Summerziit", "VET": "VET", "ACST": "ACST", "CHADT": "CHADT", "HADT": "HADT", "CLST": "CLST", "WAST": "Weschtafrikanischi Summerziit", "ADT": "ADT", "ACDT": "ACDT", "PST": "PST", "AKST": "Alaska-Schtandardziit", "OEZ": "Oschteuropäischi Schtandardziit", "WAT": "Weschtafrikanischi Schtandardziit", "WEZ": "Weschteuropäischi Schtandardziit", "SAST": "Süüdafrikanischi ziit", "NZST": "NZST"},
 	}
 }
 
@@ -191,7 +191,7 @@ func (gsw *gsw_LI) WeekdaysWide() []string {
 func (gsw *gsw_LI) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(gsw.decimal) + len(gsw.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 4 + 3*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -272,7 +272,7 @@ func (gsw *gsw_LI) FmtCurrency(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gsw.currencies[currency]
-	l := len(s) + len(gsw.decimal) + len(gsw.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 3*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -334,7 +334,7 @@ func (gsw *gsw_LI) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gsw.currencies[currency]
-	l := len(s) + len(gsw.decimal) + len(gsw.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 3*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

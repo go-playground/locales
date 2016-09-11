@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"AK", "DK"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Antis di Kristu", "Dispos di Kristu"},
-		timezones:              map[string]string{"WIT": "WIT", "JST": "JST", "PDT": "Ora di Pasifiku di Verãu", "CLST": "CLST", "CST": "Ora Sentral Padrãu", "EAT": "Ora di Afrika Oriental", "NZST": "NZST", "HNT": "HNT", "LHST": "LHST", "UYT": "UYT", "HKST": "HKST", "OESZ": "Ora di Verãu di Europa Oriental", "SRT": "SRT", "NZDT": "NZDT", "ART": "ART", "MST": "MST", "HKT": "HKT", "PST": "Ora di Pasifiku Padrãu", "COT": "COT", "COST": "COST", "CLT": "CLT", "AEDT": "Ora di Verãu di Australia Oriental", "SAST": "Ora di Sul di Afrika", "ACST": "Ora Padrãu di Australia Sentral", "AWST": "Ora Padrãu di Australia Osidental", "MEZ": "Ora Padrãu di Europa Sentral", "CHADT": "CHADT", "ACDT": "Ora di Verãu di Australia Sentral", "ChST": "ChST", "WAST": "Ora di Verão di Afrika Osidental", "HAST": "HAST", "ACWST": "Ora Padrãu di Australia Sentru-Osidental", "SGT": "SGT", "CAT": "Ora di Afrika Sentral", "JDT": "JDT", "WART": "WART", "WARST": "WARST", "WESZ": "Ora di Verãu di Europa Osidental", "MDT": "MDT", "MESZ": "Ora di Verãu di Europa Sentral", "WAT": "Ora Padrãu di Afrika Osidental", "ARST": "ARST", "ADT": "Ora di Verãu di Atlantiku", "TMT": "TMT", "AKDT": "AKDT", "WEZ": "Ora Padrãu di Europa Osidental", "AEST": "Ora Padrãu di Australia Oriental", "BT": "BT", "HADT": "HADT", "IST": "IST", "ECT": "ECT", "GYT": "GYT", "VET": "VET", "GFT": "GFT", "WIB": "WIB", "MYT": "MYT", "∅∅∅": "∅∅∅", "GMT": "GMT", "BOT": "BOT", "CHAST": "CHAST", "WITA": "WITA", "UYST": "UYST", "AKST": "AKST", "LHDT": "LHDT", "ACWDT": "Ora di Verãu di Australia Sentru-Osidental", "AST": "Ora Padrãu di Atlantiku", "CDT": "Ora Sentral di Verãu", "EDT": "Ora Oriental di Verãu", "EST": "Ora Oriental Padrãu", "HAT": "HAT", "AWDT": "Ora di Verãu di Australia Osidental", "TMST": "TMST", "OEZ": "Ora Padrãu di Europa Oriental"},
+		timezones:              map[string]string{"ARST": "ARST", "WIB": "WIB", "LHST": "LHST", "CAT": "Ora di Afrika Sentral", "UYT": "UYT", "AST": "Ora Padrãu di Atlantiku", "HNT": "HNT", "GYT": "GYT", "WEZ": "Ora Padrãu di Europa Osidental", "CHADT": "CHADT", "TMST": "TMST", "NZST": "NZST", "VET": "VET", "GFT": "GFT", "ART": "ART", "SAST": "Ora di Sul di Afrika", "EAT": "Ora di Afrika Oriental", "NZDT": "NZDT", "PST": "Ora di Pasifiku Padrãu", "WIT": "WIT", "WARST": "WARST", "CDT": "Ora Sentral di Verãu", "AKDT": "AKDT", "ADT": "Ora di Verãu di Atlantiku", "MDT": "MDT", "JDT": "JDT", "ACDT": "Ora di Verãu di Australia Sentral", "HKST": "HKST", "WART": "WART", "OESZ": "Ora di Verãu di Europa Oriental", "SRT": "SRT", "WAST": "Ora di Verão di Afrika Osidental", "MYT": "MYT", "SGT": "SGT", "HAST": "HAST", "AKST": "AKST", "OEZ": "Ora Padrãu di Europa Oriental", "UYST": "UYST", "WITA": "WITA", "JST": "JST", "ACST": "Ora Padrãu di Australia Sentral", "LHDT": "LHDT", "MESZ": "Ora di Verãu di Europa Sentral", "GMT": "GMT", "BOT": "BOT", "WESZ": "Ora di Verãu di Europa Osidental", "CST": "Ora Sentral Padrãu", "MST": "MST", "HADT": "HADT", "PDT": "Ora di Pasifiku di Verãu", "HAT": "HAT", "TMT": "TMT", "BT": "BT", "ChST": "ChST", "ACWST": "Ora Padrãu di Australia Sentru-Osidental", "COST": "COST", "ECT": "ECT", "AEST": "Ora Padrãu di Australia Oriental", "MEZ": "Ora Padrãu di Europa Sentral", "CLT": "CLT", "ACWDT": "Ora di Verãu di Australia Sentru-Osidental", "EDT": "Ora Oriental di Verãu", "AWDT": "Ora di Verãu di Australia Osidental", "HKT": "HKT", "CLST": "CLST", "∅∅∅": "∅∅∅", "EST": "Ora Oriental Padrãu", "WAT": "Ora Padrãu di Afrika Osidental", "IST": "IST", "COT": "COT", "CHAST": "CHAST", "AWST": "Ora Padrãu di Australia Osidental", "AEDT": "Ora di Verãu di Australia Oriental"},
 	}
 }
 
@@ -186,7 +186,7 @@ func (kea *kea) WeekdaysWide() []string {
 func (kea *kea) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(kea.decimal) + len(kea.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -261,7 +261,7 @@ func (kea *kea) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kea.currencies[currency]
-	l := len(s) + len(kea.decimal) + len(kea.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -321,7 +321,7 @@ func (kea *kea) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kea.currencies[currency]
-	l := len(s) + len(kea.decimal) + len(kea.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

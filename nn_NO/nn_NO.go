@@ -72,7 +72,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"f.Kr.", "e.Kr."},
 		erasWide:               []string{"f.Kr.", "e.Kr."},
-		timezones:              map[string]string{"ACDT": "sentralaustralsk sommartid", "MST": "MST", "CHAST": "CHAST", "IST": "IST", "HAT": "HAT", "CLST": "CLST", "WIB": "WIB", "JDT": "JDT", "ACWST": "vest-sentralaustralsk standardtid", "LHST": "LHST", "MYT": "MYT", "MESZ": "sentraleuropeisk sommartid", "OEZ": "austeuropeisk standardtid", "UYST": "UYST", "TMST": "TMST", "UYT": "UYT", "WESZ": "vesteuropeisk sommartid", "WAT": "vestafrikansk standardtid", "WAST": "vestafrikansk sommartid", "ARST": "ARST", "AST": "AST", "AWST": "vestaustralsk standardtid", "HAST": "HAST", "MDT": "MDT", "HADT": "HADT", "OESZ": "austeuropeisk sommartid", "ACST": "sentralaustralsk standardtid", "COT": "COT", "AKST": "AKST", "WEZ": "vesteuropeisk standardtid", "WART": "WART", "WARST": "WARST", "AWDT": "vestaustralsk sommartid", "NZDT": "NZDT", "COST": "COST", "CDT": "CDT", "ACWDT": "vest-sentralaustralsk sommartid", "SGT": "SGT", "BT": "BT", "ECT": "ECT", "∅∅∅": "∅∅∅", "CLT": "CLT", "HKT": "HKT", "JST": "JST", "SAST": "sørafrikansk tid", "PST": "PST", "PDT": "PDT", "LHDT": "LHDT", "BOT": "BOT", "HNT": "HNT", "CST": "CST", "CHADT": "CHADT", "EDT": "EDT", "GMT": "greenwich middeltid", "VET": "VET", "ADT": "ADT", "ART": "ART", "AEST": "austaustralsk standardtid", "AEDT": "austaustralsk sommartid", "WITA": "WITA", "AKDT": "AKDT", "NZST": "NZST", "HKST": "HKST", "SRT": "SRT", "ChST": "ChST", "WIT": "WIT", "EST": "EST", "GYT": "GYT", "EAT": "austafrikansk tid", "CAT": "sentralafrikansk tid", "MEZ": "sentraleuropeisk standardtid", "TMT": "TMT", "GFT": "GFT"},
+		timezones:              map[string]string{"AKST": "AKST", "AKDT": "AKDT", "AWDT": "vestaustralsk sommartid", "VET": "VET", "UYT": "UYT", "MYT": "MYT", "MST": "MST", "TMT": "TMT", "LHST": "LHST", "AEST": "austaustralsk standardtid", "PDT": "PDT", "JDT": "JDT", "ADT": "ADT", "HNT": "HNT", "CHADT": "CHADT", "EDT": "EDT", "EAT": "austafrikansk tid", "ACWDT": "vest-sentralaustralsk sommartid", "WAT": "vestafrikansk standardtid", "CST": "CST", "CDT": "CDT", "ART": "ART", "BT": "BT", "WESZ": "vesteuropeisk sommartid", "ECT": "ECT", "BOT": "BOT", "WAST": "vestafrikansk sommartid", "IST": "IST", "COT": "COT", "AWST": "vestaustralsk standardtid", "WITA": "WITA", "LHDT": "LHDT", "MESZ": "sentraleuropeisk sommartid", "SGT": "SGT", "ARST": "ARST", "AEDT": "austaustralsk sommartid", "OEZ": "austeuropeisk standardtid", "WART": "WART", "WARST": "WARST", "JST": "JST", "HKST": "HKST", "SAST": "sørafrikansk tid", "OESZ": "austeuropeisk sommartid", "UYST": "UYST", "GMT": "greenwich middeltid", "CLT": "CLT", "WIT": "WIT", "CHAST": "CHAST", "NZDT": "NZDT", "SRT": "SRT", "GYT": "GYT", "WIB": "WIB", "HADT": "HADT", "AST": "AST", "HKT": "HKT", "HAST": "HAST", "CAT": "sentralafrikansk tid", "CLST": "CLST", "PST": "PST", "WEZ": "vesteuropeisk standardtid", "COST": "COST", "ACST": "sentralaustralsk standardtid", "HAT": "HAT", "EST": "EST", "TMST": "TMST", "MEZ": "sentraleuropeisk standardtid", "ACWST": "vest-sentralaustralsk standardtid", "ACDT": "sentralaustralsk sommartid", "∅∅∅": "∅∅∅", "NZST": "NZST", "GFT": "GFT", "MDT": "MDT", "ChST": "ChST"},
 	}
 }
 
@@ -192,7 +192,7 @@ func (nn *nn_NO) WeekdaysWide() []string {
 func (nn *nn_NO) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(nn.decimal) + len(nn.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -273,7 +273,7 @@ func (nn *nn_NO) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nn.currencies[currency]
-	l := len(s) + len(nn.decimal) + len(nn.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -335,7 +335,7 @@ func (nn *nn_NO) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nn.currencies[currency]
-	l := len(s) + len(nn.decimal) + len(nn.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

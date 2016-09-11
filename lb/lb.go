@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"v. Chr.", "n. Chr."},
-		timezones:              map[string]string{"WARST": "Westargentinesch Summerzäit", "ACWST": "Zentral-/Westaustralesch Normalzäit", "SRT": "Suriname-Zäit", "WAST": "Westafrikanesch Summerzäit", "AWST": "Westaustralesch Normalzäit", "WIB": "Westindonesesch Zäit", "AEDT": "Ostaustralesch Summerzäit", "MYT": "Malaysesch Zäit", "HNT": "Neifundland-Normalzäit", "∅∅∅": "Amazonas-Summerzäit", "JST": "Japanesch Normalzäit", "OEZ": "Osteuropäesch Normalzäit", "EAT": "Ostafrikanesch Zäit", "COST": "Kolumbianesch Summerzäit", "AST": "Atlantik-Normalzäit", "CLST": "Chilenesch Summerzäit", "GFT": "Franséisch-Guayane-Zäit", "WEZ": "Westeuropäesch Normalzäit", "MST": "Rocky-Mountain-Normalzäit", "HKT": "Hong-Kong-Normalzäit", "WIT": "Ostindonesesch Zäit", "AKDT": "Alaska-Summerzäit", "GMT": "Mëttler Greenwich-Zäit", "VET": "Venezuela-Zäit", "UYT": "Uruguyanesch Normalzäit", "PST": "Nordamerikanesch Westküsten-Normalzäit", "PDT": "Nordamerikanesch Westküsten-Summerzäit", "ACWDT": "Zentral-/Westaustralesch Summerzäit", "MEZ": "Mëtteleuropäesch Normalzäit", "HAST": "Hawaii-Aleuten-Normalzäit", "JDT": "Japanesch Summerzäit", "LHST": "Lord-Howe-Normalzäit", "HKST": "Hong-Kong-Summerzäit", "CHADT": "Chatham-Summerzäit", "IST": "Indesch Zäit", "MDT": "Rocky-Mountain-Summerzäit", "ART": "Argentinesch Normalzäit", "AEST": "Ostaustralesch Normalzäit", "OESZ": "Osteuropäesch Summerzäit", "BT": "Bhutan-Zäit", "CHAST": "Chatham-Normalzäit", "HADT": "Hawaii-Aleuten-Summerzäit", "WAT": "Westafrikanesch Normalzäit", "ARST": "Argentinesch Summerzäit", "EST": "Nordamerikanesch Ostküsten-Normalzäit", "LHDT": "Lord-Howe-Summerzäit", "ACST": "Zentralaustralesch Normalzäit", "AKST": "Alaska-Normalzäit", "TMT": "Turkmenistan-Normalzäit", "NZST": "Neiséiland-Normalzäit", "NZDT": "Neiséiland-Summerzäit", "CST": "Nordamerikanesch Inland-Normalzäit", "GYT": "Guyana-Zäit", "COT": "Kolumbianesch Normalzäit", "AWDT": "Westaustralesch Summerzäit", "ADT": "Atlantik-Summerzäit", "CAT": "Zentralafrikanesch Zäit", "CDT": "Nordamerikanesch Inland-Summerzäit", "SAST": "Südafrikanesch Zäit", "WART": "Westargentinesch Normalzäit", "ACDT": "Zentralaustralesch Summerzäit", "UYST": "Uruguayanesch Summerzäit", "WESZ": "Westeuropäesch Summerzäit", "TMST": "Turkmenistan-Summerzäit", "WITA": "Zentralindonesesch Zäit", "HAT": "Neifundland-Summerzäit", "MESZ": "Mëtteleuropäesch Summerzäit", "CLT": "Chilenesch Normalzäit", "ECT": "Ecuadorianesch Zäit", "ChST": "Chamorro-Zäit", "SGT": "Singapur-Standardzäit", "EDT": "Nordamerikanesch Ostküsten-Summerzäit", "BOT": "Bolivianesch Zäit"},
+		timezones:              map[string]string{"HKST": "Hong-Kong-Summerzäit", "AKST": "Alaska-Normalzäit", "ARST": "Argentinesch Summerzäit", "CDT": "Nordamerikanesch Inland-Summerzäit", "GYT": "Guyana-Zäit", "SGT": "Singapur-Standardzäit", "OEZ": "Osteuropäesch Normalzäit", "MEZ": "Mëtteleuropäesch Normalzäit", "ACWST": "Zentral-/Westaustralesch Normalzäit", "CST": "Nordamerikanesch Inland-Normalzäit", "COST": "Kolumbianesch Summerzäit", "ACST": "Zentralaustralesch Normalzäit", "AWST": "Westaustralesch Normalzäit", "TMST": "Turkmenistan-Summerzäit", "UYST": "Uruguayanesch Summerzäit", "WIT": "Ostindonesesch Zäit", "WESZ": "Westeuropäesch Summerzäit", "AWDT": "Westaustralesch Summerzäit", "CHAST": "Chatham-Normalzäit", "ACDT": "Zentralaustralesch Summerzäit", "GMT": "Mëttler Greenwich-Zäit", "COT": "Kolumbianesch Normalzäit", "MYT": "Malaysesch Zäit", "AST": "Atlantik-Normalzäit", "BOT": "Bolivianesch Zäit", "EAT": "Ostafrikanesch Zäit", "JST": "Japanesch Normalzäit", "ChST": "Chamorro-Zäit", "WARST": "Westargentinesch Summerzäit", "TMT": "Turkmenistan-Normalzäit", "UYT": "Uruguyanesch Normalzäit", "HKT": "Hong-Kong-Normalzäit", "WIB": "Westindonesesch Zäit", "EDT": "Nordamerikanesch Ostküsten-Summerzäit", "MST": "MST", "LHDT": "Lord-Howe-Summerzäit", "SAST": "Südafrikanesch Zäit", "CAT": "Zentralafrikanesch Zäit", "BT": "Bhutan-Zäit", "WAT": "Westafrikanesch Normalzäit", "AKDT": "Alaska-Summerzäit", "CHADT": "Chatham-Summerzäit", "WITA": "Zentralindonesesch Zäit", "ADT": "Atlantik-Summerzäit", "CLT": "Chilenesch Normalzäit", "AEDT": "Ostaustralesch Summerzäit", "SRT": "Suriname-Zäit", "WAST": "Westafrikanesch Summerzäit", "LHST": "Lord-Howe-Normalzäit", "OESZ": "Osteuropäesch Summerzäit", "ACWDT": "Zentral-/Westaustralesch Summerzäit", "VET": "Venezuela-Zäit", "WEZ": "Westeuropäesch Normalzäit", "AEST": "Ostaustralesch Normalzäit", "HAT": "Neifundland-Summerzäit", "NZDT": "Neiséiland-Summerzäit", "MESZ": "Mëtteleuropäesch Summerzäit", "ECT": "Ecuadorianesch Zäit", "JDT": "Japanesch Summerzäit", "IST": "Indesch Zäit", "GFT": "Franséisch-Guayane-Zäit", "PST": "Nordamerikanesch Westküsten-Normalzäit", "CLST": "Chilenesch Summerzäit", "HAST": "Hawaii-Aleuten-Normalzäit", "NZST": "Neiséiland-Normalzäit", "HNT": "Neifundland-Normalzäit", "∅∅∅": "Azoren-Summerzäit", "EST": "Nordamerikanesch Ostküsten-Normalzäit", "PDT": "Nordamerikanesch Westküsten-Summerzäit", "WART": "Westargentinesch Normalzäit", "ART": "Argentinesch Normalzäit", "MDT": "MDT", "HADT": "Hawaii-Aleuten-Summerzäit"},
 	}
 }
 
@@ -193,7 +193,7 @@ func (lb *lb) WeekdaysWide() []string {
 func (lb *lb) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(lb.decimal) + len(lb.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -268,7 +268,7 @@ func (lb *lb) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lb.currencies[currency]
-	l := len(s) + len(lb.decimal) + len(lb.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -326,7 +326,7 @@ func (lb *lb) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lb.currencies[currency]
-	l := len(s) + len(lb.decimal) + len(lb.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -262,7 +262,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) string {
 	{{ if eq .FmtNumberExists true }}
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	{{- if gt .FmtNumberGroupLen 0 }}
-	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtNumberGroupLen }}
+	l := len(s) + {{ byte_count .Decimal .Minus }} + {{ byte_count .Group }} * len(s[:len(s)-int(v)-1]) / {{ .FmtNumberGroupLen }}
 	count := 0
 	inWhole := v == 0
 	{{- if gt .FmtNumberSecondaryGroupLen 0}}
@@ -372,7 +372,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) string 
 	{{- if eq .FmtPercentExists true }}
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	{{- if gt .FmtPercentGroupLen 0 }}
-	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtPercentGroupLen }}
+	l := len(s) + {{ byte_count .Decimal .Minus .Percent .FmtPercentPrefix .FmtPercentSuffix }} + {{ byte_count .Group }} * len(s[:len(s)-int(v)-1]) / {{ .FmtPercentGroupLen }}
 	count := 0
 	inWhole := v == 0
 	{{- if gt .FmtPercentSecondaryGroupLen 0}}
@@ -524,7 +524,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 	symbol := {{ .BaseLocale }}.currencies[currency]
 	{{- if eq .FmtCurrencyExists true }}
 	{{- if gt .FmtCurrencyGroupLen 0 }}
-	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtCurrencyGroupLen }}
+	l := len(s) + len(symbol) + {{ byte_count .Decimal .Minus .FmtCurrencyPrefix .FmtCurrencySuffix }} + {{ byte_count .Group }} * len(s[:len(s)-int(v)-1]) / {{ .FmtCurrencyGroupLen }}
 	count := 0
 	inWhole := v == 0
 	{{- if gt .FmtCurrencySecondaryGroupLen 0}}
@@ -669,7 +669,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 	symbol := {{ .BaseLocale }}.currencies[currency]
 	{{- if eq .FmtCurrencyExists true }}
 	{{- if gt .FmtCurrencyGroupLen 0 }}
-	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtCurrencyGroupLen }}
+	l := len(s) + len(symbol) + {{ byte_count .Decimal .Minus .FmtCurrencyNegativePrefix .FmtCurrencyNegativeSuffix }} + {{ byte_count .Group }} * len(s[:len(s)-int(v)-1]) / {{ .FmtCurrencyGroupLen }}
 	count := 0
 	inWhole := v == 0
 	{{- if gt .FmtCurrencySecondaryGroupLen 0}}

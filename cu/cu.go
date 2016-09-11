@@ -72,7 +72,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"пре́дъ р.\u00a0х.", "по р.\u00a0х."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"пре́дъ р.\u00a0х.", "по р.\u00a0х."},
-		timezones:              map[string]string{"WAST": "WAST", "CHADT": "CHADT", "AEDT": "AEDT", "PDT": "тихоѻкеа́нское лѣ́тнее вре́мѧ", "PST": "тихоѻкеа́нское зи́мнее вре́мѧ", "ChST": "ChST", "GMT": "сре́днее вре́мѧ по грі́нꙋичꙋ", "EDT": "восточноамерїка́нское лѣ́тнее вре́мѧ", "UYST": "UYST", "MST": "а҆мерїка́нское наго́рнее зи́мнее вре́мѧ", "AST": "а҆тланті́ческое зи́мнее вре́мѧ", "CLT": "CLT", "WIT": "WIT", "IST": "IST", "OESZ": "восточноєѵрѡпе́йское лѣ́тнее вре́мѧ", "SRT": "SRT", "AKDT": "AKDT", "WESZ": "западноєѵрѡпе́йское лѣ́тнее вре́мѧ", "COST": "COST", "CDT": "среднеамерїка́нское лѣ́тнее вре́мѧ", "HKT": "HKT", "TMT": "TMT", "EST": "восточноамерїка́нское зи́мнее вре́мѧ", "MYT": "MYT", "SGT": "SGT", "OEZ": "восточноєѵрѡпе́йское зи́мнее вре́мѧ", "AWST": "AWST", "NZST": "NZST", "HAT": "HAT", "CLST": "CLST", "WIB": "WIB", "SAST": "SAST", "MDT": "а҆мерїка́нское наго́рнее лѣ́тнее вре́мѧ", "ARST": "ARST", "HAST": "HAST", "GYT": "GYT", "CAT": "CAT", "MESZ": "среднеєѵрѡпе́йское лѣ́тнее вре́мѧ", "NZDT": "NZDT", "WEZ": "западноєѵрѡпе́йское зи́мнее вре́мѧ", "WARST": "WARST", "WAT": "WAT", "ART": "ART", "HKST": "HKST", "GFT": "GFT", "UYT": "UYT", "ACDT": "ACDT", "EAT": "EAT", "COT": "COT", "HADT": "HADT", "LHDT": "LHDT", "ECT": "ECT", "ACWST": "ACWST", "ACWDT": "ACWDT", "∅∅∅": "∅∅∅", "ACST": "ACST", "BT": "BT", "LHST": "LHST", "CST": "среднеамерїка́нское зи́мнее вре́мѧ", "MEZ": "среднеєѵрѡпе́йское зи́мнее вре́мѧ", "AEST": "AEST", "AKST": "AKST", "JDT": "JDT", "BOT": "BOT", "HNT": "HNT", "JST": "JST", "VET": "VET", "ADT": "а҆тланті́ческое лѣ́тнее вре́мѧ", "AWDT": "AWDT", "CHAST": "CHAST", "TMST": "TMST", "WITA": "WITA", "WART": "WART"},
+		timezones:              map[string]string{"AKDT": "AKDT", "LHDT": "LHDT", "UYT": "UYT", "JDT": "JDT", "SRT": "SRT", "WARST": "WARST", "WIT": "WIT", "ECT": "ECT", "AWST": "AWST", "ARST": "ARST", "MST": "а҆мерїка́нское наго́рнее зи́мнее вре́мѧ", "CST": "среднеамерїка́нское зи́мнее вре́мѧ", "WIB": "WIB", "HAST": "HAST", "HKST": "HKST", "ART": "ART", "AEDT": "AEDT", "ACWST": "ACWST", "WEZ": "западноєѵрѡпе́йское зи́мнее вре́мѧ", "COST": "COST", "TMST": "TMST", "MDT": "а҆мерїка́нское наго́рнее лѣ́тнее вре́мѧ", "BOT": "BOT", "WAST": "WAST", "COT": "COT", "ACST": "ACST", "ACDT": "ACDT", "TMT": "TMT", "MEZ": "среднеєѵрѡпе́йское зи́мнее вре́мѧ", "ACWDT": "ACWDT", "CLST": "CLST", "WART": "WART", "AWDT": "AWDT", "AEST": "AEST", "BT": "BT", "ChST": "ChST", "MYT": "MYT", "JST": "JST", "GMT": "сре́днее вре́мѧ по грі́нꙋичꙋ", "WITA": "WITA", "EAT": "EAT", "SGT": "SGT", "EDT": "восточноамерїка́нское лѣ́тнее вре́мѧ", "HADT": "HADT", "HKT": "HKT", "CAT": "CAT", "HNT": "HNT", "CHADT": "CHADT", "SAST": "SAST", "OEZ": "восточноєѵрѡпе́йское зи́мнее вре́мѧ", "AKST": "AKST", "VET": "VET", "AST": "а҆тланті́ческое зи́мнее вре́мѧ", "NZDT": "NZDT", "PDT": "тихоѻкеа́нское лѣ́тнее вре́мѧ", "WAT": "WAT", "IST": "IST", "∅∅∅": "∅∅∅", "HAT": "HAT", "CHAST": "CHAST", "OESZ": "восточноєѵрѡпе́йское лѣ́тнее вре́мѧ", "WESZ": "западноєѵрѡпе́йское лѣ́тнее вре́мѧ", "ADT": "а҆тланті́ческое лѣ́тнее вре́мѧ", "NZST": "NZST", "MESZ": "среднеєѵрѡпе́йское лѣ́тнее вре́мѧ", "UYST": "UYST", "CLT": "CLT", "EST": "восточноамерїка́нское зи́мнее вре́мѧ", "PST": "тихоѻкеа́нское зи́мнее вре́мѧ", "GYT": "GYT", "CDT": "среднеамерїка́нское лѣ́тнее вре́мѧ", "LHST": "LHST", "GFT": "GFT"},
 	}
 }
 
@@ -185,7 +185,7 @@ func (cu *cu) WeekdaysWide() []string {
 func (cu *cu) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(cu.decimal) + len(cu.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -262,7 +262,7 @@ func (cu *cu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cu.currencies[currency]
-	l := len(s) + len(cu.decimal) + len(cu.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -322,7 +322,7 @@ func (cu *cu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cu.currencies[currency]
-	l := len(s) + len(cu.decimal) + len(cu.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

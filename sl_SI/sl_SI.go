@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"pr. Kr.", "po n. št."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"pred Kristusom", "naše štetje"},
-		timezones:              map[string]string{"EAT": "Vzhodnoafriški čas", "HNT": "Novofundlandski standardni čas", "MESZ": "Srednjeevropski poletni čas", "CHAST": "Čatamski standardni čas", "CHADT": "Čatamski poletni čas", "TMT": "Turkmenistanski standardni čas", "SAST": "Južnoafriški čas", "ChST": "Čamorski standardni čas", "COST": "Kolumbijski poletni čas", "SGT": "Singapurski standardni čas", "TMST": "Turkmenistanski poletni čas", "WIB": "Indonezijski zahodni čas", "ACWDT": "Avstralski centralni zahodni poletni čas", "ACDT": "Avstralski centralni poletni čas", "ARST": "Argentinski poletni čas", "JDT": "Japonski poletni čas", "PST": "Pacifiški standardni čas", "HKT": "Hongkonški standardni čas", "JST": "Japonski standardni čas", "EST": "Vzhodni standardni čas", "EDT": "Vzhodni poletni čas", "WESZ": "Zahodnoevropski poletni čas", "GFT": "Čas: Francoska Gvajana", "MEZ": "Srednjeevropski standardni čas", "UYST": "Urugvajski poletni čas", "MST": "Gorski standardni čas", "MDT": "Gorski poletni čas", "AWST": "Avstralski zahodni standardni čas", "ADT": "Atlantski poletni čas", "WEZ": "Zahodnoevropski standardni čas", "CST": "Centralni standardni čas", "LHST": "Standardni čas otoka Lord Howe", "OEZ": "Vzhodnoevropski standardni čas", "CDT": "Centralni poletni čas", "NZST": "Novozelandski standardni čas", "COT": "Kolumbijski standardni čas", "AEDT": "Avstralski vzhodni poletni čas", "HADT": "Havajski aleutski poletni čas", "GMT": "Greenwiški srednji čas", "BT": "Butanski čas", "IST": "Indijski standardni čas", "ACST": "Avstralski centralni standardni čas", "WIT": "Indonezijski vzhodni čas", "WITA": "Indonezijski osrednji čas", "CAT": "Centralnoafriški čas", "HAT": "Novofundlandski poletni čas", "AKDT": "Aljaški poletni čas", "LHDT": "Poletni čas otoka Lord Howe", "WARST": "Argentinski zahodni poletni čas", "PDT": "Pacifiški poletni čas", "OESZ": "Vzhodnoevropski poletni čas", "WART": "Argentinski zahodni standardni čas", "WAST": "Zahodnoafriški poletni čas", "VET": "Venezuelski čas", "SRT": "Surinamski čas", "WAT": "Zahodnoafriški standardni čas", "AWDT": "Avstralski zahodni poletni čas", "CLST": "Čilski poletni čas", "ECT": "Ekvadorski čas", "∅∅∅": "Perujski poletni čas", "MYT": "Malezijski čas", "UYT": "Urugvajski standardni čas", "NZDT": "Novozelandski poletni čas", "ART": "Argentinski standardni čas", "AST": "Atlantski standardni čas", "HKST": "Hongkonški poletni čas", "ACWST": "Avstralski centralni zahodni standardni čas", "GYT": "Gvajanski čas", "CLT": "Čilski standardni čas", "AEST": "Avstralski vzhodni standardni čas", "HAST": "Havajski aleutski standardni čas", "AKST": "Aljaški standardni čas", "BOT": "Bolivijski čas"},
+		timezones:              map[string]string{"JDT": "Japonski poletni čas", "MEZ": "Srednjeevropski standardni čas", "WAT": "Zahodnoafriški standardni čas", "GMT": "Greenwiški srednji čas", "ACWST": "Avstralski centralni zahodni standardni čas", "IST": "Indijski standardni čas", "HNT": "Novofundlandski standardni čas", "ADT": "Atlantski poletni čas", "MST": "MST", "TMT": "Turkmenistanski standardni čas", "ACWDT": "Avstralski centralni zahodni poletni čas", "GFT": "Čas: Francoska Gvajana", "SAST": "Južnoafriški čas", "CLT": "Čilski standardni čas", "PDT": "Pacifiški poletni čas", "NZDT": "Novozelandski poletni čas", "UYST": "Urugvajski poletni čas", "WIT": "Indonezijski vzhodni čas", "EAT": "Vzhodnoafriški čas", "AEST": "Avstralski vzhodni standardni čas", "CAT": "Centralnoafriški čas", "LHST": "Standardni čas otoka Lord Howe", "OEZ": "Vzhodnoevropski standardni čas", "MESZ": "Srednjeevropski poletni čas", "BOT": "Bolivijski čas", "HADT": "Havajski aleutski poletni čas", "TMST": "Turkmenistanski poletni čas", "WART": "Argentinski zahodni standardni čas", "LHDT": "Poletni čas otoka Lord Howe", "WITA": "Indonezijski osrednji čas", "BT": "Butanski čas", "CST": "Centralni standardni čas", "AST": "Atlantski standardni čas", "ART": "Argentinski standardni čas", "EST": "Vzhodni standardni čas", "HAT": "Novofundlandski poletni čas", "AKST": "Aljaški standardni čas", "ARST": "Argentinski poletni čas", "JST": "Japonski standardni čas", "MDT": "MDT", "NZST": "Novozelandski standardni čas", "WEZ": "Zahodnoevropski standardni čas", "CHAST": "Čatamski standardni čas", "EDT": "Vzhodni poletni čas", "GYT": "Gvajanski čas", "AWDT": "Avstralski zahodni poletni čas", "PST": "Pacifiški standardni čas", "∅∅∅": "Amazonski poletni čas", "AEDT": "Avstralski vzhodni poletni čas", "CLST": "Čilski poletni čas", "COT": "Kolumbijski standardni čas", "AKDT": "Aljaški poletni čas", "AWST": "Avstralski zahodni standardni čas", "CHADT": "Čatamski poletni čas", "WARST": "Argentinski zahodni poletni čas", "ECT": "Ekvadorski čas", "CDT": "Centralni poletni čas", "ACST": "Avstralski centralni standardni čas", "MYT": "Malezijski čas", "WIB": "Indonezijski zahodni čas", "UYT": "Urugvajski standardni čas", "VET": "Venezuelski čas", "WAST": "Zahodnoafriški poletni čas", "ACDT": "Avstralski centralni poletni čas", "HKT": "Hongkonški standardni čas", "ChST": "Čamorski standardni čas", "OESZ": "Vzhodnoevropski poletni čas", "SRT": "Surinamski čas", "WESZ": "Zahodnoevropski poletni čas", "COST": "Kolumbijski poletni čas", "SGT": "Singapurski standardni čas", "HAST": "Havajski aleutski standardni čas", "HKST": "Hongkonški poletni čas"},
 	}
 }
 
@@ -236,7 +236,7 @@ func (sl *sl_SI) WeekdaysWide() []string {
 func (sl *sl_SI) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(sl.decimal) + len(sl.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -309,7 +309,7 @@ func (sl *sl_SI) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sl.currencies[currency]
-	l := len(s) + len(sl.decimal) + len(sl.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -367,7 +367,7 @@ func (sl *sl_SI) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sl.currencies[currency]
-	l := len(s) + len(sl.decimal) + len(sl.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

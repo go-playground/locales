@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"eKr.", "jKr."},
 		erasNarrow:             []string{"eK", "jK"},
 		erasWide:               []string{"ennen Kristuksen syntymää", "jälkeen Kristuksen syntymän"},
-		timezones:              map[string]string{"CST": "Yhdysvaltain keskinen normaaliaika", "MDT": "Macaon kesäaika", "WIB": "Länsi-Indonesian aika", "OEZ": "Itä-Euroopan normaaliaika", "COST": "Kolumbian kesäaika", "NZST": "Uuden-Seelannin normaaliaika", "SAST": "Etelä-Afrikan aika", "MYT": "Malesian aika", "WESZ": "Länsi-Euroopan kesäaika", "HNT": "Newfoundlandin normaaliaika", "CLST": "Chilen kesäaika", "HKT": "Hongkongin normaaliaika", "CHAST": "Chathamin normaaliaika", "CHADT": "Chathamin kesäaika", "CDT": "Yhdysvaltain keskinen kesäaika", "MST": "Macaon normaaliaika", "WIT": "Itä-Indonesian aika", "ART": "Argentiinan normaaliaika", "ARST": "Argentiinan kesäaika", "WART": "Länsi-Argentiinan normaaliaika", "BOT": "Bolivian aika", "UYST": "Uruguayn kesäaika", "ChST": "Tšamorron aika", "COT": "Kolumbian normaaliaika", "AKST": "Alaskan normaaliaika", "ECT": "Ecuadorin aika", "LHST": "Lord Howen normaaliaika", "∅∅∅": "Azorien kesäaika", "MESZ": "Keski-Euroopan kesäaika", "BT": "Bhutanin aika", "PST": "Yhdysvaltain Tyynenmeren normaaliaika", "WARST": "Länsi-Argentiinan kesäaika", "PDT": "Yhdysvaltain Tyynenmeren kesäaika", "TMT": "Turkmenistanin normaaliaika", "WITA": "Keski-Indonesian aika", "CAT": "Keski-Afrikan aika", "MEZ": "Keski-Euroopan normaaliaika", "AEST": "Itä-Australian normaaliaika", "UYT": "Uruguayn normaaliaika", "HAT": "Newfoundlandin kesäaika", "SGT": "Singaporen aika", "HADT": "Havaijin-Aleuttien kesäaika", "ACST": "Keski-Australian normaaliaika", "WEZ": "Länsi-Euroopan normaaliaika", "SRT": "Surinamin aika", "AST": "Kanadan Atlantin normaaliaika", "EST": "Yhdysvaltain itäinen normaaliaika", "GMT": "Greenwichin normaaliaika", "GYT": "Guyanan aika", "GFT": "Ranskan Guayanan aika", "OESZ": "Itä-Euroopan kesäaika", "HKST": "Hongkongin kesäaika", "CLT": "Chilen normaaliaika", "ACWST": "Läntisen Keski-Australian normaaliaika", "WAT": "Länsi-Afrikan normaaliaika", "AWST": "Länsi-Australian normaaliaika", "NZDT": "Uuden-Seelannin kesäaika", "EAT": "Itä-Afrikan aika", "AEDT": "Itä-Australian kesäaika", "ACDT": "Keski-Australian kesäaika", "LHDT": "Lord Howen kesäaika", "VET": "Venezuelan aika", "TMST": "Turkmenistanin kesäaika", "HAST": "Havaijin-Aleuttien normaaliaika", "ADT": "Kanadan Atlantin kesäaika", "AWDT": "Länsi-Australian kesäaika", "JDT": "Japanin kesäaika", "IST": "Intian aika", "EDT": "Yhdysvaltain itäinen kesäaika", "ACWDT": "Läntisen Keski-Australian kesäaika", "WAST": "Länsi-Afrikan kesäaika", "AKDT": "Alaskan kesäaika", "JST": "Japanin normaaliaika"},
+		timezones:              map[string]string{"ChST": "Tšamorron aika", "SRT": "Surinamin aika", "ACWDT": "Läntisen Keski-Australian kesäaika", "MST": "Kalliovuorten normaaliaika", "CDT": "Yhdysvaltain keskinen kesäaika", "AST": "Kanadan Atlantin normaaliaika", "CLT": "Chilen normaaliaika", "WEZ": "Länsi-Euroopan normaaliaika", "HAT": "Newfoundlandin kesäaika", "ART": "Argentiinan normaaliaika", "HADT": "Havaijin-Aleuttien kesäaika", "CAT": "Keski-Afrikan aika", "EAT": "Itä-Afrikan aika", "VET": "Venezuelan aika", "UYT": "Uruguayn normaaliaika", "BOT": "Bolivian aika", "WAST": "Länsi-Afrikan kesäaika", "HKT": "Hongkongin normaaliaika", "CHADT": "Chathamin kesäaika", "OEZ": "Itä-Euroopan normaaliaika", "OESZ": "Itä-Euroopan kesäaika", "GMT": "Greenwichin normaaliaika", "WIT": "Itä-Indonesian aika", "WARST": "Länsi-Argentiinan kesäaika", "AKDT": "Alaskan kesäaika", "MYT": "Malesian aika", "AWDT": "Länsi-Australian kesäaika", "ACWST": "Läntisen Keski-Australian normaaliaika", "∅∅∅": "Perun kesäaika", "HNT": "Newfoundlandin normaaliaika", "MEZ": "Keski-Euroopan normaaliaika", "CST": "Yhdysvaltain keskinen normaaliaika", "SGT": "Singaporen aika", "AEST": "Itä-Australian normaaliaika", "ACDT": "Keski-Australian kesäaika", "LHST": "Lord Howen normaaliaika", "ARST": "Argentiinan kesäaika", "WIB": "Länsi-Indonesian aika", "HAST": "Havaijin-Aleuttien normaaliaika", "ACST": "Keski-Australian normaaliaika", "GYT": "Guyanan aika", "EDT": "Yhdysvaltain itäinen kesäaika", "AWST": "Länsi-Australian normaaliaika", "HKST": "Hongkongin kesäaika", "SAST": "Etelä-Afrikan aika", "BT": "Bhutanin aika", "JST": "Japanin normaaliaika", "ECT": "Ecuadorin aika", "COT": "Kolumbian normaaliaika", "COST": "Kolumbian kesäaika", "TMT": "Turkmenistanin normaaliaika", "TMST": "Turkmenistanin kesäaika", "LHDT": "Lord Howen kesäaika", "UYST": "Uruguayn kesäaika", "CLST": "Chilen kesäaika", "WESZ": "Länsi-Euroopan kesäaika", "JDT": "Japanin kesäaika", "ADT": "Kanadan Atlantin kesäaika", "CHAST": "Chathamin normaaliaika", "AEDT": "Itä-Australian kesäaika", "NZST": "Uuden-Seelannin normaaliaika", "PDT": "Yhdysvaltain Tyynenmeren kesäaika", "MESZ": "Keski-Euroopan kesäaika", "MDT": "Kalliovuorten kesäaika", "WART": "Länsi-Argentiinan normaaliaika", "WAT": "Länsi-Afrikan normaaliaika", "GFT": "Ranskan Guayanan aika", "IST": "Intian aika", "AKST": "Alaskan normaaliaika", "EST": "Yhdysvaltain itäinen normaaliaika", "PST": "Yhdysvaltain Tyynenmeren normaaliaika", "WITA": "Keski-Indonesian aika", "NZDT": "Uuden-Seelannin kesäaika"},
 	}
 }
 
@@ -194,7 +194,7 @@ func (fi *fi_FI) WeekdaysWide() []string {
 func (fi *fi_FI) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(fi.decimal) + len(fi.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -275,7 +275,7 @@ func (fi *fi_FI) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fi.currencies[currency]
-	l := len(s) + len(fi.decimal) + len(fi.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -337,7 +337,7 @@ func (fi *fi_FI) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fi.currencies[currency]
-	l := len(s) + len(fi.decimal) + len(fi.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

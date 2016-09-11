@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"MEZ": "Centrālas Eurōpas zēimas kerdā", "EST": "Dēiniskas Amērikas zēimas kerdā", "MYT": "MYT", "WART": "WART", "ACWST": "ACWST", "EAT": "EAT", "AKST": "AKST", "MST": "Amērikas gārban zēimas kerdā", "AWST": "AWST", "HKST": "HKST", "CHAST": "CHAST", "IST": "IST", "LHST": "LHST", "∅∅∅": "∅∅∅", "ART": "ART", "CDT": "Centrālas Amērikas daggas kerdā", "GFT": "GFT", "GMT": "Greenwich kerdā", "PDT": "Pacīfiskas Amērikas daggas kerdā", "GYT": "GYT", "MESZ": "Centrālas Eurōpas daggas kerdā", "SGT": "SGT", "LHDT": "LHDT", "VET": "VET", "ARST": "ARST", "NZDT": "NZDT", "HKT": "HKT", "WAT": "WAT", "AST": "Atlāntiska zēimas kerdā", "JDT": "JDT", "ECT": "ECT", "UYT": "UYT", "SRT": "SRT", "ACDT": "ACDT", "COT": "COT", "COST": "COST", "CST": "Centrālas Amērikas zēimas kerdā", "AEST": "AEST", "ADT": "Atlāntiska daggas kerdā", "CLST": "CLST", "WIB": "WIB", "HAST": "HAST", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "EDT": "Dēiniskas Amērikas daggas kerdā", "BOT": "BOT", "UYST": "UYST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "ChST": "ChST", "HAT": "HAT", "CAT": "CAT", "ACWDT": "ACWDT", "MDT": "Amērikas gārban daggas kerdā", "WAST": "WAST", "WIT": "WIT", "CLT": "CLT", "TMT": "TMT", "AKDT": "AKDT", "BT": "BT", "WARST": "WARST", "PST": "Pacīfiskas Amērikas zēimas kerdā", "ACST": "ACST", "JST": "JST", "SAST": "SAST", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "HNT": "HNT", "HADT": "HADT", "AWDT": "AWDT", "CHADT": "CHADT", "TMST": "TMST", "AEDT": "AEDT", "NZST": "NZST", "WITA": "WITA"},
+		timezones:              map[string]string{"COT": "COT", "LHDT": "LHDT", "EST": "Dēiniskas Amērikas zēimas kerdā", "LHST": "LHST", "UYST": "UYST", "BT": "BT", "MST": "Amērikas gārban zēimas kerdā", "CLT": "CLT", "ECT": "ECT", "AST": "Atlāntiska zēimas kerdā", "MYT": "MYT", "AKDT": "AKDT", "VET": "VET", "AKST": "AKST", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "HNT": "HNT", "SGT": "SGT", "MEZ": "Centrālas Eurōpas zēimas kerdā", "UYT": "UYT", "BOT": "BOT", "GFT": "GFT", "CST": "Centrālas Amērikas zēimas kerdā", "ACDT": "ACDT", "AEST": "AEST", "CAT": "CAT", "CLST": "CLST", "WAST": "WAST", "IST": "IST", "HADT": "HADT", "ART": "ART", "WITA": "WITA", "WIB": "WIB", "AEDT": "AEDT", "NZDT": "NZDT", "PST": "Pacīfiskas Amērikas zēimas kerdā", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "CDT": "Centrālas Amērikas daggas kerdā", "AWST": "AWST", "AWDT": "AWDT", "EDT": "Dēiniskas Amērikas daggas kerdā", "JDT": "JDT", "ACST": "ACST", "HAST": "HAST", "CHAST": "CHAST", "ChST": "ChST", "WARST": "WARST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "TMST": "TMST", "SAST": "SAST", "MESZ": "Centrālas Eurōpas daggas kerdā", "PDT": "Pacīfiskas Amērikas daggas kerdā", "SRT": "SRT", "ACWDT": "ACWDT", "GYT": "GYT", "TMT": "TMT", "COST": "COST", "WIT": "WIT", "∅∅∅": "∅∅∅", "NZST": "NZST", "HKT": "HKT", "HKST": "HKST", "MDT": "Amērikas gārban daggas kerdā", "EAT": "EAT", "ACWST": "ACWST", "WAT": "WAT", "JST": "JST", "HAT": "HAT", "ARST": "ARST", "GMT": "Greenwich kerdā", "WART": "WART", "ADT": "Atlāntiska daggas kerdā", "CHADT": "CHADT", "OEZ": "Dēiniskas Eurōpas zēimas kerdā"},
 	}
 }
 
@@ -194,7 +194,7 @@ func (prg *prg) WeekdaysWide() []string {
 func (prg *prg) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(prg.decimal) + len(prg.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -269,7 +269,7 @@ func (prg *prg) FmtCurrency(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
-	l := len(s) + len(prg.decimal) + len(prg.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -329,7 +329,7 @@ func (prg *prg) FmtAccounting(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
-	l := len(s) + len(prg.decimal) + len(prg.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

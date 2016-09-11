@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p. n. e.", "n. e."},
 		erasNarrow:             []string{"pr.n.e.", "AD"},
 		erasWide:               []string{"Prije nove ere", "Nove ere"},
-		timezones:              map[string]string{"AWST": "Standardno zapadnoaustralijsko vrijeme", "VET": "Venecuelansko vrijeme", "GYT": "Gvajansko vrijeme", "NZST": "Standardno novozelandsko vrijeme", "CHAST": "Standardno čatamsko vrijeme", "CLT": "Standardno čileansko vrijeme", "MEZ": "Standardno centralnoevropsko vrijeme", "EDT": "Ljetno računanje istočnog vremena (SAD)", "SRT": "Surinamsko vrijeme", "WAST": "Zapadnoafričko ljetno računanje vremena", "AST": "Standardno atlantsko vrijeme", "ADT": "Ljetno računanje atlantskog vremena", "JST": "Standardno japansko vrijeme", "TMST": "Turkmenistansko ljetno računanje vremena", "AEDT": "Istočnoaustralijsko ljetno računanje vremena", "BOT": "Bolivijsko vrijeme", "PDT": "Ljetno računanje pacifičkog vremena (SAD)", "ChST": "Standardno čamorsko vrijeme", "ART": "Standardno argentinsko vrijeme", "ARST": "Argentinsko ljetno računanje vremena", "HKT": "Standardno hongkonško vrijeme", "MYT": "Malezijsko vrijeme", "GFT": "Vrijeme Francuske Gvajane", "IST": "Standardno indijsko vrijeme", "UYST": "Urugvajsko ljetno računanje vremena", "NZDT": "Novozelandsko ljetno računanje vremena", "CST": "Standardno centralno vrijeme (SAD)", "MESZ": "Centralnoevropsko ljetno računanje vremena", "HADT": "Havajsko-aleućansko ljetno rečunanje vremena", "HAST": "Standardno havajsko-aleućansko vrijeme", "WARST": "Zapadnoargentinsko ljetno računanje vremena", "WEZ": "Standardno zapadnoevropsko vrijeme", "CLST": "Čileansko ljetno računanje vremena", "CDT": "Ljetno računanje centralnog vremena (SAD)", "OESZ": "Istočnoevropsko ljetno računanje vremena", "ECT": "Ekvadorsko vrijeme", "OEZ": "Standardno istočnoevropsko vrijeme", "ACWDT": "Australijsko centralno zapadno ljetno računanje vremena", "ACDT": "Centralnoaustralijsko ljetno računanje vremena", "COT": "Standardno kolumbijsko vrijeme", "COST": "Kolumbijsko ljetno računanje vremena", "SGT": "Standardno singapursko vrijeme", "MST": "Makao standardno vreme", "ACWST": "Standardno australijsko centralno zapadno vrijeme", "LHST": "Standardno vrijeme na Ostrvu Lord Hau", "ACST": "Standardno centralnoaustralijsko vrijeme", "HNT": "Standardno njufaundlendsko vrijeme", "AEST": "Standardno istočnoaustralijsko vrijeme", "LHDT": "Ljetno računanje vremena na Ostrvu Lord Hau", "HKST": "Hongkonško ljetno računanje vremena", "CHADT": "Čatamsko ljetno računanje vremena", "WART": "Standardno zapadnoargentinsko vrijeme", "WITA": "Centralnoindonezijsko vrijeme", "SAST": "Standardno južnoafričko vrijeme", "AKST": "Standardno aljaskansko vrijeme", "AKDT": "Aljaskansko ljetno računanje vremena", "EAT": "Istočnoafričko vrijeme", "AWDT": "Zapadnoaustralijsko ljetno računanje vremena", "WIT": "Istočnoindonezijsko vrijeme", "TMT": "Standardno turkmenistansko vrijeme", "UYT": "Standardno urugvajsko vrijeme", "GMT": "Vrijeme po Grinviču", "BT": "Butansko vrijeme", "WESZ": "Zapadnoevropsko ljetno računanje vremena", "WAT": "Standardno zapadnoafričko vrijeme", "∅∅∅": "Brazilijsko ljetno računanje vremena", "CAT": "Centralnoafričko vrijeme", "MDT": "Makao letnje računanje vremena", "PST": "Standardno pacifičko vrijeme (SAD)", "HAT": "Njufaundlendsko ljetno računanje vremena", "WIB": "Zapadnoindonezijsko vrijeme", "JDT": "Japansko ljetno računanje vremena", "EST": "Standardno istočno vrijeme (SAD)"},
+		timezones:              map[string]string{"SAST": "Standardno južnoafričko vrijeme", "BOT": "Bolivijsko vrijeme", "WAT": "Standardno zapadnoafričko vrijeme", "EST": "Standardno istočno vrijeme (SAD)", "CST": "Standardno centralno vrijeme (SAD)", "GYT": "Gvajansko vrijeme", "AST": "Standardno atlantsko vrijeme", "ART": "Standardno argentinsko vrijeme", "WITA": "Centralnoindonezijsko vrijeme", "CLT": "Standardno čileansko vrijeme", "EAT": "Istočnoafričko vrijeme", "MYT": "Malezijsko vrijeme", "ACST": "Standardno centralnoaustralijsko vrijeme", "LHST": "Standardno vrijeme na Ostrvu Lord Hau", "IST": "Standardno indijsko vrijeme", "COT": "Standardno kolumbijsko vrijeme", "COST": "Kolumbijsko ljetno računanje vremena", "UYST": "Urugvajsko ljetno računanje vremena", "CAT": "Centralnoafričko vrijeme", "WIT": "Istočnoindonezijsko vrijeme", "TMST": "Turkmenistansko ljetno računanje vremena", "NZST": "Standardno novozelandsko vrijeme", "LHDT": "Ljetno računanje vremena na Ostrvu Lord Hau", "SRT": "Surinamsko vrijeme", "AKST": "Standardno aljaskansko vrijeme", "TMT": "Standardno turkmenistansko vrijeme", "ACWDT": "Australijsko centralno zapadno ljetno računanje vremena", "JDT": "Japansko ljetno računanje vremena", "HKT": "Standardno hongkonško vrijeme", "WEZ": "Standardno zapadnoevropsko vrijeme", "NZDT": "Novozelandsko ljetno računanje vremena", "MEZ": "Standardno centralnoevropsko vrijeme", "ACWST": "Standardno australijsko centralno zapadno vrijeme", "WESZ": "Zapadnoevropsko ljetno računanje vremena", "CHADT": "Čatamsko ljetno računanje vremena", "BT": "Butansko vrijeme", "VET": "Venecuelansko vrijeme", "AEDT": "Istočnoaustralijsko ljetno računanje vremena", "AKDT": "Aljaskansko ljetno računanje vremena", "ACDT": "Centralnoaustralijsko ljetno računanje vremena", "AWST": "Standardno zapadnoaustralijsko vrijeme", "CHAST": "Standardno čatamsko vrijeme", "ARST": "Argentinsko ljetno računanje vremena", "WARST": "Zapadnoargentinsko ljetno računanje vremena", "ECT": "Ekvadorsko vrijeme", "CDT": "Ljetno računanje centralnog vremena (SAD)", "AWDT": "Zapadnoaustralijsko ljetno računanje vremena", "HAST": "Standardno havajsko-aleućansko vrijeme", "CLST": "Čileansko ljetno računanje vremena", "HAT": "Njufaundlendsko ljetno računanje vremena", "ADT": "Ljetno računanje atlantskog vremena", "HKST": "Hongkonško ljetno računanje vremena", "PST": "Standardno pacifičko vrijeme (SAD)", "PDT": "Ljetno računanje pacifičkog vremena (SAD)", "ChST": "Standardno čamorsko vrijeme", "JST": "Standardno japansko vrijeme", "SGT": "Standardno singapursko vrijeme", "WIB": "Zapadnoindonezijsko vrijeme", "OESZ": "Istočnoevropsko ljetno računanje vremena", "UYT": "Standardno urugvajsko vrijeme", "MESZ": "Centralnoevropsko ljetno računanje vremena", "WART": "Standardno zapadnoargentinsko vrijeme", "GFT": "Vrijeme Francuske Gvajane", "HNT": "Standardno njufaundlendsko vrijeme", "OEZ": "Standardno istočnoevropsko vrijeme", "AEST": "Standardno istočnoaustralijsko vrijeme", "HADT": "Havajsko-aleućansko ljetno rečunanje vremena", "MST": "Standardno planinsko vrijeme (SAD)", "WAST": "Zapadnoafričko ljetno računanje vremena", "∅∅∅": "Azorsko ljetno računanje vremena", "MDT": "Ljetno računanje planinskog vremena (SAD)", "EDT": "Ljetno računanje istočnog vremena (SAD)", "GMT": "Vrijeme po Grinviču"},
 	}
 }
 
@@ -101,8 +101,8 @@ func (bs *bs_Cyrl_BA) CardinalPluralRule(num float64, v uint64) locales.PluralRu
 	n := math.Abs(num)
 	i := int64(n)
 	f := locales.F(n, v)
-	iMod100 := i % 100
 	iMod10 := i % 10
+	iMod100 := i % 100
 	fMod10 := f % 10
 	fMod100 := f % 100
 
@@ -222,7 +222,7 @@ func (bs *bs_Cyrl_BA) WeekdaysWide() []string {
 func (bs *bs_Cyrl_BA) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(bs.decimal) + len(bs.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -295,7 +295,7 @@ func (bs *bs_Cyrl_BA) FmtCurrency(num float64, v uint64, currency currency.Type)
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bs.currencies[currency]
-	l := len(s) + len(bs.decimal) + len(bs.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -353,7 +353,7 @@ func (bs *bs_Cyrl_BA) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bs.currencies[currency]
-	l := len(s) + len(bs.decimal) + len(bs.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

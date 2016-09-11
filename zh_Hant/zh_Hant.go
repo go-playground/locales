@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"西元前", "西元"},
 		erasNarrow:             []string{"西元前", "西元"},
 		erasWide:               []string{"西元前", "西元"},
-		timezones:              map[string]string{"CDT": "中部夏令時間", "WIB": "印尼西部時間", "AEDT": "澳洲東部夏令時間", "WARST": "阿根廷西部夏令時間", "COST": "哥倫比亞夏令時間", "CAT": "中非時間", "BOT": "玻利維亞時間", "WESZ": "西歐夏令時間", "ACDT": "澳洲中部夏令時間", "EAT": "東非時間", "TMT": "土庫曼標準時間", "HADT": "夏威夷-阿留申夏令時間", "TMST": "土庫曼夏令時間", "UYST": "烏拉圭夏令時間", "VET": "委內瑞拉時間", "ChST": "查莫洛時間", "OEZ": "東歐標準時間", "LHDT": "豪勳爵島夏令時間", "IST": "印度標準時間", "SRT": "蘇利南時間", "CST": "中部標準時間", "SAST": "南非標準時間", "HKT": "香港標準時間", "HKST": "香港夏令時間", "WIT": "印尼東部時間", "JDT": "日本夏令時間", "MYT": "馬來西亞時間", "ACST": "澳洲中部標準時間", "HAT": "紐芬蘭夏令時間", "ARST": "阿根廷夏令時間", "CLST": "智利夏令時間", "BT": "不丹時間", "ADT": "大西洋夏令時間", "OESZ": "東歐夏令時間", "AKDT": "阿拉斯加夏令時間", "ECT": "厄瓜多時間", "ACWST": "澳洲中西部標準時間", "GYT": "蓋亞那時間", "WAST": "西非夏令時間", "MEZ": "中歐標準時間", "HAST": "夏威夷-阿留申標準時間", "EDT": "東部夏令時間", "WART": "阿根廷西部標準時間", "WAT": "西非標準時間", "AWST": "澳洲西部標準時間", "CLT": "智利標準時間", "COT": "哥倫比亞標準時間", "MDT": "澳門夏令時間", "MESZ": "中歐夏令時間", "CHADT": "查坦群島夏令時間", "SGT": "新加坡標準時間", "EST": "東部標準時間", "NZDT": "紐西蘭夏令時間", "HNT": "紐芬蘭標準時間", "ACWDT": "澳洲中西部夏令時間", "ART": "阿根廷標準時間", "AEST": "澳洲東部標準時間", "WEZ": "西歐標準時間", "GFT": "法屬圭亞那時間", "UYT": "烏拉圭標準時間", "JST": "日本標準時間", "GMT": "格林威治標準時間", "LHST": "豪勳爵島標準時間", "PST": "太平洋標準時間", "NZST": "紐西蘭標準時間", "AWDT": "澳洲西部夏令時間", "MST": "澳門標準時間", "WITA": "印尼中部時間", "PDT": "太平洋夏令時間", "∅∅∅": "亞速爾群島夏令時間", "AST": "大西洋標準時間", "CHAST": "查坦群島標準時間", "AKST": "阿拉斯加標準時間"},
+		timezones:              map[string]string{"∅∅∅": "亞速爾群島夏令時間", "AWDT": "澳洲西部夏令時間", "AEST": "澳洲東部標準時間", "WEZ": "西歐標準時間", "GFT": "法屬圭亞那時間", "HAST": "夏威夷-阿留申標準時間", "NZDT": "紐西蘭夏令時間", "CAT": "中非時間", "MEZ": "中歐標準時間", "UYST": "烏拉圭夏令時間", "CLT": "智利標準時間", "WAT": "西非標準時間", "AKDT": "阿拉斯加夏令時間", "MDT": "澳門夏令時間", "LHST": "豪勳爵島標準時間", "LHDT": "豪勳爵島夏令時間", "IST": "印度標準時間", "AST": "大西洋標準時間", "EDT": "東部夏令時間", "MESZ": "中歐夏令時間", "HNT": "紐芬蘭標準時間", "OEZ": "東歐標準時間", "VET": "委內瑞拉時間", "COT": "哥倫比亞標準時間", "GYT": "蓋亞那時間", "BT": "不丹時間", "BOT": "玻利維亞時間", "WIT": "印尼東部時間", "WAST": "西非夏令時間", "HAT": "紐芬蘭夏令時間", "CHAST": "查坦群島標準時間", "ART": "阿根廷標準時間", "ARST": "阿根廷夏令時間", "AEDT": "澳洲東部夏令時間", "GMT": "格林威治標準時間", "WESZ": "西歐夏令時間", "CDT": "中部夏令時間", "AWST": "澳洲西部標準時間", "HKT": "香港標準時間", "SAST": "南非標準時間", "PST": "太平洋標準時間", "ChST": "查莫洛時間", "ACWST": "澳洲中西部標準時間", "COST": "哥倫比亞夏令時間", "TMT": "土庫曼標準時間", "TMST": "土庫曼夏令時間", "PDT": "太平洋夏令時間", "AKST": "阿拉斯加標準時間", "SGT": "新加坡標準時間", "WIB": "印尼西部時間", "OESZ": "東歐夏令時間", "ACWDT": "澳洲中西部夏令時間", "WART": "阿根廷西部標準時間", "WARST": "阿根廷西部夏令時間", "ACDT": "澳洲中部夏令時間", "HADT": "夏威夷-阿留申夏令時間", "HKST": "香港夏令時間", "UYT": "烏拉圭標準時間", "WITA": "印尼中部時間", "SRT": "蘇利南時間", "MST": "澳門標準時間", "CHADT": "查坦群島夏令時間", "JST": "日本標準時間", "MYT": "馬來西亞時間", "EST": "東部標準時間", "EAT": "東非時間", "CST": "中部標準時間", "ACST": "澳洲中部標準時間", "ECT": "厄瓜多時間", "JDT": "日本夏令時間", "ADT": "大西洋夏令時間", "NZST": "紐西蘭標準時間", "CLST": "智利夏令時間"},
 	}
 }
 
@@ -184,7 +184,7 @@ func (zh *zh_Hant) WeekdaysWide() []string {
 func (zh *zh_Hant) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(zh.decimal) + len(zh.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -257,7 +257,7 @@ func (zh *zh_Hant) FmtCurrency(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
-	l := len(s) + len(zh.decimal) + len(zh.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -315,7 +315,7 @@ func (zh *zh_Hant) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
-	l := len(s) + len(zh.decimal) + len(zh.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

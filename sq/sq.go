@@ -48,7 +48,7 @@ func New() locales.Translator {
 		locale:                 "sq",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 5, 6},
-		pluralsRange:           []locales.PluralRule{2, 6},
+		pluralsRange:           []locales.PluralRule{6, 2},
 		decimal:                ",",
 		group:                  " ",
 		minus:                  "-",
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.e.r.", "e.r."},
 		erasNarrow:             []string{"p.e.r.", "e.r."},
 		erasWide:               []string{"para erës së re", "erës së re"},
-		timezones:              map[string]string{"ECT": "Ora e Ekuadorit", "MDT": "Ora verore amerikane e Brezit Malor", "WAT": "Ora standarde e Afrikës Perëndimore", "EAT": "Ora e Afrikës Lindore", "CLT": "Ora standarde e Kilit", "WEZ": "Ora standarde e Europës Perëndimore", "COT": "Ora standarde e Kolumbisë", "ADT": "Ora verore e Atlantikut", "WIB": "Ora e Indonezisë Perëndimore", "WARST": "Ora verore e Argjentinës Perëndimore", "BOT": "Ora e Bolivisë", "SRT": "Ora e Surinamit", "ChST": "Ora e Kamorros", "MST": "Ora standarde amerikane e Brezit Malor", "VET": "Ora e Venezuelës", "LHST": "Ora standarde e Lord-Houit", "PDT": "Ora verore amerikane e Bregut të Paqësorit", "SAST": "Ora standarde e Afrikës Jugore", "UYST": "Ora verore e Uruguait", "PST": "Ora standarde amerikane e Bregut të Paqësorit", "ARST": "Ora verore e Argjentinës", "BT": "Ora e Butanit", "ACWDT": "Ora verore e Australisë Qendroro-Perëndimore", "HAT": "Ora verore e Njufaundlendit [Tokës së Re]", "AST": "Ora standarde e Atlantikut", "CDT": "Ora verore e SHBA-së Qendrore", "HKT": "Ora standarde e Hong-Kongut", "OESZ": "Ora verore e Europës Lindore", "CHAST": "Ora standarde e Katamit", "HNT": "Ora standarde e Njufaundlendit [Tokës së Re]", "WITA": "Ora e Indonezisë Qendrore", "HAST": "Ora standarde e Ishujve Hauai-Aleutian", "ACWST": "Ora standarde e Australisë Qendroro-Perëndimore", "GYT": "Ora e Guajanës", "MEZ": "Ora standarde e Europës Qendrore", "OEZ": "Ora standarde e Europës Lindore", "ACST": "Ora standarde e Australisë Qendrore", "COST": "Ora verore e Kolumbisë", "CHADT": "Ora verore e Katamit", "AEST": "Ora standarde e Australisë Lindore", "JST": "Ora standarde e Japonisë", "JDT": "Ora verore e Japonisë", "IST": "Ora standarde e Indisë", "∅∅∅": "Ora verore e Perusë", "TMST": "Ora verore e Turkmenistanit", "HADT": "Ora verore e Ishujve Hauai-Aleutian", "WAST": "Ora verore e Afrikës Perëndimore", "TMT": "Ora standarde e Turkmenistanit", "WIT": "Ora e Indonezisë Lindore", "GMT": "Ora e Meridianit të Grinuiçit", "WESZ": "Ora verore e Europës Perëndimore", "MYT": "Ora e Malajzisë", "WART": "Ora standarde e Argjentinës Perëndimore", "NZST": "Ora standarde e Zelandës së Re", "NZDT": "Ora verore e Zelandës së Re", "AEDT": "Ora verore e Australisë Lindore", "ACDT": "Ora verore e Australisë Qendrore", "ART": "Ora standarde e Argjentinës", "HKST": "Ora verore e Hong-Kongut", "SGT": "Ora e Singaporit", "GFT": "Ora e Guajanës Franceze", "AKST": "Ora standarde e Alaskës", "AKDT": "Ora verore e Alsaskës", "EDT": "Ora verore e SHBA-së Lindore", "LHDT": "Ora verore e Lord-Houit", "AWDT": "Ora verore e Australisë Perëndimore", "CST": "Ora standarde e SHBA-së Qendrore", "CAT": "Ora e Afrikës Qendrore", "EST": "Ora standarde e SHBA-së Lindore", "UYT": "Ora standarde e Uruguait", "AWST": "Ora standarde e Australisë Perëndimore", "MESZ": "Ora verore e Europës Qendrore", "CLST": "Ora verore e Kilit"},
+		timezones:              map[string]string{"ACST": "Ora standarde e Australisë Qendrore", "HKST": "Ora verore e Hong-Kongut", "CHADT": "Ora verore e Katamit", "OEZ": "Ora standarde e Europës Lindore", "PST": "Ora standarde amerikane e Bregut të Paqësorit", "PDT": "Ora verore amerikane e Bregut të Paqësorit", "MEZ": "Ora standarde e Europës Qendrore", "WART": "Ora standarde e Argjentinës Perëndimore", "CLT": "Ora standarde e Kilit", "∅∅∅": "Ora verore e Azoreve", "GYT": "Ora e Guajanës", "ARST": "Ora verore e Argjentinës", "WIB": "Ora e Indonezisë Perëndimore", "LHST": "Ora standarde e Lord-Houit", "MESZ": "Ora verore e Europës Qendrore", "JST": "Ora standarde e Japonisë", "HAT": "Ora verore e Njufaundlendit [Tokës së Re]", "AWST": "Ora standarde e Australisë Perëndimore", "UYST": "Ora verore e Uruguait", "ADT": "Ora verore e Atlantikut", "AKST": "Ora standarde e Alaskës", "HKT": "Ora standarde e Hong-Kongut", "MST": "Ora standarde amerikane e Brezit Malor", "CST": "Ora standarde e SHBA-së Qendrore", "NZDT": "Ora verore e Zelandës së Re", "GMT": "Ora e Meridianit të Grinuiçit", "ECT": "Ora e Ekuadorit", "WAT": "Ora standarde e Afrikës Perëndimore", "HNT": "Ora standarde e Njufaundlendit [Tokës së Re]", "HAST": "Ora standarde e Ishujve Hauai-Aleutian", "OESZ": "Ora verore e Europës Lindore", "LHDT": "Ora verore e Lord-Houit", "WIT": "Ora e Indonezisë Lindore", "IST": "Ora standarde e Indisë", "AWDT": "Ora verore e Australisë Perëndimore", "ACWST": "Ora standarde e Australisë Qendroro-Perëndimore", "BOT": "Ora e Bolivisë", "WAST": "Ora verore e Afrikës Perëndimore", "JDT": "Ora verore e Japonisë", "MYT": "Ora e Malajzisë", "CHAST": "Ora standarde e Katamit", "TMST": "Ora verore e Turkmenistanit", "ACWDT": "Ora verore e Australisë Qendroro-Perëndimore", "CLST": "Ora verore e Kilit", "COT": "Ora standarde e Kolumbisë", "TMT": "Ora standarde e Turkmenistanit", "SRT": "Ora e Surinamit", "COST": "Ora verore e Kolumbisë", "AKDT": "Ora verore e Alsaskës", "NZST": "Ora standarde e Zelandës së Re", "UYT": "Ora standarde e Uruguait", "CAT": "Ora e Afrikës Qendrore", "WITA": "Ora e Indonezisë Qendrore", "WARST": "Ora verore e Argjentinës Perëndimore", "AEDT": "Ora verore e Australisë Lindore", "EAT": "Ora e Afrikës Lindore", "WEZ": "Ora standarde e Europës Perëndimore", "GFT": "Ora e Guajanës Franceze", "ACDT": "Ora verore e Australisë Qendrore", "SAST": "Ora standarde e Afrikës Jugore", "MDT": "Ora verore amerikane e Brezit Malor", "CDT": "Ora verore e SHBA-së Qendrore", "SGT": "Ora e Singaporit", "HADT": "Ora verore e Ishujve Hauai-Aleutian", "ART": "Ora standarde e Argjentinës", "EST": "Ora standarde e SHBA-së Lindore", "EDT": "Ora verore e SHBA-së Lindore", "ChST": "Ora e Kamorros", "BT": "Ora e Butanit", "WESZ": "Ora verore e Europës Perëndimore", "VET": "Ora e Venezuelës", "AST": "Ora standarde e Atlantikut", "AEST": "Ora standarde e Australisë Lindore"},
 	}
 }
 
@@ -215,7 +215,7 @@ func (sq *sq) WeekdaysWide() []string {
 func (sq *sq) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(sq.decimal) + len(sq.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -290,7 +290,7 @@ func (sq *sq) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sq.currencies[currency]
-	l := len(s) + len(sq.decimal) + len(sq.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -350,7 +350,7 @@ func (sq *sq) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sq.currencies[currency]
-	l := len(s) + len(sq.decimal) + len(sq.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

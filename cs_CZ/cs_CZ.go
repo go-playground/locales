@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"př. n. l.", "n. l."},
 		erasNarrow:             []string{"př.n.l.", "n.l."},
 		erasWide:               []string{"př. n. l.", "n. l."},
-		timezones:              map[string]string{"WITA": "Středoindonéský čas", "JST": "Japonský standardní čas", "HNT": "Newfoundlandský standardní čas", "ARST": "Argentinský letní čas", "CHADT": "Chathamský letní čas", "CLST": "Chilský letní čas", "AEST": "Východoaustralský standardní čas", "OEZ": "Východoevropský standardní čas", "ACWST": "Středozápadní australský standardní čas", "UYST": "Uruguayský letní čas", "MDT": "Severoamerický horský letní čas", "AST": "Atlantický standardní čas", "TMST": "Turkmenský letní čas", "HAST": "Havajsko-aleutský standardní čas", "EDT": "Severoamerický východní letní čas", "MST": "Severoamerický horský standardní čas", "EAT": "Východoafrický čas", "WAT": "Západoafrický standardní čas", "ACDT": "Středoaustralský letní čas", "NZST": "Novozélandský standardní čas", "COT": "Kolumbijský standardní čas", "CLT": "Chilský standardní čas", "OESZ": "Východoevropský letní čas", "AKDT": "Aljašský letní čas", "UYT": "Uruguayský standardní čas", "SAST": "Jihoafrický čas", "WART": "Západoargentinský standardní čas", "ACST": "Středoaustralský standardní čas", "COST": "Kolumbijský letní čas", "ChST": "Chamorrský čas", "CAT": "Středoafrický čas", "TMT": "Turkmenský standardní čas", "GFT": "Francouzskoguyanský čas", "AEDT": "Východoaustralský letní čas", "CST": "Severoamerický centrální standardní čas", "AKST": "Aljašský standardní čas", "BT": "Bhútánský čas", "ACWDT": "Středozápadní australský letní čas", "LHST": "Standardní čas ostrova lorda Howa", "WIT": "Východoindonéský čas", "HADT": "Havajsko-aleutský letní čas", "WIB": "Západoindonéský čas", "NZDT": "Novozélandský letní čas", "ART": "Argentinský standardní čas", "HKST": "Hongkongský letní čas", "CHAST": "Chathamský standardní čas", "SGT": "Singapurský čas", "CDT": "Severoamerický centrální letní čas", "WARST": "Západoargentinský letní čas", "PST": "Severoamerický pacifický standardní čas", "WEZ": "Západoevropský standardní čas", "WAST": "Západoafrický letní čas", "ADT": "Atlantický letní čas", "MEZ": "Středoevropský standardní čas", "JDT": "Japonský letní čas", "MYT": "Malajský čas", "SRT": "Surinamský čas", "∅∅∅": "Peruánský letní čas", "HKT": "Hongkongský standardní čas", "ECT": "Ekvádorský čas", "EST": "Severoamerický východní standardní čas", "LHDT": "Letní čas ostrova lorda Howa", "PDT": "Severoamerický pacifický letní čas", "AWST": "Západoaustralský standardní čas", "MESZ": "Středoevropský letní čas", "GMT": "Greenwichský střední čas", "IST": "Indický čas", "BOT": "Bolivijský čas", "WESZ": "Západoevropský letní čas", "GYT": "Guyanský čas", "VET": "Venezuelský čas", "HAT": "Newfoundlandský letní čas", "AWDT": "Západoaustralský letní čas"},
+		timezones:              map[string]string{"WIB": "Západoindonéský čas", "UYST": "Uruguayský letní čas", "CLT": "Chilský standardní čas", "ECT": "Ekvádorský čas", "COST": "Kolumbijský letní čas", "HAT": "Newfoundlandský letní čas", "ARST": "Argentinský letní čas", "BT": "Bhútánský čas", "ACWDT": "Středozápadní australský letní čas", "MST": "Severoamerický horský standardní čas", "WARST": "Západoargentinský letní čas", "BOT": "Bolivijský čas", "LHDT": "Letní čas ostrova lorda Howa", "SRT": "Surinamský čas", "MDT": "Severoamerický horský letní čas", "WESZ": "Západoevropský letní čas", "∅∅∅": "Azorský letní čas", "EST": "Severoamerický východní standardní čas", "WAT": "Západoafrický standardní čas", "CST": "Severoamerický centrální standardní čas", "COT": "Kolumbijský standardní čas", "GYT": "Guyanský čas", "HADT": "Havajsko-aleutský letní čas", "TMST": "Turkmenský letní čas", "JDT": "Japonský letní čas", "GMT": "Greenwichský střední čas", "CLST": "Chilský letní čas", "EAT": "Východoafrický čas", "CDT": "Severoamerický centrální letní čas", "ADT": "Atlantický letní čas", "NZST": "Novozélandský standardní čas", "ACWST": "Středozápadní australský standardní čas", "ACDT": "Středoaustralský letní čas", "GFT": "Francouzskoguyanský čas", "WEZ": "Západoevropský standardní čas", "HAST": "Havajsko-aleutský standardní čas", "NZDT": "Novozélandský letní čas", "PDT": "Severoamerický pacifický letní čas", "HKT": "Hongkongský standardní čas", "UYT": "Uruguayský standardní čas", "CHAST": "Chathamský standardní čas", "AEST": "Východoaustralský standardní čas", "AEDT": "Východoaustralský letní čas", "VET": "Venezuelský čas", "JST": "Japonský standardní čas", "HNT": "Newfoundlandský standardní čas", "AKST": "Aljašský standardní čas", "AKDT": "Aljašský letní čas", "MEZ": "Středoevropský standardní čas", "CAT": "Středoafrický čas", "PST": "Severoamerický pacifický standardní čas", "WIT": "Východoindonéský čas", "AST": "Atlantický standardní čas", "HKST": "Hongkongský letní čas", "ART": "Argentinský standardní čas", "OESZ": "Východoevropský letní čas", "SAST": "Jihoafrický čas", "WITA": "Středoindonéský čas", "SGT": "Singapurský čas", "CHADT": "Chathamský letní čas", "EDT": "Severoamerický východní letní čas", "TMT": "Turkmenský standardní čas", "ChST": "Chamorrský čas", "WAST": "Západoafrický letní čas", "ACST": "Středoaustralský standardní čas", "AWST": "Západoaustralský standardní čas", "OEZ": "Východoevropský standardní čas", "MESZ": "Středoevropský letní čas", "WART": "Západoargentinský standardní čas", "IST": "Indický čas", "MYT": "Malajský čas", "AWDT": "Západoaustralský letní čas", "LHST": "Standardní čas ostrova lorda Howa"},
 	}
 }
 
@@ -225,7 +225,7 @@ func (cs *cs_CZ) WeekdaysWide() []string {
 func (cs *cs_CZ) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(cs.decimal) + len(cs.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -300,7 +300,7 @@ func (cs *cs_CZ) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cs.currencies[currency]
-	l := len(s) + len(cs.decimal) + len(cs.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -358,7 +358,7 @@ func (cs *cs_CZ) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cs.currencies[currency]
-	l := len(s) + len(cs.decimal) + len(cs.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

@@ -58,7 +58,7 @@ func New() locales.Translator {
 		daysWide:               []string{"দেওবাৰ", "সোমবাৰ", "মঙ্গলবাৰ", "বুধবাৰ", "বৃহষ্পতিবাৰ", "শুক্ৰবাৰ", "শনিবাৰ"},
 		periodsAbbreviated:     []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
 		periodsWide:            []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
-		timezones:              map[string]string{"AWST": "AWST", "MST": "MST", "WIT": "WIT", "TMT": "TMT", "TMST": "TMST", "AKDT": "AKDT", "ADT": "ADT", "AWDT": "AWDT", "CHADT": "CHADT", "ACDT": "ACDT", "GYT": "GYT", "VET": "VET", "AST": "AST", "NZST": "NZST", "MDT": "MDT", "SAST": "SAST", "EDT": "EDT", "ECT": "ECT", "HAT": "HAT", "ART": "ART", "OEZ": "OEZ", "ChST": "ChST", "WAST": "WAST", "∅∅∅": "∅∅∅", "WIB": "WIB", "AKST": "AKST", "BOT": "BOT", "CHAST": "CHAST", "HADT": "HADT", "PDT": "PDT", "WEZ": "WEZ", "MYT": "MYT", "EST": "EST", "LHST": "LHST", "EAT": "EAT", "ARST": "ARST", "COT": "COT", "CLST": "CLST", "GFT": "GFT", "UYST": "UYST", "WAT": "WAT", "JST": "JST", "IST": "ভাৰতীয় সময়", "WART": "WART", "UYT": "UYT", "HKT": "HKT", "GMT": "GMT", "ACWST": "ACWST", "WARST": "WARST", "COST": "COST", "CAT": "CAT", "CDT": "CDT", "MESZ": "MESZ", "AEDT": "AEDT", "BT": "BT", "ACWDT": "ACWDT", "HAST": "HAST", "WITA": "WITA", "PST": "PST", "LHDT": "LHDT", "HNT": "HNT", "MEZ": "MEZ", "HKST": "HKST", "AEST": "AEST", "OESZ": "OESZ", "WESZ": "WESZ", "SGT": "SGT", "CLT": "CLT", "JDT": "JDT", "ACST": "ACST", "NZDT": "NZDT", "CST": "CST", "SRT": "SRT"},
+		timezones:              map[string]string{"WIB": "WIB", "GFT": "GFT", "WAT": "WAT", "GYT": "GYT", "HKST": "HKST", "ART": "ART", "JDT": "JDT", "BOT": "BOT", "WIT": "WIT", "WITA": "WITA", "WARST": "WARST", "BT": "BT", "CDT": "CDT", "MEZ": "MEZ", "SRT": "SRT", "UYST": "UYST", "ChST": "ChST", "VET": "VET", "MST": "MST", "LHST": "LHST", "∅∅∅": "∅∅∅", "NZDT": "NZDT", "SAST": "SAST", "MYT": "MYT", "AST": "AST", "HAST": "HAST", "AWST": "AWST", "ACWST": "ACWST", "COST": "COST", "PST": "PST", "ACDT": "ACDT", "SGT": "SGT", "HADT": "HADT", "TMT": "TMT", "WEZ": "WEZ", "AKST": "AKST", "LHDT": "LHDT", "WAST": "WAST", "EAT": "EAT", "ADT": "ADT", "OEZ": "OEZ", "WART": "WART", "NZST": "NZST", "GMT": "GMT", "CAT": "CAT", "ECT": "ECT", "HNT": "HNT", "AKDT": "AKDT", "AWDT": "AWDT", "AEDT": "AEDT", "AEST": "AEST", "COT": "COT", "JST": "JST", "CST": "CST", "CHAST": "CHAST", "EDT": "EDT", "EST": "EST", "TMST": "TMST", "OESZ": "OESZ", "UYT": "UYT", "CLST": "CLST", "ACST": "ACST", "HKT": "HKT", "ARST": "ARST", "ACWDT": "ACWDT", "WESZ": "WESZ", "HAT": "HAT", "CHADT": "CHADT", "CLT": "CLT", "PDT": "PDT", "IST": "ভাৰতীয় সময়", "MDT": "MDT", "MESZ": "MESZ"},
 	}
 }
 
@@ -192,7 +192,7 @@ func (as *as) WeekdaysWide() []string {
 func (as *as) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(as.decimal) + len(as.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -274,7 +274,7 @@ func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
-	l := len(s) + len(as.decimal) + len(as.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -345,7 +345,7 @@ func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
-	l := len(s) + len(as.decimal) + len(as.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false

@@ -75,7 +75,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"fKr", "eKr"},
 		erasWide:               []string{"fyri Krist", "eftir Krist"},
-		timezones:              map[string]string{"PDT": "Pacific summartíð", "EAT": "Eysturafrika tíð", "WAT": "Vesturafrika vanlig tíð", "CLT": "Kili vanlig tíð", "CDT": "Central summartíð", "TMST": "Turkmenistan summartíð", "ChST": "Chamorro vanlig tíð", "EDT": "Eastern summartíð", "ADT": "Atlantic summartíð", "AWDT": "vestur Avstralia summartíð", "ARST": "Argentina summartíð", "CAT": "Miðafrika tíð", "MEZ": "Miðevropa vanlig tíð", "HKT": "Hong Kong vanlig tíð", "AKST": "Alaska vanlig tíð", "UYT": "Uruguai vanlig tíð", "HAT": "Newfoundland summartíð", "MST": "MST", "HKST": "Hong Kong summartíð", "SAST": "Suðurafrika vanlig tíð", "AKDT": "Alaska summartíð", "∅∅∅": "Azorurnar summartíð", "CHADT": "Chatham summartíð", "HADT": "Hawaii-Aleutian summartíð", "NZST": "Nýsæland vanlig tíð", "MDT": "MDT", "WITA": "Mið Indonesia tíð", "LHDT": "Lord Howe summartíð", "COT": "Kolombia vanlig tíð", "CLST": "Kili summartíð", "GFT": "Franska Gujana tíð", "ACWDT": "miðvestur Avstralia summartíð", "AWST": "vestur Avstralia vanlig tíð", "OEZ": "Eysturevropa vanlig tíð", "WARST": "Vestur Argentina summartíð", "AST": "Atlantic vanlig tíð", "HNT": "Newfoundland vanlig tíð", "TMT": "Turkmenistan vanlig tíð", "AEST": "eystur Avstralia vanlig tíð", "WIB": "Vestur Indonesia tíð", "WESZ": "Vesturevropa summartíð", "ACST": "mið Avstralia vanlig tíð", "CHAST": "Chatham vanlig tíð", "IST": "India tíð", "EST": "Eastern vanlig tíð", "BT": "Butan tíð", "VET": "Venesuela tíð", "SGT": "Singapor tíð", "HAST": "Hawaii-Aleutian vanlig tíð", "ECT": "Ekvador tíð", "UYST": "Uruguai summartíð", "BOT": "Bolivia tíð", "ACDT": "mið Avstralia summartíð", "WAST": "Vesturafrika summartíð", "GMT": "Greenwich Mean tíð", "MYT": "Malaisia tíð", "SRT": "Surinam tíð", "GYT": "Gujana tíð", "AEDT": "eystur Avstralia summartíð", "OESZ": "Eysturevropa summartíð", "JDT": "Japan summartíð", "NZDT": "Nýsæland summartíð", "CST": "Central vanlig tíð", "MESZ": "Miðevropa summartíð", "WIT": "Eystur Indonesia tíð", "PST": "Pacific vanlig tíð", "ACWST": "miðvestur Avstralia vanlig tíð", "ART": "Argentina vanlig tíð", "COST": "Kolombia summartíð", "JST": "Japan vanlig tíð", "WEZ": "Vesturevropa vanlig tíð", "LHST": "Lord Howe vanlig tíð", "WART": "Vestur Argentina vanlig tíð"},
+		timezones:              map[string]string{"WAT": "Vesturafrika vanlig tíð", "CHAST": "Chatham vanlig tíð", "UYST": "Uruguai summartíð", "BT": "Butan tíð", "ECT": "Ekvador tíð", "∅∅∅": "Azorurnar summartíð", "AWDT": "vestur Avstralia summartíð", "AEST": "eystur Avstralia vanlig tíð", "PDT": "Pacific summartíð", "MESZ": "Miðevropa summartíð", "ACDT": "mið Avstralia summartíð", "HAST": "Hawaii-Aleutian vanlig tíð", "CHADT": "Chatham summartíð", "MEZ": "Miðevropa vanlig tíð", "UYT": "Uruguai vanlig tíð", "EAT": "Eysturafrika tíð", "CLT": "Kili vanlig tíð", "WESZ": "Vesturevropa summartíð", "COST": "Kolombia summartíð", "AKDT": "Alaska summartíð", "MDT": "MDT", "OESZ": "Eysturevropa summartíð", "AEDT": "eystur Avstralia summartíð", "ADT": "Atlantic summartíð", "EST": "Eastern vanlig tíð", "MST": "MST", "ARST": "Argentina summartíð", "WITA": "Mið Indonesia tíð", "WARST": "Vestur Argentina summartíð", "WEZ": "Vesturevropa vanlig tíð", "JDT": "Japan summartíð", "HKST": "Hong Kong summartíð", "TMST": "Turkmenistan summartíð", "NZST": "Nýsæland vanlig tíð", "CAT": "Miðafrika tíð", "WIT": "Eystur Indonesia tíð", "JST": "Japan vanlig tíð", "EDT": "Eastern summartíð", "HKT": "Hong Kong vanlig tíð", "SAST": "Suðurafrika vanlig tíð", "BOT": "Bolivia tíð", "AKST": "Alaska vanlig tíð", "HNT": "Newfoundland vanlig tíð", "GYT": "Gujana tíð", "MYT": "Malaisia tíð", "SGT": "Singapor tíð", "ChST": "Chamorro vanlig tíð", "CST": "Central vanlig tíð", "CDT": "Central summartíð", "LHDT": "Lord Howe summartíð", "SRT": "Surinam tíð", "ACST": "mið Avstralia vanlig tíð", "NZDT": "Nýsæland summartíð", "PST": "Pacific vanlig tíð", "CLST": "Kili summartíð", "WAST": "Vesturafrika summartíð", "AST": "Atlantic vanlig tíð", "HAT": "Newfoundland summartíð", "AWST": "vestur Avstralia vanlig tíð", "WIB": "Vestur Indonesia tíð", "TMT": "Turkmenistan vanlig tíð", "GMT": "Greenwich Mean tíð", "ACWDT": "miðvestur Avstralia summartíð", "WART": "Vestur Argentina vanlig tíð", "VET": "Venesuela tíð", "GFT": "Franska Gujana tíð", "COT": "Kolombia vanlig tíð", "ART": "Argentina vanlig tíð", "OEZ": "Eysturevropa vanlig tíð", "HADT": "Hawaii-Aleutian summartíð", "LHST": "Lord Howe vanlig tíð", "ACWST": "miðvestur Avstralia vanlig tíð", "IST": "India tíð"},
 	}
 }
 
@@ -195,7 +195,7 @@ func (fo *fo) WeekdaysWide() []string {
 func (fo *fo) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(fo.decimal) + len(fo.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -274,7 +274,7 @@ func (fo *fo) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fo.currencies[currency]
-	l := len(s) + len(fo.decimal) + len(fo.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -334,7 +334,7 @@ func (fo *fo) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fo.currencies[currency]
-	l := len(s) + len(fo.decimal) + len(fo.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 8 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

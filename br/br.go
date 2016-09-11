@@ -66,7 +66,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a-raok J.K.", "goude J.K."},
 		erasNarrow:             []string{"a-raok J.K.", "goude J.K."},
 		erasWide:               []string{"a-raok Jezuz-Krist", "goude Jezuz-Krist"},
-		timezones:              map[string]string{"AWDT": "eur hañv Aostralia ar Cʼhornôg", "MESZ": "eur hañv Kreizeuropa", "SGT": "eur cʼhoañv Singapour", "HADT": "HADT", "COST": "eur hañv Kolombia", "CHADT": "eur hañv Chatham", "BOT": "eur Bolivia", "UYST": "eur hañv Uruguay", "AEDT": "eur hañv Aostralia ar Reter", "BT": "eur Bhoutan", "ACWST": "eur cʼhoañv Kreizaostralia ar Cʼhornôg", "ACDT": "eur hañv Kreizaostralia", "GYT": "eur Guyana", "JST": "eur cʼhoañv Japan", "WARST": "eur hañv Arcʼhantina ar Cʼhornôg", "WEZ": "eur cʼhoañv Europa ar Cʼhornôg", "EAT": "eur Afrika ar Reter", "CHAST": "eur cʼhoañv Chatham", "CST": "CST", "GFT": "eur Gwiana cʼhall", "WIB": "eur Indonezia ar Cʼhornôg", "VET": "eur Venezuela", "HNT": "eur cʼhoañv Newfoundland", "JDT": "eur hañv Japan", "ChST": "ChST", "HAT": "eur hañv Newfoundland", "CAT": "eur Kreizafrika", "MST": "eur cʼhoañv Macau", "UYT": "eur cʼhoañv Uruguay", "ACWDT": "eur hañv Kreizaostralia ar Cʼhornôg", "NZST": "eur cʼhoañv Zeland-Nevez", "MDT": "eur hañv Macau", "GMT": "Amzer keitat Greenwich (AKG)", "ACST": "eur cʼhoañv Kreizaostralia", "CLST": "eur hañv Chile", "TMST": "eur hañv Turkmenistan", "HAST": "HAST", "PDT": "PDT", "AEST": "eur cʼhoañv Aostralia ar Reter", "SAST": "eur cʼhoañv Suafrika", "ART": "eur cʼhoañv Arcʼhantina", "AKDT": "eur hañv Alaska", "EDT": "eur hañv ar Reter", "ARST": "eur hañv Arcʼhantina", "AST": "AST", "ADT": "ADT", "AWST": "eur cʼhoañv Aostralia ar Cʼhornôg", "HKST": "eur hañv Hong Kong", "EST": "eur cʼhoañv ar Reter", "MYT": "eur Malaysia", "SRT": "eur Surinam", "WAT": "eur cʼhoañv Afrika ar Cʼhornôg", "∅∅∅": "eur hañv Brasília", "NZDT": "eur hañv Zeland-Nevez", "OEZ": "eur cʼhoañv Europa ar Reter", "IST": "eur cʼhoañv India", "WAST": "eur hañv Afrika ar Cʼhornôg", "CLT": "eur cʼhoañv Chile", "WITA": "WITA", "OESZ": "eur hañv Europa ar Reter", "LHDT": "LHDT", "CDT": "CDT", "TMT": "eur cʼhoañv Turkmenistan", "ECT": "eur Ecuador", "LHST": "LHST", "WESZ": "eur hañv Europa ar Cʼhornôg", "WART": "eur cʼhoañv Arcʼhantina ar Cʼhornôg", "PST": "PST", "COT": "eur cʼhoañv Kolombia", "MEZ": "eur cʼhoañv Kreizeuropa", "HKT": "eur cʼhoañv Hong Kong", "WIT": "eur Indonezia ar Reter", "AKST": "eur cʼhoañv Alaska"},
+		timezones:              map[string]string{"CHAST": "eur cʼhoañv Chatham", "CHADT": "eur hañv Chatham", "LHST": "LHST", "AST": "AST", "HADT": "HADT", "WITA": "WITA", "AKST": "eur cʼhoañv Alaska", "MESZ": "eur hañv Kreizeuropa", "ChST": "ChST", "IST": "eur cʼhoañv India", "∅∅∅": "eur hañv an Azorez", "BOT": "eur Bolivia", "EDT": "eur hañv ar Reter", "JST": "eur cʼhoañv Japan", "HAST": "HAST", "WIB": "eur Indonezia ar Cʼhornôg", "ACWST": "eur cʼhoañv Kreizaostralia ar Cʼhornôg", "ACWDT": "eur hañv Kreizaostralia ar Cʼhornôg", "EAT": "eur Afrika ar Reter", "VET": "eur Venezuela", "COST": "eur hañv Kolombia", "HAT": "eur hañv Newfoundland", "MEZ": "eur cʼhoañv Kreizeuropa", "WEZ": "eur cʼhoañv Europa ar Cʼhornôg", "WAST": "eur hañv Afrika ar Cʼhornôg", "ACST": "eur cʼhoañv Kreizaostralia", "AWST": "eur cʼhoañv Aostralia ar Cʼhornôg", "HKST": "eur hañv Hong Kong", "ECT": "eur Ecuador", "PST": "PST", "GMT": "Amzer keitat Greenwich (AKG)", "UYT": "eur cʼhoañv Uruguay", "SRT": "eur Surinam", "CLT": "eur cʼhoañv Chile", "CLST": "eur hañv Chile", "OEZ": "eur cʼhoañv Europa ar Reter", "CDT": "CDT", "AWDT": "eur hañv Aostralia ar Cʼhornôg", "HKT": "eur cʼhoañv Hong Kong", "AEST": "eur cʼhoañv Aostralia ar Reter", "AEDT": "eur hañv Aostralia ar Reter", "NZST": "eur cʼhoañv Zeland-Nevez", "BT": "eur Bhoutan", "WESZ": "eur hañv Europa ar Cʼhornôg", "ACDT": "eur hañv Kreizaostralia", "SGT": "eur cʼhoañv Singapour", "TMST": "eur hañv Turkmenistan", "WART": "eur cʼhoañv Arcʼhantina ar Cʼhornôg", "WAT": "eur cʼhoañv Afrika ar Cʼhornôg", "MYT": "eur Malaysia", "NZDT": "eur hañv Zeland-Nevez", "CAT": "eur Kreizafrika", "WIT": "eur Indonezia ar Reter", "CST": "CST", "AKDT": "eur hañv Alaska", "MDT": "eur hañv Macau", "SAST": "eur cʼhoañv Suafrika", "PDT": "PDT", "JDT": "eur hañv Japan", "HNT": "eur cʼhoañv Newfoundland", "GYT": "eur Guyana", "TMT": "eur cʼhoañv Turkmenistan", "LHDT": "LHDT", "COT": "eur cʼhoañv Kolombia", "MST": "eur cʼhoañv Macau", "ART": "eur cʼhoañv Arcʼhantina", "ARST": "eur hañv Arcʼhantina", "OESZ": "eur hañv Europa ar Reter", "ADT": "ADT", "EST": "eur cʼhoañv ar Reter", "UYST": "eur hañv Uruguay", "WARST": "eur hañv Arcʼhantina ar Cʼhornôg", "GFT": "eur Gwiana cʼhall"},
 	}
 }
 
@@ -94,9 +94,9 @@ func (br *br) PluralsRange() []locales.PluralRule {
 func (br *br) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
+	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
 	nMod1000000 := math.Mod(n, 1000000)
-	nMod10 := math.Mod(n, 10)
 
 	if nMod10 == 1 && (nMod100 != 11 && nMod100 != 71 && nMod100 != 91) {
 		return locales.PluralRuleOne
@@ -195,7 +195,7 @@ func (br *br) WeekdaysWide() []string {
 func (br *br) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(br.decimal) + len(br.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -270,7 +270,7 @@ func (br *br) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := br.currencies[currency]
-	l := len(s) + len(br.decimal) + len(br.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -328,7 +328,7 @@ func (br *br) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := br.currencies[currency]
-	l := len(s) + len(br.decimal) + len(br.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

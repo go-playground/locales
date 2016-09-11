@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"RC", "AD"},
 		erasNarrow:             []string{"RC", "AD"},
 		erasWide:               []string{"Roimh Chríost", "Anno Domini"},
-		timezones:              map[string]string{"CLST": "Am Samhraidh na Sile", "EST": "Am Caighdeánach an Oirthir", "∅∅∅": "Am Samhraidh Pheiriú", "WAST": "Am Samhraidh Iarthar na hAfraice", "HAST": "Am Caighdeánach Haváí-Ailiúit", "ACWST": "Am Caighdeánach Mheániarthar na hAstráile", "WESZ": "Am Samhraidh Iarthar na hEorpa", "ART": "Am Caighdeánach na hAirgintíne", "TMST": "Am Samhraidh na Tuircméanastáine", "ADT": "Am Samhraidh an Atlantaigh", "CHADT": "Am Samhraidh Chatham", "TMT": "Am Caighdeánach na Tuircméanastáine", "WITA": "Am Lár na hIndinéise", "BOT": "Am na Bolaive", "ACDT": "Am Samhraidh Lár na hAstráile", "EAT": "Am Oirthear na hAfraice", "COT": "Am Caighdeánach na Colóime", "JDT": "Am Samhraidh na Seapáine", "EDT": "Am Samhraidh an Oirthir", "SAST": "Am Caighdeánach na hAfraice Theas", "LHDT": "Am Samhraidh Lord Howe", "UYST": "Am Samhraidh Uragua", "VET": "Am Veiniséala", "ChST": "Am Caighdeánach Seamórach", "OEZ": "Am Caighdeánach Oirthear na hEorpa", "OESZ": "Am Samhraidh Oirthear na hEorpa", "AKDT": "Am Samhraidh Alasca", "ACWDT": "Am Samhraidh Mheániarthar na hAstráile", "WAT": "Am Caighdeánach Iarthar na hAfraice", "GFT": "Am Ghuáin na Fraince", "AEST": "Am Caighdeánach Oirthear na hAstráile", "BT": "Am na Bútáine", "ECT": "Am Eacuadór", "WEZ": "Am Caighdeánach Iarthar na hEorpa", "CAT": "Am Lár na hAfraice", "CDT": "Am Samhraidh Lárnach", "GMT": "Meán-Am Greenwich", "PST": "Am Caighdeánach an Aigéin Chiúin", "CLT": "Am Caighdeánach na Sile", "MST": "Am Caighdeánach na Sléibhte", "HKT": "Am Caighdeánach Hong Cong", "SGT": "Am Caighdeánach Shingeapór", "CHAST": "Am Caighdeánach Chatham", "PDT": "Am Samhraidh an Aigéin Chiúin", "MDT": "Am Samhraidh na Sléibhte", "HAT": "Am Samhraidh Thalamh an Éisc", "MEZ": "Am Caighdeánach Lár na hEorpa", "LHST": "Am Caighdeánach Lord Howe", "GYT": "Am na Guáine", "AWST": "Am Caighdeánach Iarthar na hAstráile", "WIT": "Am Oirthear na hIndinéise", "JST": "Am Caighdeánach na Seapáine", "WART": "Am Caighdeánach Iarthar na hAirgintíne", "CST": "Am Caighdeánach Lárnach", "WIB": "Am Iarthar na hIndinéise", "AEDT": "Am Samhraidh Oirthear na hAstráile", "AST": "Am Caighdeánach an Atlantaigh", "NZST": "Am Caighdeánach na Nua-Shéalainne", "NZDT": "Am Samhraidh na Nua-Shéalainne", "AWDT": "Am Samhraidh Iarthar na hAstráile", "MYT": "Am na Malaeisia", "HNT": "Am Caighdeánach Thalamh an Éisc", "COST": "Am Samhraidh na Colóime", "MESZ": "Am Samhraidh Lár na hEorpa", "ARST": "Am Samhraidh na hAirgintíne", "HKST": "Am Samhraidh Hong Cong", "HADT": "Am Samhraidh Haváí-Ailiúit", "AKST": "Am Caighdeánach Alasca", "WARST": "Am Samhraidh Iarthar na hAirgintíne", "UYT": "Am Caighdeánach Uragua", "SRT": "Am Shuranam", "ACST": "Am Caighdeánach Lár na hAstráile", "IST": "Am Caighdeánach na hIndia"},
+		timezones:              map[string]string{"TMT": "Am Caighdeánach na Tuircméanastáine", "LHST": "Am Caighdeánach Lord Howe", "MESZ": "Am Samhraidh Lár na hEorpa", "ART": "Am Caighdeánach na hAirgintíne", "WIT": "Am Oirthear na hIndinéise", "COT": "Am Caighdeánach na Colóime", "ACST": "Am Caighdeánach Lár na hAstráile", "EDT": "Am Samhraidh an Oirthir", "NZST": "Am Caighdeánach na Nua-Shéalainne", "WARST": "Am Samhraidh Iarthar na hAirgintíne", "JDT": "Am Samhraidh na Seapáine", "GYT": "Am na Guáine", "MDT": "Am Samhraidh na Sléibhte", "WART": "Am Caighdeánach Iarthar na hAirgintíne", "GFT": "Am Ghuáin na Fraince", "ADT": "Am Samhraidh an Atlantaigh", "HAT": "Am Samhraidh Thalamh an Éisc", "WIB": "Am Iarthar na hIndinéise", "AEST": "Am Caighdeánach Oirthear na hAstráile", "PST": "Am Caighdeánach an Aigéin Chiúin", "ACWDT": "Am Samhraidh Mheániarthar na hAstráile", "SRT": "Am Shuranam", "IST": "Am Caighdeánach na hIndia", "AEDT": "Am Samhraidh Oirthear na hAstráile", "CAT": "Am Lár na hAfraice", "MEZ": "Am Caighdeánach Lár na hEorpa", "ECT": "Am Eacuadór", "PDT": "Am Samhraidh an Aigéin Chiúin", "MST": "Am Caighdeánach na Sléibhte", "WAT": "Am Caighdeánach Iarthar na hAfraice", "COST": "Am Samhraidh na Colóime", "AKST": "Am Caighdeánach Alasca", "SAST": "Am Caighdeánach na hAfraice Theas", "OEZ": "Am Caighdeánach Oirthear na hEorpa", "CLST": "Am Samhraidh na Sile", "AWST": "Am Caighdeánach Iarthar na hAstráile", "BT": "Am na Bútáine", "WESZ": "Am Samhraidh Iarthar na hEorpa", "AST": "Am Caighdeánach an Atlantaigh", "OESZ": "Am Samhraidh Oirthear na hEorpa", "EAT": "Am Oirthear na hAfraice", "VET": "Am Veiniséala", "HKT": "Am Caighdeánach Hong Cong", "UYST": "Am Samhraidh Uragua", "WEZ": "Am Caighdeánach Iarthar na hEorpa", "HAST": "Am Caighdeánach Haváí-Ailiúit", "ChST": "Am Caighdeánach Seamórach", "HNT": "Am Caighdeánach Thalamh an Éisc", "AWDT": "Am Samhraidh Iarthar na hAstráile", "TMST": "Am Samhraidh na Tuircméanastáine", "LHDT": "Am Samhraidh Lord Howe", "UYT": "Am Caighdeánach Uragua", "WITA": "Am Lár na hIndinéise", "EST": "Am Caighdeánach an Oirthir", "BOT": "Am na Bolaive", "CDT": "Am Samhraidh Lárnach", "AKDT": "Am Samhraidh Alasca", "ACDT": "Am Samhraidh Lár na hAstráile", "HADT": "Am Samhraidh Haváí-Ailiúit", "NZDT": "Am Samhraidh na Nua-Shéalainne", "ACWST": "Am Caighdeánach Mheániarthar na hAstráile", "WAST": "Am Samhraidh Iarthar na hAfraice", "MYT": "Am na Malaeisia", "ARST": "Am Samhraidh na hAirgintíne", "GMT": "Meán-Am Greenwich", "CLT": "Am Caighdeánach na Sile", "∅∅∅": "Am Samhraidh na nAsór", "HKST": "Am Samhraidh Hong Cong", "CHAST": "Am Caighdeánach Chatham", "CHADT": "Am Samhraidh Chatham", "JST": "Am Caighdeánach na Seapáine", "SGT": "Am Caighdeánach Shingeapór", "CST": "Am Caighdeánach Lárnach"},
 	}
 }
 
@@ -204,7 +204,7 @@ func (ga *ga_IE) WeekdaysWide() []string {
 func (ga *ga_IE) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(ga.decimal) + len(ga.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -277,7 +277,7 @@ func (ga *ga_IE) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ga.currencies[currency]
-	l := len(s) + len(ga.decimal) + len(ga.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -335,7 +335,7 @@ func (ga *ga_IE) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ga.currencies[currency]
-	l := len(s) + len(ga.decimal) + len(ga.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

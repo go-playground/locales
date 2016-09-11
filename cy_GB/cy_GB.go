@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"CC", "OC"},
 		erasNarrow:             []string{"C", "O"},
 		erasWide:               []string{"Cyn Crist", "Oed Crist"},
-		timezones:              map[string]string{"UYST": "Amser Haf Uruguay", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "CHAST": "Amser Safonol Chatham", "CHADT": "Amser Haf Chatham", "AKDT": "Amser Haf Alaska", "WART": "Amser Safonol Gorllewin Ariannin", "UYT": "Amser Safonol Uruguay", "MYT": "Amser Malaysia", "AWST": "Amser Safonol Gorllewin Awstralia", "HAST": "Amser Safonol Hawaii-Aleutian", "ECT": "Amser Ecuador", "BOT": "Amser Bolivia", "SRT": "Amser Suriname", "EAT": "Amser Dwyrain Affrica", "COST": "Amser Haf Colombia", "AWDT": "Amser Haf Gorllewin Awstralia", "HKST": "Amser Haf Hong Kong", "JST": "Amser Safonol Siapan", "LHDT": "Amser Haf yr Arglwydd Howe", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "CLST": "Amser Haf Chile", "COT": "Amser Safonol Colombia", "SAST": "Amser Safonol De Affrica", "IST": "Amser India", "ACDT": "Amser Haf Canolbarth Awstralia", "GMT": "Amser Safonol Greenwich", "MST": "Amser Safonol Mynyddoedd Gogledd America", "WIT": "Amser Dwyrain Indonesia", "CST": "Amser Safonol Canolbarth Gogledd America", "ACST": "Amser Safonol Canolbarth Awstralia", "ARST": "Amser Haf Ariannin", "SGT": "Amser Singapore", "NZST": "Amser Safonol Seland Newydd", "MESZ": "Amser Haf Canolbarth Ewrop", "CDT": "Amser Haf Canolbarth Gogledd America", "AEST": "Amser Safonol Dwyrain Awstralia", "LHST": "Amser Safonol yr Arglwydd Howe", "MDT": "Amser Haf Mynyddoedd Gogledd America", "HNT": "Amser Safonol Newfoundland", "ART": "Amser Safonol Ariannin", "HADT": "Amser Haf Hawaii-Aleutian", "JDT": "Amser Haf Siapan", "WEZ": "Amser Safonol Gorllewin Ewrop", "AST": "Amser Safonol Cefnfor yr Iwerydd", "CLT": "Amser Safonol Chile", "TMT": "Amser Safonol Tyrcmenistan", "OESZ": "Amser Haf Dwyrain Ewrop", "MEZ": "Amser Safonol Canolbarth Ewrop", "HKT": "Amser Safonol Hong Kong", "ADT": "Amser Haf Cefnfor yr Iwerydd", "NZDT": "Amser Haf Seland Newydd", "BT": "Amser Bhutan", "EDT": "Amser Haf Dwyrain Gogledd America", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "ChST": "Amser Chamorro", "∅∅∅": "Amser Haf Amazonas", "AKST": "Amser Safonol Alaska", "OEZ": "Amser Safonol Dwyrain Ewrop", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "WAT": "Amser Safonol Gorllewin Affrica", "GYT": "Amser Guyana", "HAT": "Amser Haf Newfoundland", "TMST": "Amser Haf Tyrcmenistan", "WIB": "Amser Gorllewin Indonesia", "WESZ": "Amser Haf Gorllewin Ewrop", "VET": "Amser Venezuela", "EST": "Amser Safonol Dwyrain Gogledd America", "WARST": "Amser Haf Gorllewin Ariannin", "WAST": "Amser Haf Gorllewin Affrica", "CAT": "Amser Canolbarth Affrica", "GFT": "Amser Guyane Ffrengig", "WITA": "Amser Canolbarth Indonesia", "AEDT": "Amser Haf Dwyrain Awstralia"},
+		timezones:              map[string]string{"MEZ": "Amser Safonol Canolbarth Ewrop", "WAT": "Amser Safonol Gorllewin Affrica", "WESZ": "Amser Haf Gorllewin Ewrop", "AKDT": "Amser Haf Alaska", "ART": "Amser Safonol Ariannin", "HADT": "Amser Haf Hawaii-Aleutian", "LHDT": "Amser Haf yr Arglwydd Howe", "CAT": "Amser Canolbarth Affrica", "JDT": "Amser Haf Siapan", "SGT": "Amser Singapore", "CHADT": "Amser Haf Chatham", "AWST": "Amser Safonol Gorllewin Awstralia", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "CLT": "Amser Safonol Chile", "MESZ": "Amser Haf Canolbarth Ewrop", "UYT": "Amser Safonol Uruguay", "BT": "Amser Bhutan", "MYT": "Amser Malaysia", "HAT": "Amser Haf Newfoundland", "GYT": "Amser Guyana", "EDT": "Amser Haf Dwyrain Gogledd America", "MDT": "MDT", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "WARST": "Amser Haf Gorllewin Ariannin", "OESZ": "Amser Haf Dwyrain Ewrop", "WAST": "Amser Haf Gorllewin Affrica", "COT": "Amser Safonol Colombia", "∅∅∅": "Amser Haf yr Azores", "AKST": "Amser Safonol Alaska", "HNT": "Amser Safonol Newfoundland", "ARST": "Amser Haf Ariannin", "TMST": "Amser Haf Tyrcmenistan", "HKT": "Amser Safonol Hong Kong", "WIT": "Amser Dwyrain Indonesia", "WEZ": "Amser Safonol Gorllewin Ewrop", "CLST": "Amser Haf Chile", "BOT": "Amser Bolivia", "CDT": "Amser Haf Canolbarth Gogledd America", "AST": "Amser Safonol Cefnfor yr Iwerydd", "CHAST": "Amser Safonol Chatham", "EST": "Amser Safonol Dwyrain Gogledd America", "ChST": "Amser Chamorro", "SRT": "Amser Suriname", "JST": "Amser Safonol Siapan", "COST": "Amser Haf Colombia", "WIB": "Amser Gorllewin Indonesia", "OEZ": "Amser Safonol Dwyrain Ewrop", "LHST": "Amser Safonol yr Arglwydd Howe", "EAT": "Amser Dwyrain Affrica", "VET": "Amser Venezuela", "ACDT": "Amser Haf Canolbarth Awstralia", "NZST": "Amser Safonol Seland Newydd", "CST": "Amser Safonol Canolbarth Gogledd America", "HKST": "Amser Haf Hong Kong", "SAST": "Amser Safonol De Affrica", "AEST": "Amser Safonol Dwyrain Awstralia", "AWDT": "Amser Haf Gorllewin Awstralia", "UYST": "Amser Haf Uruguay", "WART": "Amser Safonol Gorllewin Ariannin", "ADT": "Amser Haf Cefnfor yr Iwerydd", "AEDT": "Amser Haf Dwyrain Awstralia", "WITA": "Amser Canolbarth Indonesia", "MST": "MST", "TMT": "Amser Safonol Tyrcmenistan", "NZDT": "Amser Haf Seland Newydd", "GFT": "Amser Guyane Ffrengig", "IST": "Amser India", "ACST": "Amser Safonol Canolbarth Awstralia", "HAST": "Amser Safonol Hawaii-Aleutian", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "GMT": "Amser Safonol Greenwich", "ECT": "Amser Ecuador"},
 	}
 }
 
@@ -253,7 +253,7 @@ func (cy *cy_GB) WeekdaysWide() []string {
 func (cy *cy_GB) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(cy.decimal) + len(cy.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -326,7 +326,7 @@ func (cy *cy_GB) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
-	l := len(s) + len(cy.decimal) + len(cy.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 0 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -384,7 +384,7 @@ func (cy *cy_GB) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
-	l := len(s) + len(cy.decimal) + len(cy.group)*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
