@@ -69,7 +69,7 @@ func New() locales.Translator {
 		daysWide:               []string{"זונטיק", "מאָנטיק", "דינסטיק", "מיטוואך", "דאנערשטיק", "פֿרײַטיק", "שבת"},
 		periodsAbbreviated:     []string{"פֿאַרמיטאָג", "נאָכמיטאָג"},
 		periodsWide:            []string{"פֿאַרמיטאָג", "נאָכמיטאָג"},
-		timezones:              map[string]string{"GYT": "GYT", "WARST": "WARST", "WITA": "WITA", "ACWST": "ACWST", "WEZ": "WEZ", "OEZ": "OEZ", "UYST": "UYST", "BOT": "BOT", "COT": "COT", "ACDT": "ACDT", "IST": "IST", "HAT": "HAT", "AEST": "AEST", "WAT": "WAT", "SAST": "SAST", "EAT": "EAT", "OESZ": "OESZ", "LHDT": "LHDT", "GMT": "GMT", "MYT": "MYT", "AKST": "AKST", "HKST": "HKST", "MEZ": "MEZ", "TMT": "TMT", "∅∅∅": "∅∅∅", "CLT": "CLT", "CLST": "CLST", "JDT": "JDT", "AWDT": "AWDT", "HKT": "HKT", "PST": "PST", "AEDT": "AEDT", "JST": "JST", "CST": "CST", "CDT": "CDT", "EST": "EST", "COST": "COST", "WAST": "WAST", "BT": "BT", "TMST": "TMST", "AWST": "AWST", "MST": "MST", "SGT": "SGT", "AST": "AST", "NZST": "NZST", "NZDT": "NZDT", "LHST": "LHST", "CAT": "CAT", "UYT": "UYT", "VET": "VET", "HNT": "HNT", "ACST": "ACST", "WESZ": "WESZ", "EDT": "EDT", "ART": "ART", "MESZ": "MESZ", "HADT": "HADT", "MDT": "MDT", "GFT": "GFT", "ChST": "ChST", "ARST": "ARST", "SRT": "SRT", "WIT": "WIT", "ECT": "ECT", "WART": "WART", "ADT": "ADT", "WIB": "WIB", "PDT": "PDT", "CHAST": "CHAST", "CHADT": "CHADT", "ACWDT": "ACWDT", "AKDT": "AKDT", "HAST": "HAST"},
+		timezones:              map[string]string{"CLT": "CLT", "VET": "VET", "HADT": "HADT", "AKST": "AKST", "AKDT": "AKDT", "WAST": "WAST", "MDT": "MDT", "WIB": "WIB", "SRT": "SRT", "HKST": "HKST", "UYST": "UYST", "ART": "ART", "CST": "CST", "COT": "COT", "∅∅∅": "∅∅∅", "CLST": "CLST", "AWST": "AWST", "CDT": "CDT", "GMT": "GMT", "WAT": "WAT", "WESZ": "WESZ", "GYT": "GYT", "UYT": "UYT", "EAT": "EAT", "WITA": "WITA", "WEZ": "WEZ", "LHDT": "LHDT", "NZST": "NZST", "HAST": "HAST", "ChST": "ChST", "LHST": "LHST", "AWDT": "AWDT", "CAT": "CAT", "HKT": "HKT", "NZDT": "NZDT", "BOT": "BOT", "ARST": "ARST", "ECT": "ECT", "EST": "EST", "SAST": "SAST", "CHADT": "CHADT", "AST": "AST", "WARST": "WARST", "WIT": "WIT", "BT": "BT", "GFT": "GFT", "EDT": "EDT", "MST": "MST", "JST": "JST", "OEZ": "OEZ", "AEST": "AEST", "WART": "WART", "TMT": "TMT", "ACWST": "ACWST", "CHAST": "CHAST", "OESZ": "OESZ", "AEDT": "AEDT", "MEZ": "MEZ", "PST": "PST", "PDT": "PDT", "HAT": "HAT", "MYT": "MYT", "SGT": "SGT", "COST": "COST", "JDT": "JDT", "ADT": "ADT", "ACST": "ACST", "ACDT": "ACDT", "HNT": "HNT", "TMST": "TMST", "ACWDT": "ACWDT", "MESZ": "MESZ", "IST": "IST"},
 	}
 }
 
@@ -187,20 +187,19 @@ func (yi *yi) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'yi' and handles both Whole and Real numbers based on 'v'
-func (yi *yi) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (yi *yi) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'yi' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (yi *yi) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (yi *yi) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'yi'
-func (yi *yi) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (yi *yi) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yi.currencies[currency]
@@ -237,13 +236,12 @@ func (yi *yi) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 
 	b = append(b, yi.currencyPositiveSuffix...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'yi'
 // in accounting notation.
-func (yi *yi) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (yi *yi) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yi.currencies[currency]
@@ -297,8 +295,7 @@ func (yi *yi) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, yi.currencyPositiveSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'yi'

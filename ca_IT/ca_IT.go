@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"aC", "dC"},
 		erasNarrow:             []string{"aC", "dC"},
 		erasWide:               []string{"abans de Crist", "després de Crist"},
-		timezones:              map[string]string{"COT": "Hora estàndard de Colòmbia", "PST": "Hora estàndard del Pacífic", "GMT": "Hora del Meridià de Greenwich", "AEST": "Hora estàndard d’Austràlia Oriental", "SGT": "Hora de Singapur", "CLT": "Hora estàndard de Xile", "GFT": "Hora de la Guaiana Francesa", "HKST": "Hora d’estiu de Hong Kong", "ADT": "Hora d’estiu de l’Atlàntic", "ACWST": "Hora estàndard d’Austràlia centre-occidental", "CLST": "Hora d’estiu de Xile", "LHDT": "Horari d’estiu de Lord Howe", "ECT": "Hora de l’Equador", "AWDT": "Hora d’estiu d’Austràlia Occidental", "WESZ": "Hora d’estiu de l’Oest d’Europa", "EDT": "Hora d’estiu oriental d’Amèrica del Nord", "BT": "Hora de Bhutan", "WIT": "Hora de l’est d’Indonèsia", "JST": "Hora estàndard del Japó", "ACDT": "Hora d’estiu d’Austràlia Central", "TMST": "Hora d’estiu del Turkmenistan", "VET": "Hora de Veneçuela", "WART": "Hora estàndard de l’oest de l’Argentina", "HAST": "Hora estàndard de Hawaii-Aleutianes", "CDT": "Hora d’estiu central d’Amèrica del Nord", "CHADT": "Hora d’estiu de Chatham", "COST": "Hora d’estiu de Colòmbia", "AST": "Hora estàndard de l’Atlàntic", "MESZ": "Hora d’estiu del Centre d’Europa", "AKST": "Hora estàndard d’Alaska", "UYST": "Hora d’estiu de l’Uruguai", "MST": "Hora estàndard de muntanya d’Amèrica del Nord", "ARST": "Hora d’estiu de l’Argentina", "OESZ": "Hora d’estiu de l’Est d’Europa", "AEDT": "Hora d’estiu d’Austràlia Oriental", "CHAST": "Hora estàndard de Chatham", "ACWDT": "Hora d’estiu d’Austràlia centre-occidental", "MDT": "Hora d’estiu de muntanya d’Amèrica del Nord", "HKT": "Hora estàndard de Hong Kong", "CST": "Hora estàndard central d’Amèrica del Nord", "WEZ": "Hora estàndard de l’Oest d’Europa", "EST": "Hora estàndard oriental d’Amèrica del Nord", "WIB": "Hora de l’oest d’Indonèsia", "WAST": "Hora d’estiu de l’Àfrica Occidental", "∅∅∅": "Hora d’estiu de les Açores", "LHST": "Hora estàndard de Lord Howe", "SRT": "Hora de Surinam", "CAT": "Hora de l’Àfrica Central", "PDT": "Hora d’estiu del Pacífic", "BOT": "Hora de Bolívia", "GYT": "Hora de Guyana", "TMT": "Hora estàndard del Turkmenistan", "HAT": "Hora d’estiu de Terranova", "AWST": "Hora estàndard d’Austràlia Occidental", "ACST": "Hora estàndard d’Austràlia Central", "EAT": "Hora de l’Àfrica Oriental", "ChST": "Hora de Chamorro", "HNT": "Hora estàndard de Terranova", "UYT": "Hora estàndard de l’Uruguai", "OEZ": "Hora estàndard de l’Est d’Europa", "ART": "Hora estàndard de l’Argentina", "WARST": "Hora d’estiu de l’oest de l’Argentina", "WAT": "Hora estàndard de l’Àfrica Occidental", "WITA": "Hora central d’Indonèsia", "SAST": "Hora estàndard del sud de l’Àfrica", "IST": "Hora estàndard de l’Índia", "AKDT": "Hora d’estiu d’Alaska", "HADT": "Hora d’estiu de Hawaii-Aleutianes", "NZST": "Hora estàndard de Nova Zelanda", "NZDT": "Hora d’estiu de Nova Zelanda", "MEZ": "Hora estàndard del Centre d’Europa", "JDT": "Hora d’estiu del Japó", "MYT": "Hora de Malàisia"},
+		timezones:              map[string]string{"AEDT": "Hora d’estiu d’Austràlia Oriental", "AWST": "Hora estàndard d’Austràlia Occidental", "HNT": "Hora estàndard de Terranova", "HAST": "Hora estàndard de Hawaii-Aleutianes", "HADT": "Hora d’estiu de Hawaii-Aleutianes", "SAST": "Hora estàndard del sud de l’Àfrica", "LHST": "Hora estàndard de Lord Howe", "WARST": "Hora d’estiu de l’oest de l’Argentina", "CHADT": "Hora d’estiu de Chatham", "JDT": "Hora d’estiu del Japó", "ACDT": "Hora d’estiu d’Austràlia Central", "ARST": "Hora d’estiu de l’Argentina", "CST": "Hora estàndard central d’Amèrica del Nord", "WIB": "Hora de l’oest d’Indonèsia", "LHDT": "Horari d’estiu de Lord Howe", "JST": "Hora estàndard del Japó", "AEST": "Hora estàndard d’Austràlia Oriental", "GYT": "Hora de Guyana", "GFT": "Hora de la Guaiana Francesa", "TMT": "Hora estàndard del Turkmenistan", "CDT": "Hora d’estiu central d’Amèrica del Nord", "AKST": "Hora estàndard d’Alaska", "SRT": "Hora de Surinam", "CAT": "Hora de l’Àfrica Central", "NZST": "Hora estàndard de Nova Zelanda", "ACWST": "Hora estàndard d’Austràlia centre-occidental", "HAT": "Hora d’estiu de Terranova", "WITA": "Hora central d’Indonèsia", "OESZ": "Hora d’estiu de l’Est d’Europa", "WART": "Hora estàndard de l’oest de l’Argentina", "SGT": "Hora de Singapur", "PST": "Hora estàndard del Pacífic", "PDT": "Hora d’estiu del Pacífic", "BOT": "Hora de Bolívia", "UYST": "Hora d’estiu de l’Uruguai", "COST": "Hora d’estiu de Colòmbia", "UYT": "Hora estàndard de l’Uruguai", "GMT": "Hora del Meridià de Greenwich", "COT": "Hora estàndard de Colòmbia", "NZDT": "Hora d’estiu de Nova Zelanda", "WAST": "Hora d’estiu de l’Àfrica Occidental", "CLST": "Hora d’estiu de Xile", "ACST": "Hora estàndard d’Austràlia Central", "IST": "Hora estàndard de l’Índia", "HKST": "Hora d’estiu de Hong Kong", "ECT": "Hora de l’Equador", "ACWDT": "Hora d’estiu d’Austràlia centre-occidental", "OEZ": "Hora estàndard de l’Est d’Europa", "AST": "Hora estàndard de l’Atlàntic", "MST": "Hora estàndard de muntanya d’Amèrica del Nord", "HKT": "Hora estàndard de Hong Kong", "ChST": "Hora de Chamorro", "AKDT": "Hora d’estiu d’Alaska", "EAT": "Hora de l’Àfrica Oriental", "MESZ": "Hora d’estiu del Centre d’Europa", "VET": "Hora de Veneçuela", "MYT": "Hora de Malàisia", "ART": "Hora estàndard de l’Argentina", "EDT": "Hora d’estiu oriental d’Amèrica del Nord", "WAT": "Hora estàndard de l’Àfrica Occidental", "CLT": "Hora estàndard de Xile", "WIT": "Hora de l’est d’Indonèsia", "ADT": "Hora d’estiu de l’Atlàntic", "∅∅∅": "Hora d’estiu de les Açores", "CHAST": "Hora estàndard de Chatham", "AWDT": "Hora d’estiu d’Austràlia Occidental", "MDT": "Hora d’estiu de muntanya d’Amèrica del Nord", "BT": "Hora de Bhutan", "EST": "Hora estàndard oriental d’Amèrica del Nord", "WEZ": "Hora estàndard de l’Oest d’Europa", "WESZ": "Hora d’estiu de l’Oest d’Europa", "MEZ": "Hora estàndard del Centre d’Europa", "TMST": "Hora d’estiu del Turkmenistan"},
 	}
 }
 
@@ -202,7 +202,8 @@ func (ca *ca_IT) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ca_IT' and handles both Whole and Real numbers based on 'v'
-func (ca *ca_IT) FmtNumber(num float64, v uint64) (results string) {
+func (ca *ca_IT) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ca.decimal) + len(ca.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -238,13 +239,12 @@ func (ca *ca_IT) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ca_IT' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ca *ca_IT) FmtPercent(num float64, v uint64) (results string) {
+func (ca *ca_IT) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ca.decimal)
 	b := make([]byte, 0, l)
@@ -270,12 +270,11 @@ func (ca *ca_IT) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ca.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ca_IT'
-func (ca *ca_IT) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ca *ca_IT) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ca.currencies[currency]
@@ -328,13 +327,12 @@ func (ca *ca_IT) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ca_IT'
 // in accounting notation.
-func (ca *ca_IT) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ca *ca_IT) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ca.currencies[currency]
@@ -394,8 +392,7 @@ func (ca *ca_IT) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ca_IT'

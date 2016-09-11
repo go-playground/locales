@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"AEDT": "AEDT", "WIT": "WIT", "BT": "BT", "ACWDT": "ACWDT", "JDT": "JDT", "LHDT": "LHDT", "HAT": "HAT", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "COST": "COST", "WAST": "WAST", "HADT": "HADT", "WITA": "WITA", "CST": "Centrālas Amērikas zēimas kerdā", "CDT": "Centrālas Amērikas daggas kerdā", "HAST": "HAST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "GMT": "Greenwich kerdā", "AEST": "AEST", "CHAST": "CHAST", "SAST": "SAST", "VET": "VET", "UYT": "UYT", "CAT": "CAT", "BOT": "BOT", "SRT": "SRT", "ARST": "ARST", "TMT": "TMT", "AKDT": "AKDT", "AWST": "AWST", "ACWST": "ACWST", "NZST": "NZST", "PDT": "Pacīfiskas Amērikas daggas kerdā", "ACST": "ACST", "GYT": "GYT", "ART": "ART", "AST": "Atlāntiska zēimas kerdā", "SGT": "SGT", "IST": "IST", "UYST": "UYST", "CHADT": "CHADT", "∅∅∅": "∅∅∅", "HKT": "HKT", "CLT": "CLT", "GFT": "GFT", "MYT": "MYT", "HNT": "HNT", "AWDT": "AWDT", "EST": "Dēiniskas Amērikas zēimas kerdā", "EDT": "Dēiniskas Amērikas daggas kerdā", "MEZ": "Centrālas Eurōpas zēimas kerdā", "WARST": "WARST", "HKST": "HKST", "MESZ": "Centrālas Eurōpas daggas kerdā", "ACDT": "ACDT", "WAT": "WAT", "MDT": "Amērikas gārban daggas kerdā", "CLST": "CLST", "ADT": "Atlāntiska daggas kerdā", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "AKST": "AKST", "WIB": "WIB", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "WART": "WART", "TMST": "TMST", "JST": "JST", "LHST": "LHST", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "NZDT": "NZDT", "PST": "Pacīfiskas Amērikas zēimas kerdā", "COT": "COT", "MST": "Amērikas gārban zēimas kerdā"},
+		timezones:              map[string]string{"LHST": "LHST", "SAST": "SAST", "CLT": "CLT", "SGT": "SGT", "HKT": "HKT", "HKST": "HKST", "HADT": "HADT", "MST": "MST", "MDT": "MDT", "MESZ": "Centrālas Eurōpas daggas kerdā", "CLST": "CLST", "ACWDT": "ACWDT", "BOT": "BOT", "WITA": "WITA", "COST": "COST", "NZST": "NZST", "VET": "VET", "MYT": "MYT", "TMT": "TMT", "AKDT": "AKDT", "CHADT": "CHADT", "AWST": "AWST", "HAT": "HAT", "ART": "ART", "CAT": "CAT", "EDT": "Dēiniskas Amērikas daggas kerdā", "GMT": "Greenwich kerdā", "JST": "JST", "AST": "Atlāntiska zēimas kerdā", "SRT": "SRT", "WIB": "WIB", "AEST": "AEST", "WART": "WART", "PDT": "Pacīfiskas Amērikas daggas kerdā", "GFT": "GFT", "CST": "Centrālas Amērikas zēimas kerdā", "MEZ": "Centrālas Eurōpas zēimas kerdā", "WARST": "WARST", "GYT": "GYT", "UYT": "UYT", "ChST": "ChST", "WAST": "WAST", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "WIT": "WIT", "ARST": "ARST", "HAST": "HAST", "AKST": "AKST", "AEDT": "AEDT", "TMST": "TMST", "LHDT": "LHDT", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "ACDT": "ACDT", "BT": "BT", "ECT": "ECT", "ADT": "Atlāntiska daggas kerdā", "PST": "Pacīfiskas Amērikas zēimas kerdā", "COT": "COT", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "IST": "IST", "UYST": "UYST", "∅∅∅": "∅∅∅", "ACWST": "ACWST", "CHAST": "CHAST", "JDT": "JDT", "ACST": "ACST", "EST": "Dēiniskas Amērikas zēimas kerdā", "EAT": "EAT", "WAT": "WAT", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "AWDT": "AWDT", "CDT": "Centrālas Amērikas daggas kerdā", "NZDT": "NZDT", "HNT": "HNT"},
 	}
 }
 
@@ -98,8 +98,8 @@ func (prg *prg_001) CardinalPluralRule(num float64, v uint64) locales.PluralRule
 	f := locales.F(n, v)
 	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
-	fMod10 := f % 10
 	fMod100 := f % 100
+	fMod10 := f % 10
 
 	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
@@ -191,7 +191,8 @@ func (prg *prg_001) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'prg_001' and handles both Whole and Real numbers based on 'v'
-func (prg *prg_001) FmtNumber(num float64, v uint64) (results string) {
+func (prg *prg_001) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(prg.decimal) + len(prg.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -211,7 +212,6 @@ func (prg *prg_001) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(prg.group) - 1; j >= 0; j-- {
 					b = append(b, prg.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -230,13 +230,12 @@ func (prg *prg_001) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'prg_001' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (prg *prg_001) FmtPercent(num float64, v uint64) (results string) {
+func (prg *prg_001) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(prg.decimal)
 	b := make([]byte, 0, l)
@@ -262,12 +261,11 @@ func (prg *prg_001) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, prg.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'prg_001'
-func (prg *prg_001) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (prg *prg_001) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
@@ -289,7 +287,6 @@ func (prg *prg_001) FmtCurrency(num float64, v uint64, currency currency.Type) (
 				for j := len(prg.group) - 1; j >= 0; j-- {
 					b = append(b, prg.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -323,13 +320,12 @@ func (prg *prg_001) FmtCurrency(num float64, v uint64, currency currency.Type) (
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'prg_001'
 // in accounting notation.
-func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
@@ -351,7 +347,6 @@ func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type)
 				for j := len(prg.group) - 1; j >= 0; j-- {
 					b = append(b, prg.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -392,8 +387,7 @@ func (prg *prg_001) FmtAccounting(num float64, v uint64, currency currency.Type)
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'prg_001'

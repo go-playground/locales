@@ -18,7 +18,7 @@ type rn struct {
 	group              string
 	minus              string
 	percent            string
-	percentSuffix      []byte
+	percentSuffix      string
 	perMille           string
 	timeSeparator      string
 	inifinity          string
@@ -51,7 +51,7 @@ func New() locales.Translator {
 		group:              ".",
 		timeSeparator:      ":",
 		currencies:         []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "FBu", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:      []byte{0xc2, 0xa0},
+		percentSuffix:      " ",
 		monthsAbbreviated:  []string{"", "Mut.", "Gas.", "Wer.", "Mat.", "Gic.", "Kam.", "Nya.", "Kan.", "Nze.", "Ukw.", "Ugu.", "Uku."},
 		monthsWide:         []string{"", "Nzero", "Ruhuhuma", "Ntwarante", "Ndamukiza", "Rusama", "Ruheshi", "Mukakaro", "Nyandagaro", "Nyakanga", "Gitugutu", "Munyonyo", "Kigarama"},
 		daysAbbreviated:    []string{"cu.", "mbe.", "kab.", "gtu.", "kan.", "gnu.", "gnd."},
@@ -61,7 +61,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"Mb.Y.", "Ny.Y"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Mbere ya Yezu", "Nyuma ya Yezu"},
-		timezones:          map[string]string{"SAST": "SAST", "ChST": "ChST", "HAST": "HAST", "HADT": "HADT", "EAT": "EAT", "HAT": "HAT", "BT": "BT", "MDT": "MDT", "CDT": "CDT", "EST": "EST", "EDT": "EDT", "CHADT": "CHADT", "WAST": "WAST", "ARST": "ARST", "WITA": "WITA", "OESZ": "OESZ", "OEZ": "OEZ", "NZST": "NZST", "LHDT": "LHDT", "ECT": "ECT", "CST": "CST", "WEZ": "WEZ", "AWDT": "AWDT", "PST": "PST", "CAT": "CAT", "COT": "COT", "JST": "JST", "WESZ": "WESZ", "CLT": "CLT", "WIB": "WIB", "UYST": "UYST", "CLST": "CLST", "BOT": "BOT", "JDT": "JDT", "HKT": "HKT", "CHAST": "CHAST", "GYT": "GYT", "ART": "ART", "ACWDT": "ACWDT", "VET": "VET", "AKDT": "AKDT", "WART": "WART", "AEDT": "AEDT", "WARST": "WARST", "AWST": "AWST", "HNT": "HNT", "HKST": "HKST", "AEST": "AEST", "∅∅∅": "∅∅∅", "TMST": "TMST", "MEZ": "MEZ", "ACST": "ACST", "SRT": "SRT", "SGT": "SGT", "ADT": "ADT", "WAT": "WAT", "MST": "MST", "MYT": "MYT", "WIT": "WIT", "NZDT": "NZDT", "LHST": "LHST", "AST": "AST", "TMT": "TMT", "AKST": "AKST", "UYT": "UYT", "GMT": "GMT", "MESZ": "MESZ", "ACDT": "ACDT", "PDT": "PDT", "ACWST": "ACWST", "GFT": "GFT", "IST": "IST", "COST": "COST"},
+		timezones:          map[string]string{"NZDT": "NZDT", "LHST": "LHST", "LHDT": "LHDT", "CAT": "CAT", "TMT": "TMT", "CDT": "CDT", "EDT": "EDT", "HAST": "HAST", "SAST": "SAST", "WEZ": "WEZ", "ACDT": "ACDT", "UYST": "UYST", "TMST": "TMST", "ChST": "ChST", "CHADT": "CHADT", "OESZ": "OESZ", "ADT": "ADT", "AEST": "AEST", "GFT": "GFT", "HADT": "HADT", "AKDT": "AKDT", "AEDT": "AEDT", "AWST": "AWST", "AWDT": "AWDT", "EST": "EST", "ARST": "ARST", "WIB": "WIB", "IST": "IST", "PDT": "PDT", "HAT": "HAT", "MYT": "MYT", "WIT": "WIT", "HNT": "HNT", "WARST": "WARST", "SGT": "SGT", "ART": "ART", "COST": "COST", "ACWST": "ACWST", "MEZ": "MEZ", "JDT": "JDT", "COT": "COT", "AST": "AST", "PST": "PST", "UYT": "UYT", "JST": "JST", "BOT": "BOT", "ECT": "ECT", "WITA": "WITA", "EAT": "EAT", "WAST": "WAST", "VET": "VET", "∅∅∅": "∅∅∅", "BT": "BT", "MST": "MST", "CHAST": "CHAST", "CLT": "CLT", "HKST": "HKST", "AKST": "AKST", "MDT": "MDT", "WESZ": "WESZ", "ACWDT": "ACWDT", "SRT": "SRT", "GMT": "GMT", "OEZ": "OEZ", "ACST": "ACST", "HKT": "HKT", "MESZ": "MESZ", "CLST": "CLST", "CST": "CST", "WAT": "WAT", "WART": "WART", "GYT": "GYT", "NZST": "NZST"},
 	}
 }
 
@@ -171,7 +171,8 @@ func (rn *rn) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'rn' and handles both Whole and Real numbers based on 'v'
-func (rn *rn) FmtNumber(num float64, v uint64) (results string) {
+func (rn *rn) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(rn.decimal) + len(rn.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -199,9 +200,7 @@ func (rn *rn) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(rn.minus) - 1; j >= 0; j-- {
-			b = append(b, rn.minus[j])
-		}
+		b = append(b, rn.minus[0])
 	}
 
 	// reverse
@@ -209,13 +208,12 @@ func (rn *rn) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'rn' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (rn *rn) FmtPercent(num float64, v uint64) (results string) {
+func (rn *rn) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(rn.decimal)
 	b := make([]byte, 0, l)
@@ -231,9 +229,7 @@ func (rn *rn) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(rn.minus) - 1; j >= 0; j-- {
-			b = append(b, rn.minus[j])
-		}
+		b = append(b, rn.minus[0])
 	}
 
 	// reverse
@@ -245,12 +241,11 @@ func (rn *rn) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, rn.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'rn'
-func (rn *rn) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (rn *rn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := rn.currencies[currency]
@@ -280,9 +275,7 @@ func (rn *rn) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	}
 
 	if num < 0 {
-		for j := len(rn.minus) - 1; j >= 0; j-- {
-			b = append(b, rn.minus[j])
-		}
+		b = append(b, rn.minus[0])
 	}
 
 	// reverse
@@ -303,13 +296,12 @@ func (rn *rn) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'rn'
 // in accounting notation.
-func (rn *rn) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (rn *rn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := rn.currencies[currency]
@@ -340,9 +332,7 @@ func (rn *rn) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 
 	if num < 0 {
 
-		for j := len(rn.minus) - 1; j >= 0; j-- {
-			b = append(b, rn.minus[j])
-		}
+		b = append(b, rn.minus[0])
 
 	}
 
@@ -369,8 +359,7 @@ func (rn *rn) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'rn'

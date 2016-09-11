@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"BC", "AD"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"Kurisito Atakaijire", "Kurisito Yaijire"},
-		timezones:         map[string]string{"ADT": "ADT", "ChST": "ChST", "∅∅∅": "∅∅∅", "CHAST": "CHAST", "WAT": "WAT", "MESZ": "MESZ", "ACDT": "ACDT", "GFT": "GFT", "UYT": "UYT", "AST": "AST", "ACST": "ACST", "ECT": "ECT", "UYST": "UYST", "PDT": "PDT", "AKDT": "AKDT", "SGT": "SGT", "EAT": "EAT", "HAT": "HAT", "CAT": "CAT", "EST": "EST", "COT": "COT", "GYT": "GYT", "ART": "ART", "WARST": "WARST", "LHST": "LHST", "CDT": "CDT", "MST": "MST", "MDT": "MDT", "WEZ": "WEZ", "HKT": "HKT", "ACWST": "ACWST", "HADT": "HADT", "AWST": "AWST", "CLT": "CLT", "OESZ": "OESZ", "SRT": "SRT", "TMT": "TMT", "WIT": "WIT", "HAST": "HAST", "AWDT": "AWDT", "CHADT": "CHADT", "WAST": "WAST", "MYT": "MYT", "IST": "IST", "BT": "BT", "JDT": "JDT", "HNT": "HNT", "SAST": "SAST", "ACWDT": "ACWDT", "AKST": "AKST", "WESZ": "WESZ", "OEZ": "OEZ", "AEST": "AEST", "NZDT": "NZDT", "MEZ": "MEZ", "LHDT": "LHDT", "GMT": "GMT", "AEDT": "AEDT", "COST": "COST", "CLST": "CLST", "NZST": "NZST", "ARST": "ARST", "VET": "VET", "WITA": "WITA", "BOT": "BOT", "JST": "JST", "CST": "CST", "HKST": "HKST", "EDT": "EDT", "PST": "PST", "WIB": "WIB", "WART": "WART", "TMST": "TMST"},
+		timezones:         map[string]string{"CLST": "CLST", "AWDT": "AWDT", "HAT": "HAT", "CAT": "CAT", "GFT": "GFT", "CDT": "CDT", "CLT": "CLT", "SGT": "SGT", "UYT": "UYT", "ART": "ART", "CST": "CST", "GYT": "GYT", "MST": "MST", "ACST": "ACST", "EDT": "EDT", "HADT": "HADT", "AST": "AST", "AEDT": "AEDT", "WIB": "WIB", "JST": "JST", "HKT": "HKT", "VET": "VET", "HNT": "HNT", "SRT": "SRT", "MEZ": "MEZ", "OESZ": "OESZ", "EAT": "EAT", "CHADT": "CHADT", "MESZ": "MESZ", "ADT": "ADT", "WARST": "WARST", "UYST": "UYST", "LHST": "LHST", "LHDT": "LHDT", "MDT": "MDT", "ACDT": "ACDT", "BT": "BT", "WAT": "WAT", "WAST": "WAST", "WIT": "WIT", "GMT": "GMT", "ACWST": "ACWST", "WESZ": "WESZ", "OEZ": "OEZ", "JDT": "JDT", "MYT": "MYT", "PDT": "PDT", "BOT": "BOT", "HAST": "HAST", "ECT": "ECT", "ARST": "ARST", "HKST": "HKST", "TMT": "TMT", "NZST": "NZST", "NZDT": "NZDT", "WEZ": "WEZ", "WITA": "WITA", "AKDT": "AKDT", "COST": "COST", "AEST": "AEST", "IST": "IST", "ACWDT": "ACWDT", "CHAST": "CHAST", "∅∅∅": "∅∅∅", "TMST": "TMST", "AKST": "AKST", "COT": "COT", "SAST": "SAST", "WART": "WART", "PST": "PST", "AWST": "AWST", "ChST": "ChST", "EST": "EST"},
 	}
 }
 
@@ -174,20 +174,19 @@ func (nyn *nyn) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'nyn' and handles both Whole and Real numbers based on 'v'
-func (nyn *nyn) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (nyn *nyn) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'nyn' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (nyn *nyn) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (nyn *nyn) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'nyn'
-func (nyn *nyn) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (nyn *nyn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nyn.currencies[currency]
@@ -199,20 +198,14 @@ func (nyn *nyn) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(nyn.decimal) - 1; j >= 0; j-- {
-				b = append(b, nyn.decimal[j])
-			}
-
+			b = append(b, nyn.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(nyn.group) - 1; j >= 0; j-- {
-					b = append(b, nyn.group[j])
-				}
-
+				b = append(b, nyn.group[0])
 				count = 1
 			} else {
 				count++
@@ -227,9 +220,7 @@ func (nyn *nyn) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(nyn.minus) - 1; j >= 0; j-- {
-			b = append(b, nyn.minus[j])
-		}
+		b = append(b, nyn.minus[0])
 	}
 
 	// reverse
@@ -248,13 +239,12 @@ func (nyn *nyn) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'nyn'
 // in accounting notation.
-func (nyn *nyn) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (nyn *nyn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nyn.currencies[currency]
@@ -266,20 +256,14 @@ func (nyn *nyn) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(nyn.decimal) - 1; j >= 0; j-- {
-				b = append(b, nyn.decimal[j])
-			}
-
+			b = append(b, nyn.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(nyn.group) - 1; j >= 0; j-- {
-					b = append(b, nyn.group[j])
-				}
-
+				b = append(b, nyn.group[0])
 				count = 1
 			} else {
 				count++
@@ -295,9 +279,7 @@ func (nyn *nyn) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, symbol[j])
 		}
 
-		for j := len(nyn.minus) - 1; j >= 0; j-- {
-			b = append(b, nyn.minus[j])
-		}
+		b = append(b, nyn.minus[0])
 
 	} else {
 
@@ -323,8 +305,7 @@ func (nyn *nyn) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'nyn'

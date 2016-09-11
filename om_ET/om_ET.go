@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"KD", "KB"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"TMST": "TMST", "LHST": "LHST", "WEZ": "WEZ", "ART": "ART", "ARST": "ARST", "WAST": "WAST", "COT": "COT", "ACDT": "ACDT", "GYT": "GYT", "LHDT": "LHDT", "HAST": "HAST", "HNT": "HNT", "AEDT": "AEDT", "WIB": "WIB", "SRT": "SRT", "ACST": "ACST", "SAST": "SAST", "JST": "JST", "MYT": "MYT", "SGT": "SGT", "CAT": "CAT", "EST": "EST", "CHADT": "CHADT", "HAT": "HAT", "BT": "BT", "ChST": "ChST", "CST": "CST", "WART": "WART", "IST": "IST", "HKST": "HKST", "CDT": "CDT", "UYT": "UYT", "CLT": "CLT", "CLST": "CLST", "AWDT": "AWDT", "HKT": "HKT", "UYST": "UYST", "NZST": "NZST", "OESZ": "OESZ", "PST": "PST", "AKDT": "AKDT", "GMT": "GMT", "ADT": "ADT", "GFT": "GFT", "OEZ": "OEZ", "TMT": "TMT", "WIT": "WIT", "COST": "COST", "NZDT": "NZDT", "PDT": "PDT", "CHAST": "CHAST", "EDT": "EDT", "MST": "MST", "WESZ": "WESZ", "MESZ": "MESZ", "ACWDT": "ACWDT", "JDT": "JDT", "MEZ": "MEZ", "WITA": "WITA", "HADT": "HADT", "AEST": "AEST", "WAT": "WAT", "AST": "AST", "ACWST": "ACWST", "MDT": "MDT", "ECT": "ECT", "∅∅∅": "∅∅∅", "AKST": "AKST", "BOT": "BOT", "WARST": "WARST", "VET": "VET", "AWST": "AWST", "EAT": "EAT"},
+		timezones:          map[string]string{"MDT": "MDT", "AKST": "AKST", "JST": "JST", "TMT": "TMT", "BT": "BT", "GMT": "GMT", "ECT": "ECT", "NZDT": "NZDT", "WIB": "WIB", "ADT": "ADT", "LHST": "LHST", "CLT": "CLT", "MESZ": "MESZ", "AWST": "AWST", "AWDT": "AWDT", "HKST": "HKST", "ARST": "ARST", "WAST": "WAST", "ACWDT": "ACWDT", "MEZ": "MEZ", "AEST": "AEST", "UYST": "UYST", "AKDT": "AKDT", "OEZ": "OEZ", "AEDT": "AEDT", "HKT": "HKT", "CAT": "CAT", "HADT": "HADT", "WEZ": "WEZ", "CHADT": "CHADT", "JDT": "JDT", "HNT": "HNT", "SRT": "SRT", "BOT": "BOT", "COT": "COT", "COST": "COST", "ACDT": "ACDT", "CST": "CST", "EAT": "EAT", "PST": "PST", "GYT": "GYT", "MST": "MST", "TMST": "TMST", "EDT": "EDT", "HAST": "HAST", "WAT": "WAT", "OESZ": "OESZ", "MYT": "MYT", "∅∅∅": "∅∅∅", "NZST": "NZST", "ACST": "ACST", "CDT": "CDT", "WESZ": "WESZ", "WARST": "WARST", "UYT": "UYT", "EST": "EST", "ChST": "ChST", "HAT": "HAT", "IST": "IST", "SAST": "SAST", "CHAST": "CHAST", "WART": "WART", "VET": "VET", "AST": "AST", "LHDT": "LHDT", "PDT": "PDT", "SGT": "SGT", "WIT": "WIT", "ART": "ART", "GFT": "GFT", "WITA": "WITA", "ACWST": "ACWST", "CLST": "CLST"},
 	}
 }
 
@@ -176,20 +176,19 @@ func (om *om_ET) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'om_ET' and handles both Whole and Real numbers based on 'v'
-func (om *om_ET) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (om *om_ET) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'om_ET' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (om *om_ET) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (om *om_ET) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'om_ET'
-func (om *om_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (om *om_ET) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := om.currencies[currency]
@@ -201,20 +200,14 @@ func (om *om_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(om.decimal) - 1; j >= 0; j-- {
-				b = append(b, om.decimal[j])
-			}
-
+			b = append(b, om.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(om.group) - 1; j >= 0; j-- {
-					b = append(b, om.group[j])
-				}
-
+				b = append(b, om.group[0])
 				count = 1
 			} else {
 				count++
@@ -229,9 +222,7 @@ func (om *om_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(om.minus) - 1; j >= 0; j-- {
-			b = append(b, om.minus[j])
-		}
+		b = append(b, om.minus[0])
 	}
 
 	// reverse
@@ -250,13 +241,12 @@ func (om *om_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'om_ET'
 // in accounting notation.
-func (om *om_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (om *om_ET) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := om.currencies[currency]
@@ -268,20 +258,14 @@ func (om *om_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(om.decimal) - 1; j >= 0; j-- {
-				b = append(b, om.decimal[j])
-			}
-
+			b = append(b, om.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(om.group) - 1; j >= 0; j-- {
-					b = append(b, om.group[j])
-				}
-
+				b = append(b, om.group[0])
 				count = 1
 			} else {
 				count++
@@ -297,9 +281,7 @@ func (om *om_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			b = append(b, symbol[j])
 		}
 
-		for j := len(om.minus) - 1; j >= 0; j-- {
-			b = append(b, om.minus[j])
-		}
+		b = append(b, om.minus[0])
 
 	} else {
 
@@ -325,8 +307,7 @@ func (om *om_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'om_ET'

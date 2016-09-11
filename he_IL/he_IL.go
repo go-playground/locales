@@ -70,7 +70,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"לפנה״ס", "לספירה"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"PST": "שעון רגיל האוקיינוס השקט", "BOT": "שעון בוליביה", "MST": "שעון אזור ההרים בארה״ב (חורף)", "AKDT": "שעון אלסקה (קיץ)", "HNT": "שעון ניופאונדלנד (חורף)", "OEZ": "שעון מזרח אירופה (חורף)", "CHAST": "שעון צ׳טהאם (חורף)", "COT": "שעון קולומביה (חורף)", "ChST": "שעון צ׳אמורו", "WIT": "שעון מזרח אינדונזיה", "JST": "שעון יפן (חורף)", "EDT": "שעון החוף המזרחי (קיץ)", "AEST": "שעון מזרח אוסטרליה (חורף)", "ACDT": "שעון מרכז אוסטרליה (קיץ)", "ADT": "שעון האוקיינוס האטלנטי (קיץ)", "SAST": "שעון דרום אפריקה", "EST": "שעון החוף המזרחי (חורף)", "ARST": "שעון ארגנטינה (קיץ)", "MESZ": "שעון מרכז אירופה (קיץ)", "WEZ": "שעון מערב אירופה (חורף)", "CDT": "שעון מרכז ארה״ב (קיץ)", "HAT": "שעון ניופאונדלנד (קיץ)", "WAT": "שעון מערב אפריקה (חורף)", "VET": "שעון ונצואלה", "TMT": "שעון טורקמניסטן (חורף)", "TMST": "שעון טורקמניסטן (קיץ)", "AKST": "שעון אלסקה (חורף)", "NZDT": "שעון ניו זילנד (קיץ)", "MEZ": "שעון מרכז אירופה (חורף)", "WITA": "שעון מרכז אינדונזיה", "HKST": "שעון הונג קונג (קיץ)", "MYT": "שעון מלזיה", "HADT": "שעון קיץ האיים האלאוטיים הוואי", "CST": "שעון מרכז ארה״ב (חורף)", "UYT": "שעון אורוגוואי (חורף)", "ACST": "שעון מרכז אוסטרליה (חורף)", "WAST": "שעון מערב אפריקה (קיץ)", "ECT": "שעון אקוודור", "∅∅∅": "שעון האיים האזוריים (קיץ)", "EAT": "שעון מזרח אפריקה", "CLST": "שעון צ׳ילה (קיץ)", "OESZ": "שעון מזרח אירופה (קיץ)", "ART": "שעון ארגנטינה (חורף)", "WARST": "שעון מערב ארגנטינה (קיץ)", "AST": "שעון האוקיינוס האטלנטי (חורף)", "CHADT": "שעון צ׳טהאם (קיץ)", "BT": "שעון בהוטן", "SRT": "שעון סורינאם", "AWST": "שעון מערב אוסטרליה (חורף)", "UYST": "שעון אורוגוואי (קיץ)", "CLT": "שעון צ׳ילה (חורף)", "AEDT": "שעון מזרח אוסטרליה (קיץ)", "MDT": "שעון אזור ההרים בארה״ב (קיץ)", "SGT": "שעון סינגפור", "HKT": "שעון הונג קונג (חורף)", "CAT": "שעון מרכז אפריקה", "GYT": "שעון גויאנה", "LHST": "שעון אי הלורד האו (חורף)", "WESZ": "שעון מערב אירופה (קיץ)", "AWDT": "שעון מערב אוסטרליה (קיץ)", "GMT": "שעון גריניץ׳\u200f", "ACWDT": "שעון מרכז-מערב אוסטרליה (קיץ)", "JDT": "שעון יפן (קיץ)", "WIB": "שעון מערב אינדונזיה", "LHDT": "שעון אי הלורד האו (קיץ)", "IST": "שעון הודו", "NZST": "שעון ניו זילנד (חורף)", "PDT": "שעון קיץ, מערב ארה״ב (לוס אנג׳לס)", "WART": "שעון מערב ארגנטינה (חורף)", "HAST": "שעון רגיל האיים האלאוטיים הוואי", "COST": "שעון קולומביה (קיץ)", "GFT": "שעון גיאנה הצרפתית", "ACWST": "שעון מרכז-מערב אוסטרליה (חורף)"},
+		timezones:              map[string]string{"COST": "שעון קולומביה (קיץ)", "CHAST": "שעון צ׳טהאם (חורף)", "CHADT": "שעון צ׳טהאם (קיץ)", "MESZ": "שעון מרכז אירופה (קיץ)", "MYT": "שעון מלזיה", "TMT": "שעון טורקמניסטן (חורף)", "COT": "שעון קולומביה (חורף)", "NZST": "שעון ניו זילנד (חורף)", "JDT": "שעון יפן (קיץ)", "AWST": "שעון מערב אוסטרליה (חורף)", "UYST": "שעון אורוגוואי (קיץ)", "AKDT": "שעון אלסקה (קיץ)", "CLT": "שעון צ׳ילה (חורף)", "WIT": "שעון מזרח אינדונזיה", "GFT": "שעון גיאנה הצרפתית", "ChST": "שעון צ׳אמורו", "NZDT": "שעון ניו זילנד (קיץ)", "AEST": "שעון מזרח אוסטרליה (חורף)", "AST": "שעון האוקיינוס האטלנטי (חורף)", "HKT": "שעון הונג קונג (חורף)", "CLST": "שעון צ׳ילה (קיץ)", "OESZ": "שעון מזרח אירופה (קיץ)", "JST": "שעון יפן (חורף)", "ACWDT": "שעון מרכז-מערב אוסטרליה (קיץ)", "MST": "שעון חורף מקאו", "WARST": "שעון מערב ארגנטינה (קיץ)", "ADT": "שעון האוקיינוס האטלנטי (קיץ)", "HAT": "שעון ניופאונדלנד (קיץ)", "SGT": "שעון סינגפור", "ARST": "שעון ארגנטינה (קיץ)", "WITA": "שעון מרכז אינדונזיה", "SAST": "שעון דרום אפריקה", "BT": "שעון בהוטן", "HNT": "שעון ניופאונדלנד (חורף)", "IST": "שעון הודו", "OEZ": "שעון מזרח אירופה (חורף)", "CST": "שעון מרכז ארה״ב (חורף)", "CDT": "שעון מרכז ארה״ב (קיץ)", "AEDT": "שעון מזרח אוסטרליה (קיץ)", "EAT": "שעון מזרח אפריקה", "CAT": "שעון מרכז אפריקה", "HAST": "שעון רגיל האיים האלאוטיים הוואי", "MDT": "שעון קיץ מקאו", "PDT": "שעון קיץ, מערב ארה״ב (לוס אנג׳לס)", "GYT": "שעון גויאנה", "EDT": "שעון החוף המזרחי (קיץ)", "HADT": "שעון קיץ האיים האלאוטיים הוואי", "WAT": "שעון מערב אפריקה (חורף)", "EST": "שעון החוף המזרחי (חורף)", "WART": "שעון מערב ארגנטינה (חורף)", "HKST": "שעון הונג קונג (קיץ)", "ACDT": "שעון מרכז אוסטרליה (קיץ)", "AKST": "שעון אלסקה (חורף)", "MEZ": "שעון מרכז אירופה (חורף)", "∅∅∅": "שעון אמזונס (קיץ)", "WAST": "שעון מערב אפריקה (קיץ)", "LHST": "שעון אי הלורד האו (חורף)", "WIB": "שעון מערב אינדונזיה", "ART": "שעון ארגנטינה (חורף)", "TMST": "שעון טורקמניסטן (קיץ)", "GMT": "שעון גריניץ׳\u200f", "ECT": "שעון אקוודור", "LHDT": "שעון אי הלורד האו (קיץ)", "ACST": "שעון מרכז אוסטרליה (חורף)", "BOT": "שעון בוליביה", "ACWST": "שעון מרכז-מערב אוסטרליה (חורף)", "WESZ": "שעון מערב אירופה (קיץ)", "VET": "שעון ונצואלה", "PST": "שעון רגיל האוקיינוס השקט", "AWDT": "שעון מערב אוסטרליה (קיץ)", "SRT": "שעון סורינאם", "UYT": "שעון אורוגוואי (חורף)", "WEZ": "שעון מערב אירופה (חורף)"},
 	}
 }
 
@@ -220,7 +220,8 @@ func (he *he_IL) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'he_IL' and handles both Whole and Real numbers based on 'v'
-func (he *he_IL) FmtNumber(num float64, v uint64) (results string) {
+func (he *he_IL) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(he.decimal) + len(he.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -258,13 +259,12 @@ func (he *he_IL) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'he_IL' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (he *he_IL) FmtPercent(num float64, v uint64) (results string) {
+func (he *he_IL) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(he.decimal)
 	b := make([]byte, 0, l)
@@ -292,12 +292,11 @@ func (he *he_IL) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, he.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'he_IL'
-func (he *he_IL) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (he *he_IL) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := he.currencies[currency]
@@ -352,13 +351,12 @@ func (he *he_IL) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'he_IL'
 // in accounting notation.
-func (he *he_IL) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (he *he_IL) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := he.currencies[currency]
@@ -420,8 +418,7 @@ func (he *he_IL) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'he_IL'

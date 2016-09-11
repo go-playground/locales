@@ -18,7 +18,7 @@ type ce_RU struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -56,13 +56,13 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"},
 		monthsWide:             []string{"", "январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"},
 		daysWide:               []string{"кӀиранан де", "оршотан де", "шинарин де", "кхаарин де", "еарин де", "пӀераскан де", "шот де"},
-		timezones:              map[string]string{"CLST": "Чили, аьхкенан хан", "OESZ": "Малхбален Европа, аьхкенан хан", "ACST": "Юккъера Австрали, стандартан хан", "TMST": "Туркменин аьхкенан хан", "HADT": "Гавайн-алеутийн аьхкенан хан", "HAT": "Ньюфаундленд, аьхкенан хан", "ART": "Аргентина, стандартан хан", "WARST": "Малхбузен Аргентина, аьхкенан хан", "SAST": "Къилба Африка", "EAT": "Малхбален Африка", "BT": "Бутан", "HKST": "Гонконг, аьхкенан хан", "EDT": "Малхбален Америка, аьхкенан хан", "COT": "Колумби, стандартан хан", "HNT": "Ньюфаундленд, стандартан хан", "HKT": "Гонконг, стандартан хан", "AEDT": "Малхбален Австрали, аьхкенан хан", "GFT": "Французийн Гвиана", "ECT": "Эквадор", "LHST": "Лорд-Хау, стандартан хан", "AST": "Атлантикан стандартан хан", "VET": "Венесуэла", "JST": "Япони, стандартан хан", "NZDT": "Керла Зеланди, аьхкенан хан", "AWST": "Малхбузен Австрали, стандартан хан", "WIB": "Малхбузен Индонези", "AKDT": "Аляска, аьхкенан хан", "CLT": "Чили, стандартан хан", "GMT": "Гринвичица юкъара хан", "COST": "Колумби, аьхкенан хан", "WITA": "Юккъера Индонези", "WIT": "Малхбален Индонези", "JDT": "Япони, аьхкенан хан", "EST": "Малхбален Америка, стандартан хан", "NZST": "Керла Зеланди, стандартан хан", "OEZ": "Малхбален Европа, стандартан хан", "BOT": "Боливи", "WAT": "Малхбузен Африка, стандартан хан", "TMT": "Туркменин стандартан хан", "MYT": "Малайзи", "CST": "Юккъера Америка, стандартан хан", "GYT": "Гайана", "WAST": "Малхбузен Африка, аьхкенан хан", "CDT": "Юккъера Америка, аьхкенан хан", "CHADT": "Чатем, аьхкенан хан", "MEZ": "Юккъера Европа, стандартан хан", "HAST": "Гавайн-алеутийн стандартан хан", "MST": "MST", "WART": "Малхбузен Аргентина, стандартан хан", "AWDT": "Малхбузен Австрали, аьхкенан хан", "UYST": "Уругвай, аьхкенан хан", "PDT": "Тийна океанан аьхкенан хан", "CHAST": "Чатем, стандартан хан", "ARST": "Аргентина, аьхкенан хан", "AKST": "Аляска, стандартан хан", "PST": "Тийна океанан стандартан хан", "WEZ": "Малхбузен Европа, стандартан хан", "ACDT": "Юккъера Австрали, аьхкенан хан", "∅∅∅": "Азоран гӀайренаш, аьхкенан хан", "IST": "Инди", "WESZ": "Малхбузен Европа, аьхкенан хан", "UYT": "Уругвай, стандартан хан", "MESZ": "Юккъера Европа, аьхкенан хан", "ADT": "Атлантикан аьхкенан хан", "ACWDT": "Юккъера Австрали, малхбузен аьхкенан хан", "LHDT": "Лорд-Хау, аьхкенан хан", "SGT": "Сингапур", "CAT": "Юккъера Африка", "AEST": "Малхбален Австрали, стандартан хан", "SRT": "Суринам", "ACWST": "Юккъера Австрали, малхбузен стандартан хан", "ChST": "Чаморро", "MDT": "MDT"},
+		timezones:              map[string]string{"AEST": "Малхбален Австрали, стандартан хан", "WART": "Малхбузен Аргентина, стандартан хан", "BOT": "Боливи", "OEZ": "Малхбален Европа, стандартан хан", "WESZ": "Малхбузен Европа, аьхкенан хан", "AWST": "Малхбузен Австрали, стандартан хан", "HAT": "Ньюфаундленд, аьхкенан хан", "GFT": "Французийн Гвиана", "MESZ": "Юккъера Европа, аьхкенан хан", "CLT": "Чили, стандартан хан", "IST": "Инди", "HKT": "Гонконг, стандартан хан", "EAT": "Малхбален Африка", "EST": "Малхбален Америка, стандартан хан", "WIB": "Малхбузен Индонези", "AST": "Атлантикан стандартан хан", "ADT": "Атлантикан аьхкенан хан", "SRT": "Суринам", "TMT": "Туркменин стандартан хан", "CDT": "Юккъера Америка, аьхкенан хан", "COT": "Колумби, стандартан хан", "ECT": "Эквадор", "MST": "MST", "MDT": "MDT", "MYT": "Малайзи", "ART": "Аргентина, стандартан хан", "ChST": "Чаморро", "AKST": "Аляска, стандартан хан", "AKDT": "Аляска, аьхкенан хан", "ACST": "Юккъера Австрали, стандартан хан", "GYT": "Гайана", "UYST": "Уругвай, аьхкенан хан", "ARST": "Аргентина, аьхкенан хан", "SAST": "Къилба Африка", "WAST": "Малхбузен Африка, аьхкенан хан", "ACDT": "Юккъера Австрали, аьхкенан хан", "VET": "Венесуэла", "HADT": "Гавайн-алеутийн аьхкенан хан", "CST": "Юккъера Америка, стандартан хан", "NZST": "Керла Зеланди, стандартан хан", "JST": "Япони, стандартан хан", "AEDT": "Малхбален Австрали, аьхкенан хан", "TMST": "Туркменин аьхкенан хан", "LHST": "Лорд-Хау, стандартан хан", "COST": "Колумби, аьхкенан хан", "WEZ": "Малхбузен Европа, стандартан хан", "CHAST": "Чатем, стандартан хан", "CLST": "Чили, аьхкенан хан", "GMT": "Гринвичица юкъара хан", "CHADT": "Чатем, аьхкенан хан", "SGT": "Сингапур", "UYT": "Уругвай, стандартан хан", "WITA": "Юккъера Индонези", "ACWST": "Юккъера Австрали, малхбузен стандартан хан", "JDT": "Япони, аьхкенан хан", "PST": "Тийна океанан стандартан хан", "CAT": "Юккъера Африка", "EDT": "Малхбален Америка, аьхкенан хан", "∅∅∅": "Амазонка, аьхкенан хан", "HAST": "Гавайн-алеутийн стандартан хан", "LHDT": "Лорд-Хау, аьхкенан хан", "MEZ": "Юккъера Европа, стандартан хан", "OESZ": "Малхбален Европа, аьхкенан хан", "HNT": "Ньюфаундленд, стандартан хан", "NZDT": "Керла Зеланди, аьхкенан хан", "PDT": "Тийна океанан аьхкенан хан", "AWDT": "Малхбузен Австрали, аьхкенан хан", "HKST": "Гонконг, аьхкенан хан", "WIT": "Малхбален Индонези", "ACWDT": "Юккъера Австрали, малхбузен аьхкенан хан", "WAT": "Малхбузен Африка, стандартан хан", "WARST": "Малхбузен Аргентина, аьхкенан хан", "BT": "Бутан"},
 	}
 }
 
@@ -179,7 +179,8 @@ func (ce *ce_RU) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ce_RU' and handles both Whole and Real numbers based on 'v'
-func (ce *ce_RU) FmtNumber(num float64, v uint64) (results string) {
+func (ce *ce_RU) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ce.decimal) + len(ce.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -215,13 +216,12 @@ func (ce *ce_RU) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ce_RU' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ce *ce_RU) FmtPercent(num float64, v uint64) (results string) {
+func (ce *ce_RU) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ce.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (ce *ce_RU) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ce.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ce_RU'
-func (ce *ce_RU) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ce *ce_RU) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ce.currencies[currency]
@@ -307,13 +306,12 @@ func (ce *ce_RU) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ce_RU'
 // in accounting notation.
-func (ce *ce_RU) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ce *ce_RU) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ce.currencies[currency]
@@ -373,8 +371,7 @@ func (ce *ce_RU) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ce_RU'

@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "hr",
 		pluralsCardinal:        []locales.PluralRule{2, 4, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{6, 2, 4},
+		pluralsRange:           []locales.PluralRule{2, 4, 6},
 		decimal:                ",",
 		group:                  ".",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"pr. Kr.", "p. Kr."},
 		erasNarrow:             []string{"pr.n.e.", "AD"},
 		erasWide:               []string{"prije Krista", "poslije Krista"},
-		timezones:              map[string]string{"∅∅∅": "azorsko ljetno vrijeme", "SGT": "singapursko vrijeme", "AWST": "zapadnoaustralsko standardno vrijeme", "CLST": "čileansko ljetno vrijeme", "AEST": "istočnoaustralsko standardno vrijeme", "ECT": "ekvadorsko vrijeme", "HNT": "newfoundlandsko standardno vrijeme", "OEZ": "istočnoeuropsko standardno vrijeme", "CHADT": "ljetno vrijeme Chathama", "MESZ": "srednjoeuropsko ljetno vrijeme", "JDT": "japansko ljetno vrijeme", "AKST": "aljaško standardno vrijeme", "HADT": "havajsko-aleutsko ljetno vrijeme", "AWDT": "zapadnoaustralsko ljetno vrijeme", "CLT": "čileansko standardno vrijeme", "WAT": "zapadnoafričko standardno vrijeme", "TMST": "turkmenistansko ljetno vrijeme", "ChST": "standardno vrijeme Chamorra", "JST": "japansko standardno vrijeme", "ADT": "atlantsko ljetno vrijeme", "WIT": "istočnoindonezijsko vrijeme", "CST": "središnje standardno vrijeme", "ACDT": "srednjoaustralsko ljetno vrijeme", "ART": "argentinsko standardno vrijeme", "BT": "butansko vrijeme", "WARST": "zapadno-argentinsko ljetno vrijeme", "EDT": "istočno ljetno vrijeme", "LHDT": "ljetno vrijeme otoka Lord Howe", "CDT": "središnje ljetno vrijeme", "WESZ": "zapadnoeuropsko ljetno vrijeme", "PST": "pacifičko standardno vrijeme", "WART": "zapadno-argentinsko standardno vrijeme", "SRT": "surinamsko vrijeme", "MYT": "malezijsko vrijeme", "HKST": "hongkonško ljetno vrijeme", "WIB": "zapadnoindonezijsko vrijeme", "WAST": "zapadnoafričko ljetno vrijeme", "TMT": "turkmenistansko standardno vrijeme", "HAT": "newfoundlandsko ljetno vrijeme", "HKT": "hongkonško standardno vrijeme", "AKDT": "aljaško ljetno vrijeme", "WEZ": "zapadnoeuropsko standardno vrijeme", "GMT": "univerzalno vrijeme", "PDT": "pacifičko ljetno vrijeme", "MEZ": "srednjoeuropsko standardno vrijeme", "ACWDT": "australsko središnje zapadno ljetno vrijeme", "WITA": "srednjoindonezijsko vrijeme", "EST": "istočno standardno vrijeme", "OESZ": "istočnoeuropsko ljetno vrijeme", "NZDT": "novozelandsko ljetno vrijeme", "COST": "kolumbijsko ljetno vrijeme", "AST": "atlantsko standardno vrijeme", "MST": "planinsko standardno vrijeme", "MDT": "planinsko ljetno vrijeme", "SAST": "južnoafričko vrijeme", "HAST": "havajsko-aleutsko standardno vrijeme", "EAT": "istočnoafričko vrijeme", "UYST": "urugvajsko ljetno vrijeme", "COT": "kolumbijsko standardno vrijeme", "ARST": "argentinsko ljetno vrijeme", "GFT": "vrijeme Francuske Gvajane", "BOT": "bolivijsko vrijeme", "CHAST": "standardno vrijeme Chathama", "ACST": "srednjoaustralsko standardno vrijeme", "GYT": "gvajansko vrijeme", "VET": "venezuelsko vrijeme", "IST": "indijsko vrijeme", "UYT": "urugvajsko standardno vrijeme", "CAT": "srednjoafričko vrijeme", "AEDT": "istočnoaustralsko ljetno vrijeme", "ACWST": "australsko središnje zapadno standardno vrijeme", "LHST": "standardno vrijeme otoka Lord Howe", "NZST": "novozelandsko standardno vrijeme"},
+		timezones:              map[string]string{"BT": "butansko vrijeme", "ECT": "ekvadorsko vrijeme", "OESZ": "istočnoeuropsko ljetno vrijeme", "CLT": "čileansko standardno vrijeme", "MYT": "malezijsko vrijeme", "BOT": "bolivijsko vrijeme", "HKST": "hongkonško ljetno vrijeme", "EDT": "istočno ljetno vrijeme", "EAT": "istočnoafričko vrijeme", "MESZ": "srednjoeuropsko ljetno vrijeme", "AEDT": "istočnoaustralsko ljetno vrijeme", "NZDT": "novozelandsko ljetno vrijeme", "MEZ": "srednjoeuropsko standardno vrijeme", "PST": "pacifičko standardno vrijeme", "ChST": "standardno vrijeme Chamorra", "EST": "istočno standardno vrijeme", "∅∅∅": "peruansko ljetno vrijeme", "ACWST": "australsko središnje zapadno standardno vrijeme", "TMT": "turkmenistansko standardno vrijeme", "CLST": "čileansko ljetno vrijeme", "WARST": "zapadno-argentinsko ljetno vrijeme", "AWST": "zapadnoaustralsko standardno vrijeme", "HNT": "newfoundlandsko standardno vrijeme", "WEZ": "zapadnoeuropsko standardno vrijeme", "ACWDT": "australsko središnje zapadno ljetno vrijeme", "SAST": "južnoafričko vrijeme", "AEST": "istočnoaustralsko standardno vrijeme", "AKST": "aljaško standardno vrijeme", "COST": "kolumbijsko ljetno vrijeme", "LHST": "standardno vrijeme otoka Lord Howe", "CHADT": "ljetno vrijeme Chathama", "ACST": "srednjoaustralsko standardno vrijeme", "WART": "zapadno-argentinsko standardno vrijeme", "HKT": "hongkonško standardno vrijeme", "CDT": "središnje ljetno vrijeme", "GMT": "univerzalno vrijeme", "CHAST": "standardno vrijeme Chathama", "ACDT": "srednjoaustralsko ljetno vrijeme", "WIT": "istočnoindonezijsko vrijeme", "OEZ": "istočnoeuropsko standardno vrijeme", "ADT": "atlantsko ljetno vrijeme", "PDT": "pacifičko ljetno vrijeme", "SRT": "surinamsko vrijeme", "ART": "argentinsko standardno vrijeme", "ARST": "argentinsko ljetno vrijeme", "CST": "središnje standardno vrijeme", "NZST": "novozelandsko standardno vrijeme", "CAT": "srednjoafričko vrijeme", "UYT": "urugvajsko standardno vrijeme", "MDT": "ljetno makaosko vrijeme", "JST": "japansko standardno vrijeme", "VET": "venezuelsko vrijeme", "IST": "indijsko vrijeme", "SGT": "singapursko vrijeme", "UYST": "urugvajsko ljetno vrijeme", "AKDT": "aljaško ljetno vrijeme", "LHDT": "ljetno vrijeme otoka Lord Howe", "WAST": "zapadnoafričko ljetno vrijeme", "GYT": "gvajansko vrijeme", "MST": "standardno makaosko vrijeme", "AST": "atlantsko standardno vrijeme", "AWDT": "zapadnoaustralsko ljetno vrijeme", "TMST": "turkmenistansko ljetno vrijeme", "GFT": "vrijeme Francuske Gvajane", "WESZ": "zapadnoeuropsko ljetno vrijeme", "WAT": "zapadnoafričko standardno vrijeme", "HAST": "havajsko-aleutsko standardno vrijeme", "HADT": "havajsko-aleutsko ljetno vrijeme", "WIB": "zapadnoindonezijsko vrijeme", "JDT": "japansko ljetno vrijeme", "HAT": "newfoundlandsko ljetno vrijeme", "WITA": "srednjoindonezijsko vrijeme", "COT": "kolumbijsko standardno vrijeme"},
 	}
 }
 
@@ -219,7 +219,8 @@ func (hr *hr) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'hr' and handles both Whole and Real numbers based on 'v'
-func (hr *hr) FmtNumber(num float64, v uint64) (results string) {
+func (hr *hr) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hr.decimal) + len(hr.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -255,13 +256,12 @@ func (hr *hr) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'hr' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (hr *hr) FmtPercent(num float64, v uint64) (results string) {
+func (hr *hr) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hr.decimal)
 	b := make([]byte, 0, l)
@@ -287,12 +287,11 @@ func (hr *hr) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, hr.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'hr'
-func (hr *hr) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (hr *hr) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hr.currencies[currency]
@@ -345,13 +344,12 @@ func (hr *hr) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'hr'
 // in accounting notation.
-func (hr *hr) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (hr *hr) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hr.currencies[currency]
@@ -411,8 +409,7 @@ func (hr *hr) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'hr'

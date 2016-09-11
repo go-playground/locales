@@ -66,7 +66,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"k.Y.", "+J.C."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"katikupíen Yésuse", "ékélémkúnupíén n"},
-		timezones:              map[string]string{"BT": "BT", "ECT": "ECT", "AEDT": "AEDT", "CHADT": "CHADT", "PDT": "PDT", "CAT": "CAT", "PST": "PST", "MYT": "MYT", "COST": "COST", "WART": "WART", "TMST": "TMST", "∅∅∅": "∅∅∅", "LHDT": "LHDT", "AKST": "AKST", "UYST": "UYST", "EDT": "EDT", "NZST": "NZST", "OESZ": "OESZ", "VET": "VET", "HKT": "HKT", "NZDT": "NZDT", "ACDT": "ACDT", "WESZ": "WESZ", "ACST": "ACST", "ACWDT": "ACWDT", "SGT": "SGT", "HKST": "HKST", "CST": "CST", "CDT": "CDT", "AST": "AST", "SRT": "SRT", "BOT": "BOT", "ADT": "ADT", "MST": "MST", "JDT": "JDT", "CLST": "CLST", "AEST": "AEST", "ART": "ART", "WITA": "WITA", "ACWST": "ACWST", "WIT": "WIT", "COT": "COT", "CHAST": "CHAST", "WARST": "WARST", "LHST": "LHST", "AWST": "AWST", "GMT": "GMT", "ARST": "ARST", "WIB": "WIB", "TMT": "TMT", "IST": "IST", "HNT": "HNT", "CLT": "CLT", "EST": "EST", "HAST": "HAST", "WEZ": "WEZ", "EAT": "EAT", "MESZ": "MESZ", "WAT": "WAT", "GFT": "GFT", "SAST": "SAST", "AKDT": "AKDT", "HAT": "HAT", "OEZ": "OEZ", "MDT": "MDT", "ChST": "ChST", "GYT": "GYT", "JST": "JST", "WAST": "WAST", "HADT": "HADT", "AWDT": "AWDT", "UYT": "UYT", "MEZ": "MEZ"},
+		timezones:              map[string]string{"UYST": "UYST", "ARST": "ARST", "WITA": "WITA", "CDT": "CDT", "EST": "EST", "WIB": "WIB", "AEST": "AEST", "TMT": "TMT", "ACWDT": "ACWDT", "WARST": "WARST", "PDT": "PDT", "GFT": "GFT", "MDT": "MDT", "LHDT": "LHDT", "AWST": "AWST", "SRT": "SRT", "WAT": "WAT", "HAT": "HAT", "HKST": "HKST", "EDT": "EDT", "MST": "MST", "NZST": "NZST", "WART": "WART", "SAST": "SAST", "AST": "AST", "UYT": "UYT", "WIT": "WIT", "ART": "ART", "GMT": "GMT", "AKDT": "AKDT", "WAST": "WAST", "JDT": "JDT", "∅∅∅": "∅∅∅", "EAT": "EAT", "WESZ": "WESZ", "CHADT": "CHADT", "MESZ": "MESZ", "JST": "JST", "BT": "BT", "HAST": "HAST", "OEZ": "OEZ", "ACDT": "ACDT", "PST": "PST", "WEZ": "WEZ", "CLT": "CLT", "COST": "COST", "ECT": "ECT", "TMST": "TMST", "CST": "CST", "CLST": "CLST", "GYT": "GYT", "HNT": "HNT", "SGT": "SGT", "HADT": "HADT", "AKST": "AKST", "LHST": "LHST", "NZDT": "NZDT", "MEZ": "MEZ", "OESZ": "OESZ", "BOT": "BOT", "ACWST": "ACWST", "ADT": "ADT", "AEDT": "AEDT", "CHAST": "CHAST", "ACST": "ACST", "AWDT": "AWDT", "MYT": "MYT", "HKT": "HKT", "ChST": "ChST", "COT": "COT", "VET": "VET", "IST": "IST", "CAT": "CAT"},
 	}
 }
 
@@ -176,7 +176,8 @@ func (yav *yav_CM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'yav_CM' and handles both Whole and Real numbers based on 'v'
-func (yav *yav_CM) FmtNumber(num float64, v uint64) (results string) {
+func (yav *yav_CM) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(yav.decimal) + len(yav.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -196,7 +197,6 @@ func (yav *yav_CM) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(yav.group) - 1; j >= 0; j-- {
 					b = append(b, yav.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -207,9 +207,7 @@ func (yav *yav_CM) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(yav.minus) - 1; j >= 0; j-- {
-			b = append(b, yav.minus[j])
-		}
+		b = append(b, yav.minus[0])
 	}
 
 	// reverse
@@ -217,13 +215,12 @@ func (yav *yav_CM) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'yav_CM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (yav *yav_CM) FmtPercent(num float64, v uint64) (results string) {
+func (yav *yav_CM) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(yav.decimal)
 	b := make([]byte, 0, l)
@@ -239,9 +236,7 @@ func (yav *yav_CM) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(yav.minus) - 1; j >= 0; j-- {
-			b = append(b, yav.minus[j])
-		}
+		b = append(b, yav.minus[0])
 	}
 
 	// reverse
@@ -251,12 +246,11 @@ func (yav *yav_CM) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, yav.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'yav_CM'
-func (yav *yav_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (yav *yav_CM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yav.currencies[currency]
@@ -278,7 +272,6 @@ func (yav *yav_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 				for j := len(yav.group) - 1; j >= 0; j-- {
 					b = append(b, yav.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -289,9 +282,7 @@ func (yav *yav_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(yav.minus) - 1; j >= 0; j-- {
-			b = append(b, yav.minus[j])
-		}
+		b = append(b, yav.minus[0])
 	}
 
 	// reverse
@@ -314,13 +305,12 @@ func (yav *yav_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'yav_CM'
 // in accounting notation.
-func (yav *yav_CM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (yav *yav_CM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := yav.currencies[currency]
@@ -342,7 +332,6 @@ func (yav *yav_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 				for j := len(yav.group) - 1; j >= 0; j-- {
 					b = append(b, yav.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -383,8 +372,7 @@ func (yav *yav_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'yav_CM'

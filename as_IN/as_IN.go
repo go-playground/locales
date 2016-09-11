@@ -58,7 +58,7 @@ func New() locales.Translator {
 		daysWide:               []string{"দেওবাৰ", "সোমবাৰ", "মঙ্গলবাৰ", "বুধবাৰ", "বৃহষ্পতিবাৰ", "শুক্ৰবাৰ", "শনিবাৰ"},
 		periodsAbbreviated:     []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
 		periodsWide:            []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
-		timezones:              map[string]string{"BT": "BT", "MDT": "MDT", "AKDT": "AKDT", "EAT": "EAT", "SAST": "SAST", "ACWDT": "ACWDT", "CAT": "CAT", "WARST": "WARST", "WAT": "WAT", "AST": "AST", "EDT": "EDT", "CHADT": "CHADT", "WAST": "WAST", "ECT": "ECT", "HADT": "HADT", "AWDT": "AWDT", "PST": "PST", "WIB": "WIB", "CHAST": "CHAST", "VET": "VET", "IST": "ভাৰতীয় সময়", "CLT": "CLT", "BOT": "BOT", "ACWST": "ACWST", "WIT": "WIT", "CLST": "CLST", "GMT": "GMT", "SRT": "SRT", "HKST": "HKST", "WEZ": "WEZ", "ADT": "ADT", "HAST": "HAST", "OEZ": "OEZ", "AEST": "AEST", "MEZ": "MEZ", "LHST": "LHST", "LHDT": "LHDT", "AEDT": "AEDT", "NZDT": "NZDT", "COT": "COT", "TMT": "TMT", "CST": "CST", "WESZ": "WESZ", "ART": "ART", "ARST": "ARST", "ACST": "ACST", "MYT": "MYT", "AWST": "AWST", "HNT": "HNT", "OESZ": "OESZ", "MST": "MST", "SGT": "SGT", "COST": "COST", "MESZ": "MESZ", "CDT": "CDT", "WART": "WART", "GFT": "GFT", "∅∅∅": "∅∅∅", "JST": "JST", "EST": "EST", "UYST": "UYST", "PDT": "PDT", "ACDT": "ACDT", "TMST": "TMST", "AKST": "AKST", "HKT": "HKT", "GYT": "GYT", "WITA": "WITA", "ChST": "ChST", "JDT": "JDT", "HAT": "HAT", "UYT": "UYT", "NZST": "NZST"},
+		timezones:              map[string]string{"WARST": "WARST", "VET": "VET", "ADT": "ADT", "GYT": "GYT", "ACWDT": "ACWDT", "ART": "ART", "WIB": "WIB", "SRT": "SRT", "HKT": "HKT", "UYT": "UYT", "CAT": "CAT", "GFT": "GFT", "IST": "ভাৰতীয় সময়", "HAST": "HAST", "ChST": "ChST", "ACWST": "ACWST", "PST": "PST", "EST": "EST", "WEZ": "WEZ", "WESZ": "WESZ", "LHDT": "LHDT", "EAT": "EAT", "JST": "JST", "ACST": "ACST", "MYT": "MYT", "GMT": "GMT", "BOT": "BOT", "JDT": "JDT", "WART": "WART", "SGT": "SGT", "WIT": "WIT", "BT": "BT", "CHAST": "CHAST", "AKST": "AKST", "OEZ": "OEZ", "AWST": "AWST", "EDT": "EDT", "CHADT": "CHADT", "WAT": "WAT", "MESZ": "MESZ", "PDT": "PDT", "HKST": "HKST", "TMT": "TMT", "MST": "MST", "CLT": "CLT", "AEDT": "AEDT", "AST": "AST", "MDT": "MDT", "WAST": "WAST", "CLST": "CLST", "∅∅∅": "∅∅∅", "WITA": "WITA", "AEST": "AEST", "ECT": "ECT", "LHST": "LHST", "NZST": "NZST", "NZDT": "NZDT", "AWDT": "AWDT", "ARST": "ARST", "COST": "COST", "HNT": "HNT", "HAT": "HAT", "TMST": "TMST", "MEZ": "MEZ", "CST": "CST", "CDT": "CDT", "COT": "COT", "AKDT": "AKDT", "SAST": "SAST", "OESZ": "OESZ", "ACDT": "ACDT", "HADT": "HADT", "UYST": "UYST"},
 	}
 }
 
@@ -189,7 +189,8 @@ func (as *as_IN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'as_IN' and handles both Whole and Real numbers based on 'v'
-func (as *as_IN) FmtNumber(num float64, v uint64) (results string) {
+func (as *as_IN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(as.decimal) + len(as.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -202,10 +203,7 @@ func (as *as_IN) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -213,10 +211,7 @@ func (as *as_IN) FmtNumber(num float64, v uint64) (results string) {
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(as.group) - 1; j >= 0; j-- {
-					b = append(b, as.group[j])
-				}
-
+				b = append(b, as.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -232,9 +227,7 @@ func (as *as_IN) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 	}
 
 	// reverse
@@ -242,13 +235,12 @@ func (as *as_IN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'as_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (as *as_IN) FmtPercent(num float64, v uint64) (results string) {
+func (as *as_IN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(as.decimal)
 	b := make([]byte, 0, l)
@@ -256,10 +248,7 @@ func (as *as_IN) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			continue
 		}
 
@@ -267,9 +256,7 @@ func (as *as_IN) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 	}
 
 	// reverse
@@ -279,12 +266,11 @@ func (as *as_IN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, as.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'as_IN'
-func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
@@ -299,10 +285,7 @@ func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -310,10 +293,7 @@ func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(as.group) - 1; j >= 0; j-- {
-					b = append(b, as.group[j])
-				}
-
+				b = append(b, as.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -337,9 +317,7 @@ func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 	}
 
 	// reverse
@@ -358,13 +336,12 @@ func (as *as_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'as_IN'
 // in accounting notation.
-func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
@@ -379,10 +356,7 @@ func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -390,10 +364,7 @@ func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(as.group) - 1; j >= 0; j-- {
-					b = append(b, as.group[j])
-				}
-
+				b = append(b, as.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -418,9 +389,7 @@ func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			b = append(b, as.currencyNegativePrefix[j])
 		}
 
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 
 	} else {
 
@@ -450,8 +419,7 @@ func (as *as_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'as_IN'

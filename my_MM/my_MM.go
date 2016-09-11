@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ဘီစီ", "အေဒီ"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ခရစ်တော် မပေါ်မီကာလ", "ခရစ်တော် ပေါ်ထွန်းပြီးကာလ"},
-		timezones:              map[string]string{"PST": "ပစိဖိတ် စံတော်ချိန်", "NZDT": "နယူးဇီလန် နေ့ပိုင်း အချိန်", "LHST": "လော့ဒ်ဟောင်စံတော်ချိန်", "MYT": "မလေးရှား အချိန်", "UYST": "ဥရုဂွေး နွေရာသီ အချိန်", "AEDT": "အရှေ့ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "GYT": "ဂိုင်ရာနားအချိန်", "HADT": "ဟာဝိုင်အီ အာလူးရှန်နေ့ပိုင်းအချိန်", "AWDT": "အနောက်ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "EDT": "အရှေ့ပိုင်း အမေရိက နေ့ပိုင်း အချိန်", "CLST": "ချီလီ နွေရာသီ အချိန်", "WAST": "အနောက်ပိုင်း အာဖရိက နွေရာသီ အချိန်", "EST": "အရှေ့ပိုင်း အမေရိက စံတော်ချိန်", "CLT": "ချီလီ စံတော်ချိန်", "SGT": "စင်္ကာပူ စံတော်ချိန်", "ADT": "အတ္ထလန်တစ် နေ့ပိုင်း အချိန်", "BT": "ဘူတန် အချိန်", "TMT": "တာခ်မီန့စ်တန်စံတော်ချိန်", "ChST": "ချာမိုရိုအချိန်", "HAST": "ဟာဝိုင်အီ အာလူးရှန်စံတော်ချိန်", "CST": "အလယ်ပိုင်း အမေရိက စံတော်ချိန်", "AST": "အတ္ထလန်တစ် စံတော်ချိန်", "MESZ": "ဥရောပ အလယ်ပိုင်း နွေရာသီ အချိန်", "GFT": "ပြင်သစ် ဂီယာနာ အချိန်", "HKT": "ဟောင်ကောင် စံတော်ချိန်", "HKST": "ဟောင်ကောင် နွေရာသီ အချိန်", "CAT": "အလယ်ပိုင်း အာဖရိက အချိန်", "COST": "ကိုလံဘီယာ နွေရာသီ အချိန်", "ACWST": "အလယ်အနောက်ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "HNT": "နယူးဖောင်လန် စံတော်ချိန်", "ART": "အာဂျင်တီးနား စံတော်ချိန်", "ARST": "အာဂျင်တီးနား နွေရာသီ အချိန်", "WART": "အနောက် အာဂျင်တီးနား စံတော်ချိန်", "WARST": "အနောက် အာဂျင်တီးနား နွေရာသီ အချိန်", "EAT": "အရှေ့ပိုင်း အာဖရိက အချိန်", "CDT": "အလယ်ပိုင်း အမေရိက နွေရာသီ အချိန်", "OEZ": "အရှေ့ဥရောပ စံတော်ချိန်", "COT": "ကိုလံဘီယာ စံတော်ချိန်", "AKDT": "အလာစကာနေ့ပိုင်းအချိန်", "NZST": "နယူးဇီလန် စံတော်ချိန်", "CHAST": "ချားသမ်စံတော်ချိန်", "SAST": "တောင်အာဖရိက အချိန်", "WITA": "အလယ်ပိုင်း အင်ဒိုနီးရှား အချိန်", "LHDT": "လော့ဒ်ဟောင်နေ့ပိုင်းအချိန်", "JDT": "ဂျပန် နေ့ပိုင်း အချိန်", "WIB": "အနောက်ပိုင်း အင်ဒိုနီးရှား အချိန်", "VET": "ဗင်နီဇွဲလား အချိန်", "AWST": "အနောက်ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "AEST": "အရှေ့ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "MEZ": "ဥရောပ အလယ်ပိုင်း စံတော်ချိန်", "ACDT": "အလယ်ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "WIT": "အရှေ့ပိုင်း အင်ဒိုနီးရှား အချိန်", "HAT": "နယူးဖောင်လန် နေ့ပိုင်း အချိန်", "CHADT": "ချားသမ်နေ့ပိုင်းအချိန်", "SRT": "စူးရီနာမ်အချိန်", "TMST": "တာခ်မီန့စ်တန်နွေရာသီအချိန်", "JST": "ဂျပန် စံတော်ချိန်", "∅∅∅": "အာဇိုးစ်နွေရာသီအချိန်", "ACST": "အလယ်ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "ACWDT": "အလယ်အနောက်ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "IST": "အိန္ဒြိယ စံတော်ချိန်", "AKST": "အလာစကာစံတော်ချိန်", "WEZ": "အနောက်ပိုင်း ဥရောပ စံတော်ချိန်", "UYT": "ဥရုဂွေး စံတော်ချိန်", "WESZ": "အနောက်ပိုင်း ဥရောပ နွေရာသီ အချိန်", "PDT": "ပစိဖိတ် နေ့ပိုင်း အချိန်", "OESZ": "အရှေ့ဥရောပ နွေရာသီ အချိန်", "BOT": "ဘိုလီးဘီးယား အချိန်", "WAT": "အနောက်ပိုင်း အာဖရိက စံတော်ချိန်", "MST": "အမေရိက တောင် စံတော်ချိန်", "ECT": "အီကွေဒေါ အချိန်", "GMT": "ဂရင်းနစ် စံတော်ချိန်", "MDT": "အမေရိက တောင် နေ့ပိုင်း အချိန်"},
+		timezones:              map[string]string{"MEZ": "ဥရောပ အလယ်ပိုင်း စံတော်ချိန်", "ACDT": "အလယ်ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "GFT": "ပြင်သစ် ဂီယာနာ အချိန်", "WIT": "အရှေ့ပိုင်း အင်ဒိုနီးရှား အချိန်", "CAT": "အလယ်ပိုင်း အာဖရိက အချိန်", "ECT": "အီကွေဒေါ အချိန်", "WAT": "အနောက်ပိုင်း အာဖရိက စံတော်ချိန်", "EAT": "အရှေ့ပိုင်း အာဖရိက အချိန်", "WARST": "အနောက် အာဂျင်တီးနား နွေရာသီ အချိန်", "NZST": "နယူးဇီလန် စံတော်ချိန်", "CHADT": "ချားသမ်နေ့ပိုင်းအချိန်", "MYT": "မလေးရှား အချိန်", "TMST": "တာခ်မီန့စ်တန်နွေရာသီအချိန်", "AST": "အတ္ထလန်တစ် စံတော်ချိန်", "HNT": "နယူးဖောင်လန် စံတော်ချိန်", "ART": "အာဂျင်တီးနား စံတော်ချိန်", "GMT": "ဂရင်းနစ် စံတော်ချိန်", "∅∅∅": "အမေဇွန်နွေရာသီအချိန်", "ACWDT": "အလယ်အနောက်ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "CLST": "ချီလီ နွေရာသီ အချိန်", "BOT": "ဘိုလီးဘီးယား အချိန်", "HKST": "ဟောင်ကောင် နွေရာသီ အချိန်", "COST": "ကိုလံဘီယာ နွေရာသီ အချိန်", "AEDT": "အရှေ့ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "ADT": "အတ္ထလန်တစ် နေ့ပိုင်း အချိန်", "GYT": "ဂိုင်ရာနားအချိန်", "TMT": "တာခ်မီန့စ်တန်စံတော်ချိန်", "HADT": "ဟာဝိုင်အီ အာလူးရှန်နေ့ပိုင်းအချိန်", "CST": "အလယ်ပိုင်း အမေရိက စံတော်ချိန်", "EDT": "အရှေ့ပိုင်း အမေရိက နေ့ပိုင်း အချိန်", "AWST": "အနောက်ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "EST": "အရှေ့ပိုင်း အမေရိက စံတော်ချိန်", "OESZ": "အရှေ့ဥရောပ နွေရာသီ အချိန်", "UYST": "ဥရုဂွေး နွေရာသီ အချိန်", "ChST": "ချာမိုရိုအချိန်", "AKDT": "အလာစကာနေ့ပိုင်းအချိန်", "UYT": "ဥရုဂွေး စံတော်ချိန်", "PST": "ပစိဖိတ် စံတော်ချိန်", "SRT": "စူးရီနာမ်အချိန်", "HAST": "ဟာဝိုင်အီ အာလူးရှန်စံတော်ချိန်", "LHDT": "လော့ဒ်ဟောင်နေ့ပိုင်းအချိန်", "SAST": "တောင်အာဖရိက အချိန်", "CHAST": "ချားသမ်စံတော်ချိန်", "WEZ": "အနောက်ပိုင်း ဥရောပ စံတော်ချိန်", "VET": "ဗင်နီဇွဲလား အချိန်", "IST": "အိန္ဒြိယ စံတော်ချိန်", "ACST": "အလယ်ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "HKT": "ဟောင်ကောင် စံတော်ချိန်", "WITA": "အလယ်ပိုင်း အင်ဒိုနီးရှား အချိန်", "ARST": "အာဂျင်တီးနား နွေရာသီ အချိန်", "NZDT": "နယူးဇီလန် နေ့ပိုင်း အချိန်", "WIB": "အနောက်ပိုင်း အင်ဒိုနီးရှား အချိန်", "JST": "ဂျပန် စံတော်ချိန်", "OEZ": "အရှေ့ဥရောပ စံတော်ချိန်", "AWDT": "အနောက်ပိုင်း ဩစတြေးလျှား နေ့ပိုင်း အချိန်", "SGT": "စင်္ကာပူ စံတော်ချိန်", "COT": "ကိုလံဘီယာ စံတော်ချိန်", "WAST": "အနောက်ပိုင်း အာဖရိက နွေရာသီ အချိန်", "ACWST": "အလယ်အနောက်ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "MESZ": "ဥရောပ အလယ်ပိုင်း နွေရာသီ အချိန်", "CLT": "ချီလီ စံတော်ချိန်", "AEST": "အရှေ့ပိုင်း ဩစတြေးလျှား စံတော်ချိန်", "PDT": "ပစိဖိတ် နေ့ပိုင်း အချိန်", "AKST": "အလာစကာစံတော်ချိန်", "MST": "မကာအို စံတော်ချိန်", "MDT": "မကာအို နွေရာသီ အချိန်", "LHST": "လော့ဒ်ဟောင်စံတော်ချိန်", "CDT": "အလယ်ပိုင်း အမေရိက နွေရာသီ အချိန်", "WESZ": "အနောက်ပိုင်း ဥရောပ နွေရာသီ အချိန်", "HAT": "နယူးဖောင်လန် နေ့ပိုင်း အချိန်", "BT": "ဘူတန် အချိန်", "JDT": "ဂျပန် နေ့ပိုင်း အချိန်", "WART": "အနောက် အာဂျင်တီးနား စံတော်ချိန်"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (my *my_MM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'my_MM' and handles both Whole and Real numbers based on 'v'
-func (my *my_MM) FmtNumber(num float64, v uint64) (results string) {
+func (my *my_MM) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(my.decimal) + len(my.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (my *my_MM) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'my_MM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (my *my_MM) FmtPercent(num float64, v uint64) (results string) {
+func (my *my_MM) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(my.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (my *my_MM) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, my.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'my_MM'
-func (my *my_MM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (my *my_MM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := my.currencies[currency]
@@ -311,13 +310,12 @@ func (my *my_MM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'my_MM'
 // in accounting notation.
-func (my *my_MM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (my *my_MM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := my.currencies[currency]
@@ -386,8 +384,7 @@ func (my *my_MM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'my_MM'

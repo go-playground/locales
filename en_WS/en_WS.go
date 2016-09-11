@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"B", "A"},
 		erasWide:               []string{"Before Christ", "Anno Domini"},
-		timezones:              map[string]string{"AWST": "Australian Western Standard Time", "EDT": "Eastern Daylight Time", "GMT": "Greenwich Mean Time", "BOT": "Bolivia Time", "IST": "India Standard Time", "SGT": "Singapore Standard Time", "COT": "Colombia Standard Time", "WAT": "West Africa Standard Time", "AST": "Atlantic Standard Time", "MEZ": "Central European Standard Time", "TMST": "Turkmenistan Summer Time", "MDT": "Macau Summer Time", "CHADT": "Chatham Daylight Time", "WITA": "Central Indonesia Time", "WIT": "Eastern Indonesia Time", "CAT": "Central Africa Time", "EST": "Eastern Standard Time", "PDT": "Pacific Daylight Time", "OEZ": "Eastern European Standard Time", "ACDT": "Australian Central Daylight Time", "ACWST": "Australian Central Western Standard Time", "HAST": "Hawaii-Aleutian Standard Time", "UYT": "Uruguay Standard Time", "ADT": "Atlantic Daylight Time", "GYT": "Guyana Time", "LHDT": "Lord Howe Daylight Time", "CLST": "Chile Summer Time", "CHAST": "Chatham Standard Time", "BT": "Bhutan Time", "WARST": "Western Argentina Summer Time", "WESZ": "Western European Summer Time", "WAST": "West Africa Summer Time", "WART": "Western Argentina Standard Time", "TMT": "Turkmenistan Standard Time", "JDT": "Japan Daylight Time", "CST": "Central Standard Time", "WEZ": "Western European Standard Time", "OESZ": "Eastern European Summer Time", "NZST": "New Zealand Standard Time", "MESZ": "Central European Summer Time", "ARST": "Argentina Summer Time", "ACWDT": "Australian Central Western Daylight Time", "GFT": "French Guiana Time", "LHST": "Lord Howe Standard Time", "AKST": "Alaska Standard Time", "HAT": "Newfoundland Daylight Time", "CLT": "Chile Standard Time", "ECT": "Ecuador Time", "HADT": "Hawaii-Aleutian Daylight Time", "AEST": "Australian Eastern Standard Time", "SRT": "Suriname Time", "ChST": "Chamorro Standard Time", "MST": "Macau Standard Time", "AKDT": "Alaska Daylight Time", "CDT": "Central Daylight Time", "∅∅∅": "Brasilia Summer Time", "NZDT": "New Zealand Daylight Time", "WIB": "Western Indonesia Time", "COST": "Colombia Summer Time", "MYT": "Malaysia Time", "AWDT": "Australian Western Daylight Time", "HNT": "Newfoundland Standard Time", "HKT": "Hong Kong Standard Time", "UYST": "Uruguay Summer Time", "PST": "Pacific Standard Time", "AEDT": "Australian Eastern Daylight Time", "JST": "Japan Standard Time", "ART": "Argentina Standard Time", "SAST": "South Africa Standard Time", "ACST": "Australian Central Standard Time", "EAT": "East Africa Time", "HKST": "Hong Kong Summer Time", "VET": "Venezuela Time"},
+		timezones:              map[string]string{"WIT": "Eastern Indonesia Time", "ARST": "Argentina Summer Time", "ChST": "Chamorro Standard Time", "COT": "Colombia Standard Time", "HKT": "Hong Kong Standard Time", "HADT": "Hawaii-Aleutian Daylight Time", "EAT": "East Africa Time", "CHADT": "Chatham Daylight Time", "UYT": "Uruguay Standard Time", "WEZ": "Western European Standard Time", "CLST": "Chile Summer Time", "ACST": "Australian Central Standard Time", "WART": "Western Argentina Standard Time", "MYT": "Malaysia Time", "AKST": "Alaska Standard Time", "WAT": "West Africa Standard Time", "AEDT": "Australian Eastern Daylight Time", "VET": "Venezuela Time", "WITA": "Central Indonesia Time", "ECT": "Ecuador Time", "WAST": "West Africa Summer Time", "AWST": "Australian Western Standard Time", "IST": "India Standard Time", "EST": "Eastern Standard Time", "ACWST": "Australian Central Western Standard Time", "LHST": "Lord Howe Standard Time", "JST": "Japan Standard Time", "WARST": "Western Argentina Summer Time", "MST": "Macau Standard Time", "GMT": "Greenwich Mean Time", "HAST": "Hawaii-Aleutian Standard Time", "CLT": "Chile Standard Time", "MEZ": "Central European Standard Time", "HKST": "Hong Kong Summer Time", "WESZ": "Western European Summer Time", "WIB": "Western Indonesia Time", "ACDT": "Australian Central Daylight Time", "AEST": "Australian Eastern Standard Time", "COST": "Colombia Summer Time", "CST": "Central Standard Time", "LHDT": "Lord Howe Daylight Time", "NZDT": "New Zealand Daylight Time", "UYST": "Uruguay Summer Time", "MESZ": "Central European Summer Time", "MDT": "Macau Summer Time", "CHAST": "Chatham Standard Time", "PDT": "Pacific Daylight Time", "BOT": "Bolivia Time", "BT": "Bhutan Time", "GFT": "French Guiana Time", "EDT": "Eastern Daylight Time", "NZST": "New Zealand Standard Time", "PST": "Pacific Standard Time", "GYT": "Guyana Time", "SGT": "Singapore Standard Time", "CAT": "Central Africa Time", "OEZ": "Eastern European Standard Time", "SRT": "Suriname Time", "AKDT": "Alaska Daylight Time", "ACWDT": "Australian Central Western Daylight Time", "AST": "Atlantic Standard Time", "HAT": "Newfoundland Daylight Time", "TMT": "Turkmenistan Standard Time", "CDT": "Central Daylight Time", "SAST": "South Africa Standard Time", "ART": "Argentina Standard Time", "TMST": "Turkmenistan Summer Time", "OESZ": "Eastern European Summer Time", "JDT": "Japan Daylight Time", "ADT": "Atlantic Daylight Time", "AWDT": "Australian Western Daylight Time", "HNT": "Newfoundland Standard Time", "∅∅∅": "Brasilia Summer Time"},
 	}
 }
 
@@ -202,7 +202,8 @@ func (en *en_WS) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'en_WS' and handles both Whole and Real numbers based on 'v'
-func (en *en_WS) FmtNumber(num float64, v uint64) (results string) {
+func (en *en_WS) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(en.decimal) + len(en.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -238,13 +239,12 @@ func (en *en_WS) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'en_WS' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (en *en_WS) FmtPercent(num float64, v uint64) (results string) {
+func (en *en_WS) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(en.decimal)
 	b := make([]byte, 0, l)
@@ -270,12 +270,11 @@ func (en *en_WS) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, en.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'en_WS'
-func (en *en_WS) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (en *en_WS) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := en.currencies[currency]
@@ -328,13 +327,12 @@ func (en *en_WS) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'en_WS'
 // in accounting notation.
-func (en *en_WS) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (en *en_WS) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := en.currencies[currency]
@@ -399,8 +397,7 @@ func (en *en_WS) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, en.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'en_WS'

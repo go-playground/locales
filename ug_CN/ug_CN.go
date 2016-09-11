@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "ug_CN",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         nil,
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ".",
 		group:                  ",",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BCE", "مىلادىيە"},
 		erasNarrow:             []string{"BCE", "مىلادىيە"},
 		erasWide:               []string{"مىلادىيەدىن بۇرۇن", "مىلادىيە"},
-		timezones:              map[string]string{"AST": "ئاتلانتىك ئوكيان ئۆلچەملىك ۋاقتى", "GYT": "گىۋىيانا ۋاقتى", "SAST": "جەنۇبىي ئافرىقا ئۆلچەملىك ۋاقتى", "GFT": "فىرانسىيەگە قاراشلىق گىۋىيانا ۋاقتى", "WEZ": "غەربىي ياۋروپا ئۆلچەملىك ۋاقتى", "HKT": "شياڭگاڭ ئۆلچەملىك ۋاقتى", "BOT": "بولىۋىيە ۋاقتى", "ADT": "ئاتلانتىك ئوكيان يازلىق ۋاقتى", "BT": "بۇتان ۋاقتى", "SRT": "سۇرىنام ۋاقتى", "AKST": "ئالياسكا ئۆلچەملىك ۋاقتى", "HKST": "شياڭگاڭ يازلىق ۋاقتى", "OEZ": "شەرقىي ياۋروپا ئۆلچەملىك ۋاقتى", "OESZ": "شەرقىي ياۋروپا يازلىق ۋاقتى", "GMT": "گىرىنۋىچ ۋاقتى", "WAT": "غەربىي ئافرىقا ئۆلچەملىك ۋاقتى", "MEZ": "ئوتتۇرا ياۋروپا ئۆلچەملىك ۋاقتى", "ART": "ئارگېنتىنا ئۆلچەملىك ۋاقتى", "JDT": "ياپونىيە يازلىق ۋاقتى", "CHAST": "چاتام ئۆلچەملىك ۋاقتى", "WART": "غەربىي ئارگېنتىنا ئۆلچەملىك ۋاقتى", "VET": "ۋېنېزۇئېلا ۋاقتى", "TMST": "تۈركمەنىستان يازلىق ۋاقتى", "CLST": "چىلى يازلىق ۋاقتى", "UYT": "ئۇرۇگۋاي ئۆلچەملىك ۋاقتى", "WARST": "غەربىي ئارگېنتىنا يازلىق ۋاقتى", "ACST": "ئاۋسترالىيە ئوتتۇرا قىسىم ئۆلچەملىك ۋاقتى", "WESZ": "غەربىي ياۋروپا يازلىق ۋاقتى", "CAT": "ئوتتۇرا ئافرىقا ۋاقتى", "AEST": "ئاۋسترالىيە شەرقىي قىسىم ئۆلچەملىك ۋاقتى", "WAST": "غەربىي ئافرىقا يازلىق ۋاقتى", "LHDT": "لورد-خاي يازلىق ۋاقتى", "HAT": "نىۋفوئۇنلاند يازلىق ۋاقتى", "EST": "شەرقىي قىسىم ئۆلچەملىك ۋاقتى", "NZDT": "يېڭى زېلاندىيە يازلىق ۋاقتى", "HAST": "ھاۋاي-ئالېيۇت ئۆلچەملىك ۋاقتى", "WIB": "غەربىي ھىندونېزىيە ۋاقتى", "ACWST": "ئاۋستىرالىيە ئوتتۇرا غەربىي قىسىم ئۆلچەملىك ۋاقتى", "MYT": "مالايشىيا ۋاقتى", "UYST": "ئۇرۇگۋاي يازلىق ۋاقتى", "ACWDT": "ئاۋسترالىيە ئوتتۇرا غەربىي قىسىم يازلىق ۋاقتى", "MST": "تاغ ئۆلچەملىك ۋاقتى", "MDT": "تاغ يازلىق ۋاقتى", "AKDT": "ئالياسكا يازلىق ۋاقتى", "MESZ": "ئوتتۇرا ياۋروپا يازلىق ۋاقتى", "JST": "ياپونىيە ئۆلچەملىك ۋاقتى", "IST": "ھىندىستان ئۆلچەملىك ۋاقتى", "PDT": "تىنچ ئوكيان يازلىق ۋاقتى", "ACDT": "ئاۋسترالىيە ئوتتۇرا قىسىم يازلىق ۋاقتى", "ChST": "چاموررو ئۆلچەملىك ۋاقتى", "WIT": "شەرقىي ھىندونېزىيە ۋاقتى", "∅∅∅": "ئازور يازلىق ۋاقتى", "EDT": "شەرقىي قىسىم يازلىق ۋاقتى", "CLT": "چىلى ئۆلچەملىك ۋاقتى", "PST": "تىنچ ئوكيان ئۆلچەملىك ۋاقتى", "WITA": "ئوتتۇرا ھىندونېزىيە ۋاقتى", "TMT": "تۈركمەنىستان ئۆلچەملىك ۋاقتى", "LHST": "لورد-خاي ئۆلچەملىك ۋاقتى", "HNT": "نىۋفوئۇنلاند ئۆلچەملىك ۋاقتى", "NZST": "يېڭى زېلاندىيە ئۆلچەملىك ۋاقتى", "CHADT": "چاتام يازلىق ۋاقتى", "ARST": "ئارگېنتىنا يازلىق ۋاقتى", "HADT": "ھاۋاي-ئالېيۇت يازلىق ۋاقتى", "EAT": "شەرقىي ئافرىقا ۋاقتى", "ECT": "ئېكۋادور ۋاقتى", "AWST": "ئاۋسترالىيە غەربىي قىسىم ئۆلچەملىك ۋاقتى", "AEDT": "ئاۋسترالىيە شەرقىي قىسىم يازلىق ۋاقتى", "COT": "كولومبىيە ئۆلچەملىك ۋاقتى", "COST": "كولومبىيە يازلىق ۋاقتى", "SGT": "سىنگاپور ۋاقتى", "CST": "ئوتتۇرا قىسىم ئۆلچەملىك ۋاقتى", "CDT": "ئوتتۇرا قىسىم يازلىق ۋاقتى", "AWDT": "ئاۋسترالىيە غەربىي قىسىم يازلىق ۋاقتى"},
+		timezones:              map[string]string{"COT": "كولومبىيە ئۆلچەملىك ۋاقتى", "ACWDT": "ئاۋسترالىيە ئوتتۇرا غەربىي قىسىم يازلىق ۋاقتى", "LHST": "لورد-خاي ئۆلچەملىك ۋاقتى", "LHDT": "لورد-خاي يازلىق ۋاقتى", "CHAST": "چاتام ئۆلچەملىك ۋاقتى", "WART": "غەربىي ئارگېنتىنا ئۆلچەملىك ۋاقتى", "CAT": "ئوتتۇرا ئافرىقا ۋاقتى", "ACDT": "ئاۋسترالىيە ئوتتۇرا قىسىم يازلىق ۋاقتى", "AWST": "ئاۋسترالىيە غەربىي قىسىم ئۆلچەملىك ۋاقتى", "AWDT": "ئاۋسترالىيە غەربىي قىسىم يازلىق ۋاقتى", "HKST": "شياڭگاڭ يازلىق ۋاقتى", "TMT": "تۈركمەنىستان ئۆلچەملىك ۋاقتى", "AKDT": "ئالياسكا يازلىق ۋاقتى", "GFT": "فىرانسىيەگە قاراشلىق گىۋىيانا ۋاقتى", "ChST": "چاموررو ئۆلچەملىك ۋاقتى", "MDT": "ئاۋمېن يازلىق ۋاقتى", "OEZ": "شەرقىي ياۋروپا ئۆلچەملىك ۋاقتى", "WARST": "غەربىي ئارگېنتىنا يازلىق ۋاقتى", "∅∅∅": "بىرازىلىيە يازلىق ۋاقتى", "BT": "بۇتان ۋاقتى", "VET": "ۋېنېزۇئېلا ۋاقتى", "SGT": "سىنگاپور ۋاقتى", "BOT": "بولىۋىيە ۋاقتى", "UYT": "ئۇرۇگۋاي ئۆلچەملىك ۋاقتى", "COST": "كولومبىيە يازلىق ۋاقتى", "ECT": "ئېكۋادور ۋاقتى", "NZDT": "يېڭى زېلاندىيە يازلىق ۋاقتى", "CHADT": "چاتام يازلىق ۋاقتى", "ACST": "ئاۋسترالىيە ئوتتۇرا قىسىم ئۆلچەملىك ۋاقتى", "TMST": "تۈركمەنىستان يازلىق ۋاقتى", "CLT": "چىلى ئۆلچەملىك ۋاقتى", "EST": "شەرقىي قىسىم ئۆلچەملىك ۋاقتى", "AEST": "ئاۋسترالىيە شەرقىي قىسىم ئۆلچەملىك ۋاقتى", "IST": "ھىندىستان ئۆلچەملىك ۋاقتى", "WITA": "ئوتتۇرا ھىندونېزىيە ۋاقتى", "WAST": "غەربىي ئافرىقا يازلىق ۋاقتى", "JDT": "ياپونىيە يازلىق ۋاقتى", "HAT": "نىۋفوئۇنلاند يازلىق ۋاقتى", "ARST": "ئارگېنتىنا يازلىق ۋاقتى", "CLST": "چىلى يازلىق ۋاقتى", "PST": "تىنچ ئوكيان ئۆلچەملىك ۋاقتى", "SRT": "سۇرىنام ۋاقتى", "EAT": "شەرقىي ئافرىقا ۋاقتى", "CST": "ئوتتۇرا قىسىم ئۆلچەملىك ۋاقتى", "GMT": "گىرىنۋىچ ۋاقتى", "HAST": "ھاۋاي-ئالېيۇت ئۆلچەملىك ۋاقتى", "WEZ": "غەربىي ياۋروپا ئۆلچەملىك ۋاقتى", "MEZ": "ئوتتۇرا ياۋروپا ئۆلچەملىك ۋاقتى", "UYST": "ئۇرۇگۋاي يازلىق ۋاقتى", "HADT": "ھاۋاي-ئالېيۇت يازلىق ۋاقتى", "AKST": "ئالياسكا ئۆلچەملىك ۋاقتى", "MST": "ئاۋمېن ئۆلچەملىك ۋاقتى", "ACWST": "ئاۋستىرالىيە ئوتتۇرا غەربىي قىسىم ئۆلچەملىك ۋاقتى", "JST": "ياپونىيە ئۆلچەملىك ۋاقتى", "ART": "ئارگېنتىنا ئۆلچەملىك ۋاقتى", "WIT": "شەرقىي ھىندونېزىيە ۋاقتى", "WESZ": "غەربىي ياۋروپا يازلىق ۋاقتى", "MESZ": "ئوتتۇرا ياۋروپا يازلىق ۋاقتى", "PDT": "تىنچ ئوكيان يازلىق ۋاقتى", "HKT": "شياڭگاڭ ئۆلچەملىك ۋاقتى", "EDT": "شەرقىي قىسىم يازلىق ۋاقتى", "NZST": "يېڭى زېلاندىيە ئۆلچەملىك ۋاقتى", "SAST": "جەنۇبىي ئافرىقا ئۆلچەملىك ۋاقتى", "WAT": "غەربىي ئافرىقا ئۆلچەملىك ۋاقتى", "AEDT": "ئاۋسترالىيە شەرقىي قىسىم يازلىق ۋاقتى", "CDT": "ئوتتۇرا قىسىم يازلىق ۋاقتى", "ADT": "ئاتلانتىك ئوكيان يازلىق ۋاقتى", "AST": "ئاتلانتىك ئوكيان ئۆلچەملىك ۋاقتى", "OESZ": "شەرقىي ياۋروپا يازلىق ۋاقتى", "HNT": "نىۋفوئۇنلاند ئۆلچەملىك ۋاقتى", "GYT": "گىۋىيانا ۋاقتى", "MYT": "مالايشىيا ۋاقتى", "WIB": "غەربىي ھىندونېزىيە ۋاقتى"},
 	}
 }
 
@@ -199,7 +199,8 @@ func (ug *ug_CN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ug_CN' and handles both Whole and Real numbers based on 'v'
-func (ug *ug_CN) FmtNumber(num float64, v uint64) (results string) {
+func (ug *ug_CN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ug.decimal) + len(ug.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -235,13 +236,12 @@ func (ug *ug_CN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ug_CN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ug *ug_CN) FmtPercent(num float64, v uint64) (results string) {
+func (ug *ug_CN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ug.decimal)
 	b := make([]byte, 0, l)
@@ -267,12 +267,11 @@ func (ug *ug_CN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ug.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ug_CN'
-func (ug *ug_CN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ug *ug_CN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ug.currencies[currency]
@@ -325,13 +324,12 @@ func (ug *ug_CN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ug_CN'
 // in accounting notation.
-func (ug *ug_CN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ug *ug_CN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ug.currencies[currency]
@@ -396,8 +394,7 @@ func (ug *ug_CN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, ug.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ug_CN'

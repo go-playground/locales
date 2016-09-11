@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"BC", "AD"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"Kulisito nga tannaza", "Bukya Kulisito Azaal"},
-		timezones:         map[string]string{"CDT": "CDT", "OEZ": "OEZ", "MEZ": "MEZ", "GFT": "GFT", "ACWST": "ACWST", "AWST": "AWST", "AWDT": "AWDT", "PDT": "PDT", "BOT": "BOT", "WAT": "WAT", "ADT": "ADT", "ACWDT": "ACWDT", "AKST": "AKST", "UYST": "UYST", "NZST": "NZST", "HKT": "HKT", "MESZ": "MESZ", "ECT": "ECT", "EAT": "EAT", "CST": "CST", "TMT": "TMT", "SAST": "SAST", "HNT": "HNT", "COT": "COT", "MYT": "MYT", "GMT": "GMT", "CHAST": "CHAST", "AKDT": "AKDT", "BT": "BT", "CLST": "CLST", "AEST": "AEST", "CHADT": "CHADT", "AST": "AST", "MDT": "MDT", "TMST": "TMST", "SGT": "SGT", "HKST": "HKST", "ACDT": "ACDT", "VET": "VET", "WITA": "WITA", "JST": "JST", "WIB": "WIB", "∅∅∅": "∅∅∅", "EDT": "EDT", "NZDT": "NZDT", "ART": "ART", "IST": "IST", "CLT": "CLT", "GYT": "GYT", "ARST": "ARST", "MST": "MST", "WIT": "WIT", "JDT": "JDT", "ChST": "ChST", "HAST": "HAST", "HADT": "HADT", "EST": "EST", "OESZ": "OESZ", "WART": "WART", "WARST": "WARST", "WAST": "WAST", "LHST": "LHST", "LHDT": "LHDT", "HAT": "HAT", "CAT": "CAT", "PST": "PST", "ACST": "ACST", "WEZ": "WEZ", "WESZ": "WESZ", "UYT": "UYT", "AEDT": "AEDT", "COST": "COST", "SRT": "SRT"},
+		timezones:         map[string]string{"OEZ": "OEZ", "ADT": "ADT", "PST": "PST", "MST": "MST", "WIB": "WIB", "AKDT": "AKDT", "SAST": "SAST", "ACST": "ACST", "SGT": "SGT", "UYT": "UYT", "GMT": "GMT", "LHDT": "LHDT", "EAT": "EAT", "JST": "JST", "WART": "WART", "VET": "VET", "HKT": "HKT", "WEZ": "WEZ", "HADT": "HADT", "EST": "EST", "ACWST": "ACWST", "AWDT": "AWDT", "IST": "IST", "HKST": "HKST", "ART": "ART", "MDT": "MDT", "GYT": "GYT", "PDT": "PDT", "UYST": "UYST", "BT": "BT", "NZST": "NZST", "GFT": "GFT", "HAST": "HAST", "CHAST": "CHAST", "CLST": "CLST", "WARST": "WARST", "LHST": "LHST", "NZDT": "NZDT", "AST": "AST", "HAT": "HAT", "WIT": "WIT", "WAST": "WAST", "WAT": "WAT", "CDT": "CDT", "AKST": "AKST", "ChST": "ChST", "COT": "COT", "AEDT": "AEDT", "MYT": "MYT", "SRT": "SRT", "CAT": "CAT", "TMST": "TMST", "MEZ": "MEZ", "AWST": "AWST", "CLT": "CLT", "TMT": "TMT", "COST": "COST", "EDT": "EDT", "∅∅∅": "∅∅∅", "WITA": "WITA", "MESZ": "MESZ", "ACDT": "ACDT", "BOT": "BOT", "ARST": "ARST", "JDT": "JDT", "AEST": "AEST", "CHADT": "CHADT", "OESZ": "OESZ", "WESZ": "WESZ", "ACWDT": "ACWDT", "HNT": "HNT", "CST": "CST", "ECT": "ECT"},
 	}
 }
 
@@ -174,20 +174,19 @@ func (lg *lg) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lg' and handles both Whole and Real numbers based on 'v'
-func (lg *lg) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (lg *lg) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'lg' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (lg *lg) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (lg *lg) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lg'
-func (lg *lg) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (lg *lg) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lg.currencies[currency]
@@ -199,20 +198,14 @@ func (lg *lg) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(lg.decimal) - 1; j >= 0; j-- {
-				b = append(b, lg.decimal[j])
-			}
-
+			b = append(b, lg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(lg.group) - 1; j >= 0; j-- {
-					b = append(b, lg.group[j])
-				}
-
+				b = append(b, lg.group[0])
 				count = 1
 			} else {
 				count++
@@ -223,9 +216,7 @@ func (lg *lg) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	}
 
 	if num < 0 {
-		for j := len(lg.minus) - 1; j >= 0; j-- {
-			b = append(b, lg.minus[j])
-		}
+		b = append(b, lg.minus[0])
 	}
 
 	// reverse
@@ -246,13 +237,12 @@ func (lg *lg) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lg'
 // in accounting notation.
-func (lg *lg) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (lg *lg) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lg.currencies[currency]
@@ -264,20 +254,14 @@ func (lg *lg) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(lg.decimal) - 1; j >= 0; j-- {
-				b = append(b, lg.decimal[j])
-			}
-
+			b = append(b, lg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(lg.group) - 1; j >= 0; j-- {
-					b = append(b, lg.group[j])
-				}
-
+				b = append(b, lg.group[0])
 				count = 1
 			} else {
 				count++
@@ -289,9 +273,7 @@ func (lg *lg) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 
 	if num < 0 {
 
-		for j := len(lg.minus) - 1; j >= 0; j-- {
-			b = append(b, lg.minus[j])
-		}
+		b = append(b, lg.minus[0])
 
 	}
 
@@ -318,8 +300,7 @@ func (lg *lg) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'lg'

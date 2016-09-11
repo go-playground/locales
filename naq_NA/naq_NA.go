@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"BC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Xristub aiǃâ", "Xristub khaoǃgâ"},
-		timezones:          map[string]string{"MDT": "MDT", "WAT": "WAT", "VET": "VET", "HAT": "HAT", "WIB": "WIB", "IST": "IST", "PST": "PST", "OEZ": "OEZ", "GYT": "GYT", "ACWST": "ACWST", "LHDT": "LHDT", "SGT": "SGT", "CAT": "CAT", "GMT": "GMT", "BT": "BT", "WITA": "WITA", "AKDT": "AKDT", "HNT": "HNT", "WAST": "WAST", "ACWDT": "ACWDT", "JDT": "JDT", "WESZ": "WESZ", "AWDT": "AWDT", "AEST": "AEST", "CHAST": "CHAST", "ACDT": "ACDT", "COST": "COST", "GFT": "GFT", "MYT": "MYT", "LHST": "LHST", "CLST": "CLST", "UYST": "UYST", "BOT": "BOT", "ART": "ART", "AST": "AST", "HKT": "HKT", "MST": "MST", "AWST": "AWST", "ACST": "ACST", "TMST": "TMST", "OESZ": "OESZ", "AEDT": "AEDT", "NZST": "NZST", "∅∅∅": "∅∅∅", "AKST": "AKST", "CDT": "CDT", "CLT": "CLT", "PDT": "PDT", "WARST": "WARST", "SRT": "SRT", "SAST": "SAST", "CST": "CST", "EDT": "EDT", "WIT": "WIT", "MESZ": "MESZ", "ChST": "ChST", "HKST": "HKST", "UYT": "UYT", "NZDT": "NZDT", "ARST": "ARST", "WART": "WART", "HAST": "HAST", "HADT": "HADT", "EAT": "EAT", "WEZ": "WEZ", "ADT": "ADT", "TMT": "TMT", "ECT": "ECT", "EST": "EST", "CHADT": "CHADT", "COT": "COT", "MEZ": "MEZ", "JST": "JST"},
+		timezones:          map[string]string{"CDT": "CDT", "NZDT": "NZDT", "ACWST": "ACWST", "WIB": "WIB", "SRT": "SRT", "MYT": "MYT", "UYST": "UYST", "PDT": "PDT", "BT": "BT", "WITA": "WITA", "COT": "COT", "ECT": "ECT", "AST": "AST", "CAT": "CAT", "WIT": "WIT", "TMST": "TMST", "WEZ": "WEZ", "OEZ": "OEZ", "ACST": "ACST", "∅∅∅": "∅∅∅", "GMT": "GMT", "AKST": "AKST", "WAST": "WAST", "LHST": "LHST", "MESZ": "MESZ", "OESZ": "OESZ", "VET": "VET", "AWST": "AWST", "WAT": "WAT", "ACWDT": "ACWDT", "ACDT": "ACDT", "WART": "WART", "HADT": "HADT", "HKST": "HKST", "UYT": "UYT", "AEDT": "AEDT", "HKT": "HKT", "SAST": "SAST", "ChST": "ChST", "COST": "COST", "NZST": "NZST", "EST": "EST", "TMT": "TMT", "AKDT": "AKDT", "WESZ": "WESZ", "GFT": "GFT", "HAT": "HAT", "GYT": "GYT", "MST": "MST", "ART": "ART", "JST": "JST", "JDT": "JDT", "AEST": "AEST", "AWDT": "AWDT", "MDT": "MDT", "HAST": "HAST", "CLT": "CLT", "HNT": "HNT", "PST": "PST", "CHAST": "CHAST", "CHADT": "CHADT", "CLST": "CLST", "ADT": "ADT", "IST": "IST", "ARST": "ARST", "CST": "CST", "EAT": "EAT", "BOT": "BOT", "EDT": "EDT", "LHDT": "LHDT", "MEZ": "MEZ", "WARST": "WARST", "SGT": "SGT"},
 	}
 }
 
@@ -178,20 +178,19 @@ func (naq *naq_NA) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'naq_NA' and handles both Whole and Real numbers based on 'v'
-func (naq *naq_NA) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (naq *naq_NA) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'naq_NA' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (naq *naq_NA) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (naq *naq_NA) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'naq_NA'
-func (naq *naq_NA) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (naq *naq_NA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := naq.currencies[currency]
@@ -203,20 +202,14 @@ func (naq *naq_NA) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(naq.decimal) - 1; j >= 0; j-- {
-				b = append(b, naq.decimal[j])
-			}
-
+			b = append(b, naq.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(naq.group) - 1; j >= 0; j-- {
-					b = append(b, naq.group[j])
-				}
-
+				b = append(b, naq.group[0])
 				count = 1
 			} else {
 				count++
@@ -231,9 +224,7 @@ func (naq *naq_NA) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(naq.minus) - 1; j >= 0; j-- {
-			b = append(b, naq.minus[j])
-		}
+		b = append(b, naq.minus[0])
 	}
 
 	// reverse
@@ -252,13 +243,12 @@ func (naq *naq_NA) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'naq_NA'
 // in accounting notation.
-func (naq *naq_NA) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (naq *naq_NA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := naq.currencies[currency]
@@ -270,20 +260,14 @@ func (naq *naq_NA) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(naq.decimal) - 1; j >= 0; j-- {
-				b = append(b, naq.decimal[j])
-			}
-
+			b = append(b, naq.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(naq.group) - 1; j >= 0; j-- {
-					b = append(b, naq.group[j])
-				}
-
+				b = append(b, naq.group[0])
 				count = 1
 			} else {
 				count++
@@ -299,9 +283,7 @@ func (naq *naq_NA) FmtAccounting(num float64, v uint64, currency currency.Type) 
 			b = append(b, symbol[j])
 		}
 
-		for j := len(naq.minus) - 1; j >= 0; j-- {
-			b = append(b, naq.minus[j])
-		}
+		b = append(b, naq.minus[0])
 
 	} else {
 
@@ -327,8 +309,7 @@ func (naq *naq_NA) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'naq_NA'

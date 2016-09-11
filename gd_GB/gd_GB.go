@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"RC", "AD"},
 		erasNarrow:             []string{"R", "A"},
 		erasWide:               []string{"Ro Chrìosta", "An dèidh Chrìosta"},
-		timezones:              map[string]string{"EAT": "Àm Afraga an Ear", "PDT": "Tìde samhraidh a’ Chuain Sèimh", "AKDT": "Tìde samhraidh Alaska", "HKT": "Bun-àm Hong Kong", "BT": "Àm Butàin", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "∅∅∅": "Tìde samhraidh nan Eileanan Asorach", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "PST": "Bun-àm a’ Chuain Sèimh", "ACST": "Bun-àm Meadhan Astràilia", "ARST": "Tìde samhraidh na h-Argantaine", "JST": "Bun-àm na Seapaine", "WART": "Bun-àm na h-Argantaine Siaraich", "ADT": "Tìde samhraidh a’ Chuain Siar", "CDT": "Tìde samhraidh Meadhan Aimeireaga a Tuath", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "CLT": "Bun-àm na Sile", "WITA": "Àm Meadhan nan Innd-Innse", "IST": "Àm nan Innseachan", "CST": "Bun-àm Meadhan Aimeireaga a Tuath", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "VET": "Àm na Bheiniseala", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "SRT": "Àm Suranaim", "MDT": "Tìde samhraidh Monadh Aimeireaga a Tuath", "JDT": "Tìde samhraidh na Seapaine", "ECT": "Àm Eacuadoir", "CLST": "Tìde samhraidh na Sile", "UYST": "Tìde samhraidh Uruguaidh", "CHADT": "Tìde samhraidh Chatham", "AST": "Bun-àm a’ Chuain Siar", "GMT": "Greenwich Mean Time", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "SGT": "Àm Singeapòr", "MYT": "Àm Mhalaidhsea", "AKST": "Bun-àm Alaska", "WAT": "Bun-àm Afraga an Iar", "WAST": "Tìde Samhraidh Afraga an Iar", "HNT": "Bun-àm Talamh an Èisg", "HKST": "Tìde samhraidh Hong Kong", "WIB": "Àm nan Innd-Innse an Iar", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "TMT": "Bun-àm Turcmanastàin", "LHDT": "Tìde samhraidh Lord Howe", "MST": "Bun-àm Monadh Aimeireaga a Tuath", "ChST": "Àm Chamorro", "EST": "Bun-àm Aimeireaga a Tuath an Ear", "EDT": "Tìde samhraidh Aimeireaga a Tuath an Ear", "AEST": "Bun-àm Astràilia an Ear", "COT": "Bun-àm Coloimbia", "GFT": "Àm Guidheàna na Frainge", "ACDT": "Tìde samhraidh Meadhan Astràilia", "TMST": "Tìde samhraidh Turcmanastàin", "UYT": "Bun-àm Uruguaidh", "BOT": "Àm Boilibhia", "COST": "Tìde samhraidh Coloimbia", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "AWST": "Bun-àm Astràilia an Iar", "GYT": "Àm Guidheàna", "ART": "Bun-àm na h-Argantaine", "CAT": "Àm Meadhan Afraga", "AEDT": "Tìde samhraidh Astràilia an Ear", "SAST": "Àm Afraga a Deas", "AWDT": "Tìde samhraidh Astràilia an Iar", "WIT": "Àm nan Innd-Innse an Ear", "LHST": "Bun-àm Lord Howe", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "HAT": "Tìde samhraidh Talamh an Èisg", "NZST": "Bun-àm Shealainn Nuaidh", "CHAST": "Bun-àm Chatham", "ACWST": "Bun-àm Meadhan Astràilia an Iar"},
+		timezones:              map[string]string{"WAT": "Bun-àm Afraga an Iar", "ACST": "Bun-àm Meadhan Astràilia", "TMST": "Tìde samhraidh Turcmanastàin", "NZST": "Bun-àm Shealainn Nuaidh", "WART": "Bun-àm na h-Argantaine Siaraich", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "PDT": "Tìde samhraidh a’ Chuain Sèimh", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "CLST": "Tìde samhraidh na Sile", "AEDT": "Tìde samhraidh Astràilia an Ear", "MYT": "Àm Mhalaidhsea", "GYT": "Àm Guidheàna", "AKDT": "Tìde samhraidh Alaska", "LHDT": "Tìde samhraidh Lord Howe", "MDT": "Tìde samhraidh Macàthu", "CHAST": "Bun-àm Chatham", "COT": "Bun-àm Coloimbia", "WAST": "Tìde Samhraidh Afraga an Iar", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "ARST": "Tìde samhraidh na h-Argantaine", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "AST": "Bun-àm a’ Chuain Siar", "ACDT": "Tìde samhraidh Meadhan Astràilia", "BOT": "Àm Boilibhia", "CDT": "Tìde samhraidh Meadhan Aimeireaga a Tuath", "EST": "Bun-àm Aimeireaga a Tuath an Ear", "GMT": "Greenwich Mean Time", "AKST": "Bun-àm Alaska", "LHST": "Bun-àm Lord Howe", "JDT": "Tìde samhraidh na Seapaine", "AWDT": "Tìde samhraidh Astràilia an Iar", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "SGT": "Àm Singeapòr", "PST": "Bun-àm a’ Chuain Sèimh", "HNT": "Bun-àm Talamh an Èisg", "HAT": "Tìde samhraidh Talamh an Èisg", "MST": "Bun-àm Macàthu", "WIB": "Àm nan Innd-Innse an Iar", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "CLT": "Bun-àm na Sile", "BT": "Àm Butàin", "GFT": "Àm Guidheàna na Frainge", "ChST": "Àm Chamorro", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "CHADT": "Tìde samhraidh Chatham", "HKST": "Tìde samhraidh Hong Kong", "UYST": "Tìde samhraidh Uruguaidh", "TMT": "Bun-àm Turcmanastàin", "EDT": "Tìde samhraidh Aimeireaga a Tuath an Ear", "ECT": "Àm Eacuadoir", "SRT": "Àm Suranaim", "HKT": "Bun-àm Hong Kong", "UYT": "Bun-àm Uruguaidh", "AEST": "Bun-àm Astràilia an Ear", "WITA": "Àm Meadhan nan Innd-Innse", "∅∅∅": "Tìde samhraidh Pearù", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "VET": "Àm na Bheiniseala", "ART": "Bun-àm na h-Argantaine", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "SAST": "Àm Afraga a Deas", "IST": "Àm nan Innseachan", "WIT": "Àm nan Innd-Innse an Ear", "CAT": "Àm Meadhan Afraga", "CST": "Bun-àm Meadhan Aimeireaga a Tuath", "EAT": "Àm Afraga an Ear", "JST": "Bun-àm na Seapaine", "ADT": "Tìde samhraidh a’ Chuain Siar", "AWST": "Bun-àm Astràilia an Iar", "COST": "Tìde samhraidh Coloimbia"},
 	}
 }
 
@@ -192,7 +192,8 @@ func (gd *gd_GB) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gd_GB' and handles both Whole and Real numbers based on 'v'
-func (gd *gd_GB) FmtNumber(num float64, v uint64) (results string) {
+func (gd *gd_GB) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gd.decimal) + len(gd.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -205,7 +206,6 @@ func (gd *gd_GB) FmtNumber(num float64, v uint64) (results string) {
 			for j := len(gd.decimal) - 1; j >= 0; j-- {
 				b = append(b, gd.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -215,7 +215,6 @@ func (gd *gd_GB) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(gd.group) - 1; j >= 0; j-- {
 					b = append(b, gd.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -236,13 +235,12 @@ func (gd *gd_GB) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'gd_GB' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (gd *gd_GB) FmtPercent(num float64, v uint64) (results string) {
+func (gd *gd_GB) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gd.decimal)
 	b := make([]byte, 0, l)
@@ -253,7 +251,6 @@ func (gd *gd_GB) FmtPercent(num float64, v uint64) (results string) {
 			for j := len(gd.decimal) - 1; j >= 0; j-- {
 				b = append(b, gd.decimal[j])
 			}
-
 			continue
 		}
 
@@ -273,12 +270,11 @@ func (gd *gd_GB) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, gd.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gd_GB'
-func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gd.currencies[currency]
@@ -293,7 +289,6 @@ func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 			for j := len(gd.decimal) - 1; j >= 0; j-- {
 				b = append(b, gd.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -303,7 +298,6 @@ func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(gd.group) - 1; j >= 0; j-- {
 					b = append(b, gd.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -339,13 +333,12 @@ func (gd *gd_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gd_GB'
 // in accounting notation.
-func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gd.currencies[currency]
@@ -360,7 +353,6 @@ func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			for j := len(gd.decimal) - 1; j >= 0; j-- {
 				b = append(b, gd.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -370,7 +362,6 @@ func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(gd.group) - 1; j >= 0; j-- {
 					b = append(b, gd.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -416,8 +407,7 @@ func (gd *gd_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, gd.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'gd_GB'

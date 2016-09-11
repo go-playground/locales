@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"ACST": "ACST", "TMT": "TMT", "MYT": "MYT", "WIT": "WIT", "∅∅∅": "∅∅∅", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "AEST": "AEST", "NZST": "NZST", "CHADT": "CHADT", "WAST": "WAST", "AST": "Atlāntiska zēimas kerdā", "SGT": "SGT", "MDT": "MDT", "AWST": "AWST", "COT": "COT", "WART": "WART", "ACDT": "ACDT", "SAST": "SAST", "HADT": "HADT", "AEDT": "AEDT", "AKDT": "AKDT", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "IST": "IST", "PST": "Pacīfiskas Amērikas zēimas kerdā", "HKT": "HKT", "HKST": "HKST", "EST": "Dēiniskas Amērikas zēimas kerdā", "EDT": "Dēiniskas Amērikas daggas kerdā", "CLST": "CLST", "NZDT": "NZDT", "BOT": "BOT", "CST": "Centrālas Amērikas zēimas kerdā", "WITA": "WITA", "WIB": "WIB", "WAT": "WAT", "ADT": "Atlāntiska daggas kerdā", "SRT": "SRT", "PDT": "Pacīfiskas Amērikas daggas kerdā", "CHAST": "CHAST", "WARST": "WARST", "MESZ": "Centrālas Eurōpas daggas kerdā", "GYT": "GYT", "TMST": "TMST", "ECT": "ECT", "JDT": "JDT", "HNT": "HNT", "ART": "ART", "JST": "JST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "CAT": "CAT", "MEZ": "Centrālas Eurōpas zēimas kerdā", "GFT": "GFT", "LHDT": "LHDT", "EAT": "EAT", "HAT": "HAT", "UYST": "UYST", "ARST": "ARST", "AKST": "AKST", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "CDT": "Centrālas Amērikas daggas kerdā", "AWDT": "AWDT", "CLT": "CLT", "UYT": "UYT", "MST": "MST", "COST": "COST", "BT": "BT", "ACWDT": "ACWDT", "LHST": "LHST", "GMT": "Greenwich kerdā", "VET": "VET", "ChST": "ChST", "HAST": "HAST", "ACWST": "ACWST"},
+		timezones:              map[string]string{"MYT": "MYT", "GYT": "GYT", "GFT": "GFT", "EDT": "Dēiniskas Amērikas daggas kerdā", "∅∅∅": "∅∅∅", "CHADT": "CHADT", "AST": "Atlāntiska zēimas kerdā", "HNT": "HNT", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "MESZ": "Centrālas Eurōpas daggas kerdā", "JDT": "JDT", "AEST": "AEST", "PDT": "Pacīfiskas Amērikas daggas kerdā", "HAT": "HAT", "UYST": "UYST", "HADT": "HADT", "ACWDT": "ACWDT", "NZDT": "NZDT", "EAT": "EAT", "SGT": "SGT", "ChST": "ChST", "COT": "COT", "LHST": "LHST", "WAST": "WAST", "SRT": "SRT", "NZST": "NZST", "CLT": "CLT", "ACDT": "ACDT", "BT": "BT", "CST": "Centrālas Amērikas zēimas kerdā", "EST": "Dēiniskas Amērikas zēimas kerdā", "AKST": "AKST", "AKDT": "AKDT", "WARST": "WARST", "HKST": "HKST", "HAST": "HAST", "ECT": "ECT", "MST": "MST", "CLST": "CLST", "HKT": "HKT", "TMST": "TMST", "ACWST": "ACWST", "COST": "COST", "WIB": "WIB", "JST": "JST", "CAT": "CAT", "UYT": "UYT", "CHAST": "CHAST", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "AWST": "AWST", "MEZ": "Centrālas Eurōpas zēimas kerdā", "IST": "IST", "TMT": "TMT", "WAT": "WAT", "ADT": "Atlāntiska daggas kerdā", "AWDT": "AWDT", "PST": "Pacīfiskas Amērikas zēimas kerdā", "WITA": "WITA", "CDT": "Centrālas Amērikas daggas kerdā", "LHDT": "LHDT", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "ACST": "ACST", "SAST": "SAST", "VET": "VET", "BOT": "BOT", "GMT": "Greenwich kerdā", "MDT": "MDT", "WIT": "WIT", "ART": "ART", "WART": "WART", "ARST": "ARST", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "AEDT": "AEDT"},
 	}
 }
 
@@ -191,7 +191,8 @@ func (prg *prg) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'prg' and handles both Whole and Real numbers based on 'v'
-func (prg *prg) FmtNumber(num float64, v uint64) (results string) {
+func (prg *prg) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(prg.decimal) + len(prg.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -211,7 +212,6 @@ func (prg *prg) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(prg.group) - 1; j >= 0; j-- {
 					b = append(b, prg.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -230,13 +230,12 @@ func (prg *prg) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'prg' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (prg *prg) FmtPercent(num float64, v uint64) (results string) {
+func (prg *prg) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(prg.decimal)
 	b := make([]byte, 0, l)
@@ -262,12 +261,11 @@ func (prg *prg) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, prg.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'prg'
-func (prg *prg) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (prg *prg) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
@@ -289,7 +287,6 @@ func (prg *prg) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 				for j := len(prg.group) - 1; j >= 0; j-- {
 					b = append(b, prg.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -323,13 +320,12 @@ func (prg *prg) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'prg'
 // in accounting notation.
-func (prg *prg) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (prg *prg) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := prg.currencies[currency]
@@ -351,7 +347,6 @@ func (prg *prg) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 				for j := len(prg.group) - 1; j >= 0; j-- {
 					b = append(b, prg.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -392,8 +387,7 @@ func (prg *prg) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'prg'

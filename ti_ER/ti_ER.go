@@ -58,7 +58,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"ዓ/ዓ", "ዓ/ም"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"ART": "ART", "WART": "WART", "UYST": "UYST", "ACDT": "ACDT", "IST": "IST", "PDT": "PDT", "AST": "AST", "∅∅∅": "∅∅∅", "JDT": "JDT", "CAT": "CAT", "COT": "COT", "BOT": "BOT", "WAT": "WAT", "WAST": "WAST", "GYT": "GYT", "ECT": "ECT", "HNT": "HNT", "NZST": "NZST", "WARST": "WARST", "GFT": "GFT", "AKST": "AKST", "ACST": "ACST", "WIT": "WIT", "AKDT": "AKDT", "AWDT": "AWDT", "CLST": "CLST", "BT": "BT", "ACWST": "ACWST", "VET": "VET", "CST": "CST", "HAT": "HAT", "MDT": "MDT", "WITA": "WITA", "LHST": "LHST", "JST": "JST", "SGT": "SGT", "EAT": "EAT", "EST": "EST", "AEDT": "AEDT", "WIB": "WIB", "MEZ": "MEZ", "TMST": "TMST", "MST": "MST", "AWST": "AWST", "OEZ": "OEZ", "CHAST": "CHAST", "SRT": "SRT", "CDT": "CDT", "EDT": "EDT", "ARST": "ARST", "ADT": "ADT", "ChST": "ChST", "OESZ": "OESZ", "HADT": "HADT", "HKT": "HKT", "WESZ": "WESZ", "UYT": "UYT", "AEST": "AEST", "COST": "COST", "TMT": "TMT", "HKST": "HKST", "CLT": "CLT", "CHADT": "CHADT", "SAST": "SAST", "ACWDT": "ACWDT", "PST": "PST", "GMT": "GMT", "MESZ": "MESZ", "LHDT": "LHDT", "MYT": "MYT", "HAST": "HAST", "WEZ": "WEZ", "NZDT": "NZDT"},
+		timezones:          map[string]string{"NZST": "NZST", "MDT": "MDT", "COST": "COST", "UYST": "UYST", "CST": "CST", "ChST": "ChST", "SAST": "SAST", "CLST": "CLST", "MYT": "MYT", "OEZ": "OEZ", "HKT": "HKT", "NZDT": "NZDT", "WAST": "WAST", "CHADT": "CHADT", "TMT": "TMT", "TMST": "TMST", "EST": "EST", "MEZ": "MEZ", "GYT": "GYT", "BT": "BT", "WAT": "WAT", "AKST": "AKST", "MESZ": "MESZ", "AST": "AST", "WART": "WART", "WARST": "WARST", "IST": "IST", "ACWST": "ACWST", "LHDT": "LHDT", "EAT": "EAT", "HNT": "HNT", "CAT": "CAT", "GFT": "GFT", "UYT": "UYT", "WIB": "WIB", "ADT": "ADT", "HAT": "HAT", "HAST": "HAST", "BOT": "BOT", "WIT": "WIT", "ARST": "ARST", "JDT": "JDT", "PDT": "PDT", "ACWDT": "ACWDT", "LHST": "LHST", "WESZ": "WESZ", "CDT": "CDT", "AKDT": "AKDT", "MST": "MST", "ACST": "ACST", "SGT": "SGT", "AEDT": "AEDT", "AWDT": "AWDT", "HADT": "HADT", "GMT": "GMT", "ECT": "ECT", "OESZ": "OESZ", "SRT": "SRT", "WITA": "WITA", "AEST": "AEST", "VET": "VET", "∅∅∅": "∅∅∅", "COT": "COT", "CHAST": "CHAST", "CLT": "CLT", "JST": "JST", "ART": "ART", "EDT": "EDT", "ACDT": "ACDT", "PST": "PST", "AWST": "AWST", "WEZ": "WEZ", "HKST": "HKST"},
 	}
 }
 
@@ -175,20 +175,19 @@ func (ti *ti_ER) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ti_ER' and handles both Whole and Real numbers based on 'v'
-func (ti *ti_ER) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ti *ti_ER) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ti_ER' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ti *ti_ER) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ti *ti_ER) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ER'
-func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
@@ -200,20 +199,14 @@ func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(ti.decimal) - 1; j >= 0; j-- {
-				b = append(b, ti.decimal[j])
-			}
-
+			b = append(b, ti.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(ti.group) - 1; j >= 0; j-- {
-					b = append(b, ti.group[j])
-				}
-
+				b = append(b, ti.group[0])
 				count = 1
 			} else {
 				count++
@@ -228,9 +221,7 @@ func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(ti.minus) - 1; j >= 0; j-- {
-			b = append(b, ti.minus[j])
-		}
+		b = append(b, ti.minus[0])
 	}
 
 	// reverse
@@ -249,13 +240,12 @@ func (ti *ti_ER) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ER'
 // in accounting notation.
-func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
@@ -267,20 +257,14 @@ func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(ti.decimal) - 1; j >= 0; j-- {
-				b = append(b, ti.decimal[j])
-			}
-
+			b = append(b, ti.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(ti.group) - 1; j >= 0; j-- {
-					b = append(b, ti.group[j])
-				}
-
+				b = append(b, ti.group[0])
 				count = 1
 			} else {
 				count++
@@ -296,9 +280,7 @@ func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			b = append(b, symbol[j])
 		}
 
-		for j := len(ti.minus) - 1; j >= 0; j-- {
-			b = append(b, ti.minus[j])
-		}
+		b = append(b, ti.minus[0])
 
 	} else {
 
@@ -324,8 +306,7 @@ func (ti *ti_ER) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ti_ER'

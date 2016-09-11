@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"BC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Kapok Kristo obiro", "Ka Kristo osebiro"},
-		timezones:          map[string]string{"JDT": "JDT", "WEZ": "WEZ", "TMT": "TMT", "EDT": "EDT", "ADT": "ADT", "SAST": "SAST", "ECT": "ECT", "AKST": "AKST", "AWST": "AWST", "PST": "PST", "GMT": "GMT", "NZDT": "NZDT", "EST": "EST", "CLT": "CLT", "CLST": "CLST", "UYT": "UYT", "OEZ": "OEZ", "NZST": "NZST", "ACDT": "ACDT", "WARST": "WARST", "SRT": "SRT", "OESZ": "OESZ", "GYT": "GYT", "MYT": "MYT", "HKST": "HKST", "BOT": "BOT", "UYST": "UYST", "CAT": "CAT", "GFT": "GFT", "HKT": "HKT", "LHDT": "LHDT", "CHAST": "CHAST", "CHADT": "CHADT", "BT": "BT", "WAST": "WAST", "PDT": "PDT", "ACWDT": "ACWDT", "MST": "MST", "MDT": "MDT", "TMST": "TMST", "LHST": "LHST", "AKDT": "AKDT", "SGT": "SGT", "AEST": "AEST", "AST": "AST", "ART": "ART", "IST": "IST", "CST": "CST", "AEDT": "AEDT", "∅∅∅": "∅∅∅", "HAST": "HAST", "WESZ": "WESZ", "COST": "COST", "ACST": "ACST", "ARST": "ARST", "WART": "WART", "ChST": "ChST", "HADT": "HADT", "COT": "COT", "MEZ": "MEZ", "MESZ": "MESZ", "WAT": "WAT", "VET": "VET", "CDT": "CDT", "AWDT": "AWDT", "HNT": "HNT", "WIB": "WIB", "EAT": "EAT", "HAT": "HAT", "JST": "JST", "WITA": "WITA", "WIT": "WIT", "ACWST": "ACWST"},
+		timezones:          map[string]string{"ACWDT": "ACWDT", "SGT": "SGT", "AWDT": "AWDT", "CDT": "CDT", "HAST": "HAST", "ADT": "ADT", "BT": "BT", "CST": "CST", "COT": "COT", "∅∅∅": "∅∅∅", "JST": "JST", "AEDT": "AEDT", "BOT": "BOT", "TMT": "TMT", "GMT": "GMT", "WAT": "WAT", "ACST": "ACST", "MYT": "MYT", "HKST": "HKST", "GFT": "GFT", "OESZ": "OESZ", "AST": "AST", "HADT": "HADT", "COST": "COST", "WAST": "WAST", "WEZ": "WEZ", "CHAST": "CHAST", "JDT": "JDT", "IST": "IST", "MST": "MST", "MDT": "MDT", "ACDT": "ACDT", "WARST": "WARST", "PST": "PST", "LHST": "LHST", "LHDT": "LHDT", "CLST": "CLST", "GYT": "GYT", "CLT": "CLT", "HNT": "HNT", "SRT": "SRT", "HKT": "HKT", "EAT": "EAT", "WESZ": "WESZ", "ACWST": "ACWST", "WIB": "WIB", "AEST": "AEST", "ECT": "ECT", "NZST": "NZST", "WITA": "WITA", "SAST": "SAST", "HAT": "HAT", "UYT": "UYT", "NZDT": "NZDT", "PDT": "PDT", "AWST": "AWST", "WIT": "WIT", "ART": "ART", "EST": "EST", "AKST": "AKST", "VET": "VET", "ChST": "ChST", "AKDT": "AKDT", "CHADT": "CHADT", "MESZ": "MESZ", "OEZ": "OEZ", "ARST": "ARST", "TMST": "TMST", "EDT": "EDT", "MEZ": "MEZ", "WART": "WART", "CAT": "CAT", "UYST": "UYST"},
 	}
 }
 
@@ -169,20 +169,19 @@ func (luo *luo) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'luo' and handles both Whole and Real numbers based on 'v'
-func (luo *luo) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (luo *luo) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'luo' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (luo *luo) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (luo *luo) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'luo'
-func (luo *luo) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (luo *luo) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := luo.currencies[currency]
@@ -194,20 +193,14 @@ func (luo *luo) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(luo.decimal) - 1; j >= 0; j-- {
-				b = append(b, luo.decimal[j])
-			}
-
+			b = append(b, luo.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(luo.group) - 1; j >= 0; j-- {
-					b = append(b, luo.group[j])
-				}
-
+				b = append(b, luo.group[0])
 				count = 1
 			} else {
 				count++
@@ -218,9 +211,7 @@ func (luo *luo) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(luo.minus) - 1; j >= 0; j-- {
-			b = append(b, luo.minus[j])
-		}
+		b = append(b, luo.minus[0])
 	}
 
 	// reverse
@@ -241,13 +232,12 @@ func (luo *luo) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'luo'
 // in accounting notation.
-func (luo *luo) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (luo *luo) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := luo.currencies[currency]
@@ -259,20 +249,14 @@ func (luo *luo) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(luo.decimal) - 1; j >= 0; j-- {
-				b = append(b, luo.decimal[j])
-			}
-
+			b = append(b, luo.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(luo.group) - 1; j >= 0; j-- {
-					b = append(b, luo.group[j])
-				}
-
+				b = append(b, luo.group[0])
 				count = 1
 			} else {
 				count++
@@ -284,9 +268,7 @@ func (luo *luo) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 
 	if num < 0 {
 
-		for j := len(luo.minus) - 1; j >= 0; j-- {
-			b = append(b, luo.minus[j])
-		}
+		b = append(b, luo.minus[0])
 
 	}
 
@@ -313,8 +295,7 @@ func (luo *luo) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'luo'

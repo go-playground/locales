@@ -64,7 +64,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BCE", "CE"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"WEZ": "WEZ", "HNT": "HNT", "AKST": "AKST", "HAT": "HAT", "MESZ": "MESZ", "ECT": "ECT", "ARST": "ARST", "AWST": "AWST", "PDT": "PDT", "MEZ": "MEZ", "CHAST": "CHAST", "ACDT": "ACDT", "ART": "ART", "JST": "JST", "AEDT": "AEDT", "NZST": "NZST", "EAT": "EAT", "GFT": "GFT", "IST": "IST", "SRT": "SRT", "WIT": "WIT", "LHDT": "LHDT", "AEST": "AEST", "WAST": "WAST", "MYT": "MYT", "AKDT": "AKDT", "WAT": "WAT", "AWDT": "AWDT", "UYST": "UYST", "BOT": "BOT", "ChST": "ChST", "MST": "MST", "TMST": "TMST", "WART": "WART", "TMT": "TMT", "ACWST": "ACWST", "HAST": "HAST", "HKST": "HKST", "OESZ": "OESZ", "ACST": "ACST", "WITA": "WITA", "ACWDT": "ACWDT", "HADT": "HADT", "HKT": "HKT", "CDT": "روٙشنایی نئهادار روٙز", "COST": "COST", "GYT": "GYT", "CST": "گاٛت مینجاٛیی ئستاٛنداٛرد", "EDT": "EDT", "CHADT": "CHADT", "OEZ": "OEZ", "WARST": "WARST", "SAST": "SAST", "SGT": "SGT", "CLST": "CLST", "EST": "EST", "BT": "BT", "MDT": "MDT", "VET": "VET", "JDT": "JDT", "∅∅∅": "∅∅∅", "LHST": "LHST", "UYT": "UYT", "COT": "COT", "PST": "PST", "CLT": "CLT", "WIB": "WIB", "NZDT": "NZDT", "AST": "AST", "ADT": "ADT", "WESZ": "WESZ", "CAT": "CAT", "GMT": "GMT"},
+		timezones:              map[string]string{"AST": "AST", "SRT": "SRT", "UYT": "UYT", "HADT": "HADT", "COT": "COT", "ECT": "ECT", "VET": "VET", "HAT": "HAT", "PST": "PST", "ACWST": "ACWST", "SAST": "SAST", "MESZ": "MESZ", "CLST": "CLST", "ADT": "ADT", "TMST": "TMST", "AKDT": "AKDT", "CHAST": "CHAST", "MEZ": "MEZ", "OEZ": "OEZ", "AKST": "AKST", "JST": "JST", "GYT": "GYT", "NZST": "NZST", "NZDT": "NZDT", "HKST": "HKST", "COST": "COST", "MDT": "MDT", "UYST": "UYST", "MST": "MST", "WAT": "WAT", "JDT": "JDT", "CLT": "CLT", "AEDT": "AEDT", "ART": "ART", "EST": "EST", "ACWDT": "ACWDT", "LHDT": "LHDT", "OESZ": "OESZ", "WAST": "WAST", "ACST": "ACST", "ACDT": "ACDT", "AWST": "AWST", "AWDT": "AWDT", "PDT": "PDT", "HKT": "HKT", "ARST": "ARST", "CST": "گاٛت مینجاٛیی ئستاٛنداٛرد", "GMT": "GMT", "HNT": "HNT", "ChST": "ChST", "EDT": "EDT", "WART": "WART", "AEST": "AEST", "MYT": "MYT", "WIT": "WIT", "CAT": "CAT", "BT": "BT", "TMT": "TMT", "GFT": "GFT", "WEZ": "WEZ", "CDT": "روٙشنایی نئهادار روٙز", "EAT": "EAT", "CHADT": "CHADT", "WIB": "WIB", "SGT": "SGT", "HAST": "HAST", "LHST": "LHST", "WARST": "WARST", "IST": "IST", "BOT": "BOT", "∅∅∅": "∅∅∅", "WITA": "WITA", "WESZ": "WESZ"},
 	}
 }
 
@@ -174,7 +174,8 @@ func (lrc *lrc_IQ) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lrc_IQ' and handles both Whole and Real numbers based on 'v'
-func (lrc *lrc_IQ) FmtNumber(num float64, v uint64) (results string) {
+func (lrc *lrc_IQ) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lrc.decimal) + len(lrc.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -210,13 +211,12 @@ func (lrc *lrc_IQ) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'lrc_IQ' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (lrc *lrc_IQ) FmtPercent(num float64, v uint64) (results string) {
+func (lrc *lrc_IQ) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lrc.decimal)
 	b := make([]byte, 0, l)
@@ -242,12 +242,11 @@ func (lrc *lrc_IQ) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, lrc.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lrc_IQ'
-func (lrc *lrc_IQ) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (lrc *lrc_IQ) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lrc.currencies[currency]
@@ -304,13 +303,12 @@ func (lrc *lrc_IQ) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lrc_IQ'
 // in accounting notation.
-func (lrc *lrc_IQ) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (lrc *lrc_IQ) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lrc.currencies[currency]
@@ -379,8 +377,7 @@ func (lrc *lrc_IQ) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'lrc_IQ'

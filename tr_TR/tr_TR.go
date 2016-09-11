@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"MÖ", "MS"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Milattan Önce", "Milattan Sonra"},
-		timezones:              map[string]string{"ACWDT": "İçbatı Avustralya Yaz Saati", "HADT": "Hawaii-Aleut Yaz Saati", "AWST": "Batı Avustralya Standart Saati", "AEDT": "Doğu Avustralya Yaz Saati", "COT": "Kolombiya Standart Saati", "ACDT": "Orta Avustralya Yaz Saati", "VET": "Venezuela Saati", "HKT": "Hong Kong Standart Saati", "HAT": "Newfoundland Yaz Saati", "PST": "Kuzey Amerika Pasifik Standart Saati", "AST": "Atlantik Standart Saati", "TMT": "Türkmenistan Standart Saati", "ECT": "Ekvador Saati", "EDT": "Kuzey Amerika Doğu Yaz Saati", "UYT": "Uruguay Standart Saati", "WIT": "Doğu Endonezya Saati", "NZST": "Yeni Zelanda Standart Saati", "NZDT": "Yeni Zelanda Yaz Saati", "CHAST": "Chatham Standart Saati", "GFT": "Fransız Guyanası Saati", "LHDT": "Lord Howe Yaz Saati", "CST": "Kuzey Amerika Merkezi Standart Saati", "WAST": "Batı Afrika Yaz Saati", "WITA": "Orta Endonezya Saati", "CLST": "Şili Yaz Saati", "AEST": "Doğu Avustralya Standart Saati", "MDT": "Kuzey Amerika Dağ Yaz Saati", "AKST": "Alaska Standart Saati", "CAT": "Orta Afrika Saati", "OESZ": "Doğu Avrupa Yaz Saati", "BOT": "Bolivya Saati", "ACST": "Orta Avustralya Standart Saati", "AKDT": "Alaska Yaz Saati", "AWDT": "Batı Avustralya Yaz Saati", "WAT": "Batı Afrika Standart Saati", "MESZ": "Orta Avrupa Yaz Saati", "ACWST": "İçbatı Avustralya Standart Saati", "LHST": "Lord Howe Standart Saati", "JST": "Japonya Standart Saati", "CHADT": "Chatham Yaz Saati", "TMST": "Türkmenistan Yaz Saati", "∅∅∅": "Azorlar Yaz Saati", "HKST": "Hong Kong Yaz Saati", "EST": "Kuzey Amerika Doğu Standart Saati", "CLT": "Şili Standart Saati", "UYST": "Uruguay Yaz Saati", "WIB": "Batı Endonezya Saati", "WART": "Batı Arjantin Standart Saati", "ChST": "Chamorro Saati", "JDT": "Japonya Yaz Saati", "SGT": "Singapur Standart Saati", "WEZ": "Batı Avrupa Standart Saati", "HNT": "Newfoundland Standart Saati", "PDT": "Kuzey Amerika Pasifik Yaz Saati", "WARST": "Batı Arjantin Yaz Saati", "MEZ": "Orta Avrupa Standart Saati", "SRT": "Surinam Saati", "CDT": "Kuzey Amerika Merkezi Yaz Saati", "GMT": "Greenwich Ortalama Saati", "COST": "Kolombiya Yaz Saati", "SAST": "Güney Afrika Standart Saati", "MST": "Kuzey Amerika Dağ Standart Saati", "HAST": "Hawaii-Aleut Standart Saati", "MYT": "Malezya Saati", "EAT": "Doğu Afrika Saati", "WESZ": "Batı Avrupa Yaz Saati", "OEZ": "Doğu Avrupa Standart Saati", "BT": "Bhutan Saati", "IST": "Hindistan Standart Saati", "ART": "Arjantin Standart Saati", "ARST": "Arjantin Yaz Saati", "ADT": "Atlantik Yaz Saati", "GYT": "Guyana Saati"},
+		timezones:              map[string]string{"MDT": "Makao Yaz Saati", "JST": "Japonya Standart Saati", "AWST": "Batı Avustralya Standart Saati", "CAT": "Orta Afrika Saati", "HADT": "Hawaii-Aleut Yaz Saati", "ACWST": "İçbatı Avustralya Standart Saati", "WART": "Batı Arjantin Standart Saati", "WARST": "Batı Arjantin Yaz Saati", "SGT": "Singapur Standart Saati", "GYT": "Guyana Saati", "TMT": "Türkmenistan Standart Saati", "HAST": "Hawaii-Aleut Standart Saati", "MYT": "Malezya Saati", "IST": "Hindistan Standart Saati", "PST": "Kuzey Amerika Pasifik Standart Saati", "EDT": "Kuzey Amerika Doğu Yaz Saati", "MST": "Makao Standart Saati", "WIB": "Batı Endonezya Saati", "CST": "Kuzey Amerika Merkezi Standart Saati", "CDT": "Kuzey Amerika Merkezi Yaz Saati", "NZDT": "Yeni Zelanda Yaz Saati", "OEZ": "Doğu Avrupa Standart Saati", "AST": "Atlantik Standart Saati", "CLT": "Şili Standart Saati", "SRT": "Surinam Saati", "ACWDT": "İçbatı Avustralya Yaz Saati", "OESZ": "Doğu Avrupa Yaz Saati", "HKT": "Hong Kong Standart Saati", "WAT": "Batı Afrika Standart Saati", "CHAST": "Chatham Standart Saati", "ADT": "Atlantik Yaz Saati", "HAT": "Newfoundland Yaz Saati", "UYST": "Uruguay Yaz Saati", "WIT": "Doğu Endonezya Saati", "TMST": "Türkmenistan Yaz Saati", "EST": "Kuzey Amerika Doğu Standart Saati", "AKDT": "Alaska Yaz Saati", "SAST": "Güney Afrika Standart Saati", "GMT": "Greenwich Ortalama Saati", "COT": "Kolombiya Standart Saati", "COST": "Kolombiya Yaz Saati", "WAST": "Batı Afrika Yaz Saati", "JDT": "Japonya Yaz Saati", "ACST": "Orta Avustralya Standart Saati", "PDT": "Kuzey Amerika Pasifik Yaz Saati", "AKST": "Alaska Standart Saati", "LHDT": "Lord Howe Yaz Saati", "EAT": "Doğu Afrika Saati", "∅∅∅": "Amazon Yaz Saati", "MEZ": "Orta Avrupa Standart Saati", "AWDT": "Batı Avustralya Yaz Saati", "BT": "Bhutan Saati", "ARST": "Arjantin Yaz Saati", "ChST": "Chamorro Saati", "ACDT": "Orta Avustralya Yaz Saati", "HKST": "Hong Kong Yaz Saati", "UYT": "Uruguay Standart Saati", "WITA": "Orta Endonezya Saati", "WESZ": "Batı Avrupa Yaz Saati", "CHADT": "Chatham Yaz Saati", "CLST": "Şili Yaz Saati", "VET": "Venezuela Saati", "BOT": "Bolivya Saati", "LHST": "Lord Howe Standart Saati", "WEZ": "Batı Avrupa Standart Saati", "MESZ": "Orta Avrupa Yaz Saati", "AEDT": "Doğu Avustralya Yaz Saati", "ART": "Arjantin Standart Saati", "GFT": "Fransız Guyanası Saati", "ECT": "Ekvador Saati", "NZST": "Yeni Zelanda Standart Saati", "AEST": "Doğu Avustralya Standart Saati", "HNT": "Newfoundland Standart Saati"},
 	}
 }
 
@@ -201,7 +201,8 @@ func (tr *tr_TR) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tr_TR' and handles both Whole and Real numbers based on 'v'
-func (tr *tr_TR) FmtNumber(num float64, v uint64) (results string) {
+func (tr *tr_TR) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(tr.decimal) + len(tr.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -237,13 +238,12 @@ func (tr *tr_TR) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'tr_TR' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (tr *tr_TR) FmtPercent(num float64, v uint64) (results string) {
+func (tr *tr_TR) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(tr.decimal) + len(tr.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -282,12 +282,11 @@ func (tr *tr_TR) FmtPercent(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tr_TR'
-func (tr *tr_TR) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (tr *tr_TR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tr.currencies[currency]
@@ -340,13 +339,12 @@ func (tr *tr_TR) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tr_TR'
 // in accounting notation.
-func (tr *tr_TR) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (tr *tr_TR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tr.currencies[currency]
@@ -406,8 +404,7 @@ func (tr *tr_TR) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'tr_TR'

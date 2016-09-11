@@ -56,7 +56,7 @@ func New() locales.Translator {
 		monthsWide:             []string{"", "Ianuali", "Pepeluali", "Malaki", "ʻApelila", "Mei", "Iune", "Iulai", "ʻAukake", "Kepakemapa", "ʻOkakopa", "Nowemapa", "Kekemapa"},
 		daysAbbreviated:        []string{"LP", "P1", "P2", "P3", "P4", "P5", "P6"},
 		daysWide:               []string{"Lāpule", "Poʻakahi", "Poʻalua", "Poʻakolu", "Poʻahā", "Poʻalima", "Poʻaono"},
-		timezones:              map[string]string{"CHADT": "CHADT", "MESZ": "MESZ", "ACWST": "ACWST", "SRT": "SRT", "TMT": "TMT", "MYT": "MYT", "UYT": "UYT", "GYT": "GYT", "MEZ": "MEZ", "JDT": "JDT", "LHDT": "LHDT", "ChST": "ChST", "HKST": "HKST", "JST": "JST", "CAT": "CAT", "GMT": "GMT", "BOT": "BOT", "COT": "COT", "ECT": "ECT", "EAT": "EAT", "WESZ": "WESZ", "OEZ": "OEZ", "ACDT": "ACDT", "WIT": "WIT", "AKST": "AKST", "HNT": "HNT", "CHAST": "CHAST", "CLT": "CLT", "NZST": "NZST", "ART": "ART", "WAST": "WAST", "WARST": "WARST", "GFT": "GFT", "SGT": "SGT", "PDT": "PDT", "OESZ": "OESZ", "WART": "WART", "AKDT": "AKDT", "EDT": "EDT", "CLST": "CLST", "PST": "PST", "BT": "BT", "VET": "VET", "AWDT": "AWDT", "NZDT": "NZDT", "ARST": "ARST", "WAT": "WAT", "LHST": "LHST", "HAST": "HAST", "EST": "EST", "AST": "AST", "ACST": "ACST", "ADT": "ADT", "IST": "IST", "MST": "MST", "UYST": "UYST", "AEDT": "AEDT", "WIB": "WIB", "TMST": "TMST", "HADT": "HADT", "AWST": "AWST", "CST": "CST", "MDT": "MDT", "WEZ": "WEZ", "AEST": "AEST", "COST": "COST", "WITA": "WITA", "∅∅∅": "∅∅∅", "HAT": "HAT", "HKT": "HKT", "CDT": "CDT", "SAST": "SAST", "ACWDT": "ACWDT"},
+		timezones:              map[string]string{"ACWDT": "ACWDT", "LHST": "LHST", "LHDT": "LHDT", "WART": "WART", "HAST": "HAST", "WIB": "WIB", "ADT": "ADT", "VET": "VET", "HKST": "HKST", "UYST": "UYST", "WESZ": "WESZ", "BOT": "BOT", "WITA": "WITA", "TMST": "TMST", "WARST": "WARST", "HADT": "HADT", "EAT": "EAT", "WEZ": "WEZ", "OESZ": "OESZ", "SGT": "SGT", "GYT": "GYT", "CAT": "CAT", "CST": "CST", "MESZ": "MESZ", "MYT": "MYT", "SAST": "SAST", "ACST": "ACST", "CHAST": "CHAST", "AWDT": "AWDT", "WIT": "WIT", "GFT": "GFT", "JDT": "JDT", "AKST": "AKST", "OEZ": "OEZ", "AEST": "AEST", "AWST": "AWST", "UYT": "UYT", "BT": "BT", "TMT": "TMT", "GMT": "GMT", "∅∅∅": "∅∅∅", "NZST": "NZST", "MDT": "MDT", "ACDT": "ACDT", "ChST": "ChST", "MST": "MST", "CHADT": "CHADT", "CLST": "CLST", "AST": "AST", "PST": "PST", "ART": "ART", "EST": "EST", "WAST": "WAST", "ACWST": "ACWST", "PDT": "PDT", "COST": "COST", "IST": "IST", "MEZ": "MEZ", "WAT": "WAT", "AEDT": "AEDT", "SRT": "SRT", "AKDT": "AKDT", "HAT": "HAT", "ARST": "ARST", "NZDT": "NZDT", "CLT": "CLT", "HNT": "HNT", "COT": "COT", "EDT": "EDT", "ECT": "ECT", "JST": "JST", "HKT": "HKT", "CDT": "CDT"},
 	}
 }
 
@@ -173,20 +173,19 @@ func (haw *haw_US) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'haw_US' and handles both Whole and Real numbers based on 'v'
-func (haw *haw_US) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (haw *haw_US) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'haw_US' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (haw *haw_US) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (haw *haw_US) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'haw_US'
-func (haw *haw_US) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (haw *haw_US) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := haw.currencies[currency]
@@ -198,20 +197,14 @@ func (haw *haw_US) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(haw.decimal) - 1; j >= 0; j-- {
-				b = append(b, haw.decimal[j])
-			}
-
+			b = append(b, haw.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(haw.group) - 1; j >= 0; j-- {
-					b = append(b, haw.group[j])
-				}
-
+				b = append(b, haw.group[0])
 				count = 1
 			} else {
 				count++
@@ -226,9 +219,7 @@ func (haw *haw_US) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(haw.minus) - 1; j >= 0; j-- {
-			b = append(b, haw.minus[j])
-		}
+		b = append(b, haw.minus[0])
 	}
 
 	// reverse
@@ -247,13 +238,12 @@ func (haw *haw_US) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'haw_US'
 // in accounting notation.
-func (haw *haw_US) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (haw *haw_US) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := haw.currencies[currency]
@@ -265,20 +255,14 @@ func (haw *haw_US) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(haw.decimal) - 1; j >= 0; j-- {
-				b = append(b, haw.decimal[j])
-			}
-
+			b = append(b, haw.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(haw.group) - 1; j >= 0; j-- {
-					b = append(b, haw.group[j])
-				}
-
+				b = append(b, haw.group[0])
 				count = 1
 			} else {
 				count++
@@ -324,8 +308,7 @@ func (haw *haw_US) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, haw.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'haw_US'

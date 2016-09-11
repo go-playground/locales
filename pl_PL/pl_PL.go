@@ -48,7 +48,7 @@ func New() locales.Translator {
 		locale:                 "pl_PL",
 		pluralsCardinal:        []locales.PluralRule{2, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{4, 5, 6, 2},
+		pluralsRange:           []locales.PluralRule{5, 6, 2, 4},
 		decimal:                ",",
 		group:                  " ",
 		minus:                  "-",
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.n.e.", "n.e."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"p.n.e.", "n.e."},
-		timezones:              map[string]string{"HKST": "Hongkong (czas letni)", "WIB": "Indonezja Zachodnia", "CHAST": "Chatham (czas standardowy)", "SRT": "Surinam", "ECT": "Ekwador", "SGT": "Singapur", "COST": "Kolumbia (czas letni)", "ADT": "Czas atlantycki letni", "LHST": "Lord Howe (czas standardowy)", "AKST": "Alaska (czas standardowy)", "CAT": "Czas środkowoafrykański", "COT": "Kolumbia (czas standardowy)", "ACWST": "Czas środkowo-zachodnioaustralijski standardowy", "GFT": "Gujana Francuska", "GMT": "Czas uniwersalny", "IST": "Czas indyjski", "EAT": "Czas wschodnioafrykański", "CDT": "Czas środkowoamerykański letni", "AWDT": "Czas zachodnioaustralijski letni", "CLT": "Chile (czas standardowy)", "CLST": "Chile (czas letni)", "CHADT": "Chatham (czas letni)", "WART": "Argentyna Zachodnia (czas standardowy)", "WAST": "Czas zachodnioafrykański letni", "HNT": "Nowa Fundlandia (czas standardowy)", "EDT": "Czas wschodnioamerykański letni", "UYST": "Urugwaj (czas letni)", "PDT": "Czas pacyficzny letni", "WITA": "Indonezja Środkowa", "JDT": "Japonia (czas letni)", "HAST": "Hawaje-Aleuty (czas standardowy)", "HAT": "Nowa Fundlandia (czas letni)", "HKT": "Hongkong (czas standardowy)", "WEZ": "Czas zachodnioeuropejski standardowy", "PST": "Czas pacyficzny standardowy", "ART": "Argentyna (czas standardowy)", "SAST": "Czas południowoafrykański", "∅∅∅": "Azory (czas letni)", "LHDT": "Lord Howe (czas letni)", "MYT": "Malezja", "ARST": "Argentyna (czas letni)", "TMT": "Turkmenistan (czas standardowy)", "JST": "Japonia (czas standardowy)", "AST": "Czas standardowy atlantycki", "MDT": "Czas górski letni", "HADT": "Hawaje-Aleuty (czas letni)", "EST": "Czas wschodnioamerykański standardowy", "ACST": "Czas środkowoaustralijski standardowy", "WIT": "Indonezja Wschodnia", "WESZ": "Czas zachodnioeuropejski letni", "AWST": "Czas zachodnioaustralijski standardowy", "WARST": "Argentyna Zachodnia (czas letni)", "VET": "Wenezuela", "AKDT": "Alaska (czas letni)", "CST": "Czas środkowoamerykański standardowy", "AEDT": "Czas wschodnioaustraliski letni", "GYT": "Gujana", "ACDT": "Czas środkowoaustralijski letni", "MESZ": "Czas środkowoeuropejski letni", "OEZ": "Czas wschodnioeuropejski standardowy", "AEST": "Czas standardowy wschodnioaustraliski", "NZDT": "Nowa Zelandia (czas letni)", "BT": "Bhutan", "TMST": "Turkmenistan (czas letni)", "MST": "Czas górski standardowy", "ChST": "Czamorro", "UYT": "Urugwaj (czas standardowy)", "NZST": "Nowa Zelandia (czas standardowy)", "BOT": "Boliwia", "WAT": "Czas zachodnioafrykański standardowy", "OESZ": "Czas wschodnioeuropejski letni", "MEZ": "Czas środkowoeuropejski standardowy", "ACWDT": "Czas środkowo-zachodnioaustralijski letni"},
+		timezones:              map[string]string{"CLST": "Chile (czas letni)", "VET": "Wenezuela", "HAT": "Nowa Fundlandia (czas letni)", "GYT": "Gujana", "GFT": "Gujana Francuska", "LHST": "Lord Howe (czas standardowy)", "ACWDT": "Czas środkowo-zachodnioaustralijski letni", "CHADT": "Chatham (czas letni)", "JST": "Japonia (czas standardowy)", "AEDT": "Czas wschodnioaustraliski letni", "PST": "Czas pacyficzny standardowy", "∅∅∅": "Azory (czas letni)", "WIT": "Indonezja Wschodnia", "EST": "Czas wschodnioamerykański standardowy", "ChST": "Czamorro", "ACST": "Czas środkowoaustralijski standardowy", "WARST": "Argentyna Zachodnia (czas letni)", "MYT": "Malezja", "HNT": "Nowa Fundlandia (czas standardowy)", "OESZ": "Czas wschodnioeuropejski letni", "ACDT": "Czas środkowoaustralijski letni", "TMT": "Turkmenistan (czas standardowy)", "WESZ": "Czas zachodnioeuropejski letni", "ACWST": "Czas środkowo-zachodnioaustralijski standardowy", "MESZ": "Czas środkowoeuropejski letni", "SGT": "Singapur", "AWST": "Czas zachodnioaustralijski standardowy", "AWDT": "Czas zachodnioaustralijski letni", "MEZ": "Czas środkowoeuropejski standardowy", "EAT": "Czas wschodnioafrykański", "WAST": "Czas zachodnioafrykański letni", "MDT": "Czas górski letni", "HKST": "Hongkong (czas letni)", "ARST": "Argentyna (czas letni)", "CDT": "Czas środkowoamerykański letni", "AKDT": "Alaska (czas letni)", "LHDT": "Lord Howe (czas letni)", "WART": "Argentyna Zachodnia (czas standardowy)", "ECT": "Ekwador", "UYT": "Urugwaj (czas standardowy)", "WITA": "Indonezja Środkowa", "AKST": "Alaska (czas standardowy)", "PDT": "Czas pacyficzny letni", "ART": "Argentyna (czas standardowy)", "WIB": "Indonezja Zachodnia", "OEZ": "Czas wschodnioeuropejski standardowy", "BT": "Bhutan", "GMT": "Czas uniwersalny", "NZST": "Nowa Zelandia (czas standardowy)", "CHAST": "Chatham (czas standardowy)", "JDT": "Japonia (czas letni)", "AEST": "Czas standardowy wschodnioaustraliski", "MST": "Czas górski standardowy", "COT": "Kolumbia (czas standardowy)", "COST": "Kolumbia (czas letni)", "ADT": "Czas atlantycki letni", "HADT": "Hawaje-Aleuty (czas letni)", "NZDT": "Nowa Zelandia (czas letni)", "WEZ": "Czas zachodnioeuropejski standardowy", "BOT": "Boliwia", "SRT": "Surinam", "HKT": "Hongkong (czas standardowy)", "TMST": "Turkmenistan (czas letni)", "CST": "Czas środkowoamerykański standardowy", "HAST": "Hawaje-Aleuty (czas standardowy)", "IST": "Czas indyjski", "EDT": "Czas wschodnioamerykański letni", "SAST": "Czas południowoafrykański", "AST": "Czas standardowy atlantycki", "CAT": "Czas środkowoafrykański", "UYST": "Urugwaj (czas letni)", "WAT": "Czas zachodnioafrykański standardowy", "CLT": "Chile (czas standardowy)"},
 	}
 }
 
@@ -230,7 +230,8 @@ func (pl *pl_PL) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'pl_PL' and handles both Whole and Real numbers based on 'v'
-func (pl *pl_PL) FmtNumber(num float64, v uint64) (results string) {
+func (pl *pl_PL) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(pl.decimal) + len(pl.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -250,7 +251,6 @@ func (pl *pl_PL) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(pl.group) - 1; j >= 0; j-- {
 					b = append(b, pl.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -269,13 +269,12 @@ func (pl *pl_PL) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'pl_PL' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (pl *pl_PL) FmtPercent(num float64, v uint64) (results string) {
+func (pl *pl_PL) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(pl.decimal)
 	b := make([]byte, 0, l)
@@ -301,12 +300,11 @@ func (pl *pl_PL) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, pl.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'pl_PL'
-func (pl *pl_PL) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (pl *pl_PL) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pl.currencies[currency]
@@ -328,7 +326,6 @@ func (pl *pl_PL) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(pl.group) - 1; j >= 0; j-- {
 					b = append(b, pl.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -362,13 +359,12 @@ func (pl *pl_PL) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'pl_PL'
 // in accounting notation.
-func (pl *pl_PL) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (pl *pl_PL) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := pl.currencies[currency]
@@ -390,7 +386,6 @@ func (pl *pl_PL) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(pl.group) - 1; j >= 0; j-- {
 					b = append(b, pl.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -431,8 +426,7 @@ func (pl *pl_PL) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'pl_PL'

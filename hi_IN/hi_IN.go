@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"ईसा-पूर्व", "ईस्वी"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"ईसा-पूर्व", "ईसवी सन"},
-		timezones:          map[string]string{"HADT": "हवाई–आल्यूशन डेलाइट समय", "UYST": "उरुग्वे ग्रीष्मकालीन समय", "ACDT": "ऑस्\u200dट्रेलियाई केंद्रीय डेलाइट समय", "TMT": "तुर्कमेनिस्तान मानक समय", "ACWDT": "ऑस्\u200dट्रेलियाई केंद्रीय पश्चिमी डेलाइट समय", "JST": "जापान मानक समय", "HAST": "हवाई–आल्यूशन मानक समय", "AKST": "अलास्\u200dका मानक समय", "AKDT": "अलास्\u200dका डेलाइट समय", "UYT": "उरुग्वे मानक समय", "CLT": "चिली मानक समय", "CHAST": "चैथम मानक समय", "WART": "पश्चिमी अर्जेंटीना मानक समय", "AST": "अटलांटिक मानक समय", "MST": "उत्तरी अमेरिकी माउंटेन मानक समय", "ACWST": "ऑस्\u200dट्रेलियाई केंद्रीय पश्चिमी मानक समय", "WIT": "पूर्वी इंडोनेशिया समय", "LHDT": "लॉर्ड होवे डेलाइट समय", "JDT": "जापान डेलाइट समय", "HAT": "न्यूफ़ाउंडलैंड डेलाइट समय", "CAT": "मध्य अफ़्रीका समय", "MEZ": "मध्य यूरोपीय मानक समय", "HKST": "हाँग काँग ग्रीष्मकालीन समय", "NZST": "न्यूज़ीलैंड मानक समय", "OESZ": "पूर्वी यूरोपीय ग्रीष्मकालीन समय", "MYT": "मलेशिया समय", "SGT": "सिंगापुर समय", "AWST": "ऑस्ट्रेलियाई पश्चिमी मानक समय", "HKT": "हाँग काँग मानक समय", "GFT": "फ़्रेंच गुयाना समय", "ECT": "इक्वाडोर समय", "LHST": "लॉर्ड होवे मानक समय", "WAST": "पश्चिम अफ़्रीका ग्रीष्मकालीन समय", "ADT": "अटलांटिक डेलाइट समय", "SRT": "सूरीनाम समय", "WITA": "मध्य इंडोनेशिया समय", "OEZ": "पूर्वी यूरोपीय मानक समय", "ARST": "अर्जेंटीना ग्रीष्मकालीन समय", "WARST": "पश्चिमी अर्जेंटीना ग्रीष्मकालीन समय", "ChST": "चामोरो मानक समय", "HNT": "न्यूफ़ाउंडलैंड मानक समय", "COST": "कोलंबिया ग्रीष्मकालीन समय", "BT": "भूटान समय", "COT": "कोलंबिया मानक समय", "GYT": "गुयाना समय", "ART": "अर्जेंटीना मानक समय", "PST": "उत्तरी अमेरिकी प्रशांत मानक समय", "ACST": "ऑस्\u200dट्रेलियाई केंद्रीय मानक समय", "VET": "वेनेज़ुएला समय", "WEZ": "पश्चिमी यूरोपीय मानक समय", "AWDT": "ऑस्ट्रेलियाई पश्चिमी डेलाइट समय", "EST": "उत्तरी अमेरिकी पूर्वी मानक समय", "AEDT": "ऑस्\u200dट्रेलियाई पूर्वी डेलाइट समय", "WIB": "पश्चिमी इंडोनेशिया समय", "BOT": "बोलीविया समय", "WAT": "पश्चिम अफ़्रीका मानक समय", "∅∅∅": "अज़ोरेस ग्रीष्मकालीन समय", "IST": "भारतीय मानक समय", "GMT": "ग्रीनविच मीन टाइम", "AEST": "ऑस्\u200dट्रेलियाई पूर्वी मानक समय", "PDT": "उत्तरी अमेरिकी प्रशांत डेलाइट समय", "MDT": "उत्तरी अमेरिकी माउंटेन डेलाइट समय", "CST": "उत्तरी अमेरिकी केंद्रीय मानक समय", "EDT": "उत्तरी अमेरिकी पूर्वी डेलाइट समय", "NZDT": "न्यूज़ीलैंड डेलाइट समय", "SAST": "दक्षिण अफ़्रीका समय", "EAT": "पूर्वी अफ़्रीका समय", "CLST": "चिली ग्रीष्मकालीन समय", "MESZ": "मध्\u200dय यूरोपीय ग्रीष्\u200dमकालीन समय", "TMST": "तुर्कमेनिस्तान ग्रीष्मकालीन समय", "WESZ": "पश्चिमी यूरोपीय ग्रीष्\u200dमकालीन समय", "CDT": "उत्तरी अमेरिकी केंद्रीय डेलाइट समय", "CHADT": "चैथम डेलाइट समय"},
+		timezones:          map[string]string{"AST": "अटलांटिक मानक समय", "∅∅∅": "अज़ोरेस ग्रीष्मकालीन समय", "COST": "कोलंबिया ग्रीष्मकालीन समय", "WEZ": "पश्चिमी यूरोपीय मानक समय", "CLST": "चिली ग्रीष्मकालीन समय", "JST": "जापान मानक समय", "JDT": "जापान डेलाइट समय", "MYT": "मलेशिया समय", "SGT": "सिंगापुर समय", "EDT": "उत्तरी अमेरिकी पूर्वी डेलाइट समय", "ChST": "चामोरो मानक समय", "EAT": "पूर्वी अफ़्रीका समय", "ART": "अर्जेंटीना मानक समय", "EST": "उत्तरी अमेरिकी पूर्वी मानक समय", "OESZ": "पूर्वी यूरोपीय ग्रीष्मकालीन समय", "WAT": "पश्चिम अफ़्रीका मानक समय", "ACDT": "ऑस्\u200dट्रेलियाई केंद्रीय डेलाइट समय", "PDT": "उत्तरी अमेरिकी प्रशांत डेलाइट समय", "IST": "भारतीय मानक समय", "WIT": "पूर्वी इंडोनेशिया समय", "GFT": "फ़्रेंच गुयाना समय", "HAST": "हवाई–आल्यूशन मानक समय", "AKDT": "अलास्\u200dका डेलाइट समय", "WAST": "पश्चिम अफ़्रीका ग्रीष्मकालीन समय", "CLT": "चिली मानक समय", "BOT": "बोलीविया समय", "HKT": "हाँग काँग मानक समय", "UYST": "उरुग्वे ग्रीष्मकालीन समय", "WITA": "मध्य इंडोनेशिया समय", "BT": "भूटान समय", "ACWDT": "ऑस्\u200dट्रेलियाई केंद्रीय पश्चिमी डेलाइट समय", "LHST": "लॉर्ड होवे मानक समय", "UYT": "उरुग्वे मानक समय", "TMT": "तुर्कमेनिस्तान मानक समय", "COT": "कोलंबिया मानक समय", "ECT": "इक्वाडोर समय", "ACST": "ऑस्\u200dट्रेलियाई केंद्रीय मानक समय", "CAT": "मध्य अफ़्रीका समय", "HADT": "हवाई–आल्यूशन डेलाइट समय", "OEZ": "पूर्वी यूरोपीय मानक समय", "MDT": "उत्तरी अमेरिकी माउंटेन डेलाइट समय", "GMT": "ग्रीनविच मीन टाइम", "LHDT": "लॉर्ड होवे डेलाइट समय", "MESZ": "मध्\u200dय यूरोपीय ग्रीष्\u200dमकालीन समय", "AWST": "ऑस्ट्रेलियाई पश्चिमी मानक समय", "SRT": "सूरीनाम समय", "WIB": "पश्चिमी इंडोनेशिया समय", "AEST": "ऑस्\u200dट्रेलियाई पूर्वी मानक समय", "PST": "उत्तरी अमेरिकी प्रशांत मानक समय", "CST": "उत्तरी अमेरिकी केंद्रीय मानक समय", "MEZ": "मध्य यूरोपीय मानक समय", "WARST": "पश्चिमी अर्जेंटीना ग्रीष्मकालीन समय", "VET": "वेनेज़ुएला समय", "ADT": "अटलांटिक डेलाइट समय", "AKST": "अलास्\u200dका मानक समय", "NZST": "न्यूज़ीलैंड मानक समय", "NZDT": "न्यूज़ीलैंड डेलाइट समय", "WART": "पश्चिमी अर्जेंटीना मानक समय", "AWDT": "ऑस्ट्रेलियाई पश्चिमी डेलाइट समय", "HNT": "न्यूफ़ाउंडलैंड मानक समय", "GYT": "गुयाना समय", "TMST": "तुर्कमेनिस्तान ग्रीष्मकालीन समय", "ACWST": "ऑस्\u200dट्रेलियाई केंद्रीय पश्चिमी मानक समय", "MST": "उत्तरी अमेरिकी माउंटेन मानक समय", "HKST": "हाँग काँग ग्रीष्मकालीन समय", "ARST": "अर्जेंटीना ग्रीष्मकालीन समय", "CHADT": "चैथम डेलाइट समय", "CDT": "उत्तरी अमेरिकी केंद्रीय डेलाइट समय", "SAST": "दक्षिण अफ़्रीका समय", "WESZ": "पश्चिमी यूरोपीय ग्रीष्\u200dमकालीन समय", "CHAST": "चैथम मानक समय", "AEDT": "ऑस्\u200dट्रेलियाई पूर्वी डेलाइट समय", "HAT": "न्यूफ़ाउंडलैंड डेलाइट समय"},
 	}
 }
 
@@ -209,7 +209,8 @@ func (hi *hi_IN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'hi_IN' and handles both Whole and Real numbers based on 'v'
-func (hi *hi_IN) FmtNumber(num float64, v uint64) (results string) {
+func (hi *hi_IN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hi.decimal) + len(hi.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -254,13 +255,12 @@ func (hi *hi_IN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'hi_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (hi *hi_IN) FmtPercent(num float64, v uint64) (results string) {
+func (hi *hi_IN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hi.decimal)
 	b := make([]byte, 0, l)
@@ -286,12 +286,11 @@ func (hi *hi_IN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, hi.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'hi_IN'
-func (hi *hi_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (hi *hi_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hi.currencies[currency]
@@ -353,13 +352,12 @@ func (hi *hi_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'hi_IN'
 // in accounting notation.
-func (hi *hi_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (hi *hi_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hi.currencies[currency]
@@ -429,8 +427,7 @@ func (hi *hi_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'hi_IN'

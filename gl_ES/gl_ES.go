@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "gl_ES",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
 		group:                  ".",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a.C.", "d.C."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"antes de Cristo", "despois de Cristo"},
-		timezones:              map[string]string{"EAT": "Horario de África Oriental", "UYT": "Horario estándar de Uruguai", "CAT": "Horario de África Central", "AEST": "Horario estándar de Australia Oriental", "NZDT": "Horario de verán de Nova Celandia", "MST": "MST", "EDT": "Horario de verán de América Oriental", "PDT": "Horario de verán do Pacífico", "SRT": "Horario de Surinam", "MYT": "Horario de Malaisia", "TMT": "Horario estándar de Turcomenistán", "ACWST": "Horario estándar de Australia Occidental Central", "EST": "Horario estándar América Oriental", "OESZ": "Horario de verán de Europa Oriental", "ACDT": "Horario de verán de Australia Central", "WAST": "Horario de verán de África Occidental", "MEZ": "Horario estándar de Europa Central", "TMST": "Horario de verán de Turcomenistán", "ACWDT": "Horario de verán de Australia Occidental Central", "ECT": "Horario de Ecuador", "HAT": "Horario de verán de Terranova", "HKST": "Horario de verán de Hong Kong", "WART": "Horario estándar de Arxentina Occidental", "WARST": "Horario de verán de Arxentina Occidental", "ADT": "Horario de verán do Atlántico", "AEDT": "Horario de verán de Australia Oriental", "NZST": "Horario estándar de Nova Celandia", "COT": "Horario estándar de Colombia", "AKDT": "Horario de verán de Alasca", "HNT": "Horario estándar de Terranova", "VET": "Horario de Venezuela", "WIT": "Horario de Indonesia Oriental", "LHST": "Horario estándar de Lord Howe", "HADT": "Horario de verán de Hawai-Aleutiano", "AWST": "Horario estándar de Australia Occidental", "CST": "Horario estándar central", "CLT": "Horario estándar de Chile", "GFT": "Horario da Güiana Francesa", "MDT": "MDT", "WITA": "Horario de Indonesia Central", "JDT": "Horario de verán de Xapón", "HAST": "Horario estándar de Hawai-Aleutiano", "WIB": "Horario de Indonesia Occidental", "GMT": "Horario do meridiano de Greenwich", "COST": "Horario de verán de Colombia", "BT": "Horario de Bután", "GYT": "Horario da Güiana", "PST": "Horario estándar do Pacífico", "ACST": "Horario estándar de Australia Central", "SGT": "Horario estándar de Singapur", "IST": "Horario estándar da India", "MESZ": "Horario de verán de Europa Central", "HKT": "Horario estándar de Hong Kong", "CDT": "Horario de verán da zona central", "UYST": "Horario de verán de Uruguai", "CLST": "Horario de verán de Chile", "WAT": "Horario estándar de África Occidental", "CHADT": "Horario de verán de Chatham", "ART": "Horario estándar de Arxentina", "WEZ": "Horario estándar de Europa Occidental", "WESZ": "Horario de verán de Europa Occidental", "AWDT": "Horario de verán de Australia Occidental", "∅∅∅": "Horario de verán de Brasilia", "CHAST": "Horario estándar de Chatham", "AST": "Horario estándar do Atlántico", "JST": "Horario estándar de Xapón", "ChST": "Horario estándar de Chamorro", "BOT": "Horario de Bolivia", "ARST": "Horario de verán de Arxentina", "LHDT": "Horario de verán de Lord Howe", "OEZ": "Horario estándar de Europa Oriental", "SAST": "Horario estándar de Sudáfrica", "AKST": "Horario estándar de Alasca"},
+		timezones:              map[string]string{"∅∅∅": "Horario de verán das Azores", "ECT": "Horario de Ecuador", "SRT": "Horario de Surinam", "ACWDT": "Horario de verán de Australia Occidental Central", "NZDT": "Horario de verán de Nova Celandia", "AKDT": "Horario de verán de Alasca", "SAST": "Horario estándar de Sudáfrica", "WAST": "Horario de verán de África Occidental", "CAT": "Horario de África Central", "GFT": "Horario da Güiana Francesa", "TMT": "Horario estándar de Turcomenistán", "MESZ": "Horario de verán de Europa Central", "JST": "Horario estándar de Xapón", "ACST": "Horario estándar de Australia Central", "AWDT": "Horario de verán de Australia Occidental", "HAT": "Horario de verán de Terranova", "HKT": "Horario estándar de Hong Kong", "UYST": "Horario de verán de Uruguai", "COST": "Horario de verán de Colombia", "AWST": "Horario estándar de Australia Occidental", "BT": "Horario de Bután", "WAT": "Horario estándar de África Occidental", "WESZ": "Horario de verán de Europa Occidental", "CLST": "Horario de verán de Chile", "WART": "Horario estándar de Arxentina Occidental", "HNT": "Horario estándar de Terranova", "UYT": "Horario estándar de Uruguai", "HADT": "Horario de verán de Hawai-Aleutiano", "EAT": "Horario de África Oriental", "CHADT": "Horario de verán de Chatham", "MEZ": "Horario estándar de Europa Central", "CLT": "Horario estándar de Chile", "AST": "Horario estándar do Atlántico", "PST": "Horario estándar do Pacífico", "PDT": "Horario de verán do Pacífico", "SGT": "Horario estándar de Singapur", "WITA": "Horario de Indonesia Central", "CST": "Horario estándar central", "GMT": "Horario do meridiano de Greenwich", "MYT": "Horario de Malaisia", "BOT": "Horario de Bolivia", "ACWST": "Horario estándar de Australia Occidental Central", "LHDT": "Horario de verán de Lord Howe", "VET": "Horario de Venezuela", "IST": "Horario estándar da India", "COT": "Horario estándar de Colombia", "MST": "Horario estándar das montañas americanas", "ARST": "Horario de verán de Arxentina", "EDT": "Horario de verán de América Oriental", "WEZ": "Horario estándar de Europa Occidental", "WIB": "Horario de Indonesia Occidental", "AEST": "Horario estándar de Australia Oriental", "ChST": "Horario estándar de Chamorro", "JDT": "Horario de verán de Xapón", "ACDT": "Horario de verán de Australia Central", "MDT": "Horario de verán das montañas americanas", "TMST": "Horario de verán de Turcomenistán", "CDT": "Horario de verán da zona central", "EST": "Horario estándar América Oriental", "HAST": "Horario estándar de Hawai-Aleutiano", "LHST": "Horario estándar de Lord Howe", "NZST": "Horario estándar de Nova Celandia", "OEZ": "Horario estándar de Europa Oriental", "OESZ": "Horario de verán de Europa Oriental", "GYT": "Horario da Güiana", "HKST": "Horario de verán de Hong Kong", "AKST": "Horario estándar de Alasca", "CHAST": "Horario estándar de Chatham", "WARST": "Horario de verán de Arxentina Occidental", "WIT": "Horario de Indonesia Oriental", "ART": "Horario estándar de Arxentina", "ADT": "Horario de verán do Atlántico", "AEDT": "Horario de verán de Australia Oriental"},
 	}
 }
 
@@ -200,7 +200,8 @@ func (gl *gl_ES) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gl_ES' and handles both Whole and Real numbers based on 'v'
-func (gl *gl_ES) FmtNumber(num float64, v uint64) (results string) {
+func (gl *gl_ES) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gl.decimal) + len(gl.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -236,13 +237,12 @@ func (gl *gl_ES) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'gl_ES' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (gl *gl_ES) FmtPercent(num float64, v uint64) (results string) {
+func (gl *gl_ES) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gl.decimal)
 	b := make([]byte, 0, l)
@@ -268,12 +268,11 @@ func (gl *gl_ES) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, gl.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gl_ES'
-func (gl *gl_ES) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (gl *gl_ES) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gl.currencies[currency]
@@ -326,13 +325,12 @@ func (gl *gl_ES) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gl_ES'
 // in accounting notation.
-func (gl *gl_ES) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (gl *gl_ES) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gl.currencies[currency]
@@ -392,8 +390,7 @@ func (gl *gl_ES) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'gl_ES'

@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Kabla ya Kristo", "Baada ya Kristo"},
-		timezones:              map[string]string{"LHDT": "Saa za Mchana za Lord Howe", "AKST": "Saa za Wastani za Alaska", "HAST": "Saa za Wastani za Hawaii-Aleutian", "AWDT": "Saa za Mchana za Australia Magharibi", "EST": "Saa za Wastani za Mashariki", "OESZ": "Saa za Majira ya joto za Mashariki mwa Ulaya", "AEST": "Saa Wastani za Mashariki mwa Australia", "BOT": "Saa za Bolivia", "ARST": "Saa za Majira ya joto za Ajentina", "ACWDT": "Saa za Mchana za Magharibi ya Kati ya Australia", "VET": "Saa za Venezuela", "HNT": "Saa za Wastani za Newfoundland", "AWST": "Saa Wastani za Australia Magharibi", "CLST": "Saa za Majira ya joto za Chile", "WART": "Saa Wastani za Magharibi mwa Ajentina", "BT": "Saa za Bhutan", "CDT": "Saa za Mchana za Kati", "WESZ": "Saa za Majira ya joto za Magharibi mwa Ulaya", "CAT": "Saa za Afrika ya Kati", "MDT": "MDT", "ART": "Saa Wastani za Ajentina", "AST": "Saa za Wastani za Atlantiki", "ADT": "Saa za Mchana za Atlantiki", "MEZ": "Saa Wastani za Ulaya ya kati", "HKST": "Saa za Majira ya joto za Hong Kong", "WIB": "Saa za Magharibi mwa Indonesia", "WARST": "Saa za Majira ya joto za Magharibi mwa Ajentina", "ECT": "Saa za Ekwado", "WIT": "Saa za Mashariki mwa Indonesia", "HAT": "Saa za Mchana za Newfoundland", "WEZ": "Saa Wastani za Magharibi mwa Ulaya", "CHAST": "Saa Wastani za Chatham", "LHST": "Saa Wastani za Lord Howe", "ChST": "Saa Wastani za Chamorro", "UYST": "Saa za Majira ya joto za Urugwai", "AEDT": "Saa za Mchana za Mashariki mwa Australia", "COST": "Saa za Majira ya joto za Kolombia", "GFT": "Saa za Guiana ya Ufaransa", "JST": "Saa Wastani za Japani", "HADT": "Saa za Mchana za Hawaii-Aleutian", "EAT": "Saa za Afrika Mashariki", "NZST": "Saa Wastani za Nyuzilandi", "CHADT": "Saa za Mchana za Chatham", "ACST": "Saa Wastani za Australia ya Kati", "MST": "MST", "WITA": "Saa za Indonesia ya Kati", "COT": "Saa Wastani za Kolombia", "SRT": "Saa za Suriname", "HKT": "Saa Wastani za Hong Kong", "CLT": "Saa Wastani za Chile", "UYT": "Saa Wastani za Urugwai", "AKDT": "Saa za Mchana za Alaska", "∅∅∅": "∅∅∅", "OEZ": "Saa Wastani za Mashariki mwa Ulaya", "TMST": "Saa za Majira ya joto za Turkmenistan", "SGT": "Saa Wastani za Singapore", "EDT": "Saa za Mchana za Mashariki", "WAT": "Saa Wastani za Afrika Magharibi", "WAST": "Saa za Majira ya joto za Afrika Magharibi", "SAST": "Saa Wastani za Afrika Kusini", "JDT": "Saa za Mchana za Japani", "PST": "Saa za Wastani za Pasifiki", "GYT": "Saa za Guyana", "TMT": "Saa Wastani za Turkmenistan", "ACDT": "Saa za Mchana za Australia ya Kati", "ACWST": "Saa Wastani za Magharibi ya Kati ya Australia", "MYT": "Saa za Malaysia", "CST": "Saa za Wastani za Kati", "NZDT": "Saa za Mchana za Nyuzilandi", "MESZ": "Saa za Majira ya joto za Ulaya ya Kati", "PDT": "Saa za Mchana za Pasifiki", "GMT": "Saa za Greenwich", "IST": "Saa Wastani za India"},
+		timezones:              map[string]string{"SRT": "Saa za Suriname", "CDT": "Saa za Mchana za Kati", "EST": "Saa za Wastani za Mashariki", "COST": "Saa za Majira ya joto za Kolombia", "LHDT": "Saa za Mchana za Lord Howe", "ACST": "Saa Wastani za Australia ya Kati", "PDT": "Saa za Mchana za Pasifiki", "∅∅∅": "Saa za Majira ya joto za Azores", "GFT": "Saa za Guiana ya Ufaransa", "CST": "Saa za Wastani za Kati", "HADT": "Saa za Mchana za Hawaii-Aleutian", "CHAST": "Saa Wastani za Chatham", "WIB": "Saa za Magharibi mwa Indonesia", "WART": "Saa Wastani za Magharibi mwa Ajentina", "AWST": "Saa Wastani za Australia Magharibi", "HAT": "Saa za Mchana za Newfoundland", "HKST": "Saa za Majira ya joto za Hong Kong", "BT": "Saa za Bhutan", "CHADT": "Saa za Mchana za Chatham", "ART": "Saa Wastani za Ajentina", "ChST": "Saa Wastani za Chamorro", "ECT": "Saa za Ekwado", "ACWST": "Saa Wastani za Magharibi ya Kati ya Australia", "NZST": "Saa Wastani za Nyuzilandi", "ADT": "Saa za Mchana za Atlantiki", "MYT": "Saa za Malaysia", "SAST": "Saa Wastani za Afrika Kusini", "LHST": "Saa Wastani za Lord Howe", "CLST": "Saa za Majira ya joto za Chile", "AEDT": "Saa za Mchana za Mashariki mwa Australia", "HKT": "Saa Wastani za Hong Kong", "WEZ": "Saa Wastani za Magharibi mwa Ulaya", "ACWDT": "Saa za Mchana za Magharibi ya Kati ya Australia", "AEST": "Saa Wastani za Mashariki mwa Australia", "TMST": "Saa za Majira ya joto za Turkmenistan", "HAST": "Saa za Wastani za Hawaii-Aleutian", "OEZ": "Saa Wastani za Mashariki mwa Ulaya", "IST": "Saa Wastani za India", "UYST": "Saa za Majira ya joto za Urugwai", "WITA": "Saa za Indonesia ya Kati", "COT": "Saa Wastani za Kolombia", "NZDT": "Saa za Mchana za Nyuzilandi", "OESZ": "Saa za Majira ya joto za Mashariki mwa Ulaya", "ACDT": "Saa za Mchana za Australia ya Kati", "WARST": "Saa za Majira ya joto za Magharibi mwa Ajentina", "MDT": "Saa za Mchana za Mountain", "GMT": "Saa za Greenwich", "AKST": "Saa za Wastani za Alaska", "MESZ": "Saa za Majira ya joto za Ulaya ya Kati", "CLT": "Saa Wastani za Chile", "VET": "Saa za Venezuela", "AWDT": "Saa za Mchana za Australia Magharibi", "MST": "Saa za Wastani za Mountain", "WIT": "Saa za Mashariki mwa Indonesia", "WAT": "Saa Wastani za Afrika Magharibi", "WESZ": "Saa za Majira ya joto za Magharibi mwa Ulaya", "AST": "Saa za Wastani za Atlantiki", "BOT": "Saa za Bolivia", "UYT": "Saa Wastani za Urugwai", "EDT": "Saa za Mchana za Mashariki", "EAT": "Saa za Afrika Mashariki", "PST": "Saa za Wastani za Pasifiki", "HNT": "Saa za Wastani za Newfoundland", "CAT": "Saa za Afrika ya Kati", "TMT": "Saa Wastani za Turkmenistan", "AKDT": "Saa za Mchana za Alaska", "MEZ": "Saa Wastani za Ulaya ya kati", "JST": "Saa Wastani za Japani", "JDT": "Saa za Mchana za Japani", "GYT": "Saa za Guyana", "SGT": "Saa Wastani za Singapore", "ARST": "Saa za Majira ya joto za Ajentina", "WAST": "Saa za Majira ya joto za Afrika Magharibi"},
 	}
 }
 
@@ -200,7 +200,8 @@ func (sw *sw) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sw' and handles both Whole and Real numbers based on 'v'
-func (sw *sw) FmtNumber(num float64, v uint64) (results string) {
+func (sw *sw) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(sw.decimal) + len(sw.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -236,13 +237,12 @@ func (sw *sw) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'sw' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (sw *sw) FmtPercent(num float64, v uint64) (results string) {
+func (sw *sw) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(sw.decimal)
 	b := make([]byte, 0, l)
@@ -268,12 +268,11 @@ func (sw *sw) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, sw.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sw'
-func (sw *sw) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (sw *sw) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sw.currencies[currency]
@@ -326,13 +325,12 @@ func (sw *sw) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sw'
 // in accounting notation.
-func (sw *sw) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (sw *sw) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sw.currencies[currency]
@@ -397,8 +395,7 @@ func (sw *sw) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, sw.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'sw'

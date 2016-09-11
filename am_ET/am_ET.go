@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"", ""},
 		erasNarrow:             []string{"ዓ/ዓ", "ዓ/ም"},
 		erasWide:               []string{"ዓመተ ዓለም", "ዓመተ ምሕረት"},
-		timezones:              map[string]string{"MDT": "MDT", "WESZ": "የምዕራባዊ አውሮፓ ክረምት ሰዓት", "TMT": "የቱርክመኒስታን መደበኛ ሰዓት", "UYST": "የኡራጓይ ክረምት ሰዓት", "VET": "የቬኔዝዌላ ሰዓት", "GFT": "የፈረንሳይ ጉያና ሰዓት", "JST": "የጃፓን መደበኛ ሰዓት", "CST": "የመካከለኛ መደበኛ ሰዓት አቆጣጠር", "EAT": "የምስራቅ አፍሪካ ሰዓት", "AWDT": "የአውስትራሊያ ምስራቃዊ የቀን ሰዓት አቆጣጠር", "EDT": "የምዕራባዊ የቀን ሰዓት አቆጣጠር", "ADT": "የአትላንቲክ የቀን ሰዓት አቆጣጠር", "ARST": "የአርጀንቲና የበጋ ሰዓት አቆጣጠር", "WART": "የምዕራባዊ አርጀንቲና መደበኛ ሰዓት አቆጣጠር", "MYT": "የማሌይዢያ ሰዓት", "HAT": "የኒውፋውንድላንድ የቀን የሰዓት አቆጣጠር", "COT": "የኮሎምቢያ መደበኛ ሰዓት", "WAST": "የምዕራብ አፍሪካ ክረምት ሰዓት", "SAST": "የደቡብ አፍሪካ መደበኛ ሰዓት", "LHDT": "የሎርድ ሆዌ የቀን ሰዓት አቆጣጠር", "JDT": "የጃፓን የቀን ብርሃን ሰዓት", "HKST": "የሆንግ ኮንግ ክረምት ሰዓት", "SRT": "የሱሪናም ሰዓት", "ACWST": "የአውስትራሊያ መካከለኛ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "AEDT": "የአውስትራሊያ ምዕራባዊ የቀን ሰዓት አቆጣጠር", "BOT": "የቦሊቪያ ሰዓት", "COST": "የኮሎምቢያ ክረምት ሰዓት", "MESZ": "የመካከለኛው አውሮፓ ክረምት ሰዓት", "ACST": "የአውስትራሊያ መካከለኛ መደበኛ የሰዓት አቆጣጠር", "ART": "የአርጀንቲና መደበኛ ጊዜ", "HNT": "የኒውፋውንድላንድ መደበኛ የሰዓት አቆጣጠር", "OEZ": "የምስራቃዊ አውሮፓ መደበኛ ሰዓት", "WAT": "የምዕራብ አፍሪካ መደበኛ ሰዓት", "MEZ": "የመካከለኛው አውሮፓ መደበኛ ሰዓት", "BT": "የቡታን ሰዓት", "GYT": "የጉያና ሰዓት", "WARST": "የአርጀንቲና ምስራቃዊ በጋ ሰዓት አቆጣጠር", "LHST": "የሎርድ ሆዌ መደበኛ የሰዓት አቆጣጠር", "WEZ": "የምዕራባዊ አውሮፓ መደበኛ ሰዓት", "UYT": "የኡራጓይ መደበኛ ሰዓት", "NZDT": "የኒው ዚላንድ የቀን ብርሃን ሰዓት", "ACDT": "የአውስትራሊያ መካከለኛ የቀን ሰዓት አቆጣጠር", "WITA": "የመካከለኛው ኢንዶኔዢያ ሰዓት", "AWST": "የአውስትራሊያ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "CHAST": "የቻታም መደበኛ ሰዓት", "AST": "የአትላንቲክ መደበኛ የሰዓት አቆጣጠር", "ChST": "የቻሞሮ መደበኛ ሰዓት", "∅∅∅": "የብራዚላ የበጋ ሰዓት አቆጣጠር", "CLT": "የቺሊ መደበኛ ሰዓት", "PST": "የፓስፊክ መደበኛ ሰዓት አቆጣጠር", "WIB": "የምዕራባዊ ኢንዶኔዢያ ሰዓት", "CHADT": "የቻታም የቀን ብርሃን ሰዓት", "ACWDT": "የአውስትራሊያ መካከለኛው ምስራቅ የቀን ሰዓት አቆጣጠር", "TMST": "የቱርክመኒስታን ክረምት ሰዓት", "WIT": "የምስራቃዊ ኢንዶኔዢያ ሰዓት", "IST": "የህንድ መደበኛ ሰዓት", "SGT": "የሲንጋፒር መደበኛ ሰዓት", "CDT": "የመካከለኛ የቀን ሰዓት አቆጣጠር", "EST": "የምዕራባዊ መደበኛ የሰዓት አቆጣጠር", "AEST": "የአውስትራሊያ ምዕራባዊ መደበኛ የሰዓት አቆጣጠር", "AKDT": "የአላስካ የቀን ሰዓት አቆጣጠር", "CAT": "የመካከለኛው አፍሪካ ሰዓት", "PDT": "የፓስፊክ የቀን ሰዓት አቆጣጠር", "GMT": "ግሪንዊች ማዕከላዊ ሰዓት", "ECT": "የኢኳዶር ሰዓት", "AKST": "የአላስካ መደበኛ የሰዓት አቆጣጠር", "OESZ": "የምስራቃዊ አውሮፓ ክረምት ሰዓት", "HADT": "የሃዋይ አሌኡት የቀን ሰዓት አቆጣጠር", "HKT": "የሆንግ ኮንግ መደበኛ ሰዓት", "NZST": "የኒው ዚላንድ መደበኛ ሰዓት", "MST": "MST", "CLST": "የቺሊ ክረምት ሰዓት", "HAST": "የሃዋይ አሌኡት መደበኛ ሰዓት አቆጣጠር"},
+		timezones:              map[string]string{"AWST": "የአውስትራሊያ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "HAT": "የኒውፋውንድላንድ የቀን የሰዓት አቆጣጠር", "UYST": "የኡራጓይ ክረምት ሰዓት", "CAT": "የመካከለኛው አፍሪካ ሰዓት", "EST": "የምዕራባዊ መደበኛ የሰዓት አቆጣጠር", "AKST": "የአላስካ መደበኛ የሰዓት አቆጣጠር", "CHAST": "የቻታም መደበኛ ሰዓት", "MEZ": "የመካከለኛው አውሮፓ መደበኛ ሰዓት", "PDT": "የፓስፊክ የቀን ሰዓት አቆጣጠር", "BT": "የቡታን ሰዓት", "ChST": "የቻሞሮ መደበኛ ሰዓት", "LHDT": "የሎርድ ሆዌ የቀን ሰዓት አቆጣጠር", "VET": "የቬኔዝዌላ ሰዓት", "PST": "የፓስፊክ መደበኛ ሰዓት አቆጣጠር", "NZST": "የኒው ዚላንድ መደበኛ ሰዓት", "EAT": "የምስራቅ አፍሪካ ሰዓት", "OESZ": "የምስራቃዊ አውሮፓ ክረምት ሰዓት", "SGT": "የሲንጋፒር መደበኛ ሰዓት", "MYT": "የማሌይዢያ ሰዓት", "IST": "የህንድ መደበኛ ሰዓት", "MDT": "MDT", "WIB": "የምዕራባዊ ኢንዶኔዢያ ሰዓት", "CLST": "የቺሊ ክረምት ሰዓት", "WARST": "የአርጀንቲና ምስራቃዊ በጋ ሰዓት አቆጣጠር", "HADT": "የሃዋይ አሌኡት የቀን ሰዓት አቆጣጠር", "EDT": "የምዕራባዊ የቀን ሰዓት አቆጣጠር", "ADT": "የአትላንቲክ የቀን ሰዓት አቆጣጠር", "WEZ": "የምዕራባዊ አውሮፓ መደበኛ ሰዓት", "JDT": "የጃፓን የቀን ብርሃን ሰዓት", "WART": "የምዕራባዊ አርጀንቲና መደበኛ ሰዓት አቆጣጠር", "GYT": "የጉያና ሰዓት", "TMST": "የቱርክመኒስታን ክረምት ሰዓት", "COT": "የኮሎምቢያ መደበኛ ሰዓት", "WIT": "የምስራቃዊ ኢንዶኔዢያ ሰዓት", "ART": "የአርጀንቲና መደበኛ ጊዜ", "ECT": "የኢኳዶር ሰዓት", "AWDT": "የአውስትራሊያ ምስራቃዊ የቀን ሰዓት አቆጣጠር", "HKST": "የሆንግ ኮንግ ክረምት ሰዓት", "COST": "የኮሎምቢያ ክረምት ሰዓት", "MESZ": "የመካከለኛው አውሮፓ ክረምት ሰዓት", "AEST": "የአውስትራሊያ ምዕራባዊ መደበኛ የሰዓት አቆጣጠር", "ACST": "የአውስትራሊያ መካከለኛ መደበኛ የሰዓት አቆጣጠር", "UYT": "የኡራጓይ መደበኛ ሰዓት", "GFT": "የፈረንሳይ ጉያና ሰዓት", "ARST": "የአርጀንቲና የበጋ ሰዓት አቆጣጠር", "MST": "MST", "ACWST": "የአውስትራሊያ መካከለኛ ምስራቃዊ መደበኛ ሰዓት አቆጣጠር", "CHADT": "የቻታም የቀን ብርሃን ሰዓት", "JST": "የጃፓን መደበኛ ሰዓት", "OEZ": "የምስራቃዊ አውሮፓ መደበኛ ሰዓት", "ACDT": "የአውስትራሊያ መካከለኛ የቀን ሰዓት አቆጣጠር", "SAST": "የደቡብ አፍሪካ መደበኛ ሰዓት", "HKT": "የሆንግ ኮንግ መደበኛ ሰዓት", "∅∅∅": "የአማዞን የቀን ሰዓት አቆጣጠር", "WAST": "የምዕራብ አፍሪካ ክረምት ሰዓት", "AST": "የአትላንቲክ መደበኛ የሰዓት አቆጣጠር", "WITA": "የመካከለኛው ኢንዶኔዢያ ሰዓት", "GMT": "ግሪንዊች ማዕከላዊ ሰዓት", "HAST": "የሃዋይ አሌኡት መደበኛ ሰዓት አቆጣጠር", "CDT": "የመካከለኛ የቀን ሰዓት አቆጣጠር", "BOT": "የቦሊቪያ ሰዓት", "CST": "የመካከለኛ መደበኛ ሰዓት አቆጣጠር", "AKDT": "የአላስካ የቀን ሰዓት አቆጣጠር", "LHST": "የሎርድ ሆዌ መደበኛ የሰዓት አቆጣጠር", "NZDT": "የኒው ዚላንድ የቀን ብርሃን ሰዓት", "TMT": "የቱርክመኒስታን መደበኛ ሰዓት", "CLT": "የቺሊ መደበኛ ሰዓት", "SRT": "የሱሪናም ሰዓት", "HNT": "የኒውፋውንድላንድ መደበኛ የሰዓት አቆጣጠር", "WAT": "የምዕራብ አፍሪካ መደበኛ ሰዓት", "WESZ": "የምዕራባዊ አውሮፓ ክረምት ሰዓት", "ACWDT": "የአውስትራሊያ መካከለኛው ምስራቅ የቀን ሰዓት አቆጣጠር", "AEDT": "የአውስትራሊያ ምዕራባዊ የቀን ሰዓት አቆጣጠር"},
 	}
 }
 
@@ -200,7 +200,8 @@ func (am *am_ET) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'am_ET' and handles both Whole and Real numbers based on 'v'
-func (am *am_ET) FmtNumber(num float64, v uint64) (results string) {
+func (am *am_ET) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(am.decimal) + len(am.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -236,13 +237,12 @@ func (am *am_ET) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'am_ET' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (am *am_ET) FmtPercent(num float64, v uint64) (results string) {
+func (am *am_ET) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(am.decimal)
 	b := make([]byte, 0, l)
@@ -268,12 +268,11 @@ func (am *am_ET) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, am.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'am_ET'
-func (am *am_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (am *am_ET) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := am.currencies[currency]
@@ -326,13 +325,12 @@ func (am *am_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'am_ET'
 // in accounting notation.
-func (am *am_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (am *am_ET) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := am.currencies[currency]
@@ -397,8 +395,7 @@ func (am *am_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, am.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'am_ET'

@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "uk_UA",
 		pluralsCardinal:        []locales.PluralRule{2, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{4, 6},
-		pluralsRange:           []locales.PluralRule{2, 4, 5, 6},
+		pluralsRange:           []locales.PluralRule{4, 5, 6, 2},
 		decimal:                ",",
 		group:                  " ",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"до н. е.", "н. е."},
 		erasNarrow:             []string{"до н.е.", "н.е."},
 		erasWide:               []string{"до нашої ери", "нашої ери"},
-		timezones:              map[string]string{"SGT": "за часом у Сінгапурі", "OEZ": "за східноєвропейським стандартним часом", "SAST": "за південноафриканським часом", "UYST": "за літнім часом в Уругваї", "TMT": "за стандартним часом у Туркменістані", "WIT": "за східноіндонезійським часом", "JST": "за японським стандартним часом", "MYT": "за часом у Малайзії", "NZST": "за стандартним часом у Новій Зеландії", "NZDT": "за літнім часом у Новій Зеландії", "BT": "за часом у Бутані", "ACST": "за стандартним центральноавстралійським часом", "OESZ": "за східноєвропейським літнім часом", "GMT": "за Гринвічем", "ADT": "за атлантичним літнім часом", "AWST": "за стандартним західноавстралійським часом", "ACWDT": "за літнім центральнозахідним австралійським часом", "HAST": "за стандартним гавайсько-алеутським часом", "CDT": "за північноамериканським центральним літнім часом", "AEST": "за стандартним східноавстралійським часом", "WAST": "за західноафриканським літнім часом", "AST": "за атлантичним стандартним часом", "HADT": "за літнім гавайсько-алеутським часом", "HKST": "за літнім часом у Гонконзі", "AEDT": "за літнім східноавстралійським часом", "PDT": "за північноамериканським тихоокеанським літнім часом", "ACDT": "за літнім центральноавстралійським часом", "ACWST": "за стандартним центральнозахідним австралійським часом", "HKT": "за стандартним часом у Гонконзі", "AKDT": "за літнім часом на Алясці", "EST": "за північноамериканським східним стандартним часом", "EDT": "за північноамериканським східним літнім часом", "BOT": "за болівійським часом", "WART": "за стандартним західноаргентинським часом", "MEZ": "за центральноєвропейським стандартним часом", "TMST": "за літнім часом у Туркменістані", "MDT": "за північноамериканським гірським літнім часом", "CLT": "за стандартним чилійським часом", "WAT": "за західноафриканським стандартним часом", "WEZ": "за західноєвропейським стандартним часом", "UYT": "за стандартним часом в Уругваї", "EAT": "за східноафриканським часом", "CHAST": "за стандартним часом на архіпелазі Чатем", "CHADT": "за літнім часом на архіпелазі Чатем", "COST": "за літнім колумбійським часом", "MESZ": "за центральноєвропейським літнім часом", "MST": "за північноамериканським гірським стандартним часом", "CST": "за північноамериканським центральним стандартним часом", "WIB": "за західноіндонезійським часом", "SRT": "за часом у Суринамі", "WITA": "за центральноіндонезійським часом", "JDT": "за японським літнім часом", "AKST": "за стандартним часом на Алясці", "PST": "за північноамериканським тихоокеанським стандартним часом", "ARST": "за літнім аргентинським часом", "GFT": "за часом Французької Гвіани", "HNT": "за стандартним часом у Ньюфаундленд", "HAT": "за літнім часом у Ньюфаундленд", "COT": "за стандартним колумбійським часом", "GYT": "за часом у Гаяні", "VET": "за часом у Венесуелі", "LHDT": "за літнім часом на острові Лорд-Хау", "ChST": "за часом на Північних Маріанських островах", "ECT": "за часом в Еквадорі", "LHST": "за стандартним часом на острові Лорд-Хау", "CAT": "за центральноафриканським часом", "CLST": "за літнім чилійським часом", "AWDT": "за літнім західноавстралійським часом", "ART": "за стандартним аргентинським часом", "WARST": "за літнім за західноаргентинським часом", "∅∅∅": "за літнім часом на Азорських островах", "IST": "за індійським стандартним часом", "WESZ": "за західноєвропейським літнім часом"},
+		timezones:              map[string]string{"EDT": "за північноамериканським східним літнім часом", "NZST": "за стандартним часом у Новій Зеландії", "ADT": "за атлантичним літнім часом", "IST": "за індійським стандартним часом", "GYT": "за часом у Гаяні", "BT": "за часом у Бутані", "ChST": "за часом на Північних Маріанських островах", "NZDT": "за літнім часом у Новій Зеландії", "EAT": "за східноафриканським часом", "WEZ": "за західноєвропейським стандартним часом", "WART": "за стандартним західноаргентинським часом", "PST": "за північноамериканським тихоокеанським стандартним часом", "HAT": "за літнім часом у Ньюфаундленд", "WAT": "за західноафриканським стандартним часом", "MST": "MST", "CLT": "за стандартним чилійським часом", "CDT": "за північноамериканським центральним літнім часом", "ECT": "за часом в Еквадорі", "LHDT": "за літнім часом на острові Лорд-Хау", "OESZ": "за східноєвропейським літнім часом", "AEST": "за стандартним східноавстралійським часом", "TMST": "за літнім часом у Туркменістані", "HKST": "за літнім часом у Гонконзі", "UYST": "за літнім часом в Уругваї", "COT": "за стандартним колумбійським часом", "WESZ": "за західноєвропейським літнім часом", "MEZ": "за центральноєвропейським стандартним часом", "CLST": "за літнім чилійським часом", "HAST": "за стандартним гавайсько-алеутським часом", "WAST": "за західноафриканським літнім часом", "MDT": "MDT", "ACWST": "за стандартним центральнозахідним австралійським часом", "JDT": "за японським літнім часом", "MYT": "за часом у Малайзії", "AWDT": "за літнім західноавстралійським часом", "HKT": "за стандартним часом у Гонконзі", "GFT": "за часом Французької Гвіани", "ACDT": "за літнім центральноавстралійським часом", "AEDT": "за літнім східноавстралійським часом", "EST": "за північноамериканським східним стандартним часом", "CHADT": "за літнім часом на архіпелазі Чатем", "OEZ": "за східноєвропейським стандартним часом", "BOT": "за болівійським часом", "WIT": "за східноіндонезійським часом", "ART": "за стандартним аргентинським часом", "WITA": "за центральноіндонезійським часом", "SAST": "за південноафриканським часом", "ACWDT": "за літнім центральнозахідним австралійським часом", "WIB": "за західноіндонезійським часом", "MESZ": "за центральноєвропейським літнім часом", "WARST": "за літнім за західноаргентинським часом", "HADT": "за літнім гавайсько-алеутським часом", "AKST": "за стандартним часом на Алясці", "CHAST": "за стандартним часом на архіпелазі Чатем", "AWST": "за стандартним західноавстралійським часом", "HNT": "за стандартним часом у Ньюфаундленд", "SRT": "за часом у Суринамі", "UYT": "за стандартним часом в Уругваї", "GMT": "за Гринвічем", "COST": "за літнім колумбійським часом", "∅∅∅": "за літнім часом на Амазонці", "ACST": "за стандартним центральноавстралійським часом", "VET": "за часом у Венесуелі", "ARST": "за літнім аргентинським часом", "AKDT": "за літнім часом на Алясці", "JST": "за японським стандартним часом", "AST": "за атлантичним стандартним часом", "LHST": "за стандартним часом на острові Лорд-Хау", "PDT": "за північноамериканським тихоокеанським літнім часом", "CST": "за північноамериканським центральним стандартним часом", "SGT": "за часом у Сінгапурі", "CAT": "за центральноафриканським часом", "TMT": "за стандартним часом у Туркменістані"},
 	}
 }
 
@@ -241,7 +241,8 @@ func (uk *uk_UA) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'uk_UA' and handles both Whole and Real numbers based on 'v'
-func (uk *uk_UA) FmtNumber(num float64, v uint64) (results string) {
+func (uk *uk_UA) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(uk.decimal) + len(uk.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -261,7 +262,6 @@ func (uk *uk_UA) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(uk.group) - 1; j >= 0; j-- {
 					b = append(b, uk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -280,13 +280,12 @@ func (uk *uk_UA) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'uk_UA' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (uk *uk_UA) FmtPercent(num float64, v uint64) (results string) {
+func (uk *uk_UA) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(uk.decimal)
 	b := make([]byte, 0, l)
@@ -312,12 +311,11 @@ func (uk *uk_UA) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, uk.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'uk_UA'
-func (uk *uk_UA) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (uk *uk_UA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := uk.currencies[currency]
@@ -339,7 +337,6 @@ func (uk *uk_UA) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(uk.group) - 1; j >= 0; j-- {
 					b = append(b, uk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -371,13 +368,12 @@ func (uk *uk_UA) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'uk_UA'
 // in accounting notation.
-func (uk *uk_UA) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (uk *uk_UA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := uk.currencies[currency]
@@ -399,7 +395,6 @@ func (uk *uk_UA) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(uk.group) - 1; j >= 0; j-- {
 					b = append(b, uk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -439,8 +434,7 @@ func (uk *uk_UA) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'uk_UA'

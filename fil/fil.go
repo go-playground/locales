@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"BC", "AD"},
-		timezones:              map[string]string{"ACST": "Standard Time ng Gitnang Australya", "MYT": "Oras ng Malaysia", "HADT": "Oras sa Tag-init ng Hawaii-Aleutian", "∅∅∅": "Oras sa Tag-init ng Amazon", "WIB": "Oras ng Kanlurang Indonesiya", "CHADT": "Daylight Time sa Chatham", "CDT": "Sentral na Daylight Time", "WITA": "Oras ng Gitnang Indonesiya", "LHDT": "Daylight Time sa Lorde Howe", "HAST": "Standard na Oras sa Hawaii-Aleutian", "BOT": "Oras sa Bolivia", "WARST": "Oras sa Tag-init ng Kanlurang Argentina", "WAT": "Standard na Oras sa Kanlurang Africa", "SGT": "Standard na Oras sa Singapore", "IST": "Standard na Oras sa Bhutan", "OESZ": "Oras sa Tag-init ng Silangang Europe", "TMT": "Standard na Oras sa Turkmenistan", "MESZ": "Oras sa Tag-init ng Gitnang Europe", "WAST": "Oras sa Tag-init ng Kanlurang Africa", "JST": "Standard na Oras sa Japan", "CLT": "Standard na Oras sa Chile", "PST": "Standard na Oras sa Pasipiko", "COT": "Standard na Oras sa Colombia", "COST": "Oras sa Tag-init ng Colombia", "SRT": "Oras sa Suriname", "JDT": "Daylight Time sa Japan", "AKST": "Standard na Oras sa Alaska", "AKDT": "Daylight Time sa Alaska", "AWST": "Standard Time ng Kanlurang Australya", "AEDT": "Daylight Time ng Silangang Australya", "HNT": "Standard na Oras sa Newfoundland", "ChST": "Standard na Oras sa Chamorro", "UYT": "Standard na Oras sa Uruguay", "ACDT": "Daylight Time ng Gitnang Australya", "ACWST": "Standard Time ng Gitnang Kanluran ng Australya", "CHAST": "Standard na Oras sa Chatham", "ART": "Standard na Oras sa Argentina", "LHST": "Standard na Oras sa Lord Howe", "HAT": "Daylight Time sa Newfoundland", "AEST": "Standard Time ng Silangang Australya", "NZST": "Standard na Oras sa New Zealand", "OEZ": "Standard na Oras sa Silangang Europe", "WEZ": "Standard na Oras sa Kanlurang Europe", "AWDT": "Daylight Time sa Kanlurang Australya", "GMT": "Greenwich Mean Time", "GYT": "Oras sa Guyana", "MST": "MST", "CAT": "Oras sa Gitnang Africa", "GFT": "Oras sa French Guiana", "SAST": "Oras sa Timog Africa", "HKST": "Oras sa Tag-init ng Hong Kong", "UYST": "Oras sa Tag-init ng Uruguay", "EST": "Eastern na Standard na Oras", "TMST": "Oras sa Tag-init ng Turkmenistan", "WIT": "Oras ng Silangang Indonesiya", "WESZ": "Oras sa Tag-init ng Kanlurang Europe", "HKT": "Standard na Oras sa Hong Kong", "CLST": "Oras sa Tag-init ng Chile", "ECT": "Oras sa Ecuador", "MEZ": "Standard na Oras sa Gitnang Europe", "BT": "Oras sa Bhutan", "ARST": "Oras sa Tag-init ng Argentina", "ADT": "Daylight Time sa Atlantiko", "MDT": "MDT", "EDT": "Eastern Daylight Time", "NZDT": "Daylight Time sa New Zealand", "PDT": "Daylight Time sa Pasipiko", "VET": "Oras sa Venezuela", "ACWDT": "Daylight Time ng Gitnang Kanluran ng Australya", "EAT": "Oras sa Silangang Africa", "CST": "Sentral na Standard na Oras", "WART": "Standard na Oras sa Kanlurang Argentina", "AST": "Standard na Oras sa Atlantiko"},
+		timezones:              map[string]string{"CST": "Sentral na Standard na Oras", "SAST": "Oras sa Timog Africa", "OEZ": "Standard na Oras sa Silangang Europe", "JST": "Standard na Oras sa Japan", "PDT": "Daylight Time sa Pasipiko", "ART": "Standard na Oras sa Argentina", "ChST": "Standard na Oras sa Chamorro", "ECT": "Oras sa Ecuador", "AKST": "Standard na Oras sa Alaska", "CLT": "Standard na Oras sa Chile", "VET": "Oras sa Venezuela", "BOT": "Oras sa Bolivia", "UYST": "Oras sa Tag-init ng Uruguay", "GFT": "Oras sa French Guiana", "NZST": "Standard na Oras sa New Zealand", "OESZ": "Oras sa Tag-init ng Silangang Europe", "CLST": "Oras sa Tag-init ng Chile", "WESZ": "Oras sa Tag-init ng Kanlurang Europe", "MST": "MST", "AKDT": "Daylight Time sa Alaska", "MDT": "MDT", "HKT": "Standard na Oras sa Hong Kong", "WIT": "Oras ng Silangang Indonesiya", "TMST": "Oras sa Tag-init ng Turkmenistan", "ACWST": "Standard Time ng Gitnang Kanluran ng Australya", "HAT": "Daylight Time sa Newfoundland", "EDT": "Eastern Daylight Time", "WEZ": "Standard na Oras sa Kanlurang Europe", "JDT": "Daylight Time sa Japan", "PST": "Standard na Oras sa Pasipiko", "AWST": "Standard Time ng Kanlurang Australya", "GYT": "Oras sa Guyana", "UYT": "Standard na Oras sa Uruguay", "WAST": "Oras sa Tag-init ng Kanlurang Africa", "∅∅∅": "Oras sa Tag-init ng Amazon", "WIB": "Oras ng Kanlurang Indonesiya", "MEZ": "Standard na Oras sa Gitnang Europe", "WART": "Standard na Oras sa Kanlurang Argentina", "HADT": "Oras sa Tag-init ng Hawaii-Aleutian", "EAT": "Oras sa Silangang Africa", "MESZ": "Oras sa Tag-init ng Gitnang Europe", "GMT": "Greenwich Mean Time", "COST": "Oras sa Tag-init ng Colombia", "ACST": "Standard Time ng Gitnang Australya", "AEST": "Standard Time ng Silangang Australya", "AEDT": "Daylight Time ng Silangang Australya", "HNT": "Standard na Oras sa Newfoundland", "MYT": "Oras ng Malaysia", "SRT": "Oras sa Suriname", "BT": "Oras sa Bhutan", "CAT": "Oras sa Gitnang Africa", "WARST": "Oras sa Tag-init ng Kanlurang Argentina", "AWDT": "Daylight Time sa Kanlurang Australya", "CHADT": "Daylight Time sa Chatham", "ACWDT": "Daylight Time ng Gitnang Kanluran ng Australya", "WITA": "Oras ng Gitnang Indonesiya", "HAST": "Standard na Oras sa Hawaii-Aleutian", "WAT": "Standard na Oras sa Kanlurang Africa", "ACDT": "Daylight Time ng Gitnang Australya", "IST": "Standard na Oras sa Bhutan", "HKST": "Oras sa Tag-init ng Hong Kong", "TMT": "Standard na Oras sa Turkmenistan", "CHAST": "Standard na Oras sa Chatham", "SGT": "Standard na Oras sa Singapore", "CDT": "Sentral na Daylight Time", "EST": "Eastern na Standard na Oras", "COT": "Standard na Oras sa Colombia", "LHST": "Standard na Oras sa Lord Howe", "LHDT": "Daylight Time sa Lorde Howe", "NZDT": "Daylight Time sa New Zealand", "AST": "Standard na Oras sa Atlantiko", "ADT": "Daylight Time sa Atlantiko", "ARST": "Oras sa Tag-init ng Argentina"},
 	}
 }
 
@@ -212,7 +212,8 @@ func (fil *fil) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fil' and handles both Whole and Real numbers based on 'v'
-func (fil *fil) FmtNumber(num float64, v uint64) (results string) {
+func (fil *fil) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fil.decimal) + len(fil.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -248,13 +249,12 @@ func (fil *fil) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'fil' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (fil *fil) FmtPercent(num float64, v uint64) (results string) {
+func (fil *fil) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fil.decimal)
 	b := make([]byte, 0, l)
@@ -280,12 +280,11 @@ func (fil *fil) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, fil.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fil'
-func (fil *fil) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (fil *fil) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fil.currencies[currency]
@@ -338,13 +337,12 @@ func (fil *fil) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fil'
 // in accounting notation.
-func (fil *fil) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (fil *fil) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fil.currencies[currency]
@@ -409,8 +407,7 @@ func (fil *fil) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, fil.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'fil'

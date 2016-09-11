@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"м.э.ө", "м.э."},
 		erasNarrow:             []string{"МЭӨ", "МЭ"},
 		erasWide:               []string{"манай эриний өмнөх", "манай эриний"},
-		timezones:              map[string]string{"HAST": "Хавай-Алеутын стандарт цаг", "WESZ": "Баруун Европын зуны цаг", "ART": "Аргентины стандарт цаг", "WART": "Баруун Аргентины стандарт цаг", "WIT": "Зүүн Индонезийн цаг", "JST": "Японы стандарт цаг", "WIB": "Баруун Индонезийн цаг", "WAST": "Баруун Африкийн зуны цаг", "WITA": "Төв Индонезийн цаг", "AKST": "Аляскийн стандарт цаг", "WEZ": "Баруун Европын стандарт цаг", "OEZ": "Зүүн Европын стандарт цаг", "AEST": "Австралийн зүүн эргийн стандарт цаг", "CHAST": "Чэтамын стандарт цаг", "ACST": "Төв Австралийн стандарт цаг", "MDT": "Уулын зуны цаг", "ADT": "Атлантын зуны цаг", "MEZ": "Төв Европын стандарт цаг", "LHST": "Лорд Хаугийн стандарт цаг", "ECT": "Эквадорын цаг", "HADT": "Хавай-Алеутын зуны цаг", "CST": "Төв стандарт цаг", "ACDT": "Төв Австралийн зуны цаг", "WARST": "Баруун Аргентины зуны цаг", "AKDT": "Аляскийн зуны цаг", "CDT": "Төв зуны цаг", "AEDT": "Австралийн зүүн эргийн зуны цаг", "GFT": "Францын Гияанагийн цаг", "ACWDT": "Австралийн төв баруун эргийн зуны цаг", "AWST": "Австралийн баруун эргийн стандарт цаг", "PST": "Номхон далайн стандарт цаг", "PDT": "Номхон далайн зуны цаг", "GMT": "Гринвичийн үндсэн цаг", "VET": "Венесуэлийн цаг", "IST": "Энэтхэгийн цаг", "SRT": "Суринамын цаг", "HNT": "Нью-Фаундлендын стандарт цаг", "ChST": "Чаморрогийн цаг", "HKST": "Хонг Конгын зуны цаг", "UYST": "Уругвайн зуны цаг", "MST": "Уулын стандарт цаг", "JDT": "Японы зуны цаг", "EST": "Зүүн эргийн стандарт цаг", "CLT": "Чилийн стандарт цаг", "MESZ": "Төв Европын зуны цаг", "BT": "Бутаны цаг", "ACWST": "Австралийн төв баруун эргийн стандарт цаг", "NZST": "Шинэ Зеландын стандарт цаг", "OESZ": "Зүүн Европын зуны цаг", "GYT": "Гуяанагийн цаг", "AST": "Атлантын стандарт цаг", "HKT": "Хонг Конгын стандарт цаг", "CHADT": "Чэтамын зуны цаг", "BOT": "Боливийн цаг", "LHDT": "Лорд Хаугийн зуны цаг", "AWDT": "Австралийн баруун эргийн зуны цаг", "CAT": "Төв Африкийн цаг", "EDT": "Зүүн эргийн зуны цаг", "CLST": "Чилийн зуны цаг", "NZDT": "Шинэ Зеландын зуны цаг", "COT": "Колумбын стандарт цаг", "∅∅∅": "Азорын зуны цаг", "EAT": "Зүүн Африкийн цаг", "TMT": "Туркменистаны стандарт цаг", "UYT": "Уругвайн стандарт цаг", "ARST": "Аргентины зуны цаг", "WAT": "Баруун Африкийн стандарт цаг", "SGT": "Сингапурын цаг", "TMST": "Туркменистаны зуны цаг", "MYT": "Малайзийн цаг", "COST": "Колумбын зуны цаг", "SAST": "Өмнөд Африкийн стандарт цаг", "HAT": "Нью-Фаундлендын зуны цаг"},
+		timezones:              map[string]string{"HKT": "Хонг Конгын стандарт цаг", "HADT": "Хавай-Алеутын зуны цаг", "CLST": "Чилийн зуны цаг", "JST": "Японы стандарт цаг", "AEST": "Австралийн зүүн эргийн стандарт цаг", "AEDT": "Австралийн зүүн эргийн зуны цаг", "EAT": "Зүүн Африкийн цаг", "WEZ": "Баруун Европын стандарт цаг", "ADT": "Атлантын зуны цаг", "CAT": "Төв Африкийн цаг", "UYT": "Уругвайн стандарт цаг", "CLT": "Чилийн стандарт цаг", "CDT": "Төв зуны цаг", "HAST": "Хавай-Алеутын стандарт цаг", "AKST": "Аляскийн стандарт цаг", "AKDT": "Аляскийн зуны цаг", "LHST": "Лорд Хаугийн стандарт цаг", "OEZ": "Зүүн Европын стандарт цаг", "VET": "Венесуэлийн цаг", "HKST": "Хонг Конгын зуны цаг", "WIT": "Зүүн Индонезийн цаг", "COT": "Колумбын стандарт цаг", "ACWST": "Австралийн төв баруун эргийн стандарт цаг", "ACWDT": "Австралийн төв баруун эргийн зуны цаг", "WARST": "Баруун Аргентины зуны цаг", "IST": "Энэтхэгийн цаг", "TMST": "Туркменистаны зуны цаг", "ChST": "Чаморрогийн цаг", "COST": "Колумбын зуны цаг", "WESZ": "Баруун Европын зуны цаг", "PST": "Номхон далайн стандарт цаг", "AWST": "Австралийн баруун эргийн стандарт цаг", "GMT": "Гринвичийн үндсэн цаг", "WAST": "Баруун Африкийн зуны цаг", "WART": "Баруун Аргентины стандарт цаг", "ART": "Аргентины стандарт цаг", "EDT": "Зүүн эргийн зуны цаг", "CHADT": "Чэтамын зуны цаг", "MEZ": "Төв Европын стандарт цаг", "ARST": "Аргентины зуны цаг", "GFT": "Францын Гияанагийн цаг", "CST": "Төв стандарт цаг", "GYT": "Гуяанагийн цаг", "ECT": "Эквадорын цаг", "MESZ": "Төв Европын зуны цаг", "OESZ": "Зүүн Европын зуны цаг", "JDT": "Японы зуны цаг", "AST": "Атлантын стандарт цаг", "SGT": "Сингапурын цаг", "∅∅∅": "Бразилийн зуны цаг", "MDT": "MDT", "CHAST": "Чэтамын стандарт цаг", "MYT": "Малайзийн цаг", "BOT": "Боливийн цаг", "BT": "Бутаны цаг", "NZDT": "Шинэ Зеландын зуны цаг", "MST": "MST", "WIB": "Баруун Индонезийн цаг", "SRT": "Суринамын цаг", "LHDT": "Лорд Хаугийн зуны цаг", "ACST": "Төв Австралийн стандарт цаг", "ACDT": "Төв Австралийн зуны цаг", "HNT": "Нью-Фаундлендын стандарт цаг", "EST": "Зүүн эргийн стандарт цаг", "SAST": "Өмнөд Африкийн стандарт цаг", "AWDT": "Австралийн баруун эргийн зуны цаг", "WITA": "Төв Индонезийн цаг", "NZST": "Шинэ Зеландын стандарт цаг", "WAT": "Баруун Африкийн стандарт цаг", "HAT": "Нью-Фаундлендын зуны цаг", "UYST": "Уругвайн зуны цаг", "TMT": "Туркменистаны стандарт цаг", "PDT": "Номхон далайн зуны цаг"},
 	}
 }
 
@@ -199,7 +199,8 @@ func (mn *mn) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'mn' and handles both Whole and Real numbers based on 'v'
-func (mn *mn) FmtNumber(num float64, v uint64) (results string) {
+func (mn *mn) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(mn.decimal) + len(mn.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -235,13 +236,12 @@ func (mn *mn) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'mn' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (mn *mn) FmtPercent(num float64, v uint64) (results string) {
+func (mn *mn) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(mn.decimal)
 	b := make([]byte, 0, l)
@@ -267,12 +267,11 @@ func (mn *mn) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, mn.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'mn'
-func (mn *mn) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (mn *mn) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mn.currencies[currency]
@@ -329,13 +328,12 @@ func (mn *mn) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'mn'
 // in accounting notation.
-func (mn *mn) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (mn *mn) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mn.currencies[currency]
@@ -404,8 +402,7 @@ func (mn *mn) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'mn'

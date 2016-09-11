@@ -18,7 +18,7 @@ type tk_TM struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "ýan", "few", "mart", "apr", "maý", "iýun", "iýul", "awg", "sen", "okt", "noý", "dek"},
@@ -66,7 +66,7 @@ func New() locales.Translator {
 		daysAbbreviated:        []string{"ýb", "db", "sb", "çb", "pb", "an", "şb"},
 		daysNarrow:             []string{"Ý", "D", "S", "Ç", "P", "A", "Ş"},
 		daysWide:               []string{"ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"},
-		timezones:              map[string]string{"ADT": "Atlantika, tomusky wagt", "EDT": "Günorta Amerika, tomusky wagt", "CLT": "Çili, standart wagt", "NZST": "Täze Zelandiýa, standart wagt", "PDT": "Ýuwaş umman, tomusky wagt", "ART": "Argentina, standart wagt", "WARST": "Günbatar Argentina, tomusky wagt", "WAST": "Günbatar Afrika, tomusky wagt", "AKST": "Alýaska, standart wagt", "ChST": "Çamorro", "HAST": "Gawaý-Aleut, standart wagt", "UYST": "Urugwaý, tomusky wagt", "AEST": "Gündogar Awstraliýa, standart wagt", "BT": "Butan", "WAT": "Günbatar Afrika, standart wagt", "TMT": "Türkmenistan, standart wagt", "LHDT": "Lord-Hau, tomusky wagt", "OEZ": "Gündogar Ýewropa, standart wagt", "CHAST": "Çatem, standart wagt", "WESZ": "Günbatar Ýewropa, tomusky wagt", "CDT": "Merkezi Amerika, tomusky wagt", "COST": "Kolumbiýa, tomusky wagt", "GFT": "Fransuz Gwiana", "JDT": "Ýaponiýa, tomusky wagt", "MYT": "Malaýziýa", "WEZ": "Günbatar Ýewropa, standart wagt", "HAT": "Nýufaundlend, tomusky wagt", "AEDT": "Gündogar Awstraliýa, tomusky wagt", "VET": "Wenesuela", "JST": "Ýaponiýa, standart wagt", "HADT": "Gawaý-Aleut, tomusky wagt", "MESZ": "Merkezi Ýewropa, tomusky wagt", "SRT": "Surinam", "TMST": "Türkmenistan, tomusky wagt", "IST": "Hindistan", "OESZ": "Gündogar Ýewropa, tomusky wagt", "BOT": "Boliwiýa", "AKDT": "Alýaska, tomusky wagt", "AWST": "Günbatar Awstraliýa, standart wagt", "COT": "Kolumbiýa, standart wagt", "GYT": "Gaýana", "WITA": "Merkezi Indoneziýa", "SAST": "Günorta Afrika, standart wagt", "ECT": "Ekwador", "HKT": "Gonkong, standart wagt", "ACST": "Merkezi Awstraliýa, standart wagt", "ARST": "Argentina, tomusky wagt", "WART": "Günbatar Argentina, standart wagt", "ACWST": "Merkezi Awstraliýa, günbatar tarap, standart wagt", "HNT": "Nýufaundlend, standart wagt", "GMT": "Grinwiç boýunça orta wagt", "ACDT": "Merkezi Awstraliýa, tomusky wagt", "MEZ": "Merkezi Ýewropa, standart wagt", "CAT": "Merkezi Afrika", "EST": "Günorta Amerika, standart wagt", "ACWDT": "Merkezi Awstraliýa, günbatar tarap, tomusky wagt", "MDT": "Daglyk ýeri, tomusky wagt (ABŞ)", "∅∅∅": "Azor adalary, tomusky wagt", "LHST": "Lord-Hau, standart wagt", "AWDT": "Günbatar Awstraliýa, tomusky wagt", "CST": "Merkezi Amerika, standart wagt", "CLST": "Çili, tomusky wagt", "PST": "Ýuwaş umman, standart wagt", "AST": "Atlantika, standart wagt", "MST": "Daglyk ýeri, standart wagt (ABŞ)", "WIT": "Gündogar Indoneziýa", "SGT": "Singapur, standart wagt", "NZDT": "Täze Zelandiýa, tomusky wagt", "WIB": "Günbatar Indoneziýa", "HKST": "Gonkong, tomusky wagt", "EAT": "Gündogar Afrika", "UYT": "Urugwaý, standart wagt", "CHADT": "Çatem, tomusky wagt"},
+		timezones:              map[string]string{"ADT": "Atlantika, tomusky wagt", "MYT": "Malaýziýa", "HKT": "Gonkong, standart wagt", "GFT": "Fransuz Gwiana", "AKST": "Alýaska, standart wagt", "AKDT": "Alýaska, tomusky wagt", "MDT": "MDT", "JDT": "Ýaponiýa, tomusky wagt", "BOT": "Boliwiýa", "UYST": "Urugwaý, tomusky wagt", "SAST": "Günorta Afrika, standart wagt", "MESZ": "Merkezi Ýewropa, tomusky wagt", "WARST": "Günbatar Argentina, tomusky wagt", "TMST": "Türkmenistan, tomusky wagt", "CHAST": "Çatem, standart wagt", "CHADT": "Çatem, tomusky wagt", "ACST": "Merkezi Awstraliýa, standart wagt", "AEST": "Gündogar Awstraliýa, standart wagt", "SRT": "Surinam", "HKST": "Gonkong, tomusky wagt", "WIB": "Günbatar Indoneziýa", "PDT": "Ýuwaş umman, tomusky wagt", "ECT": "Ekwador", "MST": "MST", "MEZ": "Merkezi Ýewropa, standart wagt", "AEDT": "Gündogar Awstraliýa, tomusky wagt", "GYT": "Gaýana", "UYT": "Urugwaý, standart wagt", "CST": "Merkezi Amerika, standart wagt", "EST": "Günorta Amerika, standart wagt", "WESZ": "Günbatar Ýewropa, tomusky wagt", "ACWDT": "Merkezi Awstraliýa, günbatar tarap, tomusky wagt", "∅∅∅": "Braziliýa, tomusky wagt", "ACWST": "Merkezi Awstraliýa, günbatar tarap, standart wagt", "LHST": "Lord-Hau, standart wagt", "CDT": "Merkezi Amerika, tomusky wagt", "ACDT": "Merkezi Awstraliýa, tomusky wagt", "VET": "Wenesuela", "HNT": "Nýufaundlend, standart wagt", "ARST": "Argentina, tomusky wagt", "HADT": "Gawaý-Aleut, tomusky wagt", "ChST": "Çamorro", "WAT": "Günbatar Afrika, standart wagt", "WAST": "Günbatar Afrika, tomusky wagt", "NZDT": "Täze Zelandiýa, tomusky wagt", "IST": "Hindistan", "CAT": "Merkezi Afrika", "BT": "Butan", "HAST": "Gawaý-Aleut, standart wagt", "LHDT": "Lord-Hau, tomusky wagt", "NZST": "Täze Zelandiýa, standart wagt", "OESZ": "Gündogar Ýewropa, tomusky wagt", "CLT": "Çili, standart wagt", "AWDT": "Günbatar Awstraliýa, tomusky wagt", "TMT": "Türkmenistan, standart wagt", "OEZ": "Gündogar Ýewropa, standart wagt", "WART": "Günbatar Argentina, standart wagt", "AWST": "Günbatar Awstraliýa, standart wagt", "ART": "Argentina, standart wagt", "WITA": "Merkezi Indoneziýa", "GMT": "Grinwiç boýunça orta wagt", "EAT": "Gündogar Afrika", "JST": "Ýaponiýa, standart wagt", "WEZ": "Günbatar Ýewropa, standart wagt", "CLST": "Çili, tomusky wagt", "WIT": "Gündogar Indoneziýa", "COST": "Kolumbiýa, tomusky wagt", "HAT": "Nýufaundlend, tomusky wagt", "SGT": "Singapur, standart wagt", "EDT": "Günorta Amerika, tomusky wagt", "COT": "Kolumbiýa, standart wagt", "AST": "Atlantika, standart wagt", "PST": "Ýuwaş umman, standart wagt"},
 	}
 }
 
@@ -183,7 +183,8 @@ func (tk *tk_TM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'tk_TM' and handles both Whole and Real numbers based on 'v'
-func (tk *tk_TM) FmtNumber(num float64, v uint64) (results string) {
+func (tk *tk_TM) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(tk.decimal) + len(tk.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -203,7 +204,6 @@ func (tk *tk_TM) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(tk.group) - 1; j >= 0; j-- {
 					b = append(b, tk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -222,13 +222,12 @@ func (tk *tk_TM) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'tk_TM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (tk *tk_TM) FmtPercent(num float64, v uint64) (results string) {
+func (tk *tk_TM) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(tk.decimal)
 	b := make([]byte, 0, l)
@@ -256,12 +255,11 @@ func (tk *tk_TM) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, tk.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'tk_TM'
-func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
@@ -283,7 +281,6 @@ func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(tk.group) - 1; j >= 0; j-- {
 					b = append(b, tk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -317,13 +314,12 @@ func (tk *tk_TM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'tk_TM'
 // in accounting notation.
-func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := tk.currencies[currency]
@@ -345,7 +341,6 @@ func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(tk.group) - 1; j >= 0; j-- {
 					b = append(b, tk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -386,8 +381,7 @@ func (tk *tk_TM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'tk_TM'

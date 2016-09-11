@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"eKr", "pKr"},
 		erasNarrow:             []string{"eKr", "pKr"},
 		erasWide:               []string{"enne Kristust", "pärast Kristust"},
-		timezones:              map[string]string{"AST": "Atlandi standardaeg", "ACWDT": "Kesk-Lääne Austraalia suveaeg", "HADT": "Hawaii-Aleuudi suveaeg", "SGT": "Singapuri standardaeg", "CDT": "Kesk-Ameerika suveaeg", "AWST": "Lääne-Austraalia standardaeg", "JST": "Jaapani standardaeg", "CLT": "Tšiili standardaeg", "CLST": "Tšiili suveaeg", "WIB": "Lääne-Indoneesia aeg", "ART": "Argentina standardaeg", "CAT": "Kesk-Aafrika aeg", "GMT": "Greenwichi aeg", "AEDT": "Ida-Austraalia suveaeg", "VET": "Venezuela aeg", "WEZ": "Lääne-Euroopa standardaeg", "EST": "Idaranniku standardaeg", "UYST": "Uruguay suveaeg", "OESZ": "Ida-Euroopa suveaeg", "NZDT": "Uus-Meremaa suveaeg", "COST": "Colombia suveaeg", "ARST": "Argentina suveaeg", "WAST": "Lääne-Aafrika suveaeg", "ACWST": "Kesk-Lääne Austraalia standardaeg", "MDT": "Mäestikuvööndi suveaeg", "WESZ": "Lääne-Euroopa suveaeg", "EAT": "Ida-Aafrika aeg", "GYT": "Guyana aeg", "WART": "Lääne-Argentina standardaeg", "∅∅∅": "Assooride suveaeg", "AEST": "Ida-Austraalia standardaeg", "BT": "Bhutani aeg", "AKDT": "Alaska suveaeg", "MEZ": "Kesk-Euroopa standardaeg", "MST": "Mäestikuvööndi standardaeg", "GFT": "Prantsuse Guajaana aeg", "ACDT": "Kesk-Austraalia suveaeg", "TMST": "Türkmenistani suveaeg", "WIT": "Ida-Indoneesia aeg", "LHDT": "Lord Howe suveaeg", "HAT": "Newfoundlandi suveaeg", "HKT": "Hongkongi standardaeg", "NZST": "Uus-Meremaa standardaeg", "CHADT": "Chathami suveaeg", "TMT": "Türkmenistani standardaeg", "SAST": "Lõuna-Aafrika standardaeg", "ChST": "Tšamorro standardaeg", "MYT": "Malaisia \u200b\u200baeg", "EDT": "Idaranniku suveaeg", "OEZ": "Ida-Euroopa standardaeg", "CHAST": "Chathami standardaeg", "SRT": "Suriname aeg", "ECT": "Ecuadori aeg", "PST": "Vaikse ookeani standardaeg", "MESZ": "Kesk-Euroopa suveaeg", "ACST": "Kesk-Austraalia standardaeg", "WARST": "Lääne-Argentina suveaeg", "AKST": "Alaska standardaeg", "CST": "Kesk-Ameerika standardaeg", "HNT": "Newfoundlandi standardaeg", "UYT": "Uruguay standardaeg", "ADT": "Atlandi suveaeg", "HAST": "Hawaii-Aleuudi standardaeg", "AWDT": "Lääne-Austraalia suveaeg", "PDT": "Vaikse ookeani suveaeg", "BOT": "Boliivia aeg", "COT": "Colombia standardaeg", "WAT": "Lääne-Aafrika standardaeg", "LHST": "Lord Howe standardaeg", "IST": "India aeg", "HKST": "Hongkongi suveaeg", "WITA": "Kesk-Indoneesia aeg", "JDT": "Jaapani suveaeg"},
+		timezones:              map[string]string{"OEZ": "Ida-Euroopa standardaeg", "CLST": "Tšiili suveaeg", "ACST": "Kesk-Austraalia standardaeg", "HKT": "Hongkongi standardaeg", "HKST": "Hongkongi suveaeg", "MDT": "MDT", "WEZ": "Lääne-Euroopa standardaeg", "NZDT": "Uus-Meremaa suveaeg", "CDT": "Kesk-Ameerika suveaeg", "AKDT": "Alaska suveaeg", "WITA": "Kesk-Indoneesia aeg", "HAST": "Hawaii-Aleuudi standardaeg", "CST": "Kesk-Ameerika standardaeg", "ACWDT": "Kesk-Lääne Austraalia suveaeg", "BOT": "Boliivia aeg", "COST": "Colombia suveaeg", "ChST": "Tšamorro standardaeg", "ECT": "Ecuadori aeg", "GYT": "Guyana aeg", "IST": "India aeg", "SRT": "Suriname aeg", "TMST": "Türkmenistani suveaeg", "AKST": "Alaska standardaeg", "EAT": "Ida-Aafrika aeg", "WART": "Lääne-Argentina standardaeg", "ADT": "Atlandi suveaeg", "AWST": "Lääne-Austraalia standardaeg", "WIT": "Ida-Indoneesia aeg", "WESZ": "Lääne-Euroopa suveaeg", "WARST": "Lääne-Argentina suveaeg", "AEST": "Ida-Austraalia standardaeg", "GMT": "Greenwichi aeg", "WAT": "Lääne-Aafrika standardaeg", "JST": "Jaapani standardaeg", "PST": "Vaikse ookeani standardaeg", "MESZ": "Kesk-Euroopa suveaeg", "AWDT": "Lääne-Austraalia suveaeg", "BT": "Bhutani aeg", "ACWST": "Kesk-Lääne Austraalia standardaeg", "SAST": "Lõuna-Aafrika standardaeg", "MEZ": "Kesk-Euroopa standardaeg", "OESZ": "Ida-Euroopa suveaeg", "CAT": "Kesk-Aafrika aeg", "MST": "MST", "LHDT": "Lord Howe suveaeg", "UYST": "Uruguay suveaeg", "HAT": "Newfoundlandi suveaeg", "PDT": "Vaikse ookeani suveaeg", "UYT": "Uruguay standardaeg", "NZST": "Uus-Meremaa standardaeg", "CHADT": "Chathami suveaeg", "VET": "Venezuela aeg", "CLT": "Tšiili standardaeg", "ART": "Argentina standardaeg", "EST": "Idaranniku standardaeg", "WIB": "Lääne-Indoneesia aeg", "JDT": "Jaapani suveaeg", "SGT": "Singapuri standardaeg", "CHAST": "Chathami standardaeg", "AST": "Atlandi standardaeg", "MYT": "Malaisia \u200b\u200baeg", "GFT": "Prantsuse Guajaana aeg", "AEDT": "Ida-Austraalia suveaeg", "∅∅∅": "Assooride suveaeg", "TMT": "Türkmenistani standardaeg", "EDT": "Idaranniku suveaeg", "LHST": "Lord Howe standardaeg", "ARST": "Argentina suveaeg", "HADT": "Hawaii-Aleuudi suveaeg", "COT": "Colombia standardaeg", "WAST": "Lääne-Aafrika suveaeg", "ACDT": "Kesk-Austraalia suveaeg", "HNT": "Newfoundlandi standardaeg"},
 	}
 }
 
@@ -191,7 +191,8 @@ func (et *et_EE) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'et_EE' and handles both Whole and Real numbers based on 'v'
-func (et *et_EE) FmtNumber(num float64, v uint64) (results string) {
+func (et *et_EE) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(et.decimal) + len(et.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -211,7 +212,6 @@ func (et *et_EE) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(et.group) - 1; j >= 0; j-- {
 					b = append(b, et.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -232,13 +232,12 @@ func (et *et_EE) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'et_EE' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (et *et_EE) FmtPercent(num float64, v uint64) (results string) {
+func (et *et_EE) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(et.decimal)
 	b := make([]byte, 0, l)
@@ -266,12 +265,11 @@ func (et *et_EE) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, et.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'et_EE'
-func (et *et_EE) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (et *et_EE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := et.currencies[currency]
@@ -293,7 +291,6 @@ func (et *et_EE) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(et.group) - 1; j >= 0; j-- {
 					b = append(b, et.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -329,13 +326,12 @@ func (et *et_EE) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'et_EE'
 // in accounting notation.
-func (et *et_EE) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (et *et_EE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := et.currencies[currency]
@@ -357,7 +353,6 @@ func (et *et_EE) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(et.group) - 1; j >= 0; j-- {
 					b = append(b, et.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -398,8 +393,7 @@ func (et *et_EE) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'et_EE'

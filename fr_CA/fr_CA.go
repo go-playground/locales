@@ -18,7 +18,7 @@ type fr_CA struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS", "ATS ", "$\u00a0AU", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD", "BND", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD", "$", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP", "CNX ", "CN¥", "COP", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD", "FKP", "FRF ", "£", "GEK ", "GEL ", "GHC ", "GHS ", "GIP", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "$\u00a0HK", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "¥", "KES ", "KGS ", "KHR ", "CF", "KPW ", "KRH ", "KRO ", "KRW", "KWD ", "KYD ", "KZT ", "LAK ", "LBP", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD", "NGN ", "NIC ", "C$", "NLG ", "NOK ", "NPR ", "$\u00a0NZ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "$\u00a0SG", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TL", "TTD", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "$\u00a0US", "USN ", "USS ", "UYI ", "UYP ", "UYU", "UZS ", "VEB ", "VEF ", "VND", "VNN ", "VUV ", "WST ", "XAF", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF", "XPD ", "XPF", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZK", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " mn ",
 		currencyNegativeSuffix: " mn ",
 		monthsAbbreviated:      []string{"", "janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."},
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"av. J.-C.", "ap. J.-C."},
 		erasNarrow:             []string{"av. J.-C.", "ap. J.-C."},
 		erasWide:               []string{"avant Jésus-Christ", "après Jésus-Christ"},
-		timezones:              map[string]string{"NZDT": "heure avancée de la Nouvelle-Zélande", "BOT": "heure de Bolivie", "ACST": "heure normale du centre de l’Australie", "ART": "heure normale d’Argentine", "ARST": "heure avancée de l’Argentine", "SAST": "heure normale d’Afrique du Sud", "CST": "heure normale du Centre", "MDT": "heure avancée de Macao", "HNT": "heure normale de Terre-Neuve", "CLST": "heure avancée du Chili", "ACWST": "heure normale du centre-ouest de l’Australie", "ECT": "heure de l’Équateur", "∅∅∅": "heure avancée de l’Amazonie", "WIB": "heure de l’Ouest indonésien", "WARST": "heure avancée de l’Ouest argentin", "LHDT": "heure avancée de Lord Howe", "JDT": "heure avancée du Japon", "IST": "heure de l’Inde", "HKST": "heure avancée de Hong Kong", "CLT": "heure normale du Chili", "OESZ": "heure avancée d’Europe de l’Est", "COST": "heure avancée de Colombie", "MEZ": "heure normale d’Europe centrale", "GYT": "heure du Guyana", "EST": "heure normale de l’Est", "AEST": "heure normale de l’Est de l’Australie", "PST": "heure normale du Pacifique", "WART": "heure normale de l’Ouest argentin", "WITA": "heure du Centre indonésien", "HKT": "heure normale de Hong Kong", "PDT": "heure avancée du Pacifique", "COT": "heure normale de Colombie", "HADT": "heure avancée d’Hawaï-Aléoutiennes", "UYT": "heure normale de l’Uruguay", "NZST": "heure normale de la Nouvelle-Zélande", "MESZ": "heure avancée d’Europe centrale", "WESZ": "heure avancée d’Europe de l’Ouest", "CAT": "heure d’Afrique centrale", "LHST": "heure normale de Lord Howe", "ChST": "heure des Chamorro", "WAT": "heure normale d’Afrique de l’Ouest", "ACWDT": "heure avancée du centre-ouest de l’Australie", "VET": "heure du Venezuela", "HAST": "heure normale d’Hawaï-Aléoutiennes", "AWDT": "heure avancée de l’Ouest de l’Australie", "HAT": "heure avancée de Terre-Neuve", "BT": "heure du Bhoutan", "CDT": "heure avancée du Centre", "WEZ": "heure normale d’Europe de l’Ouest", "EDT": "heure avancée de l’Est", "WAST": "heure avancée d’Afrique de l’Ouest", "ADT": "heure avancée de l’Atlantique", "ACDT": "heure avancée du centre de l’Australie", "SRT": "heure du Suriname", "WIT": "heure de l’Est indonésien", "JST": "heure normale du Japon", "MST": "heure normale de Macao", "OEZ": "heure normale d’Europe de l’Est", "AST": "heure normale de l’Atlantique", "SGT": "heure de Singapour", "EAT": "Heure d’Afrique orientale", "GFT": "heure de Guyane française", "MYT": "heure de la Malaisie", "AKDT": "heure avancée de l’Alaska", "GMT": "heure moyenne de Greenwich", "CHADT": "heure avancée des Îles Chatham", "TMT": "heure normale du Turkménistan", "TMST": "heure avancée du Turkménistan", "AKST": "heure normale de l’Alaska", "AWST": "heure normale de l’Ouest de l’Australie", "UYST": "heure avancée de l’Uruguay", "AEDT": "heure avancée de l’Est de l’Australie", "CHAST": "heure normale des Îles Chatham"},
+		timezones:              map[string]string{"MYT": "heure de la Malaisie", "∅∅∅": "heure avancée des Açores", "BT": "heure du Bhoutan", "OEZ": "heure normale d’Europe de l’Est", "ART": "heure normale d’Argentine", "HAST": "heure normale d’Hawaï-Aléoutiennes", "ACDT": "heure avancée du centre de l’Australie", "MST": "heure normale des Rocheuses", "UYT": "heure normale de l’Uruguay", "WESZ": "heure avancée d’Europe de l’Ouest", "UYST": "heure avancée de l’Uruguay", "TMST": "heure avancée du Turkménistan", "SAST": "heure normale d’Afrique du Sud", "GYT": "heure du Guyana", "ChST": "heure des Chamorro", "CLT": "heure normale du Chili", "CHADT": "heure avancée des Îles Chatham", "MESZ": "heure avancée d’Europe centrale", "WARST": "heure avancée de l’Ouest argentin", "SRT": "heure du Suriname", "HKT": "heure normale de Hong Kong", "BOT": "heure de Bolivie", "HADT": "heure avancée d’Hawaï-Aléoutiennes", "WAT": "heure normale d’Afrique de l’Ouest", "VET": "heure du Venezuela", "PDT": "heure avancée du Pacifique", "HAT": "heure avancée de Terre-Neuve", "SGT": "heure de Singapour", "AKDT": "heure avancée de l’Alaska", "MEZ": "heure normale d’Europe centrale", "WART": "heure normale de l’Ouest argentin", "AWST": "heure normale de l’Ouest de l’Australie", "AKST": "heure normale de l’Alaska", "CDT": "heure avancée du Centre", "COT": "heure normale de Colombie", "LHDT": "heure avancée de Lord Howe", "WAST": "heure avancée d’Afrique de l’Ouest", "AST": "heure normale de l’Atlantique", "AEDT": "heure avancée de l’Est de l’Australie", "ARST": "heure avancée de l’Argentine", "ECT": "heure de l’Équateur", "ACWST": "heure normale du centre-ouest de l’Australie", "JST": "heure normale du Japon", "GMT": "heure moyenne de Greenwich", "OESZ": "heure avancée d’Europe de l’Est", "PST": "heure normale du Pacifique", "WIT": "heure de l’Est indonésien", "WITA": "heure du Centre indonésien", "TMT": "heure normale du Turkménistan", "EST": "heure normale de l’Est", "ACWDT": "heure avancée du centre-ouest de l’Australie", "NZST": "heure normale de la Nouvelle-Zélande", "NZDT": "heure avancée de la Nouvelle-Zélande", "ADT": "heure avancée de l’Atlantique", "AWDT": "heure avancée de l’Ouest de l’Australie", "GFT": "heure de Guyane française", "WEZ": "heure normale d’Europe de l’Ouest", "HKST": "heure avancée de Hong Kong", "CST": "heure normale du Centre", "COST": "heure avancée de Colombie", "LHST": "heure normale de Lord Howe", "CHAST": "heure normale des Îles Chatham", "AEST": "heure normale de l’Est de l’Australie", "IST": "heure de l’Inde", "CAT": "heure d’Afrique centrale", "JDT": "heure avancée du Japon", "EDT": "heure avancée de l’Est", "CLST": "heure avancée du Chili", "ACST": "heure normale du centre de l’Australie", "MDT": "heure avancée des Rocheuses", "HNT": "heure normale de Terre-Neuve", "EAT": "Heure d’Afrique orientale", "WIB": "heure de l’Ouest indonésien"},
 	}
 }
 
@@ -209,7 +209,8 @@ func (fr *fr_CA) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fr_CA' and handles both Whole and Real numbers based on 'v'
-func (fr *fr_CA) FmtNumber(num float64, v uint64) (results string) {
+func (fr *fr_CA) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fr.decimal) + len(fr.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -222,7 +223,6 @@ func (fr *fr_CA) FmtNumber(num float64, v uint64) (results string) {
 			for j := len(fr.decimal) - 1; j >= 0; j-- {
 				b = append(b, fr.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -232,7 +232,6 @@ func (fr *fr_CA) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(fr.group) - 1; j >= 0; j-- {
 					b = append(b, fr.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -253,13 +252,12 @@ func (fr *fr_CA) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'fr_CA' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (fr *fr_CA) FmtPercent(num float64, v uint64) (results string) {
+func (fr *fr_CA) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fr.decimal)
 	b := make([]byte, 0, l)
@@ -270,7 +268,6 @@ func (fr *fr_CA) FmtPercent(num float64, v uint64) (results string) {
 			for j := len(fr.decimal) - 1; j >= 0; j-- {
 				b = append(b, fr.decimal[j])
 			}
-
 			continue
 		}
 
@@ -292,12 +289,11 @@ func (fr *fr_CA) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, fr.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fr_CA'
-func (fr *fr_CA) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (fr *fr_CA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fr.currencies[currency]
@@ -311,7 +307,6 @@ func (fr *fr_CA) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 			for j := len(fr.decimal) - 1; j >= 0; j-- {
 				b = append(b, fr.decimal[j])
 			}
-
 			continue
 		}
 
@@ -333,13 +328,12 @@ func (fr *fr_CA) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fr_CA'
 // in accounting notation.
-func (fr *fr_CA) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (fr *fr_CA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fr.currencies[currency]
@@ -353,7 +347,6 @@ func (fr *fr_CA) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			for j := len(fr.decimal) - 1; j >= 0; j-- {
 				b = append(b, fr.decimal[j])
 			}
-
 			continue
 		}
 
@@ -382,8 +375,7 @@ func (fr *fr_CA) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'fr_CA'

@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"មុន គ.ស.", "គ.ស."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"មុន\u200bគ្រិស្តសករាជ", "គ្រិស្តសករាជ"},
-		timezones:              map[string]string{"AEDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "COST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bកូឡុំប៊ី", "VET": "ម៉ោង\u200bនៅ\u200bវ៉េណេស៊ុយអេឡា", "HAT": "ម៉ោង\u200bពេលថ្ងៃ\u200bនៅ\u200bញូហ្វោនឡែន", "HAST": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "ChST": "ម៉ោង\u200bនៅ\u200bចាំម៉ូរ៉ូ", "AKST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាឡាស្កា", "UYT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "ADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអាត្លង់ទិក", "MEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "MESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "LHST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bឡត\u200bហៅ", "TMST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bតួកម៉េនីស្ថាន\u200b", "WIT": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bកើត", "OESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "WIB": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bលិច", "SRT": "ម៉ោង\u200bនៅ\u200bសូរីណាម", "GFT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន\u200bបារាំង", "SGT": "ម៉ោង\u200bនៅ\u200bសិង្ហបូរី", "AWST": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "WAT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bលិច", "ACDT": "ម៉ោង\u200bពេលថ្ងៃ\u200b\u200b\u200b\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "ART": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន", "ARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន", "SAST": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bត្បូង", "IST": "ម៉ោង\u200bនៅ\u200bឥណ្ឌា", "UYST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "NZST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bនូវែលសេឡង់", "CHADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bចាថាំ", "WARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "MST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bតំបន់\u200bភ្នំ\u200bអាមេរិក\u200bខាង\u200bជើង", "NZDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bនូវែលសេឡង់", "BOT": "ម៉ោង\u200bនៅ\u200bបូលីវី", "AWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "MDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bតំបន់\u200bភ្នំ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "HKT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bហុងកុង", "CLST": "ម៉ោងរដូវក្តៅនៅឈីលី", "AEST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "AKDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bអាឡាស្កា", "WESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "CAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bកណ្ដាល", "CHAST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bចាថាំ", "WAST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាហ្វ្រិក\u200b\u200b\u200bខាងលិច", "AST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាត្លង់ទិក", "BT": "ម៉ោងនៅប៊ូតាន", "GYT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន", "WEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "HNT": "ម៉ោង\u200b\u200bស្តង់ដារ\u200b\u200bនៅ\u200bញូហ្វោនឡែន", "WART": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "ACWST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "HADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "EDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគខាង\u200bកើតនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "CLT": "ម៉ោងស្តង់ដារនៅឈីលី", "PST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bលិច\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "OEZ": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "ECT": "ម៉ោង\u200bនៅ\u200bអេក្វាទ័រ", "TMT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅតួកម៉េនីស្ថាន", "MYT": "ម៉ោង\u200bនៅ\u200bម៉ាឡេស៊ី", "PDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200b\u200bភាគ\u200bខាងលិច\u200bនៅ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "ACST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "WITA": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200b\u200bកណ្ដាល", "JST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bជប៉ុន", "COT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bកូឡុំប៊ី", "LHDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bឡតហៅ", "∅∅∅": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអេហ្សស", "HKST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bហុងកុង", "JDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅជប៉ុន", "EAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bកើត", "CST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "CDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "EST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bកើត\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "GMT": "ម៉ោងនៅគ្រីនវិច", "ACWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល"},
+		timezones:              map[string]string{"ADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអាត្លង់ទិក", "VET": "ម៉ោង\u200bនៅ\u200bវ៉េណេស៊ុយអេឡា", "TMST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bតួកម៉េនីស្ថាន\u200b", "COST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bកូឡុំប៊ី", "LHST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bឡត\u200bហៅ", "ACDT": "ម៉ោង\u200bពេលថ្ងៃ\u200b\u200b\u200b\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "AWST": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "AEST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "GFT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន\u200bបារាំង", "ChST": "ម៉ោង\u200bនៅ\u200bចាំម៉ូរ៉ូ", "SAST": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bត្បូង", "MST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bតំបន់\u200bភ្នំ\u200bអាមេរិក\u200bខាង\u200bជើង", "SRT": "ម៉ោង\u200bនៅ\u200bសូរីណាម", "∅∅∅": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអេហ្សស", "CAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bកណ្ដាល", "UYT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "WAST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាហ្វ្រិក\u200b\u200b\u200bខាងលិច", "HAST": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "NZDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bនូវែលសេឡង់", "MEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "OESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "CLST": "ម៉ោងរដូវក្តៅនៅឈីលី", "ART": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន", "WESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "AEDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "MDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bតំបន់\u200bភ្នំ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "HKT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bហុងកុង", "ARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន", "HADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "ECT": "ម៉ោង\u200bនៅ\u200bអេក្វាទ័រ", "WAT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bលិច", "CHADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bចាថាំ", "HKST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bហុងកុង", "AST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាត្លង់ទិក", "PDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200b\u200bភាគ\u200bខាងលិច\u200bនៅ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "EDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគខាង\u200bកើតនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "JST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bជប៉ុន", "WART": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "HNT": "ម៉ោង\u200b\u200bស្តង់ដារ\u200b\u200bនៅ\u200bញូហ្វោនឡែន", "BT": "ម៉ោងនៅប៊ូតាន", "ACWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "WIB": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bលិច", "OEZ": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "WARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "GMT": "ម៉ោងនៅគ្រីនវិច", "COT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bកូឡុំប៊ី", "MESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "JDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅជប៉ុន", "MYT": "ម៉ោង\u200bនៅ\u200bម៉ាឡេស៊ី", "WITA": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200b\u200bកណ្ដាល", "CST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "EST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bកើត\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "EAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bកើត", "CLT": "ម៉ោងស្តង់ដារនៅឈីលី", "GYT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន", "SGT": "ម៉ោង\u200bនៅ\u200bសិង្ហបូរី", "BOT": "ម៉ោង\u200bនៅ\u200bបូលីវី", "AKDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bអាឡាស្កា", "ACWST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "IST": "ម៉ោង\u200bនៅ\u200bឥណ្ឌា", "AWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "HAT": "ម៉ោង\u200bពេលថ្ងៃ\u200bនៅ\u200bញូហ្វោនឡែន", "UYST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "CDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "LHDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bឡតហៅ", "ACST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "PST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bលិច\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "WIT": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bកើត", "TMT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅតួកម៉េនីស្ថាន", "AKST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាឡាស្កា", "WEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "NZST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bនូវែលសេឡង់", "CHAST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bចាថាំ"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (km *km_KH) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'km_KH' and handles both Whole and Real numbers based on 'v'
-func (km *km_KH) FmtNumber(num float64, v uint64) (results string) {
+func (km *km_KH) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(km.decimal) + len(km.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (km *km_KH) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'km_KH' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (km *km_KH) FmtPercent(num float64, v uint64) (results string) {
+func (km *km_KH) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(km.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (km *km_KH) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, km.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'km_KH'
-func (km *km_KH) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (km *km_KH) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := km.currencies[currency]
@@ -307,13 +306,12 @@ func (km *km_KH) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'km_KH'
 // in accounting notation.
-func (km *km_KH) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (km *km_KH) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := km.currencies[currency]
@@ -378,8 +376,7 @@ func (km *km_KH) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, km.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'km_KH'

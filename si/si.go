@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "si",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{2, 6},
+		pluralsRange:           []locales.PluralRule{6, 2},
 		decimal:                ".",
 		group:                  ",",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ක්\u200dරි.පූ.", "ක්\u200dරි.ව."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ක්\u200dරිස්තු පූර්ව", "ක්\u200dරිස්තු වර්ෂ"},
-		timezones:              map[string]string{"EAT": "නැගෙනහිර අප්\u200dරිකානු වේලාව", "PDT": "උතුරු ඇමරිකානු පැසිෆික් දිවාආලෝක වේලාව", "WART": "බටහිර ආර්ජන්ටිනා සම්මත වේලාව", "LHST": "ලෝර්ඩ් හෝව් සම්මත වේලාව", "CST": "උතුරු ඇමරිකානු මධ්\u200dයම සම්මත වේලාව", "WESZ": "බටහිර යුරෝපීය ග්\u200dරීෂ්ම වේලාව", "HAT": "නිව්ෆවුන්ලන්ත දිවාආලෝක වේලාව", "CHADT": "චැතම් දිවා වේලාව", "COST": "කොලොම්බියා ග්\u200dරීෂ්ම කාලය", "MEZ": "මධ්\u200dයම යුරෝපීය සම්මත වේලාව", "ChST": "චමොරෝ වේලාව", "HADT": "හවායි-අලෙයුතියාන් දිවාආලෝක වේලාව", "SGT": "සිංගප්පුරු වේලාව", "EST": "උතුරු ඇමරිකානු නැගෙනහිර සම්මත වේලාව", "GMT": "ග්\u200dරිනිච් මධ්\u200dයම වේලාව", "PST": "උතුරු ඇමරිකානු පැසිෆික් සම්මත වේලාව", "OESZ": "නැගෙනහිර යුරෝපීය ග්\u200dරීෂ්ම වේලාව", "AEST": "නැගෙනහිර ඕස්ට්\u200dරේලියානු සම්මත වේලාව", "ART": "ආර්ජන්ටිනා සම්මත වේලාව", "SAST": "දකුණු අප්\u200dරිකානු වේලාව", "ACWDT": "මධ්\u200dයම බටහිර ඔස්ට්\u200dරේලියානු දහවල් වේලාව", "IST": "ඉන්දියානු වේලාව", "WARST": "බටහිර ආර්ජන්ටිනා ග්\u200dරීෂ්ම කාලය", "WAT": "බටහිර අප්\u200dරිකානු සම්මත වේලාව", "TMST": "ටර්ක්මෙනිස්තාන ග්\u200dරීෂ්ම වේලාව", "WIT": "නැගෙනහිර ඉන්දුනීසියානු වේලාව", "JST": "ජපාන සම්මත වේලාව", "MDT": "MDT", "AWST": "බටහිර ඕස්ට්\u200dරේලියානු සම්මත වේලාව", "HNT": "නිව්ෆවුන්ලන්ත සම්මත වේලාව", "WITA": "මධ්\u200dයම ඉන්දුනීසියානු වේලාව", "∅∅∅": "ඇමර්සන් ග්\u200dරීෂ්ම කාලය", "WIB": "බටහිර ඉන්දුනීසියානු වේලාව", "BOT": "බොලිවියා වේලාව", "WAST": "බටහිර අප්\u200dරිකානු ග්\u200dරීෂ්ම කාලය", "ACST": "ඕස්ට්\u200dරේලියානු සම්මත වේලාව", "ACDT": "මධ්\u200dයම ඔස්ට්\u200dරේලියානු දහවල් වේලාව", "VET": "වෙනිසියුලා වේලාව", "CLT": "චිලී සම්මත වේලාව", "UYST": "උරුගුවේ ග්\u200dරීෂ්ම කාලය", "CHAST": "චැතම් සම්මත වේලාව", "AST": "අත්ලාන්තික් සම්මත වේලාව", "GYT": "ගයනා වේලාව", "ACWST": "මධ්\u200dයම බටහිර ඔස්ට්\u200dරේලියානු සම්මත වේලාව", "SRT": "සුරිනාම වේලාව", "ECT": "ඉක්වදෝර් වේලාව", "CDT": "උතුරු ඇමරිකානු මධ්\u200dයම දිවාආලෝක වේලාව", "CAT": "මධ්\u200dයම අප්\u200dරිකානු වේලාව", "ARST": "ආර්ජන්ටිනා ග්\u200dරීෂ්ම කාලය", "BT": "භුතාන වේලාව", "CLST": "චිලී ග්\u200dරීෂ්ම කාලය", "OEZ": "නැගෙනහිර යුරෝපීය සම්මත වේලාව", "AEDT": "නැඟෙනහිර ඕස්ට්\u200dරේලියානු දහවල් වේලාව", "COT": "කොලොම්බියා සම්මත වේලාව", "MESZ": "මධ්\u200dයම යුරෝපීය ග්\u200dරීෂ්ම වේලාව", "AKDT": "ඇලස්කා දිවාආලෝක වේලාව", "HAST": "හවායි-අලෙයුතියාන් සම්මත වේලාව", "MST": "MST", "NZST": "නවසීලන්ත සම්මත වේලාව", "NZDT": "නවසීලන්ත දිවා වේලාව", "WEZ": "බටහිර යුරෝපීය සම්මත වේලාව", "ADT": "අත්ලාන්තික් දිවාආලෝක වේලාව", "MYT": "මැලේසියානු වේලාව", "JDT": "ජපාන දහවල් වේලාව", "HKT": "හොංකොං සම්මත වේලාව", "UYT": "උරුගුවේ සම්මත වේලාව", "TMT": "ටර්ක්මෙනිස්තාන සම්මත වේලාව", "GFT": "ප්\u200dරංශ ගයනා වේලාව", "AKST": "ඇලස්කා සම්මත වේලාව", "HKST": "හොංකොං ග්\u200dරීෂ්ම වේලාව", "AWDT": "බටහිර ඔස්ට්\u200dරේලියානු දහවල් වේලාව", "EDT": "උතුරු ඇමරිකානු නැගෙනහිර දිවාආලෝක වේලාව", "LHDT": "ලෝර්ඩ් හෝව් දිවා වේලාව"},
+		timezones:              map[string]string{"COST": "කොලොම්බියා ග්\u200dරීෂ්ම කාලය", "AEDT": "නැඟෙනහිර ඕස්ට්\u200dරේලියානු දහවල් වේලාව", "MYT": "මැලේසියානු වේලාව", "ARST": "ආර්ජන්ටිනා ග්\u200dරීෂ්ම කාලය", "AKDT": "ඇලස්කා දිවාආලෝක වේලාව", "WEZ": "බටහිර යුරෝපීය සම්මත වේලාව", "OEZ": "නැගෙනහිර යුරෝපීය සම්මත වේලාව", "AEST": "නැගෙනහිර ඕස්ට්\u200dරේලියානු සම්මත වේලාව", "HKST": "හොංකොං ග්\u200dරීෂ්ම වේලාව", "TMST": "ටර්ක්මෙනිස්තාන ග්\u200dරීෂ්ම වේලාව", "HADT": "හවායි-අලෙයුතියාන් දිවාආලෝක වේලාව", "JDT": "ජපාන දහවල් වේලාව", "MESZ": "මධ්\u200dයම යුරෝපීය ග්\u200dරීෂ්ම වේලාව", "SGT": "සිංගප්පුරු වේලාව", "WITA": "මධ්\u200dයම ඉන්දුනීසියානු වේලාව", "AWST": "බටහිර ඕස්ට්\u200dරේලියානු සම්මත වේලාව", "HAST": "හවායි-අලෙයුතියාන් සම්මත වේලාව", "WAST": "බටහිර අප්\u200dරිකානු ග්\u200dරීෂ්ම කාලය", "SRT": "සුරිනාම වේලාව", "CLST": "චිලී ග්\u200dරීෂ්ම කාලය", "WARST": "බටහිර ආර්ජන්ටිනා ග්\u200dරීෂ්ම කාලය", "ADT": "අත්ලාන්තික් දිවාආලෝක වේලාව", "PDT": "උතුරු ඇමරිකානු පැසිෆික් දිවාආලෝක වේලාව", "WART": "බටහිර ආර්ජන්ටිනා සම්මත වේලාව", "ACWDT": "මධ්\u200dයම බටහිර ඔස්ට්\u200dරේලියානු දහවල් වේලාව", "NZST": "නවසීලන්ත සම්මත වේලාව", "SAST": "දකුණු අප්\u200dරිකානු වේලාව", "UYST": "උරුගුවේ ග්\u200dරීෂ්ම කාලය", "CST": "උතුරු ඇමරිකානු මධ්\u200dයම සම්මත වේලාව", "NZDT": "නවසීලන්ත දිවා වේලාව", "CHAST": "චැතම් සම්මත වේලාව", "ACST": "ඕස්ට්\u200dරේලියානු සම්මත වේලාව", "GFT": "ප්\u200dරංශ ගයනා වේලාව", "COT": "කොලොම්බියා සම්මත වේලාව", "TMT": "ටර්ක්මෙනිස්තාන සම්මත වේලාව", "EAT": "නැගෙනහිර අප්\u200dරිකානු වේලාව", "AWDT": "බටහිර ඔස්ට්\u200dරේලියානු දහවල් වේලාව", "MST": "උතුරු ඇමරිකානු කඳුකර සම්මත වේලාව", "∅∅∅": "ඇසොර්ස් ග්\u200dරීෂ්ම වේලාව", "BOT": "බොලිවියා වේලාව", "HAT": "නිව්ෆවුන්ලන්ත දිවාආලෝක වේලාව", "EDT": "උතුරු ඇමරිකානු නැගෙනහිර දිවාආලෝක වේලාව", "LHDT": "ලෝර්ඩ් හෝව් දිවා වේලාව", "GMT": "ග්\u200dරිනිච් මධ්\u200dයම වේලාව", "ChST": "චමොරෝ වේලාව", "EST": "උතුරු ඇමරිකානු නැගෙනහිර සම්මත වේලාව", "ECT": "ඉක්වදෝර් වේලාව", "JST": "ජපාන සම්මත වේලාව", "GYT": "ගයනා වේලාව", "MDT": "උතුරු ඇමරිකානු කඳුකර දිවාආලෝක වේලාව", "CAT": "මධ්\u200dයම අප්\u200dරිකානු වේලාව", "WAT": "බටහිර අප්\u200dරිකානු සම්මත වේලාව", "WIB": "බටහිර ඉන්දුනීසියානු වේලාව", "CLT": "චිලී සම්මත වේලාව", "UYT": "උරුගුවේ සම්මත වේලාව", "WIT": "නැගෙනහිර ඉන්දුනීසියානු වේලාව", "BT": "භුතාන වේලාව", "OESZ": "නැගෙනහිර යුරෝපීය ග්\u200dරීෂ්ම වේලාව", "ART": "ආර්ජන්ටිනා සම්මත වේලාව", "ACWST": "මධ්\u200dයම බටහිර ඔස්ට්\u200dරේලියානු සම්මත වේලාව", "LHST": "ලෝර්ඩ් හෝව් සම්මත වේලාව", "AST": "අත්ලාන්තික් සම්මත වේලාව", "AKST": "ඇලස්කා සම්මත වේලාව", "CHADT": "චැතම් දිවා වේලාව", "PST": "උතුරු ඇමරිකානු පැසිෆික් සම්මත වේලාව", "HKT": "හොංකොං සම්මත වේලාව", "CDT": "උතුරු ඇමරිකානු මධ්\u200dයම දිවාආලෝක වේලාව", "MEZ": "මධ්\u200dයම යුරෝපීය සම්මත වේලාව", "VET": "වෙනිසියුලා වේලාව", "ACDT": "මධ්\u200dයම ඔස්ට්\u200dරේලියානු දහවල් වේලාව", "IST": "ඉන්දියානු වේලාව", "HNT": "නිව්ෆවුන්ලන්ත සම්මත වේලාව", "WESZ": "බටහිර යුරෝපීය ග්\u200dරීෂ්ම වේලාව"},
 	}
 }
 
@@ -203,7 +203,8 @@ func (si *si) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'si' and handles both Whole and Real numbers based on 'v'
-func (si *si) FmtNumber(num float64, v uint64) (results string) {
+func (si *si) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(si.decimal) + len(si.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -239,13 +240,12 @@ func (si *si) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'si' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (si *si) FmtPercent(num float64, v uint64) (results string) {
+func (si *si) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(si.decimal)
 	b := make([]byte, 0, l)
@@ -271,12 +271,11 @@ func (si *si) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, si.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'si'
-func (si *si) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (si *si) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := si.currencies[currency]
@@ -329,13 +328,12 @@ func (si *si) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'si'
 // in accounting notation.
-func (si *si) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (si *si) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := si.currencies[currency]
@@ -400,8 +398,7 @@ func (si *si) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, si.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'si'

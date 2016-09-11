@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"கி.மு.", "கி.பி."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"கிறிஸ்துவுக்கு முன்", "அன்னோ டோமினி"},
-		timezones:              map[string]string{"CLST": "சிலி கோடை நேரம்", "EST": "கிழக்கத்திய நிலையான நேரம்", "NZST": "நியூசிலாந்து நிலையான நேரம்", "CHAST": "சத்தாம் நிலையான நேரம்", "ChST": "சாமோரோ நிலையான நேரம்", "HAST": "ஹவாய்-அலேஷியன் நிலையான நேரம்", "HKST": "ஹாங்காங் கோடை நேரம்", "WART": "மேற்கத்திய அர்ஜென்டினா நிலையான நேரம்", "WEZ": "மேற்கத்திய ஐரோப்பிய நிலையான நேரம்", "HAT": "நியூஃபவுண்ட்லாந்து பகலொளி நேரம்", "∅∅∅": "அசோர்ஸ் கோடை நேரம்", "VET": "வெனிசுலா நேரம்", "WITA": "மத்திய இந்தோனேசியா நேரம்", "CST": "மத்திய நிலையான நேரம்", "UYST": "உருகுவே கோடை நேரம்", "AEST": "ஆஸ்திரேலியன் கிழக்கத்திய நிலையான நேரம்", "WIB": "மேற்கத்திய இந்தோனேசியா நேரம்", "PST": "பசிபிக் நிலையான நேரம்", "MEZ": "மத்திய ஐரோப்பிய நிலையான நேரம்", "LHDT": "லார்ட் ஹோவ் பகலொளி நேரம்", "SGT": "சிங்கப்பூர் நிலையான நேரம்", "ACDT": "ஆஸ்திரேலியன் மத்திய பகலொளி நேரம்", "PDT": "பசிபிக் பகலொளி நேரம்", "COST": "கொலம்பியா கோடை நேரம்", "ACST": "ஆஸ்திரேலியன் மத்திய நிலையான நேரம்", "WARST": "மேற்கத்திய அர்ஜென்டினா கோடை நேரம்", "WAT": "மேற்கு ஆப்பிரிக்க நிலையான நேரம்", "SAST": "தென் ஆப்பிரிக்க நிலையான நேரம்", "IST": "இந்திய நிலையான நேரம்", "HNT": "நியூஃபவுண்ட்லாந்து நிலையான நேரம்", "EAT": "கிழக்கு ஆப்பிரிக்க நேரம்", "UYT": "உருகுவே நிலையான நேரம்", "GMT": "கிரீன்விச் சராசரி நேரம்", "TMT": "துர்க்மெனிஸ்தான் நிலையான நேரம்", "JST": "ஜப்பான் நிலையான நேரம்", "ARST": "அர்ஜென்டினா கோடை நேரம்", "AWDT": "ஆஸ்திரேலியன் மேற்கத்திய பகலொளி நேரம்", "EDT": "கிழக்கத்திய பகலொளி நேரம்", "ADT": "அட்லாண்டிக் பகலொளி நேரம்", "COT": "கொலம்பியா நிலையான நேரம்", "ACWDT": "ஆஸ்திரேலியன் மத்திய மேற்கத்திய பகலொளி நேரம்", "MYT": "மலேஷிய நேரம்", "NZDT": "நியூசிலாந்து பகலொளி நேரம்", "OEZ": "கிழக்கத்திய ஐரோப்பிய நிலையான நேரம்", "OESZ": "கிழக்கத்திய ஐரோப்பிய கோடை நேரம்", "BOT": "பொலிவியா நேரம்", "GYT": "கயானா நேரம்", "WAST": "மேற்கு ஆப்பிரிக்கா கோடை நேரம்", "JDT": "ஜப்பான் பகலொளி நேரம்", "WESZ": "மேற்கத்திய ஐரோப்பிய கோடை நேரம்", "AWST": "ஆஸ்திரேலியன் மேற்கத்திய நிலையான நேரம்", "CDT": "மத்திய பகலொளி நேரம்", "CHADT": "சத்தாம் பகலொளி நேரம்", "WIT": "கிழக்கத்திய இந்தோனேசியா நேரம்", "AKDT": "அலாஸ்கா பகலொளி நேரம்", "HKT": "ஹாங்காங் நிலையான நேரம்", "AEDT": "ஆஸ்திரேலியன் கிழக்கத்திய பகலொளி நேரம்", "MST": "மவுன்டைன் நிலையான நேரம்", "TMST": "துர்க்மெனிஸ்தான் கோடை நேரம்", "LHST": "லார்ட் ஹோவ் நிலையான நேரம்", "AKST": "அலாஸ்கா நிலையான நேரம்", "CAT": "மத்திய ஆப்பிரிக்க நேரம்", "BT": "பூடான் நேரம்", "ART": "அர்ஜென்டினா நிலையான நேரம்", "SRT": "சுரினாம் நேரம்", "MDT": "மவுன்டைன் பகலொளி நேரம்", "ACWST": "ஆஸ்திரேலியன் மத்திய மேற்கத்திய நிலையான நேரம்", "AST": "அட்லாண்டிக் நிலையான நேரம்", "HADT": "ஹவாய்-அலேஷியன் பகலொளி நேரம்", "MESZ": "மத்திய ஐரோப்பிய கோடை நேரம்", "CLT": "சிலி நிலையான நேரம்", "GFT": "ஃபிரஞ்சு கயானா நேரம்", "ECT": "ஈக்வடார் நேரம்"},
+		timezones:              map[string]string{"HKST": "ஹாங்காங் கோடை நேரம்", "GMT": "கிரீன்விச் சராசரி நேரம்", "MST": "மக்காவ் தர நேரம்", "WEZ": "மேற்கத்திய ஐரோப்பிய நிலையான நேரம்", "WART": "மேற்கத்திய அர்ஜென்டினா நிலையான நேரம்", "ACDT": "ஆஸ்திரேலியன் மத்திய பகலொளி நேரம்", "AKDT": "அலாஸ்கா பகலொளி நேரம்", "JST": "ஜப்பான் நிலையான நேரம்", "CLT": "சிலி நிலையான நேரம்", "AKST": "அலாஸ்கா நிலையான நேரம்", "LHDT": "லார்ட் ஹோவ் பகலொளி நேரம்", "ACST": "ஆஸ்திரேலியன் மத்திய நிலையான நேரம்", "WIB": "மேற்கத்திய இந்தோனேசியா நேரம்", "MESZ": "மத்திய ஐரோப்பிய கோடை நேரம்", "AEDT": "ஆஸ்திரேலியன் கிழக்கத்திய பகலொளி நேரம்", "SGT": "சிங்கப்பூர் நிலையான நேரம்", "AWDT": "ஆஸ்திரேலியன் மேற்கத்திய பகலொளி நேரம்", "ARST": "அர்ஜென்டினா கோடை நேரம்", "ChST": "சாமோரோ நிலையான நேரம்", "NZST": "நியூசிலாந்து நிலையான நேரம்", "CAT": "மத்திய ஆப்பிரிக்க நேரம்", "SAST": "தென் ஆப்பிரிக்க நிலையான நேரம்", "CST": "மத்திய நிலையான நேரம்", "CDT": "மத்திய பகலொளி நேரம்", "ACWDT": "ஆஸ்திரேலியன் மத்திய மேற்கத்திய பகலொளி நேரம்", "HAT": "நியூஃபவுண்ட்லாந்து பகலொளி நேரம்", "WIT": "கிழக்கத்திய இந்தோனேசியா நேரம்", "TMST": "துர்க்மெனிஸ்தான் கோடை நேரம்", "WAT": "மேற்கு ஆப்பிரிக்க நிலையான நேரம்", "CLST": "சிலி கோடை நேரம்", "MDT": "மக்காவ் கோடை நேரம்", "JDT": "ஜப்பான் பகலொளி நேரம்", "WARST": "மேற்கத்திய அர்ஜென்டினா கோடை நேரம்", "AEST": "ஆஸ்திரேலியன் கிழக்கத்திய நிலையான நேரம்", "BOT": "பொலிவியா நேரம்", "GFT": "ஃபிரஞ்சு கயானா நேரம்", "EDT": "கிழக்கத்திய பகலொளி நேரம்", "ADT": "அட்லாண்டிக் பகலொளி நேரம்", "∅∅∅": "பெரு கோடை நேரம்", "WESZ": "மேற்கத்திய ஐரோப்பிய கோடை நேரம்", "NZDT": "நியூசிலாந்து பகலொளி நேரம்", "VET": "வெனிசுலா நேரம்", "SRT": "சுரினாம் நேரம்", "WITA": "மத்திய இந்தோனேசியா நேரம்", "BT": "பூடான் நேரம்", "HADT": "ஹவாய்-அலேஷியன் பகலொளி நேரம்", "MEZ": "மத்திய ஐரோப்பிய நிலையான நேரம்", "OESZ": "கிழக்கத்திய ஐரோப்பிய கோடை நேரம்", "ECT": "ஈக்வடார் நேரம்", "WAST": "மேற்கு ஆப்பிரிக்கா கோடை நேரம்", "CHAST": "சத்தாம் நிலையான நேரம்", "UYT": "உருகுவே நிலையான நேரம்", "HAST": "ஹவாய்-அலேஷியன் நிலையான நேரம்", "HNT": "நியூஃபவுண்ட்லாந்து நிலையான நேரம்", "AWST": "ஆஸ்திரேலியன் மேற்கத்திய நிலையான நேரம்", "COST": "கொலம்பியா கோடை நேரம்", "ACWST": "ஆஸ்திரேலியன் மத்திய மேற்கத்திய நிலையான நேரம்", "EAT": "கிழக்கு ஆப்பிரிக்க நேரம்", "AST": "அட்லாண்டிக் நிலையான நேரம்", "HKT": "ஹாங்காங் நிலையான நேரம்", "TMT": "துர்க்மெனிஸ்தான் நிலையான நேரம்", "ART": "அர்ஜென்டினா நிலையான நேரம்", "EST": "கிழக்கத்திய நிலையான நேரம்", "MYT": "மலேஷிய நேரம்", "PDT": "பசிபிக் பகலொளி நேரம்", "UYST": "உருகுவே கோடை நேரம்", "COT": "கொலம்பியா நிலையான நேரம்", "OEZ": "கிழக்கத்திய ஐரோப்பிய நிலையான நேரம்", "GYT": "கயானா நேரம்", "CHADT": "சத்தாம் பகலொளி நேரம்", "PST": "பசிபிக் நிலையான நேரம்", "LHST": "லார்ட் ஹோவ் நிலையான நேரம்", "IST": "இந்திய நிலையான நேரம்"},
 	}
 }
 
@@ -199,7 +199,8 @@ func (ta *ta_MY) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ta_MY' and handles both Whole and Real numbers based on 'v'
-func (ta *ta_MY) FmtNumber(num float64, v uint64) (results string) {
+func (ta *ta_MY) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ta.decimal) + len(ta.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -235,13 +236,12 @@ func (ta *ta_MY) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ta_MY' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ta *ta_MY) FmtPercent(num float64, v uint64) (results string) {
+func (ta *ta_MY) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ta.decimal)
 	b := make([]byte, 0, l)
@@ -267,12 +267,11 @@ func (ta *ta_MY) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ta.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ta_MY'
-func (ta *ta_MY) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ta *ta_MY) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ta.currencies[currency]
@@ -329,13 +328,12 @@ func (ta *ta_MY) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ta_MY'
 // in accounting notation.
-func (ta *ta_MY) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ta *ta_MY) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ta.currencies[currency]
@@ -404,8 +402,7 @@ func (ta *ta_MY) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ta_MY'

@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"BC", "AD"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"Kurisito Atakaijire", "Kurisito Yaijire"},
-		timezones:         map[string]string{"SGT": "SGT", "CLST": "CLST", "OESZ": "OESZ", "WART": "WART", "ACDT": "ACDT", "LHST": "LHST", "LHDT": "LHDT", "JDT": "JDT", "UYT": "UYT", "GMT": "GMT", "CHADT": "CHADT", "MEZ": "MEZ", "MESZ": "MESZ", "JST": "JST", "HKT": "HKT", "AST": "AST", "AWST": "AWST", "CLT": "CLT", "MST": "MST", "WIB": "WIB", "BOT": "BOT", "ART": "ART", "ACST": "ACST", "MYT": "MYT", "ADT": "ADT", "TMT": "TMT", "VET": "VET", "GFT": "GFT", "WIT": "WIT", "OEZ": "OEZ", "WAST": "WAST", "ACWDT": "ACWDT", "WEZ": "WEZ", "CDT": "CDT", "AWDT": "AWDT", "AEDT": "AEDT", "WAT": "WAT", "BT": "BT", "WITA": "WITA", "ChST": "ChST", "AKDT": "AKDT", "CST": "CST", "WESZ": "WESZ", "PST": "PST", "NZST": "NZST", "SRT": "SRT", "SAST": "SAST", "∅∅∅": "∅∅∅", "IST": "IST", "AKST": "AKST", "HNT": "HNT", "CAT": "CAT", "EDT": "EDT", "PDT": "PDT", "WARST": "WARST", "GYT": "GYT", "EAT": "EAT", "UYST": "UYST", "CHAST": "CHAST", "COST": "COST", "MDT": "MDT", "ECT": "ECT", "ARST": "ARST", "TMST": "TMST", "HADT": "HADT", "HKST": "HKST", "HAT": "HAT", "COT": "COT", "ACWST": "ACWST", "HAST": "HAST", "EST": "EST", "AEST": "AEST", "NZDT": "NZDT"},
+		timezones:         map[string]string{"WIT": "WIT", "TMST": "TMST", "SGT": "SGT", "PST": "PST", "UYST": "UYST", "ARST": "ARST", "ChST": "ChST", "MDT": "MDT", "JST": "JST", "WARST": "WARST", "ACST": "ACST", "AEST": "AEST", "WART": "WART", "PDT": "PDT", "WITA": "WITA", "AKDT": "AKDT", "COST": "COST", "MEZ": "MEZ", "CDT": "CDT", "ACWDT": "ACWDT", "GMT": "GMT", "EDT": "EDT", "EST": "EST", "LHDT": "LHDT", "AST": "AST", "HKST": "HKST", "WIB": "WIB", "JDT": "JDT", "HAST": "HAST", "∅∅∅": "∅∅∅", "NZDT": "NZDT", "WAST": "WAST", "WEZ": "WEZ", "UYT": "UYT", "TMT": "TMT", "IST": "IST", "AKST": "AKST", "LHST": "LHST", "NZST": "NZST", "AEDT": "AEDT", "HKT": "HKT", "ART": "ART", "GFT": "GFT", "CST": "CST", "ECT": "ECT", "OEZ": "OEZ", "ADT": "ADT", "HADT": "HADT", "CHADT": "CHADT", "MESZ": "MESZ", "HAT": "HAT", "BOT": "BOT", "CAT": "CAT", "ACWST": "ACWST", "SAST": "SAST", "MST": "MST", "HNT": "HNT", "GYT": "GYT", "CHAST": "CHAST", "ACDT": "ACDT", "VET": "VET", "MYT": "MYT", "CLST": "CLST", "AWDT": "AWDT", "SRT": "SRT", "WESZ": "WESZ", "OESZ": "OESZ", "CLT": "CLT", "AWST": "AWST", "BT": "BT", "COT": "COT", "EAT": "EAT", "WAT": "WAT"},
 	}
 }
 
@@ -174,20 +174,19 @@ func (cgg *cgg_UG) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cgg_UG' and handles both Whole and Real numbers based on 'v'
-func (cgg *cgg_UG) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (cgg *cgg_UG) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'cgg_UG' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (cgg *cgg_UG) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (cgg *cgg_UG) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cgg_UG'
-func (cgg *cgg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (cgg *cgg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cgg.currencies[currency]
@@ -199,20 +198,14 @@ func (cgg *cgg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cgg.decimal) - 1; j >= 0; j-- {
-				b = append(b, cgg.decimal[j])
-			}
-
+			b = append(b, cgg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cgg.group) - 1; j >= 0; j-- {
-					b = append(b, cgg.group[j])
-				}
-
+				b = append(b, cgg.group[0])
 				count = 1
 			} else {
 				count++
@@ -227,9 +220,7 @@ func (cgg *cgg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(cgg.minus) - 1; j >= 0; j-- {
-			b = append(b, cgg.minus[j])
-		}
+		b = append(b, cgg.minus[0])
 	}
 
 	// reverse
@@ -248,13 +239,12 @@ func (cgg *cgg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cgg_UG'
 // in accounting notation.
-func (cgg *cgg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (cgg *cgg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cgg.currencies[currency]
@@ -266,20 +256,14 @@ func (cgg *cgg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cgg.decimal) - 1; j >= 0; j-- {
-				b = append(b, cgg.decimal[j])
-			}
-
+			b = append(b, cgg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cgg.group) - 1; j >= 0; j-- {
-					b = append(b, cgg.group[j])
-				}
-
+				b = append(b, cgg.group[0])
 				count = 1
 			} else {
 				count++
@@ -295,9 +279,7 @@ func (cgg *cgg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) 
 			b = append(b, symbol[j])
 		}
 
-		for j := len(cgg.minus) - 1; j >= 0; j-- {
-			b = append(b, cgg.minus[j])
-		}
+		b = append(b, cgg.minus[0])
 
 	} else {
 
@@ -323,8 +305,7 @@ func (cgg *cgg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'cgg_UG'

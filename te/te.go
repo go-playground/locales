@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"క్రీపూ", "క్రీశ"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"క్రీస్తు పూర్వం", "క్రీస్తు శకం"},
-		timezones:              map[string]string{"AEDT": "తూర్పు ఆస్ట్రేలియా పగటి సమయం", "LHST": "లార్డ్ హోవ్ ప్రామాణిక సమయం", "CST": "మధ్యమ ప్రామాణిక సమయం", "CAT": "సెంట్రల్ ఆఫ్రికా సమయం", "EST": "తూర్పు ప్రామాణిక సమయం", "UYT": "ఉరుగ్వే ప్రామాణిక సమయం", "MEZ": "సెంట్రల్ యూరోపియన్ ప్రామాణిక సమయం", "AWST": "పశ్చిమ ఆస్ట్రేలియన్ ప్రామాణిక సమయం", "HAT": "న్యూఫౌండ్ ల్యాండ్ పగటి సమయం", "OEZ": "తూర్పు యూరోపియన్ ప్రామాణిక సమయం", "OESZ": "తూర్పు యూరోపియన్ వేసవి సమయం", "VET": "వెనిజులా సమయం", "JDT": "జపాన్ పగటి వెలుతురు సమయం", "HKT": "హాంకాంగ్ ప్రామాణిక సమయం", "PDT": "పసిఫిక్ పగటి సమయం", "GFT": "ఫ్రెంచ్ గయానా సమయం", "ECT": "ఈక్వడార్ సమయం", "WAST": "పశ్చిమ ఆఫ్రికా వేసవి సమయం", "TMST": "తుర్క్మెనిస్థాన్ వేసవి సమయం", "ACWDT": "మధ్యమ ఆస్ట్రేలియన్ పశ్చిమ పగటి సమయం", "COT": "కొలంబియా ప్రామాణిక సమయం", "COST": "కొలంబియా వేసవి సమయం", "CHADT": "చాథమ్ పగటి వెలుతురు సమయం", "ARST": "ఆర్జెంటీనా వేసవి సమయం", "WIT": "తూర్పు ఇండోనేషియా సమయం", "∅∅∅": "అమెజాన్ వేసవి సమయం", "HADT": "హవాయ్-అల్యూషియన్ పగటి వెలుతురు సమయం", "ACST": "ఆస్ట్రేలియా మధ్యమ ప్రామాణిక సమయం", "WART": "పశ్చిమ అర్జెంటీనా ప్రామాణిక సమయం", "MYT": "మలేషియా సమయం", "UYST": "ఉరుగ్వే వేసవి సమయం", "NZST": "న్యూజిల్యాండ్ ప్రామాణిక సమయం", "MDT": "మకావ్ వేసవి సమయం", "GYT": "గయానా సమయం", "ADT": "అట్లాంటిక్ పగటి సమయం", "HNT": "న్యూఫౌండ్ ల్యాండ్ ప్రామాణిక సమయం", "MST": "మకావ్ ప్రామాణిక సమయం", "ChST": "చామర్రో ప్రామాణిక సమయం", "AWDT": "పశ్చిమ ఆస్ట్రేలియన్ పగటి సమయం", "MESZ": "సెంట్రల్ యూరోపియన్ వేసవి సమయం", "WEZ": "పశ్చిమ యూరోపియన్ ప్రామాణిక సమయం", "WIB": "పశ్చిమ ఇండోనేషియా సమయం", "PST": "పసిఫిక్ ప్రామాణిక సమయం", "IST": "భారతదేశ సమయం", "SGT": "సింగపూర్ ప్రామాణిక సమయం", "SAST": "దక్షిణ ఆఫ్రికా ప్రామాణిక సమయం", "CLST": "చిలీ వేసవి సమయం", "BOT": "బొలీవియా సమయం", "WARST": "పశ్చిమ అర్జెంటీనా వేసవి సమయం", "ACWST": "మధ్యమ ఆస్ట్రేలియా పశ్చిమ ప్రామాణిక సమయం", "JST": "జపాన్ ప్రామాణిక సమయం", "AKDT": "అలాస్కా పగటి సమయం", "ACDT": "ఆస్ట్రేలియా మధ్యమ పగటి సమయం", "EDT": "తూర్పు పగటి సమయం", "CLT": "చిలీ ప్రామాణిక సమయం", "CHAST": "చాథమ్ ప్రామాణిక సమయం", "WAT": "పశ్చిమ ఆఫ్రికా ప్రామాణిక సమయం", "TMT": "తుర్క్మెనిస్థాన్ ప్రామాణిక సమయం", "AKST": "అలాస్కా ప్రామాణిక సమయం", "WESZ": "పశ్చిమ యూరోపియన్ వేసవి సమయం", "ART": "అర్జెంటీనా ప్రామాణిక సమయం", "GMT": "గ్రీన్\u200cవిచ్ సగటు సమయం", "AEST": "తూర్పు ఆస్ట్రేలియా ప్రామాణిక సమయం", "NZDT": "న్యూజిల్యాండ్ పగటి వెలుతురు సమయం", "AST": "అట్లాంటిక్ ప్రామాణిక సమయం", "BT": "భూటాన్ సమయం", "SRT": "సూరినామ్ సమయం", "WITA": "సెంట్రల్ ఇండోనేషియా సమయం", "LHDT": "లార్డ్ హోవ్ పగటి సమయం", "HAST": "హవాయ్-అల్యూషియన్ ప్రామాణిక సమయం", "EAT": "తూర్పు ఆఫ్రికా సమయం", "HKST": "హాంకాంగ్ వేసవి సమయం", "CDT": "మధ్యమ పగటి సమయం"},
+		timezones:              map[string]string{"AWST": "పశ్చిమ ఆస్ట్రేలియన్ ప్రామాణిక సమయం", "ART": "అర్జెంటీనా ప్రామాణిక సమయం", "CHADT": "చాథమ్ పగటి వెలుతురు సమయం", "OESZ": "తూర్పు యూరోపియన్ వేసవి సమయం", "WART": "పశ్చిమ అర్జెంటీనా ప్రామాణిక సమయం", "EAT": "తూర్పు ఆఫ్రికా సమయం", "AWDT": "పశ్చిమ ఆస్ట్రేలియన్ పగటి సమయం", "ACST": "ఆస్ట్రేలియా మధ్యమ ప్రామాణిక సమయం", "BOT": "బొలీవియా సమయం", "HKT": "హాంకాంగ్ ప్రామాణిక సమయం", "COST": "కొలంబియా వేసవి సమయం", "MDT": "మకావ్ వేసవి సమయం", "MEZ": "సెంట్రల్ యూరోపియన్ ప్రామాణిక సమయం", "TMST": "తుర్క్మెనిస్థాన్ వేసవి సమయం", "LHDT": "లార్డ్ హోవ్ పగటి సమయం", "CLT": "చిలీ ప్రామాణిక సమయం", "JST": "జపాన్ ప్రామాణిక సమయం", "ACWST": "మధ్యమ ఆస్ట్రేలియా పశ్చిమ ప్రామాణిక సమయం", "GYT": "గయానా సమయం", "HAT": "న్యూఫౌండ్ ల్యాండ్ పగటి సమయం", "CLST": "చిలీ వేసవి సమయం", "PDT": "పసిఫిక్ పగటి సమయం", "WIT": "తూర్పు ఇండోనేషియా సమయం", "AKST": "అలాస్కా ప్రామాణిక సమయం", "WESZ": "పశ్చిమ యూరోపియన్ వేసవి సమయం", "ACWDT": "మధ్యమ ఆస్ట్రేలియన్ పశ్చిమ పగటి సమయం", "SAST": "దక్షిణ ఆఫ్రికా ప్రామాణిక సమయం", "WAST": "పశ్చిమ ఆఫ్రికా వేసవి సమయం", "CHAST": "చాథమ్ ప్రామాణిక సమయం", "AEST": "తూర్పు ఆస్ట్రేలియా ప్రామాణిక సమయం", "UYST": "ఉరుగ్వే వేసవి సమయం", "GFT": "ఫ్రెంచ్ గయానా సమయం", "CST": "మధ్యమ ప్రామాణిక సమయం", "HAST": "హవాయ్-అల్యూషియన్ ప్రామాణిక సమయం", "IST": "భారతదేశ సమయం", "PST": "పసిఫిక్ ప్రామాణిక సమయం", "HNT": "న్యూఫౌండ్ ల్యాండ్ ప్రామాణిక సమయం", "HKST": "హాంకాంగ్ వేసవి సమయం", "AKDT": "అలాస్కా పగటి సమయం", "WARST": "పశ్చిమ అర్జెంటీనా వేసవి సమయం", "SGT": "సింగపూర్ ప్రామాణిక సమయం", "∅∅∅": "బ్రెజిలియా వేసవి సమయం", "COT": "కొలంబియా ప్రామాణిక సమయం", "LHST": "లార్డ్ హోవ్ ప్రామాణిక సమయం", "ACDT": "ఆస్ట్రేలియా మధ్యమ పగటి సమయం", "ADT": "అట్లాంటిక్ పగటి సమయం", "WITA": "సెంట్రల్ ఇండోనేషియా సమయం", "WAT": "పశ్చిమ ఆఫ్రికా ప్రామాణిక సమయం", "JDT": "జపాన్ పగటి వెలుతురు సమయం", "AST": "అట్లాంటిక్ ప్రామాణిక సమయం", "VET": "వెనిజులా సమయం", "MYT": "మలేషియా సమయం", "MST": "మకావ్ ప్రామాణిక సమయం", "WIB": "పశ్చిమ ఇండోనేషియా సమయం", "MESZ": "సెంట్రల్ యూరోపియన్ వేసవి సమయం", "AEDT": "తూర్పు ఆస్ట్రేలియా పగటి సమయం", "TMT": "తుర్క్మెనిస్థాన్ ప్రామాణిక సమయం", "ARST": "ఆర్జెంటీనా వేసవి సమయం", "GMT": "గ్రీన్\u200cవిచ్ సగటు సమయం", "NZDT": "న్యూజిల్యాండ్ పగటి వెలుతురు సమయం", "SRT": "సూరినామ్ సమయం", "ChST": "చామర్రో ప్రామాణిక సమయం", "OEZ": "తూర్పు యూరోపియన్ ప్రామాణిక సమయం", "EDT": "తూర్పు పగటి సమయం", "HADT": "హవాయ్-అల్యూషియన్ పగటి వెలుతురు సమయం", "ECT": "ఈక్వడార్ సమయం", "UYT": "ఉరుగ్వే ప్రామాణిక సమయం", "BT": "భూటాన్ సమయం", "CDT": "మధ్యమ పగటి సమయం", "EST": "తూర్పు ప్రామాణిక సమయం", "CAT": "సెంట్రల్ ఆఫ్రికా సమయం", "WEZ": "పశ్చిమ యూరోపియన్ ప్రామాణిక సమయం", "NZST": "న్యూజిల్యాండ్ ప్రామాణిక సమయం"},
 	}
 }
 
@@ -199,7 +199,8 @@ func (te *te) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'te' and handles both Whole and Real numbers based on 'v'
-func (te *te) FmtNumber(num float64, v uint64) (results string) {
+func (te *te) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(te.decimal) + len(te.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -244,13 +245,12 @@ func (te *te) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'te' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (te *te) FmtPercent(num float64, v uint64) (results string) {
+func (te *te) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(te.decimal)
 	b := make([]byte, 0, l)
@@ -276,12 +276,11 @@ func (te *te) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, te.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'te'
-func (te *te) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (te *te) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := te.currencies[currency]
@@ -343,13 +342,12 @@ func (te *te) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'te'
 // in accounting notation.
-func (te *te) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (te *te) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := te.currencies[currency]
@@ -423,8 +421,7 @@ func (te *te) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, te.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'te'

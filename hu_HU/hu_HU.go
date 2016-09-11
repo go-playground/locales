@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "hu_HU",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 6},
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
 		group:                  " ",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"i. e.", "i. sz."},
 		erasNarrow:             []string{"ie.", "isz."},
 		erasWide:               []string{"időszámításunk előtt", "időszámításunk szerint"},
-		timezones:              map[string]string{"MYT": "malajziai idő", "LHST": "Lord Howe-szigeti téli idő", "NZST": "új-zélandi téli idő", "PDT": "csendes-óceáni nyári idő", "CLST": "chilei nyári idő", "PST": "csendes-óceáni zónaidő", "OESZ": "kelet-európai nyári idő", "ACST": "közép-ausztráliai téli idő", "WAT": "nyugat-afrikai téli idő", "EST": "keleti államokbeli zónaidő", "HKST": "hongkongi nyári idő", "AEST": "kelet-ausztráliai téli idő", "EDT": "keleti államokbeli nyári idő", "GMT": "greenwichi középidő, téli idő", "MESZ": "közép-európai nyári idő", "WARST": "nyugat-argentínai nyári idő", "AKDT": "alaszkai nyári idő", "CAT": "közép-afrikai téli idő", "WEZ": "nyugat-európai téli idő", "CHAST": "chathami téli idő", "WITA": "közép-indonéziai idő", "SAST": "dél-afrikai téli idő", "LHDT": "Lord Howe-szigeti nyári idő", "IST": "indiai téli idő", "CST": "középső államokbeli zónaidő", "NZDT": "új-zélandi nyári idő", "COST": "kolumbiai nyári idő", "ACDT": "közép-ausztráliai nyári idő", "TMT": "türkmenisztáni téli idő", "JST": "japán téli idő", "AWDT": "nyugat-ausztráliai nyári idő", "BT": "butáni idő", "WAST": "nyugat-afrikai nyári idő", "VET": "venezuelai idő", "GFT": "francia-guianai idő", "SRT": "szurinámi idő", "HNT": "új-fundlandi zónaidő", "AKST": "alaszkai zónaidő", "HKT": "hongkongi téli idő", "CDT": "középső államokbeli nyári idő", "ARST": "Argentínai nyári idő", "AST": "atlanti-óceáni zónaidő", "ACWDT": "közép-nyugat-ausztráliai nyári idő", "WIT": "kelet-indonéziai idő", "WESZ": "nyugat-európai nyári idő", "CLT": "chilei téli idő", "UYT": "uruguayi téli idő", "WART": "nyugat-argentínai téli idő", "ADT": "atlanti-óceáni nyári idő", "∅∅∅": "azori nyári idő", "ChST": "chamorrói téli idő", "HAT": "új-fundlandi nyári idő", "WIB": "nyugat-indonéziai téli idő", "MEZ": "közép-európai téli idő", "GYT": "guyanai téli idő", "HAST": "hawaii-aleuti téli idő", "SGT": "szingapúri téli idő", "AWST": "nyugat-ausztráliai téli idő", "UYST": "uruguayi nyári idő", "BOT": "bolíviai téli idő", "MST": "hegyvidéki zónaidő", "MDT": "hegyvidéki nyári idő", "JDT": "japán nyári idő", "AEDT": "kelet-ausztráliai nyári idő", "COT": "kolumbiai téli idő", "ART": "argentínai téli idő", "ACWST": "közép-nyugat-ausztráliai téli idő", "ECT": "ecuadori téli idő", "CHADT": "chathami nyári idő", "TMST": "türkmenisztáni nyári idő", "HADT": "hawaii-aleuti nyári idő", "EAT": "kelet-afrikai téli idő", "OEZ": "kelet-európai téli idő"},
+		timezones:              map[string]string{"AKST": "alaszkai zónaidő", "AKDT": "alaszkai nyári idő", "WAT": "nyugat-afrikai téli idő", "AWDT": "nyugat-ausztráliai nyári idő", "HAT": "új-fundlandi nyári idő", "HKST": "hongkongi nyári idő", "SAST": "dél-afrikai téli idő", "ACWST": "közép-nyugat-ausztráliai téli idő", "AEST": "kelet-ausztráliai téli idő", "GYT": "guyanai téli idő", "HKT": "hongkongi téli idő", "WEZ": "nyugat-európai téli idő", "MEZ": "közép-európai téli idő", "TMST": "türkmenisztáni nyári idő", "CLT": "chilei téli idő", "WARST": "nyugat-argentínai nyári idő", "HNT": "új-fundlandi zónaidő", "BT": "butáni idő", "HADT": "hawaii-aleuti nyári idő", "MDT": "Macaui nyári idő", "WIT": "kelet-indonéziai idő", "ARST": "Argentínai nyári idő", "CLST": "chilei nyári idő", "JDT": "japán nyári idő", "ACDT": "közép-ausztráliai nyári idő", "AWST": "nyugat-ausztráliai téli idő", "SGT": "szingapúri téli idő", "UYST": "uruguayi nyári idő", "LHST": "Lord Howe-szigeti téli idő", "CHAST": "chathami téli idő", "ART": "argentínai téli idő", "NZST": "új-zélandi téli idő", "BOT": "bolíviai téli idő", "GMT": "greenwichi középidő, téli idő", "HAST": "hawaii-aleuti téli idő", "LHDT": "Lord Howe-szigeti nyári idő", "OEZ": "kelet-európai téli idő", "VET": "venezuelai idő", "TMT": "türkmenisztáni téli idő", "∅∅∅": "amazóniai nyári idő", "WAST": "nyugat-afrikai nyári idő", "MESZ": "közép-európai nyári idő", "UYT": "uruguayi téli idő", "COT": "kolumbiai téli idő", "ECT": "ecuadori téli idő", "WESZ": "nyugat-európai nyári idő", "ADT": "atlanti-óceáni nyári idő", "PDT": "csendes-óceáni nyári idő", "NZDT": "új-zélandi nyári idő", "WART": "nyugat-argentínai téli idő", "AST": "atlanti-óceáni zónaidő", "MYT": "malajziai idő", "SRT": "szurinámi idő", "EST": "keleti államokbeli zónaidő", "EDT": "keleti államokbeli nyári idő", "WIB": "nyugat-indonéziai téli idő", "CAT": "közép-afrikai téli idő", "COST": "kolumbiai nyári idő", "IST": "indiai téli idő", "CDT": "középső államokbeli nyári idő", "ChST": "chamorrói téli idő", "MST": "Macaui zónaidő", "CHADT": "chathami nyári idő", "OESZ": "kelet-európai nyári idő", "JST": "japán téli idő", "AEDT": "kelet-ausztráliai nyári idő", "PST": "csendes-óceáni zónaidő", "WITA": "közép-indonéziai idő", "ACWDT": "közép-nyugat-ausztráliai nyári idő", "EAT": "kelet-afrikai téli idő", "ACST": "közép-ausztráliai téli idő", "GFT": "francia-guianai idő", "CST": "középső államokbeli zónaidő"},
 	}
 }
 
@@ -206,7 +206,8 @@ func (hu *hu_HU) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'hu_HU' and handles both Whole and Real numbers based on 'v'
-func (hu *hu_HU) FmtNumber(num float64, v uint64) (results string) {
+func (hu *hu_HU) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hu.decimal) + len(hu.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -226,7 +227,6 @@ func (hu *hu_HU) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(hu.group) - 1; j >= 0; j-- {
 					b = append(b, hu.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -245,13 +245,12 @@ func (hu *hu_HU) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'hu_HU' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (hu *hu_HU) FmtPercent(num float64, v uint64) (results string) {
+func (hu *hu_HU) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(hu.decimal)
 	b := make([]byte, 0, l)
@@ -277,12 +276,11 @@ func (hu *hu_HU) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, hu.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'hu_HU'
-func (hu *hu_HU) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (hu *hu_HU) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hu.currencies[currency]
@@ -304,7 +302,6 @@ func (hu *hu_HU) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(hu.group) - 1; j >= 0; j-- {
 					b = append(b, hu.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -338,13 +335,12 @@ func (hu *hu_HU) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'hu_HU'
 // in accounting notation.
-func (hu *hu_HU) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (hu *hu_HU) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := hu.currencies[currency]
@@ -366,7 +362,6 @@ func (hu *hu_HU) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(hu.group) - 1; j >= 0; j-- {
 					b = append(b, hu.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -407,8 +402,7 @@ func (hu *hu_HU) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'hu_HU'

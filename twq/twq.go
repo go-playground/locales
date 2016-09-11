@@ -61,7 +61,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"IJ", "IZ"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Isaa jine", "Isaa zamanoo"},
-		timezones:          map[string]string{"UYT": "UYT", "NZST": "NZST", "WARST": "WARST", "LHST": "LHST", "AWST": "AWST", "HKST": "HKST", "∅∅∅": "∅∅∅", "CST": "CST", "WEZ": "WEZ", "HAST": "HAST", "EDT": "EDT", "CAT": "CAT", "AEST": "AEST", "MEZ": "MEZ", "ADT": "ADT", "CDT": "CDT", "EAT": "EAT", "AST": "AST", "HADT": "HADT", "IST": "IST", "WESZ": "WESZ", "HAT": "HAT", "COT": "COT", "AKST": "AKST", "ART": "ART", "WAT": "WAT", "WAST": "WAST", "LHDT": "LHDT", "HNT": "HNT", "GYT": "GYT", "MDT": "MDT", "VET": "VET", "ECT": "ECT", "AKDT": "AKDT", "AWDT": "AWDT", "HKT": "HKT", "OEZ": "OEZ", "BT": "BT", "PST": "PST", "BOT": "BOT", "AEDT": "AEDT", "SAST": "SAST", "JDT": "JDT", "SGT": "SGT", "PDT": "PDT", "ACWST": "ACWST", "ACST": "ACST", "TMT": "TMT", "CLT": "CLT", "MESZ": "MESZ", "WIT": "WIT", "JST": "JST", "WART": "WART", "MST": "MST", "TMST": "TMST", "CLST": "CLST", "UYST": "UYST", "NZDT": "NZDT", "SRT": "SRT", "WITA": "WITA", "ChST": "ChST", "EST": "EST", "GMT": "GMT", "CHADT": "CHADT", "ACWDT": "ACWDT", "CHAST": "CHAST", "COST": "COST", "ARST": "ARST", "GFT": "GFT", "MYT": "MYT", "OESZ": "OESZ", "WIB": "WIB", "ACDT": "ACDT"},
+		timezones:          map[string]string{"ACST": "ACST", "ACDT": "ACDT", "WARST": "WARST", "GMT": "GMT", "HAST": "HAST", "IST": "IST", "HAT": "HAT", "BOT": "BOT", "UYST": "UYST", "WITA": "WITA", "NZST": "NZST", "NZDT": "NZDT", "AWST": "AWST", "HKT": "HKT", "BT": "BT", "HKST": "HKST", "EDT": "EDT", "EST": "EST", "AKST": "AKST", "SAST": "SAST", "MST": "MST", "WESZ": "WESZ", "CHAST": "CHAST", "CHADT": "CHADT", "SRT": "SRT", "ACWDT": "ACWDT", "LHDT": "LHDT", "OEZ": "OEZ", "SGT": "SGT", "PST": "PST", "AEST": "AEST", "VET": "VET", "GFT": "GFT", "COST": "COST", "LHST": "LHST", "AWDT": "AWDT", "HNT": "HNT", "ART": "ART", "AKDT": "AKDT", "COT": "COT", "WAT": "WAT", "CLT": "CLT", "AST": "AST", "ADT": "ADT", "ChST": "ChST", "CDT": "CDT", "EAT": "EAT", "OESZ": "OESZ", "WART": "WART", "GYT": "GYT", "TMST": "TMST", "ACWST": "ACWST", "JST": "JST", "JDT": "JDT", "PDT": "PDT", "ECT": "ECT", "AEDT": "AEDT", "UYT": "UYT", "WIT": "WIT", "TMT": "TMT", "CST": "CST", "MYT": "MYT", "∅∅∅": "∅∅∅", "CAT": "CAT", "HADT": "HADT", "MDT": "MDT", "WIB": "WIB", "MESZ": "MESZ", "WAST": "WAST", "MEZ": "MEZ", "CLST": "CLST", "ARST": "ARST", "WEZ": "WEZ"},
 	}
 }
 
@@ -171,7 +171,8 @@ func (twq *twq) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'twq' and handles both Whole and Real numbers based on 'v'
-func (twq *twq) FmtNumber(num float64, v uint64) (results string) {
+func (twq *twq) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(twq.decimal) + len(twq.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -191,7 +192,6 @@ func (twq *twq) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(twq.group) - 1; j >= 0; j-- {
 					b = append(b, twq.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -202,9 +202,7 @@ func (twq *twq) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(twq.minus) - 1; j >= 0; j-- {
-			b = append(b, twq.minus[j])
-		}
+		b = append(b, twq.minus[0])
 	}
 
 	// reverse
@@ -212,13 +210,12 @@ func (twq *twq) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'twq' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (twq *twq) FmtPercent(num float64, v uint64) (results string) {
+func (twq *twq) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(twq.decimal)
 	b := make([]byte, 0, l)
@@ -234,9 +231,7 @@ func (twq *twq) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(twq.minus) - 1; j >= 0; j-- {
-			b = append(b, twq.minus[j])
-		}
+		b = append(b, twq.minus[0])
 	}
 
 	// reverse
@@ -246,12 +241,11 @@ func (twq *twq) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, twq.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'twq'
-func (twq *twq) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (twq *twq) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := twq.currencies[currency]
@@ -273,7 +267,6 @@ func (twq *twq) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 				for j := len(twq.group) - 1; j >= 0; j-- {
 					b = append(b, twq.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -284,9 +277,7 @@ func (twq *twq) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(twq.minus) - 1; j >= 0; j-- {
-			b = append(b, twq.minus[j])
-		}
+		b = append(b, twq.minus[0])
 	}
 
 	// reverse
@@ -307,13 +298,12 @@ func (twq *twq) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'twq'
 // in accounting notation.
-func (twq *twq) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (twq *twq) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := twq.currencies[currency]
@@ -335,7 +325,6 @@ func (twq *twq) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 				for j := len(twq.group) - 1; j >= 0; j-- {
 					b = append(b, twq.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -347,9 +336,7 @@ func (twq *twq) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 
 	if num < 0 {
 
-		for j := len(twq.minus) - 1; j >= 0; j-- {
-			b = append(b, twq.minus[j])
-		}
+		b = append(b, twq.minus[0])
 
 	}
 
@@ -376,8 +363,7 @@ func (twq *twq) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'twq'

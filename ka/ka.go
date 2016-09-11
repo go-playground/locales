@@ -18,7 +18,7 @@ type ka struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED", "AFA ", "AFN", "ALK ", "ALL", "AMD", "ANG", "AOA", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS", "ATS ", "AUD", "AWG", "AZM ", "AZN", "BAD ", "BAM", "BAN ", "BBD", "BDT", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN", "BGO ", "BHD", "BIF", "BMD", "BND", "BOB", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "R$", "BRN ", "BRR ", "BRZ ", "BSD", "BTN", "BUK ", "BWP", "BYB ", "BYR", "BZD", "CA$", "CDF", "CHE ", "CHF", "CHW ", "CLE ", "CLF ", "CLP", "CNX ", "CNY", "COP", "COU ", "CRC", "CSD ", "CSK ", "CUC", "CUP", "CVE", "CYP ", "CZK", "DDM ", "DEM ", "DJF", "DKK", "DOP", "DZD", "ECS ", "ECV ", "EEK ", "EGP", "ERN", "ESA ", "ESB ", "ESP ", "ETB", "€", "FIM ", "FJD", "FKP", "FRF ", "£", "GEK ", "₾", "GHC ", "GHS", "GIP", "GMD", "GNF", "GNS ", "GQE ", "GRD ", "GTQ", "GWE ", "GWP ", "GYD", "HKD", "HNL", "HRD ", "HRK", "HTG", "HUF", "IDR", "IEP ", "ILP ", "ILR ", "ILS", "INR", "IQD", "IRR", "ISJ ", "ISK", "ITL ", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH ", "KRO ", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL ", "LTL", "LTT ", "LUC ", "LUF ", "LUL ", "LVL", "LVR ", "LYD", "MAD", "MAF ", "MCF ", "MDC ", "MDL", "MGA", "MGF ", "MKD", "MKN ", "MLF ", "MMK", "MNT", "MOP", "MRO", "MTL ", "MTP ", "MUR", "MVP ", "MVR", "MWK", "MX$", "MXP ", "MXV ", "MYR", "MZE ", "MZM ", "MZN", "NAD", "NGN", "NIC ", "NIO", "NLG ", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI ", "PEN", "PES ", "PGK", "PHP", "PKR", "PLN", "PLZ ", "PTE ", "PYG", "QAR", "RHD ", "ROL ", "RON", "RSD", "RUB", "RUR ", "RWF", "SAR", "SBD", "SCR", "SDD ", "SDG", "SDP ", "SEK", "SGD", "SHP", "SIT ", "SKK ", "SLL", "SOS", "SRD", "SRG ", "SSP", "STD", "SUR ", "SVC ", "SYP", "SZL", "THB", "TJR ", "TJS", "TMM ", "TMT", "TND", "TOP", "TPE ", "TRL ", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK ", "UGS ", "UGX", "US$", "USN ", "USS ", "UYI ", "UYP ", "UYU", "UZS", "VEB ", "VEF", "VND", "VNN ", "VUV", "WST", "FCFA", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "EC$", "XDR ", "XEU ", "XFO ", "XFU ", "CFA", "XPD ", "CFPF", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR", "ZMK", "ZMW", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "იან", "თებ", "მარ", "აპრ", "მაი", "ივნ", "ივლ", "აგვ", "სექ", "ოქტ", "ნოე", "დეკ"},
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ძვ. წ.", "ახ. წ."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ძველი წელთაღრიცხვით", "ახალი წელთაღრიცხვით"},
-		timezones:              map[string]string{"LHST": "ლორდ-ჰაუს სტანდარტული დრო", "AKST": "ალასკას სტანდარტული დრო", "BT": "ბუტანის დრო", "AST": "ატლანტიკის ოკეანის სტანდარტული დრო", "ACWST": "ცენტრალური და დასავლეთ ავსტრალიის სტანდარტული დრო", "JST": "იაპონიის სტანდარტული დრო", "LHDT": "ლორდ-ჰაუს ზაფხულის დრო", "BOT": "ბოლივიის დრო", "MESZ": "ცენტრალური ევროპის ზაფხულის დრო", "SRT": "სურინამის დრო", "HAST": "ჰავაის და ალეუტის სტანდარტული დრო", "GMT": "გრინვიჩის საშუალო დრო", "AEDT": "აღმოსავლეთ ავსტრალიის ზაფხულის დრო", "PST": "ჩრდილოეთ ამერიკის წყნარი ოკეანის სტანდარტული დრო", "OEZ": "აღმოსავლეთ ევროპის სტანდარტული დრო", "WESZ": "დასავლეთ ევროპის ზაფხულის დრო", "HKST": "ჰონკონგის ზაფხულის დრო", "UYT": "ურუგვაის სტანდარტული დრო", "UYST": "ურუგვაის ზაფხულის დრო", "GYT": "გაიანის დრო", "ART": "არგენტინის სტანდარტული დრო", "ChST": "ჩამოროს დრო", "AWDT": "დასავლეთ ავსტრალიის ზაფხულის დრო", "WARST": "დასავლეთ არგენტინის ზაფხულის დრო", "ECT": "ეკვადორის დრო", "CST": "ჩრდილოეთ ამერიკის ცენტრალური სტანდარტული დრო", "AKDT": "ალასკას ზაფხულის დრო", "EST": "ჩრდილოეთ ამერიკის აღმოსავლეთის სტანდარტული დრო", "NZDT": "ახალი ზელანდიის ზაფხულის დრო", "WAST": "დასავლეთ აფრიკის ზაფხულის დრო", "MDT": "ჩრდილოეთ ამერიკის მაუნთინის ზაფხულის დრო", "JDT": "იაპონიის ზაფხულის დრო", "TMST": "თურქმენეთის ზაფხულის დრო", "SAST": "სამხრეთ აფრიკის დრო", "CLST": "ჩილეს ზაფხულის დრო", "CAT": "ცენტრალური აფრიკის დრო", "NZST": "ახალი ზელანდიის სტანდარტული დრო", "OESZ": "აღმოსავლეთ ევროპის ზაფხულის დრო", "MEZ": "ცენტრალური ევროპის სტანდარტული დრო", "ACST": "ავსტრალიის ცენტრალური სტანდარტული დრო", "WEZ": "დასავლეთ ევროპის სტანდარტული დრო", "HNT": "ნიუფაუნდლენდის სტანდარტული დრო", "HKT": "ჰონკონგის სტანდარტული დრო", "CDT": "ჩრდილოეთ ამერიკის ცენტრალური ზაფხულის დრო", "PDT": "ჩრდილოეთ ამერიკის წყნარი ოკეანის ზაფხულის დრო", "WART": "დასავლეთ არგენტინის სტანდარტული დრო", "WITA": "ცენტრალური ინდონეზიის დრო", "MYT": "მალაიზიის დრო", "CHADT": "ჩატემის ზაფხულის დრო", "GFT": "საფრანგეთის გვიანის დრო", "SGT": "სინგაპურის დრო", "EDT": "ჩრდილოეთ ამერიკის აღმოსავლეთის ზაფხულის დრო", "ARST": "არგენტინის ზაფხულის დრო", "TMT": "თურქმენეთის სტანდარტული დრო", "IST": "ინდოეთის დრო", "AWST": "დასავლეთ ავსტრალიის სტანდარტული დრო", "CLT": "ჩილეს სტანდარტული დრო", "COST": "კოლუმბიის ზაფხულის დრო", "WIT": "აღმოსავლეთ ინდონეზიის დრო", "∅∅∅": "აზორის კუნძულების ზაფხულის დრო", "EAT": "აღმოსავლეთ აფრიკის დრო", "AEST": "აღმოსავლეთ ავსტრალიის სტანდარტული დრო", "WAT": "დასავლეთ აფრიკის სტანდარტული დრო", "COT": "კოლუმბიის სტანდარტული დრო", "ADT": "ატლანტიკის ოკეანის ზაფხულის დრო", "HAT": "ნიუფაუნდლენდის ზაფხულის დრო", "VET": "ვენესუელის დრო", "ACWDT": "ცენტრალური და დასავლეთ ავსტრალიის ზაფხულის დრო", "HADT": "ჰავაის და ალეუტის ზაფხულის დრო", "WIB": "დასავლეთ ინდონეზიის დრო", "CHAST": "ჩატემის სტანდარტული დრო", "ACDT": "ავსტრალიის ცენტრალური ზაფხულის დრო", "MST": "ჩრდილოეთ ამერიკის მაუნთინის სტანდარტული დრო"},
+		timezones:              map[string]string{"NZST": "ახალი ზელანდიის სტანდარტული დრო", "MDT": "MDT", "ACDT": "ავსტრალიის ცენტრალური ზაფხულის დრო", "UYST": "ურუგვაის ზაფხულის დრო", "∅∅∅": "ამაზონიის ზაფხულის დრო", "GMT": "გრინვიჩის საშუალო დრო", "EAT": "აღმოსავლეთ აფრიკის დრო", "WEZ": "დასავლეთ ევროპის სტანდარტული დრო", "ACWST": "ცენტრალური და დასავლეთ ავსტრალიის სტანდარტული დრო", "MESZ": "ცენტრალური ევროპის ზაფხულის დრო", "CLST": "ჩილეს ზაფხულის დრო", "HAT": "ნიუფაუნდლენდის ზაფხულის დრო", "MYT": "მალაიზიის დრო", "WIT": "აღმოსავლეთ ინდონეზიის დრო", "AKDT": "ალასკას ზაფხულის დრო", "COST": "კოლუმბიის ზაფხულის დრო", "CHAST": "ჩატემის სტანდარტული დრო", "MEZ": "ცენტრალური ევროპის სტანდარტული დრო", "OEZ": "აღმოსავლეთ ევროპის სტანდარტული დრო", "ACST": "ავსტრალიის ცენტრალური სტანდარტული დრო", "BOT": "ბოლივიის დრო", "TMST": "თურქმენეთის ზაფხულის დრო", "AKST": "ალასკას სტანდარტული დრო", "ACWDT": "ცენტრალური და დასავლეთ ავსტრალიის ზაფხულის დრო", "LHDT": "ლორდ-ჰაუს ზაფხულის დრო", "AST": "ატლანტიკის ოკეანის სტანდარტული დრო", "WART": "დასავლეთ არგენტინის სტანდარტული დრო", "GYT": "გაიანის დრო", "HADT": "ჰავაის და ალეუტის ზაფხულის დრო", "WAT": "დასავლეთ აფრიკის სტანდარტული დრო", "JST": "იაპონიის სტანდარტული დრო", "GFT": "საფრანგეთის გვიანის დრო", "ChST": "ჩამოროს დრო", "IST": "ინდოეთის დრო", "WITA": "ცენტრალური ინდონეზიის დრო", "CST": "ჩრდილოეთ ამერიკის ცენტრალური სტანდარტული დრო", "EST": "ჩრდილოეთ ამერიკის აღმოსავლეთის სტანდარტული დრო", "NZDT": "ახალი ზელანდიის ზაფხულის დრო", "CLT": "ჩილეს სტანდარტული დრო", "MST": "MST", "PDT": "ჩრდილოეთ ამერიკის წყნარი ოკეანის ზაფხულის დრო", "HKT": "ჰონკონგის სტანდარტული დრო", "UYT": "ურუგვაის სტანდარტული დრო", "CDT": "ჩრდილოეთ ამერიკის ცენტრალური ზაფხულის დრო", "EDT": "ჩრდილოეთ ამერიკის აღმოსავლეთის ზაფხულის დრო", "WAST": "დასავლეთ აფრიკის ზაფხულის დრო", "VET": "ვენესუელის დრო", "PST": "ჩრდილოეთ ამერიკის წყნარი ოკეანის სტანდარტული დრო", "AWDT": "დასავლეთ ავსტრალიის ზაფხულის დრო", "SRT": "სურინამის დრო", "ART": "არგენტინის სტანდარტული დრო", "TMT": "თურქმენეთის სტანდარტული დრო", "WARST": "დასავლეთ არგენტინის ზაფხულის დრო", "CAT": "ცენტრალური აფრიკის დრო", "HKST": "ჰონკონგის ზაფხულის დრო", "COT": "კოლუმბიის სტანდარტული დრო", "WESZ": "დასავლეთ ევროპის ზაფხულის დრო", "LHST": "ლორდ-ჰაუს სტანდარტული დრო", "JDT": "იაპონიის ზაფხულის დრო", "AWST": "დასავლეთ ავსტრალიის სტანდარტული დრო", "HNT": "ნიუფაუნდლენდის სტანდარტული დრო", "SAST": "სამხრეთ აფრიკის დრო", "CHADT": "ჩატემის ზაფხულის დრო", "WIB": "დასავლეთ ინდონეზიის დრო", "BT": "ბუტანის დრო", "ARST": "არგენტინის ზაფხულის დრო", "HAST": "ჰავაის და ალეუტის სტანდარტული დრო", "ADT": "ატლანტიკის ოკეანის ზაფხულის დრო", "AEST": "აღმოსავლეთ ავსტრალიის სტანდარტული დრო", "AEDT": "აღმოსავლეთ ავსტრალიის ზაფხულის დრო", "SGT": "სინგაპურის დრო", "ECT": "ეკვადორის დრო", "OESZ": "აღმოსავლეთ ევროპის ზაფხულის დრო"},
 	}
 }
 
@@ -212,7 +212,8 @@ func (ka *ka) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ka' and handles both Whole and Real numbers based on 'v'
-func (ka *ka) FmtNumber(num float64, v uint64) (results string) {
+func (ka *ka) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ka.decimal) + len(ka.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -232,7 +233,6 @@ func (ka *ka) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(ka.group) - 1; j >= 0; j-- {
 					b = append(b, ka.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -251,13 +251,12 @@ func (ka *ka) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ka' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ka *ka) FmtPercent(num float64, v uint64) (results string) {
+func (ka *ka) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ka.decimal)
 	b := make([]byte, 0, l)
@@ -285,12 +284,11 @@ func (ka *ka) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ka.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ka'
-func (ka *ka) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ka *ka) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ka.currencies[currency]
@@ -312,7 +310,6 @@ func (ka *ka) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 				for j := len(ka.group) - 1; j >= 0; j-- {
 					b = append(b, ka.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -346,13 +343,12 @@ func (ka *ka) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ka'
 // in accounting notation.
-func (ka *ka) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ka *ka) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ka.currencies[currency]
@@ -374,7 +370,6 @@ func (ka *ka) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 				for j := len(ka.group) - 1; j >= 0; j-- {
 					b = append(b, ka.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -415,8 +410,7 @@ func (ka *ka) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ka'

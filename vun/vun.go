@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"KK", "BK"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Kabla ya Kristu", "Baada ya Kristu"},
-		timezones:          map[string]string{"EDT": "EDT", "WIB": "WIB", "WART": "WART", "LHDT": "LHDT", "HAST": "HAST", "GMT": "GMT", "MEZ": "MEZ", "MST": "MST", "AWDT": "AWDT", "BOT": "BOT", "COST": "COST", "SAST": "SAST", "ECT": "ECT", "OEZ": "OEZ", "AEST": "AEST", "GYT": "GYT", "LHST": "LHST", "MYT": "MYT", "ACST": "ACST", "ACDT": "ACDT", "ACWDT": "ACWDT", "JST": "JST", "EAT": "EAT", "HAT": "HAT", "CAT": "CAT", "SRT": "SRT", "GFT": "GFT", "WITA": "WITA", "CST": "CST", "AWST": "AWST", "BT": "BT", "HNT": "HNT", "UYT": "UYT", "ART": "ART", "JDT": "JDT", "AKDT": "AKDT", "HKT": "HKT", "AEDT": "AEDT", "ADT": "ADT", "HADT": "HADT", "WEZ": "WEZ", "CHADT": "CHADT", "ARST": "ARST", "WARST": "WARST", "IST": "IST", "CLT": "CLT", "COT": "COT", "ChST": "ChST", "UYST": "UYST", "MDT": "MDT", "AKST": "AKST", "TMST": "TMST", "SGT": "SGT", "CDT": "CDT", "PDT": "PDT", "NZDT": "NZDT", "AST": "AST", "MESZ": "MESZ", "ACWST": "ACWST", "VET": "VET", "CLST": "CLST", "WAT": "WAT", "TMT": "TMT", "WIT": "WIT", "∅∅∅": "∅∅∅", "WESZ": "WESZ", "HKST": "HKST", "EST": "EST", "PST": "PST", "OESZ": "OESZ", "NZST": "NZST", "CHAST": "CHAST", "WAST": "WAST"},
+		timezones:          map[string]string{"HNT": "HNT", "MYT": "MYT", "SRT": "SRT", "WITA": "WITA", "CDT": "CDT", "WEZ": "WEZ", "CHAST": "CHAST", "CHADT": "CHADT", "HAT": "HAT", "SGT": "SGT", "AEDT": "AEDT", "HKT": "HKT", "CST": "CST", "AKST": "AKST", "COST": "COST", "JST": "JST", "JDT": "JDT", "VET": "VET", "SAST": "SAST", "ADT": "ADT", "EAT": "EAT", "NZST": "NZST", "ECT": "ECT", "ACWDT": "ACWDT", "NZDT": "NZDT", "AST": "AST", "ACDT": "ACDT", "COT": "COT", "WIB": "WIB", "MEZ": "MEZ", "CLT": "CLT", "AWST": "AWST", "ART": "ART", "GMT": "GMT", "HADT": "HADT", "WAST": "WAST", "OESZ": "OESZ", "WARST": "WARST", "∅∅∅": "∅∅∅", "GFT": "GFT", "EDT": "EDT", "ChST": "ChST", "WESZ": "WESZ", "MESZ": "MESZ", "WART": "WART", "PDT": "PDT", "HKST": "HKST", "UYT": "UYT", "EST": "EST", "HAST": "HAST", "LHDT": "LHDT", "CLST": "CLST", "AEST": "AEST", "BOT": "BOT", "ARST": "ARST", "ACST": "ACST", "WIT": "WIT", "TMT": "TMT", "TMST": "TMST", "WAT": "WAT", "GYT": "GYT", "MST": "MST", "MDT": "MDT", "IST": "IST", "PST": "PST", "UYST": "UYST", "BT": "BT", "AKDT": "AKDT", "LHST": "LHST", "OEZ": "OEZ", "AWDT": "AWDT", "CAT": "CAT", "ACWST": "ACWST"},
 	}
 }
 
@@ -176,20 +176,19 @@ func (vun *vun) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'vun' and handles both Whole and Real numbers based on 'v'
-func (vun *vun) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (vun *vun) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'vun' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (vun *vun) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (vun *vun) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'vun'
-func (vun *vun) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (vun *vun) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := vun.currencies[currency]
@@ -201,20 +200,14 @@ func (vun *vun) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(vun.decimal) - 1; j >= 0; j-- {
-				b = append(b, vun.decimal[j])
-			}
-
+			b = append(b, vun.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(vun.group) - 1; j >= 0; j-- {
-					b = append(b, vun.group[j])
-				}
-
+				b = append(b, vun.group[0])
 				count = 1
 			} else {
 				count++
@@ -229,9 +222,7 @@ func (vun *vun) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(vun.minus) - 1; j >= 0; j-- {
-			b = append(b, vun.minus[j])
-		}
+		b = append(b, vun.minus[0])
 	}
 
 	// reverse
@@ -250,13 +241,12 @@ func (vun *vun) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'vun'
 // in accounting notation.
-func (vun *vun) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (vun *vun) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := vun.currencies[currency]
@@ -268,20 +258,14 @@ func (vun *vun) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(vun.decimal) - 1; j >= 0; j-- {
-				b = append(b, vun.decimal[j])
-			}
-
+			b = append(b, vun.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(vun.group) - 1; j >= 0; j-- {
-					b = append(b, vun.group[j])
-				}
-
+				b = append(b, vun.group[0])
 				count = 1
 			} else {
 				count++
@@ -297,9 +281,7 @@ func (vun *vun) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, symbol[j])
 		}
 
-		for j := len(vun.minus) - 1; j >= 0; j-- {
-			b = append(b, vun.minus[j])
-		}
+		b = append(b, vun.minus[0])
 
 	} else {
 
@@ -325,8 +307,7 @@ func (vun *vun) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'vun'

@@ -61,7 +61,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"IJ", "IZ"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Isaa jine", "Isaa zamanoo"},
-		timezones:          map[string]string{"MST": "MST", "AWST": "AWST", "AEST": "AEST", "MEZ": "MEZ", "LHST": "LHST", "WAST": "WAST", "ARST": "ARST", "∅∅∅": "∅∅∅", "OESZ": "OESZ", "GMT": "GMT", "WIB": "WIB", "WIT": "WIT", "HKST": "HKST", "AST": "AST", "ADT": "ADT", "ART": "ART", "HKT": "HKT", "ACST": "ACST", "GYT": "GYT", "ChST": "ChST", "CDT": "CDT", "EST": "EST", "WARST": "WARST", "TMT": "TMT", "PST": "PST", "AEDT": "AEDT", "BOT": "BOT", "COT": "COT", "COST": "COST", "WAT": "WAT", "OEZ": "OEZ", "MESZ": "MESZ", "WITA": "WITA", "ECT": "ECT", "WESZ": "WESZ", "UYT": "UYT", "ACWST": "ACWST", "MYT": "MYT", "HAT": "HAT", "CLT": "CLT", "SRT": "SRT", "IST": "IST", "AKDT": "AKDT", "HAST": "HAST", "EAT": "EAT", "HNT": "HNT", "CLST": "CLST", "ACDT": "ACDT", "WART": "WART", "ACWDT": "ACWDT", "EDT": "EDT", "NZST": "NZST", "NZDT": "NZDT", "TMST": "TMST", "AWDT": "AWDT", "BT": "BT", "VET": "VET", "GFT": "GFT", "AKST": "AKST", "CST": "CST", "MDT": "MDT", "PDT": "PDT", "JDT": "JDT", "WEZ": "WEZ", "CAT": "CAT", "UYST": "UYST", "CHADT": "CHADT", "LHDT": "LHDT", "JST": "JST", "CHAST": "CHAST", "SAST": "SAST", "HADT": "HADT", "SGT": "SGT"},
+		timezones:          map[string]string{"PDT": "PDT", "SGT": "SGT", "MEZ": "MEZ", "COST": "COST", "NZDT": "NZDT", "OEZ": "OEZ", "AEST": "AEST", "HAT": "HAT", "CDT": "CDT", "WIB": "WIB", "IST": "IST", "ARST": "ARST", "LHST": "LHST", "AKDT": "AKDT", "ACWDT": "ACWDT", "AST": "AST", "CAT": "CAT", "TMST": "TMST", "HADT": "HADT", "JST": "JST", "WARST": "WARST", "MYT": "MYT", "TMT": "TMT", "EAT": "EAT", "JDT": "JDT", "MESZ": "MESZ", "AEDT": "AEDT", "SRT": "SRT", "OESZ": "OESZ", "HKST": "HKST", "UYT": "UYT", "ART": "ART", "HAST": "HAST", "CST": "CST", "COT": "COT", "MDT": "MDT", "CLT": "CLT", "GMT": "GMT", "HKT": "HKT", "ChST": "ChST", "LHDT": "LHDT", "NZST": "NZST", "CHAST": "CHAST", "CLST": "CLST", "PST": "PST", "UYST": "UYST", "∅∅∅": "∅∅∅", "HNT": "HNT", "WIT": "WIT", "SAST": "SAST", "ACST": "ACST", "WART": "WART", "ADT": "ADT", "AWST": "AWST", "GYT": "GYT", "GFT": "GFT", "AKST": "AKST", "ACDT": "ACDT", "MST": "MST", "WAT": "WAT", "WAST": "WAST", "WEZ": "WEZ", "WESZ": "WESZ", "CHADT": "CHADT", "AWDT": "AWDT", "WITA": "WITA", "ECT": "ECT", "VET": "VET", "EST": "EST", "ACWST": "ACWST", "BOT": "BOT", "BT": "BT", "EDT": "EDT"},
 	}
 }
 
@@ -171,7 +171,8 @@ func (dje *dje_NE) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'dje_NE' and handles both Whole and Real numbers based on 'v'
-func (dje *dje_NE) FmtNumber(num float64, v uint64) (results string) {
+func (dje *dje_NE) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dje.decimal) + len(dje.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -191,7 +192,6 @@ func (dje *dje_NE) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(dje.group) - 1; j >= 0; j-- {
 					b = append(b, dje.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -202,9 +202,7 @@ func (dje *dje_NE) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(dje.minus) - 1; j >= 0; j-- {
-			b = append(b, dje.minus[j])
-		}
+		b = append(b, dje.minus[0])
 	}
 
 	// reverse
@@ -212,13 +210,12 @@ func (dje *dje_NE) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'dje_NE' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (dje *dje_NE) FmtPercent(num float64, v uint64) (results string) {
+func (dje *dje_NE) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dje.decimal)
 	b := make([]byte, 0, l)
@@ -234,9 +231,7 @@ func (dje *dje_NE) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(dje.minus) - 1; j >= 0; j-- {
-			b = append(b, dje.minus[j])
-		}
+		b = append(b, dje.minus[0])
 	}
 
 	// reverse
@@ -246,12 +241,11 @@ func (dje *dje_NE) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, dje.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'dje_NE'
-func (dje *dje_NE) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (dje *dje_NE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dje.currencies[currency]
@@ -273,7 +267,6 @@ func (dje *dje_NE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 				for j := len(dje.group) - 1; j >= 0; j-- {
 					b = append(b, dje.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -284,9 +277,7 @@ func (dje *dje_NE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(dje.minus) - 1; j >= 0; j-- {
-			b = append(b, dje.minus[j])
-		}
+		b = append(b, dje.minus[0])
 	}
 
 	// reverse
@@ -307,13 +298,12 @@ func (dje *dje_NE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'dje_NE'
 // in accounting notation.
-func (dje *dje_NE) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (dje *dje_NE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dje.currencies[currency]
@@ -335,7 +325,6 @@ func (dje *dje_NE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 				for j := len(dje.group) - 1; j >= 0; j-- {
 					b = append(b, dje.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -347,9 +336,7 @@ func (dje *dje_NE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	if num < 0 {
 
-		for j := len(dje.minus) - 1; j >= 0; j-- {
-			b = append(b, dje.minus[j])
-		}
+		b = append(b, dje.minus[0])
 
 	}
 
@@ -376,8 +363,7 @@ func (dje *dje_NE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'dje_NE'

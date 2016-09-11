@@ -60,7 +60,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"क्रिस्तपूर्व", "क्रिस्तशखा"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"SRT": "SRT", "HAST": "HAST", "AWST": "AWST", "HNT": "HNT", "WART": "WART", "CAT": "CAT", "WAT": "WAT", "ACST": "ACST", "GYT": "GYT", "WARST": "WARST", "LHDT": "LHDT", "CHADT": "CHADT", "VET": "VET", "JDT": "JDT", "AWDT": "AWDT", "WIB": "WIB", "MDT": "MDT", "ACWDT": "ACWDT", "TMT": "TMT", "ECT": "ECT", "IST": "भारतीय समय", "CDT": "CDT", "EAT": "EAT", "NZDT": "NZDT", "BOT": "BOT", "AST": "AST", "MYT": "MYT", "CLT": "CLT", "PDT": "PDT", "COT": "COT", "MESZ": "MESZ", "TMST": "TMST", "JST": "JST", "AEDT": "AEDT", "NZST": "NZST", "ADT": "ADT", "AKST": "AKST", "SGT": "SGT", "OEZ": "OEZ", "AEST": "AEST", "ACDT": "ACDT", "SAST": "SAST", "ACWST": "ACWST", "WESZ": "WESZ", "HAT": "HAT", "MEZ": "MEZ", "CHAST": "CHAST", "ARST": "ARST", "ChST": "ChST", "COST": "COST", "WIT": "WIT", "AKDT": "AKDT", "CST": "CST", "OESZ": "OESZ", "GMT": "GMT", "WAST": "WAST", "GFT": "GFT", "LHST": "LHST", "MST": "MST", "HADT": "HADT", "HKT": "HKT", "EDT": "EDT", "CLST": "CLST", "PST": "PST", "BT": "BT", "WITA": "WITA", "∅∅∅": "∅∅∅", "HKST": "HKST", "EST": "EST", "UYT": "UYT", "UYST": "UYST", "ART": "ART", "WEZ": "WEZ"},
+		timezones:              map[string]string{"CAT": "CAT", "HKT": "HKT", "HADT": "HADT", "SRT": "SRT", "AST": "AST", "ARST": "ARST", "EDT": "EDT", "CLT": "CLT", "VET": "VET", "ACDT": "ACDT", "PDT": "PDT", "CST": "CST", "LHDT": "LHDT", "MDT": "MDT", "CLST": "CLST", "GFT": "GFT", "GMT": "GMT", "WEZ": "WEZ", "WESZ": "WESZ", "AWDT": "AWDT", "NZST": "NZST", "MEZ": "MEZ", "AEDT": "AEDT", "SGT": "SGT", "ECT": "ECT", "SAST": "SAST", "ACST": "ACST", "HNT": "HNT", "∅∅∅": "∅∅∅", "BT": "BT", "ChST": "ChST", "CDT": "CDT", "HAT": "HAT", "ACWDT": "ACWDT", "NZDT": "NZDT", "CHAST": "CHAST", "WART": "WART", "TMST": "TMST", "CHADT": "CHADT", "MYT": "MYT", "JST": "JST", "HAST": "HAST", "AKST": "AKST", "COT": "COT", "MST": "MST", "PST": "PST", "WAT": "WAT", "MESZ": "MESZ", "OEZ": "OEZ", "WARST": "WARST", "LHST": "LHST", "EAT": "EAT", "ADT": "ADT", "WIT": "WIT", "ART": "ART", "WITA": "WITA", "EST": "EST", "AEST": "AEST", "HKST": "HKST", "UYT": "UYT", "AKDT": "AKDT", "WAST": "WAST", "IST": "भारतीय समय", "UYST": "UYST", "COST": "COST", "WIB": "WIB", "JDT": "JDT", "AWST": "AWST", "BOT": "BOT", "TMT": "TMT", "ACWST": "ACWST", "OESZ": "OESZ", "GYT": "GYT"},
 	}
 }
 
@@ -170,7 +170,8 @@ func (kok *kok) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kok' and handles both Whole and Real numbers based on 'v'
-func (kok *kok) FmtNumber(num float64, v uint64) (results string) {
+func (kok *kok) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kok.decimal) + len(kok.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -183,10 +184,7 @@ func (kok *kok) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -194,10 +192,7 @@ func (kok *kok) FmtNumber(num float64, v uint64) (results string) {
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(kok.group) - 1; j >= 0; j-- {
-					b = append(b, kok.group[j])
-				}
-
+				b = append(b, kok.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -213,9 +208,7 @@ func (kok *kok) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 	}
 
 	// reverse
@@ -223,13 +216,12 @@ func (kok *kok) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kok' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kok *kok) FmtPercent(num float64, v uint64) (results string) {
+func (kok *kok) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kok.decimal)
 	b := make([]byte, 0, l)
@@ -237,10 +229,7 @@ func (kok *kok) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			continue
 		}
 
@@ -248,9 +237,7 @@ func (kok *kok) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 	}
 
 	// reverse
@@ -260,12 +247,11 @@ func (kok *kok) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, kok.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kok'
-func (kok *kok) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kok *kok) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kok.currencies[currency]
@@ -280,10 +266,7 @@ func (kok *kok) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -291,10 +274,7 @@ func (kok *kok) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(kok.group) - 1; j >= 0; j-- {
-					b = append(b, kok.group[j])
-				}
-
+				b = append(b, kok.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -318,9 +298,7 @@ func (kok *kok) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 	}
 
 	// reverse
@@ -339,13 +317,12 @@ func (kok *kok) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kok'
 // in accounting notation.
-func (kok *kok) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kok *kok) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kok.currencies[currency]
@@ -360,10 +337,7 @@ func (kok *kok) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -371,10 +345,7 @@ func (kok *kok) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(kok.group) - 1; j >= 0; j-- {
-					b = append(b, kok.group[j])
-				}
-
+				b = append(b, kok.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -399,9 +370,7 @@ func (kok *kok) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, kok.currencyNegativePrefix[j])
 		}
 
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 
 	} else {
 
@@ -431,8 +400,7 @@ func (kok *kok) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kok'

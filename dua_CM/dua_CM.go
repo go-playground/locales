@@ -18,7 +18,7 @@ type dua_CM struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -53,7 +53,7 @@ func New() locales.Translator {
 		group:                  " ",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "di", "ŋgɔn", "sɔŋ", "diɓ", "emi", "esɔ", "mad", "diŋ", "nyɛt", "may", "tin", "elá"},
@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ɓ.Ys", "mb.Ys"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ɓoso ɓwá yáɓe lá", "mbúsa kwédi a Yés"},
-		timezones:              map[string]string{"CAT": "CAT", "UYST": "UYST", "MEZ": "MEZ", "HAT": "HAT", "AWDT": "AWDT", "BOT": "BOT", "HAST": "HAST", "CLST": "CLST", "ARST": "ARST", "JST": "JST", "AKST": "AKST", "CST": "CST", "WITA": "WITA", "WIT": "WIT", "OESZ": "OESZ", "NZST": "NZST", "ACST": "ACST", "CHADT": "CHADT", "ACDT": "ACDT", "ART": "ART", "MYT": "MYT", "PDT": "PDT", "AEDT": "AEDT", "GYT": "GYT", "IST": "IST", "ACWDT": "ACWDT", "LHDT": "LHDT", "ECT": "ECT", "HNT": "HNT", "CHAST": "CHAST", "COT": "COT", "AKDT": "AKDT", "EST": "EST", "CLT": "CLT", "WIB": "WIB", "JDT": "JDT", "HADT": "HADT", "MESZ": "MESZ", "BT": "BT", "SRT": "SRT", "TMST": "TMST", "MDT": "MDT", "AEST": "AEST", "COST": "COST", "AST": "AST", "VET": "VET", "UYT": "UYT", "∅∅∅": "∅∅∅", "LHST": "LHST", "HKT": "HKT", "EAT": "EAT", "PST": "PST", "OEZ": "OEZ", "NZDT": "NZDT", "SAST": "SAST", "ChST": "ChST", "WAST": "WAST", "ADT": "ADT", "TMT": "TMT", "GFT": "GFT", "WART": "WART", "ACWST": "ACWST", "MST": "MST", "WESZ": "WESZ", "EDT": "EDT", "GMT": "GMT", "SGT": "SGT", "CDT": "CDT", "WEZ": "WEZ", "AWST": "AWST", "WARST": "WARST", "WAT": "WAT", "HKST": "HKST"},
+		timezones:              map[string]string{"MST": "MST", "WEZ": "WEZ", "LHST": "LHST", "JDT": "JDT", "PST": "PST", "GYT": "GYT", "TMST": "TMST", "EDT": "EDT", "BT": "BT", "HADT": "HADT", "MDT": "MDT", "AWST": "AWST", "MYT": "MYT", "HAST": "HAST", "LHDT": "LHDT", "ACDT": "ACDT", "VET": "VET", "TMT": "TMT", "AKDT": "AKDT", "WAST": "WAST", "AEST": "AEST", "EST": "EST", "AST": "AST", "AEDT": "AEDT", "HKT": "HKT", "CLST": "CLST", "ACST": "ACST", "IST": "IST", "HAT": "HAT", "WITA": "WITA", "WESZ": "WESZ", "WIB": "WIB", "MEZ": "MEZ", "OEZ": "OEZ", "WAT": "WAT", "NZST": "NZST", "ACWST": "ACWST", "WART": "WART", "PDT": "PDT", "HNT": "HNT", "ART": "ART", "COST": "COST", "HKST": "HKST", "∅∅∅": "∅∅∅", "EAT": "EAT", "MESZ": "MESZ", "OESZ": "OESZ", "CAT": "CAT", "WIT": "WIT", "ECT": "ECT", "AKST": "AKST", "NZDT": "NZDT", "UYST": "UYST", "ChST": "ChST", "ACWDT": "ACWDT", "CHAST": "CHAST", "BOT": "BOT", "UYT": "UYT", "GFT": "GFT", "CST": "CST", "SAST": "SAST", "ADT": "ADT", "SGT": "SGT", "AWDT": "AWDT", "SRT": "SRT", "ARST": "ARST", "GMT": "GMT", "WARST": "WARST", "CHADT": "CHADT", "COT": "COT", "CLT": "CLT", "JST": "JST", "CDT": "CDT"},
 	}
 }
 
@@ -177,7 +177,8 @@ func (dua *dua_CM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'dua_CM' and handles both Whole and Real numbers based on 'v'
-func (dua *dua_CM) FmtNumber(num float64, v uint64) (results string) {
+func (dua *dua_CM) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dua.decimal) + len(dua.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -197,7 +198,6 @@ func (dua *dua_CM) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(dua.group) - 1; j >= 0; j-- {
 					b = append(b, dua.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -208,9 +208,7 @@ func (dua *dua_CM) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(dua.minus) - 1; j >= 0; j-- {
-			b = append(b, dua.minus[j])
-		}
+		b = append(b, dua.minus[0])
 	}
 
 	// reverse
@@ -218,13 +216,12 @@ func (dua *dua_CM) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'dua_CM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (dua *dua_CM) FmtPercent(num float64, v uint64) (results string) {
+func (dua *dua_CM) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dua.decimal)
 	b := make([]byte, 0, l)
@@ -240,9 +237,7 @@ func (dua *dua_CM) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(dua.minus) - 1; j >= 0; j-- {
-			b = append(b, dua.minus[j])
-		}
+		b = append(b, dua.minus[0])
 	}
 
 	// reverse
@@ -254,12 +249,11 @@ func (dua *dua_CM) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, dua.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'dua_CM'
-func (dua *dua_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (dua *dua_CM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dua.currencies[currency]
@@ -281,7 +275,6 @@ func (dua *dua_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 				for j := len(dua.group) - 1; j >= 0; j-- {
 					b = append(b, dua.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -292,9 +285,7 @@ func (dua *dua_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(dua.minus) - 1; j >= 0; j-- {
-			b = append(b, dua.minus[j])
-		}
+		b = append(b, dua.minus[0])
 	}
 
 	// reverse
@@ -317,13 +308,12 @@ func (dua *dua_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'dua_CM'
 // in accounting notation.
-func (dua *dua_CM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (dua *dua_CM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dua.currencies[currency]
@@ -345,7 +335,6 @@ func (dua *dua_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 				for j := len(dua.group) - 1; j >= 0; j-- {
 					b = append(b, dua.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -357,9 +346,7 @@ func (dua *dua_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	if num < 0 {
 
-		for j := len(dua.minus) - 1; j >= 0; j-- {
-			b = append(b, dua.minus[j])
-		}
+		b = append(b, dua.minus[0])
 
 	}
 
@@ -388,8 +375,7 @@ func (dua *dua_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'dua_CM'

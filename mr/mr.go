@@ -45,7 +45,7 @@ func New() locales.Translator {
 		locale:             "mr",
 		pluralsCardinal:    []locales.PluralRule{2, 6},
 		pluralsOrdinal:     []locales.PluralRule{2, 3, 4, 6},
-		pluralsRange:       []locales.PluralRule{6, 2},
+		pluralsRange:       []locales.PluralRule{2, 6},
 		decimal:            ".",
 		group:              ",",
 		minus:              "-",
@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"इ. स. पू.", "इ. स."},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"ईसवीसनपूर्व", "ईसवीसन"},
-		timezones:          map[string]string{"PDT": "पॅसिफिक सूर्यप्रकाश वेळ", "TMST": "तुर्कमेनिस्तान उन्हाळी वेळ", "SRT": "सुरिनाम वेळ", "AWST": "ऑस्ट्रेलियन पश्चिम प्रमाण वेळ", "UYT": "उरुग्वे प्रमाण वेळ", "COST": "कोलंबिया उन्हाळी वेळ", "HKST": "हाँग काँग उन्हाळी वेळ", "AEST": "ऑस्ट्रेलियन पूर्व प्रमाण वेळ", "WART": "पश्चिमी अर्जेंटिना प्रमाण वेळ", "UYST": "उरुग्वे उन्हाळी वेळ", "ACWST": "ऑस्ट्रेलियन मध्य-पश्चिम प्रमाण वेळ", "LHST": "लॉर्ड होवे प्रमाण वेळ", "AKST": "अलास्का प्रमाण वेळ", "NZDT": "न्यूझीलंड सूर्यप्रकाश वेळ", "TMT": "तुर्कमेनिस्तान प्रमाण वेळ", "ChST": "चामोरो प्रमाण वेळ", "GMT": "ग्रीनिच प्रमाण वेळ", "NZST": "न्यूझीलंड प्रमाण वेळ", "ACST": "ऑस्ट्रेलियन मध्य प्रमाण वेळ", "CHAST": "चॅथम प्रमाण वेळ", "IST": "भारतीय प्रमाण वेळ", "∅∅∅": "ऐकर ग्रीष्म वेळ", "AWDT": "ऑस्ट्रेलियन पश्चिम सूर्यप्रकाश वेळ", "PST": "पॅसिफिक प्रमाण वेळ", "GYT": "गयाना वेळ", "ACDT": "ऑस्ट्रेलियन मध्य सूर्यप्रकाश वेळ", "WITA": "मध्\u200dय इंडोनेशिया वेळ", "HAST": "हवाई-अलूशन प्रमाण वेळ", "HKT": "हाँग काँग प्रमाण वेळ", "CLST": "चिली उन्हाळी वेळ", "AEDT": "ऑस्ट्रेलियन पूर्व सूर्यप्रकाश वेळ", "JST": "जपान प्रमाण वेळ", "WIB": "पश्चिमी इंडोनेशिया वेळ", "OESZ": "पूर्व युरोपियन उन्हाळी वेळ", "VET": "व्हेनेझुएला वेळ", "ART": "अर्जेंटिना प्रमाण वेळ", "WARST": "पश्चिमी अर्जेंटिना उन्हाळी वेळ", "WAT": "पश्चिम आफ्रिका प्रमाण वेळ", "MEZ": "मध्\u200dय युरोपियन प्रमाण वेळ", "WIT": "पौर्वात्य इंडोनेशिया वेळ", "HNT": "न्यू फाउंडलंड प्रमाण वेळ", "CST": "केंद्रीय प्रमाण वेळ", "CDT": "केंद्रीय सूर्यप्रकाश वेळ", "HADT": "हवाई-अलूशन सूर्यप्रकाश वेळ", "MESZ": "मध्\u200dय युरोपियन उन्हाळी वेळ", "LHDT": "लॉर्ड होवे सूर्यप्रकाश वेळ", "ECT": "इक्वेडोर वेळ", "MDT": "मकाऊ ग्रीष्मकालीन वेळ", "CAT": "मध्\u200dय आफ्रिका वेळ", "ADT": "अटलांटिक सूर्यप्रकाश वेळ", "GFT": "फ्रेंच गयाना वेळ", "JDT": "जपान सूर्यप्रकाश वेळ", "HAT": "न्यू फाउंडलंड सूर्यप्रकाश वेळ", "EDT": "पौर्वात्य सूर्यप्रकाश वेळ", "CHADT": "चॅथम सूर्यप्रकाश वेळ", "BOT": "बोलिव्हिया वेळ", "WAST": "पश्चिम आफ्रिका उन्हाळी वेळ", "MST": "मकाऊ प्रमाणवेळ", "WESZ": "पश्चिम युरोपियन उन्हाळी वेळ", "CLT": "चिली प्रमाण वेळ", "ACWDT": "ऑस्ट्रेलियन मध्य-पश्चिम सूर्यप्रकाश वेळ", "MYT": "मलेशिया वेळ", "SGT": "सिंगापूर प्रमाण वेळ", "OEZ": "पूर्व युरोपियन प्रमाण वेळ", "ARST": "अर्जेंटिना उन्हाळी वेळ", "BT": "भूतान वेळ", "COT": "कोलंबिया प्रमाण वेळ", "AST": "अटलांटिक प्रमाण वेळ", "AKDT": "अलास्का सूर्यप्रकाश वेळ", "EAT": "पूर्व आफ्रिका वेळ", "WEZ": "पश्चिम युरोपियन प्रमाण वेळ", "EST": "पौर्वात्य प्रमाण वेळ", "SAST": "दक्षिण आफ्रिका प्रमाण वेळ"},
+		timezones:          map[string]string{"BOT": "बोलिव्हिया वेळ", "UYST": "उरुग्वे उन्हाळी वेळ", "GMT": "ग्रीनिच प्रमाण वेळ", "NZST": "न्यूझीलंड प्रमाण वेळ", "MEZ": "मध्\u200dय युरोपियन प्रमाण वेळ", "OESZ": "पूर्व युरोपियन उन्हाळी वेळ", "ACDT": "ऑस्ट्रेलियन मध्य सूर्यप्रकाश वेळ", "WART": "पश्चिमी अर्जेंटिना प्रमाण वेळ", "ADT": "अटलांटिक सूर्यप्रकाश वेळ", "WIB": "पश्चिमी इंडोनेशिया वेळ", "TMST": "तुर्कमेनिस्तान उन्हाळी वेळ", "MESZ": "मध्\u200dय युरोपियन उन्हाळी वेळ", "CLT": "चिली प्रमाण वेळ", "NZDT": "न्यूझीलंड सूर्यप्रकाश वेळ", "ARST": "अर्जेंटिना उन्हाळी वेळ", "CDT": "केंद्रीय सूर्यप्रकाश वेळ", "PDT": "पॅसिफिक सूर्यप्रकाश वेळ", "HNT": "न्यू फाउंडलंड प्रमाण वेळ", "HAT": "न्यू फाउंडलंड सूर्यप्रकाश वेळ", "SRT": "सुरिनाम वेळ", "MST": "पर्वतीय प्रमाण वेळ", "PST": "पॅसिफिक प्रमाण वेळ", "EST": "पौर्वात्य प्रमाण वेळ", "CHAST": "चॅथम प्रमाण वेळ", "HKST": "हाँग काँग उन्हाळी वेळ", "AST": "अटलांटिक प्रमाण वेळ", "WIT": "पौर्वात्य इंडोनेशिया वेळ", "WEZ": "पश्चिम युरोपियन प्रमाण वेळ", "SAST": "दक्षिण आफ्रिका प्रमाण वेळ", "CHADT": "चॅथम सूर्यप्रकाश वेळ", "HAST": "हवाई-अलूशन प्रमाण वेळ", "AKST": "अलास्का प्रमाण वेळ", "ECT": "इक्वेडोर वेळ", "EAT": "पूर्व आफ्रिका वेळ", "HADT": "हवाई-अलूशन सूर्यप्रकाश वेळ", "VET": "व्हेनेझुएला वेळ", "∅∅∅": "अ\u200dॅझोरेस उन्हाळी वेळ", "CAT": "मध्\u200dय आफ्रिका वेळ", "TMT": "तुर्कमेनिस्तान प्रमाण वेळ", "LHDT": "लॉर्ड होवे सूर्यप्रकाश वेळ", "WAST": "पश्चिम आफ्रिका उन्हाळी वेळ", "CLST": "चिली उन्हाळी वेळ", "JDT": "जपान सूर्यप्रकाश वेळ", "AEDT": "ऑस्ट्रेलियन पूर्व सूर्यप्रकाश वेळ", "ChST": "चामोरो प्रमाण वेळ", "MYT": "मलेशिया वेळ", "IST": "भारतीय प्रमाण वेळ", "EDT": "पौर्वात्य सूर्यप्रकाश वेळ", "COT": "कोलंबिया प्रमाण वेळ", "WESZ": "पश्चिम युरोपियन उन्हाळी वेळ", "WAT": "पश्चिम आफ्रिका प्रमाण वेळ", "JST": "जपान प्रमाण वेळ", "SGT": "सिंगापूर प्रमाण वेळ", "WITA": "मध्\u200dय इंडोनेशिया वेळ", "CST": "केंद्रीय प्रमाण वेळ", "AWDT": "ऑस्ट्रेलियन पश्चिम सूर्यप्रकाश वेळ", "HKT": "हाँग काँग प्रमाण वेळ", "UYT": "उरुग्वे प्रमाण वेळ", "BT": "भूतान वेळ", "WARST": "पश्चिमी अर्जेंटिना उन्हाळी वेळ", "GYT": "गयाना वेळ", "MDT": "पर्वतीय सूर्यप्रकाश वेळ", "AWST": "ऑस्ट्रेलियन पश्चिम प्रमाण वेळ", "ACWDT": "ऑस्ट्रेलियन मध्य-पश्चिम सूर्यप्रकाश वेळ", "ART": "अर्जेंटिना प्रमाण वेळ", "AKDT": "अलास्का सूर्यप्रकाश वेळ", "COST": "कोलंबिया उन्हाळी वेळ", "ACWST": "ऑस्ट्रेलियन मध्य-पश्चिम प्रमाण वेळ", "OEZ": "पूर्व युरोपियन प्रमाण वेळ", "AEST": "ऑस्ट्रेलियन पूर्व प्रमाण वेळ", "ACST": "ऑस्ट्रेलियन मध्य प्रमाण वेळ", "GFT": "फ्रेंच गयाना वेळ", "LHST": "लॉर्ड होवे प्रमाण वेळ"},
 	}
 }
 
@@ -207,7 +207,8 @@ func (mr *mr) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'mr' and handles both Whole and Real numbers based on 'v'
-func (mr *mr) FmtNumber(num float64, v uint64) (results string) {
+func (mr *mr) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(mr.decimal) + len(mr.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -252,13 +253,12 @@ func (mr *mr) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'mr' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (mr *mr) FmtPercent(num float64, v uint64) (results string) {
+func (mr *mr) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(mr.decimal)
 	b := make([]byte, 0, l)
@@ -284,12 +284,11 @@ func (mr *mr) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, mr.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'mr'
-func (mr *mr) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (mr *mr) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mr.currencies[currency]
@@ -342,13 +341,12 @@ func (mr *mr) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'mr'
 // in accounting notation.
-func (mr *mr) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (mr *mr) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := mr.currencies[currency]
@@ -409,8 +407,7 @@ func (mr *mr) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'mr'

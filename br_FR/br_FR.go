@@ -18,7 +18,7 @@ type br_FR struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -51,7 +51,7 @@ func New() locales.Translator {
 		pluralsRange:           nil,
 		timeSeparator:          ":",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "Gen.", "Cʼhwe.", "Meur.", "Ebr.", "Mae", "Mezh.", "Goue.", "Eost", "Gwen.", "Here", "Du", "Kzu."},
@@ -66,7 +66,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a-raok J.K.", "goude J.K."},
 		erasNarrow:             []string{"a-raok J.K.", "goude J.K."},
 		erasWide:               []string{"a-raok Jezuz-Krist", "goude Jezuz-Krist"},
-		timezones:              map[string]string{"UYST": "eur hañv Uruguay", "AEST": "eur cʼhoañv Aostralia ar Reter", "WARST": "eur hañv Arcʼhantina ar Cʼhornôg", "MST": "eur cʼhoañv ar Menezioù", "ECT": "eur Ecuador", "IST": "eur cʼhoañv India", "WESZ": "eur hañv Europa ar Cʼhornôg", "AWST": "eur cʼhoañv Aostralia ar Cʼhornôg", "PDT": "PDT", "GFT": "eur Gwiana cʼhall", "TMST": "eur hañv Turkmenistan", "AKDT": "eur hañv Alaska", "WAST": "eur hañv Afrika ar Cʼhornôg", "MDT": "eur hañv ar Menezioù", "ChST": "ChST", "WEZ": "eur cʼhoañv Europa ar Cʼhornôg", "NZDT": "eur hañv Zeland-Nevez", "WAT": "eur cʼhoañv Afrika ar Cʼhornôg", "JDT": "eur hañv Japan", "CDT": "CDT", "UYT": "eur cʼhoañv Uruguay", "COST": "eur hañv Kolombia", "ACST": "eur cʼhoañv Kreizaostralia", "CHAST": "eur cʼhoañv Chatham", "COT": "eur cʼhoañv Kolombia", "WITA": "WITA", "ACWDT": "eur hañv Kreizaostralia ar Cʼhornôg", "WIT": "eur Indonezia ar Reter", "HAT": "eur hañv Newfoundland", "CAT": "eur Kreizafrika", "TMT": "eur cʼhoañv Turkmenistan", "∅∅∅": "eur hañv an Azorez", "AWDT": "eur hañv Aostralia ar Cʼhornôg", "CHADT": "eur hañv Chatham", "MEZ": "eur cʼhoañv Kreizeuropa", "ARST": "eur hañv Arcʼhantina", "SRT": "eur Surinam", "HKT": "eur cʼhoañv Hong Kong", "CST": "CST", "CLT": "eur cʼhoañv Chile", "WIB": "eur Indonezia ar Cʼhornôg", "OEZ": "eur cʼhoañv Europa ar Reter", "HKST": "eur hañv Hong Kong", "BOT": "eur Bolivia", "SAST": "eur cʼhoañv Suafrika", "LHST": "LHST", "CLST": "eur hañv Chile", "GMT": "Amzer keitat Greenwich (AKG)", "AST": "AST", "MESZ": "eur hañv Kreizeuropa", "MYT": "eur Malaysia", "HADT": "HADT", "AEDT": "eur hañv Aostralia ar Reter", "NZST": "eur cʼhoañv Zeland-Nevez", "PST": "PST", "VET": "eur Venezuela", "ACWST": "eur cʼhoañv Kreizaostralia ar Cʼhornôg", "HAST": "HAST", "HNT": "eur cʼhoañv Newfoundland", "EST": "eur cʼhoañv ar Reter", "LHDT": "LHDT", "SGT": "eur cʼhoañv Singapour", "JST": "eur cʼhoañv Japan", "AKST": "eur cʼhoañv Alaska", "ACDT": "eur hañv Kreizaostralia", "ART": "eur cʼhoañv Arcʼhantina", "WART": "eur cʼhoañv Arcʼhantina ar Cʼhornôg", "ADT": "ADT", "EAT": "eur Afrika ar Reter", "EDT": "eur hañv ar Reter", "OESZ": "eur hañv Europa ar Reter", "BT": "eur Bhoutan", "GYT": "eur Guyana"},
+		timezones:              map[string]string{"EAT": "eur Afrika ar Reter", "CHADT": "eur hañv Chatham", "OEZ": "eur cʼhoañv Europa ar Reter", "AEDT": "eur hañv Aostralia ar Reter", "ART": "eur cʼhoañv Arcʼhantina", "ChST": "ChST", "ECT": "eur Ecuador", "WAT": "eur cʼhoañv Afrika ar Cʼhornôg", "AWST": "eur cʼhoañv Aostralia ar Cʼhornôg", "EST": "eur cʼhoañv ar Reter", "MDT": "eur hañv Macau", "ACDT": "eur hañv Kreizaostralia", "BOT": "eur Bolivia", "WIT": "eur Indonezia ar Reter", "MST": "eur cʼhoañv Macau", "MESZ": "eur hañv Kreizeuropa", "HNT": "eur cʼhoañv Newfoundland", "PDT": "PDT", "WESZ": "eur hañv Europa ar Cʼhornôg", "NZDT": "eur hañv Zeland-Nevez", "HKT": "eur cʼhoañv Hong Kong", "BT": "eur Bhoutan", "TMT": "eur cʼhoañv Turkmenistan", "TMST": "eur hañv Turkmenistan", "WIB": "eur Indonezia ar Cʼhornôg", "AST": "AST", "AEST": "eur cʼhoañv Aostralia ar Reter", "SRT": "eur Surinam", "CAT": "eur Kreizafrika", "EDT": "eur hañv ar Reter", "GMT": "Amzer keitat Greenwich (AKG)", "COT": "eur cʼhoañv Kolombia", "HAST": "HAST", "CLT": "eur cʼhoañv Chile", "WARST": "eur hañv Arcʼhantina ar Cʼhornôg", "MYT": "eur Malaysia", "CST": "CST", "∅∅∅": "eur hañv Perou", "ACWDT": "eur hañv Kreizaostralia ar Cʼhornôg", "ADT": "ADT", "HAT": "eur hañv Newfoundland", "AKST": "eur cʼhoañv Alaska", "UYT": "eur cʼhoañv Uruguay", "WAST": "eur hañv Afrika ar Cʼhornôg", "JST": "eur cʼhoañv Japan", "MEZ": "eur cʼhoañv Kreizeuropa", "LHDT": "LHDT", "WART": "eur cʼhoañv Arcʼhantina ar Cʼhornôg", "AWDT": "eur hañv Aostralia ar Cʼhornôg", "IST": "eur cʼhoañv India", "PST": "PST", "ARST": "eur hañv Arcʼhantina", "CDT": "CDT", "WEZ": "eur cʼhoañv Europa ar Cʼhornôg", "CLST": "eur hañv Chile", "ACST": "eur cʼhoañv Kreizaostralia", "SGT": "eur cʼhoañv Singapour", "WITA": "WITA", "AKDT": "eur hañv Alaska", "ACWST": "eur cʼhoañv Kreizaostralia ar Cʼhornôg", "SAST": "eur cʼhoañv Suafrika", "UYST": "eur hañv Uruguay", "HKST": "eur hañv Hong Kong", "COST": "eur hañv Kolombia", "LHST": "LHST", "JDT": "eur hañv Japan", "GYT": "eur Guyana", "GFT": "eur Gwiana cʼhall", "HADT": "HADT", "NZST": "eur cʼhoañv Zeland-Nevez", "CHAST": "eur cʼhoañv Chatham", "OESZ": "eur hañv Europa ar Reter", "VET": "eur Venezuela"},
 	}
 }
 
@@ -94,9 +94,9 @@ func (br *br_FR) PluralsRange() []locales.PluralRule {
 func (br *br_FR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
+	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
 	nMod1000000 := math.Mod(n, 1000000)
-	nMod10 := math.Mod(n, 10)
 
 	if nMod10 == 1 && (nMod100 != 11 && nMod100 != 71 && nMod100 != 91) {
 		return locales.PluralRuleOne
@@ -192,7 +192,8 @@ func (br *br_FR) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'br_FR' and handles both Whole and Real numbers based on 'v'
-func (br *br_FR) FmtNumber(num float64, v uint64) (results string) {
+func (br *br_FR) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(br.decimal) + len(br.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -202,20 +203,14 @@ func (br *br_FR) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(br.decimal) - 1; j >= 0; j-- {
-				b = append(b, br.decimal[j])
-			}
-
+			b = append(b, br.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(br.group) - 1; j >= 0; j-- {
-					b = append(b, br.group[j])
-				}
-
+				b = append(b, br.group[0])
 				count = 1
 			} else {
 				count++
@@ -226,9 +221,7 @@ func (br *br_FR) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(br.minus) - 1; j >= 0; j-- {
-			b = append(b, br.minus[j])
-		}
+		b = append(b, br.minus[0])
 	}
 
 	// reverse
@@ -236,13 +229,12 @@ func (br *br_FR) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'br_FR' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (br *br_FR) FmtPercent(num float64, v uint64) (results string) {
+func (br *br_FR) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(br.decimal)
 	b := make([]byte, 0, l)
@@ -250,10 +242,7 @@ func (br *br_FR) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(br.decimal) - 1; j >= 0; j-- {
-				b = append(b, br.decimal[j])
-			}
-
+			b = append(b, br.decimal[0])
 			continue
 		}
 
@@ -261,9 +250,7 @@ func (br *br_FR) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(br.minus) - 1; j >= 0; j-- {
-			b = append(b, br.minus[j])
-		}
+		b = append(b, br.minus[0])
 	}
 
 	// reverse
@@ -275,12 +262,11 @@ func (br *br_FR) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, br.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'br_FR'
-func (br *br_FR) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (br *br_FR) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := br.currencies[currency]
@@ -292,20 +278,14 @@ func (br *br_FR) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(br.decimal) - 1; j >= 0; j-- {
-				b = append(b, br.decimal[j])
-			}
-
+			b = append(b, br.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(br.group) - 1; j >= 0; j-- {
-					b = append(b, br.group[j])
-				}
-
+				b = append(b, br.group[0])
 				count = 1
 			} else {
 				count++
@@ -316,9 +296,7 @@ func (br *br_FR) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(br.minus) - 1; j >= 0; j-- {
-			b = append(b, br.minus[j])
-		}
+		b = append(b, br.minus[0])
 	}
 
 	// reverse
@@ -341,13 +319,12 @@ func (br *br_FR) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'br_FR'
 // in accounting notation.
-func (br *br_FR) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (br *br_FR) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := br.currencies[currency]
@@ -359,20 +336,14 @@ func (br *br_FR) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(br.decimal) - 1; j >= 0; j-- {
-				b = append(b, br.decimal[j])
-			}
-
+			b = append(b, br.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(br.group) - 1; j >= 0; j-- {
-					b = append(b, br.group[j])
-				}
-
+				b = append(b, br.group[0])
 				count = 1
 			} else {
 				count++
@@ -384,9 +355,7 @@ func (br *br_FR) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 
 	if num < 0 {
 
-		for j := len(br.minus) - 1; j >= 0; j-- {
-			b = append(b, br.minus[j])
-		}
+		b = append(b, br.minus[0])
 
 	}
 
@@ -415,8 +384,7 @@ func (br *br_FR) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'br_FR'

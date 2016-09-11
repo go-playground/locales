@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "it_IT",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{5, 6},
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
 		group:                  ".",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a.C.", "d.C."},
 		erasNarrow:             []string{"aC", "dC"},
 		erasWide:               []string{"a.C.", "d.C."},
-		timezones:              map[string]string{"ACST": "Ora standard dell’Australia centrale", "WARST": "Ora legale dell’Argentina occidentale", "WAT": "Ora standard dell’Africa occidentale", "HKST": "Ora legale di Hong Kong", "CLST": "Ora legale del Cile", "PDT": "Ora legale del Pacifico USA", "COT": "Ora standard della Colombia", "MESZ": "Ora legale dell’Europa centrale", "NZDT": "Ora legale della Nuova Zelanda", "GYT": "Ora della Guyana", "TMT": "Ora standard del Turkmenistan", "WAST": "Ora legale dell’Africa occidentale", "∅∅∅": "Ora legale delle Azzorre", "LHDT": "Ora legale di Lord Howe", "GMT": "Ora del meridiano di Greenwich", "BOT": "Ora della Bolivia", "SRT": "Ora del Suriname", "AKST": "Ora standard dell’Alaska", "HNT": "Ora standard di Terranova", "UYST": "Ora legale dell’Uruguay", "ART": "Ora standard dell’Argentina", "AST": "Ora standard dell’Atlantico", "AWDT": "Ora legale dell’Australia occidentale", "TMST": "Ora legale del Turkmenistan", "SAST": "Ora dell’Africa meridionale", "WIT": "Ora dell’Indonesia orientale", "WEZ": "Ora standard dell’Europa occidentale", "PST": "Ora standard del Pacifico USA", "ACDT": "Ora legale dell’Australia centrale", "MDT": "Ora legale Montagne Rocciose USA", "VET": "Ora del Venezuela", "NZST": "Ora standard della Nuova Zelanda", "WART": "Ora standard dell’Argentina occidentale", "JDT": "Ora legale del Giappone", "COST": "Ora legale della Colombia", "JST": "Ora standard del Giappone", "IST": "Ora standard dell’India", "HKT": "Ora standard di Hong Kong", "AEDT": "Ora legale dell’Australia orientale", "OESZ": "Ora legale dell’Europa orientale", "ACWDT": "Ora legale dell’Australia centroccidentale", "HADT": "Ora legale delle Isole Hawaii-Aleutine", "MEZ": "Ora standard dell’Europa centrale", "SGT": "Ora Singapore", "AWST": "Ora standard dell’Australia occidentale", "CDT": "Ora legale centrale USA", "CAT": "Ora dell’Africa centrale", "OEZ": "Ora standard dell’Europa orientale", "ADT": "Ora legale dell’Atlantico", "ACWST": "Ora standard dell’Australia centroccidentale", "AKDT": "Ora legale dell’Alaska", "WESZ": "Ora legale dell’Europa occidentale", "HAT": "Ora legale di Terranova", "WIB": "Ora dell’Indonesia occidentale", "CHAST": "Ora standard delle Chatham", "CHADT": "Ora legale delle Chatham", "WITA": "Ora dell’Indonesia centrale", "EST": "Ora standard orientale USA", "LHST": "Ora standard di Lord Howe", "ChST": "Ora Chamorro", "CST": "Ora standard centrale USA", "AEST": "Ora standard dell’Australia orientale", "BT": "Ora del Bhutan", "EAT": "Ora dell’Africa orientale", "GFT": "Ora della Guiana francese", "MYT": "Ora della Malesia", "HAST": "Ora standard delle Isole Hawaii-Aleutine", "CLT": "Ora standard del Cile", "UYT": "Ora standard dell’Uruguay", "ARST": "Ora legale dell’Argentina", "MST": "Ora standard Montagne Rocciose USA", "EDT": "Ora legale orientale USA", "ECT": "Ora dell’Ecuador"},
+		timezones:              map[string]string{"SRT": "Ora del Suriname", "EST": "Ora standard orientale USA", "AKST": "Ora standard dell’Alaska", "WAST": "Ora legale dell’Africa occidentale", "CHADT": "Ora legale delle Chatham", "ACST": "Ora standard dell’Australia centrale", "AST": "Ora standard dell’Atlantico", "TMT": "Ora standard del Turkmenistan", "EDT": "Ora legale orientale USA", "CDT": "Ora legale centrale USA", "ECT": "Ora dell’Ecuador", "WEZ": "Ora standard dell’Europa occidentale", "HAT": "Ora legale di Terranova", "WITA": "Ora dell’Indonesia centrale", "AKDT": "Ora legale dell’Alaska", "JDT": "Ora legale del Giappone", "MEZ": "Ora standard dell’Europa centrale", "GYT": "Ora della Guyana", "UYT": "Ora standard dell’Uruguay", "HAST": "Ora standard delle Isole Hawaii-Aleutine", "WESZ": "Ora legale dell’Europa occidentale", "LHST": "Ora standard di Lord Howe", "TMST": "Ora legale del Turkmenistan", "CST": "Ora standard centrale USA", "EAT": "Ora dell’Africa orientale", "ACDT": "Ora legale dell’Australia centrale", "CAT": "Ora dell’Africa centrale", "VET": "Ora del Venezuela", "PDT": "Ora legale del Pacifico USA", "ARST": "Ora legale dell’Argentina", "GMT": "Ora del meridiano di Greenwich", "LHDT": "Ora legale di Lord Howe", "WIB": "Ora dell’Indonesia occidentale", "OESZ": "Ora legale dell’Europa orientale", "BT": "Ora del Bhutan", "WAT": "Ora standard dell’Africa occidentale", "HKT": "Ora standard di Hong Kong", "ACWDT": "Ora legale dell’Australia centroccidentale", "AEST": "Ora standard dell’Australia orientale", "AWST": "Ora standard dell’Australia occidentale", "WART": "Ora standard dell’Argentina occidentale", "ADT": "Ora legale dell’Atlantico", "GFT": "Ora della Guiana francese", "ChST": "Ora Chamorro", "COST": "Ora legale della Colombia", "SAST": "Ora dell’Africa meridionale", "NZDT": "Ora legale della Nuova Zelanda", "AEDT": "Ora legale dell’Australia orientale", "HNT": "Ora standard di Terranova", "WIT": "Ora dell’Indonesia orientale", "ART": "Ora standard dell’Argentina", "JST": "Ora standard del Giappone", "WARST": "Ora legale dell’Argentina occidentale", "AWDT": "Ora legale dell’Australia occidentale", "SGT": "Ora Singapore", "∅∅∅": "Ora legale dell’Amazzonia", "OEZ": "Ora standard dell’Europa orientale", "CLT": "Ora standard del Cile", "MYT": "Ora della Malesia", "HADT": "Ora legale delle Isole Hawaii-Aleutine", "MST": "MST", "NZST": "Ora standard della Nuova Zelanda", "CHAST": "Ora standard delle Chatham", "HKST": "Ora legale di Hong Kong", "COT": "Ora standard della Colombia", "ACWST": "Ora standard dell’Australia centroccidentale", "CLST": "Ora legale del Cile", "MESZ": "Ora legale dell’Europa centrale", "PST": "Ora standard del Pacifico USA", "BOT": "Ora della Bolivia", "MDT": "MDT", "IST": "Ora standard dell’India", "UYST": "Ora legale dell’Uruguay"},
 	}
 }
 
@@ -207,7 +207,8 @@ func (it *it_IT) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'it_IT' and handles both Whole and Real numbers based on 'v'
-func (it *it_IT) FmtNumber(num float64, v uint64) (results string) {
+func (it *it_IT) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(it.decimal) + len(it.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -243,13 +244,12 @@ func (it *it_IT) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'it_IT' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (it *it_IT) FmtPercent(num float64, v uint64) (results string) {
+func (it *it_IT) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(it.decimal)
 	b := make([]byte, 0, l)
@@ -275,12 +275,11 @@ func (it *it_IT) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, it.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'it_IT'
-func (it *it_IT) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (it *it_IT) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := it.currencies[currency]
@@ -333,13 +332,12 @@ func (it *it_IT) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'it_IT'
 // in accounting notation.
-func (it *it_IT) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (it *it_IT) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := it.currencies[currency]
@@ -399,8 +397,7 @@ func (it *it_IT) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'it_IT'

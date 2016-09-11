@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "cy",
 		pluralsCardinal:        []locales.PluralRule{1, 2, 3, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{1, 2, 3, 4, 5, 6},
-		pluralsRange:           []locales.PluralRule{4, 5, 6, 2, 3},
+		pluralsRange:           []locales.PluralRule{2, 3, 4, 5, 6},
 		timeSeparator:          ":",
 		currencies:             []string{"ADP ", "AED", "AFA", "AFN", "ALK ", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD ", "BAM", "BAN ", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL ", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB ", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX ", "CN¥", "COP", "COU", "CRC", "CSD", "CSK ", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV ", "EEK ", "EGP", "ERN", "ESA ", "ESB ", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR ", "₪", "₹", "IQD", "IRR", "ISJ ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC ", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP ", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ ", "PTE", "PYG", "QAR", "RHD", "ROL ", "RON", "RSD", "RUB", "RUR ", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK ", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR ", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK ", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "EC$", "XDR ", "XEU", "XFO ", "XFU ", "CFA", "XPD ", "CFPF", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"CC", "OC"},
 		erasNarrow:             []string{"C", "O"},
 		erasWide:               []string{"Cyn Crist", "Oed Crist"},
-		timezones:              map[string]string{"PST": "Amser Safonol Cefnfor Tawel Gogledd America", "MEZ": "Amser Safonol Canolbarth Ewrop", "SAST": "Amser Safonol De Affrica", "SGT": "Amser Singapore", "OEZ": "Amser Safonol Dwyrain Ewrop", "CHADT": "Amser Haf Chatham", "ARST": "Amser Haf Ariannin", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "LHDT": "Amser Haf yr Arglwydd Howe", "WESZ": "Amser Haf Gorllewin Ewrop", "OESZ": "Amser Haf Dwyrain Ewrop", "ADT": "Amser Haf Cefnfor yr Iwerydd", "VET": "Amser Venezuela", "∅∅∅": "Amser Haf Brasília", "CHAST": "Amser Safonol Chatham", "WART": "Amser Safonol Gorllewin Ariannin", "GFT": "Amser Guyane Ffrengig", "ChST": "Amser Chamorro", "WIT": "Amser Dwyrain Indonesia", "JST": "Amser Safonol Siapan", "EDT": "Amser Haf Dwyrain Gogledd America", "AST": "Amser Safonol Cefnfor yr Iwerydd", "ECT": "Amser Ecuador", "TMT": "Amser Safonol Tyrcmenistan", "EAT": "Amser Dwyrain Affrica", "EST": "Amser Safonol Dwyrain Gogledd America", "COT": "Amser Safonol Colombia", "COST": "Amser Haf Colombia", "BT": "Amser Bhutan", "ART": "Amser Safonol Ariannin", "WITA": "Amser Canolbarth Indonesia", "WEZ": "Amser Safonol Gorllewin Ewrop", "HNT": "Amser Safonol Newfoundland", "MESZ": "Amser Haf Canolbarth Ewrop", "CST": "Amser Safonol Canolbarth Gogledd America", "AWDT": "Amser Haf Gorllewin Awstralia", "NZDT": "Amser Haf Seland Newydd", "AKDT": "Amser Haf Alaska", "CDT": "Amser Haf Canolbarth Gogledd America", "AWST": "Amser Safonol Gorllewin Awstralia", "AEDT": "Amser Haf Dwyrain Awstralia", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "WAST": "Amser Haf Gorllewin Affrica", "TMST": "Amser Haf Tyrcmenistan", "WIB": "Amser Gorllewin Indonesia", "WAT": "Amser Safonol Gorllewin Affrica", "LHST": "Amser Safonol yr Arglwydd Howe", "MST": "MST", "HAT": "Amser Haf Newfoundland", "UYST": "Amser Haf Uruguay", "JDT": "Amser Haf Siapan", "UYT": "Amser Safonol Uruguay", "CAT": "Amser Canolbarth Affrica", "ACST": "Amser Safonol Canolbarth Awstralia", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "MDT": "MDT", "GMT": "Amser Safonol Greenwich", "SRT": "Amser Suriname", "HAST": "Amser Safonol Hawaii-Aleutian", "HADT": "Amser Haf Hawaii-Aleutian", "IST": "Amser India", "HKST": "Amser Haf Hong Kong", "CLT": "Amser Safonol Chile", "CLST": "Amser Haf Chile", "ACDT": "Amser Haf Canolbarth Awstralia", "GYT": "Amser Guyana", "MYT": "Amser Malaysia", "AKST": "Amser Safonol Alaska", "HKT": "Amser Safonol Hong Kong", "NZST": "Amser Safonol Seland Newydd", "BOT": "Amser Bolivia", "WARST": "Amser Haf Gorllewin Ariannin", "AEST": "Amser Safonol Dwyrain Awstralia"},
+		timezones:              map[string]string{"ACDT": "Amser Haf Canolbarth Awstralia", "GYT": "Amser Guyana", "AKDT": "Amser Haf Alaska", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "ADT": "Amser Haf Cefnfor yr Iwerydd", "ACST": "Amser Safonol Canolbarth Awstralia", "HAT": "Amser Haf Newfoundland", "SGT": "Amser Singapore", "∅∅∅": "Amser Haf yr Azores", "UYT": "Amser Safonol Uruguay", "WITA": "Amser Canolbarth Indonesia", "ChST": "Amser Chamorro", "WARST": "Amser Haf Gorllewin Ariannin", "AWDT": "Amser Haf Gorllewin Awstralia", "NZDT": "Amser Haf Seland Newydd", "SRT": "Amser Suriname", "CLST": "Amser Haf Chile", "MEZ": "Amser Safonol Canolbarth Ewrop", "CDT": "Amser Haf Canolbarth Gogledd America", "AKST": "Amser Safonol Alaska", "WAT": "Amser Safonol Gorllewin Affrica", "WAST": "Amser Haf Gorllewin Affrica", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "GFT": "Amser Guyane Ffrengig", "CHAST": "Amser Safonol Chatham", "CHADT": "Amser Haf Chatham", "MYT": "Amser Malaysia", "GMT": "Amser Safonol Greenwich", "AWST": "Amser Safonol Gorllewin Awstralia", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "OEZ": "Amser Safonol Dwyrain Ewrop", "EAT": "Amser Dwyrain Affrica", "AEDT": "Amser Haf Dwyrain Awstralia", "HAST": "Amser Safonol Hawaii-Aleutian", "TMT": "Amser Safonol Tyrcmenistan", "ART": "Amser Safonol Ariannin", "WESZ": "Amser Haf Gorllewin Ewrop", "OESZ": "Amser Haf Dwyrain Ewrop", "BOT": "Amser Bolivia", "EST": "Amser Safonol Dwyrain Gogledd America", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "CST": "Amser Safonol Canolbarth Gogledd America", "AEST": "Amser Safonol Dwyrain Awstralia", "HADT": "Amser Haf Hawaii-Aleutian", "WIT": "Amser Dwyrain Indonesia", "WART": "Amser Safonol Gorllewin Ariannin", "HNT": "Amser Safonol Newfoundland", "BT": "Amser Bhutan", "EDT": "Amser Haf Dwyrain Gogledd America", "COST": "Amser Haf Colombia", "LHDT": "Amser Haf yr Arglwydd Howe", "NZST": "Amser Safonol Seland Newydd", "WIB": "Amser Gorllewin Indonesia", "JDT": "Amser Haf Siapan", "UYST": "Amser Haf Uruguay", "CAT": "Amser Canolbarth Affrica", "HKT": "Amser Safonol Hong Kong", "ARST": "Amser Haf Ariannin", "ECT": "Amser Ecuador", "COT": "Amser Safonol Colombia", "SAST": "Amser Safonol De Affrica", "CLT": "Amser Safonol Chile", "IST": "Amser India", "JST": "Amser Safonol Siapan", "AST": "Amser Safonol Cefnfor yr Iwerydd", "MST": "Amser Safonol Mynyddoedd Gogledd America", "MDT": "Amser Haf Mynyddoedd Gogledd America", "HKST": "Amser Haf Hong Kong", "TMST": "Amser Haf Tyrcmenistan", "WEZ": "Amser Safonol Gorllewin Ewrop", "MESZ": "Amser Haf Canolbarth Ewrop", "VET": "Amser Venezuela", "LHST": "Amser Safonol yr Arglwydd Howe"},
 	}
 }
 
@@ -250,7 +250,8 @@ func (cy *cy) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cy' and handles both Whole and Real numbers based on 'v'
-func (cy *cy) FmtNumber(num float64, v uint64) (results string) {
+func (cy *cy) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(cy.decimal) + len(cy.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -260,20 +261,14 @@ func (cy *cy) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cy.decimal) - 1; j >= 0; j-- {
-				b = append(b, cy.decimal[j])
-			}
-
+			b = append(b, cy.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cy.group) - 1; j >= 0; j-- {
-					b = append(b, cy.group[j])
-				}
-
+				b = append(b, cy.group[0])
 				count = 1
 			} else {
 				count++
@@ -284,9 +279,7 @@ func (cy *cy) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(cy.minus) - 1; j >= 0; j-- {
-			b = append(b, cy.minus[j])
-		}
+		b = append(b, cy.minus[0])
 	}
 
 	// reverse
@@ -294,13 +287,12 @@ func (cy *cy) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'cy' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (cy *cy) FmtPercent(num float64, v uint64) (results string) {
+func (cy *cy) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(cy.decimal)
 	b := make([]byte, 0, l)
@@ -308,10 +300,7 @@ func (cy *cy) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cy.decimal) - 1; j >= 0; j-- {
-				b = append(b, cy.decimal[j])
-			}
-
+			b = append(b, cy.decimal[0])
 			continue
 		}
 
@@ -319,9 +308,7 @@ func (cy *cy) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(cy.minus) - 1; j >= 0; j-- {
-			b = append(b, cy.minus[j])
-		}
+		b = append(b, cy.minus[0])
 	}
 
 	// reverse
@@ -331,12 +318,11 @@ func (cy *cy) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, cy.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cy'
-func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
@@ -348,20 +334,14 @@ func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cy.decimal) - 1; j >= 0; j-- {
-				b = append(b, cy.decimal[j])
-			}
-
+			b = append(b, cy.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cy.group) - 1; j >= 0; j-- {
-					b = append(b, cy.group[j])
-				}
-
+				b = append(b, cy.group[0])
 				count = 1
 			} else {
 				count++
@@ -376,9 +356,7 @@ func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	}
 
 	if num < 0 {
-		for j := len(cy.minus) - 1; j >= 0; j-- {
-			b = append(b, cy.minus[j])
-		}
+		b = append(b, cy.minus[0])
 	}
 
 	// reverse
@@ -397,13 +375,12 @@ func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cy'
 // in accounting notation.
-func (cy *cy) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (cy *cy) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
@@ -415,20 +392,14 @@ func (cy *cy) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cy.decimal) - 1; j >= 0; j-- {
-				b = append(b, cy.decimal[j])
-			}
-
+			b = append(b, cy.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cy.group) - 1; j >= 0; j-- {
-					b = append(b, cy.group[j])
-				}
-
+				b = append(b, cy.group[0])
 				count = 1
 			} else {
 				count++
@@ -474,8 +445,7 @@ func (cy *cy) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, cy.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'cy'

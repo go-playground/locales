@@ -58,7 +58,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"ዓ/ዓ", "ዓ/ም"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"MDT": "MDT", "AEDT": "AEDT", "WAT": "WAT", "AWDT": "AWDT", "CLST": "CLST", "SAST": "SAST", "JDT": "JDT", "AKDT": "AKDT", "WITA": "WITA", "CLT": "CLT", "ACDT": "ACDT", "PDT": "PDT", "COT": "COT", "JST": "JST", "HAST": "HAST", "HKST": "HKST", "∅∅∅": "∅∅∅", "GMT": "GMT", "WAST": "WAST", "ADT": "ADT", "ACWST": "ACWST", "IST": "IST", "AWST": "AWST", "EDT": "EDT", "NZST": "NZST", "SRT": "SRT", "TMST": "TMST", "MST": "MST", "WIT": "WIT", "NZDT": "NZDT", "COST": "COST", "GYT": "GYT", "AST": "AST", "TMT": "TMT", "ChST": "ChST", "CAT": "CAT", "BT": "BT", "GFT": "GFT", "EAT": "EAT", "WESZ": "WESZ", "UYT": "UYT", "WIB": "WIB", "OESZ": "OESZ", "ACWDT": "ACWDT", "SGT": "SGT", "HNT": "HNT", "MYT": "MYT", "WEZ": "WEZ", "PST": "PST", "UYST": "UYST", "VET": "VET", "AKST": "AKST", "HKT": "HKT", "CST": "CST", "AEST": "AEST", "WARST": "WARST", "LHST": "LHST", "LHDT": "LHDT", "ECT": "ECT", "ART": "ART", "ACST": "ACST", "EST": "EST", "OEZ": "OEZ", "CHADT": "CHADT", "CHAST": "CHAST", "ARST": "ARST", "WART": "WART", "MEZ": "MEZ", "MESZ": "MESZ", "HADT": "HADT", "HAT": "HAT", "CDT": "CDT", "BOT": "BOT"},
+		timezones:          map[string]string{"AKDT": "AKDT", "ACWDT": "ACWDT", "CDT": "CDT", "EST": "EST", "ACWST": "ACWST", "OESZ": "OESZ", "AST": "AST", "MST": "MST", "LHDT": "LHDT", "TMST": "TMST", "OEZ": "OEZ", "PDT": "PDT", "BOT": "BOT", "HAT": "HAT", "SRT": "SRT", "WART": "WART", "VET": "VET", "ADT": "ADT", "CLST": "CLST", "MDT": "MDT", "LHST": "LHST", "NZST": "NZST", "SAST": "SAST", "WAT": "WAT", "CHADT": "CHADT", "HNT": "HNT", "CAT": "CAT", "ART": "ART", "HADT": "HADT", "ChST": "ChST", "MEZ": "MEZ", "MESZ": "MESZ", "WARST": "WARST", "EDT": "EDT", "NZDT": "NZDT", "CLT": "CLT", "HAST": "HAST", "SGT": "SGT", "PST": "PST", "GFT": "GFT", "JDT": "JDT", "GYT": "GYT", "MYT": "MYT", "CST": "CST", "WEZ": "WEZ", "CHAST": "CHAST", "∅∅∅": "∅∅∅", "UYST": "UYST", "HKST": "HKST", "AKST": "AKST", "JST": "JST", "AWST": "AWST", "AWDT": "AWDT", "ARST": "ARST", "AEST": "AEST", "HKT": "HKT", "BT": "BT", "GMT": "GMT", "IST": "IST", "UYT": "UYT", "TMT": "TMT", "ACDT": "ACDT", "AEDT": "AEDT", "COT": "COT", "COST": "COST", "WESZ": "WESZ", "EAT": "EAT", "WAST": "WAST", "WITA": "WITA", "ECT": "ECT", "WIB": "WIB", "ACST": "ACST", "WIT": "WIT"},
 	}
 }
 
@@ -175,20 +175,19 @@ func (ti *ti_ET) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ti_ET' and handles both Whole and Real numbers based on 'v'
-func (ti *ti_ET) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ti *ti_ET) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ti_ET' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ti *ti_ET) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ti *ti_ET) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ET'
-func (ti *ti_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ti *ti_ET) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
@@ -200,20 +199,14 @@ func (ti *ti_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(ti.decimal) - 1; j >= 0; j-- {
-				b = append(b, ti.decimal[j])
-			}
-
+			b = append(b, ti.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(ti.group) - 1; j >= 0; j-- {
-					b = append(b, ti.group[j])
-				}
-
+				b = append(b, ti.group[0])
 				count = 1
 			} else {
 				count++
@@ -228,9 +221,7 @@ func (ti *ti_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(ti.minus) - 1; j >= 0; j-- {
-			b = append(b, ti.minus[j])
-		}
+		b = append(b, ti.minus[0])
 	}
 
 	// reverse
@@ -249,13 +240,12 @@ func (ti *ti_ET) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ti_ET'
 // in accounting notation.
-func (ti *ti_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ti *ti_ET) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ti.currencies[currency]
@@ -267,20 +257,14 @@ func (ti *ti_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(ti.decimal) - 1; j >= 0; j-- {
-				b = append(b, ti.decimal[j])
-			}
-
+			b = append(b, ti.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(ti.group) - 1; j >= 0; j-- {
-					b = append(b, ti.group[j])
-				}
-
+				b = append(b, ti.group[0])
 				count = 1
 			} else {
 				count++
@@ -296,9 +280,7 @@ func (ti *ti_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			b = append(b, symbol[j])
 		}
 
-		for j := len(ti.minus) - 1; j >= 0; j-- {
-			b = append(b, ti.minus[j])
-		}
+		b = append(b, ti.minus[0])
 
 	} else {
 
@@ -324,8 +306,7 @@ func (ti *ti_ET) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ti_ET'

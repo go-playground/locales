@@ -63,7 +63,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"KK", "BK"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Kabla ya Christo", "Baada ya Christo"},
-		timezones:              map[string]string{"BT": "BT", "SAST": "SAST", "GFT": "GFT", "TMT": "TMT", "∅∅∅": "∅∅∅", "SGT": "SGT", "CST": "CST", "NZDT": "NZDT", "EST": "EST", "MESZ": "MESZ", "MYT": "MYT", "CAT": "CAT", "CHADT": "CHADT", "GYT": "GYT", "ARST": "ARST", "MDT": "MDT", "HNT": "HNT", "WIB": "WIB", "WARST": "WARST", "ACDT": "ACDT", "WITA": "WITA", "NZST": "NZST", "HADT": "HADT", "EAT": "EAT", "PST": "PST", "OEZ": "OEZ", "COT": "COT", "WAST": "WAST", "ADT": "ADT", "MST": "MST", "AKST": "AKST", "PDT": "PDT", "LHDT": "LHDT", "JST": "JST", "HKST": "HKST", "GMT": "GMT", "ART": "ART", "AKDT": "AKDT", "WART": "WART", "AST": "AST", "CDT": "CDT", "WESZ": "WESZ", "AWST": "AWST", "HKT": "HKT", "CLST": "CLST", "TMST": "TMST", "WEZ": "WEZ", "EDT": "EDT", "ACST": "ACST", "AEST": "AEST", "ECT": "ECT", "WIT": "WIT", "JDT": "JDT", "HAST": "HAST", "UYT": "UYT", "OESZ": "OESZ", "ChST": "ChST", "CLT": "CLT", "MEZ": "MEZ", "BOT": "BOT", "COST": "COST", "WAT": "WAT", "ACWST": "ACWST", "ACWDT": "ACWDT", "LHST": "LHST", "IST": "IST", "AEDT": "AEDT", "SRT": "SRT", "HAT": "HAT", "UYST": "UYST", "CHAST": "CHAST", "AWDT": "AWDT", "VET": "VET"},
+		timezones:              map[string]string{"IST": "IST", "PDT": "PDT", "HAT": "HAT", "UYST": "UYST", "AEST": "AEST", "AEDT": "AEDT", "PST": "PST", "WIT": "WIT", "BT": "BT", "ACWDT": "ACWDT", "WART": "WART", "WARST": "WARST", "MST": "MST", "ARST": "ARST", "EDT": "EDT", "NZDT": "NZDT", "MEZ": "MEZ", "JST": "JST", "AST": "AST", "BOT": "BOT", "UYT": "UYT", "COT": "COT", "WAST": "WAST", "JDT": "JDT", "AWST": "AWST", "∅∅∅": "∅∅∅", "COST": "COST", "ACDT": "ACDT", "SRT": "SRT", "TMT": "TMT", "WEZ": "WEZ", "WIB": "WIB", "OESZ": "OESZ", "ADT": "ADT", "CAT": "CAT", "GMT": "GMT", "ChST": "ChST", "MESZ": "MESZ", "CLT": "CLT", "ACST": "ACST", "MDT": "MDT", "ART": "ART", "HAST": "HAST", "SAST": "SAST", "VET": "VET", "GFT": "GFT", "HADT": "HADT", "NZST": "NZST", "WESZ": "WESZ", "AWDT": "AWDT", "EAT": "EAT", "MYT": "MYT", "HKT": "HKT", "WITA": "WITA", "ECT": "ECT", "WAT": "WAT", "TMST": "TMST", "CDT": "CDT", "AKST": "AKST", "LHST": "LHST", "AKDT": "AKDT", "HNT": "HNT", "CST": "CST", "LHDT": "LHDT", "CHADT": "CHADT", "OEZ": "OEZ", "SGT": "SGT", "HKST": "HKST", "EST": "EST", "ACWST": "ACWST", "GYT": "GYT", "CHAST": "CHAST", "CLST": "CLST"},
 	}
 }
 
@@ -180,20 +180,19 @@ func (teo *teo_KE) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'teo_KE' and handles both Whole and Real numbers based on 'v'
-func (teo *teo_KE) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (teo *teo_KE) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'teo_KE' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (teo *teo_KE) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (teo *teo_KE) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'teo_KE'
-func (teo *teo_KE) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (teo *teo_KE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := teo.currencies[currency]
@@ -205,20 +204,14 @@ func (teo *teo_KE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(teo.decimal) - 1; j >= 0; j-- {
-				b = append(b, teo.decimal[j])
-			}
-
+			b = append(b, teo.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(teo.group) - 1; j >= 0; j-- {
-					b = append(b, teo.group[j])
-				}
-
+				b = append(b, teo.group[0])
 				count = 1
 			} else {
 				count++
@@ -233,9 +226,7 @@ func (teo *teo_KE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(teo.minus) - 1; j >= 0; j-- {
-			b = append(b, teo.minus[j])
-		}
+		b = append(b, teo.minus[0])
 	}
 
 	// reverse
@@ -254,13 +245,12 @@ func (teo *teo_KE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'teo_KE'
 // in accounting notation.
-func (teo *teo_KE) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (teo *teo_KE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := teo.currencies[currency]
@@ -272,20 +262,14 @@ func (teo *teo_KE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(teo.decimal) - 1; j >= 0; j-- {
-				b = append(b, teo.decimal[j])
-			}
-
+			b = append(b, teo.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(teo.group) - 1; j >= 0; j-- {
-					b = append(b, teo.group[j])
-				}
-
+				b = append(b, teo.group[0])
 				count = 1
 			} else {
 				count++
@@ -331,8 +315,7 @@ func (teo *teo_KE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, teo.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'teo_KE'

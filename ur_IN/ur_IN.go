@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"قبل مسیح", "عیسوی"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"قبل مسیح", "عیسوی"},
-		timezones:              map[string]string{"AWST": "آسٹریلیا ویسٹرن اسٹینڈرڈ ٹائم", "PST": "پیسفک اسٹینڈرڈ ٹائم", "MESZ": "وسطی یورپ کا موسم گرما کا وقت", "WITA": "وسطی انڈونیشیا ٹائم", "MDT": "MDT", "EDT": "ایسٹرن ڈے لائٹ ٹائم", "CHAST": "چیتھم اسٹینڈرڈ ٹائم", "COST": "کولمبیا سمر ٹائم", "ACWST": "آسٹریلین سنٹرل ویسٹرن اسٹینڈرڈ ٹائم", "SGT": "سنگاپور سٹینڈرڈ ٹائم", "CAT": "وسطی افریقہ ٹائم", "CHADT": "چیتھم ڈے لائٹ ٹائم", "ART": "ارجنٹینا سٹینڈرڈ ٹائم", "MYT": "ملیشیا ٹائم", "AEDT": "آسٹریلین ایسٹرن ڈے لائٹ ٹائم", "NZST": "نیوزی لینڈ سٹینڈرڈ ٹائم", "TMT": "ترکمانستان سٹینڈرڈ ٹائم", "ECT": "ایکواڈور ٹائم", "ChST": "چامورو سٹینڈرڈ ٹائم", "HKST": "ہانگ کانگ سمر ٹائم", "CDT": "سنٹرل ڈے لائٹ ٹائم", "ADT": "اٹلانٹک ڈے لائٹ ٹائم", "LHST": "لارڈ ہووے اسٹینڈرڈ ٹائم", "MST": "MST", "EST": "ایسٹرن اسٹینڈرڈ ٹائم", "GMT": "گرین وچ مین ٹائم", "WART": "مغربی ارجنٹینا سٹینڈرڈ ٹائم", "ACWDT": "آسٹریلین سنٹرل ویسٹرن ڈے لائٹ ٹائم", "UYT": "یوروگوئے سٹینڈرڈ ٹائم", "BOT": "بولیویا ٹائم", "COT": "کولمبیا سٹینڈرڈ ٹائم", "ACST": "آسٹریلین سنٹرل اسٹینڈرڈ ٹائم", "IST": "انڈیا سٹینڈرڈ ٹائم", "JST": "جاپان سٹینڈرڈ ٹائم", "CST": "سنٹرل اسٹینڈرڈ ٹائم", "AST": "اٹلانٹک اسٹینڈرڈ ٹائم", "MEZ": "وسطی یورپ کا معیاری وقت", "ACDT": "آسٹریلین سنٹرل ڈے لائٹ ٹائم", "ARST": "ارجنٹینا سمر ٹائم", "WARST": "مغربی ارجنٹینا سمر ٹائم", "VET": "وینزوئیلا ٹائم", "AWDT": "آسٹریلین ویسٹرن ڈے لائٹ ٹائم", "WIB": "مغربی انڈونیشیا ٹائم", "TMST": "ترکمانستان سمر ٹائم", "∅∅∅": "ایمیزون سمر ٹائم", "HNT": "نیو فاؤنڈ لینڈ اسٹینڈرڈ ٹائم", "CLST": "چلی سمر ٹائم", "OEZ": "مشرقی یورپ کا معیاری وقت", "GYT": "گیانا ٹائم", "HADT": "ہوائی الیوٹیئن ڈے لائٹ ٹائم", "NZDT": "نیوزی لینڈ ڈے لائٹ ٹائم", "PDT": "پیسفک ڈے لائٹ ٹائم", "CLT": "چلی سٹینڈرڈ ٹائم", "WAST": "مغربی افریقہ سمر ٹائم", "GFT": "فرینچ گیانا ٹائم", "AKST": "الاسکا اسٹینڈرڈ ٹائم", "AKDT": "الاسکا ڈے لائٹ ٹائم", "WEZ": "مغربی یورپ کا معیاری وقت", "WESZ": "مغربی یورپ کا موسم گرما کا وقت", "HAT": "نیو فاؤنڈ لینڈ ڈے لائٹ ٹائم", "SAST": "جنوبی افریقہ سٹینڈرڈ ٹائم", "WAT": "مغربی افریقہ سٹینڈرڈ ٹائم", "SRT": "سورینام ٹائم", "WIT": "مشرقی انڈونیشیا ٹائم", "HKT": "ہانگ کانگ سٹینڈرڈ ٹائم", "EAT": "مشرقی افریقہ ٹائم", "UYST": "یوروگوئے سمر ٹائم", "AEST": "آسٹریلین ایسٹرن اسٹینڈرڈ ٹائم", "BT": "بھوٹان ٹائم", "JDT": "جاپان ڈے لائٹ ٹائم", "LHDT": "لارڈ ہووے ڈے لائٹ ٹائم", "HAST": "ہوائی الیوٹیئن اسٹینڈرڈ ٹائم", "OESZ": "مشرقی یورپ کا موسم گرما کا وقت"},
+		timezones:              map[string]string{"UYST": "یوروگوئے سمر ٹائم", "HKST": "ہانگ کانگ سمر ٹائم", "HAST": "ہوائی الیوٹیئن اسٹینڈرڈ ٹائم", "ChST": "چامورو سٹینڈرڈ ٹائم", "AKDT": "الاسکا ڈے لائٹ ٹائم", "EAT": "مشرقی افریقہ ٹائم", "ACST": "آسٹریلین سنٹرل اسٹینڈرڈ ٹائم", "HAT": "نیو فاؤنڈ لینڈ ڈے لائٹ ٹائم", "LHST": "لارڈ ہووے اسٹینڈرڈ ٹائم", "CHAST": "چیتھم اسٹینڈرڈ ٹائم", "MEZ": "وسطی یورپ کا معیاری وقت", "AEST": "آسٹریلین ایسٹرن اسٹینڈرڈ ٹائم", "GMT": "گرین وچ مین ٹائم", "EST": "ایسٹرن اسٹینڈرڈ ٹائم", "COT": "کولمبیا سٹینڈرڈ ٹائم", "MDT": "MDT", "WART": "مغربی ارجنٹینا سٹینڈرڈ ٹائم", "AWDT": "آسٹریلین ویسٹرن ڈے لائٹ ٹائم", "TMT": "ترکمانستان سٹینڈرڈ ٹائم", "PDT": "پیسفک ڈے لائٹ ٹائم", "VET": "وینزوئیلا ٹائم", "SGT": "سنگاپور سٹینڈرڈ ٹائم", "ECT": "ایکواڈور ٹائم", "WAT": "مغربی افریقہ سٹینڈرڈ ٹائم", "NZDT": "نیوزی لینڈ ڈے لائٹ ٹائم", "WARST": "مغربی ارجنٹینا سمر ٹائم", "ACWST": "آسٹریلین سنٹرل ویسٹرن اسٹینڈرڈ ٹائم", "CHADT": "چیتھم ڈے لائٹ ٹائم", "OESZ": "مشرقی یورپ کا موسم گرما کا وقت", "UYT": "یوروگوئے سٹینڈرڈ ٹائم", "HADT": "ہوائی الیوٹیئن ڈے لائٹ ٹائم", "COST": "کولمبیا سمر ٹائم", "WAST": "مغربی افریقہ سمر ٹائم", "AKST": "الاسکا اسٹینڈرڈ ٹائم", "LHDT": "لارڈ ہووے ڈے لائٹ ٹائم", "JDT": "جاپان ڈے لائٹ ٹائم", "OEZ": "مشرقی یورپ کا معیاری وقت", "MESZ": "وسطی یورپ کا موسم گرما کا وقت", "TMST": "ترکمانستان سمر ٹائم", "BT": "بھوٹان ٹائم", "ART": "ارجنٹینا سٹینڈرڈ ٹائم", "WEZ": "مغربی یورپ کا معیاری وقت", "SRT": "سورینام ٹائم", "WITA": "وسطی انڈونیشیا ٹائم", "CLT": "چلی سٹینڈرڈ ٹائم", "CLST": "چلی سمر ٹائم", "JST": "جاپان سٹینڈرڈ ٹائم", "BOT": "بولیویا ٹائم", "∅∅∅": "برازیلیا سمر ٹائم", "CDT": "سنٹرل ڈے لائٹ ٹائم", "AEDT": "آسٹریلین ایسٹرن ڈے لائٹ ٹائم", "MYT": "ملیشیا ٹائم", "CAT": "وسطی افریقہ ٹائم", "NZST": "نیوزی لینڈ سٹینڈرڈ ٹائم", "ACDT": "آسٹریلین سنٹرل ڈے لائٹ ٹائم", "ARST": "ارجنٹینا سمر ٹائم", "CST": "سنٹرل اسٹینڈرڈ ٹائم", "WESZ": "مغربی یورپ کا موسم گرما کا وقت", "ADT": "اٹلانٹک ڈے لائٹ ٹائم", "AWST": "آسٹریلیا ویسٹرن اسٹینڈرڈ ٹائم", "IST": "انڈیا سٹینڈرڈ ٹائم", "MST": "MST", "GYT": "گیانا ٹائم", "HKT": "ہانگ کانگ سٹینڈرڈ ٹائم", "WIB": "مغربی انڈونیشیا ٹائم", "AST": "اٹلانٹک اسٹینڈرڈ ٹائم", "PST": "پیسفک اسٹینڈرڈ ٹائم", "SAST": "جنوبی افریقہ سٹینڈرڈ ٹائم", "HNT": "نیو فاؤنڈ لینڈ اسٹینڈرڈ ٹائم", "WIT": "مشرقی انڈونیشیا ٹائم", "GFT": "فرینچ گیانا ٹائم", "EDT": "ایسٹرن ڈے لائٹ ٹائم", "ACWDT": "آسٹریلین سنٹرل ویسٹرن ڈے لائٹ ٹائم"},
 	}
 }
 
@@ -189,7 +189,8 @@ func (ur *ur_IN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ur_IN' and handles both Whole and Real numbers based on 'v'
-func (ur *ur_IN) FmtNumber(num float64, v uint64) (results string) {
+func (ur *ur_IN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ur.decimal) + len(ur.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -227,13 +228,12 @@ func (ur *ur_IN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ur_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ur *ur_IN) FmtPercent(num float64, v uint64) (results string) {
+func (ur *ur_IN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ur.decimal)
 	b := make([]byte, 0, l)
@@ -261,12 +261,11 @@ func (ur *ur_IN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ur.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ur_IN'
-func (ur *ur_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ur *ur_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ur.currencies[currency]
@@ -334,13 +333,12 @@ func (ur *ur_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ur_IN'
 // in accounting notation.
-func (ur *ur_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ur *ur_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ur.currencies[currency]
@@ -420,8 +418,7 @@ func (ur *ur_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ur_IN'

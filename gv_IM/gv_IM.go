@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"RC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"WAST": "WAST", "HADT": "HADT", "MYT": "MYT", "AWST": "AWST", "HNT": "HNT", "OESZ": "OESZ", "ACST": "ACST", "GMT": "GMT", "BOT": "BOT", "WAT": "WAT", "MST": "MST", "WESZ": "WESZ", "IST": "IST", "WEZ": "WEZ", "WIB": "WIB", "HAST": "HAST", "∅∅∅": "∅∅∅", "GFT": "GFT", "WITA": "WITA", "LHDT": "LHDT", "COST": "COST", "BT": "BT", "WART": "WART", "SRT": "SRT", "CDT": "CDT", "AEST": "AEST", "PDT": "PDT", "OEZ": "OEZ", "SGT": "SGT", "AKDT": "AKDT", "WARST": "WARST", "LHST": "LHST", "AKST": "AKST", "UYT": "UYT", "CAT": "CAT", "EDT": "EDT", "MEZ": "MEZ", "UYST": "UYST", "AST": "AST", "TMST": "TMST", "MDT": "MDT", "HKT": "HKT", "EAT": "EAT", "CST": "CST", "SAST": "SAST", "WIT": "WIT", "COT": "COT", "MESZ": "MESZ", "GYT": "GYT", "VET": "VET", "AWDT": "AWDT", "HKST": "HKST", "NZST": "NZST", "ChST": "ChST", "ADT": "ADT", "TMT": "TMT", "HAT": "HAT", "CLST": "CLST", "PST": "PST", "ACDT": "ACDT", "CLT": "CLT", "EST": "EST", "ECT": "ECT", "JDT": "JDT", "NZDT": "NZDT", "CHAST": "CHAST", "CHADT": "CHADT", "ARST": "ARST", "AEDT": "AEDT", "ACWST": "ACWST", "ACWDT": "ACWDT", "JST": "JST", "ART": "ART"},
+		timezones:          map[string]string{"AKDT": "AKDT", "MESZ": "MESZ", "ACDT": "ACDT", "AWDT": "AWDT", "AKST": "AKST", "WEZ": "WEZ", "ACWDT": "ACWDT", "PST": "PST", "AWST": "AWST", "TMST": "TMST", "WAT": "WAT", "MDT": "MDT", "MEZ": "MEZ", "CAT": "CAT", "GMT": "GMT", "SAST": "SAST", "WAST": "WAST", "NZST": "NZST", "OEZ": "OEZ", "ADT": "ADT", "IST": "IST", "HAT": "HAT", "CDT": "CDT", "HAST": "HAST", "ACWST": "ACWST", "HNT": "HNT", "WIT": "WIT", "ChST": "ChST", "JDT": "JDT", "ARST": "ARST", "GFT": "GFT", "TMT": "TMT", "LHDT": "LHDT", "VET": "VET", "SRT": "SRT", "∅∅∅": "∅∅∅", "MST": "MST", "CLST": "CLST", "UYT": "UYT", "BT": "BT", "CST": "CST", "LHST": "LHST", "WIB": "WIB", "JST": "JST", "AST": "AST", "WART": "WART", "HKST": "HKST", "WITA": "WITA", "EDT": "EDT", "CHAST": "CHAST", "AEST": "AEST", "WARST": "WARST", "EST": "EST", "COT": "COT", "WESZ": "WESZ", "PDT": "PDT", "SGT": "SGT", "HKT": "HKT", "UYST": "UYST", "EAT": "EAT", "CLT": "CLT", "GYT": "GYT", "CHADT": "CHADT", "MYT": "MYT", "HADT": "HADT", "NZDT": "NZDT", "ACST": "ACST", "BOT": "BOT", "ART": "ART", "COST": "COST", "ECT": "ECT", "OESZ": "OESZ", "AEDT": "AEDT"},
 	}
 }
 
@@ -183,20 +183,19 @@ func (gv *gv_IM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gv_IM' and handles both Whole and Real numbers based on 'v'
-func (gv *gv_IM) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (gv *gv_IM) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'gv_IM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (gv *gv_IM) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (gv *gv_IM) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gv_IM'
-func (gv *gv_IM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (gv *gv_IM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gv.currencies[currency]
@@ -208,20 +207,14 @@ func (gv *gv_IM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gv.decimal) - 1; j >= 0; j-- {
-				b = append(b, gv.decimal[j])
-			}
-
+			b = append(b, gv.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(gv.group) - 1; j >= 0; j-- {
-					b = append(b, gv.group[j])
-				}
-
+				b = append(b, gv.group[0])
 				count = 1
 			} else {
 				count++
@@ -236,9 +229,7 @@ func (gv *gv_IM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(gv.minus) - 1; j >= 0; j-- {
-			b = append(b, gv.minus[j])
-		}
+		b = append(b, gv.minus[0])
 	}
 
 	// reverse
@@ -257,13 +248,12 @@ func (gv *gv_IM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gv_IM'
 // in accounting notation.
-func (gv *gv_IM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (gv *gv_IM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gv.currencies[currency]
@@ -275,20 +265,14 @@ func (gv *gv_IM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gv.decimal) - 1; j >= 0; j-- {
-				b = append(b, gv.decimal[j])
-			}
-
+			b = append(b, gv.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(gv.group) - 1; j >= 0; j-- {
-					b = append(b, gv.group[j])
-				}
-
+				b = append(b, gv.group[0])
 				count = 1
 			} else {
 				count++
@@ -304,9 +288,7 @@ func (gv *gv_IM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			b = append(b, symbol[j])
 		}
 
-		for j := len(gv.minus) - 1; j >= 0; j-- {
-			b = append(b, gv.minus[j])
-		}
+		b = append(b, gv.minus[0])
 
 	} else {
 
@@ -332,8 +314,7 @@ func (gv *gv_IM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'gv_IM'

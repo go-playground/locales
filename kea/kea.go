@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"AK", "DK"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Antis di Kristu", "Dispos di Kristu"},
-		timezones:              map[string]string{"∅∅∅": "∅∅∅", "HNT": "HNT", "EDT": "Ora Oriental di Verãu", "WAT": "Ora Padrãu di Afrika Osidental", "SRT": "SRT", "IST": "IST", "HAST": "HAST", "AEST": "Ora Padrãu di Australia Oriental", "MEZ": "Ora Padrãu di Europa Sentral", "BT": "BT", "CLST": "CLST", "AST": "Ora Padrãu di Atlantiku", "MST": "Ora di Montanha Padrãu", "MYT": "MYT", "CHAST": "CHAST", "WARST": "WARST", "GFT": "GFT", "TMT": "TMT", "HAT": "HAT", "PST": "Ora di Pasifiku Padrãu", "COT": "COT", "COST": "COST", "JST": "JST", "AKST": "AKST", "EAT": "Ora di Afrika Oriental", "CDT": "Ora Sentral di Verãu", "PDT": "Ora di Pasifiku di Verãu", "BOT": "BOT", "VET": "VET", "CAT": "Ora di Afrika Sentral", "AEDT": "Ora di Verãu di Australia Oriental", "HKT": "HKT", "MESZ": "Ora di Verãu di Europa Sentral", "ARST": "ARST", "WIT": "WIT", "OEZ": "Ora Padrãu di Europa Oriental", "NZST": "NZST", "HKST": "HKST", "MDT": "Ora di Verãu di Montanha", "SGT": "SGT", "WEZ": "Ora Padrãu di Europa Osidental", "UYST": "UYST", "CST": "Ora Sentral Padrãu", "EST": "Ora Oriental Padrãu", "OESZ": "Ora di Verãu di Europa Oriental", "CHADT": "CHADT", "ACST": "Ora Padrãu di Australia Sentral", "ACDT": "Ora di Verãu di Australia Sentral", "GYT": "GYT", "AKDT": "AKDT", "AWDT": "Ora di Verãu di Australia Osidental", "WART": "WART", "WAST": "Ora di Verão di Afrika Osidental", "ART": "ART", "SAST": "Ora di Sul di Afrika", "ACWST": "Ora Padrãu di Australia Sentru-Osidental", "WITA": "WITA", "ECT": "ECT", "CLT": "CLT", "UYT": "UYT", "TMST": "TMST", "HADT": "HADT", "WESZ": "Ora di Verãu di Europa Osidental", "GMT": "GMT", "WIB": "WIB", "NZDT": "NZDT", "ADT": "Ora di Verãu di Atlantiku", "ACWDT": "Ora di Verãu di Australia Sentru-Osidental", "LHST": "LHST", "LHDT": "LHDT", "ChST": "ChST", "JDT": "JDT", "AWST": "Ora Padrãu di Australia Osidental"},
+		timezones:              map[string]string{"LHST": "LHST", "CAT": "Ora di Afrika Sentral", "EST": "Ora Oriental Padrãu", "WEZ": "Ora Padrãu di Europa Osidental", "WIB": "WIB", "MEZ": "Ora Padrãu di Europa Sentral", "ACDT": "Ora di Verãu di Australia Sentral", "GMT": "GMT", "AKDT": "AKDT", "PDT": "Ora di Pasifiku di Verãu", "HNT": "HNT", "BT": "BT", "NZST": "NZST", "WARST": "WARST", "MDT": "MDT", "WESZ": "Ora di Verãu di Europa Osidental", "OEZ": "Ora Padrãu di Europa Oriental", "JST": "JST", "JDT": "JDT", "HAT": "HAT", "BOT": "BOT", "ARST": "ARST", "MESZ": "Ora di Verãu di Europa Sentral", "PST": "Ora di Pasifiku Padrãu", "WITA": "WITA", "TMT": "TMT", "ACWDT": "Ora di Verãu di Australia Sentru-Osidental", "LHDT": "LHDT", "ECT": "ECT", "WAST": "Ora di Verão di Afrika Osidental", "AST": "Ora Padrãu di Atlantiku", "HKT": "HKT", "VET": "VET", "CDT": "Ora Sentral di Verãu", "HADT": "HADT", "AKST": "AKST", "∅∅∅": "∅∅∅", "MST": "MST", "ADT": "Ora di Verãu di Atlantiku", "CST": "Ora Sentral Padrãu", "CLST": "CLST", "WART": "WART", "ART": "ART", "ChST": "ChST", "CHADT": "CHADT", "OESZ": "Ora di Verãu di Europa Oriental", "CLT": "CLT", "AEDT": "Ora di Verãu di Australia Oriental", "AWST": "Ora Padrãu di Australia Osidental", "NZDT": "NZDT", "AWDT": "Ora di Verãu di Australia Osidental", "SRT": "SRT", "UYST": "UYST", "GFT": "GFT", "TMST": "TMST", "HAST": "HAST", "WAT": "Ora Padrãu di Afrika Osidental", "CHAST": "CHAST", "ACST": "Ora Padrãu di Australia Sentral", "IST": "IST", "HKST": "HKST", "COST": "COST", "MYT": "MYT", "UYT": "UYT", "WIT": "WIT", "GYT": "GYT", "SGT": "SGT", "EDT": "Ora Oriental di Verãu", "COT": "COT", "EAT": "Ora di Afrika Oriental", "SAST": "Ora di Sul di Afrika", "ACWST": "Ora Padrãu di Australia Sentru-Osidental", "AEST": "Ora Padrãu di Australia Oriental"},
 	}
 }
 
@@ -183,7 +183,8 @@ func (kea *kea) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kea' and handles both Whole and Real numbers based on 'v'
-func (kea *kea) FmtNumber(num float64, v uint64) (results string) {
+func (kea *kea) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kea.decimal) + len(kea.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -203,7 +204,6 @@ func (kea *kea) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(kea.group) - 1; j >= 0; j-- {
 					b = append(b, kea.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -222,13 +222,12 @@ func (kea *kea) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kea' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kea *kea) FmtPercent(num float64, v uint64) (results string) {
+func (kea *kea) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kea.decimal)
 	b := make([]byte, 0, l)
@@ -254,12 +253,11 @@ func (kea *kea) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, kea.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kea'
-func (kea *kea) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kea *kea) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kea.currencies[currency]
@@ -281,7 +279,6 @@ func (kea *kea) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 				for j := len(kea.group) - 1; j >= 0; j-- {
 					b = append(b, kea.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -315,13 +312,12 @@ func (kea *kea) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kea'
 // in accounting notation.
-func (kea *kea) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kea *kea) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kea.currencies[currency]
@@ -343,7 +339,6 @@ func (kea *kea) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 				for j := len(kea.group) - 1; j >= 0; j-- {
 					b = append(b, kea.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -384,8 +379,7 @@ func (kea *kea) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kea'

@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"BC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Imberi ya Kuuza Kwa", "Muhiga Kuvita Kuuza"},
-		timezones:          map[string]string{"JST": "JST", "NZST": "NZST", "ART": "ART", "ACWST": "ACWST", "TMT": "TMT", "CST": "CST", "CDT": "CDT", "JDT": "JDT", "CLT": "CLT", "OESZ": "OESZ", "COST": "COST", "LHST": "LHST", "ECT": "ECT", "NZDT": "NZDT", "ChST": "ChST", "AKDT": "AKDT", "HKST": "HKST", "GMT": "GMT", "WAST": "WAST", "AST": "AST", "ARST": "ARST", "EDT": "EDT", "WIB": "WIB", "BOT": "BOT", "WITA": "WITA", "CHADT": "CHADT", "BT": "BT", "MDT": "MDT", "MYT": "MYT", "∅∅∅": "∅∅∅", "IST": "IST", "WESZ": "WESZ", "EST": "EST", "MEZ": "MEZ", "MST": "MST", "UYST": "UYST", "WIT": "WIT", "AWST": "AWST", "AWDT": "AWDT", "HNT": "HNT", "CAT": "CAT", "SAST": "SAST", "WEZ": "WEZ", "HAT": "HAT", "CLST": "CLST", "CHAST": "CHAST", "ADT": "ADT", "GYT": "GYT", "WARST": "WARST", "SGT": "SGT", "EAT": "EAT", "UYT": "UYT", "PST": "PST", "COT": "COT", "WAT": "WAT", "ACST": "ACST", "GFT": "GFT", "AKST": "AKST", "AEDT": "AEDT", "ACDT": "ACDT", "ACWDT": "ACWDT", "VET": "VET", "TMST": "TMST", "HKT": "HKT", "AEST": "AEST", "MESZ": "MESZ", "WART": "WART", "PDT": "PDT", "SRT": "SRT", "LHDT": "LHDT", "HAST": "HAST", "HADT": "HADT", "OEZ": "OEZ"},
+		timezones:          map[string]string{"CDT": "CDT", "ACWST": "ACWST", "GFT": "GFT", "JST": "JST", "WARST": "WARST", "HAT": "HAT", "AWDT": "AWDT", "CAT": "CAT", "NZST": "NZST", "NZDT": "NZDT", "CHAST": "CHAST", "TMST": "TMST", "SGT": "SGT", "BT": "BT", "GMT": "GMT", "AKDT": "AKDT", "MYT": "MYT", "UYT": "UYT", "OEZ": "OEZ", "AEST": "AEST", "IST": "IST", "COT": "COT", "MDT": "MDT", "VET": "VET", "AEDT": "AEDT", "WITA": "WITA", "HAST": "HAST", "HADT": "HADT", "EST": "EST", "BOT": "BOT", "LHST": "LHST", "CHADT": "CHADT", "MEZ": "MEZ", "COST": "COST", "AST": "AST", "ECT": "ECT", "WAST": "WAST", "PDT": "PDT", "UYST": "UYST", "TMT": "TMT", "WAT": "WAT", "HNT": "HNT", "GYT": "GYT", "WART": "WART", "WEZ": "WEZ", "WESZ": "WESZ", "WIB": "WIB", "HKST": "HKST", "CST": "CST", "ADT": "ADT", "ACST": "ACST", "PST": "PST", "AWST": "AWST", "LHDT": "LHDT", "SAST": "SAST", "JDT": "JDT", "ACWDT": "ACWDT", "CLT": "CLT", "CLST": "CLST", "EDT": "EDT", "∅∅∅": "∅∅∅", "AKST": "AKST", "EAT": "EAT", "ACDT": "ACDT", "WIT": "WIT", "ART": "ART", "ARST": "ARST", "MST": "MST", "MESZ": "MESZ", "SRT": "SRT", "ChST": "ChST", "OESZ": "OESZ", "HKT": "HKT"},
 	}
 }
 
@@ -169,20 +169,19 @@ func (luy *luy) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'luy' and handles both Whole and Real numbers based on 'v'
-func (luy *luy) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (luy *luy) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'luy' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (luy *luy) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (luy *luy) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'luy'
-func (luy *luy) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (luy *luy) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := luy.currencies[currency]
@@ -194,20 +193,14 @@ func (luy *luy) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(luy.decimal) - 1; j >= 0; j-- {
-				b = append(b, luy.decimal[j])
-			}
-
+			b = append(b, luy.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(luy.group) - 1; j >= 0; j-- {
-					b = append(b, luy.group[j])
-				}
-
+				b = append(b, luy.group[0])
 				count = 1
 			} else {
 				count++
@@ -222,9 +215,7 @@ func (luy *luy) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(luy.minus) - 1; j >= 0; j-- {
-			b = append(b, luy.minus[j])
-		}
+		b = append(b, luy.minus[0])
 	}
 
 	// reverse
@@ -243,13 +234,12 @@ func (luy *luy) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'luy'
 // in accounting notation.
-func (luy *luy) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (luy *luy) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := luy.currencies[currency]
@@ -261,20 +251,14 @@ func (luy *luy) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(luy.decimal) - 1; j >= 0; j-- {
-				b = append(b, luy.decimal[j])
-			}
-
+			b = append(b, luy.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(luy.group) - 1; j >= 0; j-- {
-					b = append(b, luy.group[j])
-				}
-
+				b = append(b, luy.group[0])
 				count = 1
 			} else {
 				count++
@@ -290,9 +274,7 @@ func (luy *luy) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, symbol[j])
 		}
 
-		for j := len(luy.minus) - 1; j >= 0; j-- {
-			b = append(b, luy.minus[j])
-		}
+		b = append(b, luy.minus[0])
 
 	} else {
 
@@ -318,8 +300,7 @@ func (luy *luy) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'luy'

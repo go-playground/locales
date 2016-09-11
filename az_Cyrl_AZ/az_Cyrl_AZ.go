@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "az_Cyrl_AZ",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 4, 5, 6},
-		pluralsRange:           []locales.PluralRule{2, 6},
+		pluralsRange:           []locales.PluralRule{6, 2},
 		decimal:                ",",
 		group:                  ".",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"e.ə.", "b.e."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"eramızdan əvvəl", "eramız"},
-		timezones:              map[string]string{"HKT": "Honq Konq Standart Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "AKST": "Alyaska Standart Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "CHAST": "Çatham Standart Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "ECT": "Ekvador Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "ARST": "Argentina Yay Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "∅∅∅": "Azor Yay Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı", "AST": "Atlantik Standart Vaxt", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "SGT": "Sinqapur Vaxtı", "IST": "Hindistan Vaxtı", "ChST": "Çamorro Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "ADT": "Atlantik Yay Vaxtı", "SRT": "Surinam Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "CLT": "Çili Standart Vaxtı", "CHADT": "Çatham Yay Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "JST": "Yaponiya Standart Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "MYT": "Malayziya Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "BOT": "Boliviya Vaxtı", "BT": "Butan Vaxtı", "GYT": "Qayana Vaxtı", "ART": "Argentina Standart Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "CLST": "Çili Yay Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı", "VET": "Venesuela Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "LHST": "Lord Hau Standart Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı"},
+		timezones:              map[string]string{"CHADT": "Çatham Yay Vaxtı", "JST": "Yaponiya Standart Vaxtı", "AST": "Atlantik Standart Vaxt", "ADT": "Atlantik Yay Vaxtı", "IST": "Hindistan Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "VET": "Venesuela Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "GYT": "Qayana Vaxtı", "ECT": "Ekvador Vaxtı", "CLST": "Çili Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "LHST": "Lord Hau Standart Vaxtı", "CLT": "Çili Standart Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "∅∅∅": "Azor Yay Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "ARST": "Argentina Yay Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "CHAST": "Çatham Standart Vaxtı", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "MYT": "Malayziya Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "SGT": "Sinqapur Vaxtı", "ART": "Argentina Standart Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "AKST": "Alyaska Standart Vaxtı", "BOT": "Boliviya Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "BT": "Butan Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "ChST": "Çamorro Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "SRT": "Surinam Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı"},
 	}
 }
 
@@ -214,7 +214,8 @@ func (az *az_Cyrl_AZ) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'az_Cyrl_AZ' and handles both Whole and Real numbers based on 'v'
-func (az *az_Cyrl_AZ) FmtNumber(num float64, v uint64) (results string) {
+func (az *az_Cyrl_AZ) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(az.decimal) + len(az.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -250,13 +251,12 @@ func (az *az_Cyrl_AZ) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'az_Cyrl_AZ' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (az *az_Cyrl_AZ) FmtPercent(num float64, v uint64) (results string) {
+func (az *az_Cyrl_AZ) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(az.decimal)
 	b := make([]byte, 0, l)
@@ -282,12 +282,11 @@ func (az *az_Cyrl_AZ) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, az.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'az_Cyrl_AZ'
-func (az *az_Cyrl_AZ) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (az *az_Cyrl_AZ) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := az.currencies[currency]
@@ -344,13 +343,12 @@ func (az *az_Cyrl_AZ) FmtCurrency(num float64, v uint64, currency currency.Type)
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'az_Cyrl_AZ'
 // in accounting notation.
-func (az *az_Cyrl_AZ) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (az *az_Cyrl_AZ) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := az.currencies[currency]
@@ -419,8 +417,7 @@ func (az *az_Cyrl_AZ) FmtAccounting(num float64, v uint64, currency currency.Typ
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'az_Cyrl_AZ'

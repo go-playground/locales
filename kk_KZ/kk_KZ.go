@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"б.з.д.", "б.з."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Біздің заманымызға дейін", "Біздің заманымыз"},
-		timezones:              map[string]string{"AEDT": "Австралия жазғы шығыс уақыты", "ARST": "Аргентина жазғы уақыты", "MEZ": "Орталық Еуропа стандартты уақыты", "VET": "Венесуэла уақыты", "CST": "Солтүстік Америка стандартты орталық уақыты", "WIB": "Батыс Индонезия уақыты", "WARST": "Батыс Аргентина жазғы уақыты", "WAT": "Батыс Африка стандартты уақыты", "MDT": "Солтүстік Америка жазғы тау уақыты", "∅∅∅": "Азор аралдары жазғы уақыты", "GYT": "Гайана уақыты", "WESZ": "Батыс Еуропа жазғы уақыты", "ART": "Аргентина стандартты уақыты", "WAST": "Батыс Африка жазғы уақыты", "TMST": "Түрікменстан жазғы уақыты", "CLT": "Чили стандартты уақыты", "CHADT": "Чатем жазғы уақыты", "WIT": "Шығыс Индонезия уақыты", "SGT": "Сингапур уақыты", "WITA": "Орталық Индонезия уақыты", "MST": "Солтүстік Америка стандартты тау уақыты", "LHST": "Лорд-Хау стандартты уақыты", "HKST": "Гонконг жазғы уақыты", "NZST": "Жаңа Зеландия стандартты уақыты", "CHAST": "Чатем стандартты уақыты", "ACST": "Австралия стандартты орталық уақыты", "SRT": "Суринам уақыты", "ACWDT": "Австралия жазғы орталық-батыс уақыты", "AKDT": "Аляска жазғы уақыты", "HAST": "Гавай және Алеут аралдары стандартты уақыты", "ChST": "Чаморро стандартты уақыты", "UYST": "Уругвай жазғы уақыты", "MESZ": "Орталық Еуропа жазғы уақыты", "JST": "Жапония стандартты уақыты", "PDT": "Солтүстік Америка жазғы Тынық мұхиты уақыты", "COST": "Колумбия жазғы уақыты", "OEZ": "Шығыс Еуропа стандартты уақыты", "AST": "Атлантика стандартты уақыты", "HNT": "Ньюфаундленд стандартты уақыты", "BOT": "Боливия уақыты", "COT": "Колумбия стандартты уақыты", "ADT": "Атлантика жазғы уақыты", "BT": "Бутан уақыты", "GFT": "Француз Гвианасы уақыты", "MYT": "Малайзия уақыты", "HADT": "Гавай және Алеут аралдары жазғы уақыты", "CLST": "Чили жазғы уақыты", "AEST": "Австралия стандартты шығыс уақыты", "JDT": "Жапония жазғы уақыты", "EAT": "Шығыс Африка уақыты", "EDT": "Солтүстік Америка жазғы шығыс уақыты", "ACDT": "Австралия жазғы орталық уақыты", "ACWST": "Австралия стандартты орталық-батыс уақыты", "IST": "Үндістан стандартты уақыты", "HKT": "Гонконг стандартты уақыты", "GMT": "Гринвич уақыты", "NZDT": "Жаңа Зеландия жазғы уақыты", "SAST": "Оңтүстік Африка уақыты", "AWDT": "Австралия жазғы батыс уақыты", "OESZ": "Шығыс Еуропа жазғы уақыты", "AWST": "Австралия стандартты батыс уақыты", "UYT": "Уругвай стандартты уақыты", "TMT": "Түрікменстан стандартты уақыты", "ECT": "Эквадор уақыты", "CDT": "Солтүстік Америка жазғы орталық уақыты", "LHDT": "Лорд-Хау жазғы уақыты", "HAT": "Ньюфаундленд жазғы уақыты", "WART": "Батыс Аргентина стандартты уақыты", "EST": "Солтүстік Америка стандартты шығыс уақыты", "PST": "Солтүстік Америка стандартты Тынық мұхиты уақыты", "AKST": "Аляска стандартты уақыты", "WEZ": "Батыс Еуропа стандартты уақыты", "CAT": "Орталық Африка уақыты"},
+		timezones:              map[string]string{"COT": "Колумбия стандартты уақыты", "AST": "Атлантика стандартты уақыты", "WIT": "Шығыс Индонезия уақыты", "ARST": "Аргентина жазғы уақыты", "OEZ": "Шығыс Еуропа стандартты уақыты", "ADT": "Атлантика жазғы уақыты", "AWST": "Австралия стандартты батыс уақыты", "UYT": "Уругвай стандартты уақыты", "ECT": "Эквадор уақыты", "ACWST": "Австралия стандартты орталық-батыс уақыты", "ACWDT": "Австралия жазғы орталық-батыс уақыты", "SAST": "Оңтүстік Африка уақыты", "WART": "Батыс Аргентина стандартты уақыты", "∅∅∅": "Перу жазғы уақыты", "WESZ": "Батыс Еуропа жазғы уақыты", "CLST": "Чили жазғы уақыты", "AEDT": "Австралия жазғы шығыс уақыты", "WEZ": "Батыс Еуропа стандартты уақыты", "IST": "Үндістан стандартты уақыты", "EST": "Солтүстік Америка стандартты шығыс уақыты", "HADT": "Гавай және Алеут аралдары жазғы уақыты", "JST": "Жапония стандартты уақыты", "TMT": "Түрікменстан стандартты уақыты", "CAT": "Орталық Африка уақыты", "CDT": "Солтүстік Америка жазғы орталық уақыты", "NZDT": "Жаңа Зеландия жазғы уақыты", "CHAST": "Чатем стандартты уақыты", "VET": "Венесуэла уақыты", "PDT": "Солтүстік Америка жазғы Тынық мұхиты уақыты", "ART": "Аргентина стандартты уақыты", "HAST": "Гавай және Алеут аралдары стандартты уақыты", "MESZ": "Орталық Еуропа жазғы уақыты", "MYT": "Малайзия уақыты", "HNT": "Ньюфаундленд стандартты уақыты", "HAT": "Ньюфаундленд жазғы уақыты", "SRT": "Суринам уақыты", "LHDT": "Лорд-Хау жазғы уақыты", "WIB": "Батыс Индонезия уақыты", "CLT": "Чили стандартты уақыты", "GYT": "Гайана уақыты", "ACDT": "Австралия жазғы орталық уақыты", "SGT": "Сингапур уақыты", "TMST": "Түрікменстан жазғы уақыты", "EDT": "Солтүстік Америка жазғы шығыс уақыты", "AKDT": "Аляска жазғы уақыты", "COST": "Колумбия жазғы уақыты", "MST": "MST", "OESZ": "Шығыс Еуропа жазғы уақыты", "NZST": "Жаңа Зеландия стандартты уақыты", "MEZ": "Орталық Еуропа стандартты уақыты", "GMT": "Гринвич уақыты", "WAST": "Батыс Африка жазғы уақыты", "WARST": "Батыс Аргентина жазғы уақыты", "CST": "Солтүстік Америка стандартты орталық уақыты", "HKST": "Гонконг жазғы уақыты", "BT": "Бутан уақыты", "EAT": "Шығыс Африка уақыты", "JDT": "Жапония жазғы уақыты", "PST": "Солтүстік Америка стандартты Тынық мұхиты уақыты", "BOT": "Боливия уақыты", "AKST": "Аляска стандартты уақыты", "MDT": "MDT", "AEST": "Австралия стандартты шығыс уақыты", "AWDT": "Австралия жазғы батыс уақыты", "ChST": "Чаморро стандартты уақыты", "LHST": "Лорд-Хау стандартты уақыты", "WAT": "Батыс Африка стандартты уақыты", "CHADT": "Чатем жазғы уақыты", "ACST": "Австралия стандартты орталық уақыты", "HKT": "Гонконг стандартты уақыты", "UYST": "Уругвай жазғы уақыты", "GFT": "Француз Гвианасы уақыты", "WITA": "Орталық Индонезия уақыты"},
 	}
 }
 
@@ -207,7 +207,8 @@ func (kk *kk_KZ) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kk_KZ' and handles both Whole and Real numbers based on 'v'
-func (kk *kk_KZ) FmtNumber(num float64, v uint64) (results string) {
+func (kk *kk_KZ) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kk.decimal) + len(kk.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -227,7 +228,6 @@ func (kk *kk_KZ) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(kk.group) - 1; j >= 0; j-- {
 					b = append(b, kk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -246,13 +246,12 @@ func (kk *kk_KZ) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kk_KZ' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kk *kk_KZ) FmtPercent(num float64, v uint64) (results string) {
+func (kk *kk_KZ) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kk.decimal)
 	b := make([]byte, 0, l)
@@ -278,12 +277,11 @@ func (kk *kk_KZ) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, kk.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kk_KZ'
-func (kk *kk_KZ) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kk *kk_KZ) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kk.currencies[currency]
@@ -305,7 +303,6 @@ func (kk *kk_KZ) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(kk.group) - 1; j >= 0; j-- {
 					b = append(b, kk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -339,13 +336,12 @@ func (kk *kk_KZ) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kk_KZ'
 // in accounting notation.
-func (kk *kk_KZ) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kk *kk_KZ) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kk.currencies[currency]
@@ -367,7 +363,6 @@ func (kk *kk_KZ) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(kk.group) - 1; j >= 0; j-- {
 					b = append(b, kk.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -408,8 +403,7 @@ func (kk *kk_KZ) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kk_KZ'

@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"BC", "AD"},
-		timezones:              map[string]string{"WEZ": "Isikhathi esijwayelekile sase-Western Europe", "WAST": "Isikhathi sasehlobo saseNtshonalanga Afrika", "TMT": "Isikhathi esivamile sase-Turkmenistan", "UYT": "Isikhathi sase-Uruguay esijwayelekile", "OEZ": "Isikhathi esijwayelekile sase-Eastern Europe", "CHAST": "Isikhathi esivamile sase-Chatham", "MST": "isikhathi sase-North American Mountain esijwayelekile", "WITA": "Isikhathi sase-Central Indonesia", "ACWDT": "Isikhathi sasemini sase-Australian Central West", "GMT": "Isikhathi sase-Greenwich Mean", "HAST": "isikhathi sase-Hawaii-Aleutia esijwayelekile", "HADT": "isikhathi sase-Hawaii-Aleutia sasemini", "IST": "esase-India Standard Time", "AEDT": "Isikhathi sasemini sase-Australian East", "ACDT": "esase-Austrilian Central Daylight Time", "SRT": "Isikhathi sase-Suriname", "ECT": "Isikhathi sase-Ecuador", "JDT": "Isikhathi semini sase-Japan", "CHADT": "Isikhathi semini sase-Chatham", "MDT": "isikhathi sase-North American Mountain sasemini", "MYT": "Isikhathi sase-Malaysia", "SGT": "Isikhathi esivamile sase-Singapore", "EST": "isikhathi sase-North American East esijwayelekile", "ACWST": "Isikhathi sase-Australian Central West esivamile", "AKDT": "Isikhathi sase-Alaska sasemini", "CLT": "Isikhathi sase-Chile esijwayelekile", "EDT": "isikhathi sase-North American East sasemini", "ACST": "esase-Austrilian Central Standard Time", "SAST": "Isikhathi esijwayelekile saseNingizimu Afrika", "EAT": "Isikhathi saseMpumalanga Afrika", "AEST": "Isikhathi esivamile sase-Australian East", "WART": "Isikhathi saseNyakatho ne-Argentina esijwayelekile", "LHST": "Isikhathi sase-Lord Howe esivamile", "UYST": "Isikhathi sase-Uruguay sasehlobo", "PDT": "isikhathi sase-North American Pacific sasemini", "WIT": "Isikhathi sase-Eastern Indonesia", "CLST": "Isikhathi sase-Chile sasehlobo", "GYT": "Isikhathi sase-Guyana", "WARST": "Isikhathi saseNyakatho ne-Argentina sasehlobo", "WESZ": "Isikhathi sasehlobo sase-Western Europe", "AWST": "I-Australian Western Standard Time", "COST": "Isikhathi sase-Colombia sasehlobo", "WAT": "Isikhathi esijwayelekile saseNtshonalanga Afrika", "ChST": "Isikhathi esijwayelekile sase-Chamorro", "HNT": "isikhathi sase-Newfoundland esijwayelekile", "NZST": "Isikhathi esivamile sase-New Zealand", "HAT": "isikhathi sase-Newfoundland sasemini", "CST": "isikhathi sase-North American Central esijwayelekile", "MEZ": "Isikhathi esijwayelekile sase-Central Europe", "ART": "Isikhathi sase-Argentina esijwayelekile", "ARST": "Isikhathi sase-Argentina sasehlobo", "ADT": "isikhathi sase-Atlantic sasemini", "WIB": "Isikhathi sase-Western Indonesia", "TMST": "Isikhathi sehlobo sase-Turkmenistan", "JST": "Isikhathi esivamile sase-Japan", "HKT": "Isikhathi esivamile sase-Hong Kong", "CDT": "isikhathi sase-North American Central sasemini", "LHDT": "Isikhathi sase-Lord Howe sasemini", "AKST": "isikhathi sase-Alaska esijwayelekile", "NZDT": "Isikhathi sasemini sase-New Zealand", "OESZ": "Isikhathi sasehlobo sase-Eastern Europe", "AST": "isikhathi sase-Atlantic esijwayelekile", "VET": "Isikhathi sase-Venezuela", "GFT": "Isikhathi sase-French Guiana", "∅∅∅": "Isikhathi sasehlobo sase-Azores", "HKST": "Isikhathi sehlobo sase-Hong Kong", "CAT": "Isikhathi sase-Central Africa", "BOT": "Isikhathi sase-Bolivia", "COT": "Isikhathi sase-Colombia esijwayelekile", "MESZ": "Isikhathi sasehlobo sase-Central Europe", "BT": "esase-Bhutan Time", "AWDT": "I-Australian Western Daylight Time", "PST": "isikhathi sase-North American Pacific esijwayelekile"},
+		timezones:              map[string]string{"AST": "isikhathi sase-Atlantic esijwayelekile", "HAT": "isikhathi sase-Newfoundland sasemini", "IST": "esase-India Standard Time", "UYST": "Isikhathi sase-Uruguay sasehlobo", "ART": "Isikhathi sase-Argentina esijwayelekile", "BT": "esase-Bhutan Time", "HADT": "isikhathi sase-Hawaii-Aleutia sasemini", "ACDT": "esase-Austrilian Central Daylight Time", "CHAST": "Isikhathi esivamile sase-Chatham", "AEST": "Isikhathi esivamile sase-Australian East", "HNT": "isikhathi sase-Newfoundland esijwayelekile", "GYT": "Isikhathi sase-Guyana", "MDT": "isikhathi sase-North American Mountain sasemini", "TMST": "Isikhathi sehlobo sase-Turkmenistan", "CHADT": "Isikhathi semini sase-Chatham", "JDT": "Isikhathi semini sase-Japan", "MYT": "Isikhathi sase-Malaysia", "EST": "isikhathi sase-North American East esijwayelekile", "HAST": "isikhathi sase-Hawaii-Aleutia esijwayelekile", "WARST": "Isikhathi saseNyakatho ne-Argentina sasehlobo", "∅∅∅": "Isikhathi sasehlobo sase-Azores", "HKT": "Isikhathi esivamile sase-Hong Kong", "ChST": "Isikhathi esijwayelekile sase-Chamorro", "CDT": "isikhathi sase-North American Central sasemini", "VET": "Isikhathi sase-Venezuela", "HKST": "Isikhathi sehlobo sase-Hong Kong", "EDT": "isikhathi sase-North American East sasemini", "CST": "isikhathi sase-North American Central esijwayelekile", "NZST": "Isikhathi esivamile sase-New Zealand", "WIB": "Isikhathi sase-Western Indonesia", "MEZ": "Isikhathi esijwayelekile sase-Central Europe", "BOT": "Isikhathi sase-Bolivia", "CAT": "Isikhathi sase-Central Africa", "GMT": "Isikhathi sase-Greenwich Mean", "COST": "Isikhathi sase-Colombia sasehlobo", "AKST": "isikhathi sase-Alaska esijwayelekile", "AEDT": "Isikhathi sasemini sase-Australian East", "AKDT": "Isikhathi sase-Alaska sasemini", "NZDT": "Isikhathi sasemini sase-New Zealand", "UYT": "Isikhathi sase-Uruguay esijwayelekile", "PDT": "isikhathi sase-North American Pacific sasemini", "WEZ": "Isikhathi esijwayelekile sase-Western Europe", "OESZ": "Isikhathi sasehlobo sase-Eastern Europe", "JST": "Isikhathi esivamile sase-Japan", "WITA": "Isikhathi sase-Central Indonesia", "SAST": "Isikhathi esijwayelekile saseNingizimu Afrika", "LHST": "Isikhathi sase-Lord Howe esivamile", "CLST": "Isikhathi sase-Chile sasehlobo", "SGT": "Isikhathi esivamile sase-Singapore", "WESZ": "Isikhathi sasehlobo sase-Western Europe", "ADT": "isikhathi sase-Atlantic sasemini", "PST": "isikhathi sase-North American Pacific esijwayelekile", "WAST": "Isikhathi sasehlobo saseNtshonalanga Afrika", "ACST": "esase-Austrilian Central Standard Time", "ECT": "Isikhathi sase-Ecuador", "ACWST": "Isikhathi sase-Australian Central West esivamile", "LHDT": "Isikhathi sase-Lord Howe sasemini", "EAT": "Isikhathi saseMpumalanga Afrika", "WIT": "Isikhathi sase-Eastern Indonesia", "AWDT": "I-Australian Western Daylight Time", "ACWDT": "Isikhathi sasemini sase-Australian Central West", "OEZ": "Isikhathi esijwayelekile sase-Eastern Europe", "WART": "Isikhathi saseNyakatho ne-Argentina esijwayelekile", "AWST": "I-Australian Western Standard Time", "GFT": "Isikhathi sase-French Guiana", "WAT": "Isikhathi esijwayelekile saseNtshonalanga Afrika", "MESZ": "Isikhathi sasehlobo sase-Central Europe", "MST": "isikhathi sase-North American Mountain esijwayelekile", "SRT": "Isikhathi sase-Suriname", "ARST": "Isikhathi sase-Argentina sasehlobo", "TMT": "Isikhathi esivamile sase-Turkmenistan", "COT": "Isikhathi sase-Colombia esijwayelekile", "CLT": "Isikhathi sase-Chile esijwayelekile"},
 	}
 }
 
@@ -200,7 +200,8 @@ func (zu *zu) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'zu' and handles both Whole and Real numbers based on 'v'
-func (zu *zu) FmtNumber(num float64, v uint64) (results string) {
+func (zu *zu) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(zu.decimal) + len(zu.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -236,13 +237,12 @@ func (zu *zu) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'zu' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (zu *zu) FmtPercent(num float64, v uint64) (results string) {
+func (zu *zu) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(zu.decimal)
 	b := make([]byte, 0, l)
@@ -268,12 +268,11 @@ func (zu *zu) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, zu.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'zu'
-func (zu *zu) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (zu *zu) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zu.currencies[currency]
@@ -326,13 +325,12 @@ func (zu *zu) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'zu'
 // in accounting notation.
-func (zu *zu) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (zu *zu) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zu.currencies[currency]
@@ -397,8 +395,7 @@ func (zu *zu) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, zu.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'zu'

@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"CDT": "CDT", "ADT": "Atlantiši Summerzit", "JDT": "JDT", "WAST": "WAST", "IST": "IST", "CST": "CST", "PST": "PST", "CHAST": "CHAST", "BOT": "BOT", "COT": "COT", "WART": "WART", "AST": "Atlantiši Standardzit", "ACST": "ACST", "VET": "VET", "TMST": "TMST", "AWDT": "AWDT", "EST": "EST", "OESZ": "Ošteuropäiši Summerzit", "SRT": "SRT", "LHST": "LHST", "ChST": "ChST", "JST": "JST", "EAT": "EAT", "CLST": "CLST", "UYT": "UYT", "WITA": "WITA", "HADT": "HADT", "HKST": "HKST", "OEZ": "Ošteuropäiši Standardzit", "TMT": "TMT", "ECT": "ECT", "AKDT": "AKDT", "MST": "MST", "MDT": "MDT", "WEZ": "Wešteuropäiši Standardzit", "WIB": "WIB", "ACWST": "ACWST", "MYT": "MYT", "AKST": "AKST", "PDT": "PDT", "AEST": "AEST", "NZST": "NZST", "CHADT": "CHADT", "HAST": "HAST", "SGT": "SGT", "HKT": "HKT", "EDT": "EDT", "NZDT": "NZDT", "ACWDT": "ACWDT", "WIT": "WIT", "∅∅∅": "∅∅∅", "WESZ": "Wešteuropäiši Summerzit", "HNT": "HNT", "CLT": "CLT", "GMT": "GMT", "BT": "BT", "SAST": "SAST", "COST": "COST", "WAT": "WAT", "MEZ": "Mitteleuropäiši Standardzit", "ACDT": "ACDT", "GYT": "GYT", "GFT": "GFT", "MESZ": "Mitteleuropäiši Summerzit", "ART": "ART", "UYST": "UYST", "ARST": "ARST", "LHDT": "LHDT", "HAT": "HAT", "CAT": "CAT", "AEDT": "AEDT", "AWST": "AWST", "WARST": "WARST"},
+		timezones:              map[string]string{"WAST": "WAST", "WESZ": "Wešteuropäiši Summerzit", "CHAST": "CHAST", "TMT": "TMT", "EDT": "EDT", "MST": "MST", "MESZ": "Mitteleuropäiši Summerzit", "SRT": "SRT", "ART": "ART", "EST": "EST", "CST": "CST", "WART": "WART", "TMST": "TMST", "CDT": "CDT", "WAT": "WAT", "ACWDT": "ACWDT", "OESZ": "Ošteuropäiši Summerzit", "JDT": "JDT", "PST": "PST", "HAT": "HAT", "WIT": "WIT", "LHDT": "LHDT", "NZDT": "NZDT", "WIB": "WIB", "CLST": "CLST", "AEST": "AEST", "AWDT": "AWDT", "GYT": "GYT", "ARST": "ARST", "HADT": "HADT", "COT": "COT", "MDT": "MDT", "UYT": "UYT", "BT": "BT", "ACWST": "ACWST", "VET": "VET", "PDT": "PDT", "AKST": "AKST", "EAT": "EAT", "MEZ": "Mitteleuropäiši Standardzit", "SGT": "SGT", "BOT": "BOT", "WITA": "WITA", "JST": "JST", "ACDT": "ACDT", "WARST": "WARST", "HNT": "HNT", "WEZ": "Wešteuropäiši Standardzit", "LHST": "LHST", "NZST": "NZST", "MYT": "MYT", "GFT": "GFT", "COST": "COST", "AKDT": "AKDT", "HKST": "HKST", "GMT": "GMT", "CLT": "CLT", "AST": "Atlantiši Standardzit", "CAT": "CAT", "ACST": "ACST", "ADT": "Atlantiši Summerzit", "∅∅∅": "∅∅∅", "HKT": "HKT", "HAST": "HAST", "ECT": "ECT", "SAST": "SAST", "CHADT": "CHADT", "AWST": "AWST", "UYST": "UYST", "OEZ": "Ošteuropäiši Standardzit", "AEDT": "AEDT", "IST": "IST", "ChST": "ChST"},
 	}
 }
 
@@ -184,20 +184,19 @@ func (wae *wae) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'wae' and handles both Whole and Real numbers based on 'v'
-func (wae *wae) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (wae *wae) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'wae' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (wae *wae) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (wae *wae) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'wae'
-func (wae *wae) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (wae *wae) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wae.currencies[currency]
@@ -224,9 +223,7 @@ func (wae *wae) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(wae.minus) - 1; j >= 0; j-- {
-			b = append(b, wae.minus[j])
-		}
+		b = append(b, wae.minus[0])
 	}
 
 	// reverse
@@ -236,13 +233,12 @@ func (wae *wae) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, wae.currencyPositiveSuffix...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'wae'
 // in accounting notation.
-func (wae *wae) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (wae *wae) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wae.currencies[currency]
@@ -270,9 +266,7 @@ func (wae *wae) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, wae.currencyNegativePrefix[j])
 		}
 
-		for j := len(wae.minus) - 1; j >= 0; j-- {
-			b = append(b, wae.minus[j])
-		}
+		b = append(b, wae.minus[0])
 
 	} else {
 
@@ -298,8 +292,7 @@ func (wae *wae) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, wae.currencyPositiveSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'wae'

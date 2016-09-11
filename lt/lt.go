@@ -18,7 +18,7 @@ type lt struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -48,7 +48,7 @@ func New() locales.Translator {
 		locale:                 "lt",
 		pluralsCardinal:        []locales.PluralRule{2, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{2, 4, 5, 6},
+		pluralsRange:           []locales.PluralRule{6, 2, 4, 5},
 		decimal:                ",",
 		group:                  " ",
 		minus:                  "−",
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED", "AFA ", "AFN", "ALK ", "ALL", "AMD", "ANG", "AOA", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS", "ATS ", "AUD", "AWG", "AZM ", "AZN", "BAD ", "BAM", "BAN ", "BBD", "BDT", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN", "BGO ", "BHD", "BIF", "BMD", "BND", "BOB", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL", "BRN ", "BRR ", "BRZ ", "BSD", "BTN", "BUK ", "BWP", "BYB ", "BYR", "BZD", "CAD", "CDF", "CHE ", "CHF", "CHW ", "CLE ", "CLF ", "CLP", "CNX ", "CNY", "COP", "COU ", "CRC", "CSD ", "CSK ", "CUC", "CUP", "CVE", "CYP ", "CZK", "DDM ", "DEM ", "DJF", "DKK", "DOP", "DZD", "ECS ", "ECV ", "EEK ", "EGP", "ERN", "ESA ", "ESB ", "ESP ", "ETB", "€", "FIM ", "FJD", "FKP", "FRF ", "GBP", "GEK ", "GEL", "GHC ", "GHS", "GIP", "GMD", "GNF", "GNS ", "GQE ", "GRD ", "GTQ", "GWE ", "GWP ", "GYD", "HKD", "HNL", "HRD ", "HRK", "HTG", "HUF", "IDR", "IEP ", "ILP ", "ILR ", "ILS", "INR", "IQD", "IRR", "ISJ ", "ISK", "ITL ", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH ", "KRO ", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL ", "LTL", "LTT ", "LUC ", "LUF ", "LUL ", "LVL", "LVR ", "LYD", "MAD", "MAF ", "MCF ", "MDC ", "MDL", "MGA", "MGF ", "MKD", "MKN ", "MLF ", "MMK", "MNT", "MOP", "MRO", "MTL ", "MTP ", "MUR", "MVP ", "MVR", "MWK", "MXN", "MXP ", "MXV ", "MYR", "MZE ", "MZM ", "MZN", "NAD", "NGN", "NIC ", "NIO", "NLG ", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI ", "PEN", "PES ", "PGK", "PHP", "PKR", "PLN", "PLZ ", "PTE ", "PYG", "QAR", "RHD ", "ROL ", "RON", "RSD", "RUB", "RUR ", "RWF", "SAR", "SBD", "SCR", "SDD ", "SDG", "SDP ", "SEK", "SGD", "SHP", "SIT ", "SKK ", "SLL", "SOS", "SRD", "SRG ", "SSP", "STD", "SUR ", "SVC ", "SYP", "SZL", "THB", "TJR ", "TJS", "TMM ", "TMT", "TND", "TOP", "TPE ", "TRL ", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK ", "UGS ", "UGX", "USD", "USN ", "USS ", "UYI ", "UYP ", "UYU", "UZS", "VEB ", "VEF", "VND", "VNN ", "VUV", "WST", "XAF", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD", "XDR ", "XEU ", "XFO ", "XFU ", "XOF", "XPD ", "XPF", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR", "ZMK ", "ZMW", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "saus.", "vas.", "kov.", "bal.", "geg.", "birž.", "liep.", "rugp.", "rugs.", "spal.", "lapkr.", "gruod."},
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"pr. Kr.", "po Kr."},
 		erasNarrow:             []string{"pr. Kr.", "po Kr."},
 		erasWide:               []string{"prieš Kristų", "po Kristaus"},
-		timezones:              map[string]string{"WAST": "Vakarų Afrikos vasaros laikas", "ACDT": "Centrinės Australijos vasaros laikas", "SGT": "Singapūro laikas", "ADT": "Atlanto vasaros laikas", "SAST": "Pietų Afrikos laikas", "VET": "Venesuelos laikas", "LHDT": "Lordo Hau vasaros laikas", "WIT": "Rytų Indonezijos laikas", "PST": "Šiaurės Amerikos Ramiojo vandenyno žiemos laikas", "AEDT": "Rytų Australijos vasaros laikas", "CHADT": "Čatamo vasaros laikas", "ACST": "Centrinės Australijos žiemos laikas", "MDT": "Šiaurės Amerikos kalnų vasaros laikas", "JST": "Japonijos žiemos laikas", "CST": "Šiaurės Amerikos centro žiemos laikas", "WEZ": "Vakarų Europos žiemos laikas", "NZST": "Naujosios Zelandijos žiemos laikas", "CHAST": "Čatamo žiemos laikas", "MESZ": "Vidurio Europos vasaros laikas", "JDT": "Japonijos vasaros laikas", "TMST": "Turkmėnistano vasaros laikas", "HKT": "Honkongo žiemos laikas", "AWDT": "Vakarų Australijos vasaros laikas", "BT": "Butano laikas", "ECT": "Ekvadoro laikas", "NZDT": "Naujosios Zelandijos vasaros laikas", "HADT": "Havajų–Aleutų vasaros laikas", "WESZ": "Vakarų Europos vasaros laikas", "CAT": "Centrinės Afrikos laikas", "AEST": "Rytų Australijos žiemos laikas", "WIB": "Vakarų Indonezijos laikas", "COST": "Kolumbijos vasaros laikas", "WAT": "Vakarų Afrikos žiemos laikas", "ChST": "Čamoro laikas", "CLST": "Čilės vasaros laikas", "ART": "Argentinos žiemos laikas", "ARST": "Argentinos vasaros laikas", "WITA": "Centrinės Indonezijos laikas", "EDT": "Šiaurės Amerikos rytų vasaros laikas", "UYT": "Urugvajaus žiemos laikas", "EST": "Šiaurės Amerikos rytų žiemos laikas", "OEZ": "Rytų Europos žiemos laikas", "WARST": "Vakarų Argentinos vasaros laikas", "GYT": "Gajanos laikas", "TMT": "Turkmėnistano žiemos laikas", "LHST": "Lordo Hau žiemos laikas", "EAT": "Rytų Afrikos laikas", "HAT": "Niufaundlendo vasaros laikas", "BOT": "Bolivijos laikas", "MST": "Šiaurės Amerikos kalnų žiemos laikas", "HKST": "Honkongo vasaros laikas", "UYST": "Urugvajaus vasaros laikas", "MEZ": "Vidurio Europos žiemos laikas", "∅∅∅": "Azorų Salų vasaros laikas", "AKST": "Aliaskos žiemos laikas", "CLT": "Čilės žiemos laikas", "IST": "Indijos laikas", "HAST": "Havajų–Aleutų žiemos laikas", "AWST": "Vakarų Australijos žiemos laikas", "HNT": "Niufaundlendo žiemos laikas", "GMT": "Grinvičo laikas", "COT": "Kolumbijos žiemos laikas", "WART": "Vakarų Argentinos žiemos laikas", "AST": "Atlanto žiemos laikas", "PDT": "Šiaurės Amerikos Ramiojo vandenyno vasaros laikas", "OESZ": "Rytų Europos vasaros laikas", "ACWST": "Centrinės vakarų Australijos žiemos laikas", "ACWDT": "Centrinės vakarų Australijos vasaros laikas", "GFT": "Prancūzijos Gvianos laikas", "AKDT": "Aliaskos vasaros laikas", "CDT": "Šiaurės Amerikos centro vasaros laikas", "SRT": "Surinamo laikas", "MYT": "Malaizijos laikas"},
+		timezones:              map[string]string{"ChST": "Čamoro laikas", "CDT": "Šiaurės Amerikos centro vasaros laikas", "WEZ": "Vakarų Europos žiemos laikas", "CHADT": "Čatamo vasaros laikas", "HNT": "Niufaundlendo žiemos laikas", "MDT": "Šiaurės Amerikos kalnų vasaros laikas", "HKT": "Honkongo žiemos laikas", "HADT": "Havajų–Aleutų vasaros laikas", "SAST": "Pietų Afrikos laikas", "ACDT": "Centrinės Australijos vasaros laikas", "SGT": "Singapūro laikas", "AWDT": "Vakarų Australijos vasaros laikas", "HAT": "Niufaundlendo vasaros laikas", "BT": "Butano laikas", "ART": "Argentinos žiemos laikas", "HAST": "Havajų–Aleutų žiemos laikas", "EST": "Šiaurės Amerikos rytų žiemos laikas", "JST": "Japonijos žiemos laikas", "AST": "Atlanto žiemos laikas", "ACST": "Centrinės Australijos žiemos laikas", "GMT": "Grinvičo laikas", "NZDT": "Naujosios Zelandijos vasaros laikas", "WIB": "Vakarų Indonezijos laikas", "MST": "Šiaurės Amerikos kalnų žiemos laikas", "PDT": "Šiaurės Amerikos Ramiojo vandenyno vasaros laikas", "WESZ": "Vakarų Europos vasaros laikas", "UYST": "Urugvajaus vasaros laikas", "WITA": "Centrinės Indonezijos laikas", "CHAST": "Čatamo žiemos laikas", "WAST": "Vakarų Afrikos vasaros laikas", "MEZ": "Vidurio Europos žiemos laikas", "CLST": "Čilės vasaros laikas", "NZST": "Naujosios Zelandijos žiemos laikas", "EDT": "Šiaurės Amerikos rytų vasaros laikas", "AKDT": "Aliaskos vasaros laikas", "PST": "Šiaurės Amerikos Ramiojo vandenyno žiemos laikas", "UYT": "Urugvajaus žiemos laikas", "TMT": "Turkmėnistano žiemos laikas", "SRT": "Surinamo laikas", "HKST": "Honkongo vasaros laikas", "WAT": "Vakarų Afrikos žiemos laikas", "CLT": "Čilės žiemos laikas", "GYT": "Gajanos laikas", "MYT": "Malaizijos laikas", "ARST": "Argentinos vasaros laikas", "ECT": "Ekvadoro laikas", "MESZ": "Vidurio Europos vasaros laikas", "BOT": "Bolivijos laikas", "WIT": "Rytų Indonezijos laikas", "OESZ": "Rytų Europos vasaros laikas", "GFT": "Prancūzijos Gvianos laikas", "ACWST": "Centrinės vakarų Australijos žiemos laikas", "LHST": "Lordo Hau žiemos laikas", "WART": "Vakarų Argentinos žiemos laikas", "VET": "Venesuelos laikas", "COST": "Kolumbijos vasaros laikas", "LHDT": "Lordo Hau vasaros laikas", "EAT": "Rytų Afrikos laikas", "JDT": "Japonijos vasaros laikas", "ADT": "Atlanto vasaros laikas", "COT": "Kolumbijos žiemos laikas", "ACWDT": "Centrinės vakarų Australijos vasaros laikas", "OEZ": "Rytų Europos žiemos laikas", "AEST": "Rytų Australijos žiemos laikas", "∅∅∅": "Azorų Salų vasaros laikas", "TMST": "Turkmėnistano vasaros laikas", "CST": "Šiaurės Amerikos centro žiemos laikas", "AKST": "Aliaskos žiemos laikas", "WARST": "Vakarų Argentinos vasaros laikas", "AWST": "Vakarų Australijos žiemos laikas", "CAT": "Centrinės Afrikos laikas", "AEDT": "Rytų Australijos vasaros laikas", "IST": "Indijos laikas"},
 	}
 }
 
@@ -234,7 +234,8 @@ func (lt *lt) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lt' and handles both Whole and Real numbers based on 'v'
-func (lt *lt) FmtNumber(num float64, v uint64) (results string) {
+func (lt *lt) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lt.decimal) + len(lt.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -254,7 +255,6 @@ func (lt *lt) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(lt.group) - 1; j >= 0; j-- {
 					b = append(b, lt.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -275,13 +275,12 @@ func (lt *lt) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'lt' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (lt *lt) FmtPercent(num float64, v uint64) (results string) {
+func (lt *lt) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lt.decimal)
 	b := make([]byte, 0, l)
@@ -311,12 +310,11 @@ func (lt *lt) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, lt.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lt'
-func (lt *lt) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (lt *lt) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lt.currencies[currency]
@@ -338,7 +336,6 @@ func (lt *lt) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 				for j := len(lt.group) - 1; j >= 0; j-- {
 					b = append(b, lt.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -374,13 +371,12 @@ func (lt *lt) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lt'
 // in accounting notation.
-func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lt.currencies[currency]
@@ -402,7 +398,6 @@ func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 				for j := len(lt.group) - 1; j >= 0; j-- {
 					b = append(b, lt.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -445,8 +440,7 @@ func (lt *lt) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'lt'

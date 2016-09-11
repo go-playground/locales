@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"hY", "Yŋ"},
 		erasNarrow:             []string{"hY", "Yŋ"},
 		erasWide:               []string{"Hafi Yesu Va Do ŋgɔ", "Yesu Ŋɔli"},
-		timezones:              map[string]string{"UYT": "Uruguai gaƒoƒoɖoanyime", "BOT": "Bolivia gaƒoƒome", "MEZ": "Titina Europe gaƒoƒoɖoanyime", "MESZ": "Titina Europe ŋkekeme gaƒoƒome", "MST": "Makau gaƒoƒoɖoanyime", "EST": "Ɣedzeƒe America gaƒoƒoɖoanyime", "WIB": "WIB", "COST": "Kolombia dzomeŋɔli gaƒoƒome", "CHAST": "CHAST", "WART": "Ɣetoɖoƒe Argentina gaƒoƒoɖoanyime", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime", "MYT": "MYT", "JST": "Japan gaƒoƒoɖanyime", "IST": "IST", "EAT": "Ɣedzeƒe Africa gaƒoƒome", "AEST": "Ɣedzeƒe Australia gaƒoƒoɖoanyime", "WIT": "WIT", "CST": "Titina America gaƒoƒoɖoanyime", "HKST": "Hɔng Kɔng dzomeŋɔli gaƒoƒome", "CLT": "Tsile gaƒoƒoɖoanyime", "NZDT": "NZDT", "TMST": "Tɛkmenistan dzomeŋɔli gaƒoƒome", "JDT": "Japan ŋkekeme gaƒoƒome", "AST": "Atlantic gaƒoƒoɖoanyime", "GFT": "Frentsi Guiana gaƒoƒome", "SAST": "Anyiehe Africa gaƒoƒome", "MDT": "Makau ŋkekeme gaƒoƒome", "AWDT": "Ɣetoɖoƒe Australia ŋkekeme gaƒoƒome", "CAT": "Titina Afrika gaƒoƒome", "PDT": "Pacific ŋkekme gaƒoƒome", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒome", "ACWST": "Australia ɣetoɖofe gaƒoƒoɖoanyime", "ChST": "ChST", "CDT": "Titina America ŋkekeme gaƒoƒome", "AWST": "Ɣetoɖoƒe Australia gaƒoƒoɖoanyime", "EDT": "Ɣedzeƒe America ŋkekeme gaƒoƒome", "GMT": "Greenwich gaƒoƒome", "ADT": "Atlantic ŋkekeme gaƒoƒome", "ACDT": "Titina Australia ŋkekeme gaƒoƒome", "ARST": "Argentina dzomeŋɔli gaƒoƒome", "HAT": "Niufaunɖlanɖ ŋkekeme gaƒoƒome", "ACWDT": "Australia ɣetoɖofe ŋkekeme gaƒoƒome", "WITA": "WITA", "TMT": "Tɛkmenistan gaƒoƒoɖoanyime", "VET": "Venezuela gaƒoƒome", "WEZ": "Ɣetoɖoƒe Europe gaƒoƒoɖoanyime", "WESZ": "Ɣetoɖoƒe Europe ŋkekeme gaƒoƒome", "∅∅∅": "Brasilia dzomeŋɔli gaƒoƒome", "CLST": "Tsile dzomeŋɔli gaƒoƒome", "UYST": "Uruguai dzomeŋɔli gaƒoƒome", "NZST": "NZST", "WAST": "Ɣetoɖoƒe Africa ŋkekeme gaƒoƒome", "AKST": "Alaska gaƒoƒoɖoanyime", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "ACST": "Titina Australia gaƒoƒoɖoanyime", "GYT": "Gayana gaƒoƒome", "SGT": "SGT", "HKT": "Hɔng Kɔng gaƒoƒoɖoanyi me", "AEDT": "Ɣedzeƒe Australia ŋkekeme gaƒoƒome", "AKDT": "Alaska ŋkekeme gaƒoƒome", "HNT": "Niufaunɖlanɖ gaƒoƒoɖoanyime", "PST": "Pacific gaƒoƒoɖoanyime", "BT": "BT", "WAT": "Ɣetoɖoƒe Afrika gaƒoƒoɖoanyime", "LHDT": "LHDT", "ECT": "Ikuedɔ dzomeŋɔli gaƒoƒome", "HAST": "Hawaii-Aleutia gaƒoƒoɖoanyime", "COT": "Kolombia gaƒoƒoɖoanyime", "HADT": "Hawaii-Aleutia ŋkekeme gaƒoƒome", "CHADT": "CHADT", "ART": "Argentina gaƒoƒoɖoanyime", "SRT": "Suriname gaƒoƒome", "LHST": "LHST"},
+		timezones:              map[string]string{"WAST": "Ɣetoɖoƒe Africa ŋkekeme gaƒoƒome", "JST": "Japan gaƒoƒoɖanyime", "PST": "Pacific gaƒoƒoɖoanyime", "HADT": "Hawaii-Aleutia ŋkekeme gaƒoƒome", "ECT": "Ikuedɔ dzomeŋɔli gaƒoƒome", "LHDT": "LHDT", "NZST": "NZST", "WAT": "Ɣetoɖoƒe Afrika gaƒoƒoɖoanyime", "MDT": "America Todzidukɔwo ƒe ŋkekme gaƒoƒome", "CLST": "Tsile dzomeŋɔli gaƒoƒome", "AEDT": "Ɣedzeƒe Australia ŋkekeme gaƒoƒome", "WITA": "WITA", "CDT": "Titina America ŋkekeme gaƒoƒome", "EST": "Ɣedzeƒe America gaƒoƒoɖoanyime", "PDT": "Pacific ŋkekme gaƒoƒome", "AWDT": "Ɣetoɖoƒe Australia ŋkekeme gaƒoƒome", "UYST": "Uruguai dzomeŋɔli gaƒoƒome", "ART": "Argentina gaƒoƒoɖoanyime", "AKST": "Alaska gaƒoƒoɖoanyime", "SGT": "SGT", "HKST": "Hɔng Kɔng dzomeŋɔli gaƒoƒome", "TMST": "Tɛkmenistan dzomeŋɔli gaƒoƒome", "EDT": "Ɣedzeƒe America ŋkekeme gaƒoƒome", "ChST": "ChST", "MESZ": "Titina Europe ŋkekeme gaƒoƒome", "ARST": "Argentina dzomeŋɔli gaƒoƒome", "HAST": "Hawaii-Aleutia gaƒoƒoɖoanyime", "ACST": "Titina Australia gaƒoƒoɖoanyime", "VET": "Venezuela gaƒoƒome", "AWST": "Ɣetoɖoƒe Australia gaƒoƒoɖoanyime", "SRT": "Suriname gaƒoƒome", "∅∅∅": "Azores dzomeŋɔli gaƒoƒome", "HKT": "Hɔng Kɔng gaƒoƒoɖoanyi me", "WESZ": "Ɣetoɖoƒe Europe ŋkekeme gaƒoƒome", "CHAST": "CHAST", "CHADT": "CHADT", "JDT": "Japan ŋkekeme gaƒoƒome", "ADT": "Atlantic ŋkekeme gaƒoƒome", "WART": "Ɣetoɖoƒe Argentina gaƒoƒoɖoanyime", "GMT": "Greenwich gaƒoƒome", "CLT": "Tsile gaƒoƒoɖoanyime", "MYT": "MYT", "HNT": "Niufaunɖlanɖ gaƒoƒoɖoanyime", "HAT": "Niufaunɖlanɖ ŋkekeme gaƒoƒome", "COST": "Kolombia dzomeŋɔli gaƒoƒome", "AST": "Atlantic gaƒoƒoɖoanyime", "ACDT": "Titina Australia ŋkekeme gaƒoƒome", "UYT": "Uruguai gaƒoƒoɖoanyime", "WIT": "WIT", "WEZ": "Ɣetoɖoƒe Europe gaƒoƒoɖoanyime", "ACWST": "Australia ɣetoɖofe gaƒoƒoɖoanyime", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒome", "MST": "America Todzidukɔwo ƒe gaƒoƒoɖoanyime", "GFT": "Frentsi Guiana gaƒoƒome", "LHST": "LHST", "WIB": "WIB", "GYT": "Gayana gaƒoƒome", "BT": "BT", "AKDT": "Alaska ŋkekeme gaƒoƒome", "EAT": "Ɣedzeƒe Africa gaƒoƒome", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "IST": "IST", "CAT": "Titina Afrika gaƒoƒome", "AEST": "Ɣedzeƒe Australia gaƒoƒoɖoanyime", "TMT": "Tɛkmenistan gaƒoƒoɖoanyime", "COT": "Kolombia gaƒoƒoɖoanyime", "NZDT": "NZDT", "SAST": "Anyiehe Africa gaƒoƒome", "BOT": "Bolivia gaƒoƒome", "CST": "Titina America gaƒoƒoɖoanyime", "ACWDT": "Australia ɣetoɖofe ŋkekeme gaƒoƒome", "MEZ": "Titina Europe gaƒoƒoɖoanyime", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime"},
 	}
 }
 
@@ -182,20 +182,19 @@ func (ee *ee_TG) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ee_TG' and handles both Whole and Real numbers based on 'v'
-func (ee *ee_TG) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ee *ee_TG) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ee_TG' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ee *ee_TG) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ee *ee_TG) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ee_TG'
-func (ee *ee_TG) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ee *ee_TG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ee.currencies[currency]
@@ -207,20 +206,14 @@ func (ee *ee_TG) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(ee.decimal) - 1; j >= 0; j-- {
-				b = append(b, ee.decimal[j])
-			}
-
+			b = append(b, ee.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(ee.group) - 1; j >= 0; j-- {
-					b = append(b, ee.group[j])
-				}
-
+				b = append(b, ee.group[0])
 				count = 1
 			} else {
 				count++
@@ -235,9 +228,7 @@ func (ee *ee_TG) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(ee.minus) - 1; j >= 0; j-- {
-			b = append(b, ee.minus[j])
-		}
+		b = append(b, ee.minus[0])
 	}
 
 	// reverse
@@ -256,13 +247,12 @@ func (ee *ee_TG) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ee_TG'
 // in accounting notation.
-func (ee *ee_TG) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ee *ee_TG) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ee.currencies[currency]
@@ -274,20 +264,14 @@ func (ee *ee_TG) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(ee.decimal) - 1; j >= 0; j-- {
-				b = append(b, ee.decimal[j])
-			}
-
+			b = append(b, ee.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(ee.group) - 1; j >= 0; j-- {
-					b = append(b, ee.group[j])
-				}
-
+				b = append(b, ee.group[0])
 				count = 1
 			} else {
 				count++
@@ -333,8 +317,7 @@ func (ee *ee_TG) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, ee.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ee_TG'

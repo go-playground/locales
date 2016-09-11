@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"KM", "BM"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Kabla ya Mtwaa", "Baada ya Mtwaa"},
-		timezones:          map[string]string{"WESZ": "WESZ", "CLT": "CLT", "AEDT": "AEDT", "WIT": "WIT", "HADT": "HADT", "MST": "MST", "AWDT": "AWDT", "HNT": "HNT", "CST": "CST", "CDT": "CDT", "OESZ": "OESZ", "BOT": "BOT", "CHADT": "CHADT", "SAST": "SAST", "HAST": "HAST", "HKST": "HKST", "∅∅∅": "∅∅∅", "BT": "BT", "AKDT": "AKDT", "SGT": "SGT", "TMT": "TMT", "AWST": "AWST", "ACWDT": "ACWDT", "GFT": "GFT", "EAT": "EAT", "CLST": "CLST", "UYT": "UYT", "CAT": "CAT", "NZDT": "NZDT", "COST": "COST", "WAT": "WAT", "MDT": "MDT", "NZST": "NZST", "COT": "COT", "MEZ": "MEZ", "WITA": "WITA", "TMST": "TMST", "AKST": "AKST", "EDT": "EDT", "ADT": "ADT", "GYT": "GYT", "ARST": "ARST", "WARST": "WARST", "GMT": "GMT", "PST": "PST", "CHAST": "CHAST", "LHDT": "LHDT", "SRT": "SRT", "WEZ": "WEZ", "HKT": "HKT", "EST": "EST", "MESZ": "MESZ", "ACDT": "ACDT", "ChST": "ChST", "IST": "IST", "HAT": "HAT", "AEST": "AEST", "PDT": "PDT", "AST": "AST", "WART": "WART", "ACWST": "ACWST", "MYT": "MYT", "WIB": "WIB", "VET": "VET", "ECT": "ECT", "JST": "JST", "LHST": "LHST", "UYST": "UYST", "OEZ": "OEZ", "ACST": "ACST", "ART": "ART", "WAST": "WAST", "JDT": "JDT"},
+		timezones:          map[string]string{"COST": "COST", "EAT": "EAT", "OEZ": "OEZ", "EST": "EST", "∅∅∅": "∅∅∅", "SAST": "SAST", "MST": "MST", "AEDT": "AEDT", "WARST": "WARST", "WESZ": "WESZ", "VET": "VET", "CAT": "CAT", "JST": "JST", "ADT": "ADT", "HAT": "HAT", "CDT": "CDT", "WAST": "WAST", "CHADT": "CHADT", "GFT": "GFT", "TMST": "TMST", "ECT": "ECT", "WEZ": "WEZ", "HNT": "HNT", "WIT": "WIT", "TMT": "TMT", "GMT": "GMT", "AKST": "AKST", "MEZ": "MEZ", "PST": "PST", "ARST": "ARST", "EDT": "EDT", "CHAST": "CHAST", "OESZ": "OESZ", "AEST": "AEST", "BOT": "BOT", "ART": "ART", "HADT": "HADT", "NZDT": "NZDT", "CLT": "CLT", "HKST": "HKST", "WAT": "WAT", "WART": "WART", "AWST": "AWST", "HKT": "HKT", "NZST": "NZST", "AST": "AST", "ACDT": "ACDT", "LHDT": "LHDT", "CLST": "CLST", "JDT": "JDT", "ACST": "ACST", "SRT": "SRT", "CST": "CST", "ACWST": "ACWST", "ACWDT": "ACWDT", "WIB": "WIB", "MESZ": "MESZ", "MYT": "MYT", "UYT": "UYT", "UYST": "UYST", "ChST": "ChST", "AKDT": "AKDT", "COT": "COT", "WITA": "WITA", "PDT": "PDT", "BT": "BT", "HAST": "HAST", "LHST": "LHST", "SGT": "SGT", "GYT": "GYT", "MDT": "MDT", "IST": "IST", "AWDT": "AWDT"},
 	}
 }
 
@@ -176,20 +176,19 @@ func (bez *bez) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bez' and handles both Whole and Real numbers based on 'v'
-func (bez *bez) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (bez *bez) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'bez' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (bez *bez) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (bez *bez) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bez'
-func (bez *bez) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (bez *bez) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bez.currencies[currency]
@@ -201,20 +200,14 @@ func (bez *bez) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(bez.decimal) - 1; j >= 0; j-- {
-				b = append(b, bez.decimal[j])
-			}
-
+			b = append(b, bez.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(bez.group) - 1; j >= 0; j-- {
-					b = append(b, bez.group[j])
-				}
-
+				b = append(b, bez.group[0])
 				count = 1
 			} else {
 				count++
@@ -225,9 +218,7 @@ func (bez *bez) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(bez.minus) - 1; j >= 0; j-- {
-			b = append(b, bez.minus[j])
-		}
+		b = append(b, bez.minus[0])
 	}
 
 	// reverse
@@ -248,13 +239,12 @@ func (bez *bez) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bez'
 // in accounting notation.
-func (bez *bez) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (bez *bez) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bez.currencies[currency]
@@ -266,20 +256,14 @@ func (bez *bez) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(bez.decimal) - 1; j >= 0; j-- {
-				b = append(b, bez.decimal[j])
-			}
-
+			b = append(b, bez.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(bez.group) - 1; j >= 0; j-- {
-					b = append(b, bez.group[j])
-				}
-
+				b = append(b, bez.group[0])
 				count = 1
 			} else {
 				count++
@@ -291,9 +275,7 @@ func (bez *bez) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 
 	if num < 0 {
 
-		for j := len(bez.minus) - 1; j >= 0; j-- {
-			b = append(b, bez.minus[j])
-		}
+		b = append(b, bez.minus[0])
 
 	}
 
@@ -320,8 +302,7 @@ func (bez *bez) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'bez'

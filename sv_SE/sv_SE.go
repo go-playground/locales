@@ -18,7 +18,7 @@ type sv_SE struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -52,7 +52,7 @@ func New() locales.Translator {
 		minus:                  "‏−",
 		timeSeparator:          ":",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "jan.", "feb.", "mars", "apr.", "maj", "juni", "juli", "aug.", "sep.", "okt.", "nov.", "dec."},
@@ -68,7 +68,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"f.Kr.", "e.Kr."},
 		erasWide:               []string{"före Kristus", "efter Kristus"},
-		timezones:              map[string]string{"UYT": "uruguayansk normaltid", "CAT": "centralafrikansk tid", "WART": "västargentinsk normaltid", "WARST": "västargentinsk sommartid", "MYT": "malaysisk tid", "CST": "centralnordamerikansk normaltid", "CLST": "chilensk sommartid", "ECT": "ecuadoriansk tid", "ChST": "Chamorrotid", "IST": "indisk tid", "UYST": "uruguayansk sommartid", "PST": "västnordamerikansk normaltid", "COST": "colombiansk sommartid", "SGT": "Singaporetid", "VET": "venezuelansk tid", "JST": "japansk normaltid", "JDT": "japansk sommartid", "EDT": "östnordamerikansk sommartid", "SAST": "sydafrikansk tid", "BOT": "boliviansk tid", "MESZ": "centraleuropeisk sommartid", "WAST": "västafrikansk sommartid", "ADT": "nordamerikansk atlantsommartid", "WITA": "centralindonesisk tid", "AKDT": "Alaska, sommartid", "CHAST": "Chatham, normaltid", "GMT": "Greenwichtid", "AEST": "östaustralisk normaltid", "PDT": "västnordamerikansk sommartid", "WAT": "västafrikansk normaltid", "WESZ": "västeuropeisk sommartid", "CDT": "centralnordamerikansk sommartid", "HKT": "Hongkong, normaltid", "MEZ": "centraleuropeisk normaltid", "NZDT": "nyzeeländsk sommartid", "ACST": "centralaustralisk normaltid", "ACWST": "västcentralaustralisk normaltid", "AWST": "västaustralisk normaltid", "CLT": "chilensk normaltid", "WEZ": "västeuropeisk normaltid", "HKST": "Hongkong, sommartid", "WIB": "västindonesisk tid", "HAST": "Honolulu, normaltid", "AKST": "Alaska, normaltid", "OEZ": "östeuropeisk normaltid", "ARST": "östargentinsk sommartid", "SRT": "Surinamtid", "GFT": "Franska Guyanatid", "MDT": "Macausommartid", "EST": "östnordamerikansk normaltid", "AST": "nordamerikansk atlantnormaltid", "LHST": "Lord Howe, normaltid", "HNT": "Newfoundland, normaltid", "AEDT": "östaustralisk sommartid", "OESZ": "östeuropeisk sommartid", "CHADT": "Chatham, sommartid", "TMST": "turkmensk sommartid", "HADT": "Honolulu, sommartid", "HAT": "Newfoundland, sommartid", "AWDT": "västaustralisk sommartid", "EAT": "östafrikansk tid", "COT": "colombiansk normaltid", "BT": "bhutansk tid", "ACDT": "centralaustralisk sommartid", "GYT": "Guyanatid", "∅∅∅": "Amazonas, sommartid", "MST": "Macaunormaltid", "ART": "östargentinsk normaltid", "WIT": "östindonesisk tid", "LHDT": "Lord Howe, sommartid", "TMT": "turkmensk normaltid", "ACWDT": "västcentralaustralisk sommartid", "NZST": "nyzeeländsk normaltid"},
+		timezones:              map[string]string{"CHAST": "Chatham, normaltid", "CHADT": "Chatham, sommartid", "AEDT": "östaustralisk sommartid", "SRT": "Surinamtid", "CST": "centralnordamerikansk normaltid", "COST": "colombiansk sommartid", "ACWST": "västcentralaustralisk normaltid", "LHST": "Lord Howe, normaltid", "AEST": "östaustralisk normaltid", "ACWDT": "västcentralaustralisk sommartid", "ACDT": "centralaustralisk sommartid", "HAT": "Newfoundland, sommartid", "WITA": "centralindonesisk tid", "MST": "Macaunormaltid", "WESZ": "västeuropeisk sommartid", "SGT": "Singaporetid", "BOT": "boliviansk tid", "ECT": "ecuadoriansk tid", "EAT": "östafrikansk tid", "CLST": "chilensk sommartid", "CLT": "chilensk normaltid", "ACST": "centralaustralisk normaltid", "WARST": "västargentinsk sommartid", "IST": "indisk tid", "UYST": "uruguayansk sommartid", "LHDT": "Lord Howe, sommartid", "WAST": "västafrikansk sommartid", "OEZ": "östeuropeisk normaltid", "WIT": "östindonesisk tid", "PDT": "västnordamerikansk sommartid", "GYT": "Guyanatid", "HKT": "Hongkong, normaltid", "UYT": "uruguayansk normaltid", "GFT": "Franska Guyanatid", "NZST": "nyzeeländsk normaltid", "WAT": "västafrikansk normaltid", "PST": "västnordamerikansk normaltid", "VET": "venezuelansk tid", "HKST": "Hongkong, sommartid", "ARST": "östargentinsk sommartid", "WEZ": "västeuropeisk normaltid", "MEZ": "centraleuropeisk normaltid", "JST": "japansk normaltid", "AWST": "västaustralisk normaltid", "HNT": "Newfoundland, normaltid", "CDT": "centralnordamerikansk sommartid", "TMT": "turkmensk normaltid", "TMST": "turkmensk sommartid", "EDT": "östnordamerikansk sommartid", "GMT": "Greenwichtid", "AKDT": "Alaska, sommartid", "MESZ": "centraleuropeisk sommartid", "BT": "bhutansk tid", "JDT": "japansk sommartid", "HAST": "Honolulu, normaltid", "HADT": "Honolulu, sommartid", "∅∅∅": "peruansk sommartid", "NZDT": "nyzeeländsk sommartid", "WART": "västargentinsk normaltid", "CAT": "centralafrikansk tid", "ChST": "Chamorrotid", "COT": "colombiansk normaltid", "MDT": "Macausommartid", "ADT": "nordamerikansk atlantsommartid", "OESZ": "östeuropeisk sommartid", "AST": "nordamerikansk atlantnormaltid", "AKST": "Alaska, normaltid", "SAST": "sydafrikansk tid", "WIB": "västindonesisk tid", "EST": "östnordamerikansk normaltid", "MYT": "malaysisk tid", "AWDT": "västaustralisk sommartid", "ART": "östargentinsk normaltid"},
 	}
 }
 
@@ -195,7 +195,8 @@ func (sv *sv_SE) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sv_SE' and handles both Whole and Real numbers based on 'v'
-func (sv *sv_SE) FmtNumber(num float64, v uint64) (results string) {
+func (sv *sv_SE) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(sv.decimal) + len(sv.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -205,20 +206,14 @@ func (sv *sv_SE) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(sv.decimal) - 1; j >= 0; j-- {
-				b = append(b, sv.decimal[j])
-			}
-
+			b = append(b, sv.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(sv.group) - 1; j >= 0; j-- {
-					b = append(b, sv.group[j])
-				}
-
+				b = append(b, sv.group[0])
 				count = 1
 			} else {
 				count++
@@ -239,13 +234,12 @@ func (sv *sv_SE) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'sv_SE' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (sv *sv_SE) FmtPercent(num float64, v uint64) (results string) {
+func (sv *sv_SE) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(sv.decimal)
 	b := make([]byte, 0, l)
@@ -253,10 +247,7 @@ func (sv *sv_SE) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(sv.decimal) - 1; j >= 0; j-- {
-				b = append(b, sv.decimal[j])
-			}
-
+			b = append(b, sv.decimal[0])
 			continue
 		}
 
@@ -278,12 +269,11 @@ func (sv *sv_SE) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, sv.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sv_SE'
-func (sv *sv_SE) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (sv *sv_SE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sv.currencies[currency]
@@ -295,20 +285,14 @@ func (sv *sv_SE) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(sv.decimal) - 1; j >= 0; j-- {
-				b = append(b, sv.decimal[j])
-			}
-
+			b = append(b, sv.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(sv.group) - 1; j >= 0; j-- {
-					b = append(b, sv.group[j])
-				}
-
+				b = append(b, sv.group[0])
 				count = 1
 			} else {
 				count++
@@ -344,13 +328,12 @@ func (sv *sv_SE) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sv_SE'
 // in accounting notation.
-func (sv *sv_SE) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (sv *sv_SE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sv.currencies[currency]
@@ -362,20 +345,14 @@ func (sv *sv_SE) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(sv.decimal) - 1; j >= 0; j-- {
-				b = append(b, sv.decimal[j])
-			}
-
+			b = append(b, sv.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(sv.group) - 1; j >= 0; j-- {
-					b = append(b, sv.group[j])
-				}
-
+				b = append(b, sv.group[0])
 				count = 1
 			} else {
 				count++
@@ -418,8 +395,7 @@ func (sv *sv_SE) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'sv_SE'

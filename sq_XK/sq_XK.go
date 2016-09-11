@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.e.r.", "e.r."},
 		erasNarrow:             []string{"p.e.r.", "e.r."},
 		erasWide:               []string{"para erës së re", "erës së re"},
-		timezones:              map[string]string{"WITA": "Ora e Indonezisë Qendrore", "HNT": "Ora standarde e Njufaundlendit [Tokës së Re]", "AWST": "Ora standarde e Australisë Perëndimore", "PST": "Ora standarde amerikane e Bregut të Paqësorit", "OESZ": "Ora verore e Europës Lindore", "WARST": "Ora verore e Argjentinës Perëndimore", "SGT": "Ora e Singaporit", "EAT": "Ora e Afrikës Lindore", "COST": "Ora verore e Kolumbisë", "WIT": "Ora e Indonezisë Lindore", "AST": "Ora standarde e Atlantikut", "ADT": "Ora verore e Atlantikut", "MEZ": "Ora standarde e Europës Qendrore", "AKDT": "Ora verore e Alsaskës", "TMST": "Ora verore e Turkmenistanit", "ChST": "Ora e Kamorros", "CHAST": "Ora standarde e Katamit", "BOT": "Ora e Bolivisë", "TMT": "Ora standarde e Turkmenistanit", "PDT": "Ora verore amerikane e Bregut të Paqësorit", "AEST": "Ora standarde e Australisë Lindore", "JDT": "Ora verore e Japonisë", "MYT": "Ora e Malajzisë", "AKST": "Ora standarde e Alaskës", "HAT": "Ora verore e Njufaundlendit [Tokës së Re]", "UYST": "Ora verore e Uruguait", "NZST": "Ora standarde e Zelandës së Re", "VET": "Ora e Venezuelës", "HADT": "Ora verore e Ishujve Hauai-Aleutian", "WEZ": "Ora standarde e Europës Perëndimore", "AWDT": "Ora verore e Australisë Perëndimore", "CAT": "Ora e Afrikës Qendrore", "CLST": "Ora verore e Kilit", "ARST": "Ora verore e Argjentinës", "BT": "Ora e Butanit", "ACWST": "Ora standarde e Australisë Qendroro-Perëndimore", "LHST": "Ora standarde e Lord-Houit", "LHDT": "Ora verore e Lord-Houit", "HKT": "Ora standarde e Hong-Kongut", "WIB": "Ora e Indonezisë Perëndimore", "OEZ": "Ora standarde e Europës Lindore", "ACWDT": "Ora verore e Australisë Qendroro-Perëndimore", "SRT": "Ora e Surinamit", "SAST": "Ora standarde e Afrikës Jugore", "JST": "Ora standarde e Japonisë", "CST": "Ora standarde e SHBA-së Qendrore", "CDT": "Ora verore e SHBA-së Qendrore", "WESZ": "Ora verore e Europës Perëndimore", "WAT": "Ora standarde e Afrikës Perëndimore", "∅∅∅": "Ora verore e Azoreve", "EDT": "Ora verore e SHBA-së Lindore", "COT": "Ora standarde e Kolumbisë", "ART": "Ora standarde e Argjentinës", "HAST": "Ora standarde e Ishujve Hauai-Aleutian", "MDT": "Ora verore e Makaos", "WART": "Ora standarde e Argjentinës Perëndimore", "MESZ": "Ora verore e Europës Qendrore", "ECT": "Ora e Ekuadorit", "IST": "Ora standarde e Indisë", "EST": "Ora standarde e SHBA-së Lindore", "CLT": "Ora standarde e Kilit", "NZDT": "Ora verore e Zelandës së Re", "UYT": "Ora standarde e Uruguait", "GMT": "Ora e Meridianit të Grinuiçit", "WAST": "Ora verore e Afrikës Perëndimore", "ACST": "Ora standarde e Australisë Qendrore", "GFT": "Ora e Guajanës Franceze", "AEDT": "Ora verore e Australisë Lindore", "CHADT": "Ora verore e Katamit", "ACDT": "Ora verore e Australisë Qendrore", "HKST": "Ora verore e Hong-Kongut", "MST": "Ora standarde e Makaos", "GYT": "Ora e Guajanës"},
+		timezones:              map[string]string{"AEST": "Ora standarde e Australisë Lindore", "NZST": "Ora standarde e Zelandës së Re", "VET": "Ora e Venezuelës", "CAT": "Ora e Afrikës Qendrore", "HAST": "Ora standarde e Ishujve Hauai-Aleutian", "JDT": "Ora verore e Japonisë", "SAST": "Ora standarde e Afrikës Jugore", "MDT": "Ora verore amerikane e Brezit Malor", "UYST": "Ora verore e Uruguait", "WIT": "Ora e Indonezisë Lindore", "TMT": "Ora standarde e Turkmenistanit", "AKST": "Ora standarde e Alaskës", "COT": "Ora standarde e Kolumbisë", "WART": "Ora standarde e Argjentinës Perëndimore", "PST": "Ora standarde amerikane e Bregut të Paqësorit", "ART": "Ora standarde e Argjentinës", "GFT": "Ora e Guajanës Franceze", "CHADT": "Ora verore e Katamit", "GMT": "Ora e Meridianit të Grinuiçit", "OEZ": "Ora standarde e Europës Lindore", "ACDT": "Ora verore e Australisë Qendrore", "ARST": "Ora verore e Argjentinës", "TMST": "Ora verore e Turkmenistanit", "CST": "Ora standarde e SHBA-së Qendrore", "LHDT": "Ora verore e Lord-Houit", "ACWDT": "Ora verore e Australisë Qendroro-Perëndimore", "ACST": "Ora standarde e Australisë Qendrore", "NZDT": "Ora verore e Zelandës së Re", "WEZ": "Ora standarde e Europës Perëndimore", "WIB": "Ora e Indonezisë Perëndimore", "MST": "Ora standarde amerikane e Brezit Malor", "EST": "Ora standarde e SHBA-së Lindore", "ECT": "Ora e Ekuadorit", "LHST": "Ora standarde e Lord-Houit", "EAT": "Ora e Afrikës Lindore", "WAT": "Ora standarde e Afrikës Perëndimore", "CLT": "Ora standarde e Kilit", "CLST": "Ora verore e Kilit", "OESZ": "Ora verore e Europës Lindore", "SGT": "Ora e Singaporit", "PDT": "Ora verore amerikane e Bregut të Paqësorit", "AWST": "Ora standarde e Australisë Perëndimore", "AWDT": "Ora verore e Australisë Perëndimore", "BT": "Ora e Butanit", "WITA": "Ora e Indonezisë Qendrore", "BOT": "Ora e Bolivisë", "COST": "Ora verore e Kolumbisë", "WAST": "Ora verore e Afrikës Perëndimore", "ACWST": "Ora standarde e Australisë Qendroro-Perëndimore", "ADT": "Ora verore e Atlantikut", "WARST": "Ora verore e Argjentinës Perëndimore", "SRT": "Ora e Surinamit", "CDT": "Ora verore e SHBA-së Qendrore", "EDT": "Ora verore e SHBA-së Lindore", "ChST": "Ora e Kamorros", "MESZ": "Ora verore e Europës Qendrore", "∅∅∅": "Ora verore e Azoreve", "HKT": "Ora standarde e Hong-Kongut", "JST": "Ora standarde e Japonisë", "AST": "Ora standarde e Atlantikut", "HAT": "Ora verore e Njufaundlendit [Tokës së Re]", "UYT": "Ora standarde e Uruguait", "HADT": "Ora verore e Ishujve Hauai-Aleutian", "WESZ": "Ora verore e Europës Perëndimore", "MEZ": "Ora standarde e Europës Qendrore", "AEDT": "Ora verore e Australisë Lindore", "MYT": "Ora e Malajzisë", "HKST": "Ora verore e Hong-Kongut", "HNT": "Ora standarde e Njufaundlendit [Tokës së Re]", "AKDT": "Ora verore e Alsaskës", "CHAST": "Ora standarde e Katamit", "IST": "Ora standarde e Indisë", "GYT": "Ora e Guajanës"},
 	}
 }
 
@@ -212,7 +212,8 @@ func (sq *sq_XK) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sq_XK' and handles both Whole and Real numbers based on 'v'
-func (sq *sq_XK) FmtNumber(num float64, v uint64) (results string) {
+func (sq *sq_XK) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(sq.decimal) + len(sq.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -232,7 +233,6 @@ func (sq *sq_XK) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(sq.group) - 1; j >= 0; j-- {
 					b = append(b, sq.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -251,13 +251,12 @@ func (sq *sq_XK) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'sq_XK' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (sq *sq_XK) FmtPercent(num float64, v uint64) (results string) {
+func (sq *sq_XK) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(sq.decimal)
 	b := make([]byte, 0, l)
@@ -283,12 +282,11 @@ func (sq *sq_XK) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, sq.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sq_XK'
-func (sq *sq_XK) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (sq *sq_XK) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sq.currencies[currency]
@@ -310,7 +308,6 @@ func (sq *sq_XK) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(sq.group) - 1; j >= 0; j-- {
 					b = append(b, sq.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -344,13 +341,12 @@ func (sq *sq_XK) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'sq_XK'
 // in accounting notation.
-func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sq.currencies[currency]
@@ -372,7 +368,6 @@ func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(sq.group) - 1; j >= 0; j-- {
 					b = append(b, sq.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -413,8 +408,7 @@ func (sq *sq_XK) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'sq_XK'

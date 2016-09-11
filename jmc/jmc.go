@@ -59,7 +59,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"KK", "BK"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Kabla ya Kristu", "Baada ya Kristu"},
-		timezones:          map[string]string{"WARST": "WARST", "MDT": "MDT", "WESZ": "WESZ", "EST": "EST", "EDT": "EDT", "CLT": "CLT", "COT": "COT", "WIT": "WIT", "AKDT": "AKDT", "WEZ": "WEZ", "AEST": "AEST", "NZDT": "NZDT", "WIB": "WIB", "BOT": "BOT", "WART": "WART", "ACDT": "ACDT", "TMT": "TMT", "MST": "MST", "LHDT": "LHDT", "HKST": "HKST", "PDT": "PDT", "GMT": "GMT", "ARST": "ARST", "WAT": "WAT", "SAST": "SAST", "NZST": "NZST", "MEZ": "MEZ", "AKST": "AKST", "CST": "CST", "ChST": "ChST", "ECT": "ECT", "HADT": "HADT", "CLST": "CLST", "TMST": "TMST", "GFT": "GFT", "PST": "PST", "OEZ": "OEZ", "ART": "ART", "AST": "AST", "ACST": "ACST", "∅∅∅": "∅∅∅", "CDT": "CDT", "HAT": "HAT", "COST": "COST", "BT": "BT", "ACWST": "ACWST", "EAT": "EAT", "CAT": "CAT", "CHADT": "CHADT", "GYT": "GYT", "VET": "VET", "SGT": "SGT", "OESZ": "OESZ", "WAST": "WAST", "ADT": "ADT", "ACWDT": "ACWDT", "LHST": "LHST", "IST": "IST", "UYST": "UYST", "MESZ": "MESZ", "HKT": "HKT", "UYT": "UYT", "CHAST": "CHAST", "SRT": "SRT", "WITA": "WITA", "JST": "JST", "AWST": "AWST", "MYT": "MYT", "JDT": "JDT", "HAST": "HAST", "AWDT": "AWDT", "HNT": "HNT", "AEDT": "AEDT"},
+		timezones:          map[string]string{"SAST": "SAST", "AEDT": "AEDT", "IST": "IST", "BT": "BT", "CDT": "CDT", "ChST": "ChST", "EAT": "EAT", "EDT": "EDT", "GMT": "GMT", "SRT": "SRT", "AKST": "AKST", "CHADT": "CHADT", "CLT": "CLT", "JDT": "JDT", "ART": "ART", "TMST": "TMST", "EST": "EST", "ECT": "ECT", "AST": "AST", "GYT": "GYT", "WIT": "WIT", "TMT": "TMT", "∅∅∅": "∅∅∅", "MST": "MST", "WART": "WART", "AEST": "AEST", "HKST": "HKST", "ARST": "ARST", "NZST": "NZST", "WEZ": "WEZ", "WIB": "WIB", "MESZ": "MESZ", "AWST": "AWST", "CAT": "CAT", "HADT": "HADT", "WAT": "WAT", "MEZ": "MEZ", "CLST": "CLST", "JST": "JST", "AKDT": "AKDT", "COT": "COT", "ACDT": "ACDT", "ACWST": "ACWST", "HNT": "HNT", "HAT": "HAT", "MDT": "MDT", "MYT": "MYT", "PST": "PST", "UYST": "UYST", "WITA": "WITA", "WAST": "WAST", "CHAST": "CHAST", "OESZ": "OESZ", "ACST": "ACST", "WARST": "WARST", "UYT": "UYT", "CST": "CST", "COST": "COST", "LHDT": "LHDT", "WESZ": "WESZ", "HKT": "HKT", "GFT": "GFT", "VET": "VET", "SGT": "SGT", "HAST": "HAST", "LHST": "LHST", "NZDT": "NZDT", "ACWDT": "ACWDT", "OEZ": "OEZ", "ADT": "ADT", "PDT": "PDT", "AWDT": "AWDT", "BOT": "BOT"},
 	}
 }
 
@@ -176,20 +176,19 @@ func (jmc *jmc) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'jmc' and handles both Whole and Real numbers based on 'v'
-func (jmc *jmc) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (jmc *jmc) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'jmc' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (jmc *jmc) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (jmc *jmc) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'jmc'
-func (jmc *jmc) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (jmc *jmc) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := jmc.currencies[currency]
@@ -201,20 +200,14 @@ func (jmc *jmc) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(jmc.decimal) - 1; j >= 0; j-- {
-				b = append(b, jmc.decimal[j])
-			}
-
+			b = append(b, jmc.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(jmc.group) - 1; j >= 0; j-- {
-					b = append(b, jmc.group[j])
-				}
-
+				b = append(b, jmc.group[0])
 				count = 1
 			} else {
 				count++
@@ -229,9 +222,7 @@ func (jmc *jmc) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(jmc.minus) - 1; j >= 0; j-- {
-			b = append(b, jmc.minus[j])
-		}
+		b = append(b, jmc.minus[0])
 	}
 
 	// reverse
@@ -250,13 +241,12 @@ func (jmc *jmc) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'jmc'
 // in accounting notation.
-func (jmc *jmc) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (jmc *jmc) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := jmc.currencies[currency]
@@ -268,20 +258,14 @@ func (jmc *jmc) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(jmc.decimal) - 1; j >= 0; j-- {
-				b = append(b, jmc.decimal[j])
-			}
-
+			b = append(b, jmc.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(jmc.group) - 1; j >= 0; j-- {
-					b = append(b, jmc.group[j])
-				}
-
+				b = append(b, jmc.group[0])
 				count = 1
 			} else {
 				count++
@@ -297,9 +281,7 @@ func (jmc *jmc) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, symbol[j])
 		}
 
-		for j := len(jmc.minus) - 1; j >= 0; j-- {
-			b = append(b, jmc.minus[j])
-		}
+		b = append(b, jmc.minus[0])
 
 	} else {
 
@@ -325,8 +307,7 @@ func (jmc *jmc) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'jmc'

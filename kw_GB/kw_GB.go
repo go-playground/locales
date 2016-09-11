@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"RC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"WEZ": "WEZ", "CAT": "CAT", "PDT": "PDT", "COT": "COT", "GYT": "GYT", "HAST": "HAST", "MST": "MST", "OEZ": "OEZ", "MESZ": "MESZ", "ART": "ART", "AKDT": "AKDT", "OESZ": "OESZ", "COST": "COST", "BOT": "BOT", "ADT": "ADT", "LHDT": "LHDT", "AEST": "AEST", "ARST": "ARST", "SGT": "SGT", "EAT": "EAT", "CDT": "CDT", "CLT": "CLT", "UYT": "UYT", "WAST": "WAST", "AST": "AST", "HNT": "HNT", "HKST": "HKST", "TMST": "TMST", "ACWDT": "ACWDT", "NZDT": "NZDT", "WIB": "WIB", "MDT": "MDT", "TMT": "TMT", "HADT": "HADT", "HAT": "HAT", "HKT": "HKT", "GFT": "GFT", "ACWST": "ACWST", "EST": "EST", "EDT": "EDT", "GMT": "GMT", "CHADT": "CHADT", "WART": "WART", "SAST": "SAST", "MYT": "MYT", "JDT": "JDT", "ChST": "ChST", "CST": "CST", "WAT": "WAT", "WITA": "WITA", "VET": "VET", "IST": "IST", "WESZ": "WESZ", "AEDT": "AEDT", "NZST": "NZST", "PST": "PST", "BT": "BT", "SRT": "SRT", "ECT": "ECT", "LHST": "LHST", "AWDT": "AWDT", "UYST": "UYST", "MEZ": "MEZ", "ACST": "ACST", "∅∅∅": "∅∅∅", "AWST": "AWST", "CLST": "CLST", "WIT": "WIT", "JST": "JST", "AKST": "AKST", "CHAST": "CHAST", "ACDT": "ACDT", "WARST": "WARST"},
+		timezones:          map[string]string{"MYT": "MYT", "AKDT": "AKDT", "JDT": "JDT", "UYST": "UYST", "EST": "EST", "CLST": "CLST", "SRT": "SRT", "LHDT": "LHDT", "NZDT": "NZDT", "AST": "AST", "AWDT": "AWDT", "CDT": "CDT", "CHAST": "CHAST", "PST": "PST", "ADT": "ADT", "IST": "IST", "∅∅∅": "∅∅∅", "ARST": "ARST", "GFT": "GFT", "AKST": "AKST", "NZST": "NZST", "AEDT": "AEDT", "EAT": "EAT", "WITA": "WITA", "CST": "CST", "PDT": "PDT", "VET": "VET", "HKT": "HKT", "HADT": "HADT", "ACWST": "ACWST", "LHST": "LHST", "JST": "JST", "SGT": "SGT", "ECT": "ECT", "WAT": "WAT", "WESZ": "WESZ", "WARST": "WARST", "ChST": "ChST", "ACWDT": "ACWDT", "UYT": "UYT", "CAT": "CAT", "WIT": "WIT", "AEST": "AEST", "HNT": "HNT", "HAT": "HAT", "EDT": "EDT", "OESZ": "OESZ", "CLT": "CLT", "MESZ": "MESZ", "CHADT": "CHADT", "OEZ": "OEZ", "BOT": "BOT", "TMST": "TMST", "BT": "BT", "HAST": "HAST", "WIB": "WIB", "MEZ": "MEZ", "WART": "WART", "AWST": "AWST", "HKST": "HKST", "ACDT": "ACDT", "TMT": "TMT", "GMT": "GMT", "COT": "COT", "COST": "COST", "WAST": "WAST", "WEZ": "WEZ", "ART": "ART", "GYT": "GYT", "MST": "MST", "MDT": "MDT", "SAST": "SAST", "ACST": "ACST"},
 	}
 }
 
@@ -176,20 +176,19 @@ func (kw *kw_GB) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kw_GB' and handles both Whole and Real numbers based on 'v'
-func (kw *kw_GB) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (kw *kw_GB) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kw_GB' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kw *kw_GB) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (kw *kw_GB) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kw_GB'
-func (kw *kw_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kw *kw_GB) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kw.currencies[currency]
@@ -201,20 +200,14 @@ func (kw *kw_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kw.decimal) - 1; j >= 0; j-- {
-				b = append(b, kw.decimal[j])
-			}
-
+			b = append(b, kw.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(kw.group) - 1; j >= 0; j-- {
-					b = append(b, kw.group[j])
-				}
-
+				b = append(b, kw.group[0])
 				count = 1
 			} else {
 				count++
@@ -229,9 +222,7 @@ func (kw *kw_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(kw.minus) - 1; j >= 0; j-- {
-			b = append(b, kw.minus[j])
-		}
+		b = append(b, kw.minus[0])
 	}
 
 	// reverse
@@ -250,13 +241,12 @@ func (kw *kw_GB) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kw_GB'
 // in accounting notation.
-func (kw *kw_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kw *kw_GB) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kw.currencies[currency]
@@ -268,20 +258,14 @@ func (kw *kw_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kw.decimal) - 1; j >= 0; j-- {
-				b = append(b, kw.decimal[j])
-			}
-
+			b = append(b, kw.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(kw.group) - 1; j >= 0; j-- {
-					b = append(b, kw.group[j])
-				}
-
+				b = append(b, kw.group[0])
 				count = 1
 			} else {
 				count++
@@ -297,9 +281,7 @@ func (kw *kw_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			b = append(b, symbol[j])
 		}
 
-		for j := len(kw.minus) - 1; j >= 0; j-- {
-			b = append(b, kw.minus[j])
-		}
+		b = append(b, kw.minus[0])
 
 	} else {
 
@@ -325,8 +307,7 @@ func (kw *kw_GB) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kw_GB'

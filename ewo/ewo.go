@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"oyk", "ayk"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"osúsúa Yésus kiri", "ámvus Yésus Kirís"},
-		timezones:              map[string]string{"GMT": "GMT", "ACWDT": "ACWDT", "CDT": "CDT", "WESZ": "WESZ", "COT": "COT", "MYT": "MYT", "ART": "ART", "SRT": "SRT", "SAST": "SAST", "AWDT": "AWDT", "EAT": "EAT", "ADT": "ADT", "∅∅∅": "∅∅∅", "CLT": "CLT", "CLST": "CLST", "PDT": "PDT", "GFT": "GFT", "JDT": "JDT", "COST": "COST", "BT": "BT", "MST": "MST", "AEST": "AEST", "WARST": "WARST", "JST": "JST", "HKT": "HKT", "AEDT": "AEDT", "BOT": "BOT", "WITA": "WITA", "OESZ": "OESZ", "CHADT": "CHADT", "WAST": "WAST", "IST": "IST", "AWST": "AWST", "HKST": "HKST", "EDT": "EDT", "OEZ": "OEZ", "GYT": "GYT", "ARST": "ARST", "ACWST": "ACWST", "NZST": "NZST", "ACST": "ACST", "TMT": "TMT", "LHST": "LHST", "ACDT": "ACDT", "VET": "VET", "AKDT": "AKDT", "CST": "CST", "CAT": "CAT", "NZDT": "NZDT", "WIB": "WIB", "MEZ": "MEZ", "ECT": "ECT", "LHDT": "LHDT", "HADT": "HADT", "HNT": "HNT", "UYST": "UYST", "PST": "PST", "MESZ": "MESZ", "TMST": "TMST", "ChST": "ChST", "AKST": "AKST", "SGT": "SGT", "WEZ": "WEZ", "HAT": "HAT", "UYT": "UYT", "WART": "WART", "CHAST": "CHAST", "WAT": "WAT", "EST": "EST", "AST": "AST", "WIT": "WIT", "HAST": "HAST", "MDT": "MDT"},
+		timezones:              map[string]string{"MYT": "MYT", "PST": "PST", "BOT": "BOT", "COST": "COST", "WESZ": "WESZ", "CLT": "CLT", "AEST": "AEST", "HAT": "HAT", "AKDT": "AKDT", "NZDT": "NZDT", "JDT": "JDT", "MEZ": "MEZ", "CLST": "CLST", "MST": "MST", "ACWDT": "ACWDT", "OESZ": "OESZ", "IST": "IST", "HKST": "HKST", "WAST": "WAST", "CAT": "CAT", "HKT": "HKT", "TMT": "TMT", "HADT": "HADT", "SAST": "SAST", "AWDT": "AWDT", "WAT": "WAT", "WIB": "WIB", "CDT": "CDT", "∅∅∅": "∅∅∅", "AST": "AST", "BT": "BT", "ECT": "ECT", "OEZ": "OEZ", "GYT": "GYT", "WIT": "WIT", "TMST": "TMST", "HNT": "HNT", "PDT": "PDT", "SRT": "SRT", "ChST": "ChST", "MDT": "MDT", "LHST": "LHST", "EAT": "EAT", "ACDT": "ACDT", "UYT": "UYT", "EST": "EST", "COT": "COT", "NZST": "NZST", "ACST": "ACST", "HAST": "HAST", "GMT": "GMT", "ACWST": "ACWST", "GFT": "GFT", "EDT": "EDT", "LHDT": "LHDT", "JST": "JST", "MESZ": "MESZ", "UYST": "UYST", "ARST": "ARST", "CST": "CST", "CHAST": "CHAST", "SGT": "SGT", "AWST": "AWST", "WITA": "WITA", "CHADT": "CHADT", "WART": "WART", "WARST": "WARST", "ART": "ART", "AKST": "AKST", "WEZ": "WEZ", "VET": "VET", "ADT": "ADT", "AEDT": "AEDT"},
 	}
 }
 
@@ -175,7 +175,8 @@ func (ewo *ewo) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ewo' and handles both Whole and Real numbers based on 'v'
-func (ewo *ewo) FmtNumber(num float64, v uint64) (results string) {
+func (ewo *ewo) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ewo.decimal) + len(ewo.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -195,7 +196,6 @@ func (ewo *ewo) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(ewo.group) - 1; j >= 0; j-- {
 					b = append(b, ewo.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -206,9 +206,7 @@ func (ewo *ewo) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(ewo.minus) - 1; j >= 0; j-- {
-			b = append(b, ewo.minus[j])
-		}
+		b = append(b, ewo.minus[0])
 	}
 
 	// reverse
@@ -216,13 +214,12 @@ func (ewo *ewo) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ewo' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ewo *ewo) FmtPercent(num float64, v uint64) (results string) {
+func (ewo *ewo) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ewo.decimal)
 	b := make([]byte, 0, l)
@@ -238,9 +235,7 @@ func (ewo *ewo) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(ewo.minus) - 1; j >= 0; j-- {
-			b = append(b, ewo.minus[j])
-		}
+		b = append(b, ewo.minus[0])
 	}
 
 	// reverse
@@ -250,12 +245,11 @@ func (ewo *ewo) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ewo.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ewo'
-func (ewo *ewo) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ewo *ewo) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ewo.currencies[currency]
@@ -277,7 +271,6 @@ func (ewo *ewo) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 				for j := len(ewo.group) - 1; j >= 0; j-- {
 					b = append(b, ewo.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -288,9 +281,7 @@ func (ewo *ewo) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(ewo.minus) - 1; j >= 0; j-- {
-			b = append(b, ewo.minus[j])
-		}
+		b = append(b, ewo.minus[0])
 	}
 
 	// reverse
@@ -313,13 +304,12 @@ func (ewo *ewo) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ewo'
 // in accounting notation.
-func (ewo *ewo) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ewo *ewo) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ewo.currencies[currency]
@@ -341,7 +331,6 @@ func (ewo *ewo) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 				for j := len(ewo.group) - 1; j >= 0; j-- {
 					b = append(b, ewo.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -353,9 +342,7 @@ func (ewo *ewo) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 
 	if num < 0 {
 
-		for j := len(ewo.minus) - 1; j >= 0; j-- {
-			b = append(b, ewo.minus[j])
-		}
+		b = append(b, ewo.minus[0])
 
 	}
 
@@ -384,8 +371,7 @@ func (ewo *ewo) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ewo'

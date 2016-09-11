@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "uz_Cyrl",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{2, 6},
+		pluralsRange:           []locales.PluralRule{6, 2},
 		decimal:                "٫",
 		group:                  "٬",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"М.А.", "Э"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"MST": "Шимолий Америка тоғ стандарт вақти", "JDT": "Япония кундузги вақти", "EAT": "Шарқий Африка вақти", "HKT": "Гонконг стандарт вақти", "AEST": "Шарқий Австралия стандарт вақти", "AST": "Атлантика стандарт вақти", "SAST": "Жанубий Африка вақти", "HAST": "Гавайи-алеут стандарт вақти", "HADT": "Гавайи-алеут кундузги вақти", "CHADT": "Чатхам кундузги вақти", "VET": "Венесуэла вақти", "ECT": "Эквадор вақти", "CST": "Шимолий Америка марказий стандарт вақти", "CLT": "Чили стандарт вақти", "UYT": "Уругвай стандарт вақти", "PST": "Шимолий Америка тинч океани стандарт вақти", "WITA": "Марказий Индонезия вақти", "ACDT": "Марказий Австралия кундузги вақти", "BT": "Бутан вақти", "TMT": "Туркманистон стандарт вақти", "TMST": "Туркманистон ёзги вақти", "ChST": "Каморро вақти", "IST": "Ҳиндистон вақти", "SGT": "Сингапур вақти", "HKST": "Гонконг ёзги вақти", "OESZ": "Шарқий Европа ёзги вақти", "SRT": "Суринам вақти", "ACWST": "Марказий Австралия Ғарбий стандарт вақти", "NZDT": "Янги Зеландия кундузги вақти", "BOT": "Боливия вақти", "CDT": "Шимолий Америка марказий кундузги вақти", "AEDT": "Шарқий Австралия кундузги вақти", "ART": "Аргентина стандарт вақти", "COST": "Колумбия ёзги вақти", "ACWDT": "Марказий Австралия Ғарбий кундузги вақти", "LHDT": "Лорд Хове кундузги вақти", "AKST": "Аляска стандарт вақти", "WEZ": "Ғарбий Европа стандарт вақти", "HNT": "Ньюфаундленд стандарт вақти", "OEZ": "Шарқий Европа стандарт вақти", "WIB": "Ғарбий Индонезия вақти", "ADT": "Атлантика кундузги вақти", "ARST": "Аргентина ёзги вақти", "MDT": "Шимолий Америка тоғ кундузги вақти", "LHST": "Лорд Хове стандарт вақти", "WIT": "Шарқий Индонезия вақти", "HAT": "Ньюфаундленд кундузги вақти", "WART": "Ғарбий Аргентина стандарт вақти", "JST": "Япония стандарт вақти", "WAT": "Ғарбий Африка стандарт вақти", "MEZ": "Марказий Европа стандарт вақти", "GYT": "Гайана вақти", "CLST": "Чили ёзги вақти", "AKDT": "Аляска кундузги вақти", "AWST": "Ғарбий Австралия стандарт вақти", "EST": "Шимолий Америка шарқий стандарт вақти", "UYST": "Уругвай ёзги вақти", "CHAST": "Чатхам стандарт вақти", "WARST": "Ғарбий Аргентина ёзги вақти", "WESZ": "Ғарбий Европа ёзги вақти", "CAT": "Марказий Африка вақти", "PDT": "Шимолий Америка тинч океани кундузги вақти", "COT": "Колумбия стандарт вақти", "WAST": "Ғарбий Африка ёзги вақти", "MYT": "Малайзия вақти", "∅∅∅": "Азор ёзги вақти", "AWDT": "Ғарбий Австралия кундузги вақти", "ACST": "Марказий Австралия стандарт вақти", "GFT": "Француз Гвианаси вақти", "EDT": "Шимолий Америка шарқий кундузги вақти", "GMT": "Гринвич вақти", "NZST": "Янги Зеландия стандарт вақти", "MESZ": "Марказий Европа ёзги вақти"},
+		timezones:              map[string]string{"ART": "Аргентина стандарт вақти", "MYT": "Малайзия вақти", "∅∅∅": "Амазонка ёзги вақти", "TMT": "Туркманистон стандарт вақти", "HADT": "Гавайи-алеут кундузги вақти", "WAT": "Ғарбий Африка стандарт вақти", "ACWDT": "Марказий Австралия Ғарбий кундузги вақти", "MESZ": "Марказий Европа ёзги вақти", "WARST": "Ғарбий Аргентина ёзги вақти", "TMST": "Туркманистон ёзги вақти", "AKST": "Аляска стандарт вақти", "WEZ": "Ғарбий Европа стандарт вақти", "OESZ": "Шарқий Европа ёзги вақти", "IST": "Ҳиндистон вақти", "HNT": "Ньюфаундленд стандарт вақти", "CDT": "Шимолий Америка марказий кундузги вақти", "ACDT": "Марказий Австралия кундузги вақти", "WART": "Ғарбий Аргентина стандарт вақти", "PST": "Шимолий Америка тинч океани стандарт вақти", "LHDT": "Лорд Хове кундузги вақти", "WAST": "Ғарбий Африка ёзги вақти", "JDT": "Япония кундузги вақти", "SGT": "Сингапур вақти", "HAT": "Ньюфаундленд кундузги вақти", "GYT": "Гайана вақти", "WITA": "Марказий Индонезия вақти", "AKDT": "Аляска кундузги вақти", "LHST": "Лорд Хове стандарт вақти", "MDT": "MDT", "WESZ": "Ғарбий Европа ёзги вақти", "VET": "Венесуэла вақти", "AWDT": "Ғарбий Австралия кундузги вақти", "CST": "Шимолий Америка марказий стандарт вақти", "COST": "Колумбия ёзги вақти", "NZST": "Янги Зеландия стандарт вақти", "SAST": "Жанубий Африка вақти", "ACWST": "Марказий Австралия Ғарбий стандарт вақти", "MEZ": "Марказий Европа стандарт вақти", "WIT": "Шарқий Индонезия вақти", "ChST": "Каморро вақти", "CLST": "Чили ёзги вақти", "UYST": "Уругвай ёзги вақти", "AEST": "Шарқий Австралия стандарт вақти", "AWST": "Ғарбий Австралия стандарт вақти", "EDT": "Шимолий Америка шарқий кундузги вақти", "MST": "MST", "AEDT": "Шарқий Австралия кундузги вақти", "HKST": "Гонконг ёзги вақти", "GMT": "Гринвич вақти", "NZDT": "Янги Зеландия кундузги вақти", "CHAST": "Чатхам стандарт вақти", "ACST": "Марказий Австралия стандарт вақти", "SRT": "Суринам вақти", "COT": "Колумбия стандарт вақти", "AST": "Атлантика стандарт вақти", "GFT": "Француз Гвианаси вақти", "ADT": "Атлантика кундузги вақти", "PDT": "Шимолий Америка тинч океани кундузги вақти", "BOT": "Боливия вақти", "CAT": "Марказий Африка вақти", "HKT": "Гонконг стандарт вақти", "ARST": "Аргентина ёзги вақти", "EST": "Шимолий Америка шарқий стандарт вақти", "EAT": "Шарқий Африка вақти", "OEZ": "Шарқий Европа стандарт вақти", "CLT": "Чили стандарт вақти", "JST": "Япония стандарт вақти", "BT": "Бутан вақти", "HAST": "Гавайи-алеут стандарт вақти", "ECT": "Эквадор вақти", "CHADT": "Чатхам кундузги вақти", "WIB": "Ғарбий Индонезия вақти", "UYT": "Уругвай стандарт вақти"},
 	}
 }
 
@@ -199,7 +199,8 @@ func (uz *uz_Cyrl) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'uz_Cyrl' and handles both Whole and Real numbers based on 'v'
-func (uz *uz_Cyrl) FmtNumber(num float64, v uint64) (results string) {
+func (uz *uz_Cyrl) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(uz.decimal) + len(uz.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -212,7 +213,6 @@ func (uz *uz_Cyrl) FmtNumber(num float64, v uint64) (results string) {
 			for j := len(uz.decimal) - 1; j >= 0; j-- {
 				b = append(b, uz.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -222,7 +222,6 @@ func (uz *uz_Cyrl) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(uz.group) - 1; j >= 0; j-- {
 					b = append(b, uz.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -241,13 +240,12 @@ func (uz *uz_Cyrl) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'uz_Cyrl' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (uz *uz_Cyrl) FmtPercent(num float64, v uint64) (results string) {
+func (uz *uz_Cyrl) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(uz.decimal)
 	b := make([]byte, 0, l)
@@ -258,7 +256,6 @@ func (uz *uz_Cyrl) FmtPercent(num float64, v uint64) (results string) {
 			for j := len(uz.decimal) - 1; j >= 0; j-- {
 				b = append(b, uz.decimal[j])
 			}
-
 			continue
 		}
 
@@ -276,12 +273,11 @@ func (uz *uz_Cyrl) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, uz.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'uz_Cyrl'
-func (uz *uz_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (uz *uz_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := uz.currencies[currency]
@@ -296,7 +292,6 @@ func (uz *uz_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 			for j := len(uz.decimal) - 1; j >= 0; j-- {
 				b = append(b, uz.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -306,7 +301,6 @@ func (uz *uz_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 				for j := len(uz.group) - 1; j >= 0; j-- {
 					b = append(b, uz.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -344,13 +338,12 @@ func (uz *uz_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'uz_Cyrl'
 // in accounting notation.
-func (uz *uz_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (uz *uz_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := uz.currencies[currency]
@@ -365,7 +358,6 @@ func (uz *uz_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) 
 			for j := len(uz.decimal) - 1; j >= 0; j-- {
 				b = append(b, uz.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -375,7 +367,6 @@ func (uz *uz_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) 
 				for j := len(uz.group) - 1; j >= 0; j-- {
 					b = append(b, uz.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -425,8 +416,7 @@ func (uz *uz_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'uz_Cyrl'

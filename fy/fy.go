@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "n.Kr."},
 		erasNarrow:             []string{"f.K.", "n.K."},
 		erasWide:               []string{"Foar Kristus", "nei Kristus"},
-		timezones:              map[string]string{"NZST": "Nij-Seelânske standerttiid", "ART": "Argentynske standerttiid", "MEZ": "Midden-Europeeske standerttiid", "LHST": "Lord Howe-eilânske standerttiid", "HKT": "Hongkongse standerttiid", "PDT": "Pasifik-simmertiid", "OESZ": "East-Europeeske simmertiid", "AEDT": "East-Australyske simmertiid", "CHADT": "Chatham simmertiid", "∅∅∅": "Brazyljaanske simmertiid", "AWST": "West-Australyske standerttiid", "EDT": "Eastern-simmertiid", "OEZ": "East-Europeeske standerttiid", "SRT": "Surinaamske tiid", "TMST": "Turkmeense simmertiid", "ECT": "Ecuadoraanske tiid", "HAST": "Hawaii-Aleoetyske standerttiid", "HKST": "Hongkongse simmertiid", "CLT": "Sileenske standerttiid", "WART": "West-Argentynske standerttiid", "ACWDT": "Midden-Australyske westelijke simmertiid", "VET": "Fenezolaanske tiid", "LHDT": "Lord Howe-eilânske simmertiid", "JST": "Japanske standerttiid", "PST": "Pasifik-standerttiid", "COT": "Kolombiaanske standerttiid", "ARST": "Argentynske simmertiid", "AKST": "Alaska-standerttiid", "AKDT": "Alaska-simmertiid", "MDT": "Macause simmertiid", "HAT": "Newfoundlânske-simmertiid", "BOT": "Boliviaanske tiid", "SAST": "Sûd-Afrikaanske tiid", "GFT": "Frâns-Guyaanske tiid", "WAST": "West-Afrikaanske simmertiid", "TMT": "Turkmeense standerttiid", "EAT": "East-Afrikaanske tiid", "EST": "Eastern-standerttiid", "COST": "Kolombiaanske simmertiid", "ACST": "Midden-Australyske standerttiid", "ACDT": "Midden-Australyske simmertiid", "CST": "Central-standerttiid", "CLST": "Sileenske simmertiid", "MESZ": "Midden-Europeeske simmertiid", "MYT": "Maleisyske tiid", "WESZ": "West-Europeeske simmertiid", "AWDT": "West-Australyske simmertiid", "HNT": "Newfoundlânske-standerttiid", "GMT": "Greenwich Mean Time", "NZDT": "Nij-Seelânske simmertiid", "WARST": "West-Argentynske simmertiid", "BT": "Bhutaanske tiid", "UYT": "Uruguayaanske standerttiid", "UYST": "Uruguayaanske simmertiid", "AEST": "East-Australyske standerttiid", "ChST": "Chamorro-tiid", "MST": "Macause standerttiid", "WIB": "West-Yndonezyske tiid", "ADT": "Atlantic-simmertiid", "GYT": "Guyaanske tiid", "ACWST": "Midden-Australyske westelijke standerttiid", "HADT": "Hawaii-Aleoetyske simmertiid", "CDT": "Central-simmertiid", "WEZ": "West-Europeeske standerttiid", "JDT": "Japanske simmertiid", "IST": "Yndiaaske tiid", "SGT": "Singaporese standerttiid", "CAT": "Sintraal-Afrikaanske tiid", "CHAST": "Chatham standerttiid", "WAT": "West-Afrikaanske standerttiid", "AST": "Atlantic-standerttiid", "WITA": "Sintraal-Yndonezyske tiid", "WIT": "East-Yndonezyske tiid"},
+		timezones:              map[string]string{"AKDT": "Alaska-simmertiid", "NZDT": "Nij-Seelânske simmertiid", "ACWDT": "Midden-Australyske westelijke simmertiid", "SGT": "Singaporese standerttiid", "GYT": "Guyaanske tiid", "CAT": "Sintraal-Afrikaanske tiid", "UYT": "Uruguayaanske standerttiid", "WIT": "East-Yndonezyske tiid", "TMST": "Turkmeense simmertiid", "EDT": "Eastern-simmertiid", "ACWST": "Midden-Australyske westelijke standerttiid", "NZST": "Nij-Seelânske standerttiid", "MEZ": "Midden-Europeeske standerttiid", "CLT": "Sileenske standerttiid", "IST": "Yndiaaske tiid", "HNT": "Newfoundlânske-standerttiid", "WAT": "West-Afrikaanske standerttiid", "CHADT": "Chatham simmertiid", "JDT": "Japanske simmertiid", "WITA": "Sintraal-Yndonezyske tiid", "CST": "Central-standerttiid", "EST": "Eastern-standerttiid", "HAT": "Newfoundlânske-simmertiid", "HKT": "Hongkongse standerttiid", "HKST": "Hongkongse simmertiid", "CDT": "Central-simmertiid", "HADT": "Hawaii-Aleoetyske simmertiid", "ECT": "Ecuadoraanske tiid", "WAST": "West-Afrikaanske simmertiid", "WART": "West-Argentynske standerttiid", "WARST": "West-Argentynske simmertiid", "PST": "Pasifik-standerttiid", "UYST": "Uruguayaanske simmertiid", "TMT": "Turkmeense standerttiid", "WESZ": "West-Europeeske simmertiid", "WIB": "West-Yndonezyske tiid", "AST": "Atlantic-standerttiid", "VET": "Fenezolaanske tiid", "AEST": "East-Australyske standerttiid", "AWST": "West-Australyske standerttiid", "GMT": "Greenwich Mean Time", "MYT": "Maleisyske tiid", "AKST": "Alaska-standerttiid", "SAST": "Sûd-Afrikaanske tiid", "OESZ": "East-Europeeske simmertiid", "BT": "Bhutaanske tiid", "GFT": "Frâns-Guyaanske tiid", "COST": "Kolombiaanske simmertiid", "MESZ": "Midden-Europeeske simmertiid", "AEDT": "East-Australyske simmertiid", "ARST": "Argentynske simmertiid", "ChST": "Chamorro-tiid", "COT": "Kolombiaanske standerttiid", "MST": "Macause standerttiid", "MDT": "Macause simmertiid", "CHAST": "Chatham standerttiid", "ACST": "Midden-Australyske standerttiid", "AWDT": "West-Australyske simmertiid", "ART": "Argentynske standerttiid", "CLST": "Sileenske simmertiid", "ADT": "Atlantic-simmertiid", "LHST": "Lord Howe-eilânske standerttiid", "LHDT": "Lord Howe-eilânske simmertiid", "EAT": "East-Afrikaanske tiid", "JST": "Japanske standerttiid", "ACDT": "Midden-Australyske simmertiid", "HAST": "Hawaii-Aleoetyske standerttiid", "∅∅∅": "Amazone-simmertiid", "WEZ": "West-Europeeske standerttiid", "OEZ": "East-Europeeske standerttiid", "PDT": "Pasifik-simmertiid", "BOT": "Boliviaanske tiid", "SRT": "Surinaamske tiid"},
 	}
 }
 
@@ -191,7 +191,8 @@ func (fy *fy) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fy' and handles both Whole and Real numbers based on 'v'
-func (fy *fy) FmtNumber(num float64, v uint64) (results string) {
+func (fy *fy) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fy.decimal) + len(fy.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -227,13 +228,12 @@ func (fy *fy) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'fy' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (fy *fy) FmtPercent(num float64, v uint64) (results string) {
+func (fy *fy) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fy.decimal)
 	b := make([]byte, 0, l)
@@ -259,12 +259,11 @@ func (fy *fy) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, fy.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fy'
-func (fy *fy) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (fy *fy) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fy.currencies[currency]
@@ -321,13 +320,12 @@ func (fy *fy) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fy'
 // in accounting notation.
-func (fy *fy) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (fy *fy) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fy.currencies[currency]
@@ -398,8 +396,7 @@ func (fy *fy) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, fy.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'fy'

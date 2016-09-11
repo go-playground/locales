@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v.C.", "n.C."},
 		erasNarrow:             []string{"v.C.", "n.C."},
 		erasWide:               []string{"voor Christus", "na Christus"},
-		timezones:              map[string]string{"OEZ": "Oos-Europese standaardtyd", "LHST": "Lord Howe-standaardtyd", "WIT": "Oos-Indonesië-tyd", "UYST": "Uruguay-somertyd", "AEST": "Australiese Oostelike standaardtyd", "ACDT": "Australiese sentrale dagligtyd", "HADT": "Hawaii-Aleusiër-dagligtyd", "PST": "Pasifiese standaardtyd", "ACWDT": "Australiese sentraal-Westelike dagligtyd", "AWDT": "Australiese Westelike dagligtyd", "CAT": "Sentraal-Afrika-tyd", "GMT": "Greenwich-mediaantyd", "GYT": "Guyana-tyd", "MDT": "Berg-dagligtyd", "CST": "Sentrale standaardtyd", "AWST": "Australiese Westelike standaardtyd", "WART": "Wes-Argentinië-standaardtyd", "MESZ": "Sentraal-Europese somertyd", "AKDT": "Alaska-dagligtyd", "SGT": "Singapoer-standaardtyd", "EST": "Oostelike standaardtyd", "CHAST": "Chatham-standaardtyd", "VET": "Venezuela-tyd", "LHDT": "Lord Howe-dagligtyd", "WAST": "Wes-Afrika-somertyd", "ACWST": "Australiese sentraal-Westelike standaard-tyd", "ECT": "Ecuador-tyd", "WESZ": "Wes-Europese somertyd", "MEZ": "Sentraal-Europese standaardtyd", "SRT": "Suriname-tyd", "GFT": "Frans-Guiana-tyd", "IST": "Indië-standaardtyd", "CLST": "Chili-somertyd", "NZST": "Nieu-Seeland-standaardtyd", "COT": "Colombië-standaardtyd", "TMT": "Turkmenistan-standaardtyd", "HKST": "Hongkong-somertyd", "WIB": "Wes-Indonesië-tyd", "AEDT": "Australiese Oostelike dagligtyd", "CHADT": "Chatham-dagligtyd", "WARST": "Wes-Argentinië-somertyd", "COST": "Colombië-somertyd", "WAT": "Wes-Afrika-standaardtyd", "SAST": "Suid-Afrika-standaardtyd", "MST": "Berg-standaardtyd", "AKST": "Alaska-standaardtyd", "CLT": "Chili-standaardtyd", "PDT": "Pasifiese dagligtyd", "NZDT": "Nieu-Seeland-dagligtyd", "BOT": "Bolivia-tyd", "BT": "Bhoetan-tyd", "WITA": "Sentraal Indonesië-tyd", "EAT": "Oos-Afrika-tyd", "OESZ": "Oos-Europese somertyd", "ART": "Argentinië-standaardtyd", "ADT": "Atlantiese dagligtyd", "MYT": "Maleisië-tyd", "HKT": "Hongkong-standaardtyd", "ACST": "Australiese sentraal-standaardtyd", "TMST": "Turkmenistan-somertyd", "HNT": "Newfoundland-standaardtyd", "EDT": "Oostelike dagligtyd", "AST": "Atlantiese standaardtyd", "ChST": "Chamorro-standaardtyd", "HAT": "Newfoundland-dagligtyd", "WEZ": "Wes-Europese standaardtyd", "CDT": "Sentrale dagligtyd", "UYT": "Uruguay-standaardtyd", "ARST": "Argentinië-somertyd", "JST": "Japan-standaardtyd", "JDT": "Japan-dagligtyd", "∅∅∅": "Asore-somertyd", "HAST": "Hawaii-Aleusiër-standaardtyd"},
+		timezones:              map[string]string{"SRT": "Suriname-tyd", "WAST": "Wes-Afrika-somertyd", "BOT": "Bolivia-tyd", "UYT": "Uruguay-standaardtyd", "ECT": "Ecuador-tyd", "AWST": "Australiese Westelike standaardtyd", "CAT": "Sentraal-Afrika-tyd", "GFT": "Frans-Guiana-tyd", "CDT": "Sentrale dagligtyd", "ACWDT": "Australiese sentraal-Westelike dagligtyd", "CHAST": "Chatham-standaardtyd", "WIB": "Wes-Indonesië-tyd", "AEST": "Australiese Oostelike standaardtyd", "AKDT": "Alaska-dagligtyd", "BT": "Bhoetan-tyd", "UYST": "Uruguay-somertyd", "CST": "Sentrale standaardtyd", "AST": "Atlantiese standaardtyd", "PST": "Pasifiese standaardtyd", "AWDT": "Australiese Westelike dagligtyd", "HNT": "Newfoundland-standaardtyd", "WESZ": "Wes-Europese somertyd", "CHADT": "Chatham-dagligtyd", "CLST": "Chili-somertyd", "TMST": "Turkmenistan-somertyd", "WITA": "Sentraal Indonesië-tyd", "HADT": "Hawaii-Aleusiër-dagligtyd", "MEZ": "Sentraal-Europese standaardtyd", "ADT": "Atlantiese dagligtyd", "ACST": "Australiese sentraal-standaardtyd", "ACDT": "Australiese sentrale dagligtyd", "LHDT": "Lord Howe-dagligtyd", "NZDT": "Nieu-Seeland-dagligtyd", "VET": "Venezuela-tyd", "ARST": "Argentinië-somertyd", "PDT": "Pasifiese dagligtyd", "ChST": "Chamorro-standaardtyd", "HAST": "Hawaii-Aleusiër-standaardtyd", "MST": "MST", "OEZ": "Oos-Europese standaardtyd", "MYT": "Maleisië-tyd", "IST": "Indië-standaardtyd", "WAT": "Wes-Afrika-standaardtyd", "CLT": "Chili-standaardtyd", "JDT": "Japan-dagligtyd", "∅∅∅": "Asore-somertyd", "GMT": "Greenwich-mediaantyd", "MDT": "MDT", "JST": "Japan-standaardtyd", "WART": "Wes-Argentinië-standaardtyd", "ART": "Argentinië-standaardtyd", "WIT": "Oos-Indonesië-tyd", "HKT": "Hongkong-standaardtyd", "HKST": "Hongkong-somertyd", "TMT": "Turkmenistan-standaardtyd", "WEZ": "Wes-Europese standaardtyd", "MESZ": "Sentraal-Europese somertyd", "OESZ": "Oos-Europese somertyd", "WARST": "Wes-Argentinië-somertyd", "AEDT": "Australiese Oostelike dagligtyd", "GYT": "Guyana-tyd", "AKST": "Alaska-standaardtyd", "EDT": "Oostelike dagligtyd", "COT": "Colombië-standaardtyd", "LHST": "Lord Howe-standaardtyd", "NZST": "Nieu-Seeland-standaardtyd", "EAT": "Oos-Afrika-tyd", "SAST": "Suid-Afrika-standaardtyd", "ACWST": "Australiese sentraal-Westelike standaard-tyd", "SGT": "Singapoer-standaardtyd", "HAT": "Newfoundland-dagligtyd", "EST": "Oostelike standaardtyd", "COST": "Colombië-somertyd"},
 	}
 }
 
@@ -188,7 +188,8 @@ func (af *af) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'af' and handles both Whole and Real numbers based on 'v'
-func (af *af) FmtNumber(num float64, v uint64) (results string) {
+func (af *af) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(af.decimal) + len(af.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -208,7 +209,6 @@ func (af *af) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(af.group) - 1; j >= 0; j-- {
 					b = append(b, af.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -227,13 +227,12 @@ func (af *af) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'af' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (af *af) FmtPercent(num float64, v uint64) (results string) {
+func (af *af) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(af.decimal)
 	b := make([]byte, 0, l)
@@ -259,12 +258,11 @@ func (af *af) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, af.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'af'
-func (af *af) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (af *af) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
@@ -286,7 +284,6 @@ func (af *af) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 				for j := len(af.group) - 1; j >= 0; j-- {
 					b = append(b, af.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -320,13 +317,12 @@ func (af *af) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'af'
 // in accounting notation.
-func (af *af) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (af *af) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
@@ -348,7 +344,6 @@ func (af *af) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 				for j := len(af.group) - 1; j >= 0; j-- {
 					b = append(b, af.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -394,8 +389,7 @@ func (af *af) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, af.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'af'

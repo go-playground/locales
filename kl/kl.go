@@ -18,7 +18,7 @@ type kl struct {
 	group              string
 	minus              string
 	percent            string
-	percentSuffix      []byte
+	percentSuffix      string
 	perMille           string
 	timeSeparator      string
 	inifinity          string
@@ -55,7 +55,7 @@ func New() locales.Translator {
 		timeSeparator:      ":",
 		inifinity:          "∞",
 		currencies:         []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "kr.", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "€", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "Nkr", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "Skr", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:      []byte{0xc2, 0xa0},
+		percentSuffix:      " ",
 		monthsAbbreviated:  []string{"", "jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"},
 		monthsNarrow:       []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
 		monthsWide:         []string{"", "januari", "februari", "martsi", "aprili", "maji", "juni", "juli", "augustusi", "septemberi", "oktoberi", "novemberi", "decemberi"},
@@ -68,7 +68,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"Kr.in.si.", "Kr.in.king."},
 		erasNarrow:         []string{"Kr.s.", "Kr.k."},
 		erasWide:           []string{"Kristusip inunngornerata siornagut", "Kristusip inunngornerata kingornagut"},
-		timezones:          map[string]string{"COST": "COST", "AST": "AST", "ACST": "ACST", "IST": "IST", "WAT": "WAT", "AKDT": "AKDT", "HAST": "HAST", "EAT": "EAT", "HNT": "HNT", "CDT": "CDT", "COT": "COT", "WART": "WART", "SRT": "SRT", "LHST": "LHST", "ECT": "ECT", "JST": "JST", "HADT": "HADT", "AWDT": "AWDT", "WIB": "WIB", "VET": "VET", "GFT": "GFT", "AWST": "AWST", "UYT": "UYT", "UYST": "UYST", "CHADT": "CHADT", "BOT": "BOT", "MYT": "MYT", "HKT": "HKT", "PST": "PST", "BT": "BT", "SAST": "SAST", "MST": "MST", "OESZ": "OESZ", "NZDT": "NZDT", "LHDT": "LHDT", "AKST": "AKST", "MESZ": "MESZ", "TMT": "TMT", "ACWDT": "ACWDT", "GYT": "GYT", "WEZ": "WEZ", "HAT": "HAT", "HKST": "HKST", "EDT": "EDT", "CAT": "CAT", "WARST": "WARST", "MEZ": "MEZ", "ARST": "ARST", "ACWST": "ACWST", "TMST": "TMST", "WIT": "WIT", "SGT": "SGT", "CLT": "CLT", "ADT": "ADT", "OEZ": "OEZ", "AEST": "AEST", "NZST": "NZST", "JDT": "JDT", "∅∅∅": "∅∅∅", "GMT": "GMT", "ART": "ART", "ChST": "ChST", "CLST": "CLST", "AEDT": "AEDT", "CHAST": "CHAST", "WAST": "WAST", "MDT": "MDT", "WITA": "WITA", "ACDT": "ACDT", "CST": "CST", "WESZ": "WESZ", "EST": "EST", "PDT": "PDT"},
+		timezones:          map[string]string{"CDT": "CDT", "AKST": "AKST", "∅∅∅": "∅∅∅", "WAT": "WAT", "VET": "VET", "HNT": "HNT", "BT": "BT", "GMT": "GMT", "LHST": "LHST", "LHDT": "LHDT", "WIB": "WIB", "OESZ": "OESZ", "EDT": "EDT", "HADT": "HADT", "WEZ": "WEZ", "MESZ": "MESZ", "WARST": "WARST", "AWST": "AWST", "HKST": "HKST", "TMST": "TMST", "ChST": "ChST", "COT": "COT", "NZDT": "NZDT", "ADT": "ADT", "MST": "MST", "MDT": "MDT", "MEZ": "MEZ", "PST": "PST", "PDT": "PDT", "AWDT": "AWDT", "BOT": "BOT", "WESZ": "WESZ", "ACWST": "ACWST", "MYT": "MYT", "SGT": "SGT", "CAT": "CAT", "ARST": "ARST", "ART": "ART", "CLT": "CLT", "ACDT": "ACDT", "AEST": "AEST", "HAT": "HAT", "CST": "CST", "UYT": "UYT", "ACWDT": "ACWDT", "JST": "JST", "WITA": "WITA", "JDT": "JDT", "SRT": "SRT", "UYST": "UYST", "HAST": "HAST", "WAST": "WAST", "HKT": "HKT", "OEZ": "OEZ", "AST": "AST", "GYT": "GYT", "WIT": "WIT", "EST": "EST", "NZST": "NZST", "EAT": "EAT", "SAST": "SAST", "GFT": "GFT", "CLST": "CLST", "AEDT": "AEDT", "IST": "IST", "TMT": "TMT", "ACST": "ACST", "WART": "WART", "CHADT": "CHADT", "AKDT": "AKDT", "COST": "COST", "ECT": "ECT", "CHAST": "CHAST"},
 	}
 }
 
@@ -185,7 +185,8 @@ func (kl *kl) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kl' and handles both Whole and Real numbers based on 'v'
-func (kl *kl) FmtNumber(num float64, v uint64) (results string) {
+func (kl *kl) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kl.decimal) + len(kl.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -221,13 +222,12 @@ func (kl *kl) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kl' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kl *kl) FmtPercent(num float64, v uint64) (results string) {
+func (kl *kl) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kl.decimal)
 	b := make([]byte, 0, l)
@@ -255,12 +255,11 @@ func (kl *kl) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, kl.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kl'
-func (kl *kl) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kl *kl) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kl.currencies[currency]
@@ -313,13 +312,12 @@ func (kl *kl) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kl'
 // in accounting notation.
-func (kl *kl) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kl *kl) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kl.currencies[currency]
@@ -380,8 +378,7 @@ func (kl *kl) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kl'

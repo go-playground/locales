@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"BC", "AD"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"Kurisito Atakaijire", "Kurisito Yaijire"},
-		timezones:         map[string]string{"∅∅∅": "∅∅∅", "ChST": "ChST", "HAT": "HAT", "OEZ": "OEZ", "BOT": "BOT", "WAT": "WAT", "SAST": "SAST", "ACWDT": "ACWDT", "WAST": "WAST", "VET": "VET", "WIB": "WIB", "GYT": "GYT", "AKDT": "AKDT", "AWST": "AWST", "MESZ": "MESZ", "ACST": "ACST", "WART": "WART", "ECT": "ECT", "PDT": "PDT", "WESZ": "WESZ", "UYT": "UYT", "NZST": "NZST", "NZDT": "NZDT", "CDT": "CDT", "PST": "PST", "COT": "COT", "SRT": "SRT", "MYT": "MYT", "HAST": "HAST", "WARST": "WARST", "TMT": "TMT", "CST": "CST", "TMST": "TMST", "EDT": "EDT", "ART": "ART", "WITA": "WITA", "HKT": "HKT", "CLST": "CLST", "CAT": "CAT", "AEST": "AEST", "OESZ": "OESZ", "AST": "AST", "LHDT": "LHDT", "WEZ": "WEZ", "HNT": "HNT", "ARST": "ARST", "CLT": "CLT", "GMT": "GMT", "JDT": "JDT", "HADT": "HADT", "AEDT": "AEDT", "CHAST": "CHAST", "CHADT": "CHADT", "GFT": "GFT", "ACWST": "ACWST", "AKST": "AKST", "HKST": "HKST", "BT": "BT", "ACDT": "ACDT", "ADT": "ADT", "LHST": "LHST", "SGT": "SGT", "AWDT": "AWDT", "EAT": "EAT", "UYST": "UYST", "COST": "COST", "MDT": "MDT", "WIT": "WIT", "JST": "JST", "EST": "EST", "MEZ": "MEZ", "MST": "MST", "IST": "IST"},
+		timezones:         map[string]string{"ACST": "ACST", "HKST": "HKST", "LHDT": "LHDT", "JST": "JST", "PDT": "PDT", "CLT": "CLT", "JDT": "JDT", "AWDT": "AWDT", "WITA": "WITA", "WAT": "WAT", "MDT": "MDT", "WEZ": "WEZ", "CHAST": "CHAST", "MYT": "MYT", "EAT": "EAT", "SAST": "SAST", "OEZ": "OEZ", "HKT": "HKT", "WIT": "WIT", "TMST": "TMST", "ACWDT": "ACWDT", "OESZ": "OESZ", "PST": "PST", "GYT": "GYT", "CAT": "CAT", "TMT": "TMT", "EST": "EST", "COT": "COT", "NZST": "NZST", "CHADT": "CHADT", "AEDT": "AEDT", "ART": "ART", "VET": "VET", "HNT": "HNT", "EDT": "EDT", "AKST": "AKST", "MST": "MST", "MEZ": "MEZ", "ADT": "ADT", "WARST": "WARST", "ChST": "ChST", "COST": "COST", "CLST": "CLST", "AWST": "AWST", "CDT": "CDT", "LHST": "LHST", "WAST": "WAST", "WESZ": "WESZ", "HAT": "HAT", "ARST": "ARST", "ECT": "ECT", "AEST": "AEST", "IST": "IST", "BT": "BT", "CST": "CST", "AST": "AST", "ACDT": "ACDT", "UYT": "UYT", "GMT": "GMT", "SRT": "SRT", "HAST": "HAST", "NZDT": "NZDT", "MESZ": "MESZ", "SGT": "SGT", "BOT": "BOT", "UYST": "UYST", "HADT": "HADT", "AKDT": "AKDT", "ACWST": "ACWST", "WIB": "WIB", "WART": "WART", "GFT": "GFT", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -174,20 +174,19 @@ func (cgg *cgg) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'cgg' and handles both Whole and Real numbers based on 'v'
-func (cgg *cgg) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (cgg *cgg) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'cgg' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (cgg *cgg) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (cgg *cgg) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'cgg'
-func (cgg *cgg) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (cgg *cgg) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cgg.currencies[currency]
@@ -199,20 +198,14 @@ func (cgg *cgg) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cgg.decimal) - 1; j >= 0; j-- {
-				b = append(b, cgg.decimal[j])
-			}
-
+			b = append(b, cgg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cgg.group) - 1; j >= 0; j-- {
-					b = append(b, cgg.group[j])
-				}
-
+				b = append(b, cgg.group[0])
 				count = 1
 			} else {
 				count++
@@ -227,9 +220,7 @@ func (cgg *cgg) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 	}
 
 	if num < 0 {
-		for j := len(cgg.minus) - 1; j >= 0; j-- {
-			b = append(b, cgg.minus[j])
-		}
+		b = append(b, cgg.minus[0])
 	}
 
 	// reverse
@@ -248,13 +239,12 @@ func (cgg *cgg) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'cgg'
 // in accounting notation.
-func (cgg *cgg) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (cgg *cgg) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cgg.currencies[currency]
@@ -266,20 +256,14 @@ func (cgg *cgg) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(cgg.decimal) - 1; j >= 0; j-- {
-				b = append(b, cgg.decimal[j])
-			}
-
+			b = append(b, cgg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(cgg.group) - 1; j >= 0; j-- {
-					b = append(b, cgg.group[j])
-				}
-
+				b = append(b, cgg.group[0])
 				count = 1
 			} else {
 				count++
@@ -295,9 +279,7 @@ func (cgg *cgg) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 			b = append(b, symbol[j])
 		}
 
-		for j := len(cgg.minus) - 1; j >= 0; j-- {
-			b = append(b, cgg.minus[j])
-		}
+		b = append(b, cgg.minus[0])
 
 	} else {
 
@@ -323,8 +305,7 @@ func (cgg *cgg) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'cgg'

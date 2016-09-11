@@ -18,7 +18,7 @@ type gsw struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "öS", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "¥", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "$", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr."},
 		erasNarrow:             []string{"v. Chr.", "n. Chr."},
 		erasWide:               []string{"v. Chr.", "n. Chr."},
-		timezones:              map[string]string{"MYT": "MYT", "IST": "IST", "AKST": "Alaska-Schtandardziit", "HAST": "HAST", "ACWDT": "ACWDT", "SRT": "SRT", "EST": "EST", "AEST": "AEST", "WAT": "Weschtafrikanischi Schtandardziit", "OESZ": "Oschteuropäischi Summerziit", "NZST": "NZST", "MDT": "MDT", "WESZ": "Weschteuropäischi Summerziit", "CAT": "Zentralafrikanischi Ziit", "UYST": "UYST", "WARST": "WARST", "GFT": "GFT", "CST": "Amerika-Zentraal Schtandardziit", "COT": "COT", "MEZ": "Mitteleuropäischi Schtandardziit", "EAT": "Oschtafrikanischi Ziit", "UYT": "UYT", "CHADT": "CHADT", "COST": "COST", "ChST": "ChST", "VET": "VET", "WAST": "Weschtafrikanischi Summerziit", "SAST": "Süüdafrikanischi ziit", "MST": "MST", "WITA": "WITA", "JDT": "JDT", "HNT": "HNT", "HAT": "HAT", "HKST": "HKST", "GYT": "GYT", "CHAST": "CHAST", "WIB": "WIB", "ART": "ART", "TMST": "TMST", "LHST": "LHST", "AKDT": "Alaska-Summerziit", "CLT": "CLT", "GMT": "GMT", "ADT": "ADT", "CDT": "Amerika-Zentraal Summerziit", "AWDT": "AWDT", "EDT": "EDT", "LHDT": "LHDT", "ACST": "ACST", "ACDT": "ACDT", "JST": "JST", "WEZ": "Weschteuropäischi Schtandardziit", "CLST": "CLST", "BT": "BT", "NZDT": "NZDT", "PDT": "PDT", "AST": "AST", "AWST": "AWST", "HKT": "HKT", "WART": "WART", "ACWST": "ACWST", "TMT": "TMT", "∅∅∅": "∅∅∅", "HADT": "HADT", "OEZ": "Oschteuropäischi Schtandardziit", "BOT": "BOT", "MESZ": "Mitteleuropäischi Summerziit", "AEDT": "AEDT", "WIT": "WIT", "ECT": "ECT", "SGT": "SGT", "PST": "PST", "ARST": "ARST"},
+		timezones:              map[string]string{"COST": "COST", "EAT": "Oschtafrikanischi Ziit", "MDT": "MDT", "AKDT": "Alaska-Summerziit", "CLT": "CLT", "ADT": "ADT", "VET": "VET", "PDT": "PDT", "UYST": "UYST", "CST": "Amerika-Zentraal Schtandardziit", "EST": "EST", "HADT": "HADT", "ACWST": "ACWST", "MYT": "MYT", "SGT": "SGT", "WIT": "WIT", "ECT": "ECT", "LHDT": "LHDT", "SAST": "Süüdafrikanischi ziit", "WEZ": "Weschteuropäischi Schtandardziit", "AEST": "AEST", "TMT": "TMT", "CHAST": "CHAST", "MEZ": "Mitteleuropäischi Schtandardziit", "WART": "WART", "PST": "PST", "AKST": "Alaska-Schtandardziit", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "WAST": "Weschtafrikanischi Summerziit", "CAT": "Zentralafrikanischi Ziit", "AEDT": "AEDT", "HNT": "HNT", "SRT": "SRT", "ChST": "ChST", "∅∅∅": "∅∅∅", "LHST": "LHST", "NZST": "NZST", "CHADT": "CHADT", "COT": "COT", "WAT": "Weschtafrikanischi Schtandardziit", "OEZ": "Oschteuropäischi Schtandardziit", "UYT": "UYT", "ACWDT": "ACWDT", "WIB": "WIB", "WARST": "WARST", "GYT": "GYT", "ARST": "ARST", "WITA": "WITA", "MST": "MST", "MESZ": "Mitteleuropäischi Summerziit", "JST": "JST", "AST": "AST", "ACDT": "ACDT", "ART": "ART", "TMST": "TMST", "EDT": "EDT", "GMT": "GMT", "OESZ": "Oschteuropäischi Summerziit", "ACST": "ACST", "HKST": "HKST", "HAST": "HAST", "WESZ": "Weschteuropäischi Summerziit", "AWDT": "AWDT", "HAT": "HAT", "HKT": "HKT", "IST": "IST", "GFT": "GFT", "CDT": "Amerika-Zentraal Summerziit", "NZDT": "NZDT", "CLST": "CLST", "JDT": "JDT"},
 	}
 }
 
@@ -188,7 +188,8 @@ func (gsw *gsw) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'gsw' and handles both Whole and Real numbers based on 'v'
-func (gsw *gsw) FmtNumber(num float64, v uint64) (results string) {
+func (gsw *gsw) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gsw.decimal) + len(gsw.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -208,7 +209,6 @@ func (gsw *gsw) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(gsw.group) - 1; j >= 0; j-- {
 					b = append(b, gsw.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -229,13 +229,12 @@ func (gsw *gsw) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'gsw' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (gsw *gsw) FmtPercent(num float64, v uint64) (results string) {
+func (gsw *gsw) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(gsw.decimal)
 	b := make([]byte, 0, l)
@@ -265,12 +264,11 @@ func (gsw *gsw) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, gsw.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'gsw'
-func (gsw *gsw) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (gsw *gsw) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gsw.currencies[currency]
@@ -292,7 +290,6 @@ func (gsw *gsw) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 				for j := len(gsw.group) - 1; j >= 0; j-- {
 					b = append(b, gsw.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -328,13 +325,12 @@ func (gsw *gsw) FmtCurrency(num float64, v uint64, currency currency.Type) (resu
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'gsw'
 // in accounting notation.
-func (gsw *gsw) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (gsw *gsw) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gsw.currencies[currency]
@@ -356,7 +352,6 @@ func (gsw *gsw) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 				for j := len(gsw.group) - 1; j >= 0; j-- {
 					b = append(b, gsw.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -399,8 +394,7 @@ func (gsw *gsw) FmtAccounting(num float64, v uint64, currency currency.Type) (re
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'gsw'

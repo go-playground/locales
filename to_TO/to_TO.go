@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"KM", "TS"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ki muʻa", "taʻu ʻo Sīsū"},
-		timezones:              map[string]string{"EDT": "houa fakaʻamelika-tokelau hahake taimi liliu", "GMT": "houa fakakiliniuisi mālie", "ACWST": "houa fakaʻaositelēlia-loto-hihifo taimi totonu", "WIB": "houa fakaʻinitonisia-hihifo", "ART": "houa fakaʻasenitina taimi totonu", "WITA": "houa fakaʻinitonisia-loto", "WIT": "houa fakaʻinitonisia-hahake", "IST": "houa fakaʻinitia", "UYT": "houa fakaʻulukuai taimi totonu", "COT": "houa fakakolomipia taimi totonu", "WART": "houa fakaʻasenitina-hihifo taimi totonu", "SAST": "houa fakaʻafelika-tonga", "ACWDT": "houa fakaʻaositelēlia-loto-hihifo taimi liliu", "MST": "houa fakaʻamelika-tokelau moʻunga taimi totonu", "LHST": "houa fakamotuʻeikihoue taimi totonu", "MYT": "houa fakamaleisia", "EST": "houa fakaʻamelika-tokelau hahake taimi totonu", "BOT": "houa fakapolīvia", "MESZ": "houa fakaʻeulope-loto taimi liliu", "AKDT": "houa fakaʻalasika taimi liliu", "AWDT": "houa fakaʻaositelēlia-hihifo taimi liliu", "AEDT": "houa fakaʻaositelēlia-hahake taimi liliu", "GYT": "houa fakakuiana", "BT": "houa fakapūtani", "VET": "houa fakavenesuela", "HADT": "houa fakahauaʻi taimi liliu", "CHAST": "houa fakasatihami taimi totonu", "ACDT": "houa fakaʻaositelēlia-loto taimi liliu", "HAT": "houa fakafonuaʻilofoʻou taimi liliu", "MDT": "houa fakaʻamelika-tokelau moʻunga taimi liliu", "AKST": "houa fakaʻalasika taimi totonu", "JDT": "houa fakasiapani taimi liliu", "LHDT": "houa fakamotuʻeikihoue taimi liliu", "OESZ": "houa fakaʻeulope-hahake taimi liliu", "CHADT": "houa fakasatihami taimi liliu", "ARST": "houa fakaʻasenitina taimi liliu", "ACST": "houa fakaʻaositelēlia-loto taimi totonu", "EAT": "houa fakaʻafelika-hahake", "NZDT": "houa fakanuʻusila taimi liliu", "SGT": "houa fakasingapoa", "HKT": "houa fakahongi-kongi taimi totonu", "PST": "houa fakaʻamelika-tokelau pasifika taimi totonu", "HKST": "houa fakahongi-kongi taimi liliu", "CLST": "houa fakasili taimi liliu", "WAST": "houa fakaʻafelika-hihifo taimi liliu", "OEZ": "houa fakaʻeulope-hahake taimi totonu", "AEST": "houa fakaʻaositelēlia-hahake taimi totonu", "COST": "houa fakakolomipia taimi liliu", "WAT": "houa fakaʻafelika-hihifo taimi totonu", "CST": "houa fakaʻamelika-tokelau loto taimi totonu", "NZST": "houa fakanuʻusila taimi totonu", "SRT": "houa fakasuliname", "HAST": "houa fakahauaʻi taimi totonu", "∅∅∅": "houa fakaʻāsolesi taimi liliu", "AWST": "houa fakaʻaositelēlia-hihifo taimi totonu", "MEZ": "houa fakaʻeulope-loto taimi totonu", "JST": "houa fakasiapani taimi totonu", "ADT": "houa fakaʻamelika-tokelau ʻatalanitiki taimi liliu", "GFT": "houa fakakuiana-fakafalanisē", "ChST": "houa fakakamolo", "CDT": "houa fakaʻamelika-tokelau loto taimi liliu", "WEZ": "houa fakaʻeulope-hihifo taimi totonu", "CLT": "houa fakasili taimi totonu", "WARST": "houa fakaʻasenitina-hihifo taimi liliu", "AST": "houa fakaʻamelika-tokelau ʻatalanitiki taimi totonu", "UYST": "houa fakaʻulukuai taimi liliu", "PDT": "houa fakaʻamelika-tokelau pasifika taimi liliu", "ECT": "houa fakaʻekuetoa", "HNT": "houa fakafonuaʻilofoʻou taimi totonu", "WESZ": "houa fakaʻeulope-hihifo taimi liliu", "CAT": "houa fakaʻafelika-loto", "TMT": "houa fakatūkimenisitani taimi totonu", "TMST": "houa fakatūkimenisitani taimi liliu"},
+		timezones:              map[string]string{"BOT": "houa fakapolīvia", "UYT": "houa fakaʻulukuai taimi totonu", "HAST": "houa fakahauaʻi taimi totonu", "CHAST": "houa fakasatihami taimi totonu", "WAST": "houa fakaʻafelika-hihifo taimi liliu", "WIB": "houa fakaʻinitonisia-hihifo", "OESZ": "houa fakaʻeulope-hahake taimi liliu", "AWDT": "houa fakaʻaositelēlia-hihifo taimi liliu", "TMT": "houa fakatūkimenisitani taimi totonu", "TMST": "houa fakatūkimenisitani taimi liliu", "COT": "houa fakakolomipia taimi totonu", "MDT": "houa fakamakau taimi liliu", "CLT": "houa fakasili taimi totonu", "WART": "houa fakaʻasenitina-hihifo taimi totonu", "PDT": "houa fakaʻamelika-tokelau pasifika taimi liliu", "WITA": "houa fakaʻinitonisia-loto", "CDT": "houa fakaʻamelika-tokelau loto taimi liliu", "MYT": "houa fakamaleisia", "IST": "houa fakaʻinitia", "HKST": "houa fakahongi-kongi taimi liliu", "NZST": "houa fakanuʻusila taimi totonu", "EAT": "houa fakaʻafelika-hahake", "NZDT": "houa fakanuʻusila taimi liliu", "HNT": "houa fakafonuaʻilofoʻou taimi totonu", "EDT": "houa fakaʻamelika-tokelau hahake taimi liliu", "MST": "houa fakamakau taimi totonu", "WARST": "houa fakaʻasenitina-hihifo taimi liliu", "ART": "houa fakaʻasenitina taimi totonu", "ARST": "houa fakaʻasenitina taimi liliu", "AWST": "houa fakaʻaositelēlia-hihifo taimi totonu", "AKST": "houa fakaʻalasika taimi totonu", "SGT": "houa fakasingapoa", "SAST": "houa fakaʻafelika-tonga", "MEZ": "houa fakaʻeulope-loto taimi totonu", "OEZ": "houa fakaʻeulope-hahake taimi totonu", "CST": "houa fakaʻamelika-tokelau loto taimi totonu", "EST": "houa fakaʻamelika-tokelau hahake taimi totonu", "ACWST": "houa fakaʻaositelēlia-loto-hihifo taimi totonu", "GMT": "houa fakakiliniuisi mālie", "COST": "houa fakakolomipia taimi liliu", "VET": "houa fakavenesuela", "AST": "houa fakaʻamelika-tokelau ʻatalanitiki taimi totonu", "GYT": "houa fakakuiana", "LHST": "houa fakamotuʻeikihoue taimi totonu", "CLST": "houa fakasili taimi liliu", "JST": "houa fakasiapani taimi totonu", "AEST": "houa fakaʻaositelēlia-hahake taimi totonu", "ADT": "houa fakaʻamelika-tokelau ʻatalanitiki taimi liliu", "ACST": "houa fakaʻaositelēlia-loto taimi totonu", "HAT": "houa fakafonuaʻilofoʻou taimi liliu", "HADT": "houa fakahauaʻi taimi liliu", "WEZ": "houa fakaʻeulope-hihifo taimi totonu", "WESZ": "houa fakaʻeulope-hihifo taimi liliu", "ACWDT": "houa fakaʻaositelēlia-loto-hihifo taimi liliu", "LHDT": "houa fakamotuʻeikihoue taimi liliu", "CHADT": "houa fakasatihami taimi liliu", "ACDT": "houa fakaʻaositelēlia-loto taimi liliu", "SRT": "houa fakasuliname", "GFT": "houa fakakuiana-fakafalanisē", "∅∅∅": "houa fakaʻamasōne taimi liliu", "UYST": "houa fakaʻulukuai taimi liliu", "WAT": "houa fakaʻafelika-hihifo taimi totonu", "MESZ": "houa fakaʻeulope-loto taimi liliu", "AEDT": "houa fakaʻaositelēlia-hahake taimi liliu", "WIT": "houa fakaʻinitonisia-hahake", "BT": "houa fakapūtani", "AKDT": "houa fakaʻalasika taimi liliu", "ChST": "houa fakakamolo", "PST": "houa fakaʻamelika-tokelau pasifika taimi totonu", "CAT": "houa fakaʻafelika-loto", "HKT": "houa fakahongi-kongi taimi totonu", "ECT": "houa fakaʻekuetoa", "JDT": "houa fakasiapani taimi liliu"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (to *to_TO) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'to_TO' and handles both Whole and Real numbers based on 'v'
-func (to *to_TO) FmtNumber(num float64, v uint64) (results string) {
+func (to *to_TO) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(to.decimal) + len(to.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (to *to_TO) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'to_TO' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (to *to_TO) FmtPercent(num float64, v uint64) (results string) {
+func (to *to_TO) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(to.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (to *to_TO) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, to.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'to_TO'
-func (to *to_TO) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (to *to_TO) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := to.currencies[currency]
@@ -311,13 +310,12 @@ func (to *to_TO) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'to_TO'
 // in accounting notation.
-func (to *to_TO) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (to *to_TO) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := to.currencies[currency]
@@ -386,8 +384,7 @@ func (to *to_TO) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'to_TO'

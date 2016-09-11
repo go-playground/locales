@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ปีก่อน ค.ศ.", "ค.ศ."},
 		erasNarrow:             []string{"ก่อน ค.ศ.", "ค.ศ."},
 		erasWide:               []string{"ปีก่อนคริสต์ศักราช", "คริสต์ศักราช"},
-		timezones:              map[string]string{"GMT": "เวลามาตรฐานกรีนิช", "WIB": "เวลาอินโดนีเซียฝั่งตะวันตก", "ECT": "เวลาเอกวาดอร์", "JST": "เวลามาตรฐานญี่ปุ่น", "EAT": "เวลาแอฟริกาตะวันออก", "EDT": "เวลาออมแสงทางตะวันออกในอเมริกาเหนือ", "EST": "เวลามาตรฐานทางตะวันออกในอเมริกาเหนือ", "ARST": "เวลาฤดูร้อนอาร์เจนตินา", "WITA": "เวลาอินโดนีเซียตอนกลาง", "AKST": "เวลามาตรฐานอะแลสกา", "AWDT": "เวลาออมแสงทางตะวันตกของออสเตรเลีย", "HNT": "เวลามาตรฐานนิวฟันด์แลนด์", "GYT": "เวลากายอานา", "AST": "เวลามาตรฐานแอตแลนติก", "SAST": "เวลาแอฟริกาใต้", "WIT": "เวลาอินโดนีเซียฝั่งตะวันออก", "HAT": "เวลาออมแสงนิวฟันด์แลนด์", "PDT": "เวลาออมแสงแปซิฟิกในอเมริกาเหนือ", "HADT": "เวลาออมแสงฮาวาย-อะลูเชียน", "NZDT": "เวลาออมแสงนิวซีแลนด์", "COT": "เวลามาตรฐานโคลอมเบีย", "WAT": "เวลามาตรฐานแอฟริกาตะวันตก", "JDT": "เวลาออมแสงญี่ปุ่น", "AEST": "เวลามาตรฐานทางตะวันออกของออสเตรเลีย", "CHADT": "เวลาออมแสงแชทัม", "WART": "เวลามาตรฐานทางตะวันตกของอาร์เจนตินา", "MDT": "เวลาออมแสงแถบภูเขาในอเมริกาเหนือ", "CHAST": "เวลามาตรฐานแชทัม", "COST": "เวลาฤดูร้อนโคลอมเบีย", "OESZ": "เวลาฤดูร้อนยุโรปตะวันออก", "WARST": "เวลาฤดูร้อนทางตะวันตกของอาร์เจนตินา", "TMT": "เวลามาตรฐานเติร์กเมนิสถาน", "LHDT": "เวลาออมแสงของลอร์ดโฮว์", "CST": "เวลามาตรฐานตอนกลางในอเมริกาเหนือ", "OEZ": "เวลามาตรฐานยุโรปตะวันออก", "HKT": "เวลามาตรฐานฮ่องกง", "MEZ": "เวลามาตรฐานยุโรปกลาง", "ADT": "เวลาออมแสงของแอตแลนติก", "ACWDT": "เวลาออมแสงทางตะวันตกตอนกลางของออสเตรเลีย", "IST": "เวลาอินเดีย", "AEDT": "เวลาออมแสงทางตะวันออกของออสเตรเลีย", "PST": "เวลามาตรฐานแปซิฟิกในอเมริกาเหนือ", "SRT": "เวลาซูรินาเม", "GFT": "เวลาเฟรนช์เกียนา", "ChST": "เวลาชามอร์โร", "HAST": "เวลามาตรฐานฮาวาย-อะลูเชียน", "ACST": "เวลามาตรฐานทางตอนกลางของออสเตรเลีย", "ACWST": "เวลามาตรฐานทางตะวันตกตอนกลางของออสเตรเลีย", "∅∅∅": "เวลาฤดูร้อนอะโซร์ส", "WEZ": "เวลามาตรฐานยุโรปตะวันตก", "ACDT": "เวลาออมแสงทางตอนกลางของออสเตรเลีย", "ART": "เวลามาตรฐานอาร์เจนตินา", "MST": "เวลามาตรฐานแถบภูเขาในอเมริกาเหนือ", "TMST": "เวลาฤดูร้อนเติร์กเมนิสถาน", "WESZ": "เวลาฤดูร้อนยุโรปตะวันตก", "UYT": "เวลามาตรฐานอุรุกวัย", "AWST": "เวลามาตรฐานทางตะวันตกของออสเตรเลีย", "CDT": "เวลาออมแสงตอนกลางในอเมริกาเหนือ", "CLT": "เวลามาตรฐานชิลี", "CLST": "เวลาฤดูร้อนชิลี", "VET": "เวลาเวเนซุเอลา", "MYT": "เวลามาเลเซีย", "LHST": "เวลามาตรฐานลอร์ดโฮว์", "SGT": "เวลาสิงคโปร์", "CAT": "เวลาแอฟริกากลาง", "NZST": "เวลามาตรฐานนิวซีแลนด์", "BOT": "เวลาโบลิเวีย", "BT": "เวลาภูฏาน", "HKST": "เวลาฤดูร้อนฮ่องกง", "UYST": "เวลาฤดูร้อนอุรุกวัย", "AKDT": "เวลาออมแสงของอะแลสกา", "MESZ": "เวลาฤดูร้อนยุโรปกลาง", "WAST": "เวลาฤดูร้อนแอฟริกาตะวันตก"},
+		timezones:              map[string]string{"SAST": "เวลาแอฟริกาใต้", "AST": "เวลามาตรฐานแอตแลนติก", "AEST": "เวลามาตรฐานทางตะวันออกของออสเตรเลีย", "WEZ": "เวลามาตรฐานยุโรปตะวันตก", "ACWST": "เวลามาตรฐานทางตะวันตกตอนกลางของออสเตรเลีย", "CLT": "เวลามาตรฐานชิลี", "WARST": "เวลาฤดูร้อนทางตะวันตกของอาร์เจนตินา", "ACDT": "เวลาออมแสงทางตอนกลางของออสเตรเลีย", "BOT": "เวลาโบลิเวีย", "MST": "เวลามาตรฐานมาเก๊า", "NZST": "เวลามาตรฐานนิวซีแลนด์", "WART": "เวลามาตรฐานทางตะวันตกของอาร์เจนตินา", "ART": "เวลามาตรฐานอาร์เจนตินา", "GFT": "เวลาเฟรนช์เกียนา", "HADT": "เวลาออมแสงฮาวาย-อะลูเชียน", "ChST": "เวลาชามอร์โร", "EAT": "เวลาแอฟริกาตะวันออก", "HAT": "เวลาออมแสงนิวฟันด์แลนด์", "MYT": "เวลามาเลเซีย", "OESZ": "เวลาฤดูร้อนยุโรปตะวันออก", "HNT": "เวลามาตรฐานนิวฟันด์แลนด์", "HKST": "เวลาฤดูร้อนฮ่องกง", "TMT": "เวลามาตรฐานเติร์กเมนิสถาน", "BT": "เวลาภูฏาน", "MDT": "เวลาฤดูร้อนมาเก๊า", "LHDT": "เวลาออมแสงของลอร์ดโฮว์", "WAT": "เวลามาตรฐานแอฟริกาตะวันตก", "AKDT": "เวลาออมแสงของอะแลสกา", "GYT": "เวลากายอานา", "PDT": "เวลาออมแสงแปซิฟิกในอเมริกาเหนือ", "ECT": "เวลาเอกวาดอร์", "CHAST": "เวลามาตรฐานแชทัม", "JST": "เวลามาตรฐานญี่ปุ่น", "MEZ": "เวลามาตรฐานยุโรปกลาง", "MESZ": "เวลาฤดูร้อนยุโรปกลาง", "OEZ": "เวลามาตรฐานยุโรปตะวันออก", "COT": "เวลามาตรฐานโคลอมเบีย", "EST": "เวลามาตรฐานทางตะวันออกในอเมริกาเหนือ", "ACWDT": "เวลาออมแสงทางตะวันตกตอนกลางของออสเตรเลีย", "AWST": "เวลามาตรฐานทางตะวันตกของออสเตรเลีย", "HAST": "เวลามาตรฐานฮาวาย-อะลูเชียน", "HKT": "เวลามาตรฐานฮ่องกง", "TMST": "เวลาฤดูร้อนเติร์กเมนิสถาน", "ARST": "เวลาฤดูร้อนอาร์เจนตินา", "GMT": "เวลามาตรฐานกรีนิช", "AEDT": "เวลาออมแสงทางตะวันออกของออสเตรเลีย", "∅∅∅": "เวลาฤดูร้อนอะโซร์ส", "CAT": "เวลาแอฟริกากลาง", "UYT": "เวลามาตรฐานอุรุกวัย", "UYST": "เวลาฤดูร้อนอุรุกวัย", "LHST": "เวลามาตรฐานลอร์ดโฮว์", "ACST": "เวลามาตรฐานทางตอนกลางของออสเตรเลีย", "IST": "เวลาอินเดีย", "WAST": "เวลาฤดูร้อนแอฟริกาตะวันตก", "PST": "เวลามาตรฐานแปซิฟิกในอเมริกาเหนือ", "WIT": "เวลาอินโดนีเซียฝั่งตะวันออก", "WESZ": "เวลาฤดูร้อนยุโรปตะวันตก", "VET": "เวลาเวเนซุเอลา", "ADT": "เวลาออมแสงของแอตแลนติก", "SGT": "เวลาสิงคโปร์", "CDT": "เวลาออมแสงตอนกลางในอเมริกาเหนือ", "AWDT": "เวลาออมแสงทางตะวันตกของออสเตรเลีย", "SRT": "เวลาซูรินาเม", "WITA": "เวลาอินโดนีเซียตอนกลาง", "CST": "เวลามาตรฐานตอนกลางในอเมริกาเหนือ", "AKST": "เวลามาตรฐานอะแลสกา", "NZDT": "เวลาออมแสงนิวซีแลนด์", "JDT": "เวลาออมแสงญี่ปุ่น", "CLST": "เวลาฤดูร้อนชิลี", "COST": "เวลาฤดูร้อนโคลอมเบีย", "CHADT": "เวลาออมแสงแชทัม", "WIB": "เวลาอินโดนีเซียฝั่งตะวันตก", "EDT": "เวลาออมแสงทางตะวันออกในอเมริกาเหนือ"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (th *th) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'th' and handles both Whole and Real numbers based on 'v'
-func (th *th) FmtNumber(num float64, v uint64) (results string) {
+func (th *th) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(th.decimal) + len(th.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (th *th) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'th' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (th *th) FmtPercent(num float64, v uint64) (results string) {
+func (th *th) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(th.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (th *th) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, th.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'th'
-func (th *th) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (th *th) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := th.currencies[currency]
@@ -307,13 +306,12 @@ func (th *th) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'th'
 // in accounting notation.
-func (th *th) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (th *th) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := th.currencies[currency]
@@ -378,8 +376,7 @@ func (th *th) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		b = append(b, th.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'th'

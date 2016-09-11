@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:   []string{"BC", "AD"},
 		erasNarrow:        []string{"", ""},
 		erasWide:          []string{"Kulisito nga tannaza", "Bukya Kulisito Azaal"},
-		timezones:         map[string]string{"LHDT": "LHDT", "MYT": "MYT", "BOT": "BOT", "WAT": "WAT", "AWDT": "AWDT", "HAT": "HAT", "EAT": "EAT", "UYST": "UYST", "COST": "COST", "ART": "ART", "ACWDT": "ACWDT", "LHST": "LHST", "ChST": "ChST", "HAST": "HAST", "CHAST": "CHAST", "JDT": "JDT", "AEST": "AEST", "AEDT": "AEDT", "WAST": "WAST", "WITA": "WITA", "CHADT": "CHADT", "COT": "COT", "GYT": "GYT", "WARST": "WARST", "AST": "AST", "MDT": "MDT", "NZST": "NZST", "OESZ": "OESZ", "MESZ": "MESZ", "SAST": "SAST", "ACWST": "ACWST", "EDT": "EDT", "BT": "BT", "ACST": "ACST", "ACDT": "ACDT", "ARST": "ARST", "WIT": "WIT", "HKT": "HKT", "MST": "MST", "TMT": "TMT", "WART": "WART", "SRT": "SRT", "VET": "VET", "AKST": "AKST", "AKDT": "AKDT", "PST": "PST", "GFT": "GFT", "TMST": "TMST", "IST": "IST", "HNT": "HNT", "NZDT": "NZDT", "WIB": "WIB", "ECT": "ECT", "JST": "JST", "CLT": "CLT", "CLST": "CLST", "∅∅∅": "∅∅∅", "SGT": "SGT", "WESZ": "WESZ", "CDT": "CDT", "UYT": "UYT", "EST": "EST", "OEZ": "OEZ", "HADT": "HADT", "HKST": "HKST", "CST": "CST", "WEZ": "WEZ", "AWST": "AWST", "GMT": "GMT", "CAT": "CAT", "ADT": "ADT", "MEZ": "MEZ", "PDT": "PDT"},
+		timezones:         map[string]string{"HKT": "HKT", "ART": "ART", "SAST": "SAST", "ACWST": "ACWST", "OEZ": "OEZ", "ACST": "ACST", "MYT": "MYT", "HKST": "HKST", "WITA": "WITA", "GMT": "GMT", "NZDT": "NZDT", "ACWDT": "ACWDT", "TMT": "TMT", "COT": "COT", "CHAST": "CHAST", "JDT": "JDT", "AEDT": "AEDT", "MESZ": "MESZ", "HAT": "HAT", "BT": "BT", "EST": "EST", "LHST": "LHST", "EAT": "EAT", "CHADT": "CHADT", "ACDT": "ACDT", "UYT": "UYT", "CDT": "CDT", "HADT": "HADT", "ChST": "ChST", "CLT": "CLT", "JST": "JST", "HNT": "HNT", "TMST": "TMST", "WIB": "WIB", "WARST": "WARST", "VET": "VET", "PST": "PST", "AWST": "AWST", "GFT": "GFT", "EDT": "EDT", "WAT": "WAT", "AKST": "AKST", "NZST": "NZST", "WEZ": "WEZ", "MEZ": "MEZ", "MDT": "MDT", "UYST": "UYST", "AKDT": "AKDT", "COST": "COST", "WAST": "WAST", "AWDT": "AWDT", "GYT": "GYT", "WIT": "WIT", "WESZ": "WESZ", "CLST": "CLST", "SGT": "SGT", "SRT": "SRT", "CAT": "CAT", "HAST": "HAST", "ADT": "ADT", "BOT": "BOT", "∅∅∅": "∅∅∅", "LHDT": "LHDT", "AST": "AST", "CST": "CST", "OESZ": "OESZ", "IST": "IST", "PDT": "PDT", "MST": "MST", "ECT": "ECT", "ARST": "ARST", "AEST": "AEST", "WART": "WART"},
 	}
 }
 
@@ -174,20 +174,19 @@ func (lg *lg_UG) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lg_UG' and handles both Whole and Real numbers based on 'v'
-func (lg *lg_UG) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (lg *lg_UG) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'lg_UG' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (lg *lg_UG) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (lg *lg_UG) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lg_UG'
-func (lg *lg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (lg *lg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lg.currencies[currency]
@@ -199,20 +198,14 @@ func (lg *lg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(lg.decimal) - 1; j >= 0; j-- {
-				b = append(b, lg.decimal[j])
-			}
-
+			b = append(b, lg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(lg.group) - 1; j >= 0; j-- {
-					b = append(b, lg.group[j])
-				}
-
+				b = append(b, lg.group[0])
 				count = 1
 			} else {
 				count++
@@ -223,9 +216,7 @@ func (lg *lg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(lg.minus) - 1; j >= 0; j-- {
-			b = append(b, lg.minus[j])
-		}
+		b = append(b, lg.minus[0])
 	}
 
 	// reverse
@@ -246,13 +237,12 @@ func (lg *lg_UG) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lg_UG'
 // in accounting notation.
-func (lg *lg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (lg *lg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lg.currencies[currency]
@@ -264,20 +254,14 @@ func (lg *lg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(lg.decimal) - 1; j >= 0; j-- {
-				b = append(b, lg.decimal[j])
-			}
-
+			b = append(b, lg.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(lg.group) - 1; j >= 0; j-- {
-					b = append(b, lg.group[j])
-				}
-
+				b = append(b, lg.group[0])
 				count = 1
 			} else {
 				count++
@@ -289,9 +273,7 @@ func (lg *lg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 
 	if num < 0 {
 
-		for j := len(lg.minus) - 1; j >= 0; j-- {
-			b = append(b, lg.minus[j])
-		}
+		b = append(b, lg.minus[0])
 
 	}
 
@@ -318,8 +300,7 @@ func (lg *lg_UG) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'lg_UG'

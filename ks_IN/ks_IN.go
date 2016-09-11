@@ -66,7 +66,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"بی سی", "اے ڈی"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"قبٕل مسیٖح", "عیٖسوی سنہٕ"},
-		timezones:              map[string]string{"AWDT": "آسٹریلِیَن مغرِبیٖ ڈےلایٔٹ ٹایِم", "COST": "کولومبِیا سَمَر ٹایِم", "SAST": "جنوٗبی افریقا ٹایِم", "ACWDT": "آسٹریلِیَن مرکزی مغربی ڈےلایِٔٹ ٹایِم", "IST": "ہِنٛدوستان", "CAT": "مرکزی افریٖقا ٹایِم", "WESZ": "مغرِبی یوٗرِپی سَمَر ٹایِم", "CLT": "چِلی سٹینڑاڑ ٹایِم", "BOT": "بولِوِیا ٹایِم", "WITA": "مرکزی اِنڑونیشِیا ٹایِم", "CST": "مرکزی سٹینڑاڑ ٹایِم", "∅∅∅": "اٮ۪زورٕس سَمَر ٹ", "AKDT": "اٮ۪لاسکا ڈےلایِٔٹ ٹایِم", "HAST": "حَواے اٮ۪لیوٗٹِیَن سٹینڑاڑ ٹایِم", "CDT": "مرکزی ڈےلایِٔٹ ٹایِم", "CHAST": "کٮ۪تھَم سٹینڑاڑ ٹایِم", "CHADT": "چٮ۪تھَم سَمَر ٹایِم", "MEZ": "مرکزی یوٗرپی سٹینڑاڑ ٹایِم", "ECT": "اِکویڑَر ٹایِم", "SRT": "سُرِنام ٹایِم", "GYT": "گُیَنا ٹایِم", "OEZ": "مشرقی یوٗرپی سٹینڑاڑ ٹایِم", "VET": "وٮ۪نٮ۪زیوٗلا ٹایِم", "PDT": "پیسِفِک ڈےلایِٔٹ ٹایِم", "CLST": "چِلی سَمَر ٹایِم", "HADT": "حَواے اٮ۪لیوٗٹِیَن سَمَر ٹایِم", "MST": "مَکَعوٗ سٹینڑاڑ ٹایِم", "ACWST": "آسٹریلِیَن مرکزی مغربی سٹینڑاڑ ٹایِم", "WIT": "مشرِقی اِنڑونیشِیا ٹایِم", "JDT": "جاپٲنۍ ڑےلایِٔٹ ٹایِم", "MDT": "مَکَعوٗ سَمَر ٹایِم", "EDT": "مشرقی ڈےلایِٔٹ ٹایِم", "ADT": "اٮ۪ٹلانٹِک ڈےلایِٔٹ ٹایِم", "ART": "ارجٮ۪نٹیٖنا سٹینڑاڑ ٹایِم", "MYT": "مَلیشِیا ٹایِم", "EST": "مشرقی سٹینڑاڑ ٹایِم", "UYT": "یوٗرٮ۪گوَے سٹینڑاڑ ٹایِم", "NZST": "نِوزِلینڑ سٹینڑاڑ ٹایِم", "WARST": "مغربی ارجٮ۪نٹیٖنا سَمَر ٹایِم", "AST": "اٮ۪ٹلانٹِک سٹینڑاڑ ٹایِم", "ACDT": "آسٹریلِیَن مرکزی ڈےلایِٔٹ ٹایِم", "HNT": "نیوٗ فاونڑلینڑ سٹینڑاڑ ٹایِم", "EAT": "مشرقی افریٖقا ٹایِم", "HKT": "حانگ کانٛگ سٹینڑاڑ ٹایِم", "HKST": "حانٛگ کانٛگ سَمَر ٹایِم", "AEST": "آسٹریلِیَن مشرقی سٹینڑاڑ ٹایِم", "WAT": "مغربی افریٖقا سٹینڑاڑ ٹایِم", "BT": "بوٗٹان ٹایِم", "ACST": "آسٹریلِیَن مرکزی سٹینڑاڑ ٹایِم", "LHDT": "لعاڑ ڑےلایٔٹ ٹایِم", "ARST": "ارجٮ۪نٹیٖنا سَمَر ٹایِم", "AWST": "آسٹریلِیَن مغرِبی سٹینڑاڑ ٹایِم", "UYST": "یوٗرٮ۪گوَے سَمَر ٹایِم", "WART": "مغربی ارجٮ۪نٹیٖنا سٹینڑاڑ ٹایِم", "MESZ": "مرکزی یوٗرپی سَمَر ٹایِم", "AKST": "اٮ۪لاسکا سٹینڑاڑ ٹایِم", "GMT": "گرٛیٖن وِچ میٖن ٹایِم", "AEDT": "آسٹریلِیَن مشرقی ڈےلایِٔٹ ٹایِم", "LHST": "لعاڑ حووے سٹینڑاڑ ٹایِم", "PST": "پیسِفِک سٹینڑاڑ ٹایِم", "COT": "کولومبِیا سٹینڑاڑ ٹایِم", "WAST": "مغربی افریٖقا سَمَر ٹایِم", "TMT": "تُرکمٮ۪نِستان سٹینڑاڑ ٹایِم", "TMST": "تُرکمٮ۪نِستان سَمَر ٹایِم", "ChST": "کٮ۪مورو سٹینڑاڑ ٹایِم", "NZDT": "نِوزِلینڑ ڑےلایٔٹ ٹایِم", "WEZ": "مغرِبی یوٗرپی سٹینڑاڑ ٹایِم", "GFT": "فرٛٮ۪نٛچ گیوٗٮ۪نا ٹایِم", "OESZ": "مشرقی یوٗرپی سَمَر ٹایِم", "SGT": "سِنٛگاپوٗر ٹایِم", "HAT": "نیوٗ فاونڑ لینڑ ڑےلایِٔٹ ٹایِم", "WIB": "مغرِبی اِنڑونیشِیا ٹایِم", "JST": "جاپٲنۍ سٹینڑاڑ ٹایِم"},
+		timezones:              map[string]string{"CST": "مرکزی سٹینڑاڑ ٹایِم", "GMT": "گرٛیٖن وِچ میٖن ٹایِم", "HAST": "حَواے اٮ۪لیوٗٹِیَن سٹینڑاڑ ٹایِم", "NZST": "نِوزِلینڑ سٹینڑاڑ ٹایِم", "WAT": "مغربی افریٖقا سٹینڑاڑ ٹایِم", "LHDT": "لعاڑ ڑےلایٔٹ ٹایِم", "ART": "ارجٮ۪نٹیٖنا سٹینڑاڑ ٹایِم", "SAST": "جنوٗبی افریقا ٹایِم", "WAST": "مغربی افریٖقا سَمَر ٹایِم", "WESZ": "مغرِبی یوٗرِپی سَمَر ٹایِم", "ACWST": "آسٹریلِیَن مرکزی مغربی سٹینڑاڑ ٹایِم", "IST": "ہِنٛدوستان", "COT": "کولومبِیا سٹینڑاڑ ٹایِم", "HAT": "نیوٗ فاونڑ لینڑ ڑےلایِٔٹ ٹایِم", "CDT": "مرکزی ڈےلایِٔٹ ٹایِم", "∅∅∅": "اٮ۪مَزَن سَمَر ٹایِم", "MEZ": "مرکزی یوٗرپی سٹینڑاڑ ٹایِم", "UYT": "یوٗرٮ۪گوَے سٹینڑاڑ ٹایِم", "BT": "بوٗٹان ٹایِم", "CLT": "چِلی سٹینڑاڑ ٹایِم", "WARST": "مغربی ارجٮ۪نٹیٖنا سَمَر ٹایِم", "AWDT": "آسٹریلِیَن مغرِبیٖ ڈےلایٔٹ ٹایِم", "WIT": "مشرِقی اِنڑونیشِیا ٹایِم", "TMST": "تُرکمٮ۪نِستان سَمَر ٹایِم", "JST": "جاپٲنۍ سٹینڑاڑ ٹایِم", "ADT": "اٮ۪ٹلانٹِک ڈےلایِٔٹ ٹایِم", "ACDT": "آسٹریلِیَن مرکزی ڈےلایِٔٹ ٹایِم", "VET": "وٮ۪نٮ۪زیوٗلا ٹایِم", "SGT": "سِنٛگاپوٗر ٹایِم", "GYT": "گُیَنا ٹایِم", "WIB": "مغرِبی اِنڑونیشِیا ٹایِم", "JDT": "جاپٲنۍ ڑےلایِٔٹ ٹایِم", "AST": "اٮ۪ٹلانٹِک سٹینڑاڑ ٹایِم", "HKST": "حانٛگ کانٛگ سَمَر ٹایِم", "UYST": "یوٗرٮ۪گوَے سَمَر ٹایِم", "ARST": "ارجٮ۪نٹیٖنا سَمَر ٹایِم", "GFT": "فرٛٮ۪نٛچ گیوٗٮ۪نا ٹایِم", "ACWDT": "آسٹریلِیَن مرکزی مغربی ڈےلایِٔٹ ٹایِم", "OESZ": "مشرقی یوٗرپی سَمَر ٹایِم", "ACST": "آسٹریلِیَن مرکزی سٹینڑاڑ ٹایِم", "AWST": "آسٹریلِیَن مغرِبی سٹینڑاڑ ٹایِم", "NZDT": "نِوزِلینڑ ڑےلایٔٹ ٹایِم", "EAT": "مشرقی افریٖقا ٹایِم", "CHAST": "کٮ۪تھَم سٹینڑاڑ ٹایِم", "MESZ": "مرکزی یوٗرپی سَمَر ٹایِم", "WART": "مغربی ارجٮ۪نٹیٖنا سٹینڑاڑ ٹایِم", "HNT": "نیوٗ فاونڑلینڑ سٹینڑاڑ ٹایِم", "MYT": "مَلیشِیا ٹایِم", "MST": "مَکَعوٗ سٹینڑاڑ ٹایِم", "AEST": "آسٹریلِیَن مشرقی سٹینڑاڑ ٹایِم", "AEDT": "آسٹریلِیَن مشرقی ڈےلایِٔٹ ٹایِم", "CAT": "مرکزی افریٖقا ٹایِم", "WITA": "مرکزی اِنڑونیشِیا ٹایِم", "EDT": "مشرقی ڈےلایِٔٹ ٹایِم", "AKST": "اٮ۪لاسکا سٹینڑاڑ ٹایِم", "COST": "کولومبِیا سَمَر ٹایِم", "OEZ": "مشرقی یوٗرپی سٹینڑاڑ ٹایِم", "HADT": "حَواے اٮ۪لیوٗٹِیَن سَمَر ٹایِم", "ECT": "اِکویڑَر ٹایِم", "LHST": "لعاڑ حووے سٹینڑاڑ ٹایِم", "TMT": "تُرکمٮ۪نِستان سٹینڑاڑ ٹایِم", "EST": "مشرقی سٹینڑاڑ ٹایِم", "AKDT": "اٮ۪لاسکا ڈےلایِٔٹ ٹایِم", "MDT": "مَکَعوٗ سَمَر ٹایِم", "WEZ": "مغرِبی یوٗرپی سٹینڑاڑ ٹایِم", "CHADT": "چٮ۪تھَم سَمَر ٹایِم", "BOT": "بولِوِیا ٹایِم", "ChST": "کٮ۪مورو سٹینڑاڑ ٹایِم", "PDT": "پیسِفِک ڈےلایِٔٹ ٹایِم", "CLST": "چِلی سَمَر ٹایِم", "PST": "پیسِفِک سٹینڑاڑ ٹایِم", "SRT": "سُرِنام ٹایِم", "HKT": "حانگ کانٛگ سٹینڑاڑ ٹایِم"},
 	}
 }
 
@@ -183,7 +183,8 @@ func (ks *ks_IN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ks_IN' and handles both Whole and Real numbers based on 'v'
-func (ks *ks_IN) FmtNumber(num float64, v uint64) (results string) {
+func (ks *ks_IN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ks.decimal) + len(ks.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -230,13 +231,12 @@ func (ks *ks_IN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ks_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ks *ks_IN) FmtPercent(num float64, v uint64) (results string) {
+func (ks *ks_IN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ks.decimal)
 	b := make([]byte, 0, l)
@@ -264,12 +264,11 @@ func (ks *ks_IN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ks.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ks_IN'
-func (ks *ks_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ks *ks_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ks.currencies[currency]
@@ -337,13 +336,12 @@ func (ks *ks_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ks_IN'
 // in accounting notation.
-func (ks *ks_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ks *ks_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ks.currencies[currency]
@@ -423,8 +421,7 @@ func (ks *ks_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ks_IN'

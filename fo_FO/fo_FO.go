@@ -18,7 +18,7 @@ type fo_FO struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -58,7 +58,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: " )",
@@ -75,7 +75,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"fKr", "eKr"},
 		erasWide:               []string{"fyri Krist", "eftir Krist"},
-		timezones:              map[string]string{"NZDT": "Nýsæland summartíð", "ARST": "Argentina summartíð", "MESZ": "Miðevropa summartíð", "COST": "Kolombia summartíð", "ACDT": "mið Avstralia summartíð", "LHST": "Lord Howe vanlig tíð", "EAT": "Eysturafrika tíð", "ChST": "Chamorro vanlig tíð", "CST": "Central vanlig tíð", "WEZ": "Vesturevropa vanlig tíð", "COT": "Kolombia vanlig tíð", "LHDT": "Lord Howe summartíð", "CLST": "Kili summartíð", "CHAST": "Chatham vanlig tíð", "BOT": "Bolivia tíð", "WART": "Vestur Argentina vanlig tíð", "MEZ": "Miðevropa vanlig tíð", "∅∅∅": "Azorurnar summartíð", "HADT": "Hawaii-Aleutian summartíð", "AKST": "Alaska vanlig tíð", "HKST": "Hong Kong summartíð", "AWDT": "vestur Avstralia summartíð", "UYT": "Uruguai vanlig tíð", "WITA": "Mið Indonesia tíð", "WIT": "Eystur Indonesia tíð", "PDT": "Pacific summartíð", "AEDT": "eystur Avstralia summartíð", "CHADT": "Chatham summartíð", "ADT": "Atlantic summartíð", "BT": "Butan tíð", "MDT": "Mountain summartíð", "JDT": "Japan summartíð", "CAT": "Miðafrika tíð", "WAST": "Vesturafrika summartíð", "TMT": "Turkmenistan vanlig tíð", "ACWST": "miðvestur Avstralia vanlig tíð", "ACWDT": "miðvestur Avstralia summartíð", "VET": "Venesuela tíð", "AWST": "vestur Avstralia vanlig tíð", "OESZ": "Eysturevropa summartíð", "WIB": "Vestur Indonesia tíð", "WAT": "Vesturafrika vanlig tíð", "ACST": "mið Avstralia vanlig tíð", "CLT": "Kili vanlig tíð", "HKT": "Hong Kong vanlig tíð", "WESZ": "Vesturevropa summartíð", "NZST": "Nýsæland vanlig tíð", "AST": "Atlantic vanlig tíð", "MST": "Mountain vanlig tíð", "MYT": "Malaisia tíð", "ECT": "Ekvador tíð", "EST": "Eastern vanlig tíð", "PST": "Pacific vanlig tíð", "OEZ": "Eysturevropa vanlig tíð", "AKDT": "Alaska summartíð", "SGT": "Singapor tíð", "CDT": "Central summartíð", "GMT": "Greenwich Mean tíð", "AEST": "eystur Avstralia vanlig tíð", "ART": "Argentina vanlig tíð", "GYT": "Gujana tíð", "TMST": "Turkmenistan summartíð", "IST": "India tíð", "HNT": "Newfoundland vanlig tíð", "HAT": "Newfoundland summartíð", "WARST": "Vestur Argentina summartíð", "SRT": "Surinam tíð", "SAST": "Suðurafrika vanlig tíð", "HAST": "Hawaii-Aleutian vanlig tíð", "GFT": "Franska Gujana tíð", "JST": "Japan vanlig tíð", "EDT": "Eastern summartíð", "UYST": "Uruguai summartíð"},
+		timezones:              map[string]string{"COST": "Kolombia summartíð", "AST": "Atlantic vanlig tíð", "WESZ": "Vesturevropa summartíð", "BT": "Butan tíð", "HKST": "Hong Kong summartíð", "CST": "Central vanlig tíð", "COT": "Kolombia vanlig tíð", "OEZ": "Eysturevropa vanlig tíð", "SGT": "Singapor tíð", "IST": "India tíð", "HKT": "Hong Kong vanlig tíð", "ARST": "Argentina summartíð", "GFT": "Franska Gujana tíð", "EDT": "Eastern summartíð", "OESZ": "Eysturevropa summartíð", "CLST": "Kili summartíð", "WART": "Vestur Argentina vanlig tíð", "CAT": "Miðafrika tíð", "JST": "Japan vanlig tíð", "PST": "Pacific vanlig tíð", "HAT": "Newfoundland summartíð", "WEZ": "Vesturevropa vanlig tíð", "PDT": "Pacific summartíð", "WIB": "Vestur Indonesia tíð", "WARST": "Vestur Argentina summartíð", "HNT": "Newfoundland vanlig tíð", "JDT": "Japan summartíð", "WIT": "Eystur Indonesia tíð", "ART": "Argentina vanlig tíð", "TMT": "Turkmenistan vanlig tíð", "CDT": "Central summartíð", "∅∅∅": "Peru summartíð", "WAST": "Vesturafrika summartíð", "CHADT": "Chatham summartíð", "EST": "Eastern vanlig tíð", "UYST": "Uruguai summartíð", "HAST": "Hawaii-Aleutian vanlig tíð", "LHDT": "Lord Howe summartíð", "MESZ": "Miðevropa summartíð", "AWDT": "vestur Avstralia summartíð", "ChST": "Chamorro vanlig tíð", "ACWST": "miðvestur Avstralia vanlig tíð", "LHST": "Lord Howe vanlig tíð", "MST": "MST", "ACST": "mið Avstralia vanlig tíð", "AWST": "vestur Avstralia vanlig tíð", "UYT": "Uruguai vanlig tíð", "NZST": "Nýsæland vanlig tíð", "SAST": "Suðurafrika vanlig tíð", "CLT": "Kili vanlig tíð", "ADT": "Atlantic summartíð", "ACDT": "mið Avstralia summartíð", "GYT": "Gujana tíð", "WITA": "Mið Indonesia tíð", "ACWDT": "miðvestur Avstralia summartíð", "NZDT": "Nýsæland summartíð", "CHAST": "Chatham vanlig tíð", "VET": "Venesuela tíð", "AKST": "Alaska vanlig tíð", "WAT": "Vesturafrika vanlig tíð", "MDT": "MDT", "AEST": "eystur Avstralia vanlig tíð", "ECT": "Ekvador tíð", "EAT": "Eysturafrika tíð", "MEZ": "Miðevropa vanlig tíð", "BOT": "Bolivia tíð", "SRT": "Surinam tíð", "TMST": "Turkmenistan summartíð", "GMT": "Greenwich Mean tíð", "HADT": "Hawaii-Aleutian summartíð", "AKDT": "Alaska summartíð", "AEDT": "eystur Avstralia summartíð", "MYT": "Malaisia tíð"},
 	}
 }
 
@@ -192,7 +192,8 @@ func (fo *fo_FO) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'fo_FO' and handles both Whole and Real numbers based on 'v'
-func (fo *fo_FO) FmtNumber(num float64, v uint64) (results string) {
+func (fo *fo_FO) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fo.decimal) + len(fo.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -230,13 +231,12 @@ func (fo *fo_FO) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'fo_FO' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (fo *fo_FO) FmtPercent(num float64, v uint64) (results string) {
+func (fo *fo_FO) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(fo.decimal)
 	b := make([]byte, 0, l)
@@ -266,12 +266,11 @@ func (fo *fo_FO) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, fo.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'fo_FO'
-func (fo *fo_FO) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (fo *fo_FO) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fo.currencies[currency]
@@ -326,13 +325,12 @@ func (fo *fo_FO) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'fo_FO'
 // in accounting notation.
-func (fo *fo_FO) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (fo *fo_FO) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fo.currencies[currency]
@@ -392,8 +390,7 @@ func (fo *fo_FO) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'fo_FO'

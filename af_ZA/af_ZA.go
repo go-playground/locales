@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v.C.", "n.C."},
 		erasNarrow:             []string{"v.C.", "n.C."},
 		erasWide:               []string{"voor Christus", "na Christus"},
-		timezones:              map[string]string{"NZDT": "Nieu-Seeland-dagligtyd", "ACST": "Australiese sentraal-standaardtyd", "ECT": "Ecuador-tyd", "∅∅∅": "Brasilië somertyd", "UYST": "Uruguay-somertyd", "ARST": "Argentinië-somertyd", "ADT": "Atlantiese dagligtyd", "TMST": "Turkmenistan-somertyd", "JST": "Japan-standaardtyd", "JDT": "Japan-dagligtyd", "AWDT": "Australiese Westelike dagligtyd", "CHAST": "Chatham-standaardtyd", "OEZ": "Oos-Europese standaardtyd", "CHADT": "Chatham-dagligtyd", "LHDT": "Lord Howe-dagligtyd", "CLT": "Chili-standaardtyd", "COST": "Colombië-somertyd", "HKT": "Hongkong-standaardtyd", "BT": "Bhoetan-tyd", "WARST": "Wes-Argentinië-somertyd", "VET": "Venezuela-tyd", "GFT": "Frans-Guiana-tyd", "WITA": "Sentraal Indonesië-tyd", "HADT": "Hawaii-Aleusiër-dagligtyd", "HAT": "Newfoundland-dagligtyd", "COT": "Colombië-standaardtyd", "UYT": "Uruguay-standaardtyd", "PDT": "Pasifiese dagligtyd", "ACDT": "Australiese sentrale dagligtyd", "ART": "Argentinië-standaardtyd", "AST": "Atlantiese standaardtyd", "TMT": "Turkmenistan-standaardtyd", "AWST": "Australiese Westelike standaardtyd", "CDT": "Sentrale dagligtyd", "AKST": "Alaska-standaardtyd", "BOT": "Bolivia-tyd", "MYT": "Maleisië-tyd", "IST": "Indië-standaardtyd", "EAT": "Oos-Afrika-tyd", "EST": "Oostelike standaardtyd", "LHST": "Lord Howe-standaardtyd", "AEST": "Australiese Oostelike standaardtyd", "OESZ": "Oos-Europese somertyd", "ACWDT": "Australiese sentraal-Westelike dagligtyd", "AKDT": "Alaska-dagligtyd", "CST": "Sentrale standaardtyd", "CAT": "Sentraal-Afrika-tyd", "ChST": "Chamorro-standaardtyd", "WESZ": "Wes-Europese somertyd", "HKST": "Hongkong-somertyd", "GYT": "Guyana-tyd", "HAST": "Hawaii-Aleusiër-standaardtyd", "EDT": "Oostelike dagligtyd", "WIB": "Wes-Indonesië-tyd", "WAST": "Wes-Afrika-somertyd", "SRT": "Suriname-tyd", "WIT": "Oos-Indonesië-tyd", "SGT": "Singapoer-standaardtyd", "MST": "MST", "PST": "Pasifiese standaardtyd", "CLST": "Chili-somertyd", "NZST": "Nieu-Seeland-standaardtyd", "WAT": "Wes-Afrika-standaardtyd", "SAST": "Suid-Afrika-standaardtyd", "WEZ": "Wes-Europese standaardtyd", "HNT": "Newfoundland-standaardtyd", "AEDT": "Australiese Oostelike dagligtyd", "MEZ": "Sentraal-Europese standaardtyd", "MESZ": "Sentraal-Europese somertyd", "WART": "Wes-Argentinië-standaardtyd", "ACWST": "Australiese sentraal-Westelike standaard-tyd", "MDT": "MDT", "GMT": "Greenwich-mediaantyd"},
+		timezones:              map[string]string{"SRT": "Suriname-tyd", "TMT": "Turkmenistan-standaardtyd", "MESZ": "Sentraal-Europese somertyd", "OEZ": "Oos-Europese standaardtyd", "ADT": "Atlantiese dagligtyd", "SGT": "Singapoer-standaardtyd", "IST": "Indië-standaardtyd", "CST": "Sentrale standaardtyd", "AKDT": "Alaska-dagligtyd", "CHAST": "Chatham-standaardtyd", "CLST": "Chili-somertyd", "AWDT": "Australiese Westelike dagligtyd", "HKT": "Hongkong-standaardtyd", "SAST": "Suid-Afrika-standaardtyd", "WAST": "Wes-Afrika-somertyd", "BOT": "Bolivia-tyd", "HAST": "Hawaii-Aleusiër-standaardtyd", "HADT": "Hawaii-Aleusiër-dagligtyd", "WIB": "Wes-Indonesië-tyd", "ACST": "Australiese sentraal-standaardtyd", "MYT": "Maleisië-tyd", "AWST": "Australiese Westelike standaardtyd", "UYT": "Uruguay-standaardtyd", "EST": "Oostelike standaardtyd", "CLT": "Chili-standaardtyd", "TMST": "Turkmenistan-somertyd", "ChST": "Chamorro-standaardtyd", "AKST": "Alaska-standaardtyd", "HAT": "Newfoundland-dagligtyd", "BT": "Bhoetan-tyd", "ART": "Argentinië-standaardtyd", "ECT": "Ecuador-tyd", "NZDT": "Nieu-Seeland-dagligtyd", "AST": "Atlantiese standaardtyd", "AEDT": "Australiese Oostelike dagligtyd", "MST": "MST", "WEZ": "Wes-Europese standaardtyd", "ACWST": "Australiese sentraal-Westelike standaard-tyd", "JDT": "Japan-dagligtyd", "AEST": "Australiese Oostelike standaardtyd", "HNT": "Newfoundland-standaardtyd", "NZST": "Nieu-Seeland-standaardtyd", "WAT": "Wes-Afrika-standaardtyd", "CAT": "Sentraal-Afrika-tyd", "EDT": "Oostelike dagligtyd", "WART": "Wes-Argentinië-standaardtyd", "PDT": "Pasifiese dagligtyd", "GMT": "Greenwich-mediaantyd", "GYT": "Guyana-tyd", "∅∅∅": "Brasilië somertyd", "WIT": "Oos-Indonesië-tyd", "COT": "Colombië-standaardtyd", "GFT": "Frans-Guiana-tyd", "LHST": "Lord Howe-standaardtyd", "ACWDT": "Australiese sentraal-Westelike dagligtyd", "JST": "Japan-standaardtyd", "WARST": "Wes-Argentinië-somertyd", "PST": "Pasifiese standaardtyd", "CHADT": "Chatham-dagligtyd", "HKST": "Hongkong-somertyd", "UYST": "Uruguay-somertyd", "COST": "Colombië-somertyd", "LHDT": "Lord Howe-dagligtyd", "EAT": "Oos-Afrika-tyd", "WESZ": "Wes-Europese somertyd", "ARST": "Argentinië-somertyd", "CDT": "Sentrale dagligtyd", "MDT": "MDT", "MEZ": "Sentraal-Europese standaardtyd", "ACDT": "Australiese sentrale dagligtyd", "VET": "Venezuela-tyd", "WITA": "Sentraal Indonesië-tyd", "OESZ": "Oos-Europese somertyd"},
 	}
 }
 
@@ -188,7 +188,8 @@ func (af *af_ZA) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'af_ZA' and handles both Whole and Real numbers based on 'v'
-func (af *af_ZA) FmtNumber(num float64, v uint64) (results string) {
+func (af *af_ZA) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(af.decimal) + len(af.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -208,7 +209,6 @@ func (af *af_ZA) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(af.group) - 1; j >= 0; j-- {
 					b = append(b, af.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -227,13 +227,12 @@ func (af *af_ZA) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'af_ZA' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (af *af_ZA) FmtPercent(num float64, v uint64) (results string) {
+func (af *af_ZA) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(af.decimal)
 	b := make([]byte, 0, l)
@@ -259,12 +258,11 @@ func (af *af_ZA) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, af.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'af_ZA'
-func (af *af_ZA) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (af *af_ZA) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
@@ -286,7 +284,6 @@ func (af *af_ZA) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(af.group) - 1; j >= 0; j-- {
 					b = append(b, af.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -320,13 +317,12 @@ func (af *af_ZA) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'af_ZA'
 // in accounting notation.
-func (af *af_ZA) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (af *af_ZA) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := af.currencies[currency]
@@ -348,7 +344,6 @@ func (af *af_ZA) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(af.group) - 1; j >= 0; j-- {
 					b = append(b, af.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -394,8 +389,7 @@ func (af *af_ZA) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, af.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'af_ZA'

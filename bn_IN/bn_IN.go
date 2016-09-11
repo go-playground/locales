@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"খ্রিস্টপূর্ব", "খৃষ্টাব্দ"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"খ্রিস্টপূর্ব", "খৃষ্টাব্দ"},
-		timezones:              map[string]string{"MEZ": "মধ্য ইউরোপের প্রমাণ সময়", "HKT": "হং কং মানক সময়", "AWDT": "অস্ট্রেলীয় পশ্চিমি দিবালোক সময়", "UYT": "উরুগুয়ে মানক সময়", "CAT": "মধ্য আফ্রিকা সময়", "AEDT": "অস্ট্রেলীয় পূর্ব দিবালোক সময়", "COT": "কোলোম্বিয়া মানক সময়", "SAST": "দক্ষিণ আফ্রিকা মানক সময়", "LHDT": "লর্ড হাওয়ে দিবালোক মসয়", "MYT": "মালয়েশিয়া সময়", "EST": "পূর্বাঞ্চলের প্রমাণ সময়", "PST": "প্রশান্ত মহাসাগরীয় অঞ্চলের প্রমাণ সময়", "MST": "পার্বত্য অঞ্চলের প্রমাণ সময়", "ECT": "ইকুয়েডর সময়", "ADT": "অতলান্তিক দিবালোক সময়", "LHST": "লর্ড হাওয়ে মানক মসয়", "SGT": "সিঙ্গাপুর মানক সময়", "AKDT": "আলাস্কা দিবালোক সময়", "HKST": "হং কং গ্রীষ্মকালীন সময়", "HAT": "নিউফাউন্ডল্যান্ড দিবালোক সময়", "NZDT": "নিউজিল্যান্ড দিবালোক সময়", "WIB": "পশ্চিমী ইন্দোনেশিয়া সময়", "COST": "কোলোম্বিয়া গ্রীষ্মকালীন সময়", "JST": "জাপান মানক সময়", "HADT": "হাওয়াই-আলেউত দিবালোক সময়", "GMT": "গ্রীনিচ মিন টাইম", "OEZ": "পূর্ব ইউরোপের প্রমাণ সময়", "UYST": "উরুগুয়ে গ্রীষ্মকালীন সময়", "OESZ": "পূর্ব ইউরোপের গ্রীষ্মকালীন সময়", "WAT": "পশ্চিম আফ্রিকা মানক সময়", "AST": "অতলান্তিক মানক সময়", "VET": "ভেনেজুয়েলা সময়", "WIT": "পূর্ব ইন্দোনেশিয়া সময়", "CHADT": "চ্যাথাম দিবালোক সময়", "BT": "ভুটান সময়", "WITA": "কেন্দ্রীয় ইন্দোনেশিয়া সময়", "CLST": "চিলি গ্রীষ্মকাল সময়", "ACWST": "অস্ট্রেলীয় কেন্দ্রীয় পশ্চিমি মানক সময়", "CST": "কেন্দ্রীয় মানক সময়", "AEST": "অস্ট্রেলীয় পূর্ব মানক সময়", "BOT": "বোলিভিয়া সময়", "WAST": "পশ্চিম আফ্রিকা গ্রীষ্মকালীন সময়", "MESZ": "মধ্য ইউরোপের গ্রীষ্মকালীন সময়", "TMST": "তুর্কমেনিস্তান গ্রীষ্মকালীন সময়", "MDT": "পার্বত্য অঞ্চলের দিনের সময়", "JDT": "জাপান দিবালোক সময়", "IST": "ভারতীয় মানক সময়", "ACDT": "অস্ট্রেলীয় কেন্দ্রীয় দিবালোক সময়", "GYT": "গুয়ানা সময়", "ART": "আর্জেনটিনা মানক সময়", "GFT": "ফরাসি গায়ানা সময়", "TMT": "তুর্কমেনিস্তান মানক সময়", "CLT": "চিলি মানক সময়", "PDT": "প্রশান্ত মহাসাগরীয় অঞ্চলের দিনের সময়", "WARST": "পশ্চিমি আর্জেনটিনা গৃষ্মকালীন সময়", "ChST": "চামেরো মানক সময়", "WEZ": "পশ্চিম ইউরোপের প্রমাণ সময়", "CDT": "কেন্দ্রীয় দিবালোক সময়", "CHAST": "চ্যাথাম মানক সময়", "ACWDT": "অস্ট্রেলীয় কেন্দ্রীয় পশ্চিমি দিবালোক সময়", "AKST": "আলাস্কা মানক সময়", "WESZ": "পশ্চিম ইউরোপের গ্রীষ্মকালীন সময়", "ACST": "অস্ট্রেলীয় কেন্দ্রীয় মানক সময়", "AWST": "অস্ট্রেলিয়ান পশ্চিমি মানক সময়", "EAT": "পূর্ব আফ্রিকা সময়", "EDT": "পূর্বাঞ্চলের দিবালোক সময়", "NZST": "নিউজিল্যান্ড মানক সময়", "ARST": "আর্জেনটিনা গৃষ্মকালীন সময়", "∅∅∅": "এজোরেস গ্রীষ্মকালীন সময়", "HAST": "হাওয়াই-আলেউত মানক সময়", "HNT": "নিউফাউন্ডল্যান্ড মানক সময়", "WART": "পশ্চিমি আর্জেনটিনার প্রমাণ সময়", "SRT": "সুরিনাম সময়"},
+		timezones:              map[string]string{"AST": "অতলান্তিক মানক সময়", "TMT": "তুর্কমেনিস্তান মানক সময়", "NZDT": "নিউজিল্যান্ড দিবালোক সময়", "AEST": "অস্ট্রেলীয় পূর্ব মানক সময়", "UYST": "উরুগুয়ে গ্রীষ্মকালীন সময়", "CDT": "কেন্দ্রীয় দিবালোক সময়", "ACDT": "অস্ট্রেলীয় কেন্দ্রীয় দিবালোক সময়", "IST": "ভারতীয় মানক সময়", "UYT": "উরুগুয়ে মানক সময়", "TMST": "তুর্কমেনিস্তান গ্রীষ্মকালীন সময়", "GMT": "গ্রীনিচ মিন টাইম", "COST": "কোলোম্বিয়া গ্রীষ্মকালীন সময়", "CLT": "চিলি মানক সময়", "AEDT": "অস্ট্রেলীয় পূর্ব দিবালোক সময়", "HAT": "নিউফাউন্ডল্যান্ড দিবালোক সময়", "BOT": "বোলিভিয়া সময়", "CLST": "চিলি গ্রীষ্মকাল সময়", "CST": "কেন্দ্রীয় মানক সময়", "ACST": "অস্ট্রেলীয় কেন্দ্রীয় মানক সময়", "CAT": "মধ্য আফ্রিকা সময়", "HKT": "হং কং মানক সময়", "EDT": "পূর্বাঞ্চলের দিবালোক সময়", "HAST": "হাওয়াই-আলেউত মানক সময়", "LHDT": "লর্ড হাওয়ে দিবালোক মসয়", "WIB": "পশ্চিমী ইন্দোনেশিয়া সময়", "SGT": "সিঙ্গাপুর মানক সময়", "MST": "পার্বত্য অঞ্চলের প্রমাণ সময়", "MDT": "পার্বত্য অঞ্চলের দিনের সময়", "WIT": "পূর্ব ইন্দোনেশিয়া সময়", "WITA": "কেন্দ্রীয় ইন্দোনেশিয়া সময়", "ECT": "ইকুয়েডর সময়", "JST": "জাপান মানক সময়", "AWST": "অস্ট্রেলিয়ান পশ্চিমি মানক সময়", "GFT": "ফরাসি গায়ানা সময়", "AKST": "আলাস্কা মানক সময়", "LHST": "লর্ড হাওয়ে মানক মসয়", "EAT": "পূর্ব আফ্রিকা সময়", "BT": "ভুটান সময়", "HADT": "হাওয়াই-আলেউত দিবালোক সময়", "OESZ": "পূর্ব ইউরোপের গ্রীষ্মকালীন সময়", "AKDT": "আলাস্কা দিবালোক সময়", "CHAST": "চ্যাথাম মানক সময়", "AWDT": "অস্ট্রেলীয় পশ্চিমি দিবালোক সময়", "HNT": "নিউফাউন্ডল্যান্ড মানক সময়", "HKST": "হং কং গ্রীষ্মকালীন সময়", "ACWST": "অস্ট্রেলীয় কেন্দ্রীয় পশ্চিমি মানক সময়", "ACWDT": "অস্ট্রেলীয় কেন্দ্রীয় পশ্চিমি দিবালোক সময়", "CHADT": "চ্যাথাম দিবালোক সময়", "MEZ": "মধ্য ইউরোপের প্রমাণ সময়", "SRT": "সুরিনাম সময়", "ChST": "চামেরো মানক সময়", "COT": "কোলোম্বিয়া মানক সময়", "NZST": "নিউজিল্যান্ড মানক সময়", "WAT": "পশ্চিম আফ্রিকা মানক সময়", "WART": "পশ্চিমি আর্জেনটিনার প্রমাণ সময়", "WARST": "পশ্চিমি আর্জেনটিনা গৃষ্মকালীন সময়", "MYT": "মালয়েশিয়া সময়", "PST": "প্রশান্ত মহাসাগরীয় অঞ্চলের প্রমাণ সময়", "GYT": "গুয়ানা সময়", "∅∅∅": "এজোরেস গ্রীষ্মকালীন সময়", "ARST": "আর্জেনটিনা গৃষ্মকালীন সময়", "EST": "পূর্বাঞ্চলের প্রমাণ সময়", "MESZ": "মধ্য ইউরোপের গ্রীষ্মকালীন সময়", "OEZ": "পূর্ব ইউরোপের প্রমাণ সময়", "ART": "আর্জেনটিনা মানক সময়", "WEZ": "পশ্চিম ইউরোপের প্রমাণ সময়", "WESZ": "পশ্চিম ইউরোপের গ্রীষ্মকালীন সময়", "JDT": "জাপান দিবালোক সময়", "ADT": "অতলান্তিক দিবালোক সময়", "VET": "ভেনেজুয়েলা সময়", "PDT": "প্রশান্ত মহাসাগরীয় অঞ্চলের দিনের সময়", "SAST": "দক্ষিণ আফ্রিকা মানক সময়", "WAST": "পশ্চিম আফ্রিকা গ্রীষ্মকালীন সময়"},
 	}
 }
 
@@ -207,7 +207,8 @@ func (bn *bn_IN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'bn_IN' and handles both Whole and Real numbers based on 'v'
-func (bn *bn_IN) FmtNumber(num float64, v uint64) (results string) {
+func (bn *bn_IN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(bn.decimal) + len(bn.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -220,10 +221,7 @@ func (bn *bn_IN) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(bn.decimal) - 1; j >= 0; j-- {
-				b = append(b, bn.decimal[j])
-			}
-
+			b = append(b, bn.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -231,10 +229,7 @@ func (bn *bn_IN) FmtNumber(num float64, v uint64) (results string) {
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(bn.group) - 1; j >= 0; j-- {
-					b = append(b, bn.group[j])
-				}
-
+				b = append(b, bn.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -250,9 +245,7 @@ func (bn *bn_IN) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(bn.minus) - 1; j >= 0; j-- {
-			b = append(b, bn.minus[j])
-		}
+		b = append(b, bn.minus[0])
 	}
 
 	// reverse
@@ -260,13 +253,12 @@ func (bn *bn_IN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'bn_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (bn *bn_IN) FmtPercent(num float64, v uint64) (results string) {
+func (bn *bn_IN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(bn.decimal)
 	b := make([]byte, 0, l)
@@ -274,10 +266,7 @@ func (bn *bn_IN) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(bn.decimal) - 1; j >= 0; j-- {
-				b = append(b, bn.decimal[j])
-			}
-
+			b = append(b, bn.decimal[0])
 			continue
 		}
 
@@ -285,9 +274,7 @@ func (bn *bn_IN) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(bn.minus) - 1; j >= 0; j-- {
-			b = append(b, bn.minus[j])
-		}
+		b = append(b, bn.minus[0])
 	}
 
 	// reverse
@@ -297,12 +284,11 @@ func (bn *bn_IN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, bn.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'bn_IN'
-func (bn *bn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (bn *bn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bn.currencies[currency]
@@ -317,10 +303,7 @@ func (bn *bn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(bn.decimal) - 1; j >= 0; j-- {
-				b = append(b, bn.decimal[j])
-			}
-
+			b = append(b, bn.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -328,10 +311,7 @@ func (bn *bn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(bn.group) - 1; j >= 0; j-- {
-					b = append(b, bn.group[j])
-				}
-
+				b = append(b, bn.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -347,9 +327,7 @@ func (bn *bn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(bn.minus) - 1; j >= 0; j-- {
-			b = append(b, bn.minus[j])
-		}
+		b = append(b, bn.minus[0])
 	}
 
 	// reverse
@@ -370,13 +348,12 @@ func (bn *bn_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'bn_IN'
 // in accounting notation.
-func (bn *bn_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (bn *bn_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bn.currencies[currency]
@@ -391,10 +368,7 @@ func (bn *bn_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(bn.decimal) - 1; j >= 0; j-- {
-				b = append(b, bn.decimal[j])
-			}
-
+			b = append(b, bn.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -402,10 +376,7 @@ func (bn *bn_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(bn.group) - 1; j >= 0; j-- {
-					b = append(b, bn.group[j])
-				}
-
+				b = append(b, bn.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -450,8 +421,7 @@ func (bn *bn_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'bn_IN'

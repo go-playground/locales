@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v.Chr.", "n.Chr."},
 		erasNarrow:             []string{"v.C.", "n.C."},
 		erasWide:               []string{"voor Christus", "na Christus"},
-		timezones:              map[string]string{"EAT": "Oost-Afrikaanse tijd", "CAT": "Centraal-Afrikaanse tijd", "CLT": "Chileense standaardtijd", "OESZ": "Oost-Europese zomertijd", "NZDT": "Nieuw-Zeelandse zomertijd", "SAST": "Zuid-Afrikaanse tijd", "MST": "Macause standaardtijd", "AWDT": "West-Australische zomertijd", "WART": "West-Argentijnse standaardtijd", "WARST": "West-Argentijnse zomertijd", "WAT": "West-Afrikaanse standaardtijd", "GYT": "Guyaanse tijd", "∅∅∅": "Braziliaanse zomertijd", "WEZ": "West-Europese standaardtijd", "WESZ": "West-Europese zomertijd", "PST": "Pacific-standaardtijd", "OEZ": "Oost-Europese standaardtijd", "NZST": "Nieuw-Zeelandse standaardtijd", "WIB": "West-Indonesische tijd", "CHAST": "Chatham-standaardtijd", "ART": "Argentijnse standaardtijd", "ACWDT": "Midden-Australische westelijke zomertijd", "LHDT": "Lord Howe-eilandse zomertijd", "IST": "Indiase tijd", "EST": "Eastern-standaardtijd", "UYST": "Uruguayaanse zomertijd", "AEDT": "Oost-Australische zomertijd", "WITA": "Centraal-Indonesische tijd", "AKST": "Alaska-standaardtijd", "HADT": "Hawaii-Aleoetische zomertijd", "COST": "Colombiaanse zomertijd", "WAST": "West-Afrikaanse zomertijd", "ADT": "Atlantic-zomertijd", "VET": "Venezolaanse tijd", "TMT": "Turkmeense standaardtijd", "JST": "Japanse standaardtijd", "SGT": "Singaporese standaardtijd", "CLST": "Chileense zomertijd", "UYT": "Uruguayaanse standaardtijd", "CHADT": "Chatham-zomertijd", "MESZ": "Midden-Europese zomertijd", "BT": "Bhutaanse tijd", "ACST": "Midden-Australische standaardtijd", "BOT": "Boliviaanse tijd", "LHST": "Lord Howe-eilandse standaardtijd", "WIT": "Oost-Indonesische tijd", "AKDT": "Alaska-zomertijd", "HKST": "Hongkongse zomertijd", "AST": "Atlantic-standaardtijd", "TMST": "Turkmeense zomertijd", "CST": "Central-standaardtijd", "PDT": "Pacific-zomertijd", "GFT": "Frans-Guyaanse tijd", "CDT": "Central-zomertijd", "ECT": "Ecuadoraanse tijd", "AEST": "Oost-Australische standaardtijd", "COT": "Colombiaanse standaardtijd", "ACWST": "Midden-Australische westelijke standaardtijd", "MYT": "Maleisische tijd", "MDT": "Macause zomertijd", "ARST": "Argentijnse zomertijd", "SRT": "Surinaamse tijd", "HAT": "Newfoundland-zomertijd", "HNT": "Newfoundland-standaardtijd", "HKT": "Hongkongse standaardtijd", "MEZ": "Midden-Europese standaardtijd", "ACDT": "Midden-Australische zomertijd", "ChST": "Chamorro-tijd", "JDT": "Japanse zomertijd", "AWST": "West-Australische standaardtijd", "EDT": "Eastern-zomertijd", "GMT": "Greenwich Mean Time", "HAST": "Hawaii-Aleoetische standaardtijd"},
+		timezones:              map[string]string{"CHADT": "Chatham-zomertijd", "ACST": "Midden-Australische standaardtijd", "MYT": "Maleisische tijd", "PST": "Pacific-standaardtijd", "BT": "Bhutaanse tijd", "ARST": "Argentijnse zomertijd", "HADT": "Hawaii-Aleoetische zomertijd", "ACDT": "Midden-Australische zomertijd", "HKT": "Hongkongse standaardtijd", "LHST": "Lord Howe-eilandse standaardtijd", "WAT": "West-Afrikaanse standaardtijd", "JST": "Japanse standaardtijd", "PDT": "Pacific-zomertijd", "GFT": "Frans-Guyaanse tijd", "CST": "Central-standaardtijd", "COST": "Colombiaanse zomertijd", "OEZ": "Oost-Europese standaardtijd", "WART": "West-Argentijnse standaardtijd", "HAT": "Newfoundland-zomertijd", "CAT": "Centraal-Afrikaanse tijd", "∅∅∅": "Peruaanse zomertijd", "WEZ": "West-Europese standaardtijd", "MESZ": "Midden-Europese zomertijd", "NZDT": "Nieuw-Zeelandse zomertijd", "MST": "Macause standaardtijd", "BOT": "Boliviaanse tijd", "HNT": "Newfoundland-standaardtijd", "CLST": "Chileense zomertijd", "WARST": "West-Argentijnse zomertijd", "AWDT": "West-Australische zomertijd", "TMST": "Turkmeense zomertijd", "SRT": "Surinaamse tijd", "AEST": "Oost-Australische standaardtijd", "WIT": "Oost-Indonesische tijd", "SGT": "Singaporese standaardtijd", "UYT": "Uruguayaanse standaardtijd", "ART": "Argentijnse standaardtijd", "TMT": "Turkmeense standaardtijd", "WAST": "West-Afrikaanse zomertijd", "VET": "Venezolaanse tijd", "HKST": "Hongkongse zomertijd", "UYST": "Uruguayaanse zomertijd", "EDT": "Eastern-zomertijd", "NZST": "Nieuw-Zeelandse standaardtijd", "CHAST": "Chatham-standaardtijd", "AKDT": "Alaska-zomertijd", "SAST": "Zuid-Afrikaanse tijd", "WESZ": "West-Europese zomertijd", "MEZ": "Midden-Europese standaardtijd", "AST": "Atlantic-standaardtijd", "CDT": "Central-zomertijd", "HAST": "Hawaii-Aleoetische standaardtijd", "ChST": "Chamorro-tijd", "AWST": "West-Australische standaardtijd", "JDT": "Japanse zomertijd", "ADT": "Atlantic-zomertijd", "AEDT": "Oost-Australische zomertijd", "EAT": "Oost-Afrikaanse tijd", "MDT": "Macause zomertijd", "OESZ": "Oost-Europese zomertijd", "GYT": "Guyaanse tijd", "GMT": "Greenwich Mean Time", "AKST": "Alaska-standaardtijd", "CLT": "Chileense standaardtijd", "IST": "Indiase tijd", "WITA": "Centraal-Indonesische tijd", "LHDT": "Lord Howe-eilandse zomertijd", "WIB": "West-Indonesische tijd", "ACWST": "Midden-Australische westelijke standaardtijd", "ACWDT": "Midden-Australische westelijke zomertijd", "EST": "Eastern-standaardtijd", "COT": "Colombiaanse standaardtijd", "ECT": "Ecuadoraanse tijd"},
 	}
 }
 
@@ -196,7 +196,8 @@ func (nl *nl_AW) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'nl_AW' and handles both Whole and Real numbers based on 'v'
-func (nl *nl_AW) FmtNumber(num float64, v uint64) (results string) {
+func (nl *nl_AW) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(nl.decimal) + len(nl.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -206,20 +207,14 @@ func (nl *nl_AW) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(nl.decimal) - 1; j >= 0; j-- {
-				b = append(b, nl.decimal[j])
-			}
-
+			b = append(b, nl.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(nl.group) - 1; j >= 0; j-- {
-					b = append(b, nl.group[j])
-				}
-
+				b = append(b, nl.group[0])
 				count = 1
 			} else {
 				count++
@@ -230,9 +225,7 @@ func (nl *nl_AW) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(nl.minus) - 1; j >= 0; j-- {
-			b = append(b, nl.minus[j])
-		}
+		b = append(b, nl.minus[0])
 	}
 
 	// reverse
@@ -240,13 +233,12 @@ func (nl *nl_AW) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'nl_AW' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (nl *nl_AW) FmtPercent(num float64, v uint64) (results string) {
+func (nl *nl_AW) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(nl.decimal)
 	b := make([]byte, 0, l)
@@ -254,10 +246,7 @@ func (nl *nl_AW) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(nl.decimal) - 1; j >= 0; j-- {
-				b = append(b, nl.decimal[j])
-			}
-
+			b = append(b, nl.decimal[0])
 			continue
 		}
 
@@ -265,9 +254,7 @@ func (nl *nl_AW) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(nl.minus) - 1; j >= 0; j-- {
-			b = append(b, nl.minus[j])
-		}
+		b = append(b, nl.minus[0])
 	}
 
 	// reverse
@@ -277,12 +264,11 @@ func (nl *nl_AW) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, nl.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'nl_AW'
-func (nl *nl_AW) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (nl *nl_AW) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nl.currencies[currency]
@@ -294,20 +280,14 @@ func (nl *nl_AW) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(nl.decimal) - 1; j >= 0; j-- {
-				b = append(b, nl.decimal[j])
-			}
-
+			b = append(b, nl.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(nl.group) - 1; j >= 0; j-- {
-					b = append(b, nl.group[j])
-				}
-
+				b = append(b, nl.group[0])
 				count = 1
 			} else {
 				count++
@@ -326,9 +306,7 @@ func (nl *nl_AW) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 	}
 
 	if num < 0 {
-		for j := len(nl.minus) - 1; j >= 0; j-- {
-			b = append(b, nl.minus[j])
-		}
+		b = append(b, nl.minus[0])
 	}
 
 	// reverse
@@ -347,13 +325,12 @@ func (nl *nl_AW) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'nl_AW'
 // in accounting notation.
-func (nl *nl_AW) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (nl *nl_AW) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nl.currencies[currency]
@@ -365,20 +342,14 @@ func (nl *nl_AW) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(nl.decimal) - 1; j >= 0; j-- {
-				b = append(b, nl.decimal[j])
-			}
-
+			b = append(b, nl.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(nl.group) - 1; j >= 0; j-- {
-					b = append(b, nl.group[j])
-				}
-
+				b = append(b, nl.group[0])
 				count = 1
 			} else {
 				count++
@@ -430,8 +401,7 @@ func (nl *nl_AW) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, nl.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'nl_AW'

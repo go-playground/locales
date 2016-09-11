@@ -18,7 +18,7 @@ type kl_GL struct {
 	group              string
 	minus              string
 	percent            string
-	percentSuffix      []byte
+	percentSuffix      string
 	perMille           string
 	timeSeparator      string
 	inifinity          string
@@ -55,7 +55,7 @@ func New() locales.Translator {
 		timeSeparator:      ":",
 		inifinity:          "∞",
 		currencies:         []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:      []byte{0xc2, 0xa0},
+		percentSuffix:      " ",
 		monthsAbbreviated:  []string{"", "jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"},
 		monthsNarrow:       []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
 		monthsWide:         []string{"", "januari", "februari", "martsi", "aprili", "maji", "juni", "juli", "augustusi", "septemberi", "oktoberi", "novemberi", "decemberi"},
@@ -68,7 +68,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"Kr.in.si.", "Kr.in.king."},
 		erasNarrow:         []string{"Kr.s.", "Kr.k."},
 		erasWide:           []string{"Kristusip inunngornerata siornagut", "Kristusip inunngornerata kingornagut"},
-		timezones:          map[string]string{"ECT": "ECT", "MDT": "MDT", "EST": "EST", "UYT": "UYT", "NZDT": "NZDT", "BOT": "BOT", "ADT": "ADT", "VET": "VET", "CDT": "CDT", "CAT": "CAT", "CLST": "CLST", "ACST": "ACST", "EAT": "EAT", "TMT": "TMT", "UYST": "UYST", "PST": "PST", "COST": "COST", "WARST": "WARST", "AST": "AST", "EDT": "EDT", "BT": "BT", "SRT": "SRT", "GFT": "GFT", "HAST": "HAST", "NZST": "NZST", "ACDT": "ACDT", "TMST": "TMST", "MYT": "MYT", "HADT": "HADT", "HNT": "HNT", "AKST": "AKST", "SGT": "SGT", "HKT": "HKT", "WEZ": "WEZ", "CLT": "CLT", "OESZ": "OESZ", "AEDT": "AEDT", "WART": "WART", "WITA": "WITA", "ChST": "ChST", "AWST": "AWST", "ART": "ART", "ACWST": "ACWST", "AWDT": "AWDT", "COT": "COT", "MEZ": "MEZ", "MESZ": "MESZ", "GYT": "GYT", "LHST": "LHST", "AKDT": "AKDT", "WAT": "WAT", "LHDT": "LHDT", "∅∅∅": "∅∅∅", "WIT": "WIT", "HKST": "HKST", "HAT": "HAT", "WIB": "WIB", "SAST": "SAST", "CST": "CST", "WESZ": "WESZ", "PDT": "PDT", "OEZ": "OEZ", "ACWDT": "ACWDT", "IST": "IST", "GMT": "GMT", "CHAST": "CHAST", "WAST": "WAST", "JST": "JST", "JDT": "JDT", "MST": "MST", "AEST": "AEST", "CHADT": "CHADT", "ARST": "ARST"},
+		timezones:          map[string]string{"SAST": "SAST", "OEZ": "OEZ", "MYT": "MYT", "∅∅∅": "∅∅∅", "HADT": "HADT", "LHDT": "LHDT", "NZDT": "NZDT", "WAST": "WAST", "OESZ": "OESZ", "CLT": "CLT", "GFT": "GFT", "ACWDT": "ACWDT", "MESZ": "MESZ", "SRT": "SRT", "WIB": "WIB", "EST": "EST", "WESZ": "WESZ", "EAT": "EAT", "MEZ": "MEZ", "ACDT": "ACDT", "IST": "IST", "WARST": "WARST", "PDT": "PDT", "TMT": "TMT", "WITA": "WITA", "ChST": "ChST", "CST": "CST", "GMT": "GMT", "AKDT": "AKDT", "HNT": "HNT", "CAT": "CAT", "CHAST": "CHAST", "JST": "JST", "WEZ": "WEZ", "ACWST": "ACWST", "WART": "WART", "COST": "COST", "HAT": "HAT", "HKST": "HKST", "TMST": "TMST", "COT": "COT", "LHST": "LHST", "AEDT": "AEDT", "AWDT": "AWDT", "ARST": "ARST", "AKST": "AKST", "AWST": "AWST", "CDT": "CDT", "EDT": "EDT", "ACST": "ACST", "SGT": "SGT", "HAST": "HAST", "CLST": "CLST", "JDT": "JDT", "MST": "MST", "WIT": "WIT", "HKT": "HKT", "UYST": "UYST", "WAT": "WAT", "AST": "AST", "MDT": "MDT", "PST": "PST", "BOT": "BOT", "BT": "BT", "ECT": "ECT", "VET": "VET", "GYT": "GYT", "UYT": "UYT", "ART": "ART", "NZST": "NZST", "ADT": "ADT", "AEST": "AEST", "CHADT": "CHADT"},
 	}
 }
 
@@ -185,7 +185,8 @@ func (kl *kl_GL) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kl_GL' and handles both Whole and Real numbers based on 'v'
-func (kl *kl_GL) FmtNumber(num float64, v uint64) (results string) {
+func (kl *kl_GL) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kl.decimal) + len(kl.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -221,13 +222,12 @@ func (kl *kl_GL) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kl_GL' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kl *kl_GL) FmtPercent(num float64, v uint64) (results string) {
+func (kl *kl_GL) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kl.decimal)
 	b := make([]byte, 0, l)
@@ -255,12 +255,11 @@ func (kl *kl_GL) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, kl.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kl_GL'
-func (kl *kl_GL) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kl *kl_GL) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kl.currencies[currency]
@@ -313,13 +312,12 @@ func (kl *kl_GL) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kl_GL'
 // in accounting notation.
-func (kl *kl_GL) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kl *kl_GL) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kl.currencies[currency]
@@ -380,8 +378,7 @@ func (kl *kl_GL) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kl_GL'

@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.m.ē.", "m.ē."},
 		erasNarrow:             []string{"p.m.ē.", "m.ē."},
 		erasWide:               []string{"pirms mūsu ēras", "mūsu ērā"},
-		timezones:              map[string]string{"JST": "Japānas ziemas laiks", "CLT": "Čīles ziemas laiks", "AEDT": "Austrālijas austrumu vasaras laiks", "WIB": "Rietumindonēzijas laiks", "ACDT": "Austrālijas centrālais vasaras laiks", "MDT": "Kalnu vasaras laiks", "HKT": "Honkongas ziemas laiks", "EDT": "Austrumu vasaras laiks", "CHAST": "Četemas ziemas laiks", "COT": "Kolumbijas ziemas laiks", "JDT": "Japānas vasaras laiks", "WIT": "Austrumindonēzijas laiks", "AEST": "Austrālijas austrumu ziemas laiks", "GYT": "Gajānas laiks", "GFT": "Franču Gviānas laiks", "HAST": "Havaju–Aleutu ziemas laiks", "WART": "Rietumargentīnas ziemas laiks", "ART": "Argentīnas ziemas laiks", "ARST": "Argentīnas vasaras laiks", "MST": "Kalnu ziemas laiks", "EAT": "Austrumāfrikas laiks", "WARST": "Rietumargentīnas vasaras laiks", "AKDT": "Aļaskas vasaras laiks", "AWST": "Austrālijas rietumu ziemas laiks", "PST": "Klusā okeāna ziemas laiks", "WITA": "Centrālindonēzijas laiks", "TMT": "Turkmenistānas ziemas laiks", "HADT": "Havaju–Aleutu vasaras laiks", "AWDT": "Austrālijas rietumu vasaras laiks", "AST": "Atlantijas ziemas laiks", "ACWDT": "Austrālijas centrālais rietumu vasaras laiks", "∅∅∅": "Azoru salu vasaras laiks", "CST": "Centrālais ziemas laiks", "CAT": "Centrālāfrikas laiks", "GMT": "Griničas laiks", "TMST": "Turkmenistānas vasaras laiks", "HKST": "Honkongas vasaras laiks", "EST": "Austrumu ziemas laiks", "ACST": "Austrālijas centrālais ziemas laiks", "ACWST": "Austrālijas centrālais rietumu ziemas laiks", "UYST": "Urugvajas vasaras laiks", "OESZ": "Austrumeiropas vasaras laiks", "MEZ": "Centrāleiropas ziemas laiks", "HNT": "Ņūfaundlendas ziemas laiks", "ChST": "Čamoro standarta laiks", "MYT": "Malaizijas laiks", "ECT": "Ekvadoras laiks", "HAT": "Ņūfaundlendas vasaras laiks", "NZST": "Jaunzēlandes ziemas laiks", "VET": "Venecuēlas laiks", "CDT": "Centrālais vasaras laiks", "WEZ": "Rietumeiropas ziemas laiks", "UYT": "Urugvajas ziemas laiks", "SGT": "Singapūras laiks", "WESZ": "Rietumeiropas vasaras laiks", "CLST": "Čīles vasaras laiks", "OEZ": "Austrumeiropas ziemas laiks", "NZDT": "Jaunzēlandes vasaras laiks", "MESZ": "Centrāleiropas vasaras laiks", "AKST": "Aļaskas ziemas laiks", "COST": "Kolumbijas vasaras laiks", "IST": "Indijas ziemas laiks", "LHDT": "Lorda Hava salas vasaras laiks", "CHADT": "Četemas vasaras laiks", "WAST": "Rietumāfrikas vasaras laiks", "BT": "Butānas laiks", "SRT": "Surinamas laiks", "SAST": "Dienvidāfrikas ziemas laiks", "PDT": "Klusā okeāna vasaras laiks", "BOT": "Bolīvijas laiks", "WAT": "Rietumāfrikas ziemas laiks", "ADT": "Atlantijas vasaras laiks", "LHST": "Lorda Hava salas ziemas laiks"},
+		timezones:              map[string]string{"ADT": "Atlantijas vasaras laiks", "CLST": "Čīles vasaras laiks", "JDT": "Japānas vasaras laiks", "WARST": "Rietumargentīnas vasaras laiks", "AKST": "Aļaskas ziemas laiks", "HKST": "Honkongas vasaras laiks", "WAT": "Rietumāfrikas ziemas laiks", "WAST": "Rietumāfrikas vasaras laiks", "MEZ": "Centrāleiropas ziemas laiks", "AEST": "Austrālijas austrumu ziemas laiks", "AEDT": "Austrālijas austrumu vasaras laiks", "WART": "Rietumargentīnas ziemas laiks", "BOT": "Bolīvijas laiks", "TMT": "Turkmenistānas ziemas laiks", "EDT": "Austrumu vasaras laiks", "LHST": "Lorda Hava salas ziemas laiks", "CLT": "Čīles ziemas laiks", "CST": "Centrālais ziemas laiks", "COT": "Kolumbijas ziemas laiks", "ACWST": "Austrālijas centrālais rietumu ziemas laiks", "MESZ": "Centrāleiropas vasaras laiks", "BT": "Butānas laiks", "COST": "Kolumbijas vasaras laiks", "NZST": "Jaunzēlandes ziemas laiks", "CHAST": "Četemas ziemas laiks", "PST": "Klusā okeāna ziemas laiks", "CDT": "Centrālais vasaras laiks", "EST": "Austrumu ziemas laiks", "HADT": "Havaju–Aleutu vasaras laiks", "AKDT": "Aļaskas vasaras laiks", "CHADT": "Četemas vasaras laiks", "JST": "Japānas ziemas laiks", "ACDT": "Austrālijas centrālais vasaras laiks", "AWDT": "Austrālijas rietumu vasaras laiks", "GYT": "Gajānas laiks", "UYT": "Urugvajas ziemas laiks", "ART": "Argentīnas ziemas laiks", "NZDT": "Jaunzēlandes vasaras laiks", "SGT": "Singapūras laiks", "HNT": "Ņūfaundlendas ziemas laiks", "CAT": "Centrālāfrikas laiks", "ACWDT": "Austrālijas centrālais rietumu vasaras laiks", "ARST": "Argentīnas vasaras laiks", "GMT": "Griničas laiks", "HAST": "Havaju–Aleutu ziemas laiks", "ECT": "Ekvadoras laiks", "∅∅∅": "Amazones vasaras laiks", "EAT": "Austrumāfrikas laiks", "WESZ": "Rietumeiropas vasaras laiks", "VET": "Venecuēlas laiks", "AWST": "Austrālijas rietumu ziemas laiks", "HKT": "Honkongas ziemas laiks", "LHDT": "Lorda Hava salas vasaras laiks", "WIB": "Rietumindonēzijas laiks", "PDT": "Klusā okeāna vasaras laiks", "GFT": "Franču Gviānas laiks", "TMST": "Turkmenistānas vasaras laiks", "ChST": "Čamoro standarta laiks", "SAST": "Dienvidāfrikas ziemas laiks", "MDT": "MDT", "AST": "Atlantijas ziemas laiks", "IST": "Indijas ziemas laiks", "MYT": "Malaizijas laiks", "SRT": "Surinamas laiks", "WITA": "Centrālindonēzijas laiks", "OEZ": "Austrumeiropas ziemas laiks", "ACST": "Austrālijas centrālais ziemas laiks", "HAT": "Ņūfaundlendas vasaras laiks", "UYST": "Urugvajas vasaras laiks", "WIT": "Austrumindonēzijas laiks", "MST": "MST", "WEZ": "Rietumeiropas ziemas laiks", "OESZ": "Austrumeiropas vasaras laiks"},
 	}
 }
 
@@ -218,7 +218,8 @@ func (lv *lv_LV) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lv_LV' and handles both Whole and Real numbers based on 'v'
-func (lv *lv_LV) FmtNumber(num float64, v uint64) (results string) {
+func (lv *lv_LV) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lv.decimal) + len(lv.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -238,7 +239,6 @@ func (lv *lv_LV) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(lv.group) - 1; j >= 0; j-- {
 					b = append(b, lv.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -257,13 +257,12 @@ func (lv *lv_LV) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'lv_LV' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (lv *lv_LV) FmtPercent(num float64, v uint64) (results string) {
+func (lv *lv_LV) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lv.decimal)
 	b := make([]byte, 0, l)
@@ -289,12 +288,11 @@ func (lv *lv_LV) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, lv.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lv_LV'
-func (lv *lv_LV) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (lv *lv_LV) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lv.currencies[currency]
@@ -336,13 +334,12 @@ func (lv *lv_LV) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lv_LV'
 // in accounting notation.
-func (lv *lv_LV) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (lv *lv_LV) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lv.currencies[currency]
@@ -391,8 +388,7 @@ func (lv *lv_LV) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'lv_LV'

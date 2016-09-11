@@ -18,7 +18,7 @@ type dsb_DE struct {
 	group                  string
 	minus                  string
 	percent                string
-	percentSuffix          []byte
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
-		percentSuffix:          []byte{0xc2, 0xa0},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "jan.", "feb.", "měr.", "apr.", "maj.", "jun.", "jul.", "awg.", "sep.", "okt.", "now.", "dec."},
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"pś.Chr.n.", "pó Chr.n."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"pśed Kristusowym naroźenim", "pó Kristusowem naroźenju"},
-		timezones:              map[string]string{"HADT": "Hawaiisko-aleutski lěśojski cas", "AKST": "Alaskojski standardny cas", "SRT": "Surinamski cas", "ECT": "Ekuadorski cas", "HAST": "Hawaiisko-aleutski standardny cas", "CAT": "Srjejźoafriski cas", "BT": "Bhutański cas", "WIB": "Pódwjacornoindoneski cas", "CHADT": "Chathamski lěśojski cas", "WAT": "Pódwjacornoafriski standardny cas", "∅∅∅": "Brasília lěśojski cas", "GMT": "Greenwichski cas", "MESZ": "Srjejźoeuropski lěśojski cas", "SAST": "Pódpołdnjowoafriski cas", "WIT": "Pódzajtšnoindoneski", "AWST": "Pódwjacornoawstralski standardny cas", "CLST": "Chilski lěśojski cas", "VET": "Venezuelski cas", "NZDT": "Nowoseelandski lěśojski cas", "COST": "Kolumbiski lěśojski cas", "NZST": "Nowoseelandski standardny cas", "EAT": "Pódzajtšnoafriski cas", "CST": "Pódpołnocnoameriski centralny standardny cas", "JST": "Japański standardny cas", "PDT": "Pódpołnocnoameriski pacifiski lěśojski cas", "COT": "Kolumbiski standardny cas", "EST": "Pódpołnocnoameriski pódzajtšny standardny cas", "BOT": "Boliwiski cas", "JDT": "Japański lěśojski cas", "SGT": "Singapurski cas", "MST": "MST", "WEZ": "Pódwjacornoeuropski standardny cas", "IST": "Indiski cas", "ARST": "Argentinski lěśojski cas", "WAST": "Pódwjacornoafriski lěśojski cas", "ACWST": "Srjejźopódwjacorny awstralski standardny cas", "HAT": "Nowofundlandski lěśojski cas", "UYST": "Uruguayski lěśojski cas", "HKST": "Hongkongski lěśojski cas", "WART": "Pódwjacornoargentinski standardny cas", "LHST": "Standardny cas kupy Lord-Howe", "LHDT": "lěśojski cas kupy Lord-Howe", "MDT": "MDT", "AWDT": "Pódwjacornoawstralski lěśojski cas", "ACST": "Srjejźoawstralski standardny cas", "GFT": "Francojskoguyański cas", "TMT": "Turkmeniski standardny cas", "ACWDT": "Srjejźopódwjacorny awstralski lěśojski cas", "EDT": "Pódpołnocnoameriski pódzajtšny lěśojski cas", "OESZ": "Pódzajtšnoeuropski lěśojski cas", "OEZ": "Pódzajtšnoeuropski standardny cas", "AST": "Atlantiski standardny cas", "HKT": "Hongkongski standardny cas", "CLT": "Chilski standardny cas", "AEST": "Pódzajtšnoawstralski standardny cas", "ACDT": "Srjejźoawstralski lěśojski cas", "ART": "Argentinski standardny cas", "WARST": "Pódwjacornoargentinski lěśojski cas", "WITA": "Srjejźoindoneski cas", "TMST": "Turkmeniski lěśojski cas", "HNT": "Nowofundlandski standardny cas", "CDT": "Pódpołnocnoameriski centralny lěśojski cas", "ChST": "Chamorrski cas", "AEDT": "Pódzajtšnoawstralski lěśojski cas", "PST": "Pódpołnocnoameriski pacifiski standardny cas", "GYT": "Guyański cas", "WESZ": "Pódwjacornoeuropski lěśojski cas", "UYT": "Uruguayski standardny cas", "ADT": "Atlantiski lěśojski cas", "MYT": "Malajziski cas", "AKDT": "Alaskojski lěśojski cas", "CHAST": "Chathamski standardny cas", "MEZ": "Srjejźoeuropski standardny cas"},
+		timezones:              map[string]string{"AWST": "Pódwjacornoawstralski standardny cas", "ECT": "Ekuadorski cas", "JDT": "Japański lěśojski cas", "ADT": "Atlantiski lěśojski cas", "HKST": "Hongkongski lěśojski cas", "AST": "Atlantiski standardny cas", "TMST": "Turkmeniski lěśojski cas", "HAST": "Hawaiisko-aleutski standardny cas", "HADT": "Hawaiisko-aleutski lěśojski cas", "MYT": "Malajziski cas", "COT": "Kolumbiski standardny cas", "EAT": "Pódzajtšnoafriski cas", "AWDT": "Pódwjacornoawstralski lěśojski cas", "HNT": "Nowofundlandski standardny cas", "CAT": "Srjejźoafriski cas", "UYT": "Uruguayski standardny cas", "ARST": "Argentinski lěśojski cas", "ACST": "Srjejźoawstralski standardny cas", "PST": "Pódpołnocnoameriski pacifiski standardny cas", "CDT": "Pódpołnocnoameriski centralny lěśojski cas", "EST": "Pódpołnocnoameriski pódzajtšny standardny cas", "WIB": "Pódwjacornoindoneski cas", "SGT": "Singapurski cas", "MST": "Pódpołnocnoameriski górski standardny cas", "BOT": "Boliwiski cas", "LHDT": "lěśojski cas kupy Lord-Howe", "CLST": "Chilski lěśojski cas", "WART": "Pódwjacornoargentinski standardny cas", "VET": "Venezuelski cas", "UYST": "Uruguayski lěśojski cas", "GMT": "Greenwichski cas", "AKST": "Alaskojski standardny cas", "WESZ": "Pódwjacornoeuropski lěśojski cas", "ACWST": "Srjejźopódwjacorny awstralski standardny cas", "MEZ": "Srjejźoeuropski standardny cas", "BT": "Bhutański cas", "MESZ": "Srjejźoeuropski lěśojski cas", "OEZ": "Pódzajtšnoeuropski standardny cas", "ACWDT": "Srjejźopódwjacorny awstralski lěśojski cas", "JST": "Japański standardny cas", "∅∅∅": "Acorski lěśojski cas", "HKT": "Hongkongski standardny cas", "CLT": "Chilski standardny cas", "ACDT": "Srjejźoawstralski lěśojski cas", "PDT": "Pódpołnocnoameriski pacifiski lěśojski cas", "ART": "Argentinski standardny cas", "WITA": "Srjejźoindoneski cas", "AEST": "Pódzajtšnoawstralski standardny cas", "WAT": "Pódwjacornoafriski standardny cas", "WAST": "Pódwjacornoafriski lěśojski cas", "IST": "Indiski cas", "MDT": "Pódpołnocnoameriski górski lěśojski cas", "WIT": "Pódzajtšnoindoneski", "EDT": "Pódpołnocnoameriski pódzajtšny lěśojski cas", "ChST": "Chamorrski cas", "NZDT": "Nowoseelandski lěśojski cas", "CHADT": "Chathamski lěśojski cas", "AEDT": "Pódzajtšnoawstralski lěśojski cas", "TMT": "Turkmeniski standardny cas", "AKDT": "Alaskojski lěśojski cas", "NZST": "Nowoseelandski standardny cas", "WEZ": "Pódwjacornoeuropski standardny cas", "CHAST": "Chathamski standardny cas", "WARST": "Pódwjacornoargentinski lěśojski cas", "HAT": "Nowofundlandski lěśojski cas", "GYT": "Guyański cas", "GFT": "Francojskoguyański cas", "CST": "Pódpołnocnoameriski centralny standardny cas", "LHST": "Standardny cas kupy Lord-Howe", "OESZ": "Pódzajtšnoeuropski lěśojski cas", "SRT": "Surinamski cas", "COST": "Kolumbiski lěśojski cas", "SAST": "Pódpołdnjowoafriski cas"},
 	}
 }
 
@@ -198,7 +198,8 @@ func (dsb *dsb_DE) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'dsb_DE' and handles both Whole and Real numbers based on 'v'
-func (dsb *dsb_DE) FmtNumber(num float64, v uint64) (results string) {
+func (dsb *dsb_DE) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dsb.decimal) + len(dsb.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -234,13 +235,12 @@ func (dsb *dsb_DE) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'dsb_DE' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (dsb *dsb_DE) FmtPercent(num float64, v uint64) (results string) {
+func (dsb *dsb_DE) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(dsb.decimal)
 	b := make([]byte, 0, l)
@@ -268,12 +268,11 @@ func (dsb *dsb_DE) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, dsb.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'dsb_DE'
-func (dsb *dsb_DE) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (dsb *dsb_DE) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dsb.currencies[currency]
@@ -326,13 +325,12 @@ func (dsb *dsb_DE) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'dsb_DE'
 // in accounting notation.
-func (dsb *dsb_DE) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (dsb *dsb_DE) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := dsb.currencies[currency]
@@ -392,8 +390,7 @@ func (dsb *dsb_DE) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'dsb_DE'

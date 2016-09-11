@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "ar_OM",
 		pluralsCardinal:        []locales.PluralRule{1, 2, 3, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{5, 6, 1, 4},
+		pluralsRange:           []locales.PluralRule{1, 4, 5, 6},
 		decimal:                "٫",
 		group:                  "٬",
 		minus:                  "‏-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"", ""},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"CLT": "توقيت شيلي الرسمي", "UYST": "توقيت أورغواي الصيفي", "WAST": "توقيت غرب أفريقيا الصيفي", "LHST": "توقيت لورد هاو الرسمي", "CDT": "التوقيت الصيفي المركزي لأمريكا الشمالية", "∅∅∅": "توقيت برازيليا الصيفي", "EAT": "توقيت شرق أفريقيا", "EDT": "التوقيت الصيفي الشرقي لأمريكا الشمالية", "ARST": "توقيت الأرجنتين الصيفي", "ACWST": "توقيت غرب وسط أستراليا الرسمي", "SAST": "توقيت جنوب أفريقيا", "UYT": "توقيت أورغواي الرسمي", "CHAST": "توقيت تشاتام الرسمي", "BT": "توقيت بوتان", "LHDT": "التوقيت الصيفي للورد هاو", "HADT": "توقيت هاواي ألوتيان الصيفي", "MST": "MST", "WEZ": "توقيت غرب أوروبا الرسمي", "GYT": "توقيت غيانا", "ART": "توقيت الأرجنتين الرسمي", "JST": "توقيت اليابان الرسمي", "JDT": "توقيت اليابان الصيفي", "AKDT": "توقيت ألاسكا الصيفي", "WESZ": "توقيت غرب أوروبا الصيفي", "EST": "التوقيت الرسمي الشرقي لأمريكا الشمالية", "AEST": "توقيت شرق أستراليا الرسمي", "PST": "توقيت المحيط الهادي الرسمي", "AST": "التوقيت الرسمي الأطلسي", "MESZ": "توقيت وسط أوروبا الصيفي", "ACDT": "توقيت وسط أستراليا الصيفي", "CST": "التوقيت الرسمي المركزي لأمريكا الشمالية", "HKT": "توقيت هونغ كونغ الرسمي", "GMT": "توقيت غرينتش", "WARST": "توقيت غرب الأرجنتين الصيفي", "OESZ": "توقيت شرق أوروبا الصيفي", "VET": "توقيت فنزويلا", "AWDT": "توقيت غرب أستراليا الصيفي", "CAT": "توقيت وسط أفريقيا", "WIB": "توقيت غرب إندونيسيا", "COT": "توقيت كولومبيا الرسمي", "CHADT": "توقيت تشاتام الصيفي", "ChST": "توقيت تشامورو", "ECT": "توقيت الإكوادور", "HNT": "توقيت نيوفاوندلاند الرسمي", "WITA": "توقيت وسط إندونيسيا", "AEDT": "توقيت شرق أستراليا الصيفي", "NZDT": "توقيت نيوزيلندا الصيفي", "ACST": "توقيت وسط أستراليا الرسمي", "TMT": "توقيت تركمانستان الرسمي", "TMST": "توقيت تركمانستان الصيفي", "BOT": "توقيت بوليفيا", "WAT": "توقيت غرب أفريقيا الرسمي", "AKST": "التوقيت الرسمي لألاسكا", "MDT": "MDT", "HKST": "توقيت هونغ كونغ الصيفي", "ACWDT": "توقيت غرب وسط أستراليا الصيفي", "WIT": "توقيت شرق إندونيسيا", "HAST": "توقيت هاواي ألوتيان الرسمي", "SGT": "توقيت سنغافورة", "PDT": "توقيت المحيط الهادي الصيفي", "COST": "توقيت كولومبيا الصيفي", "MEZ": "توقيت وسط أوروبا الرسمي", "GFT": "توقيت غايانا الفرنسية", "MYT": "توقيت ماليزيا", "SRT": "توقيت سورينام", "IST": "توقيت الهند", "HAT": "توقيت نيوفاوندلاند الصيفي", "OEZ": "توقيت شرق أوروبا الرسمي", "WART": "توقيت غرب الأرجنتين الرسمي", "AWST": "توقيت غرب أستراليا الرسمي", "CLST": "توقيت شيلي الصيفي", "NZST": "توقيت نيوزيلندا الرسمي", "ADT": "التوقيت الصيفي الأطلسي"},
+		timezones:              map[string]string{"WIT": "توقيت شرق إندونيسيا", "HAST": "توقيت هاواي ألوتيان الرسمي", "CDT": "التوقيت الصيفي المركزي لأمريكا الشمالية", "COT": "توقيت كولومبيا الرسمي", "WAT": "توقيت غرب أفريقيا الرسمي", "MESZ": "توقيت وسط أوروبا الصيفي", "OESZ": "توقيت شرق أوروبا الصيفي", "VET": "توقيت فنزويلا", "SRT": "توقيت سورينام", "BOT": "توقيت بوليفيا", "CST": "التوقيت الرسمي المركزي لأمريكا الشمالية", "WIB": "توقيت غرب إندونيسيا", "TMT": "توقيت تركمانستان الرسمي", "NZST": "توقيت نيوزيلندا الرسمي", "CHAST": "توقيت تشاتام الرسمي", "ACDT": "توقيت وسط أستراليا الصيفي", "GYT": "توقيت غيانا", "MDT": "التوقيت الجبلي الصيفي لأمريكا الشمالية", "∅∅∅": "توقيت أزورس الصيفي", "IST": "توقيت الهند", "JDT": "توقيت اليابان الصيفي", "OEZ": "توقيت شرق أوروبا الرسمي", "MST": "التوقيت الجبلي الرسمي لأمريكا الشمالية", "SGT": "توقيت سنغافورة", "LHDT": "التوقيت الصيفي للورد هاو", "CHADT": "توقيت تشاتام الصيفي", "JST": "توقيت اليابان الرسمي", "GFT": "توقيت غايانا الفرنسية", "ARST": "توقيت الأرجنتين الصيفي", "GMT": "توقيت غرينتش", "CAT": "توقيت وسط أفريقيا", "HKT": "توقيت هونغ كونغ الرسمي", "WITA": "توقيت وسط إندونيسيا", "HADT": "توقيت هاواي ألوتيان الصيفي", "AEDT": "توقيت شرق أستراليا الصيفي", "AWST": "توقيت غرب أستراليا الرسمي", "HNT": "توقيت نيوفاوندلاند الرسمي", "UYST": "توقيت أورغواي الصيفي", "NZDT": "توقيت نيوزيلندا الصيفي", "ACST": "توقيت وسط أستراليا الرسمي", "LHST": "توقيت لورد هاو الرسمي", "CLT": "توقيت شيلي الرسمي", "MYT": "توقيت ماليزيا", "TMST": "توقيت تركمانستان الصيفي", "ACWDT": "توقيت غرب وسط أستراليا الصيفي", "SAST": "توقيت جنوب أفريقيا", "AEST": "توقيت شرق أستراليا الرسمي", "WART": "توقيت غرب الأرجنتين الرسمي", "ADT": "التوقيت الصيفي الأطلسي", "AWDT": "توقيت غرب أستراليا الصيفي", "WARST": "توقيت غرب الأرجنتين الصيفي", "HAT": "توقيت نيوفاوندلاند الصيفي", "ChST": "توقيت تشامورو", "WEZ": "توقيت غرب أوروبا الرسمي", "PST": "توقيت المحيط الهادي الرسمي", "BT": "توقيت بوتان", "ART": "توقيت الأرجنتين الرسمي", "AKDT": "توقيت ألاسكا الصيفي", "CLST": "توقيت شيلي الصيفي", "MEZ": "توقيت وسط أوروبا الرسمي", "AST": "التوقيت الرسمي الأطلسي", "AKST": "التوقيت الرسمي لألاسكا", "EST": "التوقيت الرسمي الشرقي لأمريكا الشمالية", "COST": "توقيت كولومبيا الصيفي", "EAT": "توقيت شرق أفريقيا", "PDT": "توقيت المحيط الهادي الصيفي", "HKST": "توقيت هونغ كونغ الصيفي", "WESZ": "توقيت غرب أوروبا الصيفي", "ACWST": "توقيت غرب وسط أستراليا الرسمي", "UYT": "توقيت أورغواي الرسمي", "EDT": "التوقيت الصيفي الشرقي لأمريكا الشمالية", "ECT": "توقيت الإكوادور", "WAST": "توقيت غرب أفريقيا الصيفي"},
 	}
 }
 
@@ -248,7 +248,8 @@ func (ar *ar_OM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ar_OM' and handles both Whole and Real numbers based on 'v'
-func (ar *ar_OM) FmtNumber(num float64, v uint64) (results string) {
+func (ar *ar_OM) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ar.decimal) + len(ar.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -261,7 +262,6 @@ func (ar *ar_OM) FmtNumber(num float64, v uint64) (results string) {
 			for j := len(ar.decimal) - 1; j >= 0; j-- {
 				b = append(b, ar.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -271,7 +271,6 @@ func (ar *ar_OM) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(ar.group) - 1; j >= 0; j-- {
 					b = append(b, ar.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -292,13 +291,12 @@ func (ar *ar_OM) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ar_OM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ar *ar_OM) FmtPercent(num float64, v uint64) (results string) {
+func (ar *ar_OM) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ar.decimal)
 	b := make([]byte, 0, l)
@@ -309,7 +307,6 @@ func (ar *ar_OM) FmtPercent(num float64, v uint64) (results string) {
 			for j := len(ar.decimal) - 1; j >= 0; j-- {
 				b = append(b, ar.decimal[j])
 			}
-
 			continue
 		}
 
@@ -329,12 +326,11 @@ func (ar *ar_OM) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ar.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ar_OM'
-func (ar *ar_OM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ar *ar_OM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ar.currencies[currency]
@@ -349,7 +345,6 @@ func (ar *ar_OM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 			for j := len(ar.decimal) - 1; j >= 0; j-- {
 				b = append(b, ar.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -359,7 +354,6 @@ func (ar *ar_OM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 				for j := len(ar.group) - 1; j >= 0; j-- {
 					b = append(b, ar.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -399,13 +393,12 @@ func (ar *ar_OM) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ar_OM'
 // in accounting notation.
-func (ar *ar_OM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ar *ar_OM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ar.currencies[currency]
@@ -420,7 +413,6 @@ func (ar *ar_OM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 			for j := len(ar.decimal) - 1; j >= 0; j-- {
 				b = append(b, ar.decimal[j])
 			}
-
 			inWhole = true
 			continue
 		}
@@ -430,7 +422,6 @@ func (ar *ar_OM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 				for j := len(ar.group) - 1; j >= 0; j-- {
 					b = append(b, ar.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -482,8 +473,7 @@ func (ar *ar_OM) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ar_OM'

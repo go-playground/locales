@@ -74,7 +74,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"aK", "pK"},
 		erasNarrow:             []string{"aK", "pK"},
 		erasWide:               []string{"aK", "pK"},
-		timezones:              map[string]string{"LHST": "LHST", "HAST": "HAST", "IST": "barata tempo", "AWDT": "okcidenta aŭstralia somera tempo", "UYST": "UYST", "GMT": "universala tempo kunordigita", "AEST": "orienta aŭstralia norma tempo", "ACWST": "centrokcidenta aŭstralia norma tempo", "ART": "ART", "ADT": "atlantika nord-amerika somera tempo", "HADT": "HADT", "SGT": "SGT", "CST": "centra nord-amerika norma tempo", "OESZ": "orienta eŭropa somera tempo", "SRT": "SRT", "AKDT": "AKDT", "VET": "VET", "WITA": "centra indonezia tempo", "ChST": "ChST", "AWST": "okcidenta aŭstralia norma tempo", "EAT": "orienta afrika tempo", "COST": "COST", "ARST": "ARST", "MDT": "monta nord-amerika somera tempo", "WART": "WART", "ACDT": "centra aŭstralia somera tempo", "WAT": "okcidenta afrika norma tempo", "∅∅∅": "∅∅∅", "UYT": "UYT", "AST": "atlantika nord-amerika norma tempo", "WIT": "orienta indonezia tempo", "TMST": "TMST", "AEDT": "orienta aŭstralia somera tempo", "TMT": "TMT", "OEZ": "orienta eŭropa norma tempo", "PST": "pacifika nord-amerika norma tempo", "COT": "COT", "ACWDT": "centrokcidenta aŭstralia somera tempo", "HNT": "HNT", "HKT": "HKT", "CLST": "CLST", "PDT": "pacifika nord-amerika somera tempo", "WAST": "okcidenta afrika somera tempo", "ECT": "ECT", "CDT": "centra nord-amerika somera tempo", "EDT": "orienta nord-amerika somera tempo", "CLT": "CLT", "JST": "japana norma tempo", "JDT": "japana somera tempo", "AKST": "AKST", "HAT": "HAT", "NZST": "NZST", "MST": "monta nord-amerika norma tempo", "MYT": "MYT", "CHADT": "CHADT", "ACST": "centra aŭstralia norma tempo", "WARST": "WARST", "SAST": "suda afrika tempo", "HKST": "HKST", "CAT": "centra afrika tempo", "WESZ": "okcidenta eŭropa somera tempo", "LHDT": "LHDT", "MEZ": "centra eŭropa norma tempo", "GYT": "GYT", "GFT": "GFT", "BT": "BT", "EST": "orienta nord-amerika norma tempo", "NZDT": "NZDT", "WIB": "okcidenta indonezia tempo", "BOT": "BOT", "CHAST": "CHAST", "MESZ": "centra eŭropa somera tempo", "WEZ": "okcidenta eŭropa norma tempo"},
+		timezones:              map[string]string{"GMT": "universala tempo kunordigita", "ART": "ART", "EST": "orienta nord-amerika norma tempo", "AEDT": "orienta aŭstralia somera tempo", "PDT": "pacifika nord-amerika somera tempo", "UYST": "UYST", "BT": "BT", "SAST": "suda afrika tempo", "CHAST": "CHAST", "ACST": "centra aŭstralia norma tempo", "AKDT": "AKDT", "LHST": "LHST", "CAT": "centra afrika tempo", "WITA": "centra indonezia tempo", "WIB": "okcidenta indonezia tempo", "VET": "VET", "MYT": "MYT", "HAT": "HAT", "BOT": "BOT", "MDT": "MDT", "CLST": "CLST", "WAST": "okcidenta afrika somera tempo", "JST": "japana norma tempo", "GYT": "GYT", "LHDT": "LHDT", "EAT": "orienta afrika tempo", "CDT": "centra nord-amerika somera tempo", "AKST": "AKST", "COT": "COT", "ACWST": "centrokcidenta aŭstralia norma tempo", "MESZ": "centra eŭropa somera tempo", "PST": "pacifika nord-amerika norma tempo", "GFT": "GFT", "ChST": "ChST", "ECT": "ECT", "∅∅∅": "∅∅∅", "JDT": "japana somera tempo", "AWDT": "okcidenta aŭstralia somera tempo", "ARST": "ARST", "COST": "COST", "CHADT": "CHADT", "OEZ": "orienta eŭropa norma tempo", "CLT": "CLT", "AEST": "orienta aŭstralia norma tempo", "HKST": "HKST", "HADT": "HADT", "WEZ": "okcidenta eŭropa norma tempo", "WAT": "okcidenta afrika norma tempo", "SGT": "SGT", "HKT": "HKT", "TMST": "TMST", "NZST": "NZST", "ACDT": "centra aŭstralia somera tempo", "MST": "MST", "MEZ": "centra eŭropa norma tempo", "AWST": "okcidenta aŭstralia norma tempo", "SRT": "SRT", "ACWDT": "centrokcidenta aŭstralia somera tempo", "OESZ": "orienta eŭropa somera tempo", "AST": "atlantika nord-amerika norma tempo", "UYT": "UYT", "EDT": "orienta nord-amerika somera tempo", "HAST": "HAST", "NZDT": "NZDT", "WARST": "WARST", "IST": "barata tempo", "WIT": "orienta indonezia tempo", "TMT": "TMT", "WESZ": "okcidenta eŭropa somera tempo", "WART": "WART", "HNT": "HNT", "CST": "centra nord-amerika norma tempo", "ADT": "atlantika nord-amerika somera tempo"},
 	}
 }
 
@@ -191,7 +191,8 @@ func (eo *eo_001) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'eo_001' and handles both Whole and Real numbers based on 'v'
-func (eo *eo_001) FmtNumber(num float64, v uint64) (results string) {
+func (eo *eo_001) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(eo.decimal) + len(eo.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -211,7 +212,6 @@ func (eo *eo_001) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(eo.group) - 1; j >= 0; j-- {
 					b = append(b, eo.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -232,13 +232,12 @@ func (eo *eo_001) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'eo_001' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (eo *eo_001) FmtPercent(num float64, v uint64) (results string) {
+func (eo *eo_001) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(eo.decimal)
 	b := make([]byte, 0, l)
@@ -266,12 +265,11 @@ func (eo *eo_001) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, eo.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'eo_001'
-func (eo *eo_001) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (eo *eo_001) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eo.currencies[currency]
@@ -310,13 +308,12 @@ func (eo *eo_001) FmtCurrency(num float64, v uint64, currency currency.Type) (re
 
 	b = append(b, eo.currencyPositiveSuffix...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'eo_001'
 // in accounting notation.
-func (eo *eo_001) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (eo *eo_001) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eo.currencies[currency]
@@ -372,8 +369,7 @@ func (eo *eo_001) FmtAccounting(num float64, v uint64, currency currency.Type) (
 		b = append(b, eo.currencyPositiveSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'eo_001'

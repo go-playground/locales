@@ -60,7 +60,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"क्रिस्तपूर्व", "क्रिस्तशखा"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"WARST": "WARST", "AST": "AST", "MST": "MST", "∅∅∅": "∅∅∅", "ChST": "ChST", "OESZ": "OESZ", "BOT": "BOT", "EDT": "EDT", "WIT": "WIT", "LHDT": "LHDT", "HADT": "HADT", "CLST": "CLST", "COT": "COT", "MEZ": "MEZ", "WART": "WART", "HAT": "HAT", "HKT": "HKT", "CDT": "CDT", "EST": "EST", "PST": "PST", "CHADT": "CHADT", "SGT": "SGT", "AKDT": "AKDT", "CAT": "CAT", "NZDT": "NZDT", "GYT": "GYT", "ECT": "ECT", "MDT": "MDT", "MYT": "MYT", "VET": "VET", "HKST": "HKST", "ACST": "ACST", "ADT": "ADT", "GFT": "GFT", "JST": "JST", "CHAST": "CHAST", "WAT": "WAT", "UYST": "UYST", "ACDT": "ACDT", "SAST": "SAST", "SRT": "SRT", "JDT": "JDT", "HAST": "HAST", "WEZ": "WEZ", "CLT": "CLT", "NZST": "NZST", "PDT": "PDT", "BT": "BT", "ACWDT": "ACWDT", "EAT": "EAT", "CST": "CST", "GMT": "GMT", "AEST": "AEST", "WAST": "WAST", "LHST": "LHST", "AWDT": "AWDT", "HNT": "HNT", "COST": "COST", "ART": "ART", "AWST": "AWST", "WESZ": "WESZ", "UYT": "UYT", "WIB": "WIB", "AKST": "AKST", "TMT": "TMT", "TMST": "TMST", "ACWST": "ACWST", "IST": "भारतीय समय", "AEDT": "AEDT", "ARST": "ARST", "WITA": "WITA", "OEZ": "OEZ", "MESZ": "MESZ"},
+		timezones:              map[string]string{"ACST": "ACST", "SRT": "SRT", "LHST": "LHST", "MESZ": "MESZ", "VET": "VET", "CAT": "CAT", "COST": "COST", "AEDT": "AEDT", "WIB": "WIB", "WART": "WART", "WARST": "WARST", "HNT": "HNT", "HAT": "HAT", "LHDT": "LHDT", "CHADT": "CHADT", "ACDT": "ACDT", "PDT": "PDT", "UYST": "UYST", "BT": "BT", "ARST": "ARST", "AKDT": "AKDT", "AST": "AST", "NZST": "NZST", "AEST": "AEST", "AKST": "AKST", "COT": "COT", "HAST": "HAST", "MEZ": "MEZ", "OEZ": "OEZ", "HKST": "HKST", "CHAST": "CHAST", "JDT": "JDT", "WITA": "WITA", "CDT": "CDT", "ACWST": "ACWST", "ADT": "ADT", "TMST": "TMST", "HADT": "HADT", "EST": "EST", "MDT": "MDT", "ACWDT": "ACWDT", "IST": "भारतीय समय", "GMT": "GMT", "EDT": "EDT", "UYT": "UYT", "GFT": "GFT", "WEZ": "WEZ", "MYT": "MYT", "PST": "PST", "WAT": "WAT", "CLST": "CLST", "ART": "ART", "NZDT": "NZDT", "AWST": "AWST", "MST": "MST", "EAT": "EAT", "SAST": "SAST", "JST": "JST", "GYT": "GYT", "TMT": "TMT", "ChST": "ChST", "WAST": "WAST", "CLT": "CLT", "OESZ": "OESZ", "BOT": "BOT", "ECT": "ECT", "∅∅∅": "∅∅∅", "AWDT": "AWDT", "SGT": "SGT", "WIT": "WIT", "HKT": "HKT", "CST": "CST", "WESZ": "WESZ"},
 	}
 }
 
@@ -170,7 +170,8 @@ func (kok *kok_IN) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'kok_IN' and handles both Whole and Real numbers based on 'v'
-func (kok *kok_IN) FmtNumber(num float64, v uint64) (results string) {
+func (kok *kok_IN) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kok.decimal) + len(kok.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -183,10 +184,7 @@ func (kok *kok_IN) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -194,10 +192,7 @@ func (kok *kok_IN) FmtNumber(num float64, v uint64) (results string) {
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(kok.group) - 1; j >= 0; j-- {
-					b = append(b, kok.group[j])
-				}
-
+				b = append(b, kok.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -213,9 +208,7 @@ func (kok *kok_IN) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 	}
 
 	// reverse
@@ -223,13 +216,12 @@ func (kok *kok_IN) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'kok_IN' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (kok *kok_IN) FmtPercent(num float64, v uint64) (results string) {
+func (kok *kok_IN) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(kok.decimal)
 	b := make([]byte, 0, l)
@@ -237,10 +229,7 @@ func (kok *kok_IN) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			continue
 		}
 
@@ -248,9 +237,7 @@ func (kok *kok_IN) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 	}
 
 	// reverse
@@ -260,12 +247,11 @@ func (kok *kok_IN) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, kok.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'kok_IN'
-func (kok *kok_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (kok *kok_IN) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kok.currencies[currency]
@@ -280,10 +266,7 @@ func (kok *kok_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -291,10 +274,7 @@ func (kok *kok_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(kok.group) - 1; j >= 0; j-- {
-					b = append(b, kok.group[j])
-				}
-
+				b = append(b, kok.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -318,9 +298,7 @@ func (kok *kok_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 	}
 
 	// reverse
@@ -339,13 +317,12 @@ func (kok *kok_IN) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'kok_IN'
 // in accounting notation.
-func (kok *kok_IN) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (kok *kok_IN) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := kok.currencies[currency]
@@ -360,10 +337,7 @@ func (kok *kok_IN) FmtAccounting(num float64, v uint64, currency currency.Type) 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(kok.decimal) - 1; j >= 0; j-- {
-				b = append(b, kok.decimal[j])
-			}
-
+			b = append(b, kok.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -371,10 +345,7 @@ func (kok *kok_IN) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(kok.group) - 1; j >= 0; j-- {
-					b = append(b, kok.group[j])
-				}
-
+				b = append(b, kok.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -399,9 +370,7 @@ func (kok *kok_IN) FmtAccounting(num float64, v uint64, currency currency.Type) 
 			b = append(b, kok.currencyNegativePrefix[j])
 		}
 
-		for j := len(kok.minus) - 1; j >= 0; j-- {
-			b = append(b, kok.minus[j])
-		}
+		b = append(b, kok.minus[0])
 
 	} else {
 
@@ -431,8 +400,7 @@ func (kok *kok_IN) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'kok_IN'

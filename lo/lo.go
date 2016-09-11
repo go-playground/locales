@@ -69,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ກ່ອນ ຄ.ສ.", "ຄ.ສ."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ກ່ອນຄຣິດສັກກະລາດ", "ຄຣິດສັກກະລາດ"},
-		timezones:              map[string]string{"MST": "ເວລາມາດຕະຖານມາເກົາ", "HKT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຮອງ\u200bກົງ", "UYST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bອູ\u200bຣູ\u200bກວຍ", "HNT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bນິວ\u200bຟາວ\u200bແລນ", "COT": "ເວລາມາດຕະຖານໂຄລຳເບຍ", "ADT": "ເວລາກາງເວັນຂອງອາແລນຕິກ", "ARST": "\u200bເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bອາ\u200bເຈນ\u200bທິ\u200bນາ", "WAT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bອາ\u200bຟຣິ\u200bກາ\u200bຕາ\u200bເວັນ\u200bຕົກ", "GFT": "ເວ\u200bລາ\u200bເຟ\u200bຣນ\u200bຊ໌\u200bເກຍ\u200bນາ", "SGT": "ເວ\u200bລາ\u200bສິງ\u200bກະ\u200bໂປ", "HAT": "\u200bເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bນິວ\u200bຟາວ\u200bແລນ", "CLST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນຊິ\u200bລີ", "UYT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bອູ\u200bຣູ\u200bກວຍ", "GMT": "ເວ\u200bລາກຣີນ\u200bວິ\u200bຊ", "AEDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bອອກ", "ACST": "ເວ\u200bລາມາດ\u200bຕະ\u200bຖານອອ\u200bສ\u200bເຕຣ\u200bເລຍ\u200bກ\u200bາງ", "TMST": "ເວລາລະດູຮ້ອນຕວກເມນິສຖານ", "IST": "ເວລາ ອິນເດຍ", "AWST": "ເວ\u200bລາ\u200bມາ\u200bດ\u200bຕະ\u200bຖານອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bຕົກ", "WART": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານເວ\u200bສ\u200bເທິນອາ\u200bເຈນ\u200bທິ\u200bນາ", "LHDT": "\u200bເວ\u200bລ\u200bສາ\u200bຕອນ\u200b\u200bທ່ຽງ\u200bລອດ\u200bເຮົາ\u200b", "CDT": "ເວລາກາງເວັນກາງ", "AWDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bຕົກ", "HKST": "\u200bເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bຮອງ\u200bກົງ", "EST": "ເວລາມາດຕະຖານຕາເວັນອອກ", "CAT": "ເວ\u200bລາ\u200bອາ\u200bຟຣິ\u200bກາ\u200bກາງ", "OESZ": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bອອກ", "WAST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bອາ\u200bຟຣິ\u200bກາ\u200bຕາ\u200bເວັນ\u200bຕົກ", "HADT": "ເວລາຕອນທ່ຽງຮາວາຍ-ເອລູທຽນ", "EAT": "ເວ\u200bລາ\u200bອາ\u200bຟຣິ\u200bກາ\u200bຕາ\u200bເວັນ\u200bອອກ", "WIB": "ເວ\u200bລາ\u200bອິນ\u200bໂດ\u200bເນ\u200bເຊຍ\u200bຕາ\u200bເວັນ\u200bຕົກ", "ChST": "ເວ\u200bລາ\u200bຈາ\u200bໂມ\u200bໂຣ", "JST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຍີ່\u200bປຸ່ນ", "EDT": "ເວລາຕອນທ່ຽງທາງຕາເວັນອອກ", "AEST": "ເວ\u200bລາ\u200bມາດຕະຖານ\u200b\u200b\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bອອກ", "ACWST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານອອສ\u200bເຕຣ\u200bລຽນ\u200bກາງ\u200bຕາ\u200bເວັນ\u200bຕົກ", "VET": "ເວ\u200bລາ\u200bເວ\u200bເນ\u200bຊູ\u200bເອ\u200bລາ", "LHST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bລອດ\u200bເຮົາ", "CST": "ເວລາມາດຕະຖານກາງ", "WESZ": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bຕົກ", "OEZ": "ເວ\u200bລາ\u200bມາ\u200bດ\u200bຕະ\u200bຖານ\u200bຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bອອກ", "ACDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bເລຍ\u200bກາງ", "WARST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນເວ\u200bສ\u200bເທິນອາ\u200bເຈນ\u200bທິ\u200bນາ", "WIT": "ເວ\u200bລາ\u200bອິນ\u200bໂດ\u200bເນ\u200bເຊຍ\u200bຕາ\u200bເວັນ\u200bອອກ", "JDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bຍີ່\u200bປຸ່ນ", "AKST": "ເວລາມາດຕະຖານອະແລສກາ", "∅∅∅": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນອາ\u200bເມ\u200bຊອນ", "WEZ": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bຕົກ", "PST": "ເວລາມາດຕະຖານຂອງປາຊີຟິກ", "ART": "\u200bເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານອາ\u200bເຈນ\u200bທິ\u200bນາ", "BOT": "ເວ\u200bລາ\u200bໂບ\u200bລິ\u200bເວຍ", "NZST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານນິວ\u200bຊີ\u200bແລນ", "AKDT": "ເວລາກາງເວັນອະແລສກາ", "HAST": "ເວລາມາດຕະຖານຮາວາຍ-ເອລູທຽນ", "COST": "ເວລາລະດູຮ້ອນໂຄລໍາເບຍ", "SRT": "ເວ\u200bລາ\u200bຊຸ\u200bຣິ\u200bນາມ", "ACWDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bກາງ\u200bຕາ\u200bເວັນ\u200bຕົກ", "ECT": "ເວ\u200bລາ\u200bເອ\u200bກົວ\u200bດໍ", "NZDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bນິວ\u200bຊີ\u200bແລນ", "MESZ": "\u200bເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bຢູ\u200bໂຣບ\u200bກາງ", "MDT": "ເວລາລະດູຮ້ອນມາເກົາ", "CLT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານຊິ\u200bລີ", "PDT": "ເວລາກາງເວັນຂອງປາຊີຟິກ", "CHADT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bຊາ\u200bທາມ", "AST": "ເວລາມາດຕະຖານຂອງອາແລນຕິກ", "MEZ": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຢູ\u200bໂຣບກາງ", "CHAST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຊາ\u200bທາມ", "BT": "ເວ\u200bລາ\u200bພູ\u200bຖານ", "GYT": "ເວລາກາຍອານາ", "WITA": "ເວ\u200bລາ\u200bອິນ\u200bໂດ\u200bເນ\u200bເຊຍ\u200bກາງ", "TMT": "ເວລາມາດຕະຖານຕວກເມນິສຖານ", "SAST": "ເວ\u200bລາ\u200bອາ\u200bຟຣິ\u200bກາ\u200bໃຕ້", "MYT": "ເວ\u200bລາ\u200bມາ\u200bເລ\u200bເຊຍ"},
+		timezones:              map[string]string{"BT": "ເວ\u200bລາ\u200bພູ\u200bຖານ", "HAST": "ເວລາມາດຕະຖານຮາວາຍ-ເອລູທຽນ", "HADT": "ເວລາຕອນທ່ຽງຮາວາຍ-ເອລູທຽນ", "NZST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານນິວ\u200bຊີ\u200bແລນ", "CHADT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bຊາ\u200bທາມ", "WART": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານເວ\u200bສ\u200bເທິນອາ\u200bເຈນ\u200bທິ\u200bນາ", "BOT": "ເວ\u200bລາ\u200bໂບ\u200bລິ\u200bເວຍ", "GYT": "ເວລາກາຍອານາ", "HKT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຮອງ\u200bກົງ", "UYST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bອູ\u200bຣູ\u200bກວຍ", "ECT": "ເວ\u200bລາ\u200bເອ\u200bກົວ\u200bດໍ", "LHDT": "\u200bເວ\u200bລ\u200bສາ\u200bຕອນ\u200b\u200bທ່ຽງ\u200bລອດ\u200bເຮົາ\u200b", "ACST": "ເວ\u200bລາມາດ\u200bຕະ\u200bຖານອອ\u200bສ\u200bເຕຣ\u200bເລຍ\u200bກ\u200bາງ", "AEDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bອອກ", "AWST": "ເວ\u200bລາ\u200bມາ\u200bດ\u200bຕະ\u200bຖານອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bຕົກ", "AWDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bຕົກ", "WITA": "ເວ\u200bລາ\u200bອິນ\u200bໂດ\u200bເນ\u200bເຊຍ\u200bກາງ", "TMST": "ເວລາລະດູຮ້ອນຕວກເມນິສຖານ", "SAST": "ເວ\u200bລາ\u200bອາ\u200bຟຣິ\u200bກາ\u200bໃຕ້", "OEZ": "ເວ\u200bລາ\u200bມາ\u200bດ\u200bຕະ\u200bຖານ\u200bຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bອອກ", "SGT": "ເວ\u200bລາ\u200bສິງ\u200bກະ\u200bໂປ", "SRT": "ເວ\u200bລາ\u200bຊຸ\u200bຣິ\u200bນາມ", "GFT": "ເວ\u200bລາ\u200bເຟ\u200bຣນ\u200bຊ໌\u200bເກຍ\u200bນາ", "GMT": "ເວ\u200bລາກຣີນ\u200bວິ\u200bຊ", "ChST": "ເວ\u200bລາ\u200bຈາ\u200bໂມ\u200bໂຣ", "EDT": "ເວລາຕອນທ່ຽງທາງຕາເວັນອອກ", "COT": "ເວລາມາດຕະຖານໂຄລຳເບຍ", "HNT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bນິວ\u200bຟາວ\u200bແລນ", "AKDT": "ເວລາກາງເວັນອະແລສກາ", "WESZ": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bຕົກ", "WAT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bອາ\u200bຟຣິ\u200bກາ\u200bຕາ\u200bເວັນ\u200bຕົກ", "AST": "ເວລາມາດຕະຖານຂອງອາແລນຕິກ", "ACDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bເລຍ\u200bກາງ", "PDT": "ເວລາກາງເວັນຂອງປາຊີຟິກ", "HAT": "\u200bເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bນິວ\u200bຟາວ\u200bແລນ", "NZDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bນິວ\u200bຊີ\u200bແລນ", "LHST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bລອດ\u200bເຮົາ", "CLT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານຊິ\u200bລີ", "CST": "ເວລາມາດຕະຖານກາງ", "∅∅∅": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນອາ\u200bໂຊ\u200bເຣ\u200bສ", "CAT": "ເວ\u200bລາ\u200bອາ\u200bຟຣິ\u200bກາ\u200bກາງ", "HKST": "\u200bເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bຮອງ\u200bກົງ", "TMT": "ເວລາມາດຕະຖານຕວກເມນິສຖານ", "WEZ": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bຕົກ", "ARST": "\u200bເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bອາ\u200bເຈນ\u200bທິ\u200bນາ", "COST": "ເວລາລະດູຮ້ອນໂຄລໍາເບຍ", "EAT": "ເວ\u200bລາ\u200bອາ\u200bຟຣິ\u200bກາ\u200bຕາ\u200bເວັນ\u200bອອກ", "MEZ": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຢູ\u200bໂຣບກາງ", "JDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bຍີ່\u200bປຸ່ນ", "WARST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນເວ\u200bສ\u200bເທິນອາ\u200bເຈນ\u200bທິ\u200bນາ", "VET": "ເວ\u200bລາ\u200bເວ\u200bເນ\u200bຊູ\u200bເອ\u200bລາ", "MST": "ເວລາມາດຕະຖານແຖບພູເຂົາ", "WIT": "ເວ\u200bລາ\u200bອິນ\u200bໂດ\u200bເນ\u200bເຊຍ\u200bຕາ\u200bເວັນ\u200bອອກ", "AKST": "ເວລາມາດຕະຖານອະແລສກາ", "WAST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bອາ\u200bຟຣິ\u200bກາ\u200bຕາ\u200bເວັນ\u200bຕົກ", "ACWDT": "ເວ\u200bລາ\u200bຕອນ\u200bທ່ຽງ\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bກາງ\u200bຕາ\u200bເວັນ\u200bຕົກ", "WIB": "ເວ\u200bລາ\u200bອິນ\u200bໂດ\u200bເນ\u200bເຊຍ\u200bຕາ\u200bເວັນ\u200bຕົກ", "ADT": "ເວລາກາງເວັນຂອງອາແລນຕິກ", "MYT": "ເວ\u200bລາ\u200bມາ\u200bເລ\u200bເຊຍ", "UYT": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bອູ\u200bຣູ\u200bກວຍ", "ART": "\u200bເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານອາ\u200bເຈນ\u200bທິ\u200bນາ", "CDT": "ເວລາກາງເວັນກາງ", "ACWST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານອອສ\u200bເຕຣ\u200bລຽນ\u200bກາງ\u200bຕາ\u200bເວັນ\u200bຕົກ", "CLST": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນຊິ\u200bລີ", "OESZ": "ເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນຢູ\u200bໂຣບ\u200bຕາ\u200bເວັນ\u200bອອກ", "AEST": "ເວ\u200bລາ\u200bມາດຕະຖານ\u200b\u200b\u200bອອສ\u200bເຕຣ\u200bລຽນ\u200bຕາ\u200bເວັນ\u200bອອກ", "IST": "ເວລາ ອິນເດຍ", "PST": "ເວລາມາດຕະຖານຂອງປາຊີຟິກ", "MDT": "ເວລາກາງເວັນແຖວພູເຂົາ", "EST": "ເວລາມາດຕະຖານຕາເວັນອອກ", "CHAST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຊາ\u200bທາມ", "MESZ": "\u200bເວ\u200bລາ\u200bລະ\u200bດູ\u200bຮ້ອນ\u200bຢູ\u200bໂຣບ\u200bກາງ", "JST": "ເວ\u200bລາ\u200bມາດ\u200bຕະ\u200bຖານ\u200bຍີ່\u200bປຸ່ນ"},
 	}
 }
 
@@ -186,14 +186,14 @@ func (lo *lo) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'lo' and handles both Whole and Real numbers based on 'v'
-func (lo *lo) FmtNumber(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (lo *lo) FmtNumber(num float64, v uint64) string {
+
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'lo' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (lo *lo) FmtPercent(num float64, v uint64) (results string) {
+func (lo *lo) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(lo.decimal)
 	b := make([]byte, 0, l)
@@ -219,12 +219,11 @@ func (lo *lo) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, lo.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'lo'
-func (lo *lo) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (lo *lo) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lo.currencies[currency]
@@ -277,13 +276,12 @@ func (lo *lo) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'lo'
 // in accounting notation.
-func (lo *lo) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (lo *lo) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lo.currencies[currency]
@@ -344,8 +342,7 @@ func (lo *lo) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'lo'

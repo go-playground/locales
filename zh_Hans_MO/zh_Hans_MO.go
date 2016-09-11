@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"公元前", "公元"},
 		erasNarrow:             []string{"公元前", "公元"},
 		erasWide:               []string{"公元前", "公元"},
-		timezones:              map[string]string{"EDT": "北美东部夏令时间", "UYST": "乌拉圭夏令时间", "ADT": "大西洋夏令时间", "MESZ": "中欧夏令时间", "GFT": "法属圭亚那时间", "ChST": "查莫罗时间", "WESZ": "西欧夏令时间", "AWST": "澳大利亚西部标准时间", "ARST": "阿根廷夏令时间", "EAT": "东部非洲时间", "HAT": "纽芬兰夏令时间", "CHADT": "查坦夏令时间", "WART": "阿根廷西部标准时间", "WAST": "西部非洲夏令时间", "JDT": "日本夏令时间", "MST": "澳门标准时间", "AEDT": "澳大利亚东部夏令时间", "ART": "阿根廷标准时间", "TMT": "土库曼斯坦标准时间", "LHST": "豪勋爵岛标准时间", "HAST": "夏威夷-阿留申标准时间", "∅∅∅": "亚马逊夏令时间", "COST": "哥伦比亚夏令时间", "JST": "日本标准时间", "WIB": "印度尼西亚西部时间", "COT": "哥伦比亚标准时间", "PDT": "北美太平洋夏令时间", "OEZ": "东欧标准时间", "BOT": "玻利维亚时间", "LHDT": "豪勋爵岛夏令时间", "IST": "印度时间", "HADT": "夏威夷-阿留申夏令时间", "PST": "北美太平洋标准时间", "GMT": "格林尼治标准时间", "WARST": "阿根廷西部夏令时间", "SGT": "新加坡标准时间", "CDT": "北美中部夏令时间", "CLT": "智利标准时间", "NZST": "新西兰标准时间", "ACWST": "澳大利亚中西部标准时间", "ACWDT": "澳大利亚中西部夏令时间", "SAST": "南部非洲时间", "AKST": "阿拉斯加标准时间", "HNT": "纽芬兰标准时间", "HKT": "香港标准时间", "AST": "大西洋标准时间", "ACST": "澳大利亚中部标准时间", "ACDT": "澳大利亚中部夏令时间", "SRT": "苏里南时间", "MYT": "马来西亚时间", "AKDT": "阿拉斯加夏令时间", "AWDT": "澳大利亚西部夏令时间", "BT": "不丹时间", "UYT": "乌拉圭标准时间", "WITA": "印度尼西亚中部时间", "TMST": "土库曼斯坦夏令时间", "OESZ": "东欧夏令时间", "NZDT": "新西兰夏令时间", "ECT": "厄瓜多尔时间", "WEZ": "西欧标准时间", "EST": "北美东部标准时间", "CHAST": "查坦标准时间", "MEZ": "中欧标准时间", "GYT": "圭亚那时间", "WIT": "印度尼西亚东部时间", "CST": "北美中部标准时间", "CLST": "智利夏令时间", "AEST": "澳大利亚东部标准时间", "WAT": "西部非洲标准时间", "MDT": "澳门夏令时间", "HKST": "香港夏令时间", "CAT": "中部非洲时间", "VET": "委内瑞拉时间"},
+		timezones:              map[string]string{"EAT": "东部非洲时间", "JST": "日本标准时间", "PDT": "北美太平洋夏令时间", "CHADT": "查坦夏令时间", "MEZ": "中欧标准时间", "IST": "印度时间", "CDT": "北美中部夏令时间", "GMT": "格林尼治标准时间", "WESZ": "西欧夏令时间", "MST": "澳门标准时间", "WITA": "印度尼西亚中部时间", "NZST": "新西兰标准时间", "NZDT": "新西兰夏令时间", "OEZ": "东欧标准时间", "WART": "阿根廷西部标准时间", "∅∅∅": "秘鲁夏令时间", "WEZ": "西欧标准时间", "WAT": "西部非洲标准时间", "AEDT": "澳大利亚东部夏令时间", "CST": "北美中部标准时间", "HAST": "夏威夷-阿留申标准时间", "ADT": "大西洋夏令时间", "UYST": "乌拉圭夏令时间", "ARST": "阿根廷夏令时间", "AKDT": "阿拉斯加夏令时间", "COST": "哥伦比亚夏令时间", "CLT": "智利标准时间", "WIT": "印度尼西亚东部时间", "AWST": "澳大利亚西部标准时间", "ACWDT": "澳大利亚中西部夏令时间", "CHAST": "查坦标准时间", "AEST": "澳大利亚东部标准时间", "GYT": "圭亚那时间", "CAT": "中部非洲时间", "HKST": "香港夏令时间", "TMT": "土库曼斯坦标准时间", "COT": "哥伦比亚标准时间", "JDT": "日本夏令时间", "HAT": "纽芬兰夏令时间", "SRT": "苏里南时间", "AKST": "阿拉斯加标准时间", "ECT": "厄瓜多尔时间", "CLST": "智利夏令时间", "GFT": "法属圭亚那时间", "ACDT": "澳大利亚中部夏令时间", "AWDT": "澳大利亚西部夏令时间", "BOT": "玻利维亚时间", "UYT": "乌拉圭标准时间", "WAST": "西部非洲夏令时间", "OESZ": "东欧夏令时间", "VET": "委内瑞拉时间", "AST": "大西洋标准时间", "HADT": "夏威夷-阿留申夏令时间", "MYT": "马来西亚时间", "MESZ": "中欧夏令时间", "ACST": "澳大利亚中部标准时间", "TMST": "土库曼斯坦夏令时间", "BT": "不丹时间", "ART": "阿根廷标准时间", "LHDT": "豪勋爵岛夏令时间", "SAST": "南部非洲时间", "WIB": "印度尼西亚西部时间", "WARST": "阿根廷西部夏令时间", "MDT": "澳门夏令时间", "SGT": "新加坡标准时间", "PST": "北美太平洋标准时间", "HKT": "香港标准时间", "ChST": "查莫罗时间", "EST": "北美东部标准时间", "EDT": "北美东部夏令时间", "ACWST": "澳大利亚中西部标准时间", "LHST": "豪勋爵岛标准时间", "HNT": "纽芬兰标准时间"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (zh *zh_Hans_MO) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'zh_Hans_MO' and handles both Whole and Real numbers based on 'v'
-func (zh *zh_Hans_MO) FmtNumber(num float64, v uint64) (results string) {
+func (zh *zh_Hans_MO) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(zh.decimal) + len(zh.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (zh *zh_Hans_MO) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'zh_Hans_MO' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (zh *zh_Hans_MO) FmtPercent(num float64, v uint64) (results string) {
+func (zh *zh_Hans_MO) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(zh.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (zh *zh_Hans_MO) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, zh.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'zh_Hans_MO'
-func (zh *zh_Hans_MO) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (zh *zh_Hans_MO) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
@@ -307,13 +306,12 @@ func (zh *zh_Hans_MO) FmtCurrency(num float64, v uint64, currency currency.Type)
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'zh_Hans_MO'
 // in accounting notation.
-func (zh *zh_Hans_MO) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (zh *zh_Hans_MO) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
@@ -378,8 +376,7 @@ func (zh *zh_Hans_MO) FmtAccounting(num float64, v uint64, currency currency.Typ
 		b = append(b, zh.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'zh_Hans_MO'

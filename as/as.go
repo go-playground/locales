@@ -58,7 +58,7 @@ func New() locales.Translator {
 		daysWide:               []string{"দেওবাৰ", "সোমবাৰ", "মঙ্গলবাৰ", "বুধবাৰ", "বৃহষ্পতিবাৰ", "শুক্ৰবাৰ", "শনিবাৰ"},
 		periodsAbbreviated:     []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
 		periodsWide:            []string{"পূৰ্বাহ্ণ", "অপৰাহ্ণ"},
-		timezones:              map[string]string{"AEST": "AEST", "NZST": "NZST", "PST": "PST", "CLT": "CLT", "SGT": "SGT", "MESZ": "MESZ", "WAT": "WAT", "HAST": "HAST", "VET": "VET", "HADT": "HADT", "EST": "EST", "UYT": "UYT", "ADT": "ADT", "WAST": "WAST", "MDT": "MDT", "LHDT": "LHDT", "CDT": "CDT", "HAT": "HAT", "GMT": "GMT", "ACDT": "ACDT", "JDT": "JDT", "CAT": "CAT", "WIB": "WIB", "AST": "AST", "HKST": "HKST", "WEZ": "WEZ", "BOT": "BOT", "ARST": "ARST", "ACWST": "ACWST", "NZDT": "NZDT", "UYST": "UYST", "COST": "COST", "MEZ": "MEZ", "CLST": "CLST", "HNT": "HNT", "EAT": "EAT", "ART": "ART", "WART": "WART", "ACWDT": "ACWDT", "LHST": "LHST", "AKDT": "AKDT", "IST": "ভাৰতীয় সময়", "OESZ": "OESZ", "WARST": "WARST", "MYT": "MYT", "WITA": "WITA", "∅∅∅": "∅∅∅", "AKST": "AKST", "HKT": "HKT", "EDT": "EDT", "OEZ": "OEZ", "CHAST": "CHAST", "MST": "MST", "SRT": "SRT", "BT": "BT", "ECT": "ECT", "WIT": "WIT", "CST": "CST", "AWST": "AWST", "PDT": "PDT", "ACST": "ACST", "ChST": "ChST", "CHADT": "CHADT", "GYT": "GYT", "TMT": "TMT", "WESZ": "WESZ", "COT": "COT", "JST": "JST", "AWDT": "AWDT", "AEDT": "AEDT", "TMST": "TMST", "SAST": "SAST", "GFT": "GFT"},
+		timezones:              map[string]string{"ECT": "ECT", "OEZ": "OEZ", "VET": "VET", "COST": "COST", "AEDT": "AEDT", "PST": "PST", "WIT": "WIT", "TMST": "TMST", "EST": "EST", "ACWDT": "ACWDT", "OESZ": "OESZ", "JST": "JST", "JDT": "JDT", "ACDT": "ACDT", "ARST": "ARST", "MESZ": "MESZ", "ACST": "ACST", "WIB": "WIB", "ChST": "ChST", "SAST": "SAST", "WAST": "WAST", "AEST": "AEST", "PDT": "PDT", "AWST": "AWST", "HNT": "HNT", "HKT": "HKT", "GYT": "GYT", "MYT": "MYT", "NZDT": "NZDT", "ACWST": "ACWST", "HAST": "HAST", "GFT": "GFT", "GMT": "GMT", "AKST": "AKST", "WESZ": "WESZ", "WART": "WART", "WARST": "WARST", "ADT": "ADT", "UYT": "UYT", "HAT": "HAT", "AWDT": "AWDT", "WAT": "WAT", "MST": "MST", "COT": "COT", "TMT": "TMT", "BT": "BT", "CAT": "CAT", "WITA": "WITA", "CST": "CST", "NZST": "NZST", "CLT": "CLT", "MEZ": "MEZ", "SGT": "SGT", "UYST": "UYST", "CHADT": "CHADT", "CLST": "CLST", "SRT": "SRT", "LHDT": "LHDT", "AKDT": "AKDT", "MDT": "MDT", "CDT": "CDT", "ART": "ART", "EDT": "EDT", "HADT": "HADT", "CHAST": "CHAST", "AST": "AST", "IST": "ভাৰতীয় সময়", "HKST": "HKST", "∅∅∅": "∅∅∅", "LHST": "LHST", "EAT": "EAT", "BOT": "BOT", "WEZ": "WEZ"},
 	}
 }
 
@@ -189,7 +189,8 @@ func (as *as) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'as' and handles both Whole and Real numbers based on 'v'
-func (as *as) FmtNumber(num float64, v uint64) (results string) {
+func (as *as) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(as.decimal) + len(as.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -202,10 +203,7 @@ func (as *as) FmtNumber(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -213,10 +211,7 @@ func (as *as) FmtNumber(num float64, v uint64) (results string) {
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(as.group) - 1; j >= 0; j-- {
-					b = append(b, as.group[j])
-				}
-
+				b = append(b, as.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -232,9 +227,7 @@ func (as *as) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 	}
 
 	// reverse
@@ -242,13 +235,12 @@ func (as *as) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'as' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (as *as) FmtPercent(num float64, v uint64) (results string) {
+func (as *as) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(as.decimal)
 	b := make([]byte, 0, l)
@@ -256,10 +248,7 @@ func (as *as) FmtPercent(num float64, v uint64) (results string) {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			continue
 		}
 
@@ -267,9 +256,7 @@ func (as *as) FmtPercent(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 	}
 
 	// reverse
@@ -279,12 +266,11 @@ func (as *as) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, as.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'as'
-func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
@@ -299,10 +285,7 @@ func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -310,10 +293,7 @@ func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(as.group) - 1; j >= 0; j-- {
-					b = append(b, as.group[j])
-				}
-
+				b = append(b, as.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -337,9 +317,7 @@ func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 	}
 
 	if num < 0 {
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 	}
 
 	// reverse
@@ -358,13 +336,12 @@ func (as *as) FmtCurrency(num float64, v uint64, currency currency.Type) (result
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'as'
 // in accounting notation.
-func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := as.currencies[currency]
@@ -379,10 +356,7 @@ func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(as.decimal) - 1; j >= 0; j-- {
-				b = append(b, as.decimal[j])
-			}
-
+			b = append(b, as.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -390,10 +364,7 @@ func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		if inWhole {
 
 			if count == groupThreshold {
-				for j := len(as.group) - 1; j >= 0; j-- {
-					b = append(b, as.group[j])
-				}
-
+				b = append(b, as.group[0])
 				count = 1
 
 				if !inSecondary {
@@ -418,9 +389,7 @@ func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 			b = append(b, as.currencyNegativePrefix[j])
 		}
 
-		for j := len(as.minus) - 1; j >= 0; j-- {
-			b = append(b, as.minus[j])
-		}
+		b = append(b, as.minus[0])
 
 	} else {
 
@@ -450,8 +419,7 @@ func (as *as) FmtAccounting(num float64, v uint64, currency currency.Type) (resu
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'as'

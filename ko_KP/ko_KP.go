@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"기원전", "서기"},
-		timezones:              map[string]string{"MESZ": "중부 유럽 하계 표준시", "∅∅∅": "아조레스 하계 표준시", "CDT": "미 중부 하계 표준시", "HNT": "뉴펀들랜드 표준시", "OESZ": "동유럽 하계 표준시", "ACWDT": "오스트레일리아 중서부 하계 표준시", "MST": "미 산악 표준시", "WIT": "동부 인도네시아 시간", "EAT": "동아프리카 시간", "CLST": "칠레 하계 표준시", "BT": "부탄 시간", "WITA": "중부 인도네시아 시간", "MYT": "말레이시아 시간", "SGT": "싱가포르 표준시", "AWDT": "오스트레일리아 서부 하계 표준시", "CAT": "중앙아프리카 시간", "COT": "콜롬비아 표준시", "MDT": "미 산지 하계 표준시", "EDT": "미 동부 하계 표준시", "CHAST": "채텀 표준시", "WARST": "아르헨티나 서부 하계 표준시", "LHDT": "로드 하우 하계 표준시", "IST": "인도 표준시", "AEST": "오스트레일리아 동부 표준시", "BOT": "볼리비아 시간", "WART": "아르헨티나 서부 표준시", "ChST": "차모로 시간", "UYST": "우루과이 하계 표준시", "NZST": "뉴질랜드 표준시", "GYT": "가이아나 시간", "ACWST": "오스트레일리아 중서부 표준시", "JDT": "일본 하계 표준시", "HAT": "뉴펀들랜드 하계 표준시", "UYT": "우루과이 표준시", "ADT": "미 대서양 하계 표준시", "AKST": "알래스카 표준시", "CST": "미 중부 표준시", "EST": "미 동부 표준시", "AEDT": "오스트레일리아 동부 하계 표준시", "ACST": "오스트레일리아 중부 표준시", "HAST": "하와이 알류샨 표준시", "WESZ": "서유럽 하계 표준시", "AWST": "오스트레일리아 서부 표준시", "WIB": "서부 인도네시아 시간", "COST": "콜롬비아 하계 표준시", "WAT": "서아프리카 표준시", "AST": "대서양 표준시", "JST": "일본 표준시", "HKST": "홍콩 하계 표준시", "WEZ": "서유럽 표준시", "HKT": "홍콩 표준시", "PST": "미 태평양 표준시", "CHADT": "채텀 하계 표준시", "SRT": "수리남 시간", "LHST": "로드 하우 표준시", "ECT": "에콰도르 시간", "CLT": "칠레 표준시", "PDT": "미 태평양 하계 표준시", "GFT": "프랑스령 가이아나 시간", "TMT": "투르크메니스탄 표준시", "OEZ": "동유럽 표준시", "GMT": "그리니치 표준시", "ARST": "아르헨티나 하계 표준시", "SAST": "남아프리카 시간", "VET": "베네수엘라 시간", "NZDT": "뉴질랜드 하계 표준시", "WAST": "서아프리카 하계 표준시", "MEZ": "중부 유럽 표준시", "ACDT": "오스트레일리아 중부 하계 표준시", "ART": "아르헨티나 표준시", "TMST": "투르크메니스탄 하계 표준시", "AKDT": "알래스카 하계 표준시", "HADT": "하와이 알류샨 하계 표준시"},
+		timezones:              map[string]string{"HADT": "하와이 알류샨 하계 표준시", "COT": "콜롬비아 표준시", "∅∅∅": "아마존 하계 표준시", "ACWDT": "오스트레일리아 중서부 하계 표준시", "CHAST": "채텀 표준시", "OEZ": "동유럽 표준시", "MYT": "말레이시아 시간", "HNT": "뉴펀들랜드 표준시", "WART": "아르헨티나 서부 표준시", "CAT": "중앙아프리카 시간", "GMT": "그리니치 표준시", "SGT": "싱가포르 표준시", "AWST": "오스트레일리아 서부 표준시", "CST": "미 중부 표준시", "WEZ": "서유럽 표준시", "ADT": "미 대서양 하계 표준시", "ACDT": "오스트레일리아 중부 하계 표준시", "EAT": "동아프리카 시간", "MDT": "마카오 하계 표준시", "WIT": "동부 인도네시아 시간", "OESZ": "동유럽 하계 표준시", "HAT": "뉴펀들랜드 하계 표준시", "BT": "부탄 시간", "GFT": "프랑스령 가이아나 시간", "EDT": "미 동부 하계 표준시", "ECT": "에콰도르 시간", "NZST": "뉴질랜드 표준시", "WAST": "서아프리카 하계 표준시", "MEZ": "중부 유럽 표준시", "BOT": "볼리비아 시간", "EST": "미 동부 표준시", "HAST": "하와이 알류샨 표준시", "CLST": "칠레 하계 표준시", "JDT": "일본 하계 표준시", "HKST": "홍콩 하계 표준시", "UYST": "우루과이 하계 표준시", "CDT": "미 중부 하계 표준시", "ACST": "오스트레일리아 중부 표준시", "GYT": "가이아나 시간", "WITA": "중부 인도네시아 시간", "MST": "마카오 표준 시간", "AEDT": "오스트레일리아 동부 하계 표준시", "IST": "인도 표준시", "HKT": "홍콩 표준시", "TMT": "투르크메니스탄 표준시", "TMST": "투르크메니스탄 하계 표준시", "CHADT": "채텀 하계 표준시", "ART": "아르헨티나 표준시", "CLT": "칠레 표준시", "JST": "일본 표준시", "UYT": "우루과이 표준시", "ChST": "차모로 시간", "AKST": "알래스카 표준시", "AKDT": "알래스카 하계 표준시", "WESZ": "서유럽 하계 표준시", "ACWST": "오스트레일리아 중서부 표준시", "MESZ": "중부 유럽 하계 표준시", "VET": "베네수엘라 시간", "PST": "미 태평양 표준시", "AWDT": "오스트레일리아 서부 하계 표준시", "SRT": "수리남 시간", "NZDT": "뉴질랜드 하계 표준시", "WAT": "서아프리카 표준시", "WIB": "서부 인도네시아 시간", "AEST": "오스트레일리아 동부 표준시", "PDT": "미 태평양 하계 표준시", "ARST": "아르헨티나 하계 표준시", "COST": "콜롬비아 하계 표준시", "LHST": "로드 하우 표준시", "LHDT": "로드 하우 하계 표준시", "SAST": "남아프리카 시간", "AST": "대서양 표준시", "WARST": "아르헨티나 서부 하계 표준시"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (ko *ko_KP) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ko_KP' and handles both Whole and Real numbers based on 'v'
-func (ko *ko_KP) FmtNumber(num float64, v uint64) (results string) {
+func (ko *ko_KP) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ko.decimal) + len(ko.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (ko *ko_KP) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ko_KP' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ko *ko_KP) FmtPercent(num float64, v uint64) (results string) {
+func (ko *ko_KP) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ko.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (ko *ko_KP) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ko.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ko_KP'
-func (ko *ko_KP) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ko *ko_KP) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ko.currencies[currency]
@@ -307,13 +306,12 @@ func (ko *ko_KP) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ko_KP'
 // in accounting notation.
-func (ko *ko_KP) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ko *ko_KP) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ko.currencies[currency]
@@ -378,8 +376,7 @@ func (ko *ko_KP) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, ko.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ko_KP'

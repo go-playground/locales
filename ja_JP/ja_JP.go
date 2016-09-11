@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"紀元前", "西暦"},
 		erasNarrow:             []string{"BC", "AD"},
 		erasWide:               []string{"紀元前", "西暦"},
-		timezones:              map[string]string{"AKST": "アラスカ標準時", "CLST": "チリ夏時間", "NZDT": "ニュージーランド夏時間", "PST": "アメリカ太平洋標準時", "∅∅∅": "アゾレス夏時間", "HAST": "ハワイ・アリューシャン標準時", "SAST": "南アフリカ標準時", "LHDT": "ロードハウ夏時間", "EST": "アメリカ東部標準時", "WIB": "インドネシア西部時間", "ARST": "アルゼンチン夏時間", "WAT": "西アフリカ標準時", "LHST": "ロードハウ標準時", "IST": "インド標準時", "CST": "アメリカ中部標準時", "BT": "ブータン時間", "JST": "日本標準時", "MEZ": "中央ヨーロッパ標準時", "ACST": "オーストラリア中部標準時", "MDT": "アメリカ山地夏時間", "VET": "ベネズエラ時間", "GFT": "仏領ギアナ時間", "COT": "コロンビア標準時", "CHAST": "チャタム標準時", "SGT": "シンガポール標準時", "WESZ": "西ヨーロッパ夏時間", "HAT": "ニューファンドランド夏時間", "HKST": "香港夏時間", "GMT": "グリニッジ標準時", "AST": "大西洋標準時", "ChST": "チャモロ時間", "CDT": "アメリカ中部夏時間", "NZST": "ニュージーランド標準時", "MST": "アメリカ山地標準時", "WITA": "インドネシア中部時間", "EDT": "アメリカ東部夏時間", "GYT": "ガイアナ時間", "HADT": "ハワイ・アリューシャン夏時間", "CAT": "中央アフリカ時間", "CHADT": "チャタム夏時間", "TMT": "トルクメニスタン標準時", "ECT": "エクアドル時間", "PDT": "アメリカ太平洋夏時間", "BOT": "ボリビア時間", "TMST": "トルクメニスタン夏時間", "ACWDT": "オーストラリア中西部夏時間", "HNT": "ニューファンドランド標準時", "UYST": "ウルグアイ夏時間", "OESZ": "東ヨーロッパ夏時間", "ACDT": "オーストラリア中部夏時間", "WARST": "西部アルゼンチン夏時間", "JDT": "日本夏時間", "AWDT": "オーストラリア西部夏時間", "EAT": "東アフリカ時間", "ART": "アルゼンチン標準時", "SRT": "スリナム時間", "UYT": "ウルグアイ標準時", "MYT": "マレーシア時間", "WIT": "インドネシア東部時間", "ACWST": "オーストラリア中西部標準時", "AWST": "オーストラリア西部標準時", "AEST": "オーストラリア東部標準時", "AEDT": "オーストラリア東部夏時間", "WART": "西部アルゼンチン標準時", "ADT": "大西洋夏時間", "CLT": "チリ標準時", "WEZ": "西ヨーロッパ標準時", "OEZ": "東ヨーロッパ標準時", "COST": "コロンビア夏時間", "MESZ": "中央ヨーロッパ夏時間", "HKT": "香港標準時", "WAST": "西アフリカ夏時間", "AKDT": "アラスカ夏時間"},
+		timezones:              map[string]string{"AKDT": "アラスカ夏時間", "LHST": "ロードハウ標準時", "TMT": "トルクメニスタン標準時", "NZST": "ニュージーランド標準時", "PDT": "アメリカ太平洋夏時間", "SRT": "スリナム時間", "ChST": "チャモロ時間", "MDT": "マカオ夏時間", "WART": "西部アルゼンチン標準時", "VET": "ベネズエラ時間", "HAST": "ハワイ・アリューシャン標準時", "AKST": "アラスカ標準時", "∅∅∅": "ペルー夏時間", "UYST": "ウルグアイ夏時間", "HAT": "ニューファンドランド夏時間", "HKST": "香港夏時間", "WIT": "インドネシア東部時間", "MST": "マカオ標準時", "WIB": "インドネシア西部時間", "CLT": "チリ標準時", "ACST": "オーストラリア中部標準時", "IST": "インド標準時", "WITA": "インドネシア中部時間", "GMT": "グリニッジ標準時", "ADT": "大西洋夏時間", "AEST": "オーストラリア東部標準時", "HKT": "香港標準時", "GFT": "仏領ギアナ時間", "TMST": "トルクメニスタン夏時間", "ACWST": "オーストラリア中西部標準時", "OEZ": "東ヨーロッパ標準時", "JDT": "日本夏時間", "AWST": "オーストラリア西部標準時", "GYT": "ガイアナ時間", "EST": "アメリカ東部標準時", "EDT": "アメリカ東部夏時間", "ECT": "エクアドル時間", "SAST": "南アフリカ標準時", "MESZ": "中央ヨーロッパ夏時間", "MYT": "マレーシア時間", "HADT": "ハワイ・アリューシャン夏時間", "NZDT": "ニュージーランド夏時間", "WESZ": "西ヨーロッパ夏時間", "CHAST": "チャタム標準時", "AST": "大西洋標準時", "CLST": "チリ夏時間", "AEDT": "オーストラリア東部夏時間", "ACWDT": "オーストラリア中西部夏時間", "WAT": "西アフリカ標準時", "ACDT": "オーストラリア中部夏時間", "WARST": "西部アルゼンチン夏時間", "PST": "アメリカ太平洋標準時", "UYT": "ウルグアイ標準時", "CDT": "アメリカ中部夏時間", "EAT": "東アフリカ時間", "OESZ": "東ヨーロッパ夏時間", "JST": "日本標準時", "CAT": "中央アフリカ時間", "ARST": "アルゼンチン夏時間", "COT": "コロンビア標準時", "MEZ": "中央ヨーロッパ標準時", "SGT": "シンガポール標準時", "AWDT": "オーストラリア西部夏時間", "BT": "ブータン時間", "HNT": "ニューファンドランド標準時", "CST": "アメリカ中部標準時", "COST": "コロンビア夏時間", "LHDT": "ロードハウ夏時間", "WEZ": "西ヨーロッパ標準時", "CHADT": "チャタム夏時間", "BOT": "ボリビア時間", "WAST": "西アフリカ夏時間", "ART": "アルゼンチン標準時"},
 	}
 }
 
@@ -181,7 +181,8 @@ func (ja *ja_JP) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ja_JP' and handles both Whole and Real numbers based on 'v'
-func (ja *ja_JP) FmtNumber(num float64, v uint64) (results string) {
+func (ja *ja_JP) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ja.decimal) + len(ja.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -217,13 +218,12 @@ func (ja *ja_JP) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ja_JP' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ja *ja_JP) FmtPercent(num float64, v uint64) (results string) {
+func (ja *ja_JP) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ja.decimal)
 	b := make([]byte, 0, l)
@@ -249,12 +249,11 @@ func (ja *ja_JP) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, ja.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ja_JP'
-func (ja *ja_JP) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ja *ja_JP) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ja.currencies[currency]
@@ -307,13 +306,12 @@ func (ja *ja_JP) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 		}
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ja_JP'
 // in accounting notation.
-func (ja *ja_JP) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ja *ja_JP) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ja.currencies[currency]
@@ -378,8 +376,7 @@ func (ja *ja_JP) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, ja.currencyNegativeSuffix...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ja_JP'

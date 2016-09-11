@@ -64,7 +64,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"d.Y.", "k.Y."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"di Yɛ́sus aká yálɛ", "cámɛɛn kǝ kǝbɔpka Y"},
-		timezones:              map[string]string{"WESZ": "WESZ", "HKT": "HKT", "CST": "CST", "BT": "BT", "GYT": "GYT", "GFT": "GFT", "ECT": "ECT", "UYST": "UYST", "CHADT": "CHADT", "VET": "VET", "∅∅∅": "∅∅∅", "HADT": "HADT", "MST": "MST", "MYT": "MYT", "LHST": "LHST", "LHDT": "LHDT", "AKST": "AKST", "COT": "COT", "ACDT": "ACDT", "CLT": "CLT", "NZST": "NZST", "COST": "COST", "CHAST": "CHAST", "MESZ": "MESZ", "ART": "ART", "WARST": "WARST", "SGT": "SGT", "GMT": "GMT", "OEZ": "OEZ", "SAST": "SAST", "JDT": "JDT", "CAT": "CAT", "ADT": "ADT", "SRT": "SRT", "IST": "IST", "WEZ": "WEZ", "AWST": "AWST", "EDT": "EDT", "WIB": "WIB", "HAST": "HAST", "ACST": "ACST", "AST": "AST", "CLST": "CLST", "AEDT": "AEDT", "NZDT": "NZDT", "UYT": "UYT", "TMT": "TMT", "AWDT": "AWDT", "ACWDT": "ACWDT", "WIT": "WIT", "AKDT": "AKDT", "PDT": "PDT", "ACWST": "ACWST", "HNT": "HNT", "CDT": "CDT", "EST": "EST", "MEZ": "MEZ", "JST": "JST", "ARST": "ARST", "WITA": "WITA", "ChST": "ChST", "HKST": "HKST", "AEST": "AEST", "OESZ": "OESZ", "WAST": "WAST", "TMST": "TMST", "HAT": "HAT", "PST": "PST", "BOT": "BOT", "MDT": "MDT", "EAT": "EAT", "WART": "WART", "WAT": "WAT"},
+		timezones:              map[string]string{"WARST": "WARST", "WITA": "WITA", "WESZ": "WESZ", "ECT": "ECT", "SAST": "SAST", "MYT": "MYT", "EST": "EST", "AKST": "AKST", "NZDT": "NZDT", "ACWDT": "ACWDT", "MEZ": "MEZ", "HAT": "HAT", "ART": "ART", "GFT": "GFT", "CST": "CST", "MESZ": "MESZ", "TMT": "TMT", "MST": "MST", "WEZ": "WEZ", "LHDT": "LHDT", "HKT": "HKT", "UYST": "UYST", "TMST": "TMST", "EAT": "EAT", "∅∅∅": "∅∅∅", "WAST": "WAST", "OEZ": "OEZ", "OESZ": "OESZ", "AEDT": "AEDT", "ARST": "ARST", "CDT": "CDT", "HNT": "HNT", "BOT": "BOT", "BT": "BT", "PST": "PST", "ACST": "ACST", "IST": "IST", "MDT": "MDT", "SGT": "SGT", "VET": "VET", "GYT": "GYT", "WIT": "WIT", "WART": "WART", "CLT": "CLT", "CLST": "CLST", "ACDT": "ACDT", "AEST": "AEST", "GMT": "GMT", "CHAST": "CHAST", "JST": "JST", "AWDT": "AWDT", "SRT": "SRT", "CAT": "CAT", "LHST": "LHST", "ADT": "ADT", "AWST": "AWST", "HKST": "HKST", "UYT": "UYT", "JDT": "JDT", "HADT": "HADT", "ChST": "ChST", "AKDT": "AKDT", "ACWST": "ACWST", "CHADT": "CHADT", "WIB": "WIB", "PDT": "PDT", "EDT": "EDT", "COT": "COT", "COST": "COST", "AST": "AST", "HAST": "HAST", "WAT": "WAT", "NZST": "NZST"},
 	}
 }
 
@@ -174,7 +174,8 @@ func (ksf *ksf_CM) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ksf_CM' and handles both Whole and Real numbers based on 'v'
-func (ksf *ksf_CM) FmtNumber(num float64, v uint64) (results string) {
+func (ksf *ksf_CM) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(ksf.decimal) + len(ksf.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -194,7 +195,6 @@ func (ksf *ksf_CM) FmtNumber(num float64, v uint64) (results string) {
 				for j := len(ksf.group) - 1; j >= 0; j-- {
 					b = append(b, ksf.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -205,9 +205,7 @@ func (ksf *ksf_CM) FmtNumber(num float64, v uint64) (results string) {
 	}
 
 	if num < 0 {
-		for j := len(ksf.minus) - 1; j >= 0; j-- {
-			b = append(b, ksf.minus[j])
-		}
+		b = append(b, ksf.minus[0])
 	}
 
 	// reverse
@@ -215,19 +213,17 @@ func (ksf *ksf_CM) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ksf_CM' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ksf *ksf_CM) FmtPercent(num float64, v uint64) (results string) {
-	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	return
+func (ksf *ksf_CM) FmtPercent(num float64, v uint64) string {
+	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ksf_CM'
-func (ksf *ksf_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (ksf *ksf_CM) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ksf.currencies[currency]
@@ -249,7 +245,6 @@ func (ksf *ksf_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 				for j := len(ksf.group) - 1; j >= 0; j-- {
 					b = append(b, ksf.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -260,9 +255,7 @@ func (ksf *ksf_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 	}
 
 	if num < 0 {
-		for j := len(ksf.minus) - 1; j >= 0; j-- {
-			b = append(b, ksf.minus[j])
-		}
+		b = append(b, ksf.minus[0])
 	}
 
 	// reverse
@@ -285,13 +278,12 @@ func (ksf *ksf_CM) FmtCurrency(num float64, v uint64, currency currency.Type) (r
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ksf_CM'
 // in accounting notation.
-func (ksf *ksf_CM) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (ksf *ksf_CM) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ksf.currencies[currency]
@@ -313,7 +305,6 @@ func (ksf *ksf_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 				for j := len(ksf.group) - 1; j >= 0; j-- {
 					b = append(b, ksf.group[j])
 				}
-
 				count = 1
 			} else {
 				count++
@@ -325,9 +316,7 @@ func (ksf *ksf_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	if num < 0 {
 
-		for j := len(ksf.minus) - 1; j >= 0; j-- {
-			b = append(b, ksf.minus[j])
-		}
+		b = append(b, ksf.minus[0])
 
 	}
 
@@ -356,8 +345,7 @@ func (ksf *ksf_CM) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ksf_CM'

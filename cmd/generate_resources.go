@@ -22,6 +22,11 @@ const (
 )
 
 var (
+	tfuncs = template.FuncMap{
+		"is_multibyte": func(s string) bool {
+			return len([]byte(s)) > 1
+		},
+	}
 	prVarFuncs = map[string]string{
 		"n": "n := math.Abs(num)\n",
 		"i": "i := int64(n)\n",
@@ -155,7 +160,7 @@ func main() {
 	var err error
 
 	// load template
-	tmpl, err = template.ParseGlob("*.tmpl")
+	tmpl, err = template.New("all").Funcs(tfuncs).ParseGlob("*.tmpl")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -250,37 +255,6 @@ func main() {
 		if err = cmd.Run(); err != nil {
 			log.Panic(err)
 		}
-	}
-
-	fmt.Println("Writing final locale map")
-
-	if err = os.MkdirAll(fmt.Sprintf(locDir, "locales-list"), 0777); err != nil {
-		log.Fatal(err)
-	}
-
-	filename = fmt.Sprintf(locFilename, "locales-list", "locales")
-
-	output, err = os.Create(filename)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer output.Close()
-
-	if err := tmpl.ExecuteTemplate(output, "localeslist", locMap); err != nil {
-		log.Fatal(err)
-	}
-
-	output.Close()
-
-	// after file written run gofmt on file to ensure best formatting
-	cmd = exec.Command("goimports", "-w", filename)
-	if err = cmd.Run(); err != nil {
-		log.Panic(err)
-	}
-
-	cmd = exec.Command("gofmt", "-s", "-w", filename)
-	if err = cmd.Run(); err != nil {
-		log.Panic(err)
 	}
 }
 
@@ -1757,13 +1731,13 @@ func parsePercentNumberFormat(trans *translator) {
 		}
 	}
 
-	if len(trans.FmtPercentPrefix) > 0 {
-		trans.FmtPercentPrefix = fmt.Sprintf("%#v", []byte(trans.FmtPercentPrefix))
-	}
+	// if len(trans.FmtPercentPrefix) > 0 {
+	// 	trans.FmtPercentPrefix = fmt.Sprintf("%#v", []byte(trans.FmtPercentPrefix))
+	// }
 
-	if len(trans.FmtPercentSuffix) > 0 {
-		trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
-	}
+	// if len(trans.FmtPercentSuffix) > 0 {
+	// 	trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
+	// }
 
 	return
 }

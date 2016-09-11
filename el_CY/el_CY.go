@@ -48,7 +48,7 @@ func New() locales.Translator {
 		locale:                 "el_CY",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                ",",
 		group:                  ".",
 		minus:                  "-",
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"π.Χ.", "μ.Χ."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"προ Χριστού", "μετά Χριστόν"},
-		timezones:              map[string]string{"BOT": "Ώρα Βολιβίας", "TMST": "Θερινή ώρα Τουρκμενιστάν", "HAST": "Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων", "WAT": "Χειμερινή ώρα Δυτικής Αφρικής", "HKT": "Χειμερινή ώρα Χονγκ Κονγκ", "COT": "Χειμερινή ώρα Κολομβίας", "ACDT": "Θερινή ώρα Κεντρικής Αυστραλίας", "ARST": "Θερινή ώρα Αργεντινής", "PST": "Χειμερινή ώρα Βόρειας Αμερικής", "GYT": "Ώρα Γουιάνας", "WESZ": "Θερινή ώρα Δυτικής Ευρώπης", "CDT": "Κεντρική θερινή ώρα Βόρειας Αμερικής", "SGT": "Ώρα Σιγκαπούρης", "AKST": "Χειμερινή ώρα Αλάσκας", "CST": "Κεντρική χειμερινή ώρα Βόρειας Αμερικής", "UYT": "Χειμερινή ώρα Ουρουγουάης", "WART": "Χειμερινή ώρα Δυτικής Αργεντινής", "WAST": "Θερινή ώρα Δυτικής Αφρικής", "SAST": "Χειμερινή ώρα Νότιας Αφρικής", "ART": "Χειμερινή ώρα Αργεντινής", "GFT": "Ώρα Γαλλικής Γουιάνας", "MDT": "Ορεινή θερινή ώρα Βόρειας Αμερικής", "EST": "Ανατολική χειμερινή ώρα Βόρειας Αμερικής", "ADT": "Θερινή ώρα Ατλαντικού", "AWDT": "Θερινή ώρα Δυτικής Αυστραλίας", "UYST": "Θερινή ώρα Ουρουγουάης", "EAT": "Ώρα Ανατολικής Αφρικής", "SRT": "Ώρα Σουρινάμ", "LHST": "Χειμερινή ώρα Λορντ Χάου", "MYT": "Ώρα Μαλαισίας", "BT": "Ώρα Μπουτάν", "JST": "Χειμερινή ώρα Ιαπωνίας", "GMT": "Μέση ώρα Γκρίνουιτς", "AKDT": "Θερινή ώρα Αλάσκας", "EDT": "Ανατολική θερινή ώρα Βόρειας Αμερικής", "NZST": "Χειμερινή ώρα Νέας Ζηλανδίας", "OEZ": "Χειμερινή ώρα Ανατολικής Ευρώπης", "AST": "Χειμερινή ώρα Ατλαντικού", "ACWST": "Χειμερινή ώρα Κεντροδυτικής Αυστραλίας", "WIT": "Ώρα: Ανατολική Ινδονησία", "ACWDT": "Θερινή ώρα Κεντροδυτικής Αυστραλίας", "HNT": "Χειμερινή ώρα Νέας Γης", "PDT": "Θερινή ώρα Βόρειας Αμερικής", "ACST": "Χειμερινή ώρα Κεντρικής Αυστραλίας", "WITA": "Ώρα: Κεντρική Ινδονησία", "TMT": "Χειμερινή ώρα Τουρκμενιστάν", "COST": "Θερινή ώρα Κολομβίας", "NZDT": "Θερινή ώρα Νέας Ζηλανδίας", "MST": "Ορεινή χειμερινή ώρα Βόρειας Αμερικής", "AWST": "Χειμερινή ώρα Δυτικής Αυστραλίας", "CLST": "Θερινή ώρα Χιλής", "JDT": "Θερινή ώρα Ιαπωνίας", "∅∅∅": "Θερινή ώρα Αζορών", "HADT": "Θερινή ώρα Χαβάης-Αλεούτιων νήσων", "HKST": "Θερινή ώρα Χονγκ Κονγκ", "AEST": "Χειμερινή ώρα Ανατολικής Αυστραλίας", "CHAST": "Χειμερινή ώρα Τσάθαμ", "CHADT": "Θερινή ώρα Τσάθαμ", "VET": "Ώρα Βενεζουέλας", "WARST": "Θερινή ώρα Δυτικής Αργεντινής", "IST": "Ώρα Ινδίας", "AEDT": "Θερινή ώρα Ανατολικής Αυστραλίας", "OESZ": "Θερινή ώρα Ανατολικής Ευρώπης", "MEZ": "Χειμερινή ώρα Κεντρικής Ευρώπης", "MESZ": "Θερινή ώρα Κεντρικής Ευρώπης", "CLT": "Χειμερινή ώρα Χιλής", "WEZ": "Χειμερινή ώρα Δυτικής Ευρώπης", "HAT": "Θερινή ώρα Νέας Γης", "CAT": "Ώρα Κεντρικής Αφρικής", "WIB": "Ώρα: Δυτική Ινδονησία", "ECT": "Ώρα Εκουαδόρ", "LHDT": "Θερινή ώρα Λορντ Χάου", "ChST": "Ώρα Τσαμόρο"},
+		timezones:              map[string]string{"PDT": "Θερινή ώρα Βόρειας Αμερικής", "TMST": "Θερινή ώρα Τουρκμενιστάν", "ECT": "Ώρα Εκουαδόρ", "MESZ": "Θερινή ώρα Κεντρικής Ευρώπης", "OEZ": "Χειμερινή ώρα Ανατολικής Ευρώπης", "HNT": "Χειμερινή ώρα Νέας Γης", "ART": "Χειμερινή ώρα Αργεντινής", "LHDT": "Θερινή ώρα Λορντ Χάου", "BOT": "Ώρα Βολιβίας", "ChST": "Ώρα Τσαμόρο", "ACWDT": "Θερινή ώρα Κεντροδυτικής Αυστραλίας", "CHADT": "Θερινή ώρα Τσάθαμ", "SGT": "Ώρα Σιγκαπούρης", "AWDT": "Θερινή ώρα Δυτικής Αυστραλίας", "CAT": "Ώρα Κεντρικής Αφρικής", "ARST": "Θερινή ώρα Αργεντινής", "SAST": "Χειμερινή ώρα Νότιας Αφρικής", "ACWST": "Χειμερινή ώρα Κεντροδυτικής Αυστραλίας", "HKT": "Χειμερινή ώρα Χονγκ Κονγκ", "SRT": "Ώρα Σουρινάμ", "WIT": "Ώρα: Ανατολική Ινδονησία", "EDT": "Ανατολική θερινή ώρα Βόρειας Αμερικής", "COST": "Θερινή ώρα Κολομβίας", "NZST": "Χειμερινή ώρα Νέας Ζηλανδίας", "WEZ": "Χειμερινή ώρα Δυτικής Ευρώπης", "WESZ": "Θερινή ώρα Δυτικής Ευρώπης", "MEZ": "Χειμερινή ώρα Κεντρικής Ευρώπης", "ACST": "Χειμερινή ώρα Κεντρικής Αυστραλίας", "AEDT": "Θερινή ώρα Ανατολικής Αυστραλίας", "MST": "Ορεινή χειμερινή ώρα Βόρειας Αμερικής", "UYST": "Θερινή ώρα Ουρουγουάης", "TMT": "Χειμερινή ώρα Τουρκμενιστάν", "CST": "Κεντρική χειμερινή ώρα Βόρειας Αμερικής", "JST": "Χειμερινή ώρα Ιαπωνίας", "JDT": "Θερινή ώρα Ιαπωνίας", "EST": "Ανατολική χειμερινή ώρα Βόρειας Αμερικής", "HAST": "Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων", "ADT": "Θερινή ώρα Ατλαντικού", "VET": "Ώρα Βενεζουέλας", "IST": "Ώρα Ινδίας", "PST": "Χειμερινή ώρα Βόρειας Αμερικής", "HAT": "Θερινή ώρα Νέας Γης", "WITA": "Ώρα: Κεντρική Ινδονησία", "HADT": "Θερινή ώρα Χαβάης-Αλεούτιων νήσων", "LHST": "Χειμερινή ώρα Λορντ Χάου", "COT": "Χειμερινή ώρα Κολομβίας", "WAT": "Χειμερινή ώρα Δυτικής Αφρικής", "AST": "Χειμερινή ώρα Ατλαντικού", "WART": "Χειμερινή ώρα Δυτικής Αργεντινής", "MDT": "Ορεινή θερινή ώρα Βόρειας Αμερικής", "∅∅∅": "Θερινή ώρα Αζορών", "UYT": "Χειμερινή ώρα Ουρουγουάης", "AKDT": "Θερινή ώρα Αλάσκας", "OESZ": "Θερινή ώρα Ανατολικής Ευρώπης", "GYT": "Ώρα Γουιάνας", "HKST": "Θερινή ώρα Χονγκ Κονγκ", "EAT": "Ώρα Ανατολικής Αφρικής", "CHAST": "Χειμερινή ώρα Τσάθαμ", "GFT": "Ώρα Γαλλικής Γουιάνας", "AKST": "Χειμερινή ώρα Αλάσκας", "CLT": "Χειμερινή ώρα Χιλής", "WARST": "Θερινή ώρα Δυτικής Αργεντινής", "AWST": "Χειμερινή ώρα Δυτικής Αυστραλίας", "AEST": "Χειμερινή ώρα Ανατολικής Αυστραλίας", "MYT": "Ώρα Μαλαισίας", "GMT": "Μέση ώρα Γκρίνουιτς", "BT": "Ώρα Μπουτάν", "WIB": "Ώρα: Δυτική Ινδονησία", "CLST": "Θερινή ώρα Χιλής", "ACDT": "Θερινή ώρα Κεντρικής Αυστραλίας", "CDT": "Κεντρική θερινή ώρα Βόρειας Αμερικής", "NZDT": "Θερινή ώρα Νέας Ζηλανδίας", "WAST": "Θερινή ώρα Δυτικής Αφρικής"},
 	}
 }
 
@@ -201,7 +201,8 @@ func (el *el_CY) WeekdaysWide() []string {
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for 'el_CY' and handles both Whole and Real numbers based on 'v'
-func (el *el_CY) FmtNumber(num float64, v uint64) (results string) {
+func (el *el_CY) FmtNumber(num float64, v uint64) string {
+
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(el.decimal) + len(el.group)*len(s[:len(s)-int(v)-1])/3
 	count := 0
@@ -237,13 +238,12 @@ func (el *el_CY) FmtNumber(num float64, v uint64) (results string) {
 		b[i], b[j] = b[j], b[i]
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'el_CY' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (el *el_CY) FmtPercent(num float64, v uint64) (results string) {
+func (el *el_CY) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	l := len(s) + len(el.decimal)
 	b := make([]byte, 0, l)
@@ -269,12 +269,11 @@ func (el *el_CY) FmtPercent(num float64, v uint64) (results string) {
 
 	b = append(b, el.percent...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'el_CY'
-func (el *el_CY) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
+func (el *el_CY) FmtCurrency(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := el.currencies[currency]
@@ -327,13 +326,12 @@ func (el *el_CY) FmtCurrency(num float64, v uint64, currency currency.Type) (res
 
 	b = append(b, symbol...)
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'el_CY'
 // in accounting notation.
-func (el *el_CY) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
+func (el *el_CY) FmtAccounting(num float64, v uint64, currency currency.Type) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := el.currencies[currency]
@@ -393,8 +391,7 @@ func (el *el_CY) FmtAccounting(num float64, v uint64, currency currency.Type) (r
 		b = append(b, symbol...)
 	}
 
-	results = string(b)
-	return
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'el_CY'
