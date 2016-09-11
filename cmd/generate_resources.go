@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 
 	"github.com/go-playground/locales"
@@ -22,6 +23,29 @@ const (
 )
 
 var (
+	tfuncs = template.FuncMap{
+		"is_multibyte": func(s string) bool {
+			return len([]byte(s)) > 1
+		},
+		"reverse_bytes": func(s string) string {
+			b := make([]byte, 0, 8)
+
+			for j := len(s) - 1; j >= 0; j-- {
+				b = append(b, s[j])
+			}
+
+			return fmt.Sprintf("%#v", b)
+		},
+		"byte_count": func(s ...string) string {
+			var count int
+
+			for i := 0; i < len(s); i++ {
+				count += len([]byte(s[i]))
+			}
+
+			return strconv.Itoa(count)
+		},
+	}
 	prVarFuncs = map[string]string{
 		"n": "n := math.Abs(num)\n",
 		"i": "i := int64(n)\n",
@@ -59,15 +83,10 @@ type translator struct {
 	PluralsRange   string
 	RangeFunc      string
 	Decimal        string
-	DecimalLen     int
 	Group          string
-	GroupLen       int
 	Minus          string
-	MinusLen       int
 	Percent        string
-	PercentLen     int
 	PerMille       string
-	PerMilleLen    int
 	TimeSeparator  string
 	Infinity       string
 	Currencies     string
@@ -160,7 +179,7 @@ func main() {
 	var err error
 
 	// load template
-	tmpl, err = template.ParseGlob("*.tmpl")
+	tmpl, err = template.New("all").Funcs(tfuncs).ParseGlob("*.tmpl")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -256,37 +275,6 @@ func main() {
 			log.Panic(err)
 		}
 	}
-
-	fmt.Println("Writing final locale map")
-
-	if err = os.MkdirAll(fmt.Sprintf(locDir, "locales-list"), 0777); err != nil {
-		log.Fatal(err)
-	}
-
-	filename = fmt.Sprintf(locFilename, "locales-list", "locales")
-
-	output, err = os.Create(filename)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer output.Close()
-
-	if err := tmpl.ExecuteTemplate(output, "localeslist", locMap); err != nil {
-		log.Fatal(err)
-	}
-
-	output.Close()
-
-	// after file written run gofmt on file to ensure best formatting
-	cmd = exec.Command("goimports", "-w", filename)
-	if err = cmd.Run(); err != nil {
-		log.Panic(err)
-	}
-
-	cmd = exec.Command("gofmt", "-s", "-w", filename)
-	if err = cmd.Run(); err != nil {
-		log.Panic(err)
-	}
 }
 
 func postProcess(cldr *cldr.CLDR) {
@@ -328,65 +316,55 @@ func postProcess(cldr *cldr.CLDR) {
 		if len(trans.Decimal) == 0 {
 
 			if found {
-				trans.DecimalLen = base.DecimalLen
 				trans.Decimal = base.Decimal
 			}
 
 			if len(trans.Decimal) == 0 {
-				trans.DecimalLen = 0
-				trans.Decimal = "[]byte{}"
+				trans.Decimal = ""
 			}
 		}
 
 		if len(trans.Group) == 0 {
 
 			if found {
-				trans.GroupLen = base.GroupLen
 				trans.Group = base.Group
 			}
 
 			if len(trans.Group) == 0 {
-				trans.GroupLen = 0
-				trans.Group = "[]byte{}"
+				trans.Group = ""
 			}
 		}
 
 		if len(trans.Minus) == 0 {
 
 			if found {
-				trans.MinusLen = base.MinusLen
 				trans.Minus = base.Minus
 			}
 
 			if len(trans.Minus) == 0 {
-				trans.MinusLen = 0
-				trans.Minus = "[]byte{}"
+				trans.Minus = ""
 			}
 		}
 
 		if len(trans.Percent) == 0 {
 
 			if found {
-				trans.PercentLen = base.PercentLen
 				trans.Percent = base.Percent
 			}
 
 			if len(trans.Percent) == 0 {
-				trans.PercentLen = 0
-				trans.Percent = "[]byte{}"
+				trans.Percent = ""
 			}
 		}
 
 		if len(trans.PerMille) == 0 {
 
 			if found {
-				trans.PerMilleLen = base.PerMilleLen
 				trans.PerMille = base.PerMille
 			}
 
 			if len(trans.PerMille) == 0 {
-				trans.PerMilleLen = 0
-				trans.PerMille = "[]byte{}"
+				trans.PerMille = ""
 			}
 		}
 
@@ -520,7 +498,7 @@ func postProcess(cldr *cldr.CLDR) {
 
 		ldml := cldr.RawLDML(trans.Locale)
 
-		currencies := make([][]byte, len(globalCurrencies), len(globalCurrencies))
+		currencies := make([]string, len(globalCurrencies), len(globalCurrencies))
 
 		var kval string
 
@@ -532,7 +510,7 @@ func postProcess(cldr *cldr.CLDR) {
 				kval += " "
 			}
 
-			currencies[v] = []byte(kval)
+			currencies[v] = kval
 		}
 
 		// some just have no data...
@@ -553,7 +531,7 @@ func postProcess(cldr *cldr.CLDR) {
 						continue
 					}
 
-					currencies[globCurrencyIdxMap[currency.Type]] = []byte(currency.Symbol[0].Data())
+					currencies[globCurrencyIdxMap[currency.Type]] = currency.Symbol[0].Data()
 				}
 			}
 		}
@@ -595,7 +573,7 @@ func postProcess(cldr *cldr.CLDR) {
 			trans.timezones = make(map[string]*zoneAbbrev)
 		}
 
-		tz := make(map[string][]byte) // key = abbrev locale eg. EST, EDT, MST, PST... value = long locale eg. Eastern Standard Time, Pacific Time.....
+		tz := make(map[string]string) // key = abbrev locale eg. EST, EDT, MST, PST... value = long locale eg. Eastern Standard Time, Pacific Time.....
 
 		for k, v := range timezones {
 
@@ -605,14 +583,14 @@ func postProcess(cldr *cldr.CLDR) {
 				trans.timezones[k] = v
 			}
 
-			tz[v.standard] = []byte(ttz.standard)
-			tz[v.daylight] = []byte(ttz.daylight)
+			tz[v.standard] = ttz.standard
+			tz[v.daylight] = ttz.daylight
 		}
 
 		trans.FmtTimezones = fmt.Sprintf("%#v", tz)
 
 		if len(trans.TimeSeparator) == 0 {
-			trans.TimeSeparator = fmt.Sprintf("%#v", []byte(":"))
+			trans.TimeSeparator = ":"
 		}
 
 		trans.FmtDateShort, trans.FmtDateMedium, trans.FmtDateLong, trans.FmtDateFull = parseDateFormats(trans, trans.FmtDateShort, trans.FmtDateMedium, trans.FmtDateLong, trans.FmtDateFull)
@@ -655,39 +633,27 @@ func preProcess(cldrVar *cldr.CLDR) {
 				symbol := ldml.Numbers.Symbols[0]
 
 				if len(symbol.Decimal) > 0 {
-					b := []byte(symbol.Decimal[0].Data())
-					trans.DecimalLen = len(b)
-					trans.Decimal = fmt.Sprintf("%#v", b)
+					trans.Decimal = symbol.Decimal[0].Data()
 				}
 				if len(symbol.Group) > 0 {
-					b := []byte(symbol.Group[0].Data())
-					trans.GroupLen = len(b)
-					trans.Group = fmt.Sprintf("%#v", b)
+					trans.Group = symbol.Group[0].Data()
 				}
 				if len(symbol.MinusSign) > 0 {
-					b := []byte(symbol.MinusSign[0].Data())
-					trans.MinusLen = len(b)
-					trans.Minus = fmt.Sprintf("%#v", b)
+					trans.Minus = symbol.MinusSign[0].Data()
 				}
 				if len(symbol.PercentSign) > 0 {
-					b := []byte(symbol.PercentSign[0].Data())
-					trans.PercentLen = len(b)
-					trans.Percent = fmt.Sprintf("%#v", b)
+					trans.Percent = symbol.PercentSign[0].Data()
 				}
 				if len(symbol.PerMille) > 0 {
-					b := []byte(symbol.PerMille[0].Data())
-					trans.PerMilleLen = len(b)
-					trans.PerMille = fmt.Sprintf("%#v", b)
+					trans.PerMille = symbol.PerMille[0].Data()
 				}
 
 				if len(symbol.TimeSeparator) > 0 {
-					b := []byte(symbol.TimeSeparator[0].Data())
-					trans.TimeSeparator = fmt.Sprintf("%#v", b)
+					trans.TimeSeparator = symbol.TimeSeparator[0].Data()
 				}
 
 				if len(symbol.Infinity) > 0 {
-					b := []byte(symbol.Infinity[0].Data())
-					trans.Infinity = fmt.Sprintf("%#v", b)
+					trans.Infinity = symbol.Infinity[0].Data()
 				}
 			}
 
@@ -860,7 +826,7 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 							for _, months := range monthctx.MonthWidth {
 
-								var monthData [][]byte
+								var monthData []string
 
 								for _, m := range months.Month {
 
@@ -870,29 +836,29 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 									switch m.Type {
 									case "1":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "2":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "3":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "4":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "5":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "6":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "7":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "8":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "9":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "10":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "11":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									case "12":
-										monthData = append(monthData, []byte(m.Data()))
+										monthData = append(monthData, m.Data())
 									}
 								}
 
@@ -901,7 +867,7 @@ func preProcess(cldrVar *cldr.CLDR) {
 									// making array indexes line up with month values
 									// so I'll have an extra empty value, it's way faster
 									// than a switch over all type values...
-									monthData = append(make([][]byte, 1, len(monthData)+1), monthData...)
+									monthData = append(make([]string, 1, len(monthData)+1), monthData...)
 
 									switch months.Type {
 									case "abbreviated":
@@ -936,25 +902,25 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 							for _, days := range dayctx.DayWidth {
 
-								var dayData [][]byte
+								var dayData []string
 
 								for _, d := range days.Day {
 
 									switch d.Type {
 									case "sun":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									case "mon":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									case "tue":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									case "wed":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									case "thu":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									case "fri":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									case "sat":
-										dayData = append(dayData, []byte(d.Data()))
+										dayData = append(dayData, d.Data())
 									}
 								}
 
@@ -999,17 +965,17 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 								// [0] = AM
 								// [0] = PM
-								ampm := make([][]byte, 2, 2)
+								ampm := make([]string, 2, 2)
 
 								for _, d := range width.DayPeriod {
 
 									if d.Type == "am" {
-										ampm[0] = []byte(d.Data())
+										ampm[0] = d.Data()
 										continue
 									}
 
 									if d.Type == "pm" {
-										ampm[1] = []byte(d.Data())
+										ampm[1] = d.Data()
 									}
 								}
 
@@ -1043,40 +1009,40 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 						// [0] = BC
 						// [0] = AD
-						abbrev := make([][]byte, 2, 2)
-						narr := make([][]byte, 2, 2)
-						wide := make([][]byte, 2, 2)
+						abbrev := make([]string, 2, 2)
+						narr := make([]string, 2, 2)
+						wide := make([]string, 2, 2)
 
 						if calendar.Eras.EraAbbr != nil {
 
 							if len(calendar.Eras.EraAbbr.Era) == 4 {
-								abbrev[0] = []byte(calendar.Eras.EraAbbr.Era[0].Data())
-								abbrev[1] = []byte(calendar.Eras.EraAbbr.Era[2].Data())
+								abbrev[0] = calendar.Eras.EraAbbr.Era[0].Data()
+								abbrev[1] = calendar.Eras.EraAbbr.Era[2].Data()
 							} else if len(calendar.Eras.EraAbbr.Era) == 2 {
-								abbrev[0] = []byte(calendar.Eras.EraAbbr.Era[0].Data())
-								abbrev[1] = []byte(calendar.Eras.EraAbbr.Era[1].Data())
+								abbrev[0] = calendar.Eras.EraAbbr.Era[0].Data()
+								abbrev[1] = calendar.Eras.EraAbbr.Era[1].Data()
 							}
 						}
 
 						if calendar.Eras.EraNarrow != nil {
 
 							if len(calendar.Eras.EraNarrow.Era) == 4 {
-								narr[0] = []byte(calendar.Eras.EraNarrow.Era[0].Data())
-								narr[1] = []byte(calendar.Eras.EraNarrow.Era[2].Data())
+								narr[0] = calendar.Eras.EraNarrow.Era[0].Data()
+								narr[1] = calendar.Eras.EraNarrow.Era[2].Data()
 							} else if len(calendar.Eras.EraNarrow.Era) == 2 {
-								narr[0] = []byte(calendar.Eras.EraNarrow.Era[0].Data())
-								narr[1] = []byte(calendar.Eras.EraNarrow.Era[1].Data())
+								narr[0] = calendar.Eras.EraNarrow.Era[0].Data()
+								narr[1] = calendar.Eras.EraNarrow.Era[1].Data()
 							}
 						}
 
 						if calendar.Eras.EraNames != nil {
 
 							if len(calendar.Eras.EraNames.Era) == 4 {
-								wide[0] = []byte(calendar.Eras.EraNames.Era[0].Data())
-								wide[1] = []byte(calendar.Eras.EraNames.Era[2].Data())
+								wide[0] = calendar.Eras.EraNames.Era[0].Data()
+								wide[1] = calendar.Eras.EraNames.Era[2].Data()
 							} else if len(calendar.Eras.EraNames.Era) == 2 {
-								wide[0] = []byte(calendar.Eras.EraNames.Era[0].Data())
-								wide[1] = []byte(calendar.Eras.EraNames.Era[1].Data())
+								wide[0] = calendar.Eras.EraNames.Era[0].Data()
+								wide[1] = calendar.Eras.EraNames.Era[1].Data()
 							}
 						}
 
@@ -1632,13 +1598,13 @@ func parseCurrencyNumberFormat(trans *translator) {
 		}
 	}
 
-	if len(trans.FmtCurrencyPrefix) > 0 {
-		trans.FmtCurrencyPrefix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyPrefix))
-	}
+	// if len(trans.FmtCurrencyPrefix) > 0 {
+	// 	trans.FmtCurrencyPrefix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyPrefix))
+	// }
 
-	if len(trans.FmtCurrencySuffix) > 0 {
-		trans.FmtCurrencySuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencySuffix))
-	}
+	// if len(trans.FmtCurrencySuffix) > 0 {
+	// 	trans.FmtCurrencySuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencySuffix))
+	// }
 
 	// no need to parse again if true....
 	if negativeEqual {
@@ -1701,13 +1667,13 @@ func parseCurrencyNumberFormat(trans *translator) {
 		}
 	}
 
-	if len(trans.FmtCurrencyNegativePrefix) > 0 {
-		trans.FmtCurrencyNegativePrefix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativePrefix))
-	}
+	// if len(trans.FmtCurrencyNegativePrefix) > 0 {
+	// 	trans.FmtCurrencyNegativePrefix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativePrefix))
+	// }
 
-	if len(trans.FmtCurrencyNegativeSuffix) > 0 {
-		trans.FmtCurrencyNegativeSuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativeSuffix))
-	}
+	// if len(trans.FmtCurrencyNegativeSuffix) > 0 {
+	// 	trans.FmtCurrencyNegativeSuffix = fmt.Sprintf("%#v", []byte(trans.FmtCurrencyNegativeSuffix))
+	// }
 
 	return
 }
@@ -1784,13 +1750,13 @@ func parsePercentNumberFormat(trans *translator) {
 		}
 	}
 
-	if len(trans.FmtPercentPrefix) > 0 {
-		trans.FmtPercentPrefix = fmt.Sprintf("%#v", []byte(trans.FmtPercentPrefix))
-	}
+	// if len(trans.FmtPercentPrefix) > 0 {
+	// 	trans.FmtPercentPrefix = fmt.Sprintf("%#v", []byte(trans.FmtPercentPrefix))
+	// }
 
-	if len(trans.FmtPercentSuffix) > 0 {
-		trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
-	}
+	// if len(trans.FmtPercentSuffix) > 0 {
+	// 	trans.FmtPercentSuffix = fmt.Sprintf("%#v", []byte(trans.FmtPercentSuffix))
+	// }
 
 	return
 }

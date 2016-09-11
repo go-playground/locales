@@ -13,9 +13,9 @@ func TestDaysAbbreviated(t *testing.T) {
 	days := trans.WeekdaysAbbreviated()
 
 	for i, day := range days {
-		s := string(trans.WeekdayAbbreviated(time.Weekday(i)))
-		if s != string(day) {
-			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		s := trans.WeekdayAbbreviated(time.Weekday(i))
+		if s != day {
+			t.Errorf("Expected '%s' Got '%s'", day, s)
 		}
 	}
 
@@ -54,7 +54,7 @@ func TestDaysAbbreviated(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		s := string(trans.WeekdayAbbreviated(time.Weekday(tt.idx)))
+		s := trans.WeekdayAbbreviated(time.Weekday(tt.idx))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -67,8 +67,8 @@ func TestDaysNarrow(t *testing.T) {
 	days := trans.WeekdaysNarrow()
 
 	for i, day := range days {
-		s := string(trans.WeekdayNarrow(time.Weekday(i)))
-		if s != string(day) {
+		s := trans.WeekdayNarrow(time.Weekday(i))
+		if s != day {
 			t.Errorf("Expected '%s' Got '%s'", string(day), s)
 		}
 	}
@@ -108,7 +108,7 @@ func TestDaysNarrow(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		s := string(trans.WeekdayNarrow(time.Weekday(tt.idx)))
+		s := trans.WeekdayNarrow(time.Weekday(tt.idx))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -121,9 +121,9 @@ func TestDaysShort(t *testing.T) {
 	days := trans.WeekdaysShort()
 
 	for i, day := range days {
-		s := string(trans.WeekdayShort(time.Weekday(i)))
-		if s != string(day) {
-			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		s := trans.WeekdayShort(time.Weekday(i))
+		if s != day {
+			t.Errorf("Expected '%s' Got '%s'", day, s)
 		}
 	}
 
@@ -162,7 +162,7 @@ func TestDaysShort(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		s := string(trans.WeekdayShort(time.Weekday(tt.idx)))
+		s := trans.WeekdayShort(time.Weekday(tt.idx))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -175,9 +175,9 @@ func TestDaysWide(t *testing.T) {
 	days := trans.WeekdaysWide()
 
 	for i, day := range days {
-		s := string(trans.WeekdayWide(time.Weekday(i)))
-		if s != string(day) {
-			t.Errorf("Expected '%s' Got '%s'", string(day), s)
+		s := trans.WeekdayWide(time.Weekday(i))
+		if s != day {
+			t.Errorf("Expected '%s' Got '%s'", day, s)
 		}
 	}
 
@@ -216,7 +216,7 @@ func TestDaysWide(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		s := string(trans.WeekdayWide(time.Weekday(tt.idx)))
+		s := trans.WeekdayWide(time.Weekday(tt.idx))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -229,9 +229,9 @@ func TestMonthsAbbreviated(t *testing.T) {
 	months := trans.MonthsAbbreviated()
 
 	for i, month := range months {
-		s := string(trans.MonthAbbreviated(time.Month(i + 1)))
-		if s != string(month) {
-			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		s := trans.MonthAbbreviated(time.Month(i + 1))
+		if s != month {
+			t.Errorf("Expected '%s' Got '%s'", month, s)
 		}
 	}
 
@@ -290,7 +290,7 @@ func TestMonthsAbbreviated(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		s := string(trans.MonthAbbreviated(time.Month(tt.idx)))
+		s := trans.MonthAbbreviated(time.Month(tt.idx))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -303,9 +303,9 @@ func TestMonthsNarrow(t *testing.T) {
 	months := trans.MonthsNarrow()
 
 	for i, month := range months {
-		s := string(trans.MonthNarrow(time.Month(i + 1)))
-		if s != string(month) {
-			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		s := trans.MonthNarrow(time.Month(i + 1))
+		if s != month {
+			t.Errorf("Expected '%s' Got '%s'", month, s)
 		}
 	}
 
@@ -364,7 +364,7 @@ func TestMonthsNarrow(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		s := string(trans.MonthNarrow(time.Month(tt.idx)))
+		s := trans.MonthNarrow(time.Month(tt.idx))
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -377,9 +377,9 @@ func TestMonthsWide(t *testing.T) {
 	months := trans.MonthsWide()
 
 	for i, month := range months {
-		s := string(trans.MonthWide(time.Month(i + 1)))
-		if s != string(month) {
-			t.Errorf("Expected '%s' Got '%s'", string(month), s)
+		s := trans.MonthWide(time.Month(i + 1))
+		if s != month {
+			t.Errorf("Expected '%s' Got '%s'", month, s)
 		}
 	}
 
@@ -465,7 +465,7 @@ func TestFullTime(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtTimeFull(tt.t))
+		s := trans.FmtTimeFull(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -492,7 +492,7 @@ func TestLongTime(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtTimeLong(tt.t))
+		s := trans.FmtTimeLong(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -514,7 +514,7 @@ func TestMediumTime(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtTimeMedium(tt.t))
+		s := trans.FmtTimeMedium(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -536,7 +536,7 @@ func TestShortTime(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtTimeShort(tt.t))
+		s := trans.FmtTimeShort(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -558,7 +558,7 @@ func TestFullDate(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtDateFull(tt.t))
+		s := trans.FmtDateFull(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -580,7 +580,7 @@ func TestLongDate(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtDateLong(tt.t))
+		s := trans.FmtDateLong(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -602,7 +602,7 @@ func TestMediumDate(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtDateMedium(tt.t))
+		s := trans.FmtDateMedium(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -624,7 +624,7 @@ func TestShortDate(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtDateShort(tt.t))
+		s := trans.FmtDateShort(tt.t)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -692,7 +692,7 @@ func TestCurrency(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtCurrency(tt.num, tt.v, tt.currency))
+		s := trans.FmtCurrency(tt.num, tt.v, tt.currency)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
@@ -754,7 +754,7 @@ func TestAccounting(t *testing.T) {
 	trans := New()
 
 	for _, tt := range tests {
-		s := string(trans.FmtAccounting(tt.num, tt.v, tt.currency))
+		s := trans.FmtAccounting(tt.num, tt.v, tt.currency)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}

@@ -72,86 +72,86 @@ type Translator interface {
 	RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 uint64) PluralRule
 
 	// returns the locales abbreviated month given the 'month' provided
-	MonthAbbreviated(month time.Month) []byte
+	MonthAbbreviated(month time.Month) string
 
 	// returns the locales abbreviated months
-	MonthsAbbreviated() [][]byte
+	MonthsAbbreviated() []string
 
 	// returns the locales narrow month given the 'month' provided
-	MonthNarrow(month time.Month) []byte
+	MonthNarrow(month time.Month) string
 
 	// returns the locales narrow months
-	MonthsNarrow() [][]byte
+	MonthsNarrow() []string
 
 	// returns the locales wide month given the 'month' provided
-	MonthWide(month time.Month) []byte
+	MonthWide(month time.Month) string
 
 	// returns the locales wide months
-	MonthsWide() [][]byte
+	MonthsWide() []string
 
 	// returns the locales abbreviated weekday given the 'weekday' provided
-	WeekdayAbbreviated(weekday time.Weekday) []byte
+	WeekdayAbbreviated(weekday time.Weekday) string
 
 	// returns the locales abbreviated weekdays
-	WeekdaysAbbreviated() [][]byte
+	WeekdaysAbbreviated() []string
 
 	// returns the locales narrow weekday given the 'weekday' provided
-	WeekdayNarrow(weekday time.Weekday) []byte
+	WeekdayNarrow(weekday time.Weekday) string
 
 	// WeekdaysNarrowreturns the locales narrow weekdays
-	WeekdaysNarrow() [][]byte
+	WeekdaysNarrow() []string
 
 	// returns the locales short weekday given the 'weekday' provided
-	WeekdayShort(weekday time.Weekday) []byte
+	WeekdayShort(weekday time.Weekday) string
 
 	// returns the locales short weekdays
-	WeekdaysShort() [][]byte
+	WeekdaysShort() []string
 
 	// returns the locales wide weekday given the 'weekday' provided
-	WeekdayWide(weekday time.Weekday) []byte
+	WeekdayWide(weekday time.Weekday) string
 
 	// returns the locales wide weekdays
-	WeekdaysWide() [][]byte
+	WeekdaysWide() []string
 
 	// The following Functions are common Formatting functionsfor the Translator's Locale
 
 	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
-	FmtNumber(num float64, v uint64) []byte
+	FmtNumber(num float64, v uint64) string
 
 	// returns 'num' with digits/precision of 'v' for locale and handles both Whole and Real numbers based on 'v'
 	// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-	FmtPercent(num float64, v uint64) []byte
+	FmtPercent(num float64, v uint64) string
 
 	// returns the currency representation of 'num' with digits/precision of 'v' for locale
-	FmtCurrency(num float64, v uint64, currency currency.Type) []byte
+	FmtCurrency(num float64, v uint64, currency currency.Type) string
 
 	// returns the currency representation of 'num' with digits/precision of 'v' for locale
 	// in accounting notation.
-	FmtAccounting(num float64, v uint64, currency currency.Type) []byte
+	FmtAccounting(num float64, v uint64, currency currency.Type) string
 
 	// returns the short date representation of 't' for '{{ .Locale }}'
-	FmtDateShort(t time.Time) []byte
+	FmtDateShort(t time.Time) string
 
 	// returns the medium date representation of 't' for '{{ .Locale }}'
-	FmtDateMedium(t time.Time) []byte
+	FmtDateMedium(t time.Time) string
 
 	//  returns the long date representation of 't' for '{{ .Locale }}'
-	FmtDateLong(t time.Time) []byte
+	FmtDateLong(t time.Time) string
 
 	// returns the full date representation of 't' for '{{ .Locale }}'
-	FmtDateFull(t time.Time) []byte
+	FmtDateFull(t time.Time) string
 
 	// returns the short time representation of 't' for '{{ .Locale }}'
-	FmtTimeShort(t time.Time) []byte
+	FmtTimeShort(t time.Time) string
 
 	// returns the medium time representation of 't' for '{{ .Locale }}'
-	FmtTimeMedium(t time.Time) []byte
+	FmtTimeMedium(t time.Time) string
 
 	// returns the long time representation of 't' for '{{ .Locale }}'
-	FmtTimeLong(t time.Time) []byte
+	FmtTimeLong(t time.Time) string
 
 	// returns the full time representation of 't' for '{{ .Locale }}'
-	FmtTimeFull(t time.Time) []byte
+	FmtTimeFull(t time.Time) string
 }
 
 // String returns the string value  of PluralRule
