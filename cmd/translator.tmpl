@@ -15,47 +15,47 @@ type {{ .Locale }} struct {
 	pluralsCardinal 	   []locales.PluralRule
 	pluralsOrdinal  	   []locales.PluralRule
 	pluralsRange		   []locales.PluralRule
-	decimal    			   []byte
-	group      			   []byte
-	minus      			   []byte
-	percent    			   []byte
+	decimal    			   string
+	group      			   string
+	minus      			   string
+	percent    			   string
 	{{- if gt (len .FmtPercentPrefix) 0}}
 	percentPrefix   	   []byte
 	{{- end }}
 	{{- if gt (len .FmtPercentSuffix) 0}}
 	percentSuffix   	   []byte
 	{{- end }}
-	perMille   			   []byte
-	timeSeparator		   []byte
-	inifinity			   []byte
-	currencies 			   [][]byte // idx = enum of currency code
+	perMille   			   string
+	timeSeparator		   string
+	inifinity			   string
+	currencies 			   []string // idx = enum of currency code
 	{{- if gt (len .FmtCurrencyPrefix) 0}}
-	currencyPositivePrefix []byte
+	currencyPositivePrefix string
 	{{- end }}
 	{{- if gt (len .FmtCurrencySuffix) 0}}
-	currencyPositiveSuffix []byte
+	currencyPositiveSuffix string
 	{{- end }}
 	{{- if gt (len .FmtCurrencyNegativePrefix) 0}}
-	currencyNegativePrefix []byte
+	currencyNegativePrefix string
 	{{- end }}
 	{{- if gt (len .FmtCurrencyNegativeSuffix) 0}}
-	currencyNegativeSuffix []byte
+	currencyNegativeSuffix string
 	{{- end }}
-	monthsAbbreviated      [][]byte
-	monthsNarrow      	   [][]byte
-	monthsWide      	   [][]byte
-	daysAbbreviated        [][]byte
-	daysNarrow      	   [][]byte
-	daysShort      	   	   [][]byte
-	daysWide      	   	   [][]byte
-	periodsAbbreviated     [][]byte
-	periodsNarrow      	   [][]byte
-	periodsShort      	   [][]byte
-	periodsWide      	   [][]byte
-	erasAbbreviated        [][]byte
-	erasNarrow      	   [][]byte
-	erasWide      	   	   [][]byte
-	timezones 			   map[string][]byte
+	monthsAbbreviated      []string
+	monthsNarrow      	   []string
+	monthsWide      	   []string
+	daysAbbreviated        []string
+	daysNarrow      	   []string
+	daysShort      	   	   []string
+	daysWide      	   	   []string
+	periodsAbbreviated     []string
+	periodsNarrow      	   []string
+	periodsShort      	   []string
+	periodsWide      	   []string
+	erasAbbreviated        []string
+	erasNarrow      	   []string
+	erasWide      	   	   []string
+	timezones 			   map[string]string
 }
 
 // New returns a new instance of translator for the '{{ .Locale }}' locale
@@ -65,16 +65,26 @@ func New() locales.Translator {
 		pluralsCardinal: {{ .Plurals }},
 		pluralsOrdinal:  {{ .PluralsOrdinal }},
 		pluralsRange:    {{ .PluralsRange }},
-		decimal:  		 {{ .Decimal }},
-		group:    		 {{ .Group }},
-		minus:    		 {{ .Minus }},
-		percent:  		 {{ .Percent }},
-		perMille:        {{ .PerMille }},
+		{{- if gt (len .Decimal) 0}}
+		decimal:  		 "{{ .Decimal }}",
+		{{- end}}
+		{{- if gt (len .Group) 0}}
+		group:    		 "{{ .Group }}",
+		{{- end}}
+		{{- if gt (len .Minus) 0}}
+		minus:    		 "{{ .Minus }}",
+		{{- end}}
+		{{- if gt (len .Percent) 0}}
+		percent:  		 "{{ .Percent }}",
+		{{- end}}
+		{{- if gt (len .PerMille) 0}}
+		perMille:        "{{ .PerMille }}",
+		{{- end}}
 		{{- if gt (len .TimeSeparator) 0}}
-		timeSeparator:	 {{ .TimeSeparator }},
+		timeSeparator:	 "{{ .TimeSeparator }}",
 		{{- end}}
 		{{- if gt (len .Infinity) 0}}
-		inifinity:		 {{ .Infinity }},
+		inifinity:		 "{{ .Infinity }}",
 		{{- end}}
 		currencies:      {{ .Currencies }},
 		{{- if gt (len .FmtPercentPrefix) 0}}
@@ -84,16 +94,16 @@ func New() locales.Translator {
 		percentSuffix:   {{ .FmtPercentSuffix }},
 		{{- end -}}
 		{{- if gt (len .FmtCurrencyPrefix) 0}}
-		currencyPositivePrefix:   {{ .FmtCurrencyPrefix }},
+		currencyPositivePrefix:   "{{ .FmtCurrencyPrefix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencySuffix) 0}}
-		currencyPositiveSuffix:   {{ .FmtCurrencySuffix }},
+		currencyPositiveSuffix:   "{{ .FmtCurrencySuffix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencyNegativePrefix) 0}}
-		currencyNegativePrefix:   {{ .FmtCurrencyNegativePrefix }},
+		currencyNegativePrefix:   "{{ .FmtCurrencyNegativePrefix }}",
 		{{- end -}}
 		{{- if gt (len .FmtCurrencyNegativeSuffix) 0}}
-		currencyNegativeSuffix:   {{ .FmtCurrencyNegativeSuffix }},
+		currencyNegativeSuffix:   "{{ .FmtCurrencyNegativeSuffix }}",
 		{{- end -}}
 		{{- if gt (len .FmtMonthsAbbreviated) 0 }}
 		monthsAbbreviated:   {{ .FmtMonthsAbbreviated }},
@@ -177,82 +187,80 @@ func({{ .BaseLocale }} *{{ .Locale }}) RangePluralRule(num1 float64, v1 uint64,n
 }
 
 // MonthAbbreviated returns the locales abbreviated month given the 'month' provided
-func({{ .BaseLocale }} *{{ .Locale }}) MonthAbbreviated(month time.Month) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) MonthAbbreviated(month time.Month) string {
 	return {{ .BaseLocale }}.monthsAbbreviated[month]
 }
 
 // MonthsAbbreviated returns the locales abbreviated months
-func({{ .BaseLocale }} *{{ .Locale }}) MonthsAbbreviated() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) MonthsAbbreviated() []string {
 	return {{ .BaseLocale }}.monthsAbbreviated[1:]
 }
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
-func({{ .BaseLocale }} *{{ .Locale }}) MonthNarrow(month time.Month) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) MonthNarrow(month time.Month) string {
 	return {{ .BaseLocale }}.monthsNarrow[month]
 }
 
 // MonthsNarrow returns the locales narrow months
-func({{ .BaseLocale }} *{{ .Locale }}) MonthsNarrow() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) MonthsNarrow() []string {
 	return {{ .BaseLocale }}.monthsNarrow[1:]
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
-func({{ .BaseLocale }} *{{ .Locale }}) MonthWide(month time.Month) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) MonthWide(month time.Month) string {
 	return {{ .BaseLocale }}.monthsWide[month]
 }
 
 // MonthsWide returns the locales wide months
-func({{ .BaseLocale }} *{{ .Locale }}) MonthsWide() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) MonthsWide() []string {
 	return {{ .BaseLocale }}.monthsWide[1:]
 }
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdayAbbreviated(weekday time.Weekday) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayAbbreviated(weekday time.Weekday) string {
 	return {{ .BaseLocale }}.daysAbbreviated[weekday]
 }
 
 // WeekdaysAbbreviated returns the locales abbreviated weekdays
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysAbbreviated() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysAbbreviated() []string {
 	return {{ .BaseLocale }}.daysAbbreviated
 }
 
 // WeekdayNarrow returns the locales narrow weekday given the 'weekday' provided
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdayNarrow(weekday time.Weekday) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayNarrow(weekday time.Weekday) string {
 	return {{ .BaseLocale }}.daysNarrow[weekday]
 }
 
 // WeekdaysNarrow returns the locales narrow weekdays
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysNarrow() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysNarrow() []string {
 	return {{ .BaseLocale }}.daysNarrow
 }
 
 // WeekdayShort returns the locales short weekday given the 'weekday' provided
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdayShort(weekday time.Weekday) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayShort(weekday time.Weekday) string {
 	return {{ .BaseLocale }}.daysShort[weekday]
 }
 
 // WeekdaysShort returns the locales short weekdays
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysShort() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysShort() []string {
 	return {{ .BaseLocale }}.daysShort
 }
 
 // WeekdayWide returns the locales wide weekday given the 'weekday' provided
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdayWide(weekday time.Weekday) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdayWide(weekday time.Weekday) string {
 	return {{ .BaseLocale }}.daysWide[weekday]
 }
 
 // WeekdaysWide returns the locales wide weekdays
-func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysWide() [][]byte {
+func({{ .BaseLocale }} *{{ .Locale }}) WeekdaysWide() []string {
 	return {{ .BaseLocale }}.daysWide
 }
 
 // FmtNumber returns 'num' with digits/precision of 'v' for '{{ .Locale }}' and handles both Whole and Real numbers based on 'v'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) (results string) {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	{{- if eq .FmtNumberExists true }}
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	{{- if gt .FmtNumberGroupLen 0 }}
 	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtNumberGroupLen }}
 	count := 0
@@ -270,7 +278,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 
 		if s[i] == '.' {
 
-			{{- if eq .DecimalLen 1 }}
+			{{- if eq (len .Decimal) 1 }}
 			b = append(b, {{ .BaseLocale }}.decimal[0])
 			{{- else }}
 			for j := len({{ .BaseLocale }}.decimal) - 1; j >= 0; j-- {
@@ -289,7 +297,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 			{{- if gt .FmtNumberSecondaryGroupLen 0}}
 			
 			if count == groupThreshold {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -304,7 +312,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 				}
 			{{ else }}
 			if count == {{ .FmtNumberGroupLen }} {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -324,7 +332,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 	}
 
 	if num < 0 {
-		{{- if eq .MinusLen 1 }}
+		{{- if eq (len .Minus) 1 }}
 		b = append(b, {{ .BaseLocale }}.minus[0])
 		{{ else }}
 		for j := len({{ .BaseLocale }}.minus) - 1; j >= 0; j-- {
@@ -351,20 +359,20 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) []byte {
 	}
 	{{ end }}
 
-	return b
+	results = string(b)
+	return
 	{{ else }}
-	return []byte(s)
+	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	return
 	{{ end -}}
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for '{{ .Locale }}' and handles both Whole and Real numbers based on 'v'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) (results string) {
 
-	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	{{- if eq .FmtPercentExists true }}
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	{{- if gt .FmtPercentGroupLen 0 }}
 	l := len(s) + len({{ .BaseLocale }}.decimal) + len({{ .BaseLocale }}.group) * len(s[:len(s)-int(v)-1]) / {{ .FmtPercentGroupLen }}
 	count := 0
@@ -382,7 +390,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 
 		if s[i] == '.' {
 
-			{{- if eq .DecimalLen 1 }}
+			{{- if eq (len .Decimal) 1 }}
 			b = append(b, {{ .BaseLocale }}.decimal[0])
 			{{- else }}
 			for j := len({{ .BaseLocale }}.decimal) - 1; j >= 0; j-- {
@@ -401,7 +409,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 			{{- if gt .FmtPercentSecondaryGroupLen 0}}
 			
 			if count == groupThreshold {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -416,7 +424,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 				}
 			{{ else }}
 			if count == {{ .FmtPercentGroupLen }} {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -436,7 +444,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 	}
 
 	if num < 0 {
-		{{- if eq .MinusLen 1 }}
+		{{- if eq (len .Minus) 1 }}
 		b = append(b, {{ .BaseLocale }}.minus[0])
 		{{ else }}
 		for j := len({{ .BaseLocale }}.minus) - 1; j >= 0; j-- {
@@ -446,7 +454,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 	}
 
 	{{ if and .FmtPercentInPrefix (not .FmtPercentLeft) }}
-		{{- if eq .PercentLen 1 }}
+		{{- if eq (len .Percent) 1 }}
 		b = append(b, {{ .BaseLocale }}.percent[0])
 		{{ else }}
 		for j := len({{ .BaseLocale }}.percent) - 1; j >= 0; j-- {
@@ -466,7 +474,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 	{{ end }}
 
 	{{ if and .FmtPercentInPrefix .FmtPercentLeft }}
-		{{- if eq .PercentLen 1 }}
+		{{- if eq (len .Percent) 1 }}
 		b = append(b, {{ .BaseLocale }}.percent[0])
 		{{ else }}
 		for j := len({{ .BaseLocale }}.percent) - 1; j >= 0; j-- {
@@ -505,16 +513,16 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) []byte 
 		b = append(b, {{ .BaseLocale }}.percent...)
 	{{ end }}
 
-	return b
+	results = string(b)
+	return
 	{{ else }}
-	return []byte(s)
+	results = strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	return
 	{{ end -}}
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, currency currency.Type) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, currency currency.Type) (results string) {
 	
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := {{ .BaseLocale }}.currencies[currency]
@@ -536,7 +544,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 
 		if s[i] == '.' {
 
-			{{- if eq .DecimalLen 1 }}
+			{{- if eq (len .Decimal) 1 }}
 			b = append(b, {{ .BaseLocale }}.decimal[0])
 			{{- else }}
 			for j := len({{ .BaseLocale }}.decimal) - 1; j >= 0; j-- {
@@ -555,7 +563,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 			{{- if gt .FmtCurrencySecondaryGroupLen 0}}
 			
 			if count == groupThreshold {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -570,7 +578,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 				}
 			{{ else }}
 			if count == {{ .FmtCurrencyGroupLen }} {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -612,7 +620,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 	{{ end }}
 
 	if num < 0 {
-		{{- if eq .MinusLen 1 }}
+		{{- if eq (len .Minus) 1 }}
 		b = append(b, {{ .BaseLocale }}.minus[0])
 		{{ else }}
 		for j := len({{ .BaseLocale }}.minus) - 1; j >= 0; j-- {
@@ -651,16 +659,17 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 		b = append(b, symbol...)
 	{{ end }}
 
-	return b
+	results = string(b)
+	return
 	{{ else }}
-	return append(append([]byte{}, symbol...), s...)
+	results = string(append(append([]byte{}, symbol...), s...))
+	return
 	{{ end -}}
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for '{{ .Locale }}'
-// in accounting notation. returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, currency currency.Type) []byte {
+// in accounting notation.
+func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, currency currency.Type) (results string) {
 	
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := {{ .BaseLocale }}.currencies[currency]
@@ -682,7 +691,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 
 		if s[i] == '.' {
 
-			{{- if eq .DecimalLen 1 }}
+			{{- if eq (len .Decimal) 1 }}
 			b = append(b, {{ .BaseLocale }}.decimal[0])
 			{{- else }}
 			for j := len({{ .BaseLocale }}.decimal) - 1; j >= 0; j-- {
@@ -701,7 +710,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 			{{- if gt .FmtCurrencySecondaryGroupLen 0}}
 			
 			if count == groupThreshold {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -716,7 +725,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 				}
 			{{ else }}
 			if count == {{ .FmtCurrencyGroupLen }} {
-				{{- if eq .GroupLen 1 }}
+				{{- if eq (len .Group) 1 }}
 				b = append(b, {{ .BaseLocale }}.group[0])
 				{{- else }}
 				for j := len({{ .BaseLocale }}.group) - 1; j >= 0; j-- {
@@ -760,7 +769,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 		{{ end }}
 
 		{{ if eq (not .FmtCurrencyNegativeExists) true}}
-			{{- if eq .MinusLen 1 }}
+			{{- if eq (len .Minus) 1 }}
 			b = append(b, {{ .BaseLocale }}.minus[0])
 			{{ else }}
 			for j := len({{ .BaseLocale }}.minus) - 1; j >= 0; j-- {
@@ -846,106 +855,92 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 	}
 	{{- end }}
 
-	return b
+	results = string(b)
+	return
 	{{ else }}
-	return append(append([]byte{}, symbol...), s...)
+	results = string(append(append([]byte{}, symbol...), s...))
+	return
 	{{ end -}}
 }
 
 // FmtDateShort returns the short date representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateShort(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateShort(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtDateShort }}
 
-	return b
+	return string(b)
 }
 
 // FmtDateMedium returns the medium date representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateMedium(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateMedium(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtDateMedium }}
 
-	return b
+	return string(b)
 }
 
 // FmtDateLong returns the long date representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateLong(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateLong(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtDateLong }}
 
-	return b
+	return string(b)
 }
 
 // FmtDateFull returns the full date representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtDateFull(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtDateFull(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtDateFull }}
 
-	return b
+	return string(b)
 }
 
 // FmtTimeShort returns the short time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeShort(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeShort(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtTimeShort }}
 
-	return b
+	return string(b)
 }
 
 // FmtTimeMedium returns the medium time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeMedium(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeMedium(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtTimeMedium }}
 
-	return b
+	return string(b)
 }
 
 // FmtTimeLong returns the long time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeLong(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeLong(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtTimeLong }}
 
-	return b
+	return string(b)
 }
 
 // FmtTimeFull returns the full time representation of 't' for '{{ .Locale }}'
-// returned as a []byte just in case the caller wishes to add more and can help
-// avoid allocations; otherwise just cast as string.
-func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeFull(t time.Time) []byte {
+func({{ .BaseLocale }} *{{ .Locale }}) FmtTimeFull(t time.Time) string {
 	
 	b := make([]byte, 0, 32)
 
 	{{ .FmtTimeFull }}
 
-	return b
+	return string(b)
 }
 
 {{ end }}
