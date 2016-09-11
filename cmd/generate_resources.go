@@ -26,6 +26,15 @@ var (
 		"is_multibyte": func(s string) bool {
 			return len([]byte(s)) > 1
 		},
+		"reverse_bytes": func(s string) string {
+			b := make([]byte, 0, 8)
+
+			for j := len(s) - 1; j >= 0; j-- {
+				b = append(b, s[j])
+			}
+
+			return fmt.Sprintf("%#v", b)
+		},
 	}
 	prVarFuncs = map[string]string{
 		"n": "n := math.Abs(num)\n",

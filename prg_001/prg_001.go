@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"LHST": "LHST", "SAST": "SAST", "CLT": "CLT", "SGT": "SGT", "HKT": "HKT", "HKST": "HKST", "HADT": "HADT", "MST": "MST", "MDT": "MDT", "MESZ": "Centrālas Eurōpas daggas kerdā", "CLST": "CLST", "ACWDT": "ACWDT", "BOT": "BOT", "WITA": "WITA", "COST": "COST", "NZST": "NZST", "VET": "VET", "MYT": "MYT", "TMT": "TMT", "AKDT": "AKDT", "CHADT": "CHADT", "AWST": "AWST", "HAT": "HAT", "ART": "ART", "CAT": "CAT", "EDT": "Dēiniskas Amērikas daggas kerdā", "GMT": "Greenwich kerdā", "JST": "JST", "AST": "Atlāntiska zēimas kerdā", "SRT": "SRT", "WIB": "WIB", "AEST": "AEST", "WART": "WART", "PDT": "Pacīfiskas Amērikas daggas kerdā", "GFT": "GFT", "CST": "Centrālas Amērikas zēimas kerdā", "MEZ": "Centrālas Eurōpas zēimas kerdā", "WARST": "WARST", "GYT": "GYT", "UYT": "UYT", "ChST": "ChST", "WAST": "WAST", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "WIT": "WIT", "ARST": "ARST", "HAST": "HAST", "AKST": "AKST", "AEDT": "AEDT", "TMST": "TMST", "LHDT": "LHDT", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "ACDT": "ACDT", "BT": "BT", "ECT": "ECT", "ADT": "Atlāntiska daggas kerdā", "PST": "Pacīfiskas Amērikas zēimas kerdā", "COT": "COT", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "IST": "IST", "UYST": "UYST", "∅∅∅": "∅∅∅", "ACWST": "ACWST", "CHAST": "CHAST", "JDT": "JDT", "ACST": "ACST", "EST": "Dēiniskas Amērikas zēimas kerdā", "EAT": "EAT", "WAT": "WAT", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "AWDT": "AWDT", "CDT": "Centrālas Amērikas daggas kerdā", "NZDT": "NZDT", "HNT": "HNT"},
+		timezones:              map[string]string{"ACST": "ACST", "GYT": "GYT", "EAT": "EAT", "AKST": "AKST", "JST": "JST", "GMT": "Greenwich kerdā", "BT": "BT", "WIB": "WIB", "VET": "VET", "HADT": "HADT", "ECT": "ECT", "UYT": "UYT", "ChST": "ChST", "SAST": "SAST", "SRT": "SRT", "ADT": "Atlāntiska daggas kerdā", "NZST": "NZST", "CHADT": "CHADT", "MDT": "MDT", "MEZ": "Centrālas Eurōpas zēimas kerdā", "TMST": "TMST", "CAT": "CAT", "BOT": "BOT", "PST": "Pacīfiskas Amērikas zēimas kerdā", "COST": "COST", "UYST": "UYST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "ACDT": "ACDT", "CST": "Centrālas Amērikas zēimas kerdā", "MESZ": "Centrālas Eurōpas daggas kerdā", "TMT": "TMT", "∅∅∅": "∅∅∅", "WAT": "WAT", "AWST": "AWST", "NZDT": "NZDT", "HAT": "HAT", "WITA": "WITA", "WART": "WART", "WAST": "WAST", "ACWST": "ACWST", "LHDT": "LHDT", "SGT": "SGT", "MST": "MST", "AKDT": "AKDT", "IST": "IST", "CLT": "CLT", "AEST": "AEST", "HNT": "HNT", "HKT": "HKT", "CHAST": "CHAST", "CDT": "Centrālas Amērikas daggas kerdā", "AEDT": "AEDT", "WARST": "WARST", "ARST": "ARST", "HKST": "HKST", "CLST": "CLST", "WIT": "WIT", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "GFT": "GFT", "ART": "ART", "AST": "Atlāntiska zēimas kerdā", "JDT": "JDT", "EST": "Dēiniskas Amērikas zēimas kerdā", "PDT": "Pacīfiskas Amērikas daggas kerdā", "COT": "COT", "ACWDT": "ACWDT", "LHST": "LHST", "AWDT": "AWDT", "HAST": "HAST", "EDT": "Dēiniskas Amērikas daggas kerdā", "MYT": "MYT", "WEZ": "Wakkariskas Eurōpas zēimas kerdā"},
 	}
 }
 
@@ -96,8 +96,8 @@ func (prg *prg_001) CardinalPluralRule(num float64, v uint64) locales.PluralRule
 
 	n := math.Abs(num)
 	f := locales.F(n, v)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
+	nMod10 := math.Mod(n, 10)
 	fMod100 := f % 100
 	fMod10 := f % 10
 

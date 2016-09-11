@@ -462,12 +462,12 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) string 
 	{{ end }}
 
 	{{ if gt (len .FmtPercentPrefix) 0}}
-		{{- if eq (len .FmtPercentPrefix) 1 }}
-		b = append(b, {{ .BaseLocale }}.percentPrefix[0])
-		{{ else }}
+		{{- if is_multibyte .FmtPercentPrefix }}
 		for j := len({{ .BaseLocale }}.percentPrefix) - 1; j >= 0; j-- {
 			b = append(b, {{ .BaseLocale }}.percentPrefix[j])
 		}
+		{{ else }}
+		b = append(b, {{ .BaseLocale }}.percentPrefix[0])
 		{{ end }}
 	{{ end }}
 
@@ -600,12 +600,12 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 	{{ end }}
 
 	{{ if gt (len .FmtCurrencyPrefix) 0}}
-		{{- if eq (len .FmtCurrencyPrefix) 1 }}
-		b = append(b, {{ .BaseLocale }}.currencyPositivePrefix[0])
-		{{ else }}
+		{{- if is_multibyte .FmtCurrencyPrefix }}
 		for j := len({{ .BaseLocale }}.currencyPositivePrefix) - 1; j >= 0; j-- {
 			b = append(b, {{ .BaseLocale }}.currencyPositivePrefix[j])
 		}
+		{{ else }}
+		b = append(b, {{ .BaseLocale }}.currencyPositivePrefix[0])
 		{{ end }}
 	{{ end }}
 
@@ -747,12 +747,12 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 		{{ end }}
 
 		{{ if gt (len .FmtCurrencyNegativePrefix) 0}}
-			{{- if eq (len .FmtCurrencyNegativePrefix) 1 }}
-			b = append(b, {{ .BaseLocale }}.currencyNegativePrefix[0])
-			{{ else }}
+			{{- if is_multibyte .FmtCurrencyNegativePrefix }}
 			for j := len({{ .BaseLocale }}.currencyNegativePrefix) - 1; j >= 0; j-- {
 				b = append(b, {{ .BaseLocale }}.currencyNegativePrefix[j])
 			}
+			{{ else }}
+			b = append(b, {{ .BaseLocale }}.currencyNegativePrefix[0])
 			{{ end }}
 		{{ end }}
 
@@ -783,12 +783,12 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 		{{ end }}
 
 		{{ if gt (len .FmtCurrencyPrefix) 0}}
-			{{- if eq (len .FmtCurrencyPrefix) 1 }}
-			b = append(b, {{ .BaseLocale }}.currencyPositivePrefix[0])
-			{{ else }}
+			{{- if is_multibyte .FmtCurrencyPrefix }}
 			for j := len({{ .BaseLocale }}.currencyPositivePrefix) - 1; j >= 0; j-- {
 				b = append(b, {{ .BaseLocale }}.currencyPositivePrefix[j])
 			}
+			{{ else }}
+			b = append(b, {{ .BaseLocale }}.currencyPositivePrefix[0])
 			{{ end }}
 		{{ end }}
 
