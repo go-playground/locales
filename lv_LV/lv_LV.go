@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "lv_LV",
 		pluralsCardinal:        []locales.PluralRule{1, 2, 6},
 		pluralsOrdinal:         []locales.PluralRule{6},
-		pluralsRange:           []locales.PluralRule{2, 6},
+		pluralsRange:           []locales.PluralRule{6, 2},
 		decimal:                ",",
 		group:                  " ",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"p.m.ē.", "m.ē."},
 		erasNarrow:             []string{"p.m.ē.", "m.ē."},
 		erasWide:               []string{"pirms mūsu ēras", "mūsu ērā"},
-		timezones:              map[string]string{"WART": "Rietumargentīnas ziemas laiks", "ADT": "Atlantijas vasaras laiks", "CHAST": "Četemas ziemas laiks", "SGT": "Singapūras laiks", "ART": "Argentīnas ziemas laiks", "UYST": "Urugvajas vasaras laiks", "WEZ": "Rietumeiropas ziemas laiks", "CST": "Centrālais ziemas laiks", "ACDT": "Austrālijas centrālais vasaras laiks", "CLST": "Čīles vasaras laiks", "AST": "Atlantijas ziemas laiks", "AWDT": "Austrālijas rietumu vasaras laiks", "SRT": "Surinamas laiks", "CLT": "Čīles ziemas laiks", "AKDT": "Aļaskas vasaras laiks", "TMT": "Turkmenistānas ziemas laiks", "NZDT": "Jaunzēlandes vasaras laiks", "GMT": "Griničas laiks", "ACWST": "Austrālijas centrālais rietumu ziemas laiks", "HADT": "Havaju–Aleutu vasaras laiks", "WIB": "Rietumindonēzijas laiks", "TMST": "Turkmenistānas vasaras laiks", "SAST": "Dienvidāfrikas ziemas laiks", "MESZ": "Centrāleiropas vasaras laiks", "PDT": "Klusā okeāna vasaras laiks", "ACST": "Austrālijas centrālais ziemas laiks", "BOT": "Bolīvijas laiks", "ACWDT": "Austrālijas centrālais rietumu vasaras laiks", "GFT": "Franču Gviānas laiks", "JDT": "Japānas vasaras laiks", "AEST": "Austrālijas austrumu ziemas laiks", "LHDT": "Lorda Hava salas vasaras laiks", "∅∅∅": "Brazīlijas vasaras laiks", "MST": "Kalnu ziemas laiks", "AWST": "Austrālijas rietumu ziemas laiks", "AKST": "Aļaskas ziemas laiks", "NZST": "Jaunzēlandes ziemas laiks", "WAST": "Rietumāfrikas vasaras laiks", "IST": "Indijas ziemas laiks", "CDT": "Centrālais vasaras laiks", "UYT": "Urugvajas ziemas laiks", "BT": "Butānas laiks", "JST": "Japānas ziemas laiks", "HKT": "Honkongas ziemas laiks", "ARST": "Argentīnas vasaras laiks", "EST": "Austrumu ziemas laiks", "LHST": "Lorda Hava salas ziemas laiks", "WIT": "Austrumindonēzijas laiks", "ECT": "Ekvadoras laiks", "COT": "Kolumbijas ziemas laiks", "EAT": "Austrumāfrikas laiks", "VET": "Venecuēlas laiks", "COST": "Kolumbijas vasaras laiks", "HAT": "Ņūfaundlendas vasaras laiks", "EDT": "Austrumu vasaras laiks", "WITA": "Centrālindonēzijas laiks", "WARST": "Rietumargentīnas vasaras laiks", "HNT": "Ņūfaundlendas ziemas laiks", "GYT": "Gajānas laiks", "HAST": "Havaju–Aleutu ziemas laiks", "OEZ": "Austrumeiropas ziemas laiks", "OESZ": "Austrumeiropas vasaras laiks", "PST": "Klusā okeāna ziemas laiks", "WAT": "Rietumāfrikas ziemas laiks", "HKST": "Honkongas vasaras laiks", "MEZ": "Centrāleiropas ziemas laiks", "CAT": "Centrālāfrikas laiks", "ChST": "Čamoro standarta laiks", "WESZ": "Rietumeiropas vasaras laiks", "AEDT": "Austrālijas austrumu vasaras laiks", "MDT": "Kalnu vasaras laiks", "MYT": "Malaizijas laiks", "CHADT": "Četemas vasaras laiks"},
+		timezones:              map[string]string{"ACWST": "Austrālijas centrālais rietumu ziemas laiks", "CHADT": "Četemas vasaras laiks", "AST": "Atlantijas ziemas laiks", "SAST": "Dienvidāfrikas ziemas laiks", "GFT": "Franču Gviānas laiks", "PDT": "Klusā okeāna vasaras laiks", "JDT": "Japānas vasaras laiks", "AEST": "Austrālijas austrumu ziemas laiks", "ART": "Argentīnas ziemas laiks", "PST": "Klusā okeāna ziemas laiks", "WEZ": "Rietumeiropas ziemas laiks", "BT": "Butānas laiks", "HNT": "Ņūfaundlendas ziemas laiks", "AKDT": "Aļaskas vasaras laiks", "GMT": "Griničas laiks", "WITA": "Centrālindonēzijas laiks", "ACDT": "Austrālijas centrālais vasaras laiks", "AWST": "Austrālijas rietumu ziemas laiks", "CDT": "Centrālais vasaras laiks", "HADT": "Havaju–Aleutu vasaras laiks", "SGT": "Singapūras laiks", "IST": "Indijas ziemas laiks", "WIB": "Rietumindonēzijas laiks", "MYT": "Malaizijas laiks", "ACWDT": "Austrālijas centrālais rietumu vasaras laiks", "ChST": "Čamoro standarta laiks", "CAT": "Centrālāfrikas laiks", "HAST": "Havaju–Aleutu ziemas laiks", "WAT": "Rietumāfrikas ziemas laiks", "HKT": "Honkongas ziemas laiks", "HKST": "Honkongas vasaras laiks", "BOT": "Bolīvijas laiks", "AEDT": "Austrālijas austrumu vasaras laiks", "CHAST": "Četemas ziemas laiks", "OESZ": "Austrumeiropas vasaras laiks", "ACST": "Austrālijas centrālais ziemas laiks", "UYT": "Urugvajas ziemas laiks", "MDT": "Kalnu vasaras laiks", "HAT": "Ņūfaundlendas vasaras laiks", "AKST": "Aļaskas ziemas laiks", "AWDT": "Austrālijas rietumu vasaras laiks", "CST": "Centrālais ziemas laiks", "ADT": "Atlantijas vasaras laiks", "ARST": "Argentīnas vasaras laiks", "LHST": "Lorda Hava salas ziemas laiks", "MESZ": "Centrāleiropas vasaras laiks", "NZST": "Jaunzēlandes ziemas laiks", "MST": "Kalnu ziemas laiks", "WAST": "Rietumāfrikas vasaras laiks", "TMT": "Turkmenistānas ziemas laiks", "SRT": "Surinamas laiks", "CLT": "Čīles ziemas laiks", "COT": "Kolumbijas ziemas laiks", "∅∅∅": "Brazīlijas vasaras laiks", "WART": "Rietumargentīnas ziemas laiks", "OEZ": "Austrumeiropas ziemas laiks", "WIT": "Austrumindonēzijas laiks", "GYT": "Gajānas laiks", "NZDT": "Jaunzēlandes vasaras laiks", "WESZ": "Rietumeiropas vasaras laiks", "EST": "Austrumu ziemas laiks", "LHDT": "Lorda Hava salas vasaras laiks", "EDT": "Austrumu vasaras laiks", "EAT": "Austrumāfrikas laiks", "JST": "Japānas ziemas laiks", "COST": "Kolumbijas vasaras laiks", "MEZ": "Centrāleiropas ziemas laiks", "UYST": "Urugvajas vasaras laiks", "CLST": "Čīles vasaras laiks", "VET": "Venecuēlas laiks", "ECT": "Ekvadoras laiks", "WARST": "Rietumargentīnas vasaras laiks", "TMST": "Turkmenistānas vasaras laiks"},
 	}
 }
 
@@ -100,10 +100,10 @@ func (lv *lv_LV) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	f := locales.F(n, v)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
-	fMod100 := f % 100
+	nMod10 := math.Mod(n, 10)
 	fMod10 := f % 10
+	fMod100 := f % 100
 
 	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
@@ -264,7 +264,7 @@ func (lv *lv_LV) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (lv *lv_LV) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(lv.decimal)
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -296,7 +296,7 @@ func (lv *lv_LV) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lv.currencies[currency]
-	l := len(s) + len(lv.decimal)
+	l := len(s) + len(symbol) + 4
 
 	b := make([]byte, 0, l)
 
@@ -343,7 +343,7 @@ func (lv *lv_LV) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := lv.currencies[currency]
-	l := len(s) + len(lv.decimal)
+	l := len(s) + len(symbol) + 4
 
 	b := make([]byte, 0, l)
 

@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"HAT": "HAT", "ACWST": "ACWST", "ECT": "ECT", "AEDT": "AEDT", "MESZ": "Mitteleuropäiši Summerzit", "WARST": "WARST", "WAT": "WAT", "AKST": "AKST", "ART": "ART", "CST": "CST", "ACST": "ACST", "GYT": "GYT", "NZST": "NZST", "CLST": "CLST", "COT": "COT", "JST": "JST", "MDT": "MDT", "CHADT": "CHADT", "PDT": "PDT", "MEZ": "Mitteleuropäiši Standardzit", "WESZ": "Wešteuropäiši Summerzit", "GFT": "GFT", "AKDT": "AKDT", "EDT": "EDT", "MST": "MST", "HAST": "HAST", "WIB": "WIB", "PST": "PST", "WEZ": "Wešteuropäiši Standardzit", "ACDT": "ACDT", "HNT": "HNT", "MYT": "MYT", "CHAST": "CHAST", "CAT": "CAT", "WITA": "WITA", "VET": "VET", "SGT": "SGT", "NZDT": "NZDT", "UYT": "UYT", "SRT": "SRT", "ACWDT": "ACWDT", "WART": "WART", "CDT": "CDT", "HADT": "HADT", "AWDT": "AWDT", "ARST": "ARST", "TMST": "TMST", "GMT": "GMT", "BT": "BT", "JDT": "JDT", "ADT": "Atlantiši Summerzit", "∅∅∅": "∅∅∅", "IST": "IST", "HKT": "HKT", "TMT": "TMT", "LHDT": "LHDT", "UYST": "UYST", "CLT": "CLT", "WAST": "WAST", "COST": "COST", "OESZ": "Ošteuropäiši Summerzit", "WIT": "WIT", "AST": "Atlantiši Standardzit", "EST": "EST", "AWST": "AWST", "AEST": "AEST", "ChST": "ChST", "EAT": "EAT", "HKST": "HKST", "SAST": "SAST", "BOT": "BOT", "OEZ": "Ošteuropäiši Standardzit", "LHST": "LHST"},
+		timezones:              map[string]string{"ACDT": "ACDT", "AEDT": "AEDT", "COT": "COT", "COST": "COST", "ARST": "ARST", "LHDT": "LHDT", "AEST": "AEST", "CAT": "CAT", "AST": "Atlantiši Standardzit", "NZDT": "NZDT", "CHADT": "CHADT", "CLT": "CLT", "VET": "VET", "WEZ": "Wešteuropäiši Standardzit", "WESZ": "Wešteuropäiši Summerzit", "GMT": "GMT", "EAT": "EAT", "MST": "MST", "ECT": "ECT", "WART": "WART", "AWST": "AWST", "NZST": "NZST", "UYST": "UYST", "ChST": "ChST", "WAST": "WAST", "OEZ": "Ošteuropäiši Standardzit", "UYT": "UYT", "MESZ": "Mitteleuropäiši Summerzit", "JDT": "JDT", "CST": "CST", "AWDT": "AWDT", "MYT": "MYT", "WIB": "WIB", "MEZ": "Mitteleuropäiši Standardzit", "WAT": "WAT", "GFT": "GFT", "CDT": "CDT", "ACWDT": "ACWDT", "IST": "IST", "SRT": "SRT", "HADT": "HADT", "HAT": "HAT", "TMST": "TMST", "JST": "JST", "HKST": "HKST", "ACST": "ACST", "BT": "BT", "WIT": "WIT", "PDT": "PDT", "SGT": "SGT", "HAST": "HAST", "GYT": "GYT", "PST": "PST", "BOT": "BOT", "WARST": "WARST", "HNT": "HNT", "WITA": "WITA", "MDT": "MDT", "LHST": "LHST", "AKDT": "AKDT", "ACWST": "ACWST", "∅∅∅": "∅∅∅", "EST": "EST", "TMT": "TMT", "AKST": "AKST", "HKT": "HKT", "OESZ": "Ošteuropäiši Summerzit", "SAST": "SAST", "ART": "ART", "CHAST": "CHAST", "CLST": "CLST", "EDT": "EDT", "ADT": "Atlantiši Summerzit"},
 	}
 }
 
@@ -200,7 +200,7 @@ func (wae *wae_CH) FmtCurrency(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wae.currencies[currency]
-	l := len(s) + len(wae.decimal)
+	l := len(s) + len(symbol) + 4
 
 	b := make([]byte, 0, l)
 
@@ -242,7 +242,7 @@ func (wae *wae_CH) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := wae.currencies[currency]
-	l := len(s) + len(wae.decimal)
+	l := len(s) + len(symbol) + 4
 
 	b := make([]byte, 0, l)
 

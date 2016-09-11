@@ -48,7 +48,7 @@ func New() locales.Translator {
 		locale:                 "fr_CA",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 6},
-		pluralsRange:           []locales.PluralRule{6, 2},
+		pluralsRange:           []locales.PluralRule{2, 6},
 		decimal:                "٫",
 		group:                  "٬",
 		minus:                  "‏−",
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"av. J.-C.", "ap. J.-C."},
 		erasNarrow:             []string{"av. J.-C.", "ap. J.-C."},
 		erasWide:               []string{"avant Jésus-Christ", "après Jésus-Christ"},
-		timezones:              map[string]string{"WAT": "heure normale d’Afrique de l’Ouest", "WEZ": "heure normale d’Europe de l’Ouest", "GFT": "heure de Guyane française", "MYT": "heure de la Malaisie", "EDT": "heure avancée de l’Est", "AEST": "heure normale de l’Est de l’Australie", "WIT": "heure de l’Est indonésien", "WARST": "heure avancée de l’Ouest argentin", "CLST": "heure avancée du Chili", "HNT": "heure normale de Terre-Neuve", "MST": "heure normale de Macao", "TMT": "heure normale du Turkménistan", "SAST": "heure normale d’Afrique du Sud", "AST": "heure normale de l’Atlantique", "ACDT": "heure avancée du centre de l’Australie", "HADT": "heure avancée d’Hawaï-Aléoutiennes", "UYST": "heure avancée de l’Uruguay", "BT": "heure du Bhoutan", "WART": "heure normale de l’Ouest argentin", "JDT": "heure avancée du Japon", "EST": "heure normale de l’Est", "MDT": "heure avancée de Macao", "LHST": "heure normale de Lord Howe", "PST": "heure normale du Pacifique", "ACWST": "heure normale du centre-ouest de l’Australie", "WESZ": "heure avancée d’Europe de l’Ouest", "JST": "heure normale du Japon", "ARST": "heure avancée de l’Argentine", "SGT": "heure de Singapour", "AKST": "heure normale de l’Alaska", "AEDT": "heure avancée de l’Est de l’Australie", "LHDT": "heure avancée de Lord Howe", "NZST": "heure normale de la Nouvelle-Zélande", "CLT": "heure normale du Chili", "AKDT": "heure avancée de l’Alaska", "AWST": "heure normale de l’Ouest de l’Australie", "HKST": "heure avancée de Hong Kong", "CHAST": "heure normale des Îles Chatham", "TMST": "heure avancée du Turkménistan", "EAT": "Heure d’Afrique orientale", "CST": "heure normale du Centre", "ADT": "heure avancée de l’Atlantique", "HKT": "heure normale de Hong Kong", "CHADT": "heure avancée des Îles Chatham", "MESZ": "heure avancée d’Europe centrale", "ECT": "heure de l’Équateur", "OESZ": "heure avancée d’Europe de l’Est", "MEZ": "heure normale d’Europe centrale", "WITA": "heure du Centre indonésien", "∅∅∅": "heure avancée du Pérou", "GYT": "heure du Guyana", "ART": "heure normale d’Argentine", "NZDT": "heure avancée de la Nouvelle-Zélande", "ACWDT": "heure avancée du centre-ouest de l’Australie", "VET": "heure du Venezuela", "WIB": "heure de l’Ouest indonésien", "ChST": "heure des Chamorro", "SRT": "heure du Suriname", "IST": "heure de l’Inde", "OEZ": "heure normale d’Europe de l’Est", "CAT": "heure d’Afrique centrale", "PDT": "heure avancée du Pacifique", "UYT": "heure normale de l’Uruguay", "COST": "heure avancée de Colombie", "ACST": "heure normale du centre de l’Australie", "HAT": "heure avancée de Terre-Neuve", "WAST": "heure avancée d’Afrique de l’Ouest", "CDT": "heure avancée du Centre", "GMT": "heure moyenne de Greenwich", "HAST": "heure normale d’Hawaï-Aléoutiennes", "BOT": "heure de Bolivie", "COT": "heure normale de Colombie", "AWDT": "heure avancée de l’Ouest de l’Australie"},
+		timezones:              map[string]string{"MDT": "heure avancée des Rocheuses", "ACWST": "heure normale du centre-ouest de l’Australie", "EDT": "heure avancée de l’Est", "GFT": "heure de Guyane française", "ARST": "heure avancée de l’Argentine", "MYT": "heure de la Malaisie", "JDT": "heure avancée du Japon", "PST": "heure normale du Pacifique", "MESZ": "heure avancée d’Europe centrale", "MST": "heure normale des Rocheuses", "WIT": "heure de l’Est indonésien", "IST": "heure de l’Inde", "AWST": "heure normale de l’Ouest de l’Australie", "HKT": "heure normale de Hong Kong", "OEZ": "heure normale d’Europe de l’Est", "AWDT": "heure avancée de l’Ouest de l’Australie", "LHDT": "heure avancée de Lord Howe", "CHADT": "heure avancée des Îles Chatham", "COST": "heure avancée de Colombie", "ECT": "heure de l’Équateur", "WAT": "heure normale d’Afrique de l’Ouest", "HADT": "heure avancée d’Hawaï-Aléoutiennes", "WART": "heure normale de l’Ouest argentin", "BT": "heure du Bhoutan", "ART": "heure normale d’Argentine", "JST": "heure normale du Japon", "SRT": "heure du Suriname", "NZDT": "heure avancée de la Nouvelle-Zélande", "OESZ": "heure avancée d’Europe de l’Est", "HKST": "heure avancée de Hong Kong", "AKDT": "heure avancée de l’Alaska", "TMST": "heure avancée du Turkménistan", "EAT": "Heure d’Afrique orientale", "MEZ": "heure normale d’Europe centrale", "CHAST": "heure normale des Îles Chatham", "WEZ": "heure normale d’Europe de l’Ouest", "HAST": "heure normale d’Hawaï-Aléoutiennes", "CST": "heure normale du Centre", "BOT": "heure de Bolivie", "WAST": "heure avancée d’Afrique de l’Ouest", "GMT": "heure moyenne de Greenwich", "VET": "heure du Venezuela", "AST": "heure normale de l’Atlantique", "HNT": "heure normale de Terre-Neuve", "TMT": "heure normale du Turkménistan", "AEDT": "heure avancée de l’Est de l’Australie", "CAT": "heure d’Afrique centrale", "SAST": "heure normale d’Afrique du Sud", "WITA": "heure du Centre indonésien", "UYST": "heure avancée de l’Uruguay", "CDT": "heure avancée du Centre", "ACWDT": "heure avancée du centre-ouest de l’Australie", "AEST": "heure normale de l’Est de l’Australie", "HAT": "heure avancée de Terre-Neuve", "GYT": "heure du Guyana", "AKST": "heure normale de l’Alaska", "PDT": "heure avancée du Pacifique", "WESZ": "heure avancée d’Europe de l’Ouest", "∅∅∅": "heure avancée de Brasilia", "ADT": "heure avancée de l’Atlantique", "UYT": "heure normale de l’Uruguay", "LHST": "heure normale de Lord Howe", "NZST": "heure normale de la Nouvelle-Zélande", "COT": "heure normale de Colombie", "SGT": "heure de Singapour", "WARST": "heure avancée de l’Ouest argentin", "WIB": "heure de l’Ouest indonésien", "ACST": "heure normale du centre de l’Australie", "ACDT": "heure avancée du centre de l’Australie", "CLT": "heure normale du Chili", "CLST": "heure avancée du Chili", "ChST": "heure des Chamorro", "EST": "heure normale de l’Est"},
 	}
 }
 
@@ -259,7 +259,7 @@ func (fr *fr_CA) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (fr *fr_CA) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(fr.decimal)
+	l := len(s) + 12
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -297,7 +297,7 @@ func (fr *fr_CA) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fr.currencies[currency]
-	l := len(s) + len(fr.decimal)
+	l := len(s) + len(symbol) + 14
 
 	b := make([]byte, 0, l)
 
@@ -337,7 +337,7 @@ func (fr *fr_CA) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fr.currencies[currency]
-	l := len(s) + len(fr.decimal)
+	l := len(s) + len(symbol) + 14
 
 	b := make([]byte, 0, l)
 

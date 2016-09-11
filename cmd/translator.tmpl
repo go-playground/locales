@@ -270,7 +270,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtNumber(num float64, v uint64) string {
 	groupThreshold := {{ .FmtNumberGroupLen }}
 	{{ end -}}
 	{{ else }}
-	l := len(s) + len({{ .BaseLocale }}.decimal)
+	l := len(s) + {{ byte_count .Decimal .Minus }}
 	{{ end }}
 	b := make([]byte, 0, l)
 
@@ -380,7 +380,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtPercent(num float64, v uint64) string 
 	groupThreshold := {{ .FmtPercentGroupLen }}
 	{{ end -}}
 	{{ else }}
-	l := len(s) + len({{ .BaseLocale }}.decimal)
+	l := len(s) + {{ byte_count .Decimal .Minus .Percent .FmtPercentPrefix .FmtPercentSuffix }}
 	{{- end }}
 	b := make([]byte, 0, l)
 
@@ -532,7 +532,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtCurrency(num float64, v uint64, curren
 	groupThreshold := {{ .FmtCurrencyGroupLen }}
 	{{ end -}}
 	{{ else }}
-	l := len(s) + len({{ .BaseLocale }}.decimal)
+	l := len(s) + len(symbol) + {{ byte_count .Decimal .Minus .FmtCurrencyPrefix .FmtCurrencySuffix }}
 	{{ end }}
 	b := make([]byte, 0, l)
 
@@ -677,7 +677,7 @@ func({{ .BaseLocale }} *{{ .Locale }}) FmtAccounting(num float64, v uint64, curr
 	groupThreshold := {{ .FmtCurrencyGroupLen }}
 	{{ end -}}
 	{{ else }}
-	l := len(s) + len({{ .BaseLocale }}.decimal)
+	l := len(s) + len(symbol) + {{ byte_count .Decimal .Minus .FmtCurrencyNegativePrefix .FmtCurrencyNegativeSuffix }}
 	{{ end }}
 	b := make([]byte, 0, l)
 

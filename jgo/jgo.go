@@ -69,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BCE", "CE"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"tsɛttsɛt mɛŋguꞌ mi ɛ́ lɛɛnɛ Kɛlísɛtɔ gɔ ńɔ́", "tsɛttsɛt mɛŋguꞌ mi ɛ́ fúnɛ Kɛlísɛtɔ tɔ́ mɔ́"},
-		timezones:              map[string]string{"CAT": "CAT", "WITA": "WITA", "JDT": "JDT", "GYT": "GYT", "EST": "EST", "SAST": "SAST", "UYST": "UYST", "PST": "PST", "BOT": "BOT", "AKST": "AKST", "ADT": "ADT", "ACDT": "ACDT", "TMST": "TMST", "AEST": "AEST", "CLST": "CLST", "ACWDT": "ACWDT", "CST": "CST", "COT": "COT", "ART": "ART", "TMT": "TMT", "UYT": "UYT", "WESZ": "WESZ", "CHAST": "CHAST", "MDT": "MDT", "GMT": "GMT", "PDT": "PDT", "BT": "BT", "CLT": "CLT", "AST": "AST", "WIB": "WIB", "EAT": "EAT", "COST": "COST", "ACST": "ACST", "CDT": "CDT", "AWDT": "AWDT", "OESZ": "OESZ", "WART": "WART", "ACWST": "ACWST", "HNT": "HNT", "HKST": "HKST", "LHST": "LHST", "SRT": "SRT", "WARST": "WARST", "WEZ": "WEZ", "LHDT": "LHDT", "NZST": "NZST", "NZDT": "NZDT", "ECT": "ECT", "HAT": "HAT", "AWST": "AWST", "HKT": "HKT", "MEZ": "MEZ", "WAT": "WAT", "MYT": "MYT", "MST": "MST", "HAST": "HAST", "OEZ": "OEZ", "AEDT": "AEDT", "VET": "VET", "WAST": "WAST", "IST": "IST", "AKDT": "AKDT", "ARST": "ARST", "MESZ": "MESZ", "ChST": "ChST", "WIT": "WIT", "SGT": "SGT", "∅∅∅": "∅∅∅", "CHADT": "CHADT", "EDT": "EDT", "HADT": "HADT", "GFT": "GFT", "JST": "JST"},
+		timezones:              map[string]string{"WITA": "WITA", "ACDT": "ACDT", "UYST": "UYST", "CHAST": "CHAST", "JST": "JST", "CDT": "CDT", "CLT": "CLT", "AEDT": "AEDT", "EST": "EST", "GMT": "GMT", "SRT": "SRT", "ECT": "ECT", "AKDT": "AKDT", "NZST": "NZST", "ACWST": "ACWST", "WIT": "WIT", "WIB": "WIB", "ARST": "ARST", "LHDT": "LHDT", "MYT": "MYT", "EDT": "EDT", "HAST": "HAST", "CST": "CST", "CHADT": "CHADT", "COST": "COST", "MST": "MST", "MEZ": "MEZ", "ChST": "ChST", "ART": "ART", "TMST": "TMST", "PDT": "PDT", "AWST": "AWST", "UYT": "UYT", "NZDT": "NZDT", "HKST": "HKST", "WAT": "WAT", "HNT": "HNT", "OEZ": "OEZ", "MDT": "MDT", "BOT": "BOT", "∅∅∅": "∅∅∅", "ADT": "ADT", "LHST": "LHST", "MESZ": "MESZ", "WEZ": "WEZ", "CLST": "CLST", "VET": "VET", "ACWDT": "ACWDT", "AST": "AST", "WARST": "WARST", "GFT": "GFT", "EAT": "EAT", "AWDT": "AWDT", "COT": "COT", "WESZ": "WESZ", "SGT": "SGT", "HKT": "HKT", "WAST": "WAST", "IST": "IST", "JDT": "JDT", "PST": "PST", "HADT": "HADT", "WART": "WART", "BT": "BT", "ACST": "ACST", "AKST": "AKST", "SAST": "SAST", "HAT": "HAT", "OESZ": "OESZ", "CAT": "CAT", "TMT": "TMT", "GYT": "GYT", "AEST": "AEST"},
 	}
 }
 
@@ -230,7 +230,7 @@ func (jgo *jgo) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (jgo *jgo) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(jgo.decimal)
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

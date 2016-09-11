@@ -69,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"н.д.а.", "н.д."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"CAT": "CAT", "UYST": "UYST", "EAT": "EAT", "HAT": "HAT", "EST": "EST", "UYT": "UYT", "NZST": "NZST", "ChST": "ChST", "CLST": "CLST", "AST": "AST", "HADT": "HADT", "AEST": "AEST", "MDT": "MDT", "ART": "ART", "WIB": "WIB", "OEZ": "Скӕсӕн Европӕйаг стандартон рӕстӕг", "CDT": "CDT", "ARST": "ARST", "TMST": "TMST", "BOT": "BOT", "WESZ": "Ныгъуылӕн Европӕйаг сӕрдыгон рӕстӕг", "VET": "VET", "AKDT": "AKDT", "HKST": "HKST", "CHAST": "CHAST", "OESZ": "Скӕсӕн Европӕйаг сӕрдыгон рӕстӕг", "LHST": "LHST", "BT": "BT", "ACST": "ACST", "ACDT": "ACDT", "AEDT": "AEDT", "NZDT": "NZDT", "WART": "WART", "HAST": "HAST", "TMT": "TMT", "LHDT": "LHDT", "MESZ": "Астӕуккаг Европӕйаг сӕрдыгон рӕстӕг", "WIT": "WIT", "ECT": "ECT", "CST": "CST", "EDT": "EDT", "∅∅∅": "∅∅∅", "ACWST": "ACWST", "WEZ": "Ныгъуылӕн Европӕйаг стандартон рӕстӕг", "GMT": "Гринвичы рӕстӕмбис рӕстӕг", "WARST": "WARST", "COT": "COT", "HNT": "HNT", "SGT": "SGT", "HKT": "HKT", "ACWDT": "ACWDT", "JST": "JST", "MYT": "MYT", "MST": "MST", "WAT": "WAT", "WAST": "WAST", "COST": "COST", "ADT": "ADT", "GYT": "GYT", "AKST": "AKST", "CHADT": "CHADT", "PDT": "PDT", "CLT": "CLT", "GFT": "GFT", "AWST": "AWST", "AWDT": "AWDT", "SAST": "SAST", "MEZ": "Астӕуккаг Европӕйаг стандартон рӕстӕг", "WITA": "WITA", "SRT": "SRT", "JDT": "JDT", "IST": "IST", "PST": "PST"},
+		timezones:              map[string]string{"PDT": "PDT", "LHDT": "LHDT", "CLT": "CLT", "CLST": "CLST", "COST": "COST", "WART": "WART", "MYT": "MYT", "AWST": "AWST", "NZST": "NZST", "CHAST": "CHAST", "EAT": "EAT", "WEZ": "Ныгъуылӕн Европӕйаг стандартон рӕстӕг", "HKT": "HKT", "ART": "ART", "∅∅∅": "∅∅∅", "ChST": "ChST", "HKST": "HKST", "HAT": "HAT", "AWDT": "AWDT", "NZDT": "NZDT", "SAST": "SAST", "HNT": "HNT", "LHST": "LHST", "GYT": "GYT", "HAST": "HAST", "ACDT": "ACDT", "ACST": "ACST", "AKST": "AKST", "AEDT": "AEDT", "MST": "MST", "CAT": "CAT", "EST": "EST", "BT": "BT", "MEZ": "Астӕуккаг Европӕйаг стандартон рӕстӕг", "UYST": "UYST", "VET": "VET", "COT": "COT", "ARST": "ARST", "AKDT": "AKDT", "MESZ": "Астӕуккаг Европӕйаг сӕрдыгон рӕстӕг", "WESZ": "Ныгъуылӕн Европӕйаг сӕрдыгон рӕстӕг", "AST": "AST", "WAT": "WAT", "OEZ": "Скӕсӕн Европӕйаг стандартон рӕстӕг", "UYT": "UYT", "ADT": "ADT", "CST": "CST", "MDT": "MDT", "HADT": "HADT", "IST": "IST", "GFT": "GFT", "TMT": "TMT", "CDT": "CDT", "ACWDT": "ACWDT", "SGT": "SGT", "OESZ": "Скӕсӕн Европӕйаг сӕрдыгон рӕстӕг", "SRT": "SRT", "AEST": "AEST", "WARST": "WARST", "WITA": "WITA", "WIT": "WIT", "PST": "PST", "JST": "JST", "BOT": "BOT", "ACWST": "ACWST", "ECT": "ECT", "TMST": "TMST", "JDT": "JDT", "CHADT": "CHADT", "EDT": "EDT", "WAST": "WAST", "GMT": "Гринвичы рӕстӕмбис рӕстӕг", "WIB": "WIB"},
 	}
 }
 
@@ -232,7 +232,7 @@ func (os *os) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (os *os) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(os.decimal)
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

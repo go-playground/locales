@@ -47,7 +47,7 @@ func New() locales.Translator {
 		locale:                 "az_Latn_AZ",
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 4, 5, 6},
-		pluralsRange:           []locales.PluralRule{2, 6},
+		pluralsRange:           []locales.PluralRule{6, 2},
 		decimal:                ",",
 		group:                  ".",
 		minus:                  "-",
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"e.ə.", "b.e."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"eramızdan əvvəl", "eramız"},
-		timezones:              map[string]string{"AKDT": "Alyaska Yay Vaxtı", "ARST": "Argentina Yay Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı", "CHAST": "Çatham Standart Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "JST": "Yaponiya Standart Vaxtı", "IST": "Hindistan Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "ChST": "Çamorro Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "ECT": "Ekvador Vaxtı", "ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "GYT": "Qayana Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "∅∅∅": "Braziliya Yay Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "CHADT": "Çatham Yay Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "BT": "Butan Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "SRT": "Surinam Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "BOT": "Boliviya Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "MYT": "Malayziya Vaxtı", "ADT": "Atlantik Yay Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "CLT": "Çili Standart Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "AST": "Atlantik Standart Vaxt", "ART": "Argentina Standart Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "CLST": "Çili Yay Vaxtı", "VET": "Venesuela Vaxtı", "LHST": "Lord Hau Standart Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "SGT": "Sinqapur Vaxtı", "AKST": "Alyaska Standart Vaxtı"},
+		timezones:              map[string]string{"BOT": "Boliviya Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "ECT": "Ekvador Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "BT": "Butan Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "GYT": "Qayana Vaxtı", "ARST": "Argentina Yay Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "AST": "Atlantik Standart Vaxt", "HKST": "Honq Konq Yay Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "CHADT": "Çatham Yay Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "AKST": "Alyaska Standart Vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "SGT": "Sinqapur Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "CLST": "Çili Yay Vaxtı", "∅∅∅": "Braziliya Yay Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "ADT": "Atlantik Yay Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "MYT": "Malayziya Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "CHAST": "Çatham Standart Vaxtı", "VET": "Venesuela Vaxtı", "ChST": "Çamorro Vaxtı", "JST": "Yaponiya Standart Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "ART": "Argentina Standart Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "SRT": "Surinam Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "IST": "Hindistan Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "CLT": "Çili Standart Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "LHST": "Lord Hau Standart Vaxtı"},
 	}
 }
 
@@ -112,9 +112,9 @@ func (az *az_Latn_AZ) OrdinalPluralRule(num float64, v uint64) locales.PluralRul
 
 	n := math.Abs(num)
 	i := int64(n)
+	iMod10 := i % 10
 	iMod100 := i % 100
 	iMod1000 := i % 1000
-	iMod10 := i % 10
 
 	if (iMod10 == 1 || iMod10 == 2 || iMod10 == 5 || iMod10 == 7 || iMod10 == 8) || (iMod100 == 20 || iMod100 == 50 || iMod100 == 70 || iMod100 == 80) {
 		return locales.PluralRuleOne
@@ -258,7 +258,7 @@ func (az *az_Latn_AZ) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (az *az_Latn_AZ) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(az.decimal)
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

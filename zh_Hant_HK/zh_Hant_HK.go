@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"公元前", "公元"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"公元前", "公元"},
-		timezones:              map[string]string{"MEZ": "中欧标准时间", "CAT": "中部非洲时间", "ACST": "澳大利亚中部标准时间", "WIT": "印度尼西亚东部时间", "ECT": "厄瓜多爾時間", "AEST": "澳大利亚东部标准时间", "WITA": "印度尼西亚中部时间", "HNT": "纽芬兰标准时间", "HADT": "夏威夷-阿留申夏令时间", "ARST": "阿根廷夏令时间", "CLT": "智利标准时间", "SGT": "新加坡時間", "AKST": "阿拉斯加标准时间", "HKST": "香港夏令时间", "COT": "哥伦比亚标准时间", "HAT": "纽芬兰夏令时间", "EST": "北美東部標準時間", "LHST": "豪勋爵岛标准时间", "ChST": "查莫罗时间", "ACWST": "澳大利亚中西部标准时间", "IST": "印度時間", "AWST": "澳大利亚西部标准时间", "ACDT": "澳大利亚中部夏令时间", "LHDT": "豪勋爵岛夏令时间", "CLST": "智利夏令时间", "WEZ": "西欧标准时间", "WESZ": "西欧夏令时间", "CDT": "中部夏令時間", "MESZ": "中欧夏令时间", "MYT": "马来西亚时间", "CHADT": "查坦夏令时间", "AEDT": "澳大利亚东部夏令时间", "SAST": "南非時間", "SRT": "蘇里南時間", "MDT": "北美山區夏令時間", "BOT": "玻利维亚时间", "WAT": "西部非洲标准时间", "WARST": "阿根廷西部夏令时间", "VET": "委内瑞拉时间", "AST": "大西洋标准时间", "ADT": "大西洋夏令时间", "CST": "北美中部標準時間", "GMT": "格林尼治标准时间", "UYT": "乌拉圭标准时间", "EAT": "东部非洲时间", "JDT": "日本夏令时间", "UYST": "乌拉圭夏令时间", "BT": "不丹时间", "GFT": "法属圭亚那时间", "TMT": "土库曼斯坦标准时间", "OEZ": "东欧标准时间", "OESZ": "东欧夏令时间", "COST": "哥伦比亚夏令时间", "AKDT": "阿拉斯加夏令时间", "WIB": "印度尼西亚西部时间", "NZDT": "新西兰夏令时间", "HAST": "夏威夷-阿留申标准时间", "HKT": "香港标准时间", "CHAST": "查坦标准时间", "WART": "阿根廷西部标准时间", "ACWDT": "澳大利亚中西部夏令时间", "JST": "日本标准时间", "∅∅∅": "亚速尔群岛夏令时间", "PDT": "北美太平洋夏令時間", "EDT": "北美東部夏令時間", "TMST": "土库曼斯坦夏令时间", "NZST": "新西兰标准时间", "AWDT": "澳大利亚西部夏令时间", "ART": "阿根廷标准时间", "PST": "北美太平洋標準時間", "MST": "北美山區標準時間", "WAST": "西部非洲夏令时间", "GYT": "圭亞那時間"},
+		timezones:              map[string]string{"HAT": "纽芬兰夏令时间", "AWST": "澳大利亚西部标准时间", "HADT": "夏威夷-阿留申夏令时间", "OESZ": "东欧夏令时间", "ACWDT": "澳大利亚中西部夏令时间", "CLST": "智利夏令时间", "CAT": "中部非洲时间", "EDT": "北美東部夏令時間", "WARST": "阿根廷西部夏令时间", "WAT": "西部非洲标准时间", "ACST": "澳大利亚中部标准时间", "UYST": "乌拉圭夏令时间", "GFT": "法属圭亚那时间", "EAT": "东部非洲时间", "ART": "阿根廷标准时间", "UYT": "乌拉圭标准时间", "AEDT": "澳大利亚东部夏令时间", "COST": "哥伦比亚夏令时间", "OEZ": "东欧标准时间", "ARST": "阿根廷夏令时间", "MYT": "马来西亚时间", "SRT": "蘇里南時間", "LHST": "豪勋爵岛标准时间", "CHADT": "查坦夏令时间", "SGT": "新加坡時間", "SAST": "南非時間", "PDT": "北美太平洋夏令時間", "AWDT": "澳大利亚西部夏令时间", "PST": "北美太平洋標準時間", "ACWST": "澳大利亚中西部标准时间", "COT": "哥伦比亚标准时间", "∅∅∅": "阿克里夏令时间", "WAST": "西部非洲夏令时间", "HKT": "香港标准时间", "HKST": "香港夏令时间", "IST": "印度時間", "AKDT": "阿拉斯加夏令时间", "BOT": "玻利维亚时间", "CLT": "智利标准时间", "AST": "大西洋标准时间", "ADT": "大西洋夏令时间", "TMT": "土库曼斯坦标准时间", "WART": "阿根廷西部标准时间", "WIB": "印度尼西亚西部时间", "HNT": "纽芬兰标准时间", "GYT": "圭亞那時間", "VET": "委内瑞拉时间", "ChST": "查莫罗时间", "NZST": "新西兰标准时间", "EST": "北美東部標準時間", "HAST": "夏威夷-阿留申标准时间", "GMT": "格林尼治标准时间", "AKST": "阿拉斯加标准时间", "MESZ": "中欧夏令时间", "TMST": "土库曼斯坦夏令时间", "JDT": "日本夏令时间", "NZDT": "新西兰夏令时间", "WESZ": "西欧夏令时间", "WITA": "印度尼西亚中部时间", "CDT": "中部夏令時間", "MEZ": "中欧标准时间", "CHAST": "查坦标准时间", "CST": "北美中部標準時間", "BT": "不丹时间", "MST": "澳门标准时间", "ACDT": "澳大利亚中部夏令时间", "LHDT": "豪勋爵岛夏令时间", "AEST": "澳大利亚东部标准时间", "ECT": "厄瓜多爾時間", "WIT": "印度尼西亚东部时间", "MDT": "澳门夏令时间", "JST": "日本标准时间", "WEZ": "西欧标准时间"},
 	}
 }
 
@@ -225,7 +225,7 @@ func (zh *zh_Hant_HK) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (zh *zh_Hant_HK) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(zh.decimal)
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -257,7 +257,7 @@ func (zh *zh_Hant_HK) FmtCurrency(num float64, v uint64, currency currency.Type)
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
-	l := len(s) + len(zh.decimal)
+	l := len(s) + len(symbol) + 3
 
 	b := make([]byte, 0, l)
 
@@ -295,7 +295,7 @@ func (zh *zh_Hant_HK) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := zh.currencies[currency]
-	l := len(s) + len(zh.decimal)
+	l := len(s) + len(symbol) + 3
 
 	b := make([]byte, 0, l)
 

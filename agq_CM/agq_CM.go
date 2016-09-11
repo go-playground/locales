@@ -61,7 +61,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"SK", "BK"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"Sěe Kɨ̀lesto", "Bǎa Kɨ̀lesto"},
-		timezones:          map[string]string{"LHDT": "LHDT", "SRT": "SRT", "CLST": "CLST", "HNT": "HNT", "AWST": "AWST", "LHST": "LHST", "PST": "PST", "WIB": "WIB", "SAST": "SAST", "UYST": "UYST", "GYT": "GYT", "HKST": "HKST", "CHADT": "CHADT", "UYT": "UYT", "ECT": "ECT", "HKT": "HKT", "ARST": "ARST", "EDT": "EDT", "ACWST": "ACWST", "COT": "COT", "JST": "JST", "ART": "ART", "BT": "BT", "VET": "VET", "MEZ": "MEZ", "WARST": "WARST", "ACDT": "ACDT", "AKDT": "AKDT", "TMST": "TMST", "AEST": "AEST", "CDT": "CDT", "HADT": "HADT", "MDT": "MDT", "AST": "AST", "SGT": "SGT", "AKST": "AKST", "CHAST": "CHAST", "CST": "CST", "WAT": "WAT", "IST": "IST", "EST": "EST", "ChST": "ChST", "OESZ": "OESZ", "AEDT": "AEDT", "WESZ": "WESZ", "GFT": "GFT", "HAST": "HAST", "TMT": "TMT", "OEZ": "OEZ", "NZDT": "NZDT", "CLT": "CLT", "MYT": "MYT", "NZST": "NZST", "AWDT": "AWDT", "EAT": "EAT", "MESZ": "MESZ", "WITA": "WITA", "WIT": "WIT", "WEZ": "WEZ", "ACST": "ACST", "HAT": "HAT", "∅∅∅": "∅∅∅", "CAT": "CAT", "ACWDT": "ACWDT", "MST": "MST", "WART": "WART", "BOT": "BOT", "WAST": "WAST", "COST": "COST", "GMT": "GMT", "JDT": "JDT", "ADT": "ADT", "PDT": "PDT"},
+		timezones:          map[string]string{"SRT": "SRT", "PDT": "PDT", "MESZ": "MESZ", "∅∅∅": "∅∅∅", "ARST": "ARST", "TMT": "TMT", "AWST": "AWST", "WIB": "WIB", "ChST": "ChST", "MST": "MST", "WESZ": "WESZ", "AST": "AST", "WITA": "WITA", "UYST": "UYST", "VET": "VET", "COST": "COST", "EDT": "EDT", "BT": "BT", "SGT": "SGT", "NZST": "NZST", "UYT": "UYT", "ACDT": "ACDT", "MDT": "MDT", "WEZ": "WEZ", "HADT": "HADT", "OEZ": "OEZ", "MYT": "MYT", "AEST": "AEST", "ECT": "ECT", "HKT": "HKT", "LHDT": "LHDT", "CDT": "CDT", "MEZ": "MEZ", "ACWST": "ACWST", "WARST": "WARST", "GFT": "GFT", "AKDT": "AKDT", "HAST": "HAST", "HAT": "HAT", "CLT": "CLT", "CLST": "CLST", "ART": "ART", "BOT": "BOT", "HKST": "HKST", "GMT": "GMT", "TMST": "TMST", "LHST": "LHST", "GYT": "GYT", "NZDT": "NZDT", "CHADT": "CHADT", "CAT": "CAT", "SAST": "SAST", "WAT": "WAT", "ACWDT": "ACWDT", "AWDT": "AWDT", "AKST": "AKST", "AEDT": "AEDT", "WAST": "WAST", "IST": "IST", "JDT": "JDT", "PST": "PST", "COT": "COT", "EST": "EST", "WIT": "WIT", "OESZ": "OESZ", "WART": "WART", "EAT": "EAT", "CST": "CST", "JST": "JST", "CHAST": "CHAST", "ADT": "ADT", "HNT": "HNT", "ACST": "ACST"},
 	}
 }
 
@@ -217,7 +217,7 @@ func (agq *agq_CM) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (agq *agq_CM) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(agq.decimal)
+	l := len(s) + 1
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

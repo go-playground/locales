@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"o.Kr.", "m.Kr."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ovdal Kristtusa", "maŋŋel Kristtusa"},
-		timezones:              map[string]string{"CAT": "CAT", "CST": "CST", "∅∅∅": "∅∅∅", "SRT": "SRT", "WESZ": "oarje-Eurohpá geassiáigi", "CDT": "CDT", "MYT": "MYT", "EST": "EST", "LHST": "LHST", "WAT": "WAT", "GFT": "GFT", "ACDT": "ACDT", "ARST": "ARST", "AEST": "AEST", "NZST": "NZST", "PST": "PST", "CLT": "CLT", "VET": "VET", "JST": "JST", "HNT": "HNT", "HAT": "HAT", "ACWST": "ACWST", "WART": "WART", "HADT": "HADT", "WAST": "WAST", "JDT": "JDT", "HAST": "HAST", "AWST": "AWST", "CHADT": "CHADT", "LHDT": "LHDT", "NZDT": "NZDT", "CHAST": "CHAST", "ChST": "ChST", "WITA": "WITA", "EAT": "EAT", "ECT": "ECT", "AST": "AST", "SGT": "SGT", "AWDT": "AWDT", "TMT": "TMT", "MDT": "MDT", "COST": "COST", "GYT": "GYT", "HKT": "HKT", "MESZ": "gaska-Eurohpá geassiáigi", "HKST": "HKST", "TMST": "TMST", "ACWDT": "ACWDT", "ACST": "ACST", "WIB": "WIB", "CLST": "CLST", "IST": "IST", "AKST": "AKST", "AKDT": "AKDT", "ART": "ART", "OEZ": "nuorti-Eurohpá dábálašáigi", "OESZ": "nuorti-Eurohpá geassiáigi", "PDT": "PDT", "UYT": "UYT", "UYST": "UYST", "BT": "BT", "WIT": "WIT", "WEZ": "oarje-Eurohpá dábálašáigi", "COT": "COT", "WARST": "WARST", "SAST": "SAST", "MEZ": "gaska-Eurohpá dábálašáigi", "MST": "MST", "EDT": "EDT", "GMT": "Greenwich gaskka áigi", "BOT": "BOT", "ADT": "ADT", "AEDT": "AEDT"},
+		timezones:              map[string]string{"OESZ": "nuorti-Eurohpá geassiáigi", "CDT": "CDT", "WIT": "WIT", "AWST": "AWST", "LHST": "LHST", "NZDT": "NZDT", "CLT": "CLT", "EAT": "EAT", "ARST": "ARST", "PST": "PST", "PDT": "PDT", "VET": "VET", "ACWDT": "ACWDT", "EST": "EST", "COST": "COST", "WART": "WART", "HNT": "HNT", "WITA": "WITA", "TMT": "TMT", "JDT": "JDT", "JST": "JST", "MYT": "MYT", "WEZ": "oarje-Eurohpá dábálašáigi", "HKT": "HKT", "MEZ": "gaska-Eurohpá dábálašáigi", "BT": "BT", "IST": "IST", "ACDT": "ACDT", "CST": "CST", "AEDT": "AEDT", "TMST": "TMST", "NZST": "NZST", "AEST": "AEST", "CAT": "CAT", "EDT": "EDT", "GFT": "GFT", "MDT": "MDT", "WESZ": "oarje-Eurohpá geassiáigi", "CHAST": "CHAST", "GMT": "Greenwich gaskka áigi", "HAT": "HAT", "AKST": "AKST", "ChST": "ChST", "ECT": "ECT", "ADT": "ADT", "WAT": "WAT", "WAST": "WAST", "WARST": "WARST", "AWDT": "AWDT", "MESZ": "gaska-Eurohpá geassiáigi", "OEZ": "nuorti-Eurohpá dábálašáigi", "ART": "ART", "AKDT": "AKDT", "ACWST": "ACWST", "CHADT": "CHADT", "SAST": "SAST", "HKST": "HKST", "∅∅∅": "∅∅∅", "SRT": "SRT", "GYT": "GYT", "COT": "COT", "SGT": "SGT", "MST": "MST", "LHDT": "LHDT", "BOT": "BOT", "HAST": "HAST", "WIB": "WIB", "ACST": "ACST", "AST": "AST", "HADT": "HADT", "UYT": "UYT", "UYST": "UYST", "CLST": "CLST"},
 	}
 }
 
@@ -238,7 +238,7 @@ func (se *se) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (se *se) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(se.decimal)
+	l := len(s) + 7
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

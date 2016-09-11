@@ -72,7 +72,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v. Chr.", "n. Chr."},
 		erasNarrow:             []string{"vC", "nC"},
 		erasWide:               []string{"vür Chrestus", "noh Chrestus"},
-		timezones:              map[string]string{"EST": "EST", "NZDT": "NZDT", "IST": "IST", "HAT": "HAT", "CHAST": "CHAST", "CLT": "CLT", "CST": "CST", "COT": "COT", "ACST": "ACST", "TMT": "TMT", "GFT": "GFT", "∅∅∅": "de Azore ier Summerzick", "AWDT": "AWDT", "CAT": "Zentraal-Affrekaanesche Zigg", "SRT": "SRT", "AKST": "AKST", "AST": "AST", "EDT": "EDT", "MESZ": "Meddel-Europpa sing Summerzick", "WAST": "Wäß-Affrekaanesche Sommerzigg", "MYT": "MYT", "HADT": "HADT", "UYST": "UYST", "SGT": "SGT", "MST": "MST", "OEZ": "Oß-Europpa sing jewöhnlijje Zick", "BT": "BT", "ECT": "ECT", "HKST": "HKST", "AEDT": "AEDT", "LHDT": "LHDT", "MEZ": "Meddel-Europpa sing jewöhnlijje Zick", "BOT": "BOT", "ACDT": "ACDT", "AWST": "AWST", "OESZ": "Oß-Europpa sing Summerzick", "LHST": "LHST", "ACWDT": "ACWDT", "WAT": "Jewöhnlijje Wäß-Affrekaanesche Zigg", "ARST": "ARST", "HAST": "HAST", "SAST": "Söd-Affrekaanesche Zigg", "COST": "COST", "UYT": "UYT", "VET": "VET", "ART": "ART", "AEST": "AEST", "CLST": "CLST", "EAT": "Oß-Affrekaanesche Zigg", "ACWST": "ACWST", "ADT": "ADT", "WIB": "WIB", "GMT": "Greenwich sing Standat-Zick", "ChST": "ChST", "WIT": "WIT", "CHADT": "CHADT", "NZST": "NZST", "JDT": "JDT", "GYT": "GYT", "AKDT": "AKDT", "HKT": "HKT", "PST": "PST", "WITA": "WITA", "WESZ": "Weß-Europpa sing Summerzick", "CDT": "CDT", "WARST": "WARST", "HNT": "HNT", "MDT": "MDT", "TMST": "TMST", "PDT": "PDT", "WART": "WART", "WEZ": "Weß-Europpa sing jewöhnlijje Zick", "JST": "JST"},
+		timezones:              map[string]string{"ACWST": "ACWST", "HAT": "HAT", "SRT": "SRT", "AKDT": "AKDT", "CDT": "CDT", "CLT": "CLT", "GFT": "GFT", "WITA": "WITA", "LHDT": "LHDT", "CAT": "Zentraal-Affrekaanesche Zigg", "EST": "EST", "ACST": "ACST", "NZST": "NZST", "AEST": "AEST", "HAST": "HAST", "WART": "WART", "HNT": "HNT", "LHST": "LHST", "EDT": "EDT", "WIT": "WIT", "MESZ": "Meddel-Europpa sing Summerzick", "AST": "AST", "COT": "COT", "HADT": "HADT", "SAST": "Söd-Affrekaanesche Zigg", "WAT": "Jewöhnlijje Wäß-Affrekaanesche Zigg", "GYT": "GYT", "PDT": "PDT", "NZDT": "NZDT", "AEDT": "AEDT", "SGT": "SGT", "HKST": "HKST", "∅∅∅": "∅∅∅", "JDT": "JDT", "WESZ": "Weß-Europpa sing Summerzick", "MST": "MST", "VET": "VET", "COST": "COST", "BOT": "BOT", "HKT": "HKT", "TMT": "TMT", "PST": "PST", "AWDT": "AWDT", "CHAST": "CHAST", "WAST": "Wäß-Affrekaanesche Sommerzigg", "ACDT": "ACDT", "JST": "JST", "AWST": "AWST", "ARST": "ARST", "CHADT": "CHADT", "WIB": "WIB", "GMT": "Greenwich sing Standat-Zick", "ART": "ART", "MYT": "MYT", "CLST": "CLST", "UYST": "UYST", "ECT": "ECT", "WARST": "WARST", "TMST": "TMST", "EAT": "Oß-Affrekaanesche Zigg", "MDT": "MDT", "WEZ": "Weß-Europpa sing jewöhnlijje Zick", "ADT": "ADT", "BT": "BT", "IST": "IST", "OESZ": "Oß-Europpa sing Summerzick", "MEZ": "Meddel-Europpa sing jewöhnlijje Zick", "CST": "CST", "ChST": "ChST", "ACWDT": "ACWDT", "OEZ": "Oß-Europpa sing jewöhnlijje Zick", "AKST": "AKST", "UYT": "UYT"},
 	}
 }
 
@@ -239,7 +239,7 @@ func (ksh *ksh) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ksh *ksh) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(ksh.decimal)
+	l := len(s) + 7
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

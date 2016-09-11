@@ -69,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"pdC", "ddC"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"MYT": "MYT", "HKT": "HKT", "HKST": "HKST", "WESZ": "Ore estive de Europe ocidentâl", "CDT": "CDT", "CAT": "CAT", "CLT": "CLT", "WEZ": "Ore standard de Europe ocidentâl", "CHAST": "CHAST", "MEZ": "Ore standard de Europe centrâl", "WIT": "WIT", "EAT": "EAT", "MST": "MST", "MDT": "MDT", "HADT": "HADT", "CLST": "CLST", "GFT": "GFT", "WAT": "WAT", "JST": "JST", "HNT": "HNT", "TMST": "TMST", "OESZ": "Ore estive de Europe orientâl", "UYT": "UYT", "GMT": "GMT", "ACDT": "ACDT", "AWST": "AWST", "EDT": "EDT", "AEST": "AEST", "IST": "IST", "HAT": "HAT", "AWDT": "AWDT", "ART": "ART", "LHST": "LHST", "BOT": "BOT", "ADT": "ADT", "ACST": "ACST", "AKDT": "AKDT", "SAST": "SAST", "SRT": "SRT", "ACWDT": "ACWDT", "WAST": "WAST", "CHADT": "CHADT", "MESZ": "Ore estive de Europe centrâl", "VET": "VET", "BT": "BT", "ACWST": "ACWST", "HAST": "HAST", "∅∅∅": "∅∅∅", "NZST": "NZST", "TMT": "TMT", "ChST": "ChST", "OEZ": "Ore standard de Europe orientâl", "WARST": "WARST", "AKST": "AKST", "LHDT": "LHDT", "CST": "CST", "SGT": "SGT", "UYST": "UYST", "WITA": "WITA", "WART": "WART", "WIB": "WIB", "AEDT": "AEDT", "PST": "PST", "AST": "AST", "EST": "EST", "ECT": "ECT", "JDT": "JDT", "GYT": "GYT", "ARST": "ARST", "COT": "COT", "COST": "COST", "NZDT": "NZDT", "PDT": "PDT"},
+		timezones:              map[string]string{"WARST": "WARST", "AWST": "AWST", "NZST": "NZST", "UYST": "UYST", "ACWST": "ACWST", "HADT": "HADT", "COT": "COT", "HAT": "HAT", "PST": "PST", "BOT": "BOT", "AEDT": "AEDT", "CLST": "CLST", "EST": "EST", "ACST": "ACST", "EAT": "EAT", "UYT": "UYT", "CDT": "CDT", "ADT": "ADT", "OEZ": "Ore standard de Europe orientâl", "AEST": "AEST", "ChST": "ChST", "ECT": "ECT", "WAST": "WAST", "MST": "MST", "ACWDT": "ACWDT", "HAST": "HAST", "WIT": "WIT", "WESZ": "Ore estive de Europe ocidentâl", "COST": "COST", "MYT": "MYT", "JST": "JST", "LHDT": "LHDT", "GMT": "GMT", "GFT": "GFT", "WIB": "WIB", "MEZ": "Ore standard de Europe centrâl", "MESZ": "Ore estive de Europe centrâl", "SGT": "SGT", "WAT": "WAT", "BT": "BT", "HKST": "HKST", "WART": "WART", "WITA": "WITA", "ACDT": "ACDT", "GYT": "GYT", "∅∅∅": "∅∅∅", "CHAST": "CHAST", "OESZ": "Ore estive de Europe orientâl", "AKDT": "AKDT", "SAST": "SAST", "JDT": "JDT", "CLT": "CLT", "CAT": "CAT", "MDT": "MDT", "ART": "ART", "AWDT": "AWDT", "SRT": "SRT", "EDT": "EDT", "NZDT": "NZDT", "VET": "VET", "PDT": "PDT", "HNT": "HNT", "ARST": "ARST", "TMST": "TMST", "CST": "CST", "CHADT": "CHADT", "HKT": "HKT", "IST": "IST", "TMT": "TMT", "LHST": "LHST", "AKST": "AKST", "WEZ": "Ore standard de Europe ocidentâl", "AST": "AST"},
 	}
 }
 
@@ -230,7 +230,7 @@ func (fur *fur_IT) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (fur *fur_IT) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(fur.decimal)
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {

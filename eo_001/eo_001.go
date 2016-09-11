@@ -74,7 +74,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"aK", "pK"},
 		erasNarrow:             []string{"aK", "pK"},
 		erasWide:               []string{"aK", "pK"},
-		timezones:              map[string]string{"ChST": "ChST", "ACDT": "centra aŭstralia somera tempo", "HKT": "HKT", "LHDT": "LHDT", "UYST": "UYST", "AEDT": "orienta aŭstralia somera tempo", "COST": "COST", "JST": "japana norma tempo", "GYT": "GYT", "MYT": "MYT", "ARST": "ARST", "TMST": "TMST", "WITA": "centra indonezia tempo", "SRT": "SRT", "WAT": "okcidenta afrika norma tempo", "WESZ": "okcidenta eŭropa somera tempo", "HADT": "HADT", "TMT": "TMT", "SAST": "suda afrika tempo", "CAT": "centra afrika tempo", "HAT": "HAT", "GMT": "universala tempo kunordigita", "EAT": "orienta afrika tempo", "WAST": "okcidenta afrika somera tempo", "CDT": "centra nord-amerika somera tempo", "AEST": "orienta aŭstralia norma tempo", "CST": "centra nord-amerika norma tempo", "AWST": "okcidenta aŭstralia norma tempo", "MST": "MST", "MEZ": "centra eŭropa norma tempo", "BT": "BT", "WIT": "orienta indonezia tempo", "ACWDT": "centrokcidenta aŭstralia somera tempo", "ECT": "ECT", "SGT": "SGT", "ADT": "atlantika nord-amerika somera tempo", "NZDT": "NZDT", "PDT": "pacifika nord-amerika somera tempo", "JDT": "japana somera tempo", "IST": "barata tempo", "AKST": "AKST", "OESZ": "orienta eŭropa somera tempo", "CLT": "CLT", "ACWST": "centrokcidenta aŭstralia norma tempo", "WART": "WART", "CLST": "CLST", "ACST": "centra aŭstralia norma tempo", "AST": "atlantika nord-amerika norma tempo", "LHST": "LHST", "PST": "pacifika nord-amerika norma tempo", "VET": "VET", "COT": "COT", "CHADT": "CHADT", "ART": "ART", "WIB": "okcidenta indonezia tempo", "EST": "orienta nord-amerika norma tempo", "∅∅∅": "∅∅∅", "HAST": "HAST", "AWDT": "okcidenta aŭstralia somera tempo", "HKST": "HKST", "NZST": "NZST", "BOT": "BOT", "EDT": "orienta nord-amerika somera tempo", "MESZ": "centra eŭropa somera tempo", "HNT": "HNT", "WARST": "WARST", "GFT": "GFT", "UYT": "UYT", "WEZ": "okcidenta eŭropa norma tempo", "AKDT": "AKDT", "CHAST": "CHAST", "MDT": "MDT", "OEZ": "orienta eŭropa norma tempo"},
+		timezones:              map[string]string{"COT": "COT", "WIB": "okcidenta indonezia tempo", "ARST": "ARST", "ECT": "ECT", "LHST": "LHST", "MYT": "MYT", "NZST": "NZST", "ChST": "ChST", "VET": "VET", "HKT": "HKT", "WITA": "centra indonezia tempo", "GMT": "universala tempo kunordigita", "OEZ": "orienta eŭropa norma tempo", "TMT": "TMT", "MDT": "MDT", "JST": "japana norma tempo", "PDT": "pacifika nord-amerika somera tempo", "SAST": "suda afrika tempo", "HNT": "HNT", "IST": "barata tempo", "CDT": "centra nord-amerika somera tempo", "WART": "WART", "EAT": "orienta afrika tempo", "CHAST": "CHAST", "HAT": "HAT", "GFT": "GFT", "GYT": "GYT", "AWDT": "okcidenta aŭstralia somera tempo", "ACWST": "centrokcidenta aŭstralia norma tempo", "HADT": "HADT", "SGT": "SGT", "BT": "BT", "MESZ": "centra eŭropa somera tempo", "ACDT": "centra aŭstralia somera tempo", "SRT": "SRT", "BOT": "BOT", "WAT": "okcidenta afrika norma tempo", "ACST": "centra aŭstralia norma tempo", "AKST": "AKST", "NZDT": "NZDT", "CAT": "centra afrika tempo", "TMST": "TMST", "PST": "pacifika nord-amerika norma tempo", "UYT": "UYT", "ADT": "atlantika nord-amerika somera tempo", "EST": "orienta nord-amerika norma tempo", "AEDT": "orienta aŭstralia somera tempo", "MST": "MST", "UYST": "UYST", "WESZ": "okcidenta eŭropa somera tempo", "MEZ": "centra eŭropa norma tempo", "WEZ": "okcidenta eŭropa norma tempo", "AEST": "orienta aŭstralia norma tempo", "∅∅∅": "∅∅∅", "OESZ": "orienta eŭropa somera tempo", "AWST": "okcidenta aŭstralia norma tempo", "WARST": "WARST", "CLST": "CLST", "COST": "COST", "AST": "atlantika nord-amerika norma tempo", "HAST": "HAST", "WAST": "okcidenta afrika somera tempo", "WIT": "orienta indonezia tempo", "AKDT": "AKDT", "CST": "centra nord-amerika norma tempo", "CLT": "CLT", "HKST": "HKST", "ART": "ART", "JDT": "japana somera tempo", "EDT": "orienta nord-amerika somera tempo", "LHDT": "LHDT", "CHADT": "CHADT", "ACWDT": "centrokcidenta aŭstralia somera tempo"},
 	}
 }
 
@@ -239,7 +239,7 @@ func (eo *eo_001) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (eo *eo_001) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + len(eo.decimal)
+	l := len(s) + 5
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -273,7 +273,7 @@ func (eo *eo_001) FmtCurrency(num float64, v uint64, currency currency.Type) str
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eo.currencies[currency]
-	l := len(s) + len(eo.decimal)
+	l := len(s) + len(symbol) + 7
 
 	b := make([]byte, 0, l)
 
@@ -317,7 +317,7 @@ func (eo *eo_001) FmtAccounting(num float64, v uint64, currency currency.Type) s
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := eo.currencies[currency]
-	l := len(s) + len(eo.decimal)
+	l := len(s) + len(symbol) + 7
 
 	b := make([]byte, 0, l)
 
