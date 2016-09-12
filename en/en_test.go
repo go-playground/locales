@@ -4,8 +4,229 @@ import (
 	"testing"
 	"time"
 
+	"github.com/go-playground/locales"
 	"github.com/go-playground/locales/currency"
 )
+
+func TestLocale(t *testing.T) {
+
+	trans := New()
+	expected := "en"
+
+	if trans.Locale() != expected {
+		t.Errorf("Expected '%s' Got '%s'", expected, trans.Locale())
+	}
+}
+
+func TestPluralsRange(t *testing.T) {
+
+	trans := New()
+
+	tests := []struct {
+		expected locales.PluralRule
+	}{
+		{
+			expected: locales.PluralRuleOther,
+		},
+	}
+
+	rules := trans.PluralsRange()
+	expected := 1
+	if len(rules) != expected {
+		t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
+	}
+
+	for _, tt := range tests {
+
+		r := locales.PluralRuleUnknown
+
+		for i := 0; i < len(rules); i++ {
+			if rules[i] == tt.expected {
+				r = rules[i]
+				break
+			}
+		}
+		if r == locales.PluralRuleUnknown {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, r)
+		}
+	}
+}
+
+func TestPluralsOrdinal(t *testing.T) {
+
+	trans := New()
+
+	tests := []struct {
+		expected locales.PluralRule
+	}{
+		{
+			expected: locales.PluralRuleOne,
+		},
+		{
+			expected: locales.PluralRuleTwo,
+		},
+		{
+			expected: locales.PluralRuleFew,
+		},
+		{
+			expected: locales.PluralRuleOther,
+		},
+	}
+
+	rules := trans.PluralsOrdinal()
+	expected := 4
+	if len(rules) != expected {
+		t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
+	}
+
+	for _, tt := range tests {
+
+		r := locales.PluralRuleUnknown
+
+		for i := 0; i < len(rules); i++ {
+			if rules[i] == tt.expected {
+				r = rules[i]
+				break
+			}
+		}
+		if r == locales.PluralRuleUnknown {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, r)
+		}
+	}
+}
+
+func TestPluralsCardinal(t *testing.T) {
+
+	trans := New()
+
+	tests := []struct {
+		expected locales.PluralRule
+	}{
+		{
+			expected: locales.PluralRuleOne,
+		},
+		{
+			expected: locales.PluralRuleOther,
+		},
+	}
+
+	rules := trans.PluralsCardinal()
+	expected := 2
+	if len(rules) != expected {
+		t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
+	}
+
+	for _, tt := range tests {
+
+		r := locales.PluralRuleUnknown
+
+		for i := 0; i < len(rules); i++ {
+			if rules[i] == tt.expected {
+				r = rules[i]
+				break
+			}
+		}
+		if r == locales.PluralRuleUnknown {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, r)
+		}
+	}
+}
+
+func TestRangePlurals(t *testing.T) {
+
+	trans := New()
+
+	tests := []struct {
+		num1     float64
+		v1       uint64
+		num2     float64
+		v2       uint64
+		expected locales.PluralRule
+	}{
+		{
+			num1:     1,
+			v1:       1,
+			num2:     2,
+			v2:       2,
+			expected: locales.PluralRuleOther,
+		},
+	}
+
+	for _, tt := range tests {
+		rule := trans.RangePluralRule(tt.num1, tt.v1, tt.num2, tt.v2)
+		if rule != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, rule)
+		}
+	}
+}
+
+func TestOrdinalPlurals(t *testing.T) {
+
+	trans := New()
+
+	tests := []struct {
+		num      float64
+		v        uint64
+		expected locales.PluralRule
+	}{
+		{
+			num:      1,
+			v:        0,
+			expected: locales.PluralRuleOne,
+		},
+		{
+			num:      2,
+			v:        0,
+			expected: locales.PluralRuleTwo,
+		},
+		{
+			num:      3,
+			v:        0,
+			expected: locales.PluralRuleFew,
+		},
+		{
+			num:      4,
+			v:        0,
+			expected: locales.PluralRuleOther,
+		},
+	}
+
+	for _, tt := range tests {
+		rule := trans.OrdinalPluralRule(tt.num, tt.v)
+		if rule != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, rule)
+		}
+	}
+}
+
+func TestCardinalPlurals(t *testing.T) {
+
+	trans := New()
+
+	tests := []struct {
+		num      float64
+		v        uint64
+		expected locales.PluralRule
+	}{
+		{
+			num:      1,
+			v:        0,
+			expected: locales.PluralRuleOne,
+		},
+		{
+			num:      4,
+			v:        0,
+			expected: locales.PluralRuleOther,
+		},
+	}
+
+	for _, tt := range tests {
+		rule := trans.CardinalPluralRule(tt.num, tt.v)
+		if rule != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, rule)
+		}
+	}
+}
 
 func TestDaysAbbreviated(t *testing.T) {
 
@@ -445,12 +666,14 @@ func TestMonthsWide(t *testing.T) {
 	}
 }
 
-func TestFullTime(t *testing.T) {
+func TestFmtTimeFull(t *testing.T) {
 
 	loc, err := time.LoadLocation("America/Toronto")
 	if err != nil {
 		t.Errorf("Expected '<nil>' Got '%s'", err)
 	}
+
+	fixed := time.FixedZone("OTHER", -4)
 
 	tests := []struct {
 		t        time.Time
@@ -459,6 +682,10 @@ func TestFullTime(t *testing.T) {
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
 			expected: "9:05:01 am Eastern Standard Time",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, fixed),
+			expected: "8:05:01 pm OTHER",
 		},
 	}
 
@@ -472,7 +699,7 @@ func TestFullTime(t *testing.T) {
 	}
 }
 
-func TestLongTime(t *testing.T) {
+func TestFmtTimeLong(t *testing.T) {
 
 	loc, err := time.LoadLocation("America/Toronto")
 	if err != nil {
@@ -487,6 +714,10 @@ func TestLongTime(t *testing.T) {
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
 			expected: "9:05:01 am EST",
 		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
+			expected: "8:05:01 pm EST",
+		},
 	}
 
 	trans := New()
@@ -499,7 +730,7 @@ func TestLongTime(t *testing.T) {
 	}
 }
 
-func TestMediumTime(t *testing.T) {
+func TestFmtTimeMedium(t *testing.T) {
 
 	tests := []struct {
 		t        time.Time
@@ -508,6 +739,10 @@ func TestMediumTime(t *testing.T) {
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
 			expected: "9:05:01 am",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
+			expected: "8:05:01 pm",
 		},
 	}
 
@@ -521,7 +756,7 @@ func TestMediumTime(t *testing.T) {
 	}
 }
 
-func TestShortTime(t *testing.T) {
+func TestFmtTimeShort(t *testing.T) {
 
 	tests := []struct {
 		t        time.Time
@@ -530,6 +765,10 @@ func TestShortTime(t *testing.T) {
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
 			expected: "9:05 am",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
+			expected: "8:05 pm",
 		},
 	}
 
@@ -543,7 +782,7 @@ func TestShortTime(t *testing.T) {
 	}
 }
 
-func TestFullDate(t *testing.T) {
+func TestFmtDateFull(t *testing.T) {
 
 	tests := []struct {
 		t        time.Time
@@ -565,7 +804,7 @@ func TestFullDate(t *testing.T) {
 	}
 }
 
-func TestLongDate(t *testing.T) {
+func TestFmtDateLong(t *testing.T) {
 
 	tests := []struct {
 		t        time.Time
@@ -587,7 +826,7 @@ func TestLongDate(t *testing.T) {
 	}
 }
 
-func TestMediumDate(t *testing.T) {
+func TestFmtDateMedium(t *testing.T) {
 
 	tests := []struct {
 		t        time.Time
@@ -609,7 +848,7 @@ func TestMediumDate(t *testing.T) {
 	}
 }
 
-func TestShortDate(t *testing.T) {
+func TestFmtDateShort(t *testing.T) {
 
 	tests := []struct {
 		t        time.Time
@@ -618,6 +857,10 @@ func TestShortDate(t *testing.T) {
 		{
 			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
 			expected: "2/3/16",
+		},
+		{
+			t:        time.Date(-500, 02, 03, 9, 0, 1, 0, time.UTC),
+			expected: "2/3/500",
 		},
 	}
 
@@ -631,7 +874,66 @@ func TestShortDate(t *testing.T) {
 	}
 }
 
-func TestCurrency(t *testing.T) {
+func TestFmtNumber(t *testing.T) {
+
+	tests := []struct {
+		num      float64
+		v        uint64
+		expected string
+	}{
+		{
+			num:      1123456.5643,
+			v:        2,
+			expected: "1,123,456.56",
+		},
+		{
+			num:      1123456.5643,
+			v:        1,
+			expected: "1,123,456.6",
+		},
+		{
+			num:      221123456.5643,
+			v:        3,
+			expected: "221,123,456.564",
+		},
+		{
+			num:      -221123456.5643,
+			v:        3,
+			expected: "-221,123,456.564",
+		},
+		{
+			num:      -221123456.5643,
+			v:        3,
+			expected: "-221,123,456.564",
+		},
+		{
+			num:      0,
+			v:        2,
+			expected: "0.00",
+		},
+		{
+			num:      -0,
+			v:        2,
+			expected: "0.00",
+		},
+		{
+			num:      -0,
+			v:        2,
+			expected: "0.00",
+		},
+	}
+
+	trans := New()
+
+	for _, tt := range tests {
+		s := trans.FmtNumber(tt.num, tt.v)
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
+}
+
+func TestFmtCurrency(t *testing.T) {
 
 	tests := []struct {
 		num      float64
@@ -687,6 +989,12 @@ func TestCurrency(t *testing.T) {
 			currency: currency.CAD,
 			expected: "CAD 0.00",
 		},
+		{
+			num:      1.23,
+			v:        0,
+			currency: currency.USD,
+			expected: "$1.00",
+		},
 	}
 
 	trans := New()
@@ -699,7 +1007,7 @@ func TestCurrency(t *testing.T) {
 	}
 }
 
-func TestAccounting(t *testing.T) {
+func TestFmtAccounting(t *testing.T) {
 
 	tests := []struct {
 		num      float64
@@ -749,12 +1057,62 @@ func TestAccounting(t *testing.T) {
 			currency: currency.CAD,
 			expected: "CAD 0.00",
 		},
+		{
+			num:      1.23,
+			v:        0,
+			currency: currency.USD,
+			expected: "$1.00",
+		},
 	}
 
 	trans := New()
 
 	for _, tt := range tests {
 		s := trans.FmtAccounting(tt.num, tt.v, tt.currency)
+		if s != tt.expected {
+			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
+		}
+	}
+}
+
+func TestFmtPercent(t *testing.T) {
+
+	tests := []struct {
+		num      float64
+		v        uint64
+		expected string
+	}{
+		{
+			num:      15,
+			v:        0,
+			expected: "15%",
+		},
+		{
+			num:      15,
+			v:        2,
+			expected: "15.00%",
+		},
+		{
+			num:      434.45,
+			v:        0,
+			expected: "434%",
+		},
+		{
+			num:      34.4,
+			v:        2,
+			expected: "34.40%",
+		},
+		{
+			num:      -34,
+			v:        0,
+			expected: "-34%",
+		},
+	}
+
+	trans := New()
+
+	for _, tt := range tests {
+		s := trans.FmtPercent(tt.num, tt.v)
 		if s != tt.expected {
 			t.Errorf("Expected '%s' Got '%s'", tt.expected, s)
 		}
