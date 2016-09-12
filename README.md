@@ -1,6 +1,6 @@
 ## locales
 <img align="right" src="https://raw.githubusercontent.com/go-playground/locales/master/logo.png">
-![Project status](https://img.shields.io/badge/version-0.9.1-green.svg)
+![Project status](https://img.shields.io/badge/version-0.10.0-green.svg)
 [![Build Status](https://semaphoreci.com/api/v1/joeybloggs/locales/branches/master/badge.svg)](https://semaphoreci.com/joeybloggs/locales)
 [![Coverage Status](https://coveralls.io/repos/github/go-playground/locales/badge.svg?branch=master)](https://coveralls.io/github/go-playground/locales?branch=master)
 [![GoDoc](https://godoc.org/github.com/go-playground/locales?status.svg)](https://godoc.org/github.com/go-playground/locales)

@@ -274,6 +274,37 @@ func main() {
 		if err = cmd.Run(); err != nil {
 			log.Panic(err)
 		}
+
+		filename = fmt.Sprintf(locFilename, trans.Locale, trans.Locale+"_test")
+
+		if _, err := os.Stat(filename); err == nil {
+			fmt.Println("*************** test file exists, skipping:", filename)
+			continue
+		}
+
+		output, err = os.Create(filename)
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer output.Close()
+
+		if err := tmpl.ExecuteTemplate(output, "tests", trans); err != nil {
+			log.Fatal(err)
+		}
+
+		output.Close()
+
+		// after file written run gofmt on file to ensure best formatting
+		cmd = exec.Command("goimports", "-w", filename)
+		if err = cmd.Run(); err != nil {
+			log.Panic(err)
+		}
+
+		// this simplifies some syntax that I can;t find an option for in goimports, namely '-s'
+		cmd = exec.Command("gofmt", "-s", "-w", filename)
+		if err = cmd.Run(); err != nil {
+			log.Panic(err)
+		}
 	}
 }
 

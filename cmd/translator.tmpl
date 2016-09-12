@@ -193,7 +193,11 @@ func({{ .BaseLocale }} *{{ .Locale }}) MonthAbbreviated(month time.Month) string
 
 // MonthsAbbreviated returns the locales abbreviated months
 func({{ .BaseLocale }} *{{ .Locale }}) MonthsAbbreviated() []string {
+	{{- if gt (len .FmtMonthsAbbreviated) 0 }}
 	return {{ .BaseLocale }}.monthsAbbreviated[1:]
+	{{ else }}
+	return nil
+	{{- end -}}
 }
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
@@ -203,7 +207,11 @@ func({{ .BaseLocale }} *{{ .Locale }}) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func({{ .BaseLocale }} *{{ .Locale }}) MonthsNarrow() []string {
+	{{- if gt (len .FmtMonthsNarrow) 0 }}
 	return {{ .BaseLocale }}.monthsNarrow[1:]
+	{{ else }}
+	return nil
+	{{- end -}}
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
@@ -213,7 +221,11 @@ func({{ .BaseLocale }} *{{ .Locale }}) MonthWide(month time.Month) string {
 
 // MonthsWide returns the locales wide months
 func({{ .BaseLocale }} *{{ .Locale }}) MonthsWide() []string {
+	{{- if gt (len .FmtMonthsWide) 0 }}
 	return {{ .BaseLocale }}.monthsWide[1:]
+	{{ else }}
+	return nil
+	{{- end -}}
 }
 
 // WeekdayAbbreviated returns the locales abbreviated weekday given the 'weekday' provided

@@ -56,7 +56,7 @@ func New() locales.Translator {
 		currencyNegativeSuffix: ")",
 		monthsWide:             []string{"", "ꖨꕪꖃ ꔞꕮ", "ꕒꕡꖝꖕ", "ꕾꖺ", "ꖢꖕ", "ꖑꕱ", "6", "7", "ꗛꔕ", "ꕢꕌ", "ꕭꖃ", "ꔞꘋꕔꕿ ꕸꖃꗏ", "ꖨꕪꕱ ꗏꕮ"},
 		daysWide:               []string{"ꕞꕌꔵ", "ꗳꗡꘉ", "ꕚꕞꕚ", "ꕉꕞꕒ", "ꕉꔤꕆꕢ", "ꕉꔤꕀꕮ", "ꔻꔬꔳ"},
-		timezones:              map[string]string{"WEZ": "WEZ", "COT": "COT", "COST": "COST", "EDT": "EDT", "EAT": "EAT", "CHAST": "CHAST", "UYT": "UYT", "AEST": "AEST", "WIB": "WIB", "NZST": "NZST", "AKDT": "AKDT", "PDT": "PDT", "MESZ": "MESZ", "SGT": "SGT", "ACDT": "ACDT", "GMT": "GMT", "HNT": "HNT", "GYT": "GYT", "∅∅∅": "∅∅∅", "ADT": "ADT", "JDT": "JDT", "NZDT": "NZDT", "MEZ": "MEZ", "TMST": "TMST", "MYT": "MYT", "ACWST": "ACWST", "ACWDT": "ACWDT", "CAT": "CAT", "HAST": "HAST", "CST": "CST", "WITA": "WITA", "MST": "MST", "AWDT": "AWDT", "HKT": "HKT", "HKST": "HKST", "WIT": "WIT", "CHADT": "CHADT", "AWST": "AWST", "LHDT": "LHDT", "CLT": "CLT", "IST": "IST", "ACST": "ACST", "WAT": "WAT", "HAT": "HAT", "ART": "ART", "JST": "JST", "PST": "PST", "CDT": "CDT", "HADT": "HADT", "SAST": "SAST", "WARST": "WARST", "GFT": "GFT", "OEZ": "OEZ", "ARST": "ARST", "TMT": "TMT", "BT": "BT", "WART": "WART", "VET": "VET", "ChST": "ChST", "ECT": "ECT", "AKST": "AKST", "UYST": "UYST", "OESZ": "OESZ", "MDT": "MDT", "SRT": "SRT", "AST": "AST", "WAST": "WAST", "AEDT": "AEDT", "CLST": "CLST", "WESZ": "WESZ", "EST": "EST", "LHST": "LHST", "BOT": "BOT"},
+		timezones:              map[string]string{"WARST": "WARST", "CHAST": "CHAST", "PST": "PST", "WIB": "WIB", "WITA": "WITA", "GMT": "GMT", "MYT": "MYT", "UYT": "UYT", "WIT": "WIT", "GFT": "GFT", "HKT": "HKT", "HKST": "HKST", "IST": "IST", "TMT": "TMT", "OEZ": "OEZ", "AEDT": "AEDT", "MST": "MST", "MDT": "MDT", "ART": "ART", "EST": "EST", "EAT": "EAT", "LHDT": "LHDT", "AKST": "AKST", "JDT": "JDT", "WAT": "WAT", "COST": "COST", "ACWST": "ACWST", "NZST": "NZST", "HNT": "HNT", "AEST": "AEST", "CST": "CST", "ACDT": "ACDT", "HADT": "HADT", "TMST": "TMST", "VET": "VET", "ACWDT": "ACWDT", "PDT": "PDT", "BOT": "BOT", "HAT": "HAT", "∅∅∅": "∅∅∅", "EDT": "EDT", "CLT": "CLT", "MEZ": "MEZ", "UYST": "UYST", "CDT": "CDT", "ECT": "ECT", "AWDT": "AWDT", "COT": "COT", "ChST": "ChST", "GYT": "GYT", "SRT": "SRT", "ARST": "ARST", "NZDT": "NZDT", "WEZ": "WEZ", "CHADT": "CHADT", "AKDT": "AKDT", "ADT": "ADT", "SAST": "SAST", "SGT": "SGT", "BT": "BT", "CLST": "CLST", "AWST": "AWST", "JST": "JST", "HAST": "HAST", "CAT": "CAT", "WAST": "WAST", "LHST": "LHST", "ACST": "ACST", "WART": "WART", "AST": "AST", "MESZ": "MESZ", "WESZ": "WESZ", "OESZ": "OESZ"},
 	}
 }
 
@@ -102,7 +102,7 @@ func (vai *vai_Vaii_LR) MonthAbbreviated(month time.Month) string {
 
 // MonthsAbbreviated returns the locales abbreviated months
 func (vai *vai_Vaii_LR) MonthsAbbreviated() []string {
-	return vai.monthsAbbreviated[1:]
+	return nil
 }
 
 // MonthNarrow returns the locales narrow month given the 'month' provided
@@ -112,7 +112,7 @@ func (vai *vai_Vaii_LR) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (vai *vai_Vaii_LR) MonthsNarrow() []string {
-	return vai.monthsNarrow[1:]
+	return nil
 }
 
 // MonthWide returns the locales wide month given the 'month' provided

@@ -61,7 +61,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"T.K.", "A.K."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Tupu Kristi", "Afọ Kristi"},
-		timezones:              map[string]string{"CDT": "CDT", "WESZ": "WESZ", "CHADT": "CHADT", "PDT": "PDT", "CLT": "CLT", "CHAST": "CHAST", "COT": "COT", "HKT": "HKT", "IST": "IST", "∅∅∅": "∅∅∅", "SRT": "SRT", "AWDT": "AWDT", "HAST": "HAST", "HADT": "HADT", "WAST": "WAST", "WIT": "WIT", "EST": "EST", "ECT": "ECT", "WIB": "WIB", "MST": "MST", "MESZ": "MESZ", "SGT": "SGT", "HKST": "HKST", "GMT": "GMT", "LHST": "LHST", "GYT": "GYT", "AEST": "AEST", "ChST": "ChST", "WARST": "WARST", "OESZ": "OESZ", "WITA": "WITA", "TMT": "TMT", "AKDT": "AKDT", "WEZ": "WEZ", "SAST": "SAST", "BT": "BT", "HAT": "HAT", "ADT": "ADT", "WAT": "WAT", "OEZ": "OEZ", "EAT": "EAT", "TMST": "TMST", "CAT": "CAT", "WART": "WART", "ARST": "ARST", "CST": "CST", "MDT": "MDT", "EDT": "EDT", "ACST": "ACST", "JDT": "JDT", "AWST": "AWST", "AST": "AST", "GFT": "GFT", "ACDT": "ACDT", "ART": "ART", "NZDT": "NZDT", "CLST": "CLST", "AEDT": "AEDT", "PST": "PST", "MYT": "MYT", "NZST": "NZST", "BOT": "BOT", "VET": "VET", "HNT": "HNT", "JST": "JST", "AKST": "AKST", "LHDT": "LHDT", "MEZ": "MEZ", "UYT": "UYT", "UYST": "UYST", "ACWST": "ACWST", "ACWDT": "ACWDT", "COST": "COST"},
+		timezones:              map[string]string{"WIB": "WIB", "TMST": "TMST", "CAT": "CAT", "EAT": "EAT", "CST": "CST", "∅∅∅": "∅∅∅", "AST": "AST", "HAST": "HAST", "AWDT": "AWDT", "ART": "ART", "EDT": "EDT", "PDT": "PDT", "UYST": "UYST", "HKT": "HKT", "ACWST": "ACWST", "AWST": "AWST", "SRT": "SRT", "CLT": "CLT", "ACDT": "ACDT", "LHDT": "LHDT", "SAST": "SAST", "COST": "COST", "GYT": "GYT", "WESZ": "WESZ", "SGT": "SGT", "CDT": "CDT", "CHADT": "CHADT", "PST": "PST", "WAST": "WAST", "EST": "EST", "HAT": "HAT", "CLST": "CLST", "WART": "WART", "WARST": "WARST", "ARST": "ARST", "NZST": "NZST", "BOT": "BOT", "AEST": "AEST", "BT": "BT", "ECT": "ECT", "VET": "VET", "TMT": "TMT", "ADT": "ADT", "GMT": "GMT", "AEDT": "AEDT", "WIT": "WIT", "HNT": "HNT", "LHST": "LHST", "ACWDT": "ACWDT", "IST": "IST", "WEZ": "WEZ", "NZDT": "NZDT", "MESZ": "MESZ", "OEZ": "OEZ", "OESZ": "OESZ", "MYT": "MYT", "GFT": "GFT", "MST": "MST", "AKDT": "AKDT", "MDT": "MDT", "JDT": "JDT", "AKST": "AKST", "COT": "COT", "ChST": "ChST", "HKST": "HKST", "JST": "JST", "MEZ": "MEZ", "UYT": "UYT", "CHAST": "CHAST", "HADT": "HADT", "ACST": "ACST", "WITA": "WITA", "WAT": "WAT"},
 	}
 }
 
@@ -117,7 +117,7 @@ func (ig *ig) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (ig *ig) MonthsNarrow() []string {
-	return ig.monthsNarrow[1:]
+	return nil
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
