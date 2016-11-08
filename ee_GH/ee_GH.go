@@ -49,7 +49,7 @@ func New() locales.Translator {
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
 		timeSeparator:          ":",
-		currencies:             []string{"ADP ", "AED ", "AFA ", "AFN ", "ALK ", "ALL ", "AMD ", "ANG ", "AOA ", "AOK ", "AON ", "AOR ", "ARA ", "ARL ", "ARM ", "ARP ", "ARS ", "ATS ", "AUD ", "AWG ", "AZM ", "AZN ", "BAD ", "BAM ", "BAN ", "BBD ", "BDT ", "BEC ", "BEF ", "BEL ", "BGL ", "BGM ", "BGN ", "BGO ", "BHD ", "BIF ", "BMD ", "BND ", "BOB ", "BOL ", "BOP ", "BOV ", "BRB ", "BRC ", "BRE ", "BRL ", "BRN ", "BRR ", "BRZ ", "BSD ", "BTN ", "BUK ", "BWP ", "BYB ", "BYR ", "BZD ", "CAD ", "CDF ", "CHE ", "CHF ", "CHW ", "CLE ", "CLF ", "CLP ", "CNX ", "CNY ", "COP ", "COU ", "CRC ", "CSD ", "CSK ", "CUC ", "CUP ", "CVE ", "CYP ", "CZK ", "DDM ", "DEM ", "DJF ", "DKK ", "DOP ", "DZD ", "ECS ", "ECV ", "EEK ", "EGP ", "ERN ", "ESA ", "ESB ", "ESP ", "ETB ", "EUR ", "FIM ", "FJD ", "FKP ", "FRF ", "GBP ", "GEK ", "GEL ", "GHC ", "GHS ", "GIP ", "GMD ", "GNF ", "GNS ", "GQE ", "GRD ", "GTQ ", "GWE ", "GWP ", "GYD ", "HKD ", "HNL ", "HRD ", "HRK ", "HTG ", "HUF ", "IDR ", "IEP ", "ILP ", "ILR ", "ILS ", "INR ", "IQD ", "IRR ", "ISJ ", "ISK ", "ITL ", "JMD ", "JOD ", "JPY ", "KES ", "KGS ", "KHR ", "KMF ", "KPW ", "KRH ", "KRO ", "KRW ", "KWD ", "KYD ", "KZT ", "LAK ", "LBP ", "LKR ", "LRD ", "LSL ", "LTL ", "LTT ", "LUC ", "LUF ", "LUL ", "LVL ", "LVR ", "LYD ", "MAD ", "MAF ", "MCF ", "MDC ", "MDL ", "MGA ", "MGF ", "MKD ", "MKN ", "MLF ", "MMK ", "MNT ", "MOP ", "MRO ", "MTL ", "MTP ", "MUR ", "MVP ", "MVR ", "MWK ", "MXN ", "MXP ", "MXV ", "MYR ", "MZE ", "MZM ", "MZN ", "NAD ", "NGN ", "NIC ", "NIO ", "NLG ", "NOK ", "NPR ", "NZD ", "OMR ", "PAB ", "PEI ", "PEN ", "PES ", "PGK ", "PHP ", "PKR ", "PLN ", "PLZ ", "PTE ", "PYG ", "QAR ", "RHD ", "ROL ", "RON ", "RSD ", "RUB ", "RUR ", "RWF ", "SAR ", "SBD ", "SCR ", "SDD ", "SDG ", "SDP ", "SEK ", "SGD ", "SHP ", "SIT ", "SKK ", "SLL ", "SOS ", "SRD ", "SRG ", "SSP ", "STD ", "SUR ", "SVC ", "SYP ", "SZL ", "THB ", "TJR ", "TJS ", "TMM ", "TMT ", "TND ", "TOP ", "TPE ", "TRL ", "TRY ", "TTD ", "TWD ", "TZS ", "UAH ", "UAK ", "UGS ", "UGX ", "USD ", "USN ", "USS ", "UYI ", "UYP ", "UYU ", "UZS ", "VEB ", "VEF ", "VND ", "VNN ", "VUV ", "WST ", "XAF ", "XAG ", "XAU ", "XBA ", "XBB ", "XBC ", "XBD ", "XCD ", "XDR ", "XEU ", "XFO ", "XFU ", "XOF ", "XPD ", "XPF ", "XPT ", "XRE ", "XSU ", "XTS ", "XUA ", "XXX ", "YDD ", "YER ", "YUD ", "YUM ", "YUN ", "YUR ", "ZAL ", "ZAR ", "ZMK ", "ZMW ", "ZRN ", "ZRZ ", "ZWD ", "ZWL ", "ZWR "},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "dzv", "dzd", "ted", "afɔ", "dam", "mas", "sia", "dea", "any", "kel", "ade", "dzm"},
@@ -65,7 +65,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"hY", "Yŋ"},
 		erasNarrow:             []string{"hY", "Yŋ"},
 		erasWide:               []string{"Hafi Yesu Va Do ŋgɔ", "Yesu Ŋɔli"},
-		timezones:              map[string]string{"WAST": "Ɣetoɖoƒe Africa ŋkekeme gaƒoƒome", "GMT": "Greenwich gaƒoƒome", "HKT": "Hɔng Kɔng gaƒoƒoɖoanyi me", "ART": "Argentina gaƒoƒoɖoanyime", "SAST": "Anyiehe Africa gaƒoƒome", "IST": "IST", "WEZ": "Ɣetoɖoƒe Europe gaƒoƒoɖoanyime", "AEDT": "Ɣedzeƒe Australia ŋkekeme gaƒoƒome", "UYST": "Uruguai dzomeŋɔli gaƒoƒome", "BT": "BT", "WESZ": "Ɣetoɖoƒe Europe ŋkekeme gaƒoƒome", "LHDT": "LHDT", "ADT": "Atlantic ŋkekeme gaƒoƒome", "JDT": "Japan ŋkekeme gaƒoƒome", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "MDT": "America Todzidukɔwo ƒe ŋkekme gaƒoƒome", "MYT": "MYT", "JST": "Japan gaƒoƒoɖanyime", "MESZ": "Titina Europe ŋkekeme gaƒoƒome", "EAT": "Ɣedzeƒe Africa gaƒoƒome", "CST": "Titina America gaƒoƒoɖoanyime", "EST": "Ɣedzeƒe America gaƒoƒoɖoanyime", "PST": "Pacific gaƒoƒoɖoanyime", "HKST": "Hɔng Kɔng dzomeŋɔli gaƒoƒome", "HAST": "Hawaii-Aleutia gaƒoƒoɖoanyime", "NZST": "NZST", "GYT": "Gayana gaƒoƒome", "UYT": "Uruguai gaƒoƒoɖoanyime", "ACST": "Titina Australia gaƒoƒoɖoanyime", "ECT": "Ikuedɔ dzomeŋɔli gaƒoƒome", "LHST": "LHST", "ARST": "Argentina dzomeŋɔli gaƒoƒome", "AST": "Atlantic gaƒoƒoɖoanyime", "BOT": "Bolivia gaƒoƒome", "WITA": "WITA", "PDT": "Pacific ŋkekme gaƒoƒome", "HAT": "Niufaunɖlanɖ ŋkekeme gaƒoƒome", "COT": "Kolombia gaƒoƒoɖoanyime", "TMT": "Tɛkmenistan gaƒoƒoɖoanyime", "ACDT": "Titina Australia ŋkekeme gaƒoƒome", "AWDT": "Ɣetoɖoƒe Australia ŋkekeme gaƒoƒome", "COST": "Kolombia dzomeŋɔli gaƒoƒome", "CDT": "Titina America ŋkekeme gaƒoƒome", "CHAST": "CHAST", "ACWDT": "Australia ɣetoɖofe ŋkekeme gaƒoƒome", "MST": "America Todzidukɔwo ƒe gaƒoƒoɖoanyime", "GFT": "Frentsi Guiana gaƒoƒome", "AKST": "Alaska gaƒoƒoɖoanyime", "NZDT": "NZDT", "HNT": "Niufaunɖlanɖ gaƒoƒoɖoanyime", "WIT": "WIT", "VET": "Venezuela gaƒoƒome", "AKDT": "Alaska ŋkekeme gaƒoƒome", "HADT": "Hawaii-Aleutia ŋkekeme gaƒoƒome", "AEST": "Ɣedzeƒe Australia gaƒoƒoɖoanyime", "CLT": "Tsile gaƒoƒoɖoanyime", "CHADT": "CHADT", "MEZ": "Titina Europe gaƒoƒoɖoanyime", "ACWST": "Australia ɣetoɖofe gaƒoƒoɖoanyime", "AWST": "Ɣetoɖoƒe Australia gaƒoƒoɖoanyime", "EDT": "Ɣedzeƒe America ŋkekeme gaƒoƒome", "SGT": "SGT", "WIB": "WIB", "TMST": "Tɛkmenistan dzomeŋɔli gaƒoƒome", "CLST": "Tsile dzomeŋɔli gaƒoƒome", "∅∅∅": "Brasilia dzomeŋɔli gaƒoƒome", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒome", "SRT": "Suriname gaƒoƒome", "WART": "Ɣetoɖoƒe Argentina gaƒoƒoɖoanyime", "CAT": "Titina Afrika gaƒoƒome", "WAT": "Ɣetoɖoƒe Afrika gaƒoƒoɖoanyime", "ChST": "ChST", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime"},
+		timezones:              map[string]string{"EAT": "Ɣedzeƒe Africa gaƒoƒome", "LHST": "LHST", "BOT": "Bolivia gaƒoƒome", "JDT": "Japan ŋkekeme gaƒoƒome", "ECT": "Ikuedɔ dzomeŋɔli gaƒoƒome", "BT": "BT", "HKST": "Hɔng Kɔng dzomeŋɔli gaƒoƒome", "ARST": "Argentina dzomeŋɔli gaƒoƒome", "MDT": "America Todzidukɔwo ƒe ŋkekme gaƒoƒome", "COT": "Kolombia gaƒoƒoɖoanyime", "TMT": "Tɛkmenistan gaƒoƒoɖoanyime", "EDT": "Ɣedzeƒe America ŋkekeme gaƒoƒome", "AWST": "Ɣetoɖoƒe Australia gaƒoƒoɖoanyime", "AEST": "Ɣedzeƒe Australia gaƒoƒoɖoanyime", "WIB": "WIB", "PDT": "Pacific ŋkekme gaƒoƒome", "NZST": "NZST", "WARST": "Ɣetoɖoƒe Argentina dzomeŋɔli gaƒoƒome", "WIT": "WIT", "∅∅∅": "Peru dzomeŋɔli gaƒoƒome", "JST": "Japan gaƒoƒoɖanyime", "TMST": "Tɛkmenistan dzomeŋɔli gaƒoƒome", "AWDT": "Ɣetoɖoƒe Australia ŋkekeme gaƒoƒome", "GYT": "Gayana gaƒoƒome", "CHAST": "CHAST", "GMT": "Greenwich gaƒoƒome", "WITA": "WITA", "MYT": "MYT", "ChST": "ChST", "ACWST": "Australia ɣetoɖofe gaƒoƒoɖoanyime", "HAT": "Niufaunɖlanɖ ŋkekeme gaƒoƒome", "VET": "Venezuela gaƒoƒome", "WESZ": "Ɣetoɖoƒe Europe ŋkekeme gaƒoƒome", "CLST": "Tsile dzomeŋɔli gaƒoƒome", "OEZ": "Ɣedzeƒe Europe gaƒoƒoɖoanyime", "CDT": "Titina America ŋkekeme gaƒoƒome", "HKT": "Hɔng Kɔng gaƒoƒoɖoanyi me", "COST": "Kolombia dzomeŋɔli gaƒoƒome", "AEDT": "Ɣedzeƒe Australia ŋkekeme gaƒoƒome", "WART": "Ɣetoɖoƒe Argentina gaƒoƒoɖoanyime", "CST": "Titina America gaƒoƒoɖoanyime", "UYST": "Uruguai dzomeŋɔli gaƒoƒome", "AKST": "Alaska gaƒoƒoɖoanyime", "UYT": "Uruguai gaƒoƒoɖoanyime", "MESZ": "Titina Europe ŋkekeme gaƒoƒome", "GFT": "Frentsi Guiana gaƒoƒome", "SAST": "Anyiehe Africa gaƒoƒome", "HADT": "Hawaii-Aleutia ŋkekeme gaƒoƒome", "ACWDT": "Australia ɣetoɖofe ŋkekeme gaƒoƒome", "HNT": "Niufaunɖlanɖ gaƒoƒoɖoanyime", "ACST": "Titina Australia gaƒoƒoɖoanyime", "PST": "Pacific gaƒoƒoɖoanyime", "NZDT": "NZDT", "IST": "IST", "ART": "Argentina gaƒoƒoɖoanyime", "OESZ": "Ɣedzeƒe Europe ŋkekeme gaƒoƒome", "MST": "America Todzidukɔwo ƒe gaƒoƒoɖoanyime", "EST": "Ɣedzeƒe America gaƒoƒoɖoanyime", "ACDT": "Titina Australia ŋkekeme gaƒoƒome", "CHADT": "CHADT", "HAST": "Hawaii-Aleutia gaƒoƒoɖoanyime", "LHDT": "LHDT", "WAT": "Ɣetoɖoƒe Afrika gaƒoƒoɖoanyime", "WAST": "Ɣetoɖoƒe Africa ŋkekeme gaƒoƒome", "CLT": "Tsile gaƒoƒoɖoanyime", "AST": "Atlantic gaƒoƒoɖoanyime", "MEZ": "Titina Europe gaƒoƒoɖoanyime", "SGT": "SGT", "SRT": "Suriname gaƒoƒome", "CAT": "Titina Afrika gaƒoƒome", "AKDT": "Alaska ŋkekeme gaƒoƒome", "ADT": "Atlantic ŋkekeme gaƒoƒome", "WEZ": "Ɣetoɖoƒe Europe gaƒoƒoɖoanyime"},
 	}
 }
 
@@ -347,8 +347,8 @@ func (ee *ee_GH) FmtDateMedium(t time.Time) string {
 	b = append(b, ee.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x6c, 0x69, 0x61, 0x27, 0x2c, 0x20}...)
+	b = append(b, []byte{0x20, 0x6c, 0x69, 0x61}...)
+	b = append(b, []byte{0x2c, 0x20}...)
 	b = strconv.AppendInt(b, int64(t.Year()), 10)
 
 	return string(b)
@@ -362,8 +362,8 @@ func (ee *ee_GH) FmtDateLong(t time.Time) string {
 	b = append(b, ee.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x6c, 0x69, 0x61, 0x27, 0x20}...)
+	b = append(b, []byte{0x20, 0x6c, 0x69, 0x61}...)
+	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Year()), 10)
 
 	return string(b)
@@ -379,8 +379,8 @@ func (ee *ee_GH) FmtDateFull(t time.Time) string {
 	b = append(b, ee.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x6c, 0x69, 0x61, 0x27, 0x20}...)
+	b = append(b, []byte{0x20, 0x6c, 0x69, 0x61}...)
+	b = append(b, []byte{0x20}...)
 	b = strconv.AppendInt(b, int64(t.Year()), 10)
 
 	return string(b)
@@ -397,8 +397,8 @@ func (ee *ee_GH) FmtTimeShort(t time.Time) string {
 		b = append(b, ee.periodsAbbreviated[1]...)
 	}
 
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x67, 0x61, 0x27, 0x20}...)
+	b = append(b, []byte{0x20, 0x67, 0x61}...)
+	b = append(b, []byte{0x20}...)
 
 	h := t.Hour()
 
@@ -429,8 +429,8 @@ func (ee *ee_GH) FmtTimeMedium(t time.Time) string {
 		b = append(b, ee.periodsAbbreviated[1]...)
 	}
 
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x67, 0x61, 0x27, 0x20}...)
+	b = append(b, []byte{0x20, 0x67, 0x61}...)
+	b = append(b, []byte{0x20}...)
 
 	h := t.Hour()
 
@@ -468,8 +468,8 @@ func (ee *ee_GH) FmtTimeLong(t time.Time) string {
 		b = append(b, ee.periodsAbbreviated[1]...)
 	}
 
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x67, 0x61, 0x27, 0x20}...)
+	b = append(b, []byte{0x20, 0x67, 0x61}...)
+	b = append(b, []byte{0x20}...)
 
 	h := t.Hour()
 
@@ -511,8 +511,8 @@ func (ee *ee_GH) FmtTimeFull(t time.Time) string {
 		b = append(b, ee.periodsAbbreviated[1]...)
 	}
 
-	b = append(b, []byte{}...)
-	b = append(b, []byte{0x27, 0x67, 0x61, 0x27, 0x20}...)
+	b = append(b, []byte{0x20, 0x67, 0x61}...)
+	b = append(b, []byte{0x20}...)
 
 	h := t.Hour()
 

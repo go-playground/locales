@@ -969,7 +969,7 @@ func TestFmtCurrency(t *testing.T) {
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "-CAD 221,123,456.564",
+			expected: "-CAD221,123,456.564",
 		},
 		{
 			num:      0,
@@ -987,7 +987,7 @@ func TestFmtCurrency(t *testing.T) {
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "CAD 0.00",
+			expected: "CAD0.00",
 		},
 		{
 			num:      1.23,
@@ -1043,7 +1043,7 @@ func TestFmtAccounting(t *testing.T) {
 			num:      -221123456.5643,
 			v:        3,
 			currency: currency.CAD,
-			expected: "(CAD 221,123,456.564)",
+			expected: "(CAD221,123,456.564)",
 		},
 		{
 			num:      -0,
@@ -1055,7 +1055,7 @@ func TestFmtAccounting(t *testing.T) {
 			num:      -0,
 			v:        2,
 			currency: currency.CAD,
-			expected: "CAD 0.00",
+			expected: "CAD0.00",
 		},
 		{
 			num:      1.23,

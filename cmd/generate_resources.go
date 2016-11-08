@@ -308,6 +308,13 @@ func main() {
 	}
 }
 
+func ApplyOverrides(trans *translator) {
+
+	if trans.BaseLocale == "ru" {
+		trans.PercentNumberFormat = "#,##0%"
+	}
+}
+
 func postProcess(cldr *cldr.CLDR) {
 
 	for _, v := range timezones {
@@ -533,13 +540,12 @@ func postProcess(cldr *cldr.CLDR) {
 
 		var kval string
 
-		// add a space for readability for non locale specific currencies eg. -USD<space>10,356.45
 		for k, v := range globCurrencyIdxMap {
 
 			kval = k
-			if kval[:len(kval)-1] != " " {
-				kval += " "
-			}
+			// if kval[:len(kval)-1] != " " {
+			// 	kval += " "
+			// }
 
 			currencies[v] = kval
 		}
@@ -589,6 +595,8 @@ func postProcess(cldr *cldr.CLDR) {
 				trans.timezones[k] = v
 			}
 		}
+
+		ApplyOverrides(trans)
 
 		parseDecimalNumberFormat(trans)
 		parsePercentNumberFormat(trans)
@@ -1138,6 +1146,7 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 		case '\'':
 
 			i++
+			startI := i
 
 			// peek to see if ''
 			if len(format) != i && format[i] == '\'' {
@@ -1147,7 +1156,7 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 					results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i-1])) + "...)\n"
 				} else {
 					inConstantText = true
-					start = i - 1
+					start = i
 				}
 
 				continue
@@ -1156,18 +1165,22 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 			// not '' so whatever comes between '' is constant
 
 			if len(format) != i {
-				if inConstantText {
-					// inContantText = false // gonna put us right back in so not setting...
-					results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i-2])) + "...)\n"
-					start = i - 1
-				}
-
-				inConstantText = true
 
 				// advance i to the next single quote + 1
 				for ; i < len(format); i++ {
 					if format[i] == '\'' {
-						// i++
+
+						if inConstantText {
+							inConstantText = false
+							b := []byte(format[start : startI-1])
+							b = append(b, []byte(format[startI:i])...)
+
+							results += "b = append(b, " + fmt.Sprintf("%#v", b) + "...)\n"
+
+						} else {
+							results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[startI:i])) + "...)\n"
+						}
+
 						break
 					}
 				}
@@ -1831,6 +1844,12 @@ func (a ByRank) Len() int           { return len(a) }
 func (a ByRank) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByRank) Less(i, j int) bool { return a[i].Rank < a[j].Rank }
 
+type ByPluralRule []locales.PluralRule
+
+func (a ByPluralRule) Len() int           { return len(a) }
+func (a ByPluralRule) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByPluralRule) Less(i, j int) bool { return a[i] < a[j] }
+
 // TODO: refine generated code a bit, some combinations end up with same plural rule,
 // could check all at once; but it works and that's step 1 complete
 func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
@@ -1924,6 +1943,18 @@ func parseRangePluralRuleFunc(current *cldr.CLDR, baseLocale string) (results st
 	if len(pluralArr) == 0 {
 		plurals = "nil"
 	} else {
+
+		ints := make([]int, len(pluralArr))
+		for i := 0; i < len(pluralArr); i++ {
+			ints[i] = int(pluralArr[i])
+		}
+
+		sort.Ints(ints)
+
+		for i := 0; i < len(ints); i++ {
+			pluralArr[i] = locales.PluralRule(ints[i])
+		}
+
 		plurals = fmt.Sprintf("%#v", pluralArr)
 	}
 
@@ -2077,7 +2108,7 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 								case "==":
 									pre += lft + " >= " + rng[0] + " && " + lft + "<=" + rng[1]
 								case "!=":
-									pre += lft + " < " + rng[0] + " && " + lft + " > " + rng[1]
+									pre += "(" + lft + " < " + rng[0] + " || " + lft + " > " + rng[1] + ")"
 								}
 
 								if multiRange {
@@ -2355,7 +2386,7 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 								case "==":
 									pre += lft + " >= " + rng[0] + " && " + lft + "<=" + rng[1]
 								case "!=":
-									pre += lft + " < " + rng[0] + " && " + lft + " > " + rng[1]
+									pre += "(" + lft + " < " + rng[0] + " || " + lft + " > " + rng[1] + ")"
 								}
 
 								if multiRange {
