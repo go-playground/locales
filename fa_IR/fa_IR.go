@@ -50,6 +50,7 @@ func New() locales.Translator {
 		pluralsRange:           []locales.PluralRule{6},
 		decimal:                "٫",
 		group:                  "٬",
+		minus:                  "‎−",
 		percent:                "٪",
 		perMille:               "؉",
 		timeSeparator:          ":",
@@ -70,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ق.م.", "م."},
 		erasNarrow:             []string{"ق", "م"},
 		erasWide:               []string{"قبل از میلاد", "میلادی"},
-		timezones:              map[string]string{"HADT": "وقت تابستانی هاوایی‐الوشن", "TMST": "وقت تابستانی ترکمنستان", "MST": "وقت عادی ماکائو", "HAT": "وقت تابستانی نیوفاندلند", "HNT": "وقت عادی نیوفاندلند", "WIT": "وقت شرق اندونزی", "AKDT": "وقت تابستانی آلاسکا", "ART": "وقت عادی آرژانتین", "IST": "وقت هند", "CLST": "وقت تابستانی شیلی", "ChST": "وقت عادی چامورو", "AEDT": "وقت تابستانی شرق استرالیا", "HAST": "وقت عادی هاوایی‐الوشن", "VET": "وقت ونزوئلا", "HKST": "وقت تابستانی هنگ\u200cکنگ", "AWDT": "وقت تابستانی غرب استرالیا", "CLT": "وقت عادی شیلی", "UYST": "وقت تابستانی اروگوئه", "NZDT": "وقت تابستانی زلاند نو", "ACDT": "وقت تابستانی مرکز استرالیا", "WITA": "وقت مرکز اندونزی", "EDT": "وقت تابستانی شرق امریکا", "ACST": "وقت عادی مرکز استرالیا", "∅∅∅": "وقت تابستانی آزور", "SRT": "وقت سورینام", "COST": "وقت تابستانی کلمبیا", "GFT": "وقت گویان فرانسه", "EST": "وقت عادی شرق امریکا", "WIB": "وقت غرب اندونزی", "PDT": "وقت تابستانی غرب امریکا", "OEZ": "وقت عادی شرق اروپا", "OESZ": "وقت تابستانی شرق اروپا", "AST": "وقت عادی آتلانتیک", "AWST": "وقت عادی غرب استرالیا", "MDT": "وقت تابستانی ماکائو", "TMT": "وقت عادی ترکمنستان", "MYT": "وقت مالزی", "UYT": "وقت عادی اروگوئه", "BT": "وقت بوتان", "ACWST": "وقت عادی مرکز-غرب استرالیا", "CDT": "وقت تابستانی مرکز امریکا", "SAST": "وقت عادی جنوب افریقا", "GYT": "وقت گویان", "WEZ": "وقت عادی غرب اروپا", "WART": "وقت عادی غرب آرژانتین", "SGT": "وقت سنگاپور", "COT": "وقت عادی کلمبیا", "WARST": "وقت تابستانی غرب آرژانتین", "BOT": "وقت بولیوی", "ECT": "وقت اکوادور", "HKT": "وقت عادی هنگ\u200cکنگ", "MEZ": "وقت عادی مرکز اروپا", "CHAST": "وقت عادی چت\u200cهام", "CST": "وقت عادی مرکز امریکا", "JDT": "وقت تابستانی ژاپن", "EAT": "وقت شرق افریقا", "LHDT": "وقت تابستانی لردهو", "JST": "وقت عادی ژاپن", "AKST": "وقت عادی آلاسکا", "CHADT": "وقت تابستانی چت\u200cهام", "ACWDT": "وقت تابستانی مرکز-غرب استرالیا", "PST": "وقت عادی غرب امریکا", "WESZ": "وقت تابستانی غرب اروپا", "ARST": "وقت تابستانی آرژانتین", "AEST": "وقت عادی شرق استرالیا", "ADT": "وقت تابستانی آتلانتیک", "WAT": "وقت عادی غرب افریقا", "MESZ": "وقت تابستانی مرکز اروپا", "GMT": "وقت گرینویچ", "LHST": "وقت عادی لردهو", "CAT": "وقت مرکز افریقا", "WAST": "وقت تابستانی غرب افریقا", "NZST": "وقت عادی زلاند نو"},
+		timezones:              map[string]string{"BT": "وقت بوتان", "ARST": "وقت تابستانی آرژانتین", "WART": "وقت عادی غرب آرژانتین", "WARST": "وقت تابستانی غرب آرژانتین", "WITA": "وقت مرکز اندونزی", "GYT": "وقت گویان", "CHADT": "وقت تابستانی چت\u200cهام", "COT": "وقت عادی کلمبیا", "SAST": "وقت عادی جنوب افریقا", "BOT": "وقت بولیوی", "AWST": "وقت عادی غرب استرالیا", "MEZ": "وقت عادی مرکز اروپا", "MESZ": "وقت تابستانی مرکز اروپا", "AEST": "وقت عادی شرق استرالیا", "VET": "وقت ونزوئلا", "SGT": "وقت سنگاپور", "AEDT": "وقت تابستانی شرق استرالیا", "ADT": "وقت تابستانی آتلانتیک", "MST": "وقت عادی کوهستانی امریکا", "AWDT": "وقت تابستانی غرب استرالیا", "GMT": "وقت گرینویچ", "WIB": "وقت غرب اندونزی", "HAST": "وقت عادی هاوایی‐الوشن", "AKDT": "وقت تابستانی آلاسکا", "PST": "وقت عادی غرب امریکا", "CHAST": "وقت عادی چت\u200cهام", "IST": "وقت هند", "WAST": "وقت تابستانی غرب افریقا", "CST": "وقت عادی مرکز امریکا", "WIT": "وقت شرق اندونزی", "ART": "وقت عادی آرژانتین", "WAT": "وقت عادی غرب افریقا", "MDT": "وقت تابستانی کوهستانی امریکا", "NZST": "وقت عادی زلاند نو", "CAT": "وقت مرکز افریقا", "JDT": "وقت تابستانی ژاپن", "LHST": "وقت عادی لردهو", "WESZ": "وقت تابستانی غرب اروپا", "TMT": "وقت عادی ترکمنستان", "CDT": "وقت تابستانی مرکز امریکا", "EAT": "وقت شرق افریقا", "MYT": "وقت مالزی", "ChST": "وقت عادی چامورو", "LHDT": "وقت تابستانی لردهو", "HKT": "وقت عادی هنگ\u200cکنگ", "ECT": "وقت اکوادور", "ACST": "وقت عادی مرکز استرالیا", "PDT": "وقت تابستانی غرب امریکا", "HAT": "وقت تابستانی نیوفاندلند", "CLT": "وقت عادی شیلی", "AKST": "وقت عادی آلاسکا", "TMST": "وقت تابستانی ترکمنستان", "OEZ": "وقت عادی شرق اروپا", "EST": "وقت عادی شرق امریکا", "HNT": "وقت عادی نیوفاندلند", "∅∅∅": "وقت تابستانی برازیلیا", "SRT": "وقت سورینام", "COST": "وقت تابستانی کلمبیا", "ACDT": "وقت تابستانی مرکز استرالیا", "NZDT": "وقت تابستانی زلاند نو", "UYST": "وقت تابستانی اروگوئه", "HADT": "وقت تابستانی هاوایی‐الوشن", "GFT": "وقت گویان فرانسه", "EDT": "وقت تابستانی شرق امریکا", "CLST": "وقت تابستانی شیلی", "UYT": "وقت عادی اروگوئه", "WEZ": "وقت عادی غرب اروپا", "HKST": "وقت تابستانی هنگ\u200cکنگ", "ACWST": "وقت عادی مرکز-غرب استرالیا", "AST": "وقت عادی آتلانتیک", "JST": "وقت عادی ژاپن", "OESZ": "وقت تابستانی شرق اروپا", "ACWDT": "وقت تابستانی مرکز-غرب استرالیا"},
 	}
 }
 
@@ -191,7 +192,7 @@ func (fa *fa_IR) WeekdaysWide() []string {
 func (fa *fa_IR) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 8 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -221,7 +222,9 @@ func (fa *fa_IR) FmtNumber(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		b = append(b, fa.minus[0])
+		for j := len(fa.minus) - 1; j >= 0; j-- {
+			b = append(b, fa.minus[j])
+		}
 	}
 
 	// reverse
@@ -236,7 +239,7 @@ func (fa *fa_IR) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (fa *fa_IR) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 4
+	l := len(s) + 10
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -252,7 +255,9 @@ func (fa *fa_IR) FmtPercent(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		b = append(b, fa.minus[0])
+		for j := len(fa.minus) - 1; j >= 0; j-- {
+			b = append(b, fa.minus[j])
+		}
 	}
 
 	// reverse
@@ -270,7 +275,7 @@ func (fa *fa_IR) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fa.currencies[currency]
-	l := len(s) + len(symbol) + 5 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 11 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -308,7 +313,9 @@ func (fa *fa_IR) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 	}
 
 	if num < 0 {
-		b = append(b, fa.minus[0])
+		for j := len(fa.minus) - 1; j >= 0; j-- {
+			b = append(b, fa.minus[j])
+		}
 	}
 
 	// reverse
@@ -336,7 +343,7 @@ func (fa *fa_IR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := fa.currencies[currency]
-	l := len(s) + len(symbol) + 5 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 11 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -375,7 +382,9 @@ func (fa *fa_IR) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, fa.currencyNegativePrefix[j])
 		}
 
-		b = append(b, fa.minus[0])
+		for j := len(fa.minus) - 1; j >= 0; j-- {
+			b = append(b, fa.minus[j])
+		}
 
 	} else {
 

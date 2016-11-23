@@ -48,11 +48,11 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 3, 4, 6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                "٫",
-		group:                  "٬",
-		minus:                  "‏-",
-		percent:                "٪",
-		perMille:               "؉",
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
+		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"RC", "AD"},
 		erasNarrow:             []string{"R", "A"},
 		erasWide:               []string{"Ro Chrìosta", "An dèidh Chrìosta"},
-		timezones:              map[string]string{"GFT": "Àm Guidheàna na Frainge", "CHADT": "Tìde samhraidh Chatham", "ART": "Bun-àm na h-Argantaine", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "WART": "Bun-àm na h-Argantaine Siaraich", "SRT": "Àm Suranaim", "GMT": "Greenwich Mean Time", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "VET": "Àm na Bheiniseala", "TMT": "Bun-àm Turcmanastàin", "UYT": "Bun-àm Uruguaidh", "CLT": "Bun-àm na Sile", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "AEST": "Bun-àm Astràilia an Ear", "BOT": "Àm Boilibhia", "AST": "Bun-àm a’ Chuain Siar", "HKT": "Bun-àm Hong Kong", "WAST": "Tìde Samhraidh Afraga an Iar", "PDT": "Tìde samhraidh a’ Chuain Sèimh", "MDT": "Tìde samhraidh Monadh Aimeireaga a Tuath", "HAT": "Tìde samhraidh Talamh an Èisg", "CST": "Bun-àm Meadhan Aimeireaga a Tuath", "AKST": "Bun-àm Alaska", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "NZST": "Bun-àm Shealainn Nuaidh", "CHAST": "Bun-àm Chatham", "COT": "Bun-àm Coloimbia", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "GYT": "Àm Guidheàna", "CLST": "Tìde samhraidh na Sile", "WAT": "Bun-àm Afraga an Iar", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "ARST": "Tìde samhraidh na h-Argantaine", "TMST": "Tìde samhraidh Turcmanastàin", "SAST": "Àm Afraga a Deas", "∅∅∅": "Tìde samhraidh Pearù", "LHST": "Bun-àm Lord Howe", "JST": "Bun-àm na Seapaine", "AWDT": "Tìde samhraidh Astràilia an Iar", "WITA": "Àm Meadhan nan Innd-Innse", "WIB": "Àm nan Innd-Innse an Iar", "ChST": "Àm Chamorro", "SGT": "Àm Singeapòr", "MST": "Bun-àm Monadh Aimeireaga a Tuath", "HNT": "Bun-àm Talamh an Èisg", "CDT": "Tìde samhraidh Meadhan Aimeireaga a Tuath", "LHDT": "Tìde samhraidh Lord Howe", "CAT": "Àm Meadhan Afraga", "AKDT": "Tìde samhraidh Alaska", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "ACDT": "Tìde samhraidh Meadhan Astràilia", "ECT": "Àm Eacuadoir", "ADT": "Tìde samhraidh a’ Chuain Siar", "BT": "Àm Butàin", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "EDT": "Tìde samhraidh Aimeireaga a Tuath an Ear", "ACST": "Bun-àm Meadhan Astràilia", "HKST": "Tìde samhraidh Hong Kong", "UYST": "Tìde samhraidh Uruguaidh", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "MYT": "Àm Mhalaidhsea", "PST": "Bun-àm a’ Chuain Sèimh", "IST": "Àm nan Innseachan", "COST": "Tìde samhraidh Coloimbia", "AEDT": "Tìde samhraidh Astràilia an Ear", "EST": "Bun-àm Aimeireaga a Tuath an Ear", "WIT": "Àm nan Innd-Innse an Ear", "EAT": "Àm Afraga an Ear", "JDT": "Tìde samhraidh na Seapaine", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "AWST": "Bun-àm Astràilia an Iar", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear"},
+		timezones:              map[string]string{"AKDT": "Tìde samhraidh Alaska", "CDT": "Tìde samhraidh Meadhan Aimeireaga a Tuath", "BT": "Àm Butàin", "GMT": "Greenwich Mean Time", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "HKT": "Bun-àm Hong Kong", "WIB": "Àm nan Innd-Innse an Iar", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "AST": "Bun-àm a’ Chuain Siar", "TMST": "Tìde samhraidh Turcmanastàin", "ChST": "Àm Chamorro", "HNT": "Bun-àm Talamh an Èisg", "CLT": "Bun-àm na Sile", "HKST": "Tìde samhraidh Hong Kong", "AEST": "Bun-àm Astràilia an Ear", "WAT": "Bun-àm Afraga an Iar", "UYT": "Bun-àm Uruguaidh", "JDT": "Tìde samhraidh na Seapaine", "CHADT": "Tìde samhraidh Chatham", "ART": "Bun-àm na h-Argantaine", "COST": "Tìde samhraidh Coloimbia", "WAST": "Tìde Samhraidh Afraga an Iar", "GYT": "Àm Guidheàna", "ARST": "Tìde samhraidh na h-Argantaine", "AKST": "Bun-àm Alaska", "∅∅∅": "Tìde samhraidh Pearù", "LHDT": "Tìde samhraidh Lord Howe", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "IST": "Àm nan Innseachan", "PDT": "Tìde samhraidh a’ Chuain Sèimh", "EAT": "Àm Afraga an Ear", "TMT": "Bun-àm Turcmanastàin", "MST": "Bun-àm Monadh Aimeireaga a Tuath", "WIT": "Àm nan Innd-Innse an Ear", "JST": "Bun-àm na Seapaine", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "AEDT": "Tìde samhraidh Astràilia an Ear", "PST": "Bun-àm a’ Chuain Sèimh", "MDT": "Tìde samhraidh Monadh Aimeireaga a Tuath", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "EST": "Bun-àm Aimeireaga a Tuath an Ear", "UYST": "Tìde samhraidh Uruguaidh", "VET": "Àm na Bheiniseala", "ACDT": "Tìde samhraidh Meadhan Astràilia", "MYT": "Àm Mhalaidhsea", "NZST": "Bun-àm Shealainn Nuaidh", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "CAT": "Àm Meadhan Afraga", "ECT": "Àm Eacuadoir", "SAST": "Àm Afraga a Deas", "WART": "Bun-àm na h-Argantaine Siaraich", "LHST": "Bun-àm Lord Howe", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "ACST": "Bun-àm Meadhan Astràilia", "SGT": "Àm Singeapòr", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "EDT": "Tìde samhraidh Aimeireaga a Tuath an Ear", "WITA": "Àm Meadhan nan Innd-Innse", "AWST": "Bun-àm Astràilia an Iar", "HAT": "Tìde samhraidh Talamh an Èisg", "GFT": "Àm Guidheàna na Frainge", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "CLST": "Tìde samhraidh na Sile", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "COT": "Bun-àm Coloimbia", "ADT": "Tìde samhraidh a’ Chuain Siar", "CHAST": "Bun-àm Chatham", "BOT": "Àm Boilibhia", "AWDT": "Tìde samhraidh Astràilia an Iar", "SRT": "Àm Suranaim", "CST": "Bun-àm Meadhan Aimeireaga a Tuath"},
 	}
 }
 
@@ -195,7 +195,7 @@ func (gd *gd) WeekdaysWide() []string {
 func (gd *gd) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 6 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -203,18 +203,14 @@ func (gd *gd) FmtNumber(num float64, v uint64) string {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gd.decimal) - 1; j >= 0; j-- {
-				b = append(b, gd.decimal[j])
-			}
+			b = append(b, gd.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(gd.group) - 1; j >= 0; j-- {
-					b = append(b, gd.group[j])
-				}
+				b = append(b, gd.group[0])
 				count = 1
 			} else {
 				count++
@@ -225,9 +221,7 @@ func (gd *gd) FmtNumber(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		for j := len(gd.minus) - 1; j >= 0; j-- {
-			b = append(b, gd.minus[j])
-		}
+		b = append(b, gd.minus[0])
 	}
 
 	// reverse
@@ -242,15 +236,13 @@ func (gd *gd) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (gd *gd) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 8
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gd.decimal) - 1; j >= 0; j-- {
-				b = append(b, gd.decimal[j])
-			}
+			b = append(b, gd.decimal[0])
 			continue
 		}
 
@@ -258,9 +250,7 @@ func (gd *gd) FmtPercent(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		for j := len(gd.minus) - 1; j >= 0; j-- {
-			b = append(b, gd.minus[j])
-		}
+		b = append(b, gd.minus[0])
 	}
 
 	// reverse
@@ -278,7 +268,7 @@ func (gd *gd) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gd.currencies[currency]
-	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -286,18 +276,14 @@ func (gd *gd) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gd.decimal) - 1; j >= 0; j-- {
-				b = append(b, gd.decimal[j])
-			}
+			b = append(b, gd.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(gd.group) - 1; j >= 0; j-- {
-					b = append(b, gd.group[j])
-				}
+				b = append(b, gd.group[0])
 				count = 1
 			} else {
 				count++
@@ -312,9 +298,7 @@ func (gd *gd) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 	}
 
 	if num < 0 {
-		for j := len(gd.minus) - 1; j >= 0; j-- {
-			b = append(b, gd.minus[j])
-		}
+		b = append(b, gd.minus[0])
 	}
 
 	// reverse
@@ -342,7 +326,7 @@ func (gd *gd) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gd.currencies[currency]
-	l := len(s) + len(symbol) + 8 + 2*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -350,18 +334,14 @@ func (gd *gd) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gd.decimal) - 1; j >= 0; j-- {
-				b = append(b, gd.decimal[j])
-			}
+			b = append(b, gd.decimal[0])
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				for j := len(gd.group) - 1; j >= 0; j-- {
-					b = append(b, gd.group[j])
-				}
+				b = append(b, gd.group[0])
 				count = 1
 			} else {
 				count++

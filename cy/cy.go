@@ -48,7 +48,13 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{1, 2, 3, 4, 5, 6},
 		pluralsOrdinal:         []locales.PluralRule{1, 2, 3, 4, 5, 6},
 		pluralsRange:           []locales.PluralRule{2, 3, 4, 5, 6},
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
+		perMille:               "‰",
 		timeSeparator:          ":",
+		inifinity:              "∞",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
@@ -65,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"CC", "OC"},
 		erasNarrow:             []string{"C", "O"},
 		erasWide:               []string{"Cyn Crist", "Oed Crist"},
-		timezones:              map[string]string{"AEST": "Amser Safonol Dwyrain Awstralia", "WIT": "Amser Dwyrain Indonesia", "EAT": "Amser Dwyrain Affrica", "CST": "Amser Safonol Canolbarth Gogledd America", "TMT": "Amser Safonol Tyrcmenistan", "ARST": "Amser Haf Ariannin", "IST": "Amser India", "HADT": "Amser Haf Hawaii-Aleutian", "ECT": "Amser Ecuador", "AST": "Amser Safonol Cefnfor yr Iwerydd", "HKST": "Amser Haf Hong Kong", "WAST": "Amser Haf Gorllewin Affrica", "GFT": "Amser Guyane Ffrengig", "LHST": "Amser Safonol yr Arglwydd Howe", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "AEDT": "Amser Haf Dwyrain Awstralia", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "SAST": "Amser Safonol De Affrica", "LHDT": "Amser Haf yr Arglwydd Howe", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "COST": "Amser Haf Colombia", "CDT": "Amser Haf Canolbarth Gogledd America", "∅∅∅": "Amser Haf Amazonas", "MEZ": "Amser Safonol Canolbarth Ewrop", "NZDT": "Amser Haf Seland Newydd", "MDT": "MDT", "UYST": "Amser Haf Uruguay", "MESZ": "Amser Haf Canolbarth Ewrop", "WESZ": "Amser Haf Gorllewin Ewrop", "BOT": "Amser Bolivia", "UYT": "Amser Safonol Uruguay", "JDT": "Amser Haf Siapan", "HKT": "Amser Safonol Hong Kong", "WIB": "Amser Gorllewin Indonesia", "WARST": "Amser Haf Gorllewin Ariannin", "HAST": "Amser Safonol Hawaii-Aleutian", "NZST": "Amser Safonol Seland Newydd", "ChST": "Amser Chamorro", "WART": "Amser Safonol Gorllewin Ariannin", "EDT": "Amser Haf Dwyrain Gogledd America", "HAT": "Amser Haf Newfoundland", "ADT": "Amser Haf Cefnfor yr Iwerydd", "CLT": "Amser Safonol Chile", "CLST": "Amser Haf Chile", "OESZ": "Amser Haf Dwyrain Ewrop", "EST": "Amser Safonol Dwyrain Gogledd America", "HNT": "Amser Safonol Newfoundland", "ACDT": "Amser Haf Canolbarth Awstralia", "BT": "Amser Bhutan", "GYT": "Amser Guyana", "WAT": "Amser Safonol Gorllewin Affrica", "CHAST": "Amser Safonol Chatham", "CHADT": "Amser Haf Chatham", "SRT": "Amser Suriname", "GMT": "Amser Safonol Greenwich", "VET": "Amser Venezuela", "TMST": "Amser Haf Tyrcmenistan", "AKST": "Amser Safonol Alaska", "AWST": "Amser Safonol Gorllewin Awstralia", "AWDT": "Amser Haf Gorllewin Awstralia", "OEZ": "Amser Safonol Dwyrain Ewrop", "WITA": "Amser Canolbarth Indonesia", "JST": "Amser Safonol Siapan", "MYT": "Amser Malaysia", "AKDT": "Amser Haf Alaska", "MST": "MST", "ART": "Amser Safonol Ariannin", "COT": "Amser Safonol Colombia", "CAT": "Amser Canolbarth Affrica", "WEZ": "Amser Safonol Gorllewin Ewrop", "ACST": "Amser Safonol Canolbarth Awstralia", "SGT": "Amser Singapore"},
+		timezones:              map[string]string{"NZST": "Amser Safonol Seland Newydd", "HAT": "Amser Haf Newfoundland", "UYST": "Amser Haf Uruguay", "CHADT": "Amser Haf Chatham", "HAST": "Amser Safonol Hawaii-Aleutian", "AKST": "Amser Safonol Alaska", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "GFT": "Amser Guyane Ffrengig", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "WITA": "Amser Canolbarth Indonesia", "∅∅∅": "Amser Haf yr Azores", "BOT": "Amser Bolivia", "CLT": "Amser Safonol Chile", "JST": "Amser Safonol Siapan", "OESZ": "Amser Haf Dwyrain Ewrop", "COT": "Amser Safonol Colombia", "CDT": "Amser Haf Canolbarth Gogledd America", "MDT": "Amser Haf Mynyddoedd Gogledd America", "MYT": "Amser Malaysia", "SRT": "Amser Suriname", "WARST": "Amser Haf Gorllewin Ariannin", "AEDT": "Amser Haf Dwyrain Awstralia", "ART": "Amser Safonol Ariannin", "AWDT": "Amser Haf Gorllewin Awstralia", "OEZ": "Amser Safonol Dwyrain Ewrop", "WIB": "Amser Gorllewin Indonesia", "AEST": "Amser Safonol Dwyrain Awstralia", "AST": "Amser Safonol Cefnfor yr Iwerydd", "IST": "Amser India", "CHAST": "Amser Safonol Chatham", "MEZ": "Amser Safonol Canolbarth Ewrop", "EST": "Amser Safonol Dwyrain Gogledd America", "GYT": "Amser Guyana", "CAT": "Amser Canolbarth Affrica", "LHDT": "Amser Haf yr Arglwydd Howe", "HKT": "Amser Safonol Hong Kong", "ECT": "Amser Ecuador", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "AKDT": "Amser Haf Alaska", "CLST": "Amser Haf Chile", "EDT": "Amser Haf Dwyrain Gogledd America", "CST": "Amser Safonol Canolbarth Gogledd America", "HKST": "Amser Haf Hong Kong", "MESZ": "Amser Haf Canolbarth Ewrop", "TMT": "Amser Safonol Tyrcmenistan", "AWST": "Amser Safonol Gorllewin Awstralia", "ARST": "Amser Haf Ariannin", "MST": "Amser Safonol Mynyddoedd Gogledd America", "HNT": "Amser Safonol Newfoundland", "VET": "Amser Venezuela", "ACST": "Amser Safonol Canolbarth Awstralia", "WART": "Amser Safonol Gorllewin Ariannin", "HADT": "Amser Haf Hawaii-Aleutian", "COST": "Amser Haf Colombia", "ADT": "Amser Haf Cefnfor yr Iwerydd", "WIT": "Amser Dwyrain Indonesia", "BT": "Amser Bhutan", "WAT": "Amser Safonol Gorllewin Affrica", "NZDT": "Amser Haf Seland Newydd", "WEZ": "Amser Safonol Gorllewin Ewrop", "SGT": "Amser Singapore", "ChST": "Amser Chamorro", "JDT": "Amser Haf Siapan", "WESZ": "Amser Haf Gorllewin Ewrop", "UYT": "Amser Safonol Uruguay", "EAT": "Amser Dwyrain Affrica", "WAST": "Amser Haf Gorllewin Affrica", "GMT": "Amser Safonol Greenwich", "LHST": "Amser Safonol yr Arglwydd Howe", "ACDT": "Amser Haf Canolbarth Awstralia", "SAST": "Amser Safonol De Affrica", "TMST": "Amser Haf Tyrcmenistan"},
 	}
 }
 
@@ -253,7 +259,7 @@ func (cy *cy) WeekdaysWide() []string {
 func (cy *cy) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 0 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -294,7 +300,7 @@ func (cy *cy) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (cy *cy) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 0
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -326,7 +332,7 @@ func (cy *cy) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
-	l := len(s) + len(symbol) + 0 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -384,7 +390,7 @@ func (cy *cy) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := cy.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

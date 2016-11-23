@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"RC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"UYST": "UYST", "WAT": "WAT", "WESZ": "WESZ", "PST": "PST", "EST": "EST", "LHST": "LHST", "TMST": "TMST", "MYT": "MYT", "AEDT": "AEDT", "HAT": "HAT", "ADT": "ADT", "WAST": "WAST", "CLST": "CLST", "CHAST": "CHAST", "OEZ": "OEZ", "GFT": "GFT", "LHDT": "LHDT", "AKDT": "AKDT", "HKT": "HKT", "SAST": "SAST", "BT": "BT", "UYT": "UYT", "SRT": "SRT", "HAST": "HAST", "HNT": "HNT", "CAT": "CAT", "ECT": "ECT", "AWST": "AWST", "COT": "COT", "GMT": "GMT", "ACWDT": "ACWDT", "IST": "IST", "ARST": "ARST", "ACWST": "ACWST", "MDT": "MDT", "CHADT": "CHADT", "WART": "WART", "HADT": "HADT", "JST": "JST", "CDT": "CDT", "MST": "MST", "NZST": "NZST", "COST": "COST", "BOT": "BOT", "TMT": "TMT", "MEZ": "MEZ", "ChST": "ChST", "VET": "VET", "GYT": "GYT", "HKST": "HKST", "WIB": "WIB", "SGT": "SGT", "ART": "ART", "OESZ": "OESZ", "WITA": "WITA", "EDT": "EDT", "NZDT": "NZDT", "ACDT": "ACDT", "AKST": "AKST", "∅∅∅": "∅∅∅", "CST": "CST", "AST": "AST", "MESZ": "MESZ", "WEZ": "WEZ", "AWDT": "AWDT", "JDT": "JDT", "PDT": "PDT", "CLT": "CLT", "AEST": "AEST", "WARST": "WARST", "WIT": "WIT", "EAT": "EAT", "ACST": "ACST"},
+		timezones:          map[string]string{"ACWST": "ACWST", "WAT": "WAT", "PST": "PST", "AST": "AST", "ChST": "ChST", "SGT": "SGT", "AEDT": "AEDT", "ADT": "ADT", "UYST": "UYST", "MESZ": "MESZ", "WIB": "WIB", "PDT": "PDT", "MDT": "MDT", "AWST": "AWST", "ECT": "ECT", "EST": "EST", "TMST": "TMST", "CST": "CST", "OEZ": "OEZ", "AKST": "AKST", "MEZ": "MEZ", "WART": "WART", "HADT": "HADT", "SRT": "SRT", "ACDT": "ACDT", "SAST": "SAST", "∅∅∅": "∅∅∅", "CAT": "CAT", "COST": "COST", "GMT": "GMT", "WAST": "WAST", "NZST": "NZST", "BOT": "BOT", "HNT": "HNT", "HKST": "HKST", "WITA": "WITA", "OESZ": "OESZ", "EAT": "EAT", "MYT": "MYT", "UYT": "UYT", "JST": "JST", "COT": "COT", "MST": "MST", "CLT": "CLT", "CLST": "CLST", "WIT": "WIT", "JDT": "JDT", "VET": "VET", "GYT": "GYT", "GFT": "GFT", "TMT": "TMT", "AEST": "AEST", "NZDT": "NZDT", "HAT": "HAT", "ACWDT": "ACWDT", "EDT": "EDT", "AWDT": "AWDT", "LHDT": "LHDT", "WARST": "WARST", "ART": "ART", "HAST": "HAST", "AKDT": "AKDT", "CDT": "CDT", "BT": "BT", "WEZ": "WEZ", "ACST": "ACST", "IST": "IST", "LHST": "LHST", "WESZ": "WESZ", "HKT": "HKT", "CHAST": "CHAST", "CHADT": "CHADT", "ARST": "ARST"},
 	}
 }
 
@@ -86,8 +86,8 @@ func (gv *gv) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
-	iMod100 := i % 100
 	iMod10 := i % 10
+	iMod100 := i % 100
 
 	if v == 0 && iMod10 == 1 {
 		return locales.PluralRuleOne

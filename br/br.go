@@ -49,7 +49,13 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 3, 4, 5, 6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
+		decimal:                ",",
+		group:                  " ",
+		minus:                  "-",
+		percent:                "%",
+		perMille:               "‰",
 		timeSeparator:          ":",
+		inifinity:              "∞",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "$A", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "$CA", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£ RU", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "$ HK", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "$ ZN", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$ SU", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
@@ -66,7 +72,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"a-raok J.K.", "goude J.K."},
 		erasNarrow:             []string{"a-raok J.K.", "goude J.K."},
 		erasWide:               []string{"a-raok Jezuz-Krist", "goude Jezuz-Krist"},
-		timezones:              map[string]string{"ARST": "eur hañv Arcʼhantina", "ART": "eur cʼhoañv Arcʼhantina", "EAT": "eur Afrika ar Reter", "UYT": "eur cʼhoañv Uruguay", "WITA": "WITA", "EST": "eur cʼhoañv ar Reter", "HNT": "eur cʼhoañv Newfoundland", "GFT": "eur Gwiana cʼhall", "JST": "eur cʼhoañv Japan", "ACDT": "eur hañv Kreizaostralia", "TMT": "eur cʼhoañv Turkmenistan", "WAT": "eur cʼhoañv Afrika ar Cʼhornôg", "WEZ": "eur cʼhoañv Europa ar Cʼhornôg", "PDT": "PDT", "IST": "eur cʼhoañv India", "WART": "eur cʼhoañv Arcʼhantina ar Cʼhornôg", "CAT": "eur Kreizafrika", "ACWST": "eur cʼhoañv Kreizaostralia ar Cʼhornôg", "HADT": "HADT", "COST": "eur hañv Kolombia", "WAST": "eur hañv Afrika ar Cʼhornôg", "GMT": "Amzer keitat Greenwich (AKG)", "UYST": "eur hañv Uruguay", "ChST": "ChST", "HKT": "eur cʼhoañv Hong Kong", "AKDT": "eur hañv Alaska", "AST": "AST", "MDT": "eur hañv Macau", "CHAST": "eur cʼhoañv Chatham", "SGT": "eur cʼhoañv Singapour", "EDT": "eur hañv ar Reter", "ACWDT": "eur hañv Kreizaostralia ar Cʼhornôg", "ECT": "eur Ecuador", "AKST": "eur cʼhoañv Alaska", "HKST": "eur hañv Hong Kong", "AWST": "eur cʼhoañv Aostralia ar Cʼhornôg", "AEDT": "eur hañv Aostralia ar Reter", "WARST": "eur hañv Arcʼhantina ar Cʼhornôg", "WIT": "eur Indonezia ar Reter", "∅∅∅": "eur hañv an Amazon", "HAST": "HAST", "OESZ": "eur hañv Europa ar Reter", "VET": "eur Venezuela", "GYT": "eur Guyana", "MST": "eur cʼhoañv Macau", "PST": "PST", "CLT": "eur cʼhoañv Chile", "SRT": "eur Surinam", "SAST": "eur cʼhoañv Suafrika", "CDT": "CDT", "COT": "eur cʼhoañv Kolombia", "TMST": "eur hañv Turkmenistan", "AEST": "eur cʼhoañv Aostralia ar Reter", "MYT": "eur Malaysia", "BT": "eur Bhoutan", "MEZ": "eur cʼhoañv Kreizeuropa", "WIB": "eur Indonezia ar Cʼhornôg", "OEZ": "eur cʼhoañv Europa ar Reter", "LHST": "LHST", "NZDT": "eur hañv Zeland-Nevez", "CLST": "eur hañv Chile", "CHADT": "eur hañv Chatham", "NZST": "eur cʼhoañv Zeland-Nevez", "ACST": "eur cʼhoañv Kreizaostralia", "ADT": "ADT", "MESZ": "eur hañv Kreizeuropa", "JDT": "eur hañv Japan", "LHDT": "LHDT", "WESZ": "eur hañv Europa ar Cʼhornôg", "AWDT": "eur hañv Aostralia ar Cʼhornôg", "HAT": "eur hañv Newfoundland", "BOT": "eur Bolivia", "CST": "CST"},
+		timezones:              map[string]string{"WIT": "eur Indonezia ar Reter", "COT": "eur cʼhoañv Kolombia", "ACWDT": "eur hañv Kreizaostralia ar Cʼhornôg", "ACST": "eur cʼhoañv Kreizaostralia", "AEDT": "eur hañv Aostralia ar Reter", "BOT": "eur Bolivia", "MDT": "eur hañv ar Menezioù", "ChST": "ChST", "LHST": "LHST", "OESZ": "eur hañv Europa ar Reter", "HKST": "eur hañv Hong Kong", "ACWST": "eur cʼhoañv Kreizaostralia ar Cʼhornôg", "TMT": "eur cʼhoañv Turkmenistan", "BT": "eur Bhoutan", "CLT": "eur cʼhoañv Chile", "ADT": "ADT", "WITA": "WITA", "ARST": "eur hañv Arcʼhantina", "WART": "eur cʼhoañv Arcʼhantina ar Cʼhornôg", "PST": "PST", "IST": "eur cʼhoañv India", "HAT": "eur hañv Newfoundland", "WEZ": "eur cʼhoañv Europa ar Cʼhornôg", "SAST": "eur cʼhoañv Suafrika", "CST": "CST", "∅∅∅": "eur hañv an Amazon", "SGT": "eur cʼhoañv Singapour", "ECT": "eur Ecuador", "AKDT": "eur hañv Alaska", "MYT": "eur Malaysia", "HNT": "eur cʼhoañv Newfoundland", "LHDT": "LHDT", "PDT": "PDT", "CDT": "CDT", "WESZ": "eur hañv Europa ar Cʼhornôg", "VET": "eur Venezuela", "ACDT": "eur hañv Kreizaostralia", "CAT": "eur Kreizafrika", "HKT": "eur cʼhoañv Hong Kong", "MEZ": "eur cʼhoañv Kreizeuropa", "NZDT": "eur hañv Zeland-Nevez", "MST": "eur cʼhoañv ar Menezioù", "JDT": "eur hañv Japan", "OEZ": "eur cʼhoañv Europa ar Reter", "ART": "eur cʼhoañv Arcʼhantina", "EAT": "eur Afrika ar Reter", "AKST": "eur cʼhoañv Alaska", "HAST": "HAST", "EST": "eur cʼhoañv ar Reter", "NZST": "eur cʼhoañv Zeland-Nevez", "AWST": "eur cʼhoañv Aostralia ar Cʼhornôg", "CLST": "eur hañv Chile", "UYT": "eur cʼhoañv Uruguay", "UYST": "eur hañv Uruguay", "CHAST": "eur cʼhoañv Chatham", "JST": "eur cʼhoañv Japan", "WIB": "eur Indonezia ar Cʼhornôg", "MESZ": "eur hañv Kreizeuropa", "HADT": "HADT", "WARST": "eur hañv Arcʼhantina ar Cʼhornôg", "WAST": "eur hañv Afrika ar Cʼhornôg", "GFT": "eur Gwiana cʼhall", "SRT": "eur Surinam", "CHADT": "eur hañv Chatham", "AEST": "eur cʼhoañv Aostralia ar Reter", "WAT": "eur cʼhoañv Afrika ar Cʼhornôg", "COST": "eur hañv Kolombia", "EDT": "eur hañv ar Reter", "AST": "AST", "TMST": "eur hañv Turkmenistan", "AWDT": "eur hañv Aostralia ar Cʼhornôg", "GMT": "Amzer keitat Greenwich (AKG)", "GYT": "eur Guyana"},
 	}
 }
 
@@ -94,9 +100,9 @@ func (br *br) PluralsRange() []locales.PluralRule {
 func (br *br) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
+	nMod100 := math.Mod(n, 100)
 	nMod1000000 := math.Mod(n, 1000000)
 	nMod10 := math.Mod(n, 10)
-	nMod100 := math.Mod(n, 100)
 
 	if nMod10 == 1 && (nMod100 != 11 && nMod100 != 71 && nMod100 != 91) {
 		return locales.PluralRuleOne
@@ -195,7 +201,7 @@ func (br *br) WeekdaysWide() []string {
 func (br *br) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 0 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -210,7 +216,9 @@ func (br *br) FmtNumber(num float64, v uint64) string {
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, br.group[0])
+				for j := len(br.group) - 1; j >= 0; j-- {
+					b = append(b, br.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -236,7 +244,7 @@ func (br *br) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (br *br) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2
+	l := len(s) + 5
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -270,7 +278,7 @@ func (br *br) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := br.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -285,7 +293,9 @@ func (br *br) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, br.group[0])
+				for j := len(br.group) - 1; j >= 0; j-- {
+					b = append(b, br.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -328,7 +338,7 @@ func (br *br) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := br.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -343,7 +353,9 @@ func (br *br) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, br.group[0])
+				for j := len(br.group) - 1; j >= 0; j-- {
+					b = append(b, br.group[j])
+				}
 				count = 1
 			} else {
 				count++
