@@ -48,8 +48,13 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         []locales.PluralRule{2, 3, 4, 5, 6},
 		pluralsRange:           []locales.PluralRule{2, 6},
-		decimal:                "٫",
+		decimal:                ".",
+		group:                  ",",
+		minus:                  "-",
+		percent:                "%",
+		perMille:               "‰",
 		timeSeparator:          ":",
+		inifinity:              "∞",
 		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
@@ -66,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"ઈ.સ.પૂર્વે", "ઈ.સ."},
 		erasNarrow:             []string{"ઇ સ પુ", "ઇસ"},
 		erasWide:               []string{"ઈસવીસન પૂર્વે", "ઇસવીસન"},
-		timezones:              map[string]string{"CST": "ઉત્તર અમેરિકન કેન્દ્રિય પ્રમાણભૂત સમય", "TMST": "તુર્કમેનિસ્તાન ગ્રીષ્મ સમય", "MEZ": "મધ્ય યુરોપિયન માનક સમય", "PDT": "ઉત્તર અમેરિકન પેસિફિક દિવસ સમય", "OESZ": "પૂર્વી યુરોપીયન ગ્રીષ્મ સમય", "ACST": "ઓસ્ટ્રેલિયન મધ્ય પ્રમાણભૂત સમય", "AKDT": "અલાસ્કા દિવસ સમય", "AEST": "ઓસ્ટ્રેલિયન પૂર્વીય પ્રમાણભૂત સમય", "CAT": "મધ્ય આફ્રિકા સમય", "JST": "જાપાન માનક સમય", "ADT": "અટલાન્ટિક દિવસ સમય", "EDT": "ઉત્તર અમેરિકન પૂર્વી દિવસ સમય", "ECT": "એક્વાડોર સમય", "WEZ": "પશ્ચિમી યુરોપિયન માનક સમય", "CLT": "ચિલી માનક સમય", "WARST": "પશ્ચિમી અર્જેન્ટીના ગ્રીષ્મ સમય", "MST": "મકાઉ પ્રમાણભૂત સમય", "ARST": "આર્જેન્ટીના ગ્રીષ્મ સમય", "HAST": "હવાઇ-એલ્યુશિઅન માનક સમય", "HAT": "ન્યૂફાઉન્ડલેન્ડ દિવસ સમય", "AST": "અટલાન્ટિક પ્રમાણભૂત સમય", "HKT": "હોંગ કોંગ માનક સમય", "UYT": "ઉરૂગ્વે માનક સમય", "ART": "અર્જેન્ટીના માનક સમય", "SAST": "દક્ષિણ આફ્રિકા માનક સમય", "MESZ": "મધ્ય યુરોપિયન ગ્રીષ્મ સમય", "AWDT": "ઓસ્ટ્રેલિયન પશ્ચિમી દિવસ સમય", "ACWST": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી પ્રમાણભૂત સમય", "EAT": "પૂર્વ આફ્રિકા સમય", "GYT": "ગયાના સમય", "SGT": "સિંગાપુર માનક સમય", "HNT": "ન્યૂફાઉન્ડલેન્ડ પ્રમાણભૂત સમય", "BOT": "બોલિવિયા સમય", "CDT": "ઉત્તર અમેરિકન મધ્ય દિવસ સમય", "LHDT": "લોર્ડ હોવ દિવસ સમય", "VET": "વેનેઝુએલા સમય", "TMT": "તુર્કમેનિસ્તાન માનક સમય", "WART": "પશ્ચિમી અર્જેન્ટીના માનક સમય", "GMT": "ગ્રીનવિચ મધ્યમ સમય", "HADT": "હવાઇ-એલ્યુશિઅન દિવસ સમય", "JDT": "જાપાન દિવસ સમય", "BT": "ભૂટાન સમય", "UYST": "ઉરૂગ્વે ગ્રીષ્મ સમય", "MDT": "મકાઉ ગ્રીષ્મ સમય", "IST": "ભારતીય માનક સમય", "COT": "કોલંબિયા માનક સમય", "ACDT": "ઓસ્ટ્રેલિયન મધ્ય દિવસ સમય", "WAST": "પશ્ચિમ આફ્રિકા ગ્રીષ્મ સમય", "AWST": "ઓસ્ટ્રેલિયન પશ્ચિમી પ્રમાણભૂત સમય", "NZST": "ન્યુઝીલેન્ડ માનક સમય", "CHADT": "ચેતહામ દિવસ સમય", "OEZ": "પૂર્વી યુરોપિયન માનક સમય", "LHST": "લોર્ડ હોવ પ્રમાણભૂત સમય", "MYT": "મલેશિયા સમય", "SRT": "સૂરીનામ સમય", "ACWDT": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી દિવસ સમય", "WESZ": "પશ્ચિમી યુરોપિયન ગ્રીષ્મ સમય", "NZDT": "ન્યુઝીલેન્ડ દિવસ સમય", "ChST": "કેમોરો માનક સમય", "COST": "કોલંબિયા ગ્રીષ્મ સમય", "WITA": "મધ્ય ઇન્ડોનેશિયા સમય", "AKST": "અલાસ્કા પ્રમાણભૂત સમય", "CLST": "ચિલી ગ્રીષ્મ સમય", "EST": "ઉત્તર અમેરિકન પૂર્વી પ્રમાણભૂત સમય", "WIT": "પૂર્વીય ઇન્ડોનેશિયા સમય", "WIB": "પશ્ચિમી ઇન્ડોનેશિયા સમય", "AEDT": "ઓસ્ટ્રેલિયન પૂર્વીય દિવસ સમય", "GFT": "ફ્રેન્ચ ગયાના સમય", "∅∅∅": "પેરુ ગ્રીષ્મ સમય", "HKST": "હોંગ કોંગ ગ્રીષ્મ સમય", "WAT": "પશ્ચિમ આફ્રિકા માનક સમય", "PST": "ઉત્તર અમેરિકન પેસિફિક પ્રમાણભૂત સમય", "CHAST": "ચેતહામ માનક સમય"},
+		timezones:              map[string]string{"BOT": "બોલિવિયા સમય", "OESZ": "પૂર્વી યુરોપીયન ગ્રીષ્મ સમય", "HKST": "હોંગ કોંગ ગ્રીષ્મ સમય", "ARST": "આર્જેન્ટીના ગ્રીષ્મ સમય", "AKST": "અલાસ્કા પ્રમાણભૂત સમય", "AKDT": "અલાસ્કા દિવસ સમય", "WITA": "મધ્ય ઇન્ડોનેશિયા સમય", "CHADT": "ચેતહામ દિવસ સમય", "ACDT": "ઓસ્ટ્રેલિયન મધ્ય દિવસ સમય", "HAST": "હવાઇ-એલ્યુશિઅન માનક સમય", "AEST": "ઓસ્ટ્રેલિયન પૂર્વીય પ્રમાણભૂત સમય", "WART": "પશ્ચિમી અર્જેન્ટીના માનક સમય", "TMT": "તુર્કમેનિસ્તાન માનક સમય", "GYT": "ગયાના સમય", "WEZ": "પશ્ચિમી યુરોપિયન માનક સમય", "ECT": "એક્વાડોર સમય", "JST": "જાપાન માનક સમય", "WESZ": "પશ્ચિમી યુરોપિયન ગ્રીષ્મ સમય", "COST": "કોલંબિયા ગ્રીષ્મ સમય", "CHAST": "ચેતહામ માનક સમય", "ACWDT": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી દિવસ સમય", "EST": "ઉત્તર અમેરિકન પૂર્વી પ્રમાણભૂત સમય", "NZDT": "ન્યુઝીલેન્ડ દિવસ સમય", "HNT": "ન્યૂફાઉન્ડલેન્ડ પ્રમાણભૂત સમય", "CDT": "ઉત્તર અમેરિકન મધ્ય દિવસ સમય", "WIB": "પશ્ચિમી ઇન્ડોનેશિયા સમય", "BT": "ભૂટાન સમય", "AWDT": "ઓસ્ટ્રેલિયન પશ્ચિમી દિવસ સમય", "JDT": "જાપાન દિવસ સમય", "EAT": "પૂર્વ આફ્રિકા સમય", "TMST": "તુર્કમેનિસ્તાન ગ્રીષ્મ સમય", "WIT": "પૂર્વીય ઇન્ડોનેશિયા સમય", "VET": "વેનેઝુએલા સમય", "ACST": "ઓસ્ટ્રેલિયન મધ્ય પ્રમાણભૂત સમય", "NZST": "ન્યુઝીલેન્ડ માનક સમય", "AWST": "ઓસ્ટ્રેલિયન પશ્ચિમી પ્રમાણભૂત સમય", "CLST": "ચિલી ગ્રીષ્મ સમય", "MESZ": "મધ્ય યુરોપિયન ગ્રીષ્મ સમય", "SGT": "સિંગાપુર માનક સમય", "ACWST": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી પ્રમાણભૂત સમય", "IST": "ભારતીય માનક સમય", "ChST": "કેમોરો માનક સમય", "UYT": "ઉરૂગ્વે માનક સમય", "UYST": "ઉરૂગ્વે ગ્રીષ્મ સમય", "SRT": "સૂરીનામ સમય", "OEZ": "પૂર્વી યુરોપિયન માનક સમય", "ART": "અર્જેન્ટીના માનક સમય", "SAST": "દક્ષિણ આફ્રિકા માનક સમય", "MDT": "ઉત્તર અમેરિકન માઉન્ટન દિવસ સમય", "MYT": "મલેશિયા સમય", "LHST": "લોર્ડ હોવ પ્રમાણભૂત સમય", "MEZ": "મધ્ય યુરોપિયન માનક સમય", "WAT": "પશ્ચિમ આફ્રિકા માનક સમય", "WAST": "પશ્ચિમ આફ્રિકા ગ્રીષ્મ સમય", "GMT": "ગ્રીનવિચ મધ્યમ સમય", "PST": "ઉત્તર અમેરિકન પેસિફિક પ્રમાણભૂત સમય", "AST": "અટલાન્ટિક પ્રમાણભૂત સમય", "HADT": "હવાઇ-એલ્યુશિઅન દિવસ સમય", "WARST": "પશ્ચિમી અર્જેન્ટીના ગ્રીષ્મ સમય", "CAT": "મધ્ય આફ્રિકા સમય", "LHDT": "લોર્ડ હોવ દિવસ સમય", "HKT": "હોંગ કોંગ માનક સમય", "COT": "કોલંબિયા માનક સમય", "EDT": "ઉત્તર અમેરિકન પૂર્વી દિવસ સમય", "PDT": "ઉત્તર અમેરિકન પેસિફિક દિવસ સમય", "HAT": "ન્યૂફાઉન્ડલેન્ડ દિવસ સમય", "MST": "ઉત્તર અમેરિકન માઉન્ટન પ્રમાણભૂત સમય", "GFT": "ફ્રેન્ચ ગયાના સમય", "ADT": "અટલાન્ટિક દિવસ સમય", "∅∅∅": "પેરુ ગ્રીષ્મ સમય", "CST": "ઉત્તર અમેરિકન કેન્દ્રિય પ્રમાણભૂત સમય", "CLT": "ચિલી માનક સમય", "AEDT": "ઓસ્ટ્રેલિયન પૂર્વીય દિવસ સમય"},
 	}
 }
 
@@ -211,7 +216,7 @@ func (gu *gu) WeekdaysWide() []string {
 func (gu *gu) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -222,9 +227,7 @@ func (gu *gu) FmtNumber(num float64, v uint64) string {
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gu.decimal) - 1; j >= 0; j-- {
-				b = append(b, gu.decimal[j])
-			}
+			b = append(b, gu.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -263,15 +266,13 @@ func (gu *gu) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (gu *gu) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 2
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gu.decimal) - 1; j >= 0; j-- {
-				b = append(b, gu.decimal[j])
-			}
+			b = append(b, gu.decimal[0])
 			continue
 		}
 
@@ -297,7 +298,7 @@ func (gu *gu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gu.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -308,9 +309,7 @@ func (gu *gu) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gu.decimal) - 1; j >= 0; j-- {
-				b = append(b, gu.decimal[j])
-			}
+			b = append(b, gu.decimal[0])
 			inWhole = true
 			continue
 		}
@@ -366,7 +365,7 @@ func (gu *gu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gu.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -377,9 +376,7 @@ func (gu *gu) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			for j := len(gu.decimal) - 1; j >= 0; j-- {
-				b = append(b, gu.decimal[j])
-			}
+			b = append(b, gu.decimal[0])
 			inWhole = true
 			continue
 		}

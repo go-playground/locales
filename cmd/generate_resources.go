@@ -671,6 +671,20 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 				symbol := ldml.Numbers.Symbols[0]
 
+				// Try to get the default numbering system instead of the first one
+				systems := ldml.Numbers.DefaultNumberingSystem
+				// There shouldn't really be more than one DefaultNumberingSystem
+				if len(systems) > 0 {
+					if dns := systems[0].Data(); dns != "" {
+						for k := range ldml.Numbers.Symbols {
+							if ldml.Numbers.Symbols[k].NumberSystem == dns {
+								symbol = ldml.Numbers.Symbols[k]
+								break
+							}
+						}
+					}
+				}
+
 				if len(symbol.Decimal) > 0 {
 					trans.Decimal = symbol.Decimal[0].Data()
 				}
