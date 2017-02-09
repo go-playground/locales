@@ -22,8 +22,8 @@ type uz_Latn_UZ struct {
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
-	currencyNegativePrefix string
+	currencyPositiveSuffix string
+	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -55,23 +55,23 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "yan", "fev", "mar", "apr", "may", "iyn", "iyl", "avg", "sen", "okt", "noy", "dek"},
 		monthsNarrow:           []string{"", "Y", "F", "M", "A", "M", "I", "I", "A", "S", "O", "N", "D"},
-		monthsWide:             []string{"", "yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "Sentabr", "Oktabr", "noyabr", "dekabr"},
-		daysAbbreviated:        []string{"Ya", "Du", "Se", "Ch", "Pa", "Ju", "Sh"},
+		monthsWide:             []string{"", "yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"},
+		daysAbbreviated:        []string{"Yak", "Dush", "Sesh", "Chor", "Pay", "Jum", "Shan"},
 		daysNarrow:             []string{"Y", "D", "S", "C", "P", "J", "S"},
 		daysShort:              []string{"Ya", "Du", "Se", "Ch", "Pa", "Ju", "Sh"},
 		daysWide:               []string{"yakshanba", "dushanba", "seshanba", "chorshanba", "payshanba", "juma", "shanba"},
 		periodsAbbreviated:     []string{"TO", "TK"},
 		periodsNarrow:          []string{"TO", "TK"},
 		periodsWide:            []string{"TO", "TK"},
-		erasAbbreviated:        []string{"", ""},
+		erasAbbreviated:        []string{"m.a.", "milodiy"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"WAST": "Gʻarbiy Afrika yozgi vaqti", "EAT": "Sharqiy Afrika vaqti", "CLT": "Chili standart vaqti", "GMT": "Grinvich o‘rtacha vaqti", "WESZ": "G‘arbiy Yevropa yozgi vaqti", "CHAST": "Chatem standart vaqti", "OEZ": "Sharqiy Yevropa standart vaqti", "SAST": "Janubiy Afrika standart vaqti", "COST": "Kolumbiya yozgi vaqti", "ECT": "Ekvador vaqti", "MEZ": "Markaziy Yevropa standart vaqti", "MESZ": "Markaziy Yevropa yozgi vaqti", "OESZ": "Sharqiy Yevropa yozgi vaqti", "HNT": "Nyufaundlend standart vaqti", "COT": "Kolumbiya standart vaqti", "ACWST": "Markaziy Avstraliya g‘arbiy standart vaqti", "WITA": "Markaziy Indoneziya vaqti", "LHST": "Lord-Xau standart vaqti", "SGT": "Singapur vaqti", "ACWDT": "Markaziy Avstraliya g‘arbiy yozgi vaqti", "EDT": "Sharqiy Amerika yozgi vaqti", "VET": "Venesuela vaqti", "AEST": "Sharqiy Avstraliya standart vaqti", "WARST": "Gʻarbiy Argentina yozgi vaqti", "ChST": "Chamorro standart vaqti", "GYT": "Gayana vaqti", "NZDT": "Yangi Zelandiya yozgi vaqti", "HKST": "Gonkong yozgi vaqti", "PDT": "Shimoliy Amerika Tinch okeani yozgi vaqti", "NZST": "Yangi Zelandiya standart vaqti", "CLST": "Chili yozgi vaqti", "WEZ": "G‘arbiy Yevropa standart vaqti", "SRT": "Surinam vaqti", "AKST": "Alyaska standart vaqti", "MDT": "Shimoliy Amerika togʻ yozgi vaqti", "ADT": "Atlantika yozgi vaqti", "∅∅∅": "Azor orollari yozgi vaqti", "GFT": "Fransuz Gvianasi vaqti", "ACDT": "Markaziy Avstraliya yozgi vaqti", "HAST": "Gavayi-aleut standart vaqti", "EST": "Sharqiy Amerika standart vaqti", "AKDT": "Alyaska yozgi vaqti", "MST": "Shimoliy Amerika togʻ standart vaqti", "AEDT": "Sharqiy Avstraliya yozgi vaqti", "WAT": "Gʻarbiy Afrika standart vaqti", "HAT": "Nyufaundlend yozgi vaqti", "LHDT": "Lord-Xau yozgi vaqti", "ACST": "Markaziy Avstraliya standart vaqti", "WIB": "Gʻarbiy Indoneziya vaqti", "ARST": "Argentina yozgi vaqti", "AWST": "G‘arbiy Avstraliya standart vaqti", "MYT": "Malayziya vaqti", "BOT": "Boliviya vaqti", "AST": "Atlantika standart vaqti", "TMT": "Turkmaniston standart vaqti", "TMST": "Turkmaniston yozgi vaqti", "BT": "Butan vaqti", "WIT": "Sharqiy Indoneziya vaqti", "JST": "Yaponiya standart vaqti", "PST": "Shimoliy Amerika Tinch okeani standart vaqti", "UYT": "Urugvay standart vaqti", "UYST": "Urugvay yozgi vaqti", "AWDT": "G‘arbiy Avstraliya yozgi vaqti", "JDT": "Yaponiya yozgi vaqti", "CHADT": "Chatem yozgi vaqti", "ART": "Argentina standart vaqti", "CST": "Markaziy Amerika standart vaqti", "CAT": "Markaziy Afrika vaqti", "WART": "Gʻarbiy Argentina standart vaqti", "CDT": "Markaziy Amerika yozgi vaqti", "HKT": "Gonkong standart vaqti", "HADT": "Gavayi-aleut yozgi vaqti", "IST": "Hindiston vaqti"},
+		timezones:              map[string]string{"AWST": "G‘arbiy Avstraliya standart vaqti", "AWDT": "G‘arbiy Avstraliya yozgi vaqti", "NZST": "Yangi Zelandiya standart vaqti", "IST": "Hindiston vaqti", "ACST": "Markaziy Avstraliya standart vaqti", "CST": "Markaziy Amerika standart vaqti", "AST": "Atlantika standart vaqti", "WITA": "Markaziy Indoneziya vaqti", "HECU": "Kuba yozgi vaqti", "HKST": "Gonkong yozgi vaqti", "MEZ": "Markaziy Yevropa standart vaqti", "COT": "Kolumbiya standart vaqti", "MESZ": "Markaziy Yevropa yozgi vaqti", "∅∅∅": "Amazonka yozgi vaqti", "JST": "Yaponiya standart vaqti", "UYT": "Urugvay standart vaqti", "HKT": "Gonkong standart vaqti", "AEDT": "Sharqiy Avstraliya yozgi vaqti", "JDT": "Yaponiya yozgi vaqti", "HAST": "Gavayi-aleut standart vaqti", "HADT": "Gavayi-aleut yozgi vaqti", "EST": "Sharqiy Amerika standart vaqti", "HEPMX": "Meksika Tinch okeani yozgi vaqti", "WESZ": "G‘arbiy Yevropa yozgi vaqti", "CLST": "Chili yozgi vaqti", "WAT": "Gʻarbiy Afrika standart vaqti", "TMST": "Turkmaniston yozgi vaqti", "ChST": "Chamorro standart vaqti", "CDT": "Markaziy Amerika yozgi vaqti", "WIT": "Sharqiy Indoneziya vaqti", "HEPM": "Sen-Pyer va Mikelon yozgi vaqti", "WAST": "Gʻarbiy Afrika yozgi vaqti", "WART": "Gʻarbiy Argentina standart vaqti", "SGT": "Singapur vaqti", "ADT": "Atlantika yozgi vaqti", "SRT": "Surinam vaqti", "CHAST": "Chatem standart vaqti", "CHADT": "Chatem yozgi vaqti", "HEEG": "Sharqiy Grenlandiya yozgi vaqti", "GFT": "Fransuz Gvianasi vaqti", "ARST": "Argentina yozgi vaqti", "TMT": "Turkmaniston standart vaqti", "ECT": "Ekvador vaqti", "COST": "Kolumbiya yozgi vaqti", "EDT": "Sharqiy Amerika yozgi vaqti", "GYT": "Gayana vaqti", "MYT": "Malayziya vaqti", "HNT": "Nyufaundlend standart vaqti", "HNOG": "G‘arbiy Grenlandiya standart vaqti", "HEOG": "G‘arbiy Grenlandiya yozgi vaqti", "PDT": "Tinch okeani yozgi vaqti", "HNPM": "Sen-Pyer va Mikelon standart vaqti", "HNPMX": "Meksika Tinch okeani standart vaqti", "AKST": "Alyaska standart vaqti", "MDT": "Tog‘ yozgi vaqti (AQSH)", "BT": "Butan vaqti", "NZDT": "Yangi Zelandiya yozgi vaqti", "SAST": "Janubiy Afrika standart vaqti", "GMT": "Grinvich o‘rtacha vaqti", "AKDT": "Alyaska yozgi vaqti", "WIB": "Gʻarbiy Indoneziya vaqti", "ACWST": "Markaziy Avstraliya g‘arbiy standart vaqti", "PST": "Tinch okeani standart vaqti", "HNEG": "Sharqiy Grenlandiya standart vaqti", "ACDT": "Markaziy Avstraliya yozgi vaqti", "OEZ": "Sharqiy Yevropa standart vaqti", "CAT": "Markaziy Afrika vaqti", "UYST": "Urugvay yozgi vaqti", "MST": "Tog‘ standart vaqti (AQSH)", "ART": "Argentina standart vaqti", "WEZ": "G‘arbiy Yevropa standart vaqti", "LHDT": "Lord-Xau yozgi vaqti", "HNNOMX": "Shimoli-g‘arbiy Meksika standart vaqti", "HENOMX": "Shimoli-g‘arbiy Meksika yozgi vaqti", "WARST": "Gʻarbiy Argentina yozgi vaqti", "AEST": "Sharqiy Avstraliya standart vaqti", "LHST": "Lord-Xau standart vaqti", "BOT": "Boliviya vaqti", "CLT": "Chili standart vaqti", "OESZ": "Sharqiy Yevropa yozgi vaqti", "EAT": "Sharqiy Afrika vaqti", "HNCU": "Kuba standart vaqti", "VET": "Venesuela vaqti", "ACWDT": "Markaziy Avstraliya g‘arbiy yozgi vaqti", "HAT": "Nyufaundlend yozgi vaqti"},
 	}
 }
 
@@ -304,14 +304,6 @@ func (uz *uz_Latn_UZ) FmtCurrency(num float64, v uint64, currency currency.Type)
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
-	for j := len(uz.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, uz.currencyPositivePrefix[j])
-	}
-
 	if num < 0 {
 		b = append(b, uz.minus[0])
 	}
@@ -331,6 +323,10 @@ func (uz *uz_Latn_UZ) FmtCurrency(num float64, v uint64, currency currency.Type)
 			b = append(b, '0')
 		}
 	}
+
+	b = append(b, uz.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
 
 	return string(b)
 }
@@ -370,25 +366,7 @@ func (uz *uz_Latn_UZ) FmtAccounting(num float64, v uint64, currency currency.Typ
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(uz.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, uz.currencyNegativePrefix[j])
-		}
-
 		b = append(b, uz.minus[0])
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(uz.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, uz.currencyPositivePrefix[j])
-		}
 
 	}
 
@@ -406,6 +384,15 @@ func (uz *uz_Latn_UZ) FmtAccounting(num float64, v uint64, currency currency.Typ
 		for i := 0; i < 2-int(v); i++ {
 			b = append(b, '0')
 		}
+	}
+
+	if num < 0 {
+		b = append(b, uz.currencyNegativeSuffix...)
+		b = append(b, symbol...)
+	} else {
+
+		b = append(b, uz.currencyPositiveSuffix...)
+		b = append(b, symbol...)
 	}
 
 	return string(b)
@@ -449,7 +436,12 @@ func (uz *uz_Latn_UZ) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x2d}...)
 	b = append(b, uz.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -463,7 +455,12 @@ func (uz *uz_Latn_UZ) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x2d}...)
 	b = append(b, uz.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -475,16 +472,16 @@ func (uz *uz_Latn_UZ) FmtDateFull(t time.Time) string {
 
 	b = append(b, uz.daysWide[t.Weekday()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
-	b = append(b, []byte{0x20}...)
-	b = append(b, uz.monthsWide[t.Month()]...)
-	b = append(b, []byte{0x20}...)
-
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2d}...)
+	b = append(b, uz.monthsWide[t.Month()]...)
+	b = append(b, []byte{0x2c, 0x20}...)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

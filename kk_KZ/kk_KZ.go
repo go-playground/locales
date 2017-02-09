@@ -55,7 +55,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "қаң.", "ақп.", "нау.", "сәу.", "мам.", "мау.", "шіл.", "там.", "қыр.", "қаз.", "қар.", "жел."},
@@ -65,13 +65,13 @@ func New() locales.Translator {
 		daysNarrow:             []string{"Ж", "Д", "С", "С", "Б", "Ж", "С"},
 		daysShort:              []string{"Жс", "Дс", "Сс", "Ср", "Бс", "Жм", "Сб"},
 		daysWide:               []string{"жексенбі", "дүйсенбі", "сейсенбі", "сәрсенбі", "бейсенбі", "жұма", "сенбі"},
-		periodsAbbreviated:     []string{"таңғы", "түскі/кешкі"},
-		periodsNarrow:          []string{"таңғы", "түскі/кешкі"},
-		periodsWide:            []string{"таңғы", "түскі/кешкі"},
+		periodsAbbreviated:     []string{"AM", "PM"},
+		periodsNarrow:          []string{"AM", "PM"},
+		periodsWide:            []string{"AM", "PM"},
 		erasAbbreviated:        []string{"б.з.д.", "б.з."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"Біздің заманымызға дейін", "Біздің заманымыз"},
-		timezones:              map[string]string{"CST": "Солтүстік Америка стандартты орталық уақыты", "CDT": "Солтүстік Америка жазғы орталық уақыты", "CLT": "Чили стандартты уақыты", "WIT": "Шығыс Индонезия уақыты", "COT": "Колумбия стандартты уақыты", "ECT": "Эквадор уақыты", "IST": "Үндістан стандартты уақыты", "ADT": "Атлантика жазғы уақыты", "WIB": "Батыс Индонезия уақыты", "AEDT": "Австралия жазғы шығыс уақыты", "MDT": "Солтүстік Америка жазғы тау уақыты", "GMT": "Гринвич уақыты", "OESZ": "Шығыс Еуропа жазғы уақыты", "VET": "Венесуэла уақыты", "WART": "Батыс Аргентина стандартты уақыты", "HADT": "Гавай және Алеут аралдары жазғы уақыты", "MYT": "Малайзия уақыты", "WAST": "Батыс Африка жазғы уақыты", "AKST": "Аляска стандартты уақыты", "∅∅∅": "Бразилия жазғы уақыты", "LHDT": "Лорд-Хау жазғы уақыты", "COST": "Колумбия жазғы уақыты", "AEST": "Австралия стандартты шығыс уақыты", "ACST": "Австралия стандартты орталық уақыты", "ARST": "Аргентина жазғы уақыты", "WAT": "Батыс Африка стандартты уақыты", "EST": "Солтүстік Америка стандартты шығыс уақыты", "HKST": "Гонконг жазғы уақыты", "CHADT": "Чатем жазғы уақыты", "SRT": "Суринам уақыты", "OEZ": "Шығыс Еуропа стандартты уақыты", "TMT": "Түрікменстан стандартты уақыты", "BOT": "Боливия уақыты", "NZDT": "Жаңа Зеландия жазғы уақыты", "BT": "Бутан уақыты", "UYST": "Уругвай жазғы уақыты", "JDT": "Жапония жазғы уақыты", "UYT": "Уругвай стандартты уақыты", "JST": "Жапония стандартты уақыты", "MESZ": "Орталық Еуропа жазғы уақыты", "EDT": "Солтүстік Америка жазғы шығыс уақыты", "CAT": "Орталық Африка уақыты", "LHST": "Лорд-Хау стандартты уақыты", "GFT": "Француз Гвианасы уақыты", "ACDT": "Австралия жазғы орталық уақыты", "NZST": "Жаңа Зеландия стандартты уақыты", "WARST": "Батыс Аргентина жазғы уақыты", "AWDT": "Австралия жазғы батыс уақыты", "CLST": "Чили жазғы уақыты", "TMST": "Түрікменстан жазғы уақыты", "AWST": "Австралия стандартты батыс уақыты", "WESZ": "Батыс Еуропа жазғы уақыты", "SGT": "Сингапур уақыты", "PST": "Солтүстік Америка стандартты Тынық мұхиты уақыты", "EAT": "Шығыс Африка уақыты", "MST": "Солтүстік Америка стандартты тау уақыты", "ChST": "Чаморро стандартты уақыты", "HNT": "Ньюфаундленд стандартты уақыты", "CHAST": "Чатем стандартты уақыты", "ACWDT": "Австралия жазғы орталық-батыс уақыты", "PDT": "Солтүстік Америка жазғы Тынық мұхиты уақыты", "WITA": "Орталық Индонезия уақыты", "WEZ": "Батыс Еуропа стандартты уақыты", "ART": "Аргентина стандартты уақыты", "HAT": "Ньюфаундленд жазғы уақыты", "HKT": "Гонконг стандартты уақыты", "GYT": "Гайана уақыты", "MEZ": "Орталық Еуропа стандартты уақыты", "AKDT": "Аляска жазғы уақыты", "AST": "Атлантика стандартты уақыты", "HAST": "Гавай және Алеут аралдары стандартты уақыты", "ACWST": "Австралия стандартты орталық-батыс уақыты", "SAST": "Оңтүстік Африка уақыты"},
+		timezones:              map[string]string{"MST": "MST", "GYT": "Гайана уақыты", "WESZ": "Батыс Еуропа жазғы уақыты", "ACWST": "Австралия стандартты орталық-батыс уақыты", "CHADT": "Чатем жазғы уақыты", "∅∅∅": "Перу жазғы уақыты", "SGT": "Сингапур стандартты уақыты", "CST": "Солтүстік Америка стандартты орталық уақыты", "AST": "Атлантика стандартты уақыты", "HENOMX": "Солтүстік-Батыс Мексика жазғы уақыты", "UYT": "Уругвай стандартты уақыты", "WIB": "Батыс Индонезия уақыты", "ACWDT": "Австралия жазғы орталық-батыс уақыты", "ARST": "Аргентина жазғы уақыты", "AWDT": "Австралия жазғы батыс уақыты", "WARST": "Батыс Аргентина жазғы уақыты", "EAT": "Шығыс Африка уақыты", "WAST": "Батыс Африка жазғы уақыты", "HAST": "Гавай және Алеут аралдары стандартты уақыты", "SRT": "Суринам уақыты", "HAT": "Ньюфаундленд жазғы уақыты", "CAT": "Орталық Африка уақыты", "OESZ": "Шығыс Еуропа жазғы уақыты", "ADT": "Атлантика жазғы уақыты", "VET": "Венесуэла уақыты", "MEZ": "Орталық Еуропа стандартты уақыты", "ChST": "Чаморро стандартты уақыты", "AKST": "Аляска стандартты уақыты", "UYST": "Уругвай жазғы уақыты", "PST": "Солтүстік Америка стандартты Тынық мұхиты уақыты", "WITA": "Орталық Индонезия уақыты", "HEPM": "Сен-Пьер және Микелон жазғы уақыты", "MESZ": "Орталық Еуропа жазғы уақыты", "WAT": "Батыс Африка стандартты уақыты", "AKDT": "Аляска жазғы уақыты", "HNT": "Ньюфаундленд стандартты уақыты", "ART": "Аргентина стандартты уақыты", "AWST": "Австралия стандартты батыс уақыты", "HNPM": "Сен-Пьер және Микелон стандартты уақыты", "JST": "Жапония стандартты уақыты", "JDT": "Жапония жазғы уақыты", "IST": "Үндістан стандартты уақыты", "ACDT": "Австралия жазғы орталық уақыты", "WART": "Батыс Аргентина стандартты уақыты", "EDT": "Солтүстік Америка жазғы шығыс уақыты", "MDT": "MDT", "HADT": "Гавай және Алеут аралдары жазғы уақыты", "LHST": "Лорд-Хау стандартты уақыты", "TMT": "Түрікменстан стандартты уақыты", "EST": "Солтүстік Америка стандартты шығыс уақыты", "WEZ": "Батыс Еуропа стандартты уақыты", "HNOG": "Батыс Гренландия стандартты уақыты", "CHAST": "Чатем стандартты уақыты", "LHDT": "Лорд-Хау жазғы уақыты", "NZST": "Жаңа Зеландия стандартты уақыты", "HNEG": "Шығыс Гренландия стандартты уақыты", "ACST": "Австралия стандартты орталық уақыты", "HEPMX": "Мексика жазғы Тынық мұхит уақыты", "BT": "Бутан уақыты", "HEOG": "Батыс Гренландия жазғы уақыты", "HKST": "Гонконг жазғы уақыты", "SAST": "Оңтүстік Африка уақыты", "CLT": "Чили стандартты уақыты", "TMST": "Түрікменстан жазғы уақыты", "COT": "Колумбия стандартты уақыты", "HNNOMX": "Солтүстік-Батыс Мексика стандартты уақыты", "MYT": "Малайзия уақыты", "AEST": "Австралия стандартты шығыс уақыты", "NZDT": "Жаңа Зеландия жазғы уақыты", "BOT": "Боливия уақыты", "GFT": "Француз Гвианасы уақыты", "PDT": "Солтүстік Америка жазғы Тынық мұхиты уақыты", "CLST": "Чили жазғы уақыты", "COST": "Колумбия жазғы уақыты", "HNCU": "Куба стандартты уақыты", "HECU": "Куба жазғы уақыты", "HNPMX": "Мексика стандартты Тынық мұхит уақыты", "CDT": "Солтүстік Америка жазғы орталық уақыты", "HKT": "Гонконг стандартты уақыты", "HEEG": "Шығыс Гренландия жазғы уақыты", "OEZ": "Шығыс Еуропа стандартты уақыты", "ECT": "Эквадор уақыты", "GMT": "Гринвич уақыты", "WIT": "Шығыс Индонезия уақыты", "AEDT": "Австралия жазғы шығыс уақыты"},
 	}
 }
 
@@ -440,7 +440,12 @@ func (kk *kk_KZ) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd0, 0xb6}...)
 	b = append(b, []byte{0x2e, 0x20}...)
 
@@ -460,7 +465,12 @@ func (kk *kk_KZ) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd0, 0xb6}...)
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
@@ -475,7 +485,12 @@ func (kk *kk_KZ) FmtDateFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd0, 0xb6}...)
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = strconv.AppendInt(b, int64(t.Day()), 10)

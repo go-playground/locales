@@ -1017,7 +1017,7 @@ func TestFmtDateShort(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-			expected: "03.02.16",
+			expected: "03.02.2016", // date format changed from v29 dd.MM.yy to v30 dd.MM.y so adjusted test for new CLDR data
 		},
 		{
 			t:        time.Date(-500, 02, 03, 9, 0, 1, 0, time.UTC),

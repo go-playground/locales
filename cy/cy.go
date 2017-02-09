@@ -55,7 +55,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Ion", "Chwef", "Maw", "Ebrill", "Mai", "Meh", "Gorff", "Awst", "Medi", "Hyd", "Tach", "Rhag"},
@@ -65,13 +65,13 @@ func New() locales.Translator {
 		daysNarrow:             []string{"S", "Ll", "M", "M", "I", "G", "S"},
 		daysShort:              []string{"Su", "Ll", "Ma", "Me", "Ia", "Gw", "Sa"},
 		daysWide:               []string{"Dydd Sul", "Dydd Llun", "Dydd Mawrth", "Dydd Mercher", "Dydd Iau", "Dydd Gwener", "Dydd Sadwrn"},
-		periodsAbbreviated:     []string{"AM", "PM"},
-		periodsNarrow:          []string{"AM", "PM"},
-		periodsWide:            []string{"AM", "PM"},
+		periodsAbbreviated:     []string{"yb", "yh"},
+		periodsNarrow:          []string{"b", "h"},
+		periodsWide:            []string{"yb", "yh"},
 		erasAbbreviated:        []string{"CC", "OC"},
 		erasNarrow:             []string{"C", "O"},
 		erasWide:               []string{"Cyn Crist", "Oed Crist"},
-		timezones:              map[string]string{"NZST": "Amser Safonol Seland Newydd", "HAT": "Amser Haf Newfoundland", "UYST": "Amser Haf Uruguay", "CHADT": "Amser Haf Chatham", "HAST": "Amser Safonol Hawaii-Aleutian", "AKST": "Amser Safonol Alaska", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "GFT": "Amser Guyane Ffrengig", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "WITA": "Amser Canolbarth Indonesia", "∅∅∅": "Amser Haf yr Azores", "BOT": "Amser Bolivia", "CLT": "Amser Safonol Chile", "JST": "Amser Safonol Siapan", "OESZ": "Amser Haf Dwyrain Ewrop", "COT": "Amser Safonol Colombia", "CDT": "Amser Haf Canolbarth Gogledd America", "MDT": "Amser Haf Mynyddoedd Gogledd America", "MYT": "Amser Malaysia", "SRT": "Amser Suriname", "WARST": "Amser Haf Gorllewin Ariannin", "AEDT": "Amser Haf Dwyrain Awstralia", "ART": "Amser Safonol Ariannin", "AWDT": "Amser Haf Gorllewin Awstralia", "OEZ": "Amser Safonol Dwyrain Ewrop", "WIB": "Amser Gorllewin Indonesia", "AEST": "Amser Safonol Dwyrain Awstralia", "AST": "Amser Safonol Cefnfor yr Iwerydd", "IST": "Amser India", "CHAST": "Amser Safonol Chatham", "MEZ": "Amser Safonol Canolbarth Ewrop", "EST": "Amser Safonol Dwyrain Gogledd America", "GYT": "Amser Guyana", "CAT": "Amser Canolbarth Affrica", "LHDT": "Amser Haf yr Arglwydd Howe", "HKT": "Amser Safonol Hong Kong", "ECT": "Amser Ecuador", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "AKDT": "Amser Haf Alaska", "CLST": "Amser Haf Chile", "EDT": "Amser Haf Dwyrain Gogledd America", "CST": "Amser Safonol Canolbarth Gogledd America", "HKST": "Amser Haf Hong Kong", "MESZ": "Amser Haf Canolbarth Ewrop", "TMT": "Amser Safonol Tyrcmenistan", "AWST": "Amser Safonol Gorllewin Awstralia", "ARST": "Amser Haf Ariannin", "MST": "Amser Safonol Mynyddoedd Gogledd America", "HNT": "Amser Safonol Newfoundland", "VET": "Amser Venezuela", "ACST": "Amser Safonol Canolbarth Awstralia", "WART": "Amser Safonol Gorllewin Ariannin", "HADT": "Amser Haf Hawaii-Aleutian", "COST": "Amser Haf Colombia", "ADT": "Amser Haf Cefnfor yr Iwerydd", "WIT": "Amser Dwyrain Indonesia", "BT": "Amser Bhutan", "WAT": "Amser Safonol Gorllewin Affrica", "NZDT": "Amser Haf Seland Newydd", "WEZ": "Amser Safonol Gorllewin Ewrop", "SGT": "Amser Singapore", "ChST": "Amser Chamorro", "JDT": "Amser Haf Siapan", "WESZ": "Amser Haf Gorllewin Ewrop", "UYT": "Amser Safonol Uruguay", "EAT": "Amser Dwyrain Affrica", "WAST": "Amser Haf Gorllewin Affrica", "GMT": "Amser Safonol Greenwich", "LHST": "Amser Safonol yr Arglwydd Howe", "ACDT": "Amser Haf Canolbarth Awstralia", "SAST": "Amser Safonol De Affrica", "TMST": "Amser Haf Tyrcmenistan"},
+		timezones:              map[string]string{"WESZ": "Amser Haf Gorllewin Ewrop", "WITA": "Amser Canolbarth Indonesia", "AEDT": "Amser Haf Dwyrain Awstralia", "CHADT": "Amser Haf Chatham", "SAST": "Amser Safonol De Affrica", "ChST": "Amser Chamorro", "EST": "Amser Safonol Dwyrain Gogledd America", "IST": "Amser India", "WAT": "Amser Safonol Gorllewin Affrica", "HNT": "Amser Safonol Newfoundland", "ARST": "Amser Haf Ariannin", "UYST": "Amser Haf Uruguay", "NZDT": "Amser Haf Seland Newydd", "HEEG": "Amser Haf Dwyrain yr Ynys Las", "OESZ": "Amser Haf Dwyrain Ewrop", "CST": "Amser Safonol Canolbarth Gogledd America", "ACWDT": "Amser Haf Canolbarth Gorllewin Awstralia", "HKT": "Amser Safonol Hong Kong", "COST": "Amser Haf Colombia", "SGT": "Amser Singapore", "CDT": "Amser Haf Canolbarth Gogledd America", "GYT": "Amser Guyana", "MESZ": "Amser Haf Canolbarth Ewrop", "HNEG": "Amser Safonol Dwyrain yr Ynys Las", "HENOMX": "Amser Haf Gogledd Orllewin Mecsico", "WIB": "Amser Gorllewin Indonesia", "CHAST": "Amser Safonol Chatham", "TMST": "Amser Haf Tyrcmenistan", "HNCU": "Amser Safonol Cuba", "HADT": "Amser Haf Hawaii-Aleutian", "AEST": "Amser Safonol Dwyrain Awstralia", "HEPM": "Amser Haf Saint-Pierre-et-Miquelon", "∅∅∅": "Amser Haf Amazonas", "COT": "Amser Safonol Colombia", "GMT": "Amser Safonol Greenwich", "HEOG": "Amser Haf Gorllewin yr Ynys Las", "WART": "Amser Safonol Gorllewin Ariannin", "AST": "Amser Safonol Cefnfor yr Iwerydd", "HAST": "Amser Safonol Hawaii-Aleutian", "LHST": "Amser Safonol yr Arglwydd Howe", "JST": "Amser Safonol Siapan", "WAST": "Amser Haf Gorllewin Affrica", "OEZ": "Amser Safonol Dwyrain Ewrop", "HEPMX": "Amser Haf Pasiffig Mecsico", "VET": "Amser Venezuela", "SRT": "Amser Suriname", "PST": "Amser Safonol Cefnfor Tawel Gogledd America", "ACST": "Amser Safonol Canolbarth Awstralia", "ACDT": "Amser Haf Canolbarth Awstralia", "EAT": "Amser Dwyrain Affrica", "HNPMX": "Amser Safonol Pasiffig Mecsico", "PDT": "Amser Haf Cefnfor Tawel Gogledd America", "AKDT": "Amser Haf Alaska", "WIT": "Amser Dwyrain Indonesia", "AWDT": "Amser Haf Gorllewin Awstralia", "GFT": "Amser Guyane Ffrengig", "MDT": "MDT", "EDT": "Amser Haf Dwyrain Gogledd America", "AKST": "Amser Safonol Alaska", "HNPM": "Amser Safonol Saint-Pierre-et-Miquelon", "CLT": "Amser Safonol Chile", "CAT": "Amser Canolbarth Affrica", "UYT": "Amser Safonol Uruguay", "HKST": "Amser Haf Hong Kong", "LHDT": "Amser Haf yr Arglwydd Howe", "WEZ": "Amser Safonol Gorllewin Ewrop", "ART": "Amser Safonol Ariannin", "HNOG": "Amser Safonol Gorllewin yr Ynys Las", "WARST": "Amser Haf Gorllewin Ariannin", "HECU": "Amser Haf Cuba", "MYT": "Amser Malaysia", "BT": "Amser Bhutan", "MEZ": "Amser Safonol Canolbarth Ewrop", "BOT": "Amser Bolivia", "TMT": "Amser Safonol Tyrcmenistan", "ECT": "Amser Ecuador", "AWST": "Amser Safonol Gorllewin Awstralia", "CLST": "Amser Haf Chile", "JDT": "Amser Haf Siapan", "MST": "MST", "ACWST": "Amser Safonol Canolbarth Gorllewin Awstralia", "NZST": "Amser Safonol Seland Newydd", "HNNOMX": "Amser Safonol Gogledd Orllewin Mecsico", "ADT": "Amser Haf Cefnfor yr Iwerydd", "HAT": "Amser Haf Newfoundland"},
 	}
 }
 
@@ -492,7 +492,12 @@ func (cy *cy) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, cy.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -506,7 +511,12 @@ func (cy *cy) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, cy.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -522,7 +532,12 @@ func (cy *cy) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, cy.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

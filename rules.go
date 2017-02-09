@@ -129,28 +129,28 @@ type Translator interface {
 	// in accounting notation.
 	FmtAccounting(num float64, v uint64, currency currency.Type) string
 
-	// returns the short date representation of 't' for '{{ .Locale }}'
+	// returns the short date representation of 't' for locale
 	FmtDateShort(t time.Time) string
 
-	// returns the medium date representation of 't' for '{{ .Locale }}'
+	// returns the medium date representation of 't' for locale
 	FmtDateMedium(t time.Time) string
 
-	//  returns the long date representation of 't' for '{{ .Locale }}'
+	//  returns the long date representation of 't' for locale
 	FmtDateLong(t time.Time) string
 
-	// returns the full date representation of 't' for '{{ .Locale }}'
+	// returns the full date representation of 't' for locale
 	FmtDateFull(t time.Time) string
 
-	// returns the short time representation of 't' for '{{ .Locale }}'
+	// returns the short time representation of 't' for locale
 	FmtTimeShort(t time.Time) string
 
-	// returns the medium time representation of 't' for '{{ .Locale }}'
+	// returns the medium time representation of 't' for locale
 	FmtTimeMedium(t time.Time) string
 
-	// returns the long time representation of 't' for '{{ .Locale }}'
+	// returns the long time representation of 't' for locale
 	FmtTimeLong(t time.Time) string
 
-	// returns the full time representation of 't' for '{{ .Locale }}'
+	// returns the full time representation of 't' for locale
 	FmtTimeFull(t time.Time) string
 }
 

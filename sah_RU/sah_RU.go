@@ -22,9 +22,7 @@ type sah_RU struct {
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
 	currencyPositiveSuffix string
-	currencyNegativePrefix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -50,26 +48,30 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  ",",
+		decimal:                ",",
+		group:                  " ",
+		minus:                  "-",
+		percent:                "%",
+		perMille:               "‰",
 		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyPositiveSuffix: "K",
-		currencyNegativePrefix: " ",
-		currencyNegativeSuffix: "K",
-		monthsAbbreviated:      []string{"", "Тохс", "Олун", "Клн_ттр", "Мус_уст", "Ыам_йн", "Бэс_йн", "От_йн", "Атрдь_йн", "Блҕн_йн", "Алт", "Сэт", "Ахс"},
+		inifinity:              "∞",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
+		monthsAbbreviated:      []string{"", "Тохс", "Олун", "Клн", "Мсу", "Ыам", "Бэс", "Отй", "Атр", "Блҕ", "Алт", "Сэт", "Ахс"},
 		monthsNarrow:           []string{"", "Т", "О", "К", "М", "Ы", "Б", "О", "А", "Б", "А", "С", "А"},
-		monthsWide:             []string{"", "Тохсунньу", "Олунньу", "Кулун тутар", "Муус устар", "Ыам ыйын", "Бэс ыйын", "От ыйын", "Атырдьых ыйын", "Балаҕан ыйын", "Алтынньы", "Сэтинньи", "Ахсынньы"},
-		daysAbbreviated:        []string{"Бс", "Бн", "Оп", "Сэ", "Чп", "Бэ", "Сб"},
+		monthsWide:             []string{"", "Тохсунньу", "Олунньу", "Кулун тутар", "Муус устар", "Ыам ыйын", "Бэс ыйын", "От ыйын", "Атырдьых ыйын", "Балаҕан ыйын", "Алтынньы", "Сэтинньи", "ахсынньы"},
+		daysAbbreviated:        []string{"бс", "бн", "оп", "сэ", "чп", "бэ", "сб"},
 		daysNarrow:             []string{"Б", "Б", "О", "С", "Ч", "Б", "С"},
-		daysWide:               []string{"Баскыһыанньа", "Бэнидиэлинньик", "Оптуорунньук", "Сэрэдэ", "Чэппиэр", "Бээтиҥсэ", "Субуота"},
+		daysShort:              []string{"бс", "бн", "оп", "сэ", "чп", "бэ", "сб"},
+		daysWide:               []string{"баскыһыанньа", "бэнидиэнньик", "оптуорунньук", "сэрэдэ", "чэппиэр", "Бээтиҥсэ", "субуота"},
 		periodsAbbreviated:     []string{"ЭИ", "ЭК"},
+		periodsNarrow:          []string{"ЭИ", "ЭК"},
 		periodsWide:            []string{"ЭИ", "ЭК"},
 		erasAbbreviated:        []string{"б. э. и.", "б. э"},
 		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"NZDT": "NZDT", "OESZ": "OESZ", "GYT": "GYT", "BOT": "BOT", "HNT": "HNT", "WIT": "WIT", "UYST": "UYST", "ARST": "ARST", "WAT": "WAT", "MESZ": "MESZ", "HADT": "HADT", "SAST": "SAST", "HKST": "HKST", "HAT": "HAT", "CLT": "CLT", "JST": "JST", "MEZ": "MEZ", "ACWST": "ACWST", "EAT": "EAT", "WIB": "WIB", "AST": "AST", "CHAST": "CHAST", "CAT": "CAT", "JDT": "JDT", "LHDT": "LHDT", "HKT": "HKT", "SRT": "SRT", "AKST": "AKST", "MST": "MST", "∅∅∅": "∅∅∅", "ChST": "ChST", "AWDT": "AWDT", "SGT": "SGT", "ACST": "ACST", "WAST": "WAST", "MYT": "MYT", "COT": "COT", "AEST": "AEST", "HAST": "HAST", "CHADT": "CHADT", "TMST": "TMST", "BT": "BT", "LHST": "LHST", "WEZ": "WEZ", "VET": "VET", "ACDT": "ACDT", "PST": "PST", "GMT": "GMT", "MDT": "MDT", "NZST": "NZST", "AWST": "AWST", "AEDT": "AEDT", "IST": "IST", "CDT": "CDT", "GFT": "GFT", "OEZ": "OEZ", "COST": "COST", "ECT": "ECT", "EST": "EST", "PDT": "PDT", "WARST": "WARST", "AKDT": "AKDT", "EDT": "EDT", "TMT": "TMT", "ART": "ART", "WART": "WART", "WITA": "WITA", "CST": "CST", "CLST": "CLST", "UYT": "UYT", "WESZ": "WESZ", "ACWDT": "ACWDT", "ADT": "ADT"},
+		erasWide:               []string{"б. э. и.", "б. э"},
+		timezones:              map[string]string{"ECT": "ECT", "UYT": "UYT", "WESZ": "WESZ", "HKT": "HKT", "GFT": "GFT", "WAT": "WAT", "HNCU": "HNCU", "MYT": "MYT", "PST": "PST", "HNPM": "HNPM", "ACDT": "Киин Австралия сайыҥҥы кэмэ", "WAST": "WAST", "WARST": "WARST", "HECU": "HECU", "HEPMX": "HEPMX", "GYT": "GYT", "HEEG": "HEEG", "ACST": "Киин Австралия сүрүн кэмэ", "EAT": "EAT", "MDT": "MDT", "WITA": "WITA", "AWDT": "Арҕаа Австралия сайыҥҥы кэмэ", "HAST": "HAST", "HAT": "HAT", "MESZ": "MESZ", "CLST": "CLST", "OEZ": "OEZ", "WART": "WART", "EDT": "EDT", "MST": "MST", "ART": "ART", "JST": "Дьоппуон сүрүн кэмэ", "CLT": "CLT", "∅∅∅": "∅∅∅", "UYST": "UYST", "AKDT": "AKDT", "SAST": "SAST", "WIB": "WIB", "HNOG": "HNOG", "ACWST": "ACWST", "MEZ": "MEZ", "ChST": "ChST", "COT": "COT", "HNT": "HNT", "ACWDT": "ACWDT", "NZST": "Саҥа Сэйлэнд сүрүн кэмэ", "NZDT": "Саҥа Сэйлэнд сайыҥҥы кэмэ", "TMST": "TMST", "VET": "VET", "BT": "BT", "PDT": "PDT", "CHAST": "CHAST", "HNNOMX": "HNNOMX", "EST": "EST", "CST": "CST", "SRT": "SRT", "HKST": "HKST", "LHDT": "LHDT", "IST": "Ииндийэ сүрүн кэмэ", "TMT": "TMT", "CAT": "CAT", "ADT": "ADT", "AWST": "Арҕаа Австралия сүрүн кэмэ", "HNPMX": "HNPMX", "AKST": "AKST", "LHST": "LHST", "BOT": "BOT", "HNEG": "HNEG", "COST": "COST", "GMT": "GMT", "SGT": "SGT", "AEDT": "Илин Австралия сайыҥҥы кэмэ", "HEPM": "HEPM", "JDT": "Дьоппуон сайыҥҥы кэмэ", "OESZ": "OESZ", "ARST": "ARST", "AEST": "Илин Австралия сүрүн кэмэ", "CHADT": "CHADT", "HENOMX": "HENOMX", "CDT": "CDT", "WIT": "WIT", "HEOG": "HEOG", "WEZ": "WEZ", "AST": "AST", "HADT": "HADT"},
 	}
 }
 
@@ -181,22 +183,51 @@ func (sah *sah_RU) WeekdaysWide() []string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'sah_RU' and handles both Whole and Real numbers based on 'v'
 func (sah *sah_RU) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, sah.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(sah.group) - 1; j >= 0; j-- {
+					b = append(b, sah.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, sah.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'sah_RU' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (sah *sah_RU) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-}
-
-// FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sah_RU'
-func (sah *sah_RU) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	symbol := sah.currencies[currency]
-	l := len(s) + len(symbol) + 4
-
+	l := len(s) + 3
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -209,12 +240,50 @@ func (sah *sah_RU) FmtCurrency(num float64, v uint64, currency currency.Type) st
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
+	if num < 0 {
+		b = append(b, sah.minus[0])
 	}
 
-	for j := len(sah.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, sah.currencyPositivePrefix[j])
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, sah.percent...)
+
+	return string(b)
+}
+
+// FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'sah_RU'
+func (sah *sah_RU) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := sah.currencies[currency]
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, sah.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(sah.group) - 1; j >= 0; j-- {
+					b = append(b, sah.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
 	}
 
 	if num < 0 {
@@ -226,7 +295,20 @@ func (sah *sah_RU) FmtCurrency(num float64, v uint64, currency currency.Type) st
 		b[i], b[j] = b[j], b[i]
 	}
 
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, sah.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
 	b = append(b, sah.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
 
 	return string(b)
 }
@@ -237,15 +319,28 @@ func (sah *sah_RU) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := sah.currencies[currency]
-	l := len(s) + len(symbol) + 4
-
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, sah.decimal[0])
+			inWhole = true
 			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(sah.group) - 1; j >= 0; j-- {
+					b = append(b, sah.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
 		}
 
 		b = append(b, s[i])
@@ -253,25 +348,7 @@ func (sah *sah_RU) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(sah.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, sah.currencyNegativePrefix[j])
-		}
-
 		b = append(b, sah.minus[0])
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(sah.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, sah.currencyPositivePrefix[j])
-		}
 
 	}
 
@@ -280,11 +357,24 @@ func (sah *sah_RU) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		b[i], b[j] = b[j], b[i]
 	}
 
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, sah.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
 	if num < 0 {
 		b = append(b, sah.currencyNegativeSuffix...)
+		b = append(b, symbol...)
 	} else {
 
 		b = append(b, sah.currencyPositiveSuffix...)
+		b = append(b, symbol...)
 	}
 
 	return string(b)
@@ -314,7 +404,12 @@ func (sah *sah_RU) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2c, 0x20}...)
 	b = append(b, sah.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
@@ -328,7 +423,12 @@ func (sah *sah_RU) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2c, 0x20}...)
 	b = append(b, sah.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
@@ -342,7 +442,12 @@ func (sah *sah_RU) FmtDateFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd1, 0x81, 0xd1, 0x8b, 0xd0, 0xbb}...)
 	b = append(b, []byte{0x20}...)
 	b = append(b, sah.monthsWide[t.Month()]...)
@@ -359,6 +464,19 @@ func (sah *sah_RU) FmtDateFull(t time.Time) string {
 func (sah *sah_RU) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
+
+	if t.Hour() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
+	b = append(b, sah.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Minute()), 10)
 
 	return string(b)
 }
@@ -427,6 +545,35 @@ func (sah *sah_RU) FmtTimeLong(t time.Time) string {
 func (sah *sah_RU) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
+
+	if t.Hour() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
+	b = append(b, sah.timeSeparator...)
+
+	if t.Minute() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Minute()), 10)
+	b = append(b, sah.timeSeparator...)
+
+	if t.Second() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Second()), 10)
+	b = append(b, []byte{0x20}...)
+
+	tz, _ := t.Zone()
+
+	if btz, ok := sah.timezones[tz]; ok {
+		b = append(b, btz...)
+	} else {
+		b = append(b, tz...)
+	}
 
 	return string(b)
 }
