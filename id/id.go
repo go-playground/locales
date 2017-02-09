@@ -53,7 +53,7 @@ func New() locales.Translator {
 		perMille:           "‰",
 		timeSeparator:      ".",
 		inifinity:          "∞",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "Rp", "IEP", "ILP", "ILR", "₪", "Rs", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "Rp", "IEP", "ILP", "ILR", "₪", "Rs", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		monthsAbbreviated:  []string{"", "Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agt", "Sep", "Okt", "Nov", "Des"},
 		monthsNarrow:       []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
 		monthsWide:         []string{"", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"},
@@ -66,8 +66,8 @@ func New() locales.Translator {
 		periodsWide:        []string{"AM", "PM"},
 		erasAbbreviated:    []string{"SM", "M"},
 		erasNarrow:         []string{"SM", "M"},
-		erasWide:           []string{"Sebelum Masehi", "M"},
-		timezones:          map[string]string{"LHST": "Waktu Standar Lord Howe", "UYT": "Waktu Standar Uruguay", "OEZ": "Waktu Standar Eropa Timur", "ACWST": "Waktu Standar Barat Tengah Australia", "CST": "Waktu Standar Tengah", "NZDT": "Waktu Musim Panas Selandia Baru", "AWST": "Waktu Standar Barat Australia", "GMT": "Waktu Rata-rata Greenwich", "VET": "Waktu Venezuela", "MESZ": "Waktu Musim Panas Eropa Tengah", "WARST": "Waktu Musim Panas Argentina Bagian Barat", "EST": "Waktu Standar Timur", "WIT": "Waktu Indonesia Timur", "CHAST": "Waktu Standar Chatham", "AKST": "Waktu Standar Alaska", "WAST": "Waktu Musim Panas Afrika Barat", "CDT": "Waktu Musim Panas Tengah", "GYT": "Waktu Guyana", "CLT": "Waktu Standar Cile", "AWDT": "Waktu Musim Panas Barat Australia", "ECT": "Waktu Ekuador", "ARST": "Waktu Musim Panas Argentina", "PST": "Waktu Standar Pasifik", "WITA": "Waktu Indonesia Tengah", "MDT": "Waktu Musim Panas Pegunungan", "GFT": "Waktu Guyana Prancis", "AEDT": "Waktu Musim Panas Timur Australia", "MST": "Waktu Standar Pegunungan", "∅∅∅": "Waktu Musim Panas Brasil", "OESZ": "Waktu Musim Panas Eropa Timur", "ART": "Waktu Standar Argentina", "JST": "Waktu Standar Jepang", "HKST": "Waktu Musim Panas Hong Kong", "EDT": "Waktu Musim Panas Timur", "SAST": "Waktu Standar Afrika Selatan", "AKDT": "Waktu Musim Panas Alaska", "TMST": "Waktu Musim Panas Turkmenistan", "CAT": "Waktu Afrika Tengah", "UYST": "Waktu Musim Panas Uruguay", "EAT": "Waktu Afrika Timur", "MYT": "Waktu Malaysia", "NZST": "Waktu Standar Selandia Baru", "SGT": "Waktu Standar Singapura", "WART": "Waktu Standar Argentina Bagian Barat", "AEST": "Waktu Standar Timur Australia", "ChST": "Waktu Chamorro", "ACWDT": "Waktu Musim Panas Barat Tengah Australia", "BOT": "Waktu Bolivia", "CLST": "Waktu Musim Panas Cile", "HAST": "Waktu Standar Hawaii-Aleutian", "PDT": "Waktu Musim Panas Pasifik", "JDT": "Waktu Musim Panas Jepang", "CHADT": "Waktu Musim Panas Chatham", "WEZ": "Waktu Standar Eropa Barat", "HKT": "Waktu Standar Hong Kong", "WIB": "Waktu Indonesia Barat", "WESZ": "Waktu Musim Panas Eropa Barat", "ACST": "Waktu Standar Tengah Australia", "ADT": "Waktu Musim Panas Atlantik", "TMT": "Waktu Standar Turkmenistan", "LHDT": "Waktu Musim Panas Lord Howe", "COST": "Waktu Musim Panas Kolombia", "ACDT": "Waktu Musim Panas Tengah Australia", "IST": "Waktu India", "AST": "Waktu Standar Atlantik", "HNT": "Waktu Standar Newfoundland", "HAT": "Waktu Musim Panas Newfoundland", "BT": "Waktu Bhutan", "SRT": "Waktu Suriname", "COT": "Waktu Standar Kolombia", "MEZ": "Waktu Standar Eropa Tengah", "HADT": "Waktu Musim Panas Hawaii-Aleutian", "WAT": "Waktu Standar Afrika Barat"},
+		erasWide:           []string{"Sebelum Masehi", "Masehi"},
+		timezones:          map[string]string{"JDT": "Waktu Musim Panas Jepang", "TMT": "Waktu Standar Turkmenistan", "ChST": "Waktu Standar Chamorro", "HECU": "Waktu Musim Panas Kuba", "EST": "Waktu Standar Timur", "AKDT": "Waktu Musim Panas Alaska", "SAST": "Waktu Standar Afrika Selatan", "JST": "Waktu Standar Jepang", "GYT": "Waktu Guyana", "WIT": "Waktu Indonesia Timur", "AEDT": "Waktu Musim Panas Timur Australia", "HEPM": "Waktu Musim Panas Saint Pierre dan Miquelon", "WARST": "Waktu Musim Panas Argentina Bagian Barat", "COT": "Waktu Standar Kolombia", "ACDT": "Waktu Musim Panas Tengah Australia", "HNCU": "Waktu Standar Kuba", "ARST": "Waktu Musim Panas Argentina", "AWST": "Waktu Standar Barat Australia", "CHAST": "Waktu Standar Chatham", "BOT": "Waktu Bolivia", "UYT": "Waktu Standar Uruguay", "HAST": "Waktu Standar Hawaii-Aleutian", "AWDT": "Waktu Musim Panas Barat Australia", "MESZ": "Waktu Musim Panas Eropa Tengah", "ECT": "Waktu Ekuador", "WART": "Waktu Standar Argentina Bagian Barat", "MST": "Waktu Standar Makau", "CDT": "Waktu Musim Panas Tengah", "SRT": "Waktu Suriname", "NZST": "Waktu Standar Selandia Baru", "HNEG": "Waktu Standar Greenland Timur", "HEEG": "Waktu Musim Panas Greenland Timur", "WAST": "Waktu Musim Panas Afrika Barat", "OESZ": "Waktu Musim Panas Eropa Timur", "ART": "Waktu Standar Argentina", "HEOG": "Waktu Musim Panas Greenland Barat", "LHST": "Waktu Standar Lord Howe", "CLST": "Waktu Musim Panas Cile", "EAT": "Waktu Afrika Timur", "ADT": "Waktu Musim Panas Atlantik", "BT": "Waktu Bhutan", "PDT": "Waktu Musim Panas Pasifik", "ACST": "Waktu Standar Tengah Australia", "CAT": "Waktu Afrika Tengah", "WIB": "Waktu Indonesia Barat", "WEZ": "Waktu Standar Eropa Barat", "HNNOMX": "Waktu Standar Meksiko Barat Laut", "CST": "Waktu Standar Tengah", "COST": "Waktu Musim Panas Kolombia", "MYT": "Waktu Malaysia", "PST": "Waktu Standar Pasifik", "HKT": "Waktu Standar Hong Kong", "LHDT": "Waktu Musim Panas Lord Howe", "IST": "Waktu India", "HAT": "Waktu Musim Panas Newfoundland", "HNOG": "Waktu Standar Greenland Barat", "MDT": "Waktu Musim Panas Makau", "UYST": "Waktu Musim Panas Uruguay", "HADT": "Waktu Musim Panas Hawaii-Aleutian", "CHADT": "Waktu Musim Panas Chatham", "EDT": "Waktu Musim Panas Timur", "HEPMX": "Waktu Musim Panas Pasifik Meksiko", "WITA": "Waktu Indonesia Tengah", "∅∅∅": "Waktu Musim Panas Amazon", "SGT": "Waktu Standar Singapura", "AST": "Waktu Standar Atlantik", "VET": "Waktu Venezuela", "HNT": "Waktu Standar Newfoundland", "HKST": "Waktu Musim Panas Hong Kong", "NZDT": "Waktu Musim Panas Selandia Baru", "WAT": "Waktu Standar Afrika Barat", "TMST": "Waktu Musim Panas Turkmenistan", "OEZ": "Waktu Standar Eropa Timur", "HENOMX": "Waktu Musim Panas Meksiko Barat Laut", "GMT": "Greenwich Mean Time", "HNPMX": "Waktu Standar Pasifik Meksiko", "ACWDT": "Waktu Musim Panas Barat Tengah Australia", "CLT": "Waktu Standar Cile", "GFT": "Waktu Guyana Prancis", "WESZ": "Waktu Musim Panas Eropa Barat", "HNPM": "Waktu Standar Saint Pierre dan Miquelon", "ACWST": "Waktu Standar Barat Tengah Australia", "AEST": "Waktu Standar Timur Australia", "MEZ": "Waktu Standar Eropa Tengah", "AKST": "Waktu Standar Alaska"},
 	}
 }
 
@@ -409,7 +409,12 @@ func (id *id) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, id.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -423,7 +428,12 @@ func (id *id) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, id.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -444,7 +454,12 @@ func (id *id) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, id.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

@@ -53,7 +53,7 @@ func New() locales.Translator {
 		perMille:           "‰",
 		timeSeparator:      ":",
 		inifinity:          "∞",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		monthsAbbreviated:  []string{"", "ਜਨ", "ਫ਼ਰ", "ਮਾਰਚ", "ਅਪ੍ਰੈ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾ", "ਅਗ", "ਸਤੰ", "ਅਕਤੂ", "ਨਵੰ", "ਦਸੰ"},
 		monthsNarrow:       []string{"", "ਜ", "ਫ਼", "ਮਾ", "ਅ", "ਮ", "ਜੂ", "ਜੁ", "ਅ", "ਸ", "ਅ", "ਨ", "ਦ"},
 		monthsWide:         []string{"", "ਜਨਵਰੀ", "ਫ਼ਰਵਰੀ", "ਮਾਰਚ", "ਅਪ੍ਰੈਲ", "ਮਈ", "ਜੂਨ", "ਜੁਲਾਈ", "ਅਗਸਤ", "ਸਤੰਬਰ", "ਅਕਤੂਬਰ", "ਨਵੰਬਰ", "ਦਸੰਬਰ"},
@@ -65,9 +65,9 @@ func New() locales.Translator {
 		periodsNarrow:      []string{"ਸ.", "ਸ਼."},
 		periodsWide:        []string{"ਪੂ.ਦੁ.", "ਬਾ.ਦੁ."},
 		erasAbbreviated:    []string{"ਈ. ਪੂ.", "ਸੰਨ"},
-		erasNarrow:         []string{"ਈ. ਪੂ.", "ਸੰਨ"},
+		erasNarrow:         []string{"ਈ.ਪੂ.", "ਸੰਨ"},
 		erasWide:           []string{"ਈਸਵੀ ਪੂਰਵ", "ਈਸਵੀ ਸੰਨ"},
-		timezones:          map[string]string{"LHST": "ਲੌਰਡ ਹੋਵੇ ਮਿਆਰੀ ਸਮਾਂ", "LHDT": "ਲੌਰਡ ਹੋਵੇ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "UYT": "ਉਰੂਗਵੇ ਮਿਆਰੀ ਸਮਾਂ", "UYST": "ਉਰੂਗਵੇ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "HKT": "ਹਾਂਗ ਕਾਂਗ ਮਿਆਰੀ ਸਮਾਂ", "AKDT": "ਅਲਾਸਕਾ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "NZDT": "ਨਿਊਜ਼ੀਲੈਂਡ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "GFT": "ਫ੍ਰੈਂਚ ਗੁਏਨਾ ਸਮਾਂ", "MESZ": "ਮੱਧ ਯੂਰਪੀ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "ACWST": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਪੱਛਮੀ ਮਿਆਰੀ ਸਮਾਂ", "WEZ": "ਪੱਛਮੀ ਯੂਰਪੀ ਮਿਆਰੀ ਸਮਾਂ", "WESZ": "ਪੱਛਮੀ ਯੂਰਪੀ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "HKST": "ਹਾਂਗ ਕਾਂਗ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "MEZ": "ਮੱਧ ਯੂਰਪੀ ਮਿਆਰੀ ਸਮਾਂ", "AKST": "ਅਲਾਸਕਾ ਮਿਆਰੀ ਸਮਾਂ", "MYT": "ਮਲੇਸ਼ੀਆ ਸਮਾਂ", "BT": "ਭੂਟਾਨ ਸਮਾਂ", "ACWDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਪੱਛਮੀ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "EDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੂਰਬੀ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "ChST": "ਚਾਮੋਰੋ ਮਿਆਰੀ ਸਮਾਂ", "GMT": "ਗ੍ਰੀਨਵਿਚ ਮੀਨ ਟਾਈਮ", "WIB": "ਪੱਛਮੀ ਇੰਡੋਨੇਸ਼ੀਆ ਸਮਾਂ", "HAST": "ਹਵਾਈ-ਅਲੇਯੂਸ਼ਿਅਨ ਮਿਆਰੀ ਸਮਾਂ", "WITA": "ਮੱਧ ਇੰਡੋਨੇਸ਼ੀਆਈ ਸਮਾਂ", "GYT": "ਗੁਯਾਨਾ ਸਮਾਂ", "CLT": "ਚਿਲੀ ਮਿਆਰੀ ਸਮਾਂ", "∅∅∅": "ਬ੍ਰਾਜ਼ੀਲੀਆ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "TMT": "ਤੁਰਕਮੇਨਿਸਤਾਨ ਮਿਆਰੀ ਸਮਾਂ", "MST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਮਾਉਂਟੇਨ ਮਿਆਰੀ ਸਮਾਂ", "VET": "ਵੈਨੇਜ਼ੂਏਲਾ ਸਮਾਂ", "CST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਕੇਂਦਰੀ ਮਿਆਰੀ ਸਮਾਂ", "AWST": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੱਛਮੀ ਮਿਆਰੀ ਸਮਾਂ", "JDT": "ਜਪਾਨ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "CHADT": "ਚੈਥਮ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "HADT": "ਹਵਾਈ-ਅਲੇਯੂਸ਼ਿਅਨ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "EST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੂਰਬੀ ਮਿਆਰੀ ਸਮਾਂ", "WIT": "ਪੂਰਬੀ ਇੰਡੋਨੇਸ਼ੀਆ ਸਮਾਂ", "ACDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "SGT": "ਸਿੰਗਾਪੁਰ ਮਿਆਰੀ ਸਮਾਂ", "COST": "ਕੋਲੰਬੀਆ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "AEDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੂਰਬੀ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "PST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੈਸਿਫਿਕ ਮਿਆਰੀ ਸਮਾਂ", "BOT": "ਬੋਲੀਵੀਆ ਸਮਾਂ", "SRT": "ਸੂਰੀਨਾਮ ਸਮਾਂ", "TMST": "ਤੁਰਕਮੇਨਿਸਤਾਨ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "HNT": "ਨਿਊਫਾਉਂਡਲੈਂਡ ਮਿਆਰੀ ਸਮਾਂ", "AWDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੱਛਮੀ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "OESZ": "ਪੂਰਬੀ ਯੂਰਪੀ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "ACST": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਮਿਆਰੀ ਸਮਾਂ", "WART": "ਪੱਛਮੀ ਅਰਜਨਟੀਨਾ ਮਿਆਰੀ ਸਮਾਂ", "WARST": "ਪੱਛਮੀ ਅਰਜਨਟੀਨਾ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "PDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੈਸਿਫਿਕ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "AST": "ਅਟਲਾਂਟਿਕ ਮਿਆਰੀ ਸਮਾਂ", "ADT": "ਅਟਲਾਂਟਿਕ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "COT": "ਕੋਲੰਬੀਆ ਮਿਆਰੀ ਸਮਾਂ", "ARST": "ਅਰਜਨਟੀਨਾ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "WAST": "ਪੱਛਮੀ ਅਫਰੀਕਾ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "EAT": "ਪੂਰਬੀ ਅਫਰੀਕਾ ਸਮਾਂ", "NZST": "ਨਿਊਜ਼ੀਲੈਂਡ ਮਿਆਰੀ ਸਮਾਂ", "CLST": "ਚਿਲੀ ਗਰਮੀ-ਰੁੱਤ ਸਮਾਂ", "CHAST": "ਚੈਥਮ ਮਿਆਰੀ ਸਮਾਂ", "MDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਮਾਉਂਟੇਨ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "HAT": "ਨਿਊਫਾਉਂਡਲੈਂਡ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "CAT": "ਕੇਂਦਰੀ ਅਫਰੀਕਾ ਸਮਾਂ", "OEZ": "ਪੂਰਬੀ ਯੂਰਪੀ ਮਿਆਰੀ ਸਮਾਂ", "ECT": "ਇਕਵੇਡੋਰ ਸਮਾਂ", "ART": "ਅਰਜਨਟੀਨਾ ਮਿਆਰੀ ਸਮਾਂ", "WAT": "ਪੱਛਮੀ ਅਫਰੀਕਾ ਮਿਆਰੀ ਸਮਾਂ", "CDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਕੇਂਦਰੀ ਪ੍ਰਕਾਸ਼ ਸਮਾਂ", "JST": "ਜਪਾਨ ਮਿਆਰੀ ਸਮਾਂ", "AEST": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੂਰਬੀ ਮਿਆਰੀ ਸਮਾਂ", "SAST": "ਦੱਖਣੀ ਅਫ਼ਰੀਕਾ ਮਿਆਰੀ ਸਮਾਂ", "IST": "ਭਾਰਤੀ ਮਿਆਰੀ ਸਮਾਂ"},
+		timezones:          map[string]string{"WESZ": "ਪੱਛਮੀ ਯੂਰਪੀ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "CHAST": "ਚੈਥਮ ਮਿਆਰੀ ਵੇਲਾ", "WART": "ਪੱਛਮੀ ਅਰਜਨਟੀਨਾ ਮਿਆਰੀ ਵੇਲਾ", "HNPMX": "ਮੈਕਸੀਕਨ ਪੈਸਿਫਿਕ ਮਿਆਰੀ ਵੇਲਾ", "VET": "ਵੈਨੇਜ਼ੂਏਲਾ ਵੇਲਾ", "PST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੈਸਿਫਿਕ ਮਿਆਰੀ ਵੇਲਾ", "MESZ": "ਮੱਧ ਯੂਰਪੀ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "JST": "ਜਪਾਨ ਮਿਆਰੀ ਵੇਲਾ", "WAST": "ਪੱਛਮੀ ਅਫਰੀਕਾ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "EDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੂਰਬੀ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "MYT": "ਮਲੇਸ਼ੀਆ ਵੇਲਾ", "PDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੈਸਿਫਿਕ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "HEEG": "ਪੂਰਬੀ ਗ੍ਰੀਨਲੈਂਡ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "GFT": "ਫ੍ਰੈਂਚ ਗੁਏਨਾ ਵੇਲਾ", "TMST": "ਤੁਰਕਮੇਨਿਸਤਾਨ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "WARST": "ਪੱਛਮੀ ਅਰਜਨਟੀਨਾ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "UYST": "ਉਰੂਗਵੇ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "WEZ": "ਪੱਛਮੀ ਯੂਰਪੀ ਮਿਆਰੀ ਵੇਲਾ", "CHADT": "ਚੈਥਮ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "ACDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "COST": "ਕੋਲੰਬੀਆ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "CDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਕੇਂਦਰੀ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "HNOG": "ਪੱਛਮੀ ਗ੍ਰੀਨਲੈਂਡ ਮਿਆਰੀ ਵੇਲਾ", "HEOG": "ਪੱਛਮੀ ਗ੍ਰੀਨਲੈਂਡ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "HKT": "ਹਾਂਗ ਕਾਂਗ ਮਿਆਰੀ ਵੇਲਾ", "HEPM": "ਸੈਂਟ ਪੀਅਰੇ ਅਤੇ ਮਿਕੇਲਨ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "SGT": "ਸਿੰਗਾਪੁਰ ਮਿਆਰੀ ਵੇਲਾ", "AWST": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੱਛਮੀ ਮਿਆਰੀ ਵੇਲਾ", "NZDT": "ਨਿਊਜ਼ੀਲੈਂਡ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "JDT": "ਜਪਾਨ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "TMT": "ਤੁਰਕਮੇਨਿਸਤਾਨ ਮਿਆਰੀ ਵੇਲਾ", "COT": "ਕੋਲੰਬੀਆ ਮਿਆਰੀ ਵੇਲਾ", "WIT": "ਪੂਰਬੀ ਇੰਡੋਨੇਸ਼ੀਆ ਵੇਲਾ", "HAT": "ਨਿਊਫਾਉਂਡਲੈਂਡ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "LHDT": "ਲੌਰਡ ਹੋਵੇ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "MEZ": "ਮੱਧ ਯੂਰਪੀ ਮਿਆਰੀ ਵੇਲਾ", "SAST": "ਦੱਖਣੀ ਅਫ਼ਰੀਕਾ ਮਿਆਰੀ ਵੇਲਾ", "WAT": "ਪੱਛਮੀ ਅਫਰੀਕਾ ਮਿਆਰੀ ਵੇਲਾ", "WIB": "ਪੱਛਮੀ ਇੰਡੋਨੇਸ਼ੀਆ ਵੇਲਾ", "AWDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੱਛਮੀ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "AEDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੂਰਬੀ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "LHST": "ਲੌਰਡ ਹੋਵੇ ਮਿਆਰੀ ਵੇਲਾ", "NZST": "ਨਿਊਜ਼ੀਲੈਂਡ ਮਿਆਰੀ ਵੇਲਾ", "GMT": "ਗ੍ਰੀਨਵਿਚ ਮੀਨ ਵੇਲਾ", "HEPMX": "ਮੈਕਸੀਕਨ ਪੈਸਿਫਿਕ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "AKDT": "ਅਲਾਸਕਾ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "HNT": "ਨਿਊਫਾਉਂਡਲੈਂਡ ਮਿਆਰੀ ਵੇਲਾ", "HKST": "ਹਾਂਗ ਕਾਂਗ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "BOT": "ਬੋਲੀਵੀਆ ਵੇਲਾ", "ChST": "ਚਾਮੋਰੋ ਮਿਆਰੀ ਵੇਲਾ", "ECT": "ਇਕਵੇਡੋਰ ਵੇਲਾ", "CST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਕੇਂਦਰੀ ਮਿਆਰੀ ਵੇਲਾ", "HNPM": "ਸੈਂਟ ਪੀਅਰੇ ਅਤੇ ਮਿਕੇਲਨ ਮਿਆਰੀ ਵੇਲਾ", "ACST": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਮਿਆਰੀ ਵੇਲਾ", "AST": "ਅਟਲਾਂਟਿਕ ਮਿਆਰੀ ਵੇਲਾ", "UYT": "ਉਰੂਗਵੇ ਮਿਆਰੀ ਵੇਲਾ", "MST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਮਾਉਂਟੇਨ ਮਿਆਰੀ ਵੇਲਾ", "HENOMX": "ਉੱਤਰ ਪੱਛਮੀ ਮੈਕਸੀਕੋ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "HADT": "ਹਵਾਈ-ਅਲੇਯੂਸ਼ਿਅਨ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "HNNOMX": "ਉੱਤਰ ਪੱਛਮੀ ਮੈਕਸੀਕੋ ਮਿਆਰੀ ਵੇਲਾ", "HECU": "ਕਿਊਬਾ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "ADT": "ਅਟਲਾਂਟਿਕ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "IST": "ਭਾਰਤੀ ਮਿਆਰੀ ਵੇਲਾ", "CLT": "ਚਿਲੀ ਮਿਆਰੀ ਵੇਲਾ", "CAT": "ਕੇਂਦਰੀ ਅਫਰੀਕਾ ਵੇਲਾ", "HNCU": "ਕਿਊਬਾ ਮਿਆਰੀ ਵੇਲਾ", "EST": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਪੂਰਬੀ ਮਿਆਰੀ ਵੇਲਾ", "OEZ": "ਪੂਰਬੀ ਯੂਰਪੀ ਮਿਆਰੀ ਵੇਲਾ", "GYT": "ਗੁਯਾਨਾ ਵੇਲਾ", "MDT": "ਉੱਤਰੀ ਅਮਰੀਕੀ ਮਾਉਂਟੇਨ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "HAST": "ਹਵਾਈ-ਅਲੇਯੂਸ਼ਿਅਨ ਮਿਆਰੀ ਵੇਲਾ", "SRT": "ਸੂਰੀਨਾਮ ਵੇਲਾ", "ACWST": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਪੱਛਮੀ ਮਿਆਰੀ ਵੇਲਾ", "∅∅∅": "ਅਮੇਜ਼ਨ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "ARST": "ਅਰਜਨਟੀਨਾ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "HNEG": "ਪੂਰਬੀ ਗ੍ਰੀਨਲੈਂਡ ਮਿਆਰੀ ਵੇਲਾ", "EAT": "ਪੂਰਬੀ ਅਫਰੀਕਾ ਵੇਲਾ", "AKST": "ਅਲਾਸਕਾ ਮਿਆਰੀ ਵੇਲਾ", "CLST": "ਚਿਲੀ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "OESZ": "ਪੂਰਬੀ ਯੂਰਪੀ ਗਰਮੀਆਂ ਦਾ ਵੇਲਾ", "BT": "ਭੂਟਾਨ ਵੇਲਾ", "ACWDT": "ਆਸਟ੍ਰੇਲੀਆਈ ਕੇਂਦਰੀ ਪੱਛਮੀ ਪ੍ਰਕਾਸ਼ ਵੇਲਾ", "ART": "ਅਰਜਨਟੀਨਾ ਮਿਆਰੀ ਵੇਲਾ", "WITA": "ਮੱਧ ਇੰਡੋਨੇਸ਼ੀਆਈ ਵੇਲਾ", "AEST": "ਆਸਟ੍ਰੇਲੀਆਈ ਪੂਰਬੀ ਮਿਆਰੀ ਵੇਲਾ"},
 	}
 }
 
@@ -118,6 +118,8 @@ func (pa *pa_Guru_IN) RangePluralRule(num1 float64, v1 uint64, num2 float64, v2 
 		return locales.PluralRuleOne
 	} else if start == locales.PluralRuleOne && end == locales.PluralRuleOther {
 		return locales.PluralRuleOther
+	} else if start == locales.PluralRuleOther && end == locales.PluralRuleOne {
+		return locales.PluralRuleOne
 	}
 
 	return locales.PluralRuleOther
@@ -444,7 +446,12 @@ func (pa *pa_Guru_IN) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, pa.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -458,7 +465,12 @@ func (pa *pa_Guru_IN) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, pa.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -474,7 +486,12 @@ func (pa *pa_Guru_IN) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, pa.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

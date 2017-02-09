@@ -10,58 +10,64 @@ import (
 )
 
 type ig_NG struct {
-	locale                 string
-	pluralsCardinal        []locales.PluralRule
-	pluralsOrdinal         []locales.PluralRule
-	pluralsRange           []locales.PluralRule
-	decimal                string
-	group                  string
-	minus                  string
-	percent                string
-	perMille               string
-	timeSeparator          string
-	inifinity              string
-	currencies             []string // idx = enum of currency code
-	currencyNegativePrefix string
-	currencyNegativeSuffix string
-	monthsAbbreviated      []string
-	monthsNarrow           []string
-	monthsWide             []string
-	daysAbbreviated        []string
-	daysNarrow             []string
-	daysShort              []string
-	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
-	timezones              map[string]string
+	locale             string
+	pluralsCardinal    []locales.PluralRule
+	pluralsOrdinal     []locales.PluralRule
+	pluralsRange       []locales.PluralRule
+	decimal            string
+	group              string
+	minus              string
+	percent            string
+	percentSuffix      string
+	perMille           string
+	timeSeparator      string
+	inifinity          string
+	currencies         []string // idx = enum of currency code
+	monthsAbbreviated  []string
+	monthsNarrow       []string
+	monthsWide         []string
+	daysAbbreviated    []string
+	daysNarrow         []string
+	daysShort          []string
+	daysWide           []string
+	periodsAbbreviated []string
+	periodsNarrow      []string
+	periodsShort       []string
+	periodsWide        []string
+	erasAbbreviated    []string
+	erasNarrow         []string
+	erasWide           []string
+	timezones          map[string]string
 }
 
 // New returns a new instance of translator for the 'ig_NG' locale
 func New() locales.Translator {
 	return &ig_NG{
-		locale:                 "ig_NG",
-		pluralsCardinal:        []locales.PluralRule{6},
-		pluralsOrdinal:         nil,
-		pluralsRange:           nil,
-		timeSeparator:          ":",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: ")",
-		monthsAbbreviated:      []string{"", "Jen", "Feb", "Maa", "Epr", "Mee", "Juu", "Jul", "Ọgọ", "Sep", "Ọkt", "Nov", "Dis"},
-		monthsWide:             []string{"", "Jenụwarị", "Febrụwarị", "Maachị", "Eprel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"},
-		daysAbbreviated:        []string{"Ụka", "Mọn", "Tiu", "Wen", "Tọọ", "Fraị", "Sat"},
-		daysWide:               []string{"Mbọsị Ụka", "Mọnde", "Tiuzdee", "Wenezdee", "Tọọzdee", "Fraịdee", "Satọdee"},
-		periodsAbbreviated:     []string{"A.M.", "P.M."},
-		periodsWide:            []string{"A.M.", "P.M."},
-		erasAbbreviated:        []string{"T.K.", "A.K."},
-		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"Tupu Kristi", "Afọ Kristi"},
-		timezones:              map[string]string{"EDT": "EDT", "BT": "BT", "AWDT": "AWDT", "HKT": "HKT", "MEZ": "MEZ", "COT": "COT", "COST": "COST", "ART": "ART", "AKDT": "AKDT", "NZST": "NZST", "CHADT": "CHADT", "ACST": "ACST", "WAT": "WAT", "TMST": "TMST", "CDT": "CDT", "NZDT": "NZDT", "UYT": "UYT", "OESZ": "OESZ", "MESZ": "MESZ", "WARST": "WARST", "PST": "PST", "WITA": "WITA", "MYT": "MYT", "AWST": "AWST", "JDT": "JDT", "WESZ": "WESZ", "SGT": "SGT", "PDT": "PDT", "AST": "AST", "IST": "IST", "GYT": "GYT", "MDT": "MDT", "BOT": "BOT", "ACWDT": "ACWDT", "WAST": "WAST", "EST": "EST", "CAT": "CAT", "HAT": "HAT", "GMT": "GMT", "LHST": "LHST", "ACWST": "ACWST", "JST": "JST", "∅∅∅": "∅∅∅", "HADT": "HADT", "WART": "WART", "TMT": "TMT", "OEZ": "OEZ", "WEZ": "WEZ", "ECT": "ECT", "AEST": "AEST", "EAT": "EAT", "CST": "CST", "CLST": "CLST", "WIT": "WIT", "UYST": "UYST", "ADT": "ADT", "AKST": "AKST", "CLT": "CLT", "SRT": "SRT", "ACDT": "ACDT", "VET": "VET", "SAST": "SAST", "ChST": "ChST", "LHDT": "LHDT", "HKST": "HKST", "GFT": "GFT", "HAST": "HAST", "AEDT": "AEDT", "ARST": "ARST", "CHAST": "CHAST", "WIB": "WIB", "MST": "MST", "HNT": "HNT"},
+		locale:             "ig_NG",
+		pluralsCardinal:    []locales.PluralRule{6},
+		pluralsOrdinal:     nil,
+		pluralsRange:       nil,
+		decimal:            "٫",
+		group:              "٬",
+		perMille:           "؉",
+		timeSeparator:      ":",
+		inifinity:          "∞",
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		percentSuffix:      " ",
+		monthsAbbreviated:  []string{"", "Jen", "Feb", "Maa", "Epr", "Mee", "Juu", "Jul", "Ọgọ", "Sep", "Ọkt", "Nov", "Dis"},
+		monthsNarrow:       []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
+		monthsWide:         []string{"", "Jenụwarị", "Febrụwarị", "Maachị", "Eprel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"},
+		daysAbbreviated:    []string{"Ụka", "Mọn", "Tiu", "Wen", "Tọọ", "Fraị", "Sat"},
+		daysNarrow:         []string{"S", "M", "T", "W", "T", "F", "S"},
+		daysShort:          []string{"Ụka", "Mọn", "Tiu", "Wen", "Tọọ", "Fraị", "Sat"},
+		daysWide:           []string{"Mbọsị Ụka", "Mọnde", "Tiuzdee", "Wenezdee", "Tọọzdee", "Fraịdee", "Satọdee"},
+		periodsAbbreviated: []string{"A.M.", "P.M."},
+		periodsNarrow:      []string{"A.M.", "P.M."},
+		periodsWide:        []string{"A.M.", "P.M."},
+		erasAbbreviated:    []string{"T.K.", "A.K."},
+		erasNarrow:         []string{"T.K.", "A.K."},
+		erasWide:           []string{"Tupu Kristi", "Afọ Kristi"},
+		timezones:          map[string]string{"ACWST": "ACWST", "CHAST": "CHAST", "CHADT": "CHADT", "HENOMX": "HENOMX", "PDT": "PDT", "AEDT": "AEDT", "HKT": "HKT", "IST": "IST", "ECT": "ECT", "UYT": "UYT", "WIT": "WIT", "ART": "ART", "ACDT": "ACDT", "WARST": "WARST", "HADT": "HADT", "JDT": "JDT", "GMT": "GMT", "HEPMX": "HEPMX", "WITA": "WITA", "BT": "BT", "AWDT": "AWDT", "CLST": "CLST", "JST": "JST", "HEEG": "HEEG", "EAT": "EAT", "WART": "WART", "VET": "VET", "MYT": "MYT", "OESZ": "OESZ", "CDT": "CDT", "WAT": "WAT", "HNEG": "HNEG", "COST": "COST", "HNPMX": "HNPMX", "ADT": "ADT", "GYT": "GYT", "NZDT": "NZDT", "BOT": "BOT", "PST": "PST", "ACWDT": "ACWDT", "MEZ": "MEZ", "AST": "AST", "SRT": "SRT", "HEOG": "HEOG", "∅∅∅": "∅∅∅", "TMT": "TMT", "TMST": "TMST", "ACST": "ACST", "CAT": "CAT", "SGT": "SGT", "HAST": "HAST", "AKDT": "AKDT", "UYST": "UYST", "AKST": "AKST", "HAT": "HAT", "EST": "EST", "EDT": "EDT", "MST": "MST", "CST": "CST", "HNT": "HNT", "MESZ": "MESZ", "NZST": "NZST", "ChST": "ChST", "COT": "COT", "WIB": "WIB", "WESZ": "WESZ", "ARST": "ARST", "AEST": "AEST", "HKST": "HKST", "HNPM": "HNPM", "SAST": "SAST", "OEZ": "OEZ", "MDT": "MDT", "WEZ": "WEZ", "CLT": "CLT", "GFT": "GFT", "WAST": "WAST", "HNCU": "HNCU", "HECU": "HECU", "AWST": "AWST", "LHST": "LHST", "HNOG": "HNOG", "LHDT": "LHDT", "HNNOMX": "HNNOMX", "HEPM": "HEPM"},
 	}
 }
 
@@ -117,7 +123,7 @@ func (ig *ig_NG) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (ig *ig_NG) MonthsNarrow() []string {
-	return nil
+	return ig.monthsNarrow[1:]
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
@@ -173,21 +179,8 @@ func (ig *ig_NG) WeekdaysWide() []string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ig_NG' and handles both Whole and Real numbers based on 'v'
 func (ig *ig_NG) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-}
-
-// FmtPercent returns 'num' with digits/precision of 'v' for 'ig_NG' and handles both Whole and Real numbers based on 'v'
-// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
-func (ig *ig_NG) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-}
-
-// FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ig_NG'
-func (ig *ig_NG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
-
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	symbol := ig.currencies[currency]
-	l := len(s) + len(symbol) + 0 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -195,14 +188,99 @@ func (ig *ig_NG) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			b = append(b, ig.decimal[0])
+			for j := len(ig.decimal) - 1; j >= 0; j-- {
+				b = append(b, ig.decimal[j])
+			}
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, ig.group[0])
+				for j := len(ig.group) - 1; j >= 0; j-- {
+					b = append(b, ig.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ig.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
+}
+
+// FmtPercent returns 'num' with digits/precision of 'v' for 'ig_NG' and handles both Whole and Real numbers based on 'v'
+// NOTE: 'num' passed into FmtPercent is assumed to be in percent already
+func (ig *ig_NG) FmtPercent(num float64, v uint64) string {
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 4
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(ig.decimal) - 1; j >= 0; j-- {
+				b = append(b, ig.decimal[j])
+			}
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ig.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, ig.percentSuffix...)
+
+	b = append(b, ig.percent...)
+
+	return string(b)
+}
+
+// FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ig_NG'
+func (ig *ig_NG) FmtCurrency(num float64, v uint64, currency currency.Type) string {
+
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	symbol := ig.currencies[currency]
+	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(ig.decimal) - 1; j >= 0; j-- {
+				b = append(b, ig.decimal[j])
+			}
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(ig.group) - 1; j >= 0; j-- {
+					b = append(b, ig.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -245,7 +323,7 @@ func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ig.currencies[currency]
-	l := len(s) + len(symbol) + 2 + 0*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 2*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -253,14 +331,18 @@ func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
-			b = append(b, ig.decimal[0])
+			for j := len(ig.decimal) - 1; j >= 0; j-- {
+				b = append(b, ig.decimal[j])
+			}
 			inWhole = true
 			continue
 		}
 
 		if inWhole {
 			if count == 3 {
-				b = append(b, ig.group[0])
+				for j := len(ig.group) - 1; j >= 0; j-- {
+					b = append(b, ig.group[j])
+				}
 				count = 1
 			} else {
 				count++
@@ -276,7 +358,7 @@ func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, symbol[j])
 		}
 
-		b = append(b, ig.currencyNegativePrefix[0])
+		b = append(b, ig.minus[0])
 
 	} else {
 
@@ -302,10 +384,6 @@ func (ig *ig_NG) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		}
 	}
 
-	if num < 0 {
-		b = append(b, ig.currencyNegativeSuffix...)
-	}
-
 	return string(b)
 }
 
@@ -328,7 +406,12 @@ func (ig *ig_NG) FmtDateShort(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 
 	b = append(b, []byte{0x2f}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -342,7 +425,12 @@ func (ig *ig_NG) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, ig.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -356,7 +444,12 @@ func (ig *ig_NG) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, ig.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -372,7 +465,12 @@ func (ig *ig_NG) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, ig.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -382,13 +480,11 @@ func (ig *ig_NG) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, ig.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -396,13 +492,6 @@ func (ig *ig_NG) FmtTimeShort(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, ig.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, ig.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -412,13 +501,11 @@ func (ig *ig_NG) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, ig.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -433,13 +520,6 @@ func (ig *ig_NG) FmtTimeMedium(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, ig.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, ig.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -449,13 +529,11 @@ func (ig *ig_NG) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, ig.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -470,14 +548,6 @@ func (ig *ig_NG) FmtTimeLong(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, ig.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, ig.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()
@@ -491,13 +561,11 @@ func (ig *ig_NG) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, ig.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -512,14 +580,6 @@ func (ig *ig_NG) FmtTimeFull(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, ig.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, ig.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()

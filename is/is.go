@@ -55,7 +55,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "jan.", "feb.", "mar.", "apr.", "maí", "jún.", "júl.", "ágú.", "sep.", "okt.", "nóv.", "des."},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"f.Kr.", "e.Kr."},
 		erasNarrow:             []string{"f.k.", "e.k."},
 		erasWide:               []string{"fyrir Krist", "eftir Krist"},
-		timezones:              map[string]string{"ACDT": "Sumartími í Mið-Ástralíu", "MYT": "Malasíutími", "ACWDT": "Sumartími í miðvesturhluta Ástralíu", "AKST": "Staðaltími í Alaska", "SAST": "Suður-Afríkutími", "GYT": "Gvæjanatími", "JST": "Staðaltími í Japan", "CHAST": "Staðaltími í Chatham", "COST": "Sumartími í Kólumbíu", "HNT": "Staðaltími á Nýfundnalandi", "CAT": "Mið-Afríkutími", "COT": "Staðaltími í Kólumbíu", "VET": "Venesúelatími", "MDT": "Sumartími í Klettafjöllum", "IST": "Indlandstími", "TMT": "Staðaltími í Túrkmenistan", "ChST": "Chamorro-staðaltími", "HKST": "Sumartími í Hong Kong", "ART": "Staðaltími í Argentínu", "ACWST": "Staðaltími í miðvesturhluta Ástralíu", "MST": "Staðaltími í Klettafjöllum", "SRT": "Súrinamtími", "ADT": "Sumartími á Atlantshafssvæðinu", "WAT": "Staðaltími í Vestur-Afríku", "NZST": "Staðaltími á Nýja-Sjálandi", "AWDT": "Sumartími í Vestur-Ástralíu", "WESZ": "Sumartími í Vestur-Evrópu", "EST": "Staðaltími í austurhluta Bandaríkjanna og Kanada", "CST": "Staðaltími í miðhluta Bandaríkjanna og Kanada", "GFT": "Tími í Frönsku Gvæjana", "WARST": "Sumartími í Vestur-Argentínu", "ECT": "Ekvadortími", "MEZ": "Staðaltími í Mið-Evrópu", "TMST": "Sumartími í Túrkmenistan", "WAST": "Sumartími í Vestur-Afríku", "JDT": "Sumartími í Japan", "MESZ": "Sumartími í Mið-Evrópu", "EDT": "Sumartími í austurhluta Bandaríkjanna og Kanada", "∅∅∅": "Sumartími í Brasilíu", "LHST": "Staðaltími á Lord Howe-eyju", "AWST": "Staðaltími í Vestur-Ástralíu", "WEZ": "Staðaltími í Vestur-Evrópu", "PST": "Staðaltími á Kyrrahafssvæðinu", "HAST": "Staðaltími á Havaí og Aleúta", "AST": "Staðaltími á Atlantshafssvæðinu", "BOT": "Bólivíutími", "NZDT": "Sumartími á Nýja-Sjálandi", "CLST": "Sumartími í Síle", "UYST": "Sumartími í Úrúgvæ", "CHADT": "Sumartími í Chatham", "SGT": "Singapúrtími", "BT": "Bútantími", "WIB": "Vestur-Indónesíutími", "ACST": "Staðaltími í Mið-Ástralíu", "PDT": "Sumartími á Kyrrahafssvæðinu", "EAT": "Austur-Afríkutími", "WITA": "Mið-Indónesíutími", "GMT": "Greenwich-staðaltími", "UYT": "Staðaltími í Úrúgvæ", "HKT": "Staðaltími í Hong Kong", "WIT": "Austur-Indónesíutími", "AEST": "Staðaltími í Austur-Ástralíu", "AKDT": "Sumartími í Alaska", "CDT": "Sumartími í miðhluta Bandaríkjanna og Kanada", "OEZ": "Staðaltími í Austur-Evrópu", "ARST": "Sumartími í Argentínu", "WART": "Staðaltími í Vestur-Argentínu", "AEDT": "Sumartími í Austur-Ástralíu", "HAT": "Sumartími á Nýfundnalandi", "LHDT": "Sumartími á Lord Howe-eyju", "OESZ": "Sumartími í Austur-Evrópu", "HADT": "Sumartími á Havaí og Aleúta", "CLT": "Staðaltími í Síle"},
+		timezones:              map[string]string{"VET": "Venesúelatími", "MESZ": "Sumartími í Mið-Evrópu", "GFT": "Tími í Frönsku Gvæjana", "EAT": "Austur-Afríkutími", "CST": "Staðaltími í miðhluta Bandaríkjanna og Kanada", "HEOG": "Sumartími á Vestur-Grænlandi", "PDT": "Sumartími á Kyrrahafssvæðinu", "ACWDT": "Sumartími í miðvesturhluta Ástralíu", "AWST": "Staðaltími í Vestur-Ástralíu", "CHAST": "Staðaltími í Chatham", "IST": "Indlandstími", "UYT": "Staðaltími í Úrúgvæ", "AEST": "Staðaltími í Austur-Ástralíu", "NZST": "Staðaltími á Nýja-Sjálandi", "NZDT": "Sumartími á Nýja-Sjálandi", "ACST": "Staðaltími í Mið-Ástralíu", "HNNOMX": "Staðaltími í Norðvestur-Mexíkó", "HNCU": "Staðaltími á Kúbu", "HEPMX": "Sumartími í Mexíkó á Kyrrahafssvæðinu", "BT": "Bútantími", "HNOG": "Staðaltími á Vestur-Grænlandi", "WEZ": "Staðaltími í Vestur-Evrópu", "ChST": "Chamorro-staðaltími", "SGT": "Singapúrtími", "EDT": "Sumartími í austurhluta Bandaríkjanna og Kanada", "WESZ": "Sumartími í Vestur-Evrópu", "SAST": "Suður-Afríkutími", "OESZ": "Sumartími í Austur-Evrópu", "AKST": "Staðaltími í Alaska", "HADT": "Sumartími á Havaí og Aleúta", "ACWST": "Staðaltími í miðvesturhluta Ástralíu", "∅∅∅": "Sumartími á Amasónsvæðinu", "WAT": "Staðaltími í Vestur-Afríku", "EST": "Staðaltími í austurhluta Bandaríkjanna og Kanada", "WIB": "Vestur-Indónesíutími", "ART": "Staðaltími í Argentínu", "JDT": "Sumartími í Japan", "TMST": "Sumartími í Túrkmenistan", "WAST": "Sumartími í Vestur-Afríku", "WARST": "Sumartími í Vestur-Argentínu", "WIT": "Austur-Indónesíutími", "AWDT": "Sumartími í Vestur-Ástralíu", "MEZ": "Staðaltími í Mið-Evrópu", "CLT": "Staðaltími í Síle", "TMT": "Staðaltími í Túrkmenistan", "ACDT": "Sumartími í Mið-Ástralíu", "OEZ": "Staðaltími í Austur-Evrópu", "UYST": "Sumartími í Úrúgvæ", "ADT": "Sumartími á Atlantshafssvæðinu", "SRT": "Súrinamtími", "HNT": "Staðaltími á Nýfundnalandi", "HEPM": "Sumartími á Sankti Pierre og Miquelon", "JST": "Staðaltími í Japan", "HEEG": "Sumartími á Austur-Grænlandi", "ECT": "Ekvadortími", "WART": "Staðaltími í Vestur-Argentínu", "CHADT": "Sumartími í Chatham", "HNPMX": "Staðaltími í Mexíkó á Kyrrahafssvæðinu", "HKT": "Staðaltími í Hong Kong", "HNEG": "Staðaltími á Austur-Grænlandi", "COST": "Sumartími í Kólumbíu", "CDT": "Sumartími í miðhluta Bandaríkjanna og Kanada", "AST": "Staðaltími á Atlantshafssvæðinu", "MYT": "Malasíutími", "WITA": "Mið-Indónesíutími", "HKST": "Sumartími í Hong Kong", "HNPM": "Staðaltími á Sankti Pierre og Miquelon", "CLST": "Sumartími í Síle", "AKDT": "Sumartími í Alaska", "ARST": "Sumartími í Argentínu", "LHDT": "Sumartími á Lord Howe-eyju", "GMT": "Greenwich-staðaltími", "HECU": "Sumartími á Kúbu", "MST": "MST", "MDT": "MDT", "HAT": "Sumartími á Nýfundnalandi", "AEDT": "Sumartími í Austur-Ástralíu", "LHST": "Staðaltími á Lord Howe-eyju", "CAT": "Mið-Afríkutími", "GYT": "Gvæjanatími", "HAST": "Staðaltími á Havaí og Aleúta", "PST": "Staðaltími á Kyrrahafssvæðinu", "BOT": "Bólivíutími", "COT": "Staðaltími í Kólumbíu", "HENOMX": "Sumartími í Norðvestur-Mexíkó"},
 	}
 }
 
@@ -407,7 +407,12 @@ func (is *is) FmtDateShort(t time.Time) string {
 	b = append(b, []byte{0x2e}...)
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 	b = append(b, []byte{0x2e}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -421,7 +426,12 @@ func (is *is) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, is.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -435,7 +445,12 @@ func (is *is) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, is.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -451,7 +466,12 @@ func (is *is) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, is.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

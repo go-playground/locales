@@ -55,7 +55,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"RC", "AD"},
 		erasNarrow:             []string{"R", "A"},
 		erasWide:               []string{"Ro Chrìosta", "An dèidh Chrìosta"},
-		timezones:              map[string]string{"AKDT": "Tìde samhraidh Alaska", "CDT": "Tìde samhraidh Meadhan Aimeireaga a Tuath", "BT": "Àm Butàin", "GMT": "Greenwich Mean Time", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "HKT": "Bun-àm Hong Kong", "WIB": "Àm nan Innd-Innse an Iar", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "AST": "Bun-àm a’ Chuain Siar", "TMST": "Tìde samhraidh Turcmanastàin", "ChST": "Àm Chamorro", "HNT": "Bun-àm Talamh an Èisg", "CLT": "Bun-àm na Sile", "HKST": "Tìde samhraidh Hong Kong", "AEST": "Bun-àm Astràilia an Ear", "WAT": "Bun-àm Afraga an Iar", "UYT": "Bun-àm Uruguaidh", "JDT": "Tìde samhraidh na Seapaine", "CHADT": "Tìde samhraidh Chatham", "ART": "Bun-àm na h-Argantaine", "COST": "Tìde samhraidh Coloimbia", "WAST": "Tìde Samhraidh Afraga an Iar", "GYT": "Àm Guidheàna", "ARST": "Tìde samhraidh na h-Argantaine", "AKST": "Bun-àm Alaska", "∅∅∅": "Tìde samhraidh Pearù", "LHDT": "Tìde samhraidh Lord Howe", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "IST": "Àm nan Innseachan", "PDT": "Tìde samhraidh a’ Chuain Sèimh", "EAT": "Àm Afraga an Ear", "TMT": "Bun-àm Turcmanastàin", "MST": "Bun-àm Monadh Aimeireaga a Tuath", "WIT": "Àm nan Innd-Innse an Ear", "JST": "Bun-àm na Seapaine", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "AEDT": "Tìde samhraidh Astràilia an Ear", "PST": "Bun-àm a’ Chuain Sèimh", "MDT": "Tìde samhraidh Monadh Aimeireaga a Tuath", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "EST": "Bun-àm Aimeireaga a Tuath an Ear", "UYST": "Tìde samhraidh Uruguaidh", "VET": "Àm na Bheiniseala", "ACDT": "Tìde samhraidh Meadhan Astràilia", "MYT": "Àm Mhalaidhsea", "NZST": "Bun-àm Shealainn Nuaidh", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "CAT": "Àm Meadhan Afraga", "ECT": "Àm Eacuadoir", "SAST": "Àm Afraga a Deas", "WART": "Bun-àm na h-Argantaine Siaraich", "LHST": "Bun-àm Lord Howe", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "ACST": "Bun-àm Meadhan Astràilia", "SGT": "Àm Singeapòr", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "EDT": "Tìde samhraidh Aimeireaga a Tuath an Ear", "WITA": "Àm Meadhan nan Innd-Innse", "AWST": "Bun-àm Astràilia an Iar", "HAT": "Tìde samhraidh Talamh an Èisg", "GFT": "Àm Guidheàna na Frainge", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "CLST": "Tìde samhraidh na Sile", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "COT": "Bun-àm Coloimbia", "ADT": "Tìde samhraidh a’ Chuain Siar", "CHAST": "Bun-àm Chatham", "BOT": "Àm Boilibhia", "AWDT": "Tìde samhraidh Astràilia an Iar", "SRT": "Àm Suranaim", "CST": "Bun-àm Meadhan Aimeireaga a Tuath"},
+		timezones:              map[string]string{"BT": "Àm Butàin", "∅∅∅": "Tìde samhraidh Amasoin", "EAT": "Àm Afraga an Ear", "ADT": "Tìde samhraidh a’ Chuain Siar", "VET": "Àm na Bheiniseala", "SGT": "Àm Singeapòr", "UYST": "Tìde samhraidh Uruguaidh", "HEPM": "Tìde Samhraidh Saint Pierre agus Miquelon", "CHAST": "Bun-àm Chatham", "WAT": "Bun-àm Afraga an Iar", "COT": "Bun-àm Coloimbia", "GMT": "Greenwich Mean Time", "MDT": "Tìde samhraidh Macàthu", "EDT": "Tìde samhraidh Aimeireaga a Tuath an Ear", "AKST": "Bun-àm Alaska", "IST": "Àm nan Innseachan", "GFT": "Àm Guidheàna na Frainge", "HAT": "Tìde samhraidh Talamh an Èisg", "MEZ": "Bun-àm Meadhan na Roinn-Eòrpa", "TMT": "Bun-àm Turcmanastàin", "TMST": "Tìde samhraidh Turcmanastàin", "WEZ": "Bun-àm na Roinn-Eòrpa an Iar", "HNPMX": "Bun-àm a’ Chuain Sèimh Mheagsago", "ART": "Bun-àm na h-Argantaine", "AWDT": "Tìde samhraidh Astràilia an Iar", "HNNOMX": "Bun-àm Mheagsago an Iar-thuath", "HEPMX": "Tìde samhraidh a’ Chuain Sèimh Mheagsago", "AKDT": "Tìde samhraidh Alaska", "CDT": "Tìde samhraidh Meadhan Aimeireaga a Tuath", "NZST": "Bun-àm Shealainn Nuaidh", "SAST": "Àm Afraga a Deas", "JST": "Bun-àm na Seapaine", "WAST": "Tìde Samhraidh Afraga an Iar", "HADT": "Tìde Samhraidh nan Eileanan Hawai’i ’s Aleutach", "AWST": "Bun-àm Astràilia an Iar", "AST": "Bun-àm a’ Chuain Siar", "HAST": "Bun-àm nan Eileanan Hawai’i ’s Aleutach", "ACWST": "Bun-àm Meadhan Astràilia an Iar", "PDT": "Tìde samhraidh a’ Chuain Sèimh", "CLT": "Bun-àm na Sile", "ACST": "Bun-àm Meadhan Astràilia", "ECT": "Àm Eacuadoir", "COST": "Tìde samhraidh Coloimbia", "HKT": "Bun-àm Hong Kong", "EST": "Bun-àm Aimeireaga a Tuath an Ear", "UYT": "Bun-àm Uruguaidh", "WIB": "Àm nan Innd-Innse an Iar", "HNT": "Bun-àm Talamh an Èisg", "CLST": "Tìde samhraidh na Sile", "BOT": "Àm Boilibhia", "HENOMX": "Tìde samhraidh Mheagsago an Iar-thuath", "HNCU": "Bun-àm Cùba", "HEOG": "Tìde samhraidh na Graonlainn an Iar", "AEST": "Bun-àm Astràilia an Ear", "ACDT": "Tìde samhraidh Meadhan Astràilia", "HECU": "Tìde samhraidh Cùba", "WART": "Bun-àm na h-Argantaine Siaraich", "WITA": "Àm Meadhan nan Innd-Innse", "HNPM": "Bun-àm Saint Pierre agus Miquelon", "LHST": "Bun-àm Lord Howe", "HEEG": "Tìde samhraidh na Graonlainn an Ear", "HKST": "Tìde samhraidh Hong Kong", "WARST": "Tìde samhraidh na h-Argantaine Siaraich", "ARST": "Tìde samhraidh na h-Argantaine", "AEDT": "Tìde samhraidh Astràilia an Ear", "NZDT": "Tìde samhraidh Shealainn Nuaidh", "MESZ": "Tìde samhraidh Meadhan na Roinn-Eòrpa", "HNEG": "Bun-àm na Graonlainn an Ear", "OEZ": "Bun-àm na Roinn-Eòrpa an Ear", "ACWDT": "Tìde samhraidh Meadhan Astràilia an Iar", "CST": "Bun-àm Meadhan Aimeireaga a Tuath", "WIT": "Àm nan Innd-Innse an Ear", "SRT": "Àm Suranaim", "WESZ": "Tìde samhraidh na Roinn-Eòrpa an Iar", "LHDT": "Tìde samhraidh Lord Howe", "MST": "Bun-àm Macàthu", "CAT": "Àm Meadhan Afraga", "GYT": "Àm Guidheàna", "MYT": "Àm Mhalaidhsea", "HNOG": "Bun-àm na Graonlainn an Iar", "CHADT": "Tìde samhraidh Chatham", "JDT": "Tìde samhraidh na Seapaine", "ChST": "Àm Chamorro", "OESZ": "Tìde samhraidh na Roinn-Eòrpa an Ear", "PST": "Bun-àm a’ Chuain Sèimh"},
 	}
 }
 
@@ -409,7 +409,12 @@ func (gd *gd) FmtDateShort(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 
 	b = append(b, []byte{0x2f}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -423,7 +428,12 @@ func (gd *gd) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, gd.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -438,7 +448,12 @@ func (gd *gd) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, gd.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -455,7 +470,12 @@ func (gd *gd) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, gd.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

@@ -54,7 +54,7 @@ func New() locales.Translator {
 		perMille:           "‰",
 		timeSeparator:      ":",
 		inifinity:          "གྲངས་མེད",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "Nu.", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KR₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "TH฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "Nu.", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KR₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "TH฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "US$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		percentSuffix:      " ",
 		monthsAbbreviated:  []string{"", "༡", "༢", "༣", "༤", "༥", "༦", "༧", "༨", "༩", "༡༠", "༡༡", "12"},
 		monthsNarrow:       []string{"", "༡", "༢", "༣", "4", "༥", "༦", "༧", "༨", "9", "༡༠", "༡༡", "༡༢"},
@@ -69,7 +69,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"BCE", "CE"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"MST": "བྱང་ཨ་མི་རི་ཀ་མའུ་ཊེན་ཚད་ལྡན་ཆུ་ཚོད", "NZST": "ནིའུ་ཛི་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "GMT": "གིརིན་ཝིཆ་ལུ་ཡོད་པའི་ཆུ་ཚོད", "ECT": "ཨེ་ཀུ་ཌཽ་ཆུ་ཚོད", "IST": "རྒྱ་གར་ཆུ་ཚོད", "MESZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "SGT": "SGT", "EST": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "AST": "ཨེཊ་ལེན་ཊིཀ་ཚད་ལྡན་ཆུ་ཚོད", "CDT": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "CHAST": "CHAST", "VET": "བེ་ནི་ཛུ་ཝེ་ལ་ཆུ་ཚོད", "MEZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "WART": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "AKST": "ཨ་ལསི་ཀ་ཚད་ལྡན་ཆུ་ཚོད", "ARST": "ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "AKDT": "ཨ་ལསི་ཀ་ཉིན་སྲུང་ཆུ་ཚོད", "UYST": "ཡུ་རུ་གུ་ཝཱའི་བྱཱར་དུས་ཆུ་ཚོད", "ACST": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "AEST": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "BOT": "བྷོ་ལི་བི་ཡ་ཆུ་ཚོད", "CLT": "ཅི་ལི་ཚད་ལྡན་ཆུ་ཚོད", "WEZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "ACDT": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ART": "ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "PDT": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཉིན་སྲུང་ཆུ་ཚོད", "WAST": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་བྱཱར་དུས་ཆུ་ཚོད", "TMT": "TMT", "TMST": "TMST", "HKST": "HKST", "ACWST": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "ACWDT": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "WARST": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "∅∅∅": "ཨེ་ཛོརས་བྱཱར་དུས་ཆུ་ཚོད", "COT": "ཀོ་ལོམ་བྷི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "COST": "ཀོ་ལོམ་བྷི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "HAST": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཚད་ལྡན་ཆུ་ཚོད", "BT": "འབྲུག་ཡུལ་ཆུ་ཚོད", "OEZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "OESZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "WIT": "ཤར་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "JDT": "ཇ་པཱན་ཉིན་སྲུང་ཆུ་ཚོད", "MDT": "བྱང་ཨ་མི་རི་ཀ་མའུ་ཊེན་ཉིན་སྲུང་ཆུ་ཚོད", "CLST": "ཅི་ལི་བྱཱར་དུས་ཆུ་ཚོད", "HNT": "ནིའུ་ཕའུནཌ་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "LHST": "LHST", "UYT": "ཡུ་རུ་གུ་ཝཱའི་ཚད་ལྡན་ཆུ་ཚོད", "JST": "ཇ་པཱན་ཚད་ལྡན་ཆུ་ཚོད", "EAT": "ཤར་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "WAT": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཚད་ལྡན་ཆུ་ཚོད", "SRT": "སུ་རི་ནཱམ་ཆུ་ཚོད", "MYT": "MYT", "AWDT": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "HADT": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཉིན་སྲུང་ཆུ་ཚོད", "SAST": "ལྷོ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "WITA": "དབུས་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "ChST": "ChST", "GYT": "གུ་ཡ་ན་ཆུ་ཚོད", "WESZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "HKT": "HKT", "CHADT": "CHADT", "AEDT": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ADT": "ཨེཊ་ལེན་ཊིཀ་ཉིན་སྲུང་ཆུ་ཚོད", "NZDT": "ནིའུ་ཛི་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "CAT": "དབུས་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "LHDT": "LHDT", "EDT": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "PST": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཚད་ལྡན་ཆུ་ཚོད", "AWST": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "HAT": "ནིའུ་ཕའུནཌ་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "GFT": "ཕིརེནཅ་གི་ཡ་ན་ཆུ་ཚོད", "WIB": "ནུབ་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "CST": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད"},
+		timezones:          map[string]string{"WESZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "HEPM": "པའི་རི་དང་མི་ཀི་ལཱོན་ཉིན་སྲུང་ཆུ་ཚོད", "AST": "ཨེཊ་ལེན་ཊིཀ་ཚད་ལྡན་ཆུ་ཚོད", "WARST": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "UYST": "ཡུ་རུ་གུ་ཝཱའི་བྱཱར་དུས་ཆུ་ཚོད", "CDT": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "HAST": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཚད་ལྡན་ཆུ་ཚོད", "TMT": "TMT", "ACDT": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "ECT": "ཨེ་ཀུ་ཌཽ་ཆུ་ཚོད", "EAT": "ཤར་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "HNNOMX": "HNNOMX", "SRT": "སུ་རི་ནཱམ་ཆུ་ཚོད", "∅∅∅": "པ་རུ་བྱཱར་དུས་ཆུ་ཚོད", "MST": "MST", "ADT": "ཨེཊ་ལེན་ཊིཀ་ཉིན་སྲུང་ཆུ་ཚོད", "AEDT": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "CHAST": "CHAST", "OEZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "PST": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཚད་ལྡན་ཆུ་ཚོད", "HNT": "ནིའུ་ཕའུནཌ་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "TMST": "TMST", "HENOMX": "HENOMX", "HEPMX": "HEPMX", "GYT": "གུ་ཡ་ན་ཆུ་ཚོད", "MYT": "MYT", "VET": "བེ་ནི་ཛུ་ཝེ་ལ་ཆུ་ཚོད", "ACWDT": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "OESZ": "ཤར་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "COT": "ཀོ་ལོམ་བྷི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "SGT": "SGT", "HNCU": "ཀིའུ་བྷ་ཚད་ལྡན་ཆུ་ཚོད", "EST": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "PDT": "བྱང་ཨ་མི་རི་ཀ་པེ་སི་ཕིག་ཉིན་སྲུང་ཆུ་ཚོད", "MESZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་བྱཱར་དུས་ཆུ་ཚོད", "NZST": "ནིའུ་ཛི་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "WAT": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཚད་ལྡན་ཆུ་ཚོད", "BOT": "བྷོ་ལི་བི་ཡ་ཆུ་ཚོད", "AKST": "ཨ་ལསི་ཀ་ཚད་ལྡན་ཆུ་ཚོད", "HADT": "ཧ་ཝའི་-ཨེ་ལིའུ་ཤེན་ཉིན་སྲུང་ཆུ་ཚོད", "WIT": "ཤར་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "ACWST": "དབུས་ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "HKT": "HKT", "CLST": "ཅི་ལི་བྱཱར་དུས་ཆུ་ཚོད", "GMT": "གིརིན་ཝིཆ་ལུ་ཡོད་པའི་ཆུ་ཚོད", "WITA": "དབུས་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "NZDT": "ནིའུ་ཛི་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "HEEG": "ཤར་ཕྱོགས་གིརིན་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "WAST": "ནུབ་ཕྱོགས་ཨཕ་རི་ཀཱ་བྱཱར་དུས་ཆུ་ཚོད", "ARST": "ཨར་ཇེན་ཊི་ན་བྱཱར་དུས་ཆུ་ཚོད", "HEOG": "ནུབ་ཕྱོགས་གིརིན་ལེནཌ་བྱཱར་དུས་ཆུ་ཚོད", "AWST": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "SAST": "ལྷོ་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "JDT": "ཇ་པཱན་ཉིན་སྲུང་ཆུ་ཚོད", "GFT": "ཕིརེནཅ་གི་ཡ་ན་ཆུ་ཚོད", "WART": "ནུབ་ཕྱོགས་ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "HNPMX": "HNPMX", "CST": "བྱང་ཨ་མི་རི་ཀ་དབུས་ཕྱོགས་ཚད་ལྡན་ཆུ་ཚོད", "CLT": "ཅི་ལི་ཚད་ལྡན་ཆུ་ཚོད", "HNEG": "ཤར་ཕྱོགས་གིརིན་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "MDT": "MDT", "COST": "ཀོ་ལོམ་བྷི་ཡ་བྱཱར་དུས་ཆུ་ཚོད", "AKDT": "ཨ་ལསི་ཀ་ཉིན་སྲུང་ཆུ་ཚོད", "AEST": "ཤར་ཕྱོགས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "AWDT": "ནུབ་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཉིན་སྲུང་ཆུ་ཚོད", "HNPM": "པའི་རི་དང་མི་ཀི་ལཱོན་ཚད་ལྡན་ཆུ་ཚོད", "MEZ": "དབུས་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "CAT": "དབུས་ཕྱོགས་ཨཕ་རི་ཀཱ་ཆུ་ཚོད", "LHST": "LHST", "JST": "ཇ་པཱན་ཚད་ལྡན་ཆུ་ཚོད", "HAT": "ནིའུ་ཕའུནཌ་ལེནཌ་ཉིན་སྲུང་ཆུ་ཚོད", "BT": "འབྲུག་ཡུལ་ཆུ་ཚོད", "WEZ": "ནུབ་ཕྱོགས་ཡུ་རོ་པེན་ཚད་ལྡན་ཆུ་ཚོད", "HKST": "HKST", "CHADT": "CHADT", "IST": "རྒྱ་གར་ཆུ་ཚོད", "ACST": "དབུས་ཕྱོགས་ཨཱོས་ཊྲེལ་ལི་ཡ་ཚད་ལྡན་ཆུ་ཚོད", "UYT": "ཡུ་རུ་གུ་ཝཱའི་ཚད་ལྡན་ཆུ་ཚོད", "LHDT": "LHDT", "HNOG": "ནུབ་ཕྱོགས་གིརིན་ལེནཌ་ཚད་ལྡན་ཆུ་ཚོད", "EDT": "བྱང་ཨ་མི་རི་ཀ་ཤར་ཕྱོགས་ཉིན་སྲུང་ཆུ་ཚོད", "WIB": "ནུབ་ཕྱོགས་ཨིན་ཌོ་ནེ་ཤི་ཡ་ཆུ་ཚོད", "ART": "ཨར་ཇེན་ཊི་ན་ཚད་ལྡན་ཆུ་ཚོད", "ChST": "ChST", "HECU": "ཀིའུ་བྷ་ཉིན་སྲུང་ཆུ་ཚོད"},
 	}
 }
 
@@ -407,7 +407,12 @@ func (dz *dz) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2d}...)
 
 	if t.Month() < 10 {
@@ -433,7 +438,13 @@ func (dz *dz) FmtDateMedium(t time.Time) string {
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0xa6, 0xe0, 0xbe, 0xa4, 0xe0, 0xbe, 0xb1, 0xe0, 0xbd, 0xb2, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0xa3, 0xe0, 0xbd, 0xbc, 0xe0, 0xbc, 0x8b}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xe0, 0xbd, 0x9f, 0xe0, 0xbe, 0xb3, 0xe0, 0xbc, 0x8b}...)
 	b = append(b, dz.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xba, 0xe0, 0xbd, 0xa6, 0xe0, 0xbc, 0x8b}...)
@@ -453,7 +464,13 @@ func (dz *dz) FmtDateLong(t time.Time) string {
 	b := make([]byte, 0, 32)
 
 	b = append(b, []byte{0xe0, 0xbd, 0xa6, 0xe0, 0xbe, 0xa4, 0xe0, 0xbe, 0xb1, 0xe0, 0xbd, 0xb2, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0xa3, 0xe0, 0xbd, 0xbc, 0xe0, 0xbc, 0x8b}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20}...)
 	b = append(b, dz.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xba, 0xe0, 0xbd, 0xa6, 0xe0, 0xbc, 0x8b, 0x20}...)
@@ -474,7 +491,13 @@ func (dz *dz) FmtDateFull(t time.Time) string {
 
 	b = append(b, dz.daysWide[t.Weekday()]...)
 	b = append(b, []byte{0x2c, 0x20, 0xe0, 0xbd, 0xa6, 0xe0, 0xbe, 0xa4, 0xe0, 0xbe, 0xb1, 0xe0, 0xbd, 0xb2, 0xe0, 0xbc, 0x8b, 0xe0, 0xbd, 0xa3, 0xe0, 0xbd, 0xbc, 0xe0, 0xbc, 0x8b}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20}...)
 	b = append(b, dz.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20, 0xe0, 0xbd, 0x9a, 0xe0, 0xbd, 0xba, 0xe0, 0xbd, 0xa6, 0xe0, 0xbc, 0x8b}...)

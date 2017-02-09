@@ -1,6 +1,6 @@
 ## locales
 <img align="right" src="https://raw.githubusercontent.com/go-playground/locales/master/logo.png">
-![Project status](https://img.shields.io/badge/version-0.10.3-green.svg)
+![Project status](https://img.shields.io/badge/version-0.11.0-green.svg)
 [![Build Status](https://semaphoreci.com/api/v1/joeybloggs/locales/branches/master/badge.svg)](https://semaphoreci.com/joeybloggs/locales)
 [![Go Report Card](https://goreportcard.com/badge/github.com/go-playground/locales)](https://goreportcard.com/report/github.com/go-playground/locales)
 [![GoDoc](https://godoc.org/github.com/go-playground/locales?status.svg)](https://godoc.org/github.com/go-playground/locales)
@@ -12,7 +12,7 @@ an i18n package; these were built for use with, but not exclusive to, [Universal
 
 Features
 --------
-- [x] Rules generated from the latest [CLDR](http://cldr.unicode.org/index/downloads) data, v29
+- [x] Rules generated from the latest [CLDR](http://cldr.unicode.org/index/downloads) data, v30.0.3
 - [x] Contains Cardinal, Ordinal and Range Plural Rules
 - [x] Contains Month, Weekday and Timezone translations built in
 - [x] Contains Date & Time formatting functions
@@ -29,7 +29,7 @@ Installation
 
 Use go get 
 
-```go
+```shell
 go get github.com/go-playground/locales
 ```  
 
@@ -51,10 +51,6 @@ import (
 	"github.com/go-playground/locales/en_CA"
 )
 
-const (
-	dateTimeString = "Jan 2, 2006 at 3:04:05pm"
-)
-
 func main() {
 
 	loc, _ := time.LoadLocation("America/Toronto")
@@ -63,57 +59,57 @@ func main() {
 	l := en_CA.New()
 
 	// Dates
-	fmt.Println(string(l.FmtDateFull(datetime)))
-	fmt.Println(string(l.FmtDateLong(datetime)))
-	fmt.Println(string(l.FmtDateMedium(datetime)))
-	fmt.Println(string(l.FmtDateShort(datetime)))
+	fmt.Println(l.FmtDateFull(datetime))
+	fmt.Println(l.FmtDateLong(datetime))
+	fmt.Println(l.FmtDateMedium(datetime))
+	fmt.Println(l.FmtDateShort(datetime))
 
 	// Times
-	fmt.Println(string(l.FmtTimeFull(datetime)))
-	fmt.Println(string(l.FmtTimeLong(datetime)))
-	fmt.Println(string(l.FmtTimeMedium(datetime)))
-	fmt.Println(string(l.FmtTimeShort(datetime)))
+	fmt.Println(l.FmtTimeFull(datetime))
+	fmt.Println(l.FmtTimeLong(datetime))
+	fmt.Println(l.FmtTimeMedium(datetime))
+	fmt.Println(l.FmtTimeShort(datetime))
 
 	// Months Wide
-	fmt.Println(string(l.MonthWide(time.January)))
-	fmt.Println(string(l.MonthWide(time.February)))
-	fmt.Println(string(l.MonthWide(time.March)))
+	fmt.Println(l.MonthWide(time.January))
+	fmt.Println(l.MonthWide(time.February))
+	fmt.Println(l.MonthWide(time.March))
 	// ...
 
 	// Months Abbreviated
-	fmt.Println(string(l.MonthAbbreviated(time.January)))
-	fmt.Println(string(l.MonthAbbreviated(time.February)))
-	fmt.Println(string(l.MonthAbbreviated(time.March)))
+	fmt.Println(l.MonthAbbreviated(time.January))
+	fmt.Println(l.MonthAbbreviated(time.February))
+	fmt.Println(l.MonthAbbreviated(time.March))
 	// ...
 
 	// Months Narrow
-	fmt.Println(string(l.MonthNarrow(time.January)))
-	fmt.Println(string(l.MonthNarrow(time.February)))
-	fmt.Println(string(l.MonthNarrow(time.March)))
+	fmt.Println(l.MonthNarrow(time.January))
+	fmt.Println(l.MonthNarrow(time.February))
+	fmt.Println(l.MonthNarrow(time.March))
 	// ...
 
 	// Weekdays Wide
-	fmt.Println(string(l.WeekdayWide(time.Sunday)))
-	fmt.Println(string(l.WeekdayWide(time.Monday)))
-	fmt.Println(string(l.WeekdayWide(time.Tuesday)))
+	fmt.Println(l.WeekdayWide(time.Sunday))
+	fmt.Println(l.WeekdayWide(time.Monday))
+	fmt.Println(l.WeekdayWide(time.Tuesday))
 	// ...
 
 	// Weekdays Abbreviated
-	fmt.Println(string(l.WeekdayAbbreviated(time.Sunday)))
-	fmt.Println(string(l.WeekdayAbbreviated(time.Monday)))
-	fmt.Println(string(l.WeekdayAbbreviated(time.Tuesday)))
+	fmt.Println(l.WeekdayAbbreviated(time.Sunday))
+	fmt.Println(l.WeekdayAbbreviated(time.Monday))
+	fmt.Println(l.WeekdayAbbreviated(time.Tuesday))
 	// ...
 
 	// Weekdays Short
-	fmt.Println(string(l.WeekdayShort(time.Sunday)))
-	fmt.Println(string(l.WeekdayShort(time.Monday)))
-	fmt.Println(string(l.WeekdayShort(time.Tuesday)))
+	fmt.Println(l.WeekdayShort(time.Sunday))
+	fmt.Println(l.WeekdayShort(time.Monday))
+	fmt.Println(l.WeekdayShort(time.Tuesday))
 	// ...
 
 	// Weekdays Narrow
-	fmt.Println(string(l.WeekdayNarrow(time.Sunday)))
-	fmt.Println(string(l.WeekdayNarrow(time.Monday)))
-	fmt.Println(string(l.WeekdayNarrow(time.Tuesday)))
+	fmt.Println(l.WeekdayNarrow(time.Sunday))
+	fmt.Println(l.WeekdayNarrow(time.Monday))
+	fmt.Println(l.WeekdayNarrow(time.Tuesday))
 	// ...
 
 	var f64 float64
@@ -121,20 +117,20 @@ func main() {
 	f64 = -10356.4523
 
 	// Number
-	fmt.Println(string(l.FmtNumber(f64, 2)))
+	fmt.Println(l.FmtNumber(f64, 2))
 
 	// Currency
-	fmt.Println(string(l.FmtCurrency(f64, 2, currency.CAD)))
-	fmt.Println(string(l.FmtCurrency(f64, 2, currency.USD)))
+	fmt.Println(l.FmtCurrency(f64, 2, currency.CAD))
+	fmt.Println(l.FmtCurrency(f64, 2, currency.USD))
 
 	// Accounting
-	fmt.Println(string(l.FmtAccounting(f64, 2, currency.CAD)))
-	fmt.Println(string(l.FmtAccounting(f64, 2, currency.USD)))
+	fmt.Println(l.FmtAccounting(f64, 2, currency.CAD))
+	fmt.Println(l.FmtAccounting(f64, 2, currency.USD))
 
 	f64 = 78.12
 
 	// Percent
-	fmt.Println(string(l.FmtPercent(f64, 0)))
+	fmt.Println(l.FmtPercent(f64, 0))
 
 	// Plural Rules for locale, so you know what rules you must cover
 	fmt.Println(l.PluralsCardinal())

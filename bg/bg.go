@@ -56,7 +56,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "лв.", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "щ.д.", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "лв.", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "щ.д.", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: " )",
@@ -67,13 +67,13 @@ func New() locales.Translator {
 		daysNarrow:             []string{"н", "п", "в", "с", "ч", "п", "с"},
 		daysShort:              []string{"нд", "пн", "вт", "ср", "чт", "пт", "сб"},
 		daysWide:               []string{"неделя", "понеделник", "вторник", "сряда", "четвъртък", "петък", "събота"},
-		periodsAbbreviated:     []string{"пр.об.", "сл.об."},
-		periodsNarrow:          []string{"пр.об.", "сл.об."},
+		periodsAbbreviated:     []string{"am", "pm"},
+		periodsNarrow:          []string{"am", "pm"},
 		periodsWide:            []string{"пр.об.", "сл.об."},
 		erasAbbreviated:        []string{"пр.Хр.", "сл.Хр."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"преди Христа", "след Христа"},
-		timezones:              map[string]string{"ECT": "Еквадорско време", "AEST": "Австралия – източно стандартно време", "WAST": "Западноафриканско лятно часово време", "AWST": "Австралия – западно стандартно време", "COST": "Колумбийско лятно часово време", "ACWDT": "Австралия – западно централно лятно часово време", "PDT": "Северноамериканско тихоокеанско лятно часово време", "HAT": "Нюфаундлендско лятно часово време", "CLST": "Чилийско лятно часово време", "LHDT": "Лорд Хау – лятно часово време", "OESZ": "Източноевропейско лятно часово време", "WART": "Западноаржентинско стандартно време", "MDT": "Северноамериканско планинско лятно часово време", "WIT": "Източноиндонезийско време", "ACWST": "Австралия – западно централно стандартно време", "EDT": "Северноамериканско източно лятно часово време", "MST": "Северноамериканско планинско стандартно време", "BOT": "Боливийско време", "WEZ": "Западноевропейско стандартно време", "WIB": "Западноиндонезийско време", "PST": "Северноамериканско тихоокеанско стандартно време", "GMT": "Средно гринуичко време", "CDT": "Северноамериканско централно лятно часово време", "SRT": "Суринамско време", "MEZ": "Централноевропейско стандартно време", "EAT": "Източноафриканско време", "IST": "Индийско стандартно време", "JST": "Японско стандартно време", "SGT": "Сингапурско време", "HADT": "Хавайско-алеутско лятно часово време", "AEDT": "Австралия – източно лятно часово време", "ART": "Аржентинско стандартно време", "TMT": "Туркменистанско стандартно време", "TMST": "Туркменистанско лятно часово време", "MYT": "Малайзийско време", "OEZ": "Източноевропейско стандартно време", "CHAST": "Чатъм – стандартно време", "WARST": "Западноаржентинско лятно часово време", "UYT": "Уругвайско стандартно време", "SAST": "Южноафриканско време", "AKDT": "Аляска – лятно часово време", "NZDT": "Новозеландско лятно часово време", "HNT": "Нюфаундлендско стандартно време", "COT": "Колумбийско стандартно време", "VET": "Венецуелско време", "HAST": "Хавайско-алеутско стандартно време", "ARST": "Аржентинско лятно часово време", "WAT": "Западноафриканско стандартно време", "WITA": "Централноиндонезийско време", "NZST": "Новозеландско стандартно време", "∅∅∅": "Бразилско лятно часово време", "WESZ": "Западноевропейско лятно време", "GFT": "Френска Гвиана", "CST": "Северноамериканско централно стандартно време", "GYT": "Гаяна", "ChST": "Чаморо – стандартно време", "CLT": "Чилийско стандартно време", "CHADT": "Чатъм – лятно часово време", "ACST": "Австралия – централно стандартно време", "AKST": "Аляска – стандартно време", "AST": "Северноамериканско атлантическо стандартно време", "ADT": "Северноамериканско атлантическо лятно часово време", "CAT": "Централноафриканско време", "BT": "Бутанско време", "JDT": "Японско лятно часово време", "HKT": "Хонконгско стандартно време", "EST": "Северноамериканско източно стандартно време", "LHST": "Лорд Хау – стандартно време", "UYST": "Уругвайско лятно часово време", "ACDT": "Австралия – централно лятно часово време", "HKST": "Хонконгско лятно часово време", "MESZ": "Централноевропейско лятно часово време", "AWDT": "Австралия – западно лятно часово време"},
+		timezones:              map[string]string{"CLST": "Чилийско лятно часово време", "ADT": "Северноамериканско атлантическо лятно часово време", "WEZ": "Западноевропейско стандартно време", "BT": "Бутанско време", "HEOG": "Западногренландско лятно часово време", "HKST": "Хонконгско лятно часово време", "OESZ": "Източноевропейско лятно часово време", "CAT": "Централноафриканско време", "AKDT": "Аляска – лятно часово време", "WIB": "Западноиндонезийско време", "ACWDT": "Австралия – западно централно лятно часово време", "NZST": "Новозеландско стандартно време", "OEZ": "Източноевропейско стандартно време", "SRT": "Суринамско време", "HKT": "Хонконгско стандартно време", "NZDT": "Новозеландско лятно часово време", "PST": "Северноамериканско тихоокеанско стандартно време", "WITA": "Централноиндонезийско време", "SAST": "Южноафриканско време", "ACDT": "Австралия – централно лятно часово време", "EAT": "Източноафриканско време", "WARST": "Западноаржентинско лятно часово време", "UYST": "Уругвайско лятно часово време", "HADT": "Хавайско-алеутско лятно часово време", "WAT": "Западноафриканско стандартно време", "HNOG": "Западногренландско стандартно време", "COST": "Колумбийско лятно часово време", "UYT": "Уругвайско стандартно време", "HEPM": "Сен Пиер и Микелон – лятно часово време", "AEDT": "Австралия – източно лятно часово време", "AWDT": "Австралия – западно лятно часово време", "ChST": "Чаморо – стандартно време", "BOT": "Боливийско време", "ECT": "Еквадорско време", "HEPMX": "Мексиканско тихоокеанско лятно часово време", "HAT": "Нюфаундлендско лятно часово време", "AEST": "Австралия – източно стандартно време", "TMT": "Туркменистанско стандартно време", "HEEG": "Източногренландско лятно часово време", "WAST": "Западноафриканско лятно часово време", "COT": "Колумбийско стандартно време", "EDT": "Северноамериканско източно лятно часово време", "CDT": "Северноамериканско централно лятно часово време", "MEZ": "Централноевропейско стандартно време", "HNEG": "Източногренландско стандартно време", "HNNOMX": "Мексико – северозападно стандартно време", "MYT": "Малайзийско време", "HAST": "Хавайско-алеутско стандартно време", "PDT": "Северноамериканско тихоокеанско лятно часово време", "WESZ": "Западноевропейско лятно време", "GMT": "Средно гринуичко време", "AKST": "Аляска – стандартно време", "CHAST": "Чатъм – стандартно време", "IST": "Индийско стандартно време", "∅∅∅": "Амазонско лятно часово време", "EST": "Северноамериканско източно стандартно време", "WIT": "Източноиндонезийско време", "ARST": "Аржентинско лятно часово време", "AWST": "Австралия – западно стандартно време", "LHST": "Лорд Хау – стандартно време", "WART": "Западноаржентинско стандартно време", "HNCU": "Кубинско стандартно време", "MDT": "MDT", "AST": "Северноамериканско атлантическо стандартно време", "VET": "Венецуелско време", "ACWST": "Австралия – западно централно стандартно време", "HNPM": "Сен Пиер и Микелон – стандартно време", "JST": "Японско стандартно време", "JDT": "Японско лятно часово време", "HENOMX": "Мексико – северозападно лятно часово време", "SGT": "Сингапурско време", "HNPMX": "Мексиканско тихоокеанско стандартно време", "HNT": "Нюфаундлендско стандартно време", "CLT": "Чилийско стандартно време", "ACST": "Австралия – централно стандартно време", "GYT": "Гаяна", "MESZ": "Централноевропейско лятно часово време", "CHADT": "Чатъм – лятно часово време", "LHDT": "Лорд Хау – лятно часово време", "GFT": "Френска Гвиана", "TMST": "Туркменистанско лятно часово време", "HECU": "Кубинско лятно часово време", "MST": "MST", "CST": "Северноамериканско централно стандартно време", "ART": "Аржентинско стандартно време"},
 	}
 }
 
@@ -268,28 +268,15 @@ func (bg *bg) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bg.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + len(symbol) + 4
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, bg.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				for j := len(bg.group) - 1; j >= 0; j-- {
-					b = append(b, bg.group[j])
-				}
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -328,28 +315,15 @@ func (bg *bg) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := bg.currencies[currency]
-	l := len(s) + len(symbol) + 6 + 2*len(s[:len(s)-int(v)-1])/3
-	count := 0
-	inWhole := v == 0
+	l := len(s) + len(symbol) + 6
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
 
 		if s[i] == '.' {
 			b = append(b, bg.decimal[0])
-			inWhole = true
 			continue
-		}
-
-		if inWhole {
-			if count == 3 {
-				for j := len(bg.group) - 1; j >= 0; j-- {
-					b = append(b, bg.group[j])
-				}
-				count = 1
-			} else {
-				count++
-			}
 		}
 
 		b = append(b, s[i])
@@ -432,7 +406,13 @@ func (bg *bg) FmtDateMedium(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 
 	b = append(b, []byte{0x2e}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd0, 0xb3}...)
 	b = append(b, []byte{0x2e}...)
 
@@ -448,7 +428,13 @@ func (bg *bg) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, bg.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd0, 0xb3}...)
 	b = append(b, []byte{0x2e}...)
 
@@ -466,7 +452,13 @@ func (bg *bg) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, bg.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x20, 0xd0, 0xb3}...)
 	b = append(b, []byte{0x2e}...)
 

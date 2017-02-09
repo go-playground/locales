@@ -55,23 +55,23 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "៛", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CN¥", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JP¥", "KES", "KGS", "៛", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ"},
-		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
+		monthsNarrow:           []string{"", "ម", "ក", "ម", "ម", "ឧ", "ម", "ក", "ស", "ក", "ត", "វ", "ធ"},
 		monthsWide:             []string{"", "មករា", "កុម្ភៈ", "មីនា", "មេសា", "ឧសភា", "មិថុនា", "កក្កដា", "សីហា", "កញ្ញា", "តុលា", "វិច្ឆិកា", "ធ្នូ"},
 		daysAbbreviated:        []string{"អាទិត្យ", "ច័ន្ទ", "អង្គារ", "ពុធ", "ព្រហស្បតិ៍", "សុក្រ", "សៅរ៍"},
-		daysNarrow:             []string{"អា", "ច", "អ", "ពុ", "ព្រ", "សុ", "ស"},
-		daysShort:              []string{"អាទិត្យ", "ច័ន្ទ", "អង្គារ", "ពុធ", "ព្រហស្បតិ៍", "សុក្រ", "សៅរ៍"},
+		daysNarrow:             []string{"អ", "ច", "អ", "ព", "ព", "ស", "ស"},
+		daysShort:              []string{"អា", "ច", "អ", "ពុ", "ព្រ", "សុ", "ស"},
 		daysWide:               []string{"អាទិត្យ", "ច័ន្ទ", "អង្គារ", "ពុធ", "ព្រហស្បតិ៍", "សុក្រ", "សៅរ៍"},
-		periodsAbbreviated:     []string{"ព្រឹក", "ល្ងាច"},
-		periodsNarrow:          []string{"ព្រឹក", "ល្ងាច"},
-		periodsWide:            []string{"ព្រឹក", "ល្ងាច"},
+		periodsAbbreviated:     []string{"AM", "PM"},
+		periodsNarrow:          []string{"a", "p"},
+		periodsWide:            []string{"AM", "PM"},
 		erasAbbreviated:        []string{"មុន គ.ស.", "គ.ស."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"មុន\u200bគ្រិស្តសករាជ", "គ្រិស្តសករាជ"},
-		timezones:              map[string]string{"CHAST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bចាថាំ", "HAST": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "SRT": "ម៉ោង\u200bនៅ\u200bសូរីណាម", "WEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "WAT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bលិច", "WIT": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bកើត", "NZDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bនូវែលសេឡង់", "WARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "AEDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "ADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអាត្លង់ទិក", "MST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bតំបន់\u200bភ្នំ\u200bអាមេរិក\u200bខាង\u200bជើង", "CLT": "ម៉ោងស្តង់ដារនៅឈីលី", "HAT": "ម៉ោង\u200bពេលថ្ងៃ\u200bនៅ\u200bញូហ្វោនឡែន", "HKT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bហុងកុង", "AKST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាឡាស្កា", "EDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគខាង\u200bកើតនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "AKDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bអាឡាស្កា", "EST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bកើត\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "MESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "ARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន", "GYT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន", "MDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bតំបន់\u200bភ្នំ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "ChST": "ម៉ោង\u200bនៅ\u200bចាំម៉ូរ៉ូ", "LHDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bឡតហៅ", "ECT": "ម៉ោង\u200bនៅ\u200bអេក្វាទ័រ", "WIB": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bលិច", "TMST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bតួកម៉េនីស្ថាន\u200b", "CST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "BOT": "ម៉ោង\u200bនៅ\u200bបូលីវី", "CLST": "ម៉ោងរដូវក្តៅនៅឈីលី", "AWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "GMT": "ម៉ោងនៅគ្រីនវិច", "ACWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "PDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200b\u200bភាគ\u200bខាងលិច\u200bនៅ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "MYT": "ម៉ោង\u200bនៅ\u200bម៉ាឡេស៊ី", "ACWST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "WAST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាហ្វ្រិក\u200b\u200b\u200bខាងលិច", "GFT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន\u200bបារាំង", "NZST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bនូវែលសេឡង់", "LHST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bឡត\u200bហៅ", "IST": "ម៉ោង\u200bនៅ\u200bឥណ្ឌា", "∅∅∅": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអេហ្សស", "BT": "ម៉ោងនៅប៊ូតាន", "WART": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "AEST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "OEZ": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "HKST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bហុងកុង", "PST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bលិច\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "JDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅជប៉ុន", "COT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bកូឡុំប៊ី", "HNT": "ម៉ោង\u200b\u200bស្តង់ដារ\u200b\u200bនៅ\u200bញូហ្វោនឡែន", "WESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "VET": "ម៉ោង\u200bនៅ\u200bវ៉េណេស៊ុយអេឡា", "ACDT": "ម៉ោង\u200bពេលថ្ងៃ\u200b\u200b\u200b\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "HADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "EAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bកើត", "SAST": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bត្បូង", "WITA": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200b\u200bកណ្ដាល", "JST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bជប៉ុន", "CHADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bចាថាំ", "ACST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "SGT": "ម៉ោង\u200bនៅ\u200bសិង្ហបូរី", "TMT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅតួកម៉េនីស្ថាន", "CAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bកណ្ដាល", "UYT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "UYST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "OESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "MEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "COST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bកូឡុំប៊ី", "AST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាត្លង់ទិក", "AWST": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "ART": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន", "CDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង"},
+		timezones:              map[string]string{"HAST": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "ACWST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "HKT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bហុងកុង", "JDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅជប៉ុន", "HNPMX": "ម៉ោង\u200bស្តង់ដា\u200bនៅ\u200bប៉ាសីុហ្វិក\u200bម៉ិកស៊ិក", "HEPMX": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bប៉ាសីុហ្វិក\u200bម៉ិកស៊ិក", "HADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bហាវៃ-អាល់ដ្យូសិន", "NZDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bនូវែលសេឡង់", "CLST": "ម៉ោងរដូវក្តៅនៅឈីលី", "ACDT": "ម៉ោង\u200bពេលថ្ងៃ\u200b\u200b\u200b\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "WIB": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bលិច", "HAT": "ម៉ោង\u200bពេលថ្ងៃ\u200bនៅ\u200bញូហ្វោនឡែន", "∅∅∅": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាម៉ាសូន", "HNCU": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bគុយបា", "EST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bកើត\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "EDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគខាង\u200bកើតនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "HKST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bហុងកុង", "AWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "NZST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bនូវែលសេឡង់", "SAST": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bត្បូង", "WIT": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200bខាង\u200bកើត", "BT": "ម៉ោងនៅប៊ូតាន", "WEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "BOT": "ម៉ោង\u200bនៅ\u200bបូលីវី", "WART": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "MST": "MST", "ADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអាត្លង់ទិក", "COT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bកូឡុំប៊ី", "WITA": "ម៉ោង\u200bនៅ\u200bឥណ្ឌូណេស៊ី\u200b\u200b\u200bកណ្ដាល", "CLT": "ម៉ោងស្តង់ដារនៅឈីលី", "WAT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bលិច", "OESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "MDT": "MDT", "CST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "CDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bភាគ\u200bកណ្ដាល\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "UYST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "HNPM": "ម៉ោង\u200bស្តង់ដារ\u200bនៅសង់\u200bព្យែរ និង\u200bមីគុយឡុង", "MESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "HENOMX": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bម៉ិកស៊ិកភាគពាយព្យ", "SGT": "ម៉ោង\u200bនៅ\u200bសិង្ហបូរី", "GMT": "ម៉ោងនៅគ្រីនវិច", "VET": "ម៉ោង\u200bនៅ\u200bវ៉េណេស៊ុយអេឡា", "PDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200b\u200bភាគ\u200bខាងលិច\u200bនៅ\u200bអាមេរិក\u200bភាគ\u200bខាង\u200bជើង", "CHAST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bចាថាំ", "IST": "ម៉ោង\u200bនៅ\u200bឥណ្ឌា", "ECT": "ម៉ោង\u200bនៅ\u200bអេក្វាទ័រ", "COST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bកូឡុំប៊ី", "AWST": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bលិច", "GYT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន", "PST": "ម៉ោង\u200bស្តង់ដារ\u200bភាគ\u200bខាង\u200bលិច\u200bនៅ\u200bអាមេរិក\u200bខាង\u200bជើង", "MEZ": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអឺរ៉ុប\u200bកណ្ដាល", "LHST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bឡត\u200bហៅ", "ACST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "HNOG": "ម៉ោងស្តង់ដារនៅហ្គ្រីនលែនខាងលិច", "ACWDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bភាគ\u200bខាង\u200bលិច\u200bនៃ\u200bអូស្ត្រាលី\u200bកណ្ដាល", "ART": "ម៉ោង\u200b\u200bស្តង់ដារ\u200bនៅ\u200bអាសង់ទីន", "TMST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bតួកម៉េនីស្ថាន\u200b", "WAST": "ម៉ោង\u200b\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាហ្វ្រិក\u200b\u200b\u200bខាងលិច", "OEZ": "ម៉ោង\u200bស្តង់ដារ\u200b\u200bនៅ\u200bអឺរ៉ុប\u200b\u200bខាង\u200bកើត\u200b", "MYT": "ម៉ោង\u200bនៅ\u200bម៉ាឡេស៊ី", "HEPM": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅសង់\u200bព្យែរ និង\u200bមីគុយឡុង", "TMT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅតួកម៉េនីស្ថាន", "AKST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាឡាស្កា", "LHDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bឡតហៅ", "UYT": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអ៊ុយរូហ្គាយ", "SRT": "ម៉ោង\u200bនៅ\u200bសូរីណាម", "HEOG": "ម៉ោងរដូវក្តៅនៅហ្គ្រីនលែនខាងលិច", "AEST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "ChST": "ម៉ោង\u200bនៅ\u200bចាំម៉ូរ៉ូ", "HNNOMX": "ម៉ោង\u200bស្តង់ដា\u200bនៅ\u200bម៉ិកស៊ិកភាគពាយព្យ", "HNT": "ម៉ោង\u200b\u200bស្តង់ដារ\u200b\u200bនៅ\u200bញូហ្វោនឡែន", "CAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bកណ្ដាល", "EAT": "ម៉ោង\u200bនៅ\u200bអាហ្វ្រិក\u200bខាង\u200bកើត", "AKDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200b\u200bអាឡាស្កា", "CHADT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bចាថាំ", "JST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bជប៉ុន", "HNEG": "ម៉ោង\u200b\u200b\u200bស្តង់ដារ\u200bនៅ\u200b\u200bហ្គ្រីនលែន\u200bខាង\u200bកើត", "GFT": "ម៉ោង\u200bនៅ\u200bឃ្វីយ៉ាន\u200bបារាំង", "AST": "ម៉ោង\u200bស្តង់ដារ\u200bនៅ\u200bអាត្លង់ទិក", "ARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន", "WESZ": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអឺរ៉ុប\u200bខាង\u200bលិច", "AEDT": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bអូស្ត្រាលី\u200bខាង\u200bកើត", "HEEG": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bហ្គ្រីនលែនខាង\u200bកើត", "WARST": "ម៉ោង\u200bរដូវ\u200bក្ដៅ\u200bនៅ\u200bអាសង់ទីន\u200b\u200bខាង\u200bលិច", "HECU": "ម៉ោង\u200bពេល\u200bថ្ងៃ\u200bនៅ\u200bគុយបា"},
 	}
 }
 
@@ -282,10 +282,6 @@ func (km *km) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
 	if num < 0 {
 		b = append(b, km.minus[0])
 	}
@@ -305,6 +301,8 @@ func (km *km) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 			b = append(b, '0')
 		}
 	}
+
+	b = append(b, symbol...)
 
 	return string(b)
 }
@@ -342,17 +340,7 @@ func (km *km) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
 		b = append(b, km.currencyNegativePrefix[0])
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
 
 	}
 
@@ -374,6 +362,10 @@ func (km *km) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	if num < 0 {
 		b = append(b, km.currencyNegativeSuffix...)
+		b = append(b, symbol...)
+	} else {
+
+		b = append(b, symbol...)
 	}
 
 	return string(b)
@@ -407,7 +399,12 @@ func (km *km) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, km.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -421,7 +418,12 @@ func (km *km) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, km.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -437,7 +439,12 @@ func (km *km) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, km.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

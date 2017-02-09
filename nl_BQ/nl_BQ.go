@@ -18,12 +18,12 @@ type nl_BQ struct {
 	group                  string
 	minus                  string
 	percent                string
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
-	currencyNegativePrefix string
+	currencyPositiveSuffix string
 	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
@@ -56,10 +56,10 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: "( ",
-		currencyNegativeSuffix: ")",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "jan.", "feb.", "mrt.", "apr.", "mei", "jun.", "jul.", "aug.", "sep.", "okt.", "nov.", "dec."},
 		monthsNarrow:           []string{"", "J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"},
 		monthsWide:             []string{"", "januari", "februari", "maart", "april", "mei", "juni", "juli", "augustus", "september", "oktober", "november", "december"},
@@ -73,7 +73,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"v.Chr.", "n.Chr."},
 		erasNarrow:             []string{"v.C.", "n.C."},
 		erasWide:               []string{"voor Christus", "na Christus"},
-		timezones:              map[string]string{"ACDT": "Midden-Australische zomertijd", "ECT": "Ecuadoraanse tijd", "ART": "Argentijnse standaardtijd", "CAT": "Centraal-Afrikaanse tijd", "ACST": "Midden-Australische standaardtijd", "SGT": "Singaporese standaardtijd", "SAST": "Zuid-Afrikaanse tijd", "WITA": "Centraal-Indonesische tijd", "MDT": "Macause zomertijd", "HNT": "Newfoundland-standaardtijd", "MESZ": "Midden-Europese zomertijd", "AEST": "Oost-Australische standaardtijd", "TMST": "Turkmeense zomertijd", "TMT": "Turkmeense standaardtijd", "NZST": "Nieuw-Zeelandse standaardtijd", "BOT": "Boliviaanse tijd", "AWST": "West-Australische standaardtijd", "HAT": "Newfoundland-zomertijd", "LHDT": "Lord Howe-eilandse zomertijd", "ACWDT": "Midden-Australische westelijke zomertijd", "PDT": "Pacific-zomertijd", "WESZ": "West-Europese zomertijd", "PST": "Pacific-standaardtijd", "MYT": "Maleisische tijd", "WEZ": "West-Europese standaardtijd", "HKT": "Hongkongse standaardtijd", "CHADT": "Chatham-zomertijd", "IST": "Indiase tijd", "LHST": "Lord Howe-eilandse standaardtijd", "WARST": "West-Argentijnse zomertijd", "WAST": "West-Afrikaanse zomertijd", "EAT": "Oost-Afrikaanse tijd", "CDT": "Central-zomertijd", "CLT": "Chileense standaardtijd", "JST": "Japanse standaardtijd", "∅∅∅": "Braziliaanse zomertijd", "GFT": "Frans-Guyaanse tijd", "SRT": "Surinaamse tijd", "EST": "Eastern-standaardtijd", "ChST": "Chamorro-tijd", "AWDT": "West-Australische zomertijd", "JDT": "Japanse zomertijd", "ACWST": "Midden-Australische westelijke standaardtijd", "ARST": "Argentijnse zomertijd", "BT": "Bhutaanse tijd", "CHAST": "Chatham-standaardtijd", "HAST": "Hawaii-Aleoetische standaardtijd", "WIB": "West-Indonesische tijd", "WART": "West-Argentijnse standaardtijd", "OESZ": "Oost-Europese zomertijd", "COST": "Colombiaanse zomertijd", "AEDT": "Oost-Australische zomertijd", "HADT": "Hawaii-Aleoetische zomertijd", "MEZ": "Midden-Europese standaardtijd", "ADT": "Atlantic-zomertijd", "CST": "Central-standaardtijd", "MST": "Macause standaardtijd", "CLST": "Chileense zomertijd", "WIT": "Oost-Indonesische tijd", "OEZ": "Oost-Europese standaardtijd", "UYT": "Uruguayaanse standaardtijd", "VET": "Venezolaanse tijd", "WAT": "West-Afrikaanse standaardtijd", "AKST": "Alaska-standaardtijd", "EDT": "Eastern-zomertijd", "AST": "Atlantic-standaardtijd", "NZDT": "Nieuw-Zeelandse zomertijd", "UYST": "Uruguayaanse zomertijd", "GMT": "Greenwich Mean Time", "HKST": "Hongkongse zomertijd", "COT": "Colombiaanse standaardtijd", "AKDT": "Alaska-zomertijd", "GYT": "Guyaanse tijd"},
+		timezones:              map[string]string{"UYT": "Uruguayaanse standaardtijd", "HNPM": "Saint Pierre en Miquelon-standaardtijd", "SAST": "Zuid-Afrikaanse tijd", "IST": "Indiase tijd", "CLST": "Chileense zomertijd", "COST": "Colombiaanse zomertijd", "ADT": "Atlantic-zomertijd", "WEZ": "West-Europese standaardtijd", "ACST": "Midden-Australische standaardtijd", "CAT": "Centraal-Afrikaanse tijd", "HNPMX": "Mexicaanse Pacific-standaardtijd", "WESZ": "West-Europese zomertijd", "AEDT": "Oost-Australische zomertijd", "HKT": "Hongkongse standaardtijd", "HEEG": "Oost-Groenlandse zomertijd", "VET": "Venezolaanse tijd", "EST": "Eastern-standaardtijd", "AST": "Atlantic-standaardtijd", "GYT": "Guyaanse tijd", "ACWST": "Midden-Australische westelijke standaardtijd", "WAT": "West-Afrikaanse standaardtijd", "COT": "Colombiaanse standaardtijd", "AKDT": "Alaska-zomertijd", "WIB": "West-Indonesische tijd", "CHAST": "Chatham-standaardtijd", "CHADT": "Chatham-zomertijd", "JDT": "Japanse zomertijd", "CLT": "Chileense standaardtijd", "ChST": "Chamorro-tijd", "HENOMX": "Noordwest-Mexicaanse zomertijd", "HECU": "Cubaanse zomertijd", "EDT": "Eastern-zomertijd", "MYT": "Maleisische tijd", "UYST": "Uruguayaanse zomertijd", "WIT": "Oost-Indonesische tijd", "GFT": "Frans-Guyaanse tijd", "HNNOMX": "Noordwest-Mexicaanse standaardtijd", "HNCU": "Cubaanse standaardtijd", "HNT": "Newfoundland-standaardtijd", "NZST": "Nieuw-Zeelandse standaardtijd", "SGT": "Singaporese standaardtijd", "HAST": "Hawaii-Aleoetische standaardtijd", "HADT": "Hawaii-Aleoetische zomertijd", "ARST": "Argentijnse zomertijd", "AEST": "Oost-Australische standaardtijd", "WART": "West-Argentijnse standaardtijd", "HEPMX": "Mexicaanse Pacific-zomertijd", "CDT": "Central-zomertijd", "SRT": "Surinaamse tijd", "HAT": "Newfoundland-zomertijd", "HKST": "Hongkongse zomertijd", "ACDT": "Midden-Australische zomertijd", "ECT": "Ecuadoraanse tijd", "MDT": "Macause zomertijd", "HEOG": "West-Groenlandse zomertijd", "PDT": "Pacific-zomertijd", "HEPM": "Saint Pierre en Miquelon-zomertijd", "TMT": "Turkmeense standaardtijd", "OEZ": "Oost-Europese standaardtijd", "GMT": "Greenwich Mean Time", "AKST": "Alaska-standaardtijd", "AWDT": "West-Australische zomertijd", "LHDT": "Lord Howe-eilandse zomertijd", "NZDT": "Nieuw-Zeelandse zomertijd", "OESZ": "Oost-Europese zomertijd", "∅∅∅": "Azoren-zomertijd", "WITA": "Centraal-Indonesische tijd", "MESZ": "Midden-Europese zomertijd", "JST": "Japanse standaardtijd", "TMST": "Turkmeense zomertijd", "BOT": "Boliviaanse tijd", "HNOG": "West-Groenlandse standaardtijd", "BT": "Bhutaanse tijd", "ACWDT": "Midden-Australische westelijke zomertijd", "MEZ": "Midden-Europese standaardtijd", "HNEG": "Oost-Groenlandse standaardtijd", "EAT": "Oost-Afrikaanse tijd", "WAST": "West-Afrikaanse zomertijd", "MST": "Macause standaardtijd", "CST": "Central-standaardtijd", "ART": "Argentijnse standaardtijd", "PST": "Pacific-standaardtijd", "AWST": "West-Australische standaardtijd", "LHST": "Lord Howe-eilandse standaardtijd", "WARST": "West-Argentijnse zomertijd"},
 	}
 }
 
@@ -246,7 +246,7 @@ func (nl *nl_BQ) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (nl *nl_BQ) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
+	l := len(s) + 5
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -267,6 +267,8 @@ func (nl *nl_BQ) FmtPercent(num float64, v uint64) string {
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
+
+	b = append(b, nl.percentSuffix...)
 
 	b = append(b, nl.percent...)
 
@@ -303,14 +305,6 @@ func (nl *nl_BQ) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
-	for j := len(nl.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, nl.currencyPositivePrefix[j])
-	}
-
 	if num < 0 {
 		b = append(b, nl.minus[0])
 	}
@@ -331,6 +325,10 @@ func (nl *nl_BQ) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		}
 	}
 
+	b = append(b, nl.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
+
 	return string(b)
 }
 
@@ -340,7 +338,7 @@ func (nl *nl_BQ) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := nl.currencies[currency]
-	l := len(s) + len(symbol) + 6 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -367,23 +365,7 @@ func (nl *nl_BQ) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(nl.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, nl.currencyNegativePrefix[j])
-		}
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(nl.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, nl.currencyPositivePrefix[j])
-		}
+		b = append(b, nl.minus[0])
 
 	}
 
@@ -405,6 +387,11 @@ func (nl *nl_BQ) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	if num < 0 {
 		b = append(b, nl.currencyNegativeSuffix...)
+		b = append(b, symbol...)
+	} else {
+
+		b = append(b, nl.currencyPositiveSuffix...)
+		b = append(b, symbol...)
 	}
 
 	return string(b)
@@ -448,7 +435,12 @@ func (nl *nl_BQ) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, nl.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -462,7 +454,12 @@ func (nl *nl_BQ) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, nl.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -478,7 +475,12 @@ func (nl *nl_BQ) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, nl.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

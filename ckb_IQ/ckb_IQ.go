@@ -10,56 +10,69 @@ import (
 )
 
 type ckb_IQ struct {
-	locale             string
-	pluralsCardinal    []locales.PluralRule
-	pluralsOrdinal     []locales.PluralRule
-	pluralsRange       []locales.PluralRule
-	decimal            string
-	group              string
-	minus              string
-	percent            string
-	perMille           string
-	timeSeparator      string
-	inifinity          string
-	currencies         []string // idx = enum of currency code
-	monthsAbbreviated  []string
-	monthsNarrow       []string
-	monthsWide         []string
-	daysAbbreviated    []string
-	daysNarrow         []string
-	daysShort          []string
-	daysWide           []string
-	periodsAbbreviated []string
-	periodsNarrow      []string
-	periodsShort       []string
-	periodsWide        []string
-	erasAbbreviated    []string
-	erasNarrow         []string
-	erasWide           []string
-	timezones          map[string]string
+	locale                 string
+	pluralsCardinal        []locales.PluralRule
+	pluralsOrdinal         []locales.PluralRule
+	pluralsRange           []locales.PluralRule
+	decimal                string
+	group                  string
+	minus                  string
+	percent                string
+	percentSuffix          string
+	perMille               string
+	timeSeparator          string
+	inifinity              string
+	currencies             []string // idx = enum of currency code
+	currencyPositiveSuffix string
+	currencyNegativeSuffix string
+	monthsAbbreviated      []string
+	monthsNarrow           []string
+	monthsWide             []string
+	daysAbbreviated        []string
+	daysNarrow             []string
+	daysShort              []string
+	daysWide               []string
+	periodsAbbreviated     []string
+	periodsNarrow          []string
+	periodsShort           []string
+	periodsWide            []string
+	erasAbbreviated        []string
+	erasNarrow             []string
+	erasWide               []string
+	timezones              map[string]string
 }
 
 // New returns a new instance of translator for the 'ckb_IQ' locale
 func New() locales.Translator {
 	return &ckb_IQ{
-		locale:            "ckb_IQ",
-		pluralsCardinal:   []locales.PluralRule{2, 6},
-		pluralsOrdinal:    nil,
-		pluralsRange:      nil,
-		minus:             "‎-",
-		percent:           "٪",
-		timeSeparator:     ":",
-		currencies:        []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		monthsAbbreviated: []string{"", "کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانونی یەکەم"},
-		monthsWide:        []string{"", "کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانونی یەکەم"},
-		daysAbbreviated:   []string{"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"},
-		daysNarrow:        []string{"ی", "د", "س", "چ", "پ", "ھ", "ش"},
-		daysWide:          []string{"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"},
-		periodsWide:       []string{"ب.ن", "د.ن"},
-		erasAbbreviated:   []string{"پ.ن", "ز"},
-		erasNarrow:        []string{"پ.ن", "ز"},
-		erasWide:          []string{"پێش زایین", "زایینی"},
-		timezones:         map[string]string{"BT": "BT", "∅∅∅": "∅∅∅", "COT": "COT", "SAST": "SAST", "BOT": "BOT", "ACWST": "ACWST", "ADT": "ADT", "MDT": "MDT", "UYT": "UYT", "GMT": "GMT", "WEZ": "WEZ", "ACDT": "ACDT", "EST": "EST", "HNT": "HNT", "CDT": "CDT", "ChST": "ChST", "AWST": "AWST", "AWDT": "AWDT", "HKST": "HKST", "CHAST": "CHAST", "WIB": "WIB", "PST": "PST", "JST": "JST", "WESZ": "WESZ", "VET": "VET", "WIT": "WIT", "CLST": "CLST", "WART": "WART", "HADT": "HADT", "EDT": "EDT", "AST": "AST", "NZST": "NZST", "NZDT": "NZDT", "CHADT": "CHADT", "COST": "COST", "MESZ": "MESZ", "PDT": "PDT", "JDT": "JDT", "LHST": "LHST", "LHDT": "LHDT", "HKT": "HKT", "ART": "ART", "ARST": "ARST", "IST": "IST", "ECT": "ECT", "TMST": "TMST", "MST": "MST", "HAT": "HAT", "SGT": "SGT", "WAT": "WAT", "AKST": "AKST", "CAT": "CAT", "SRT": "SRT", "OEZ": "OEZ", "AKDT": "AKDT", "CST": "CST", "GFT": "GFT", "WARST": "WARST", "HAST": "HAST", "WAST": "WAST", "WITA": "WITA", "MYT": "MYT", "GYT": "GYT", "OESZ": "OESZ", "MEZ": "MEZ", "ACST": "ACST", "AEST": "AEST", "CLT": "CLT", "UYST": "UYST", "AEDT": "AEDT", "ACWDT": "ACWDT", "EAT": "EAT", "TMT": "TMT"},
+		locale:                 "ckb_IQ",
+		pluralsCardinal:        []locales.PluralRule{2, 6},
+		pluralsOrdinal:         nil,
+		pluralsRange:           nil,
+		decimal:                "٫",
+		group:                  "٬",
+		percent:                "٪",
+		perMille:               "؉",
+		timeSeparator:          ":",
+		inifinity:              "∞",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		percentSuffix:          " ",
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
+		monthsAbbreviated:      []string{"", "کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانونی یەکەم"},
+		monthsNarrow:           []string{"", "ک", "ش", "ئ", "ن", "ئ", "ح", "ت", "ئ", "ئ", "ت", "ت", "ک"},
+		monthsWide:             []string{"", "کانوونی دووەم", "شوبات", "ئازار", "نیسان", "ئایار", "حوزەیران", "تەمووز", "ئاب", "ئەیلوول", "تشرینی یەکەم", "تشرینی دووەم", "کانونی یەکەم"},
+		daysAbbreviated:        []string{"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"},
+		daysNarrow:             []string{"ی", "د", "س", "چ", "پ", "ھ", "ش"},
+		daysShort:              []string{"١ش", "٢ش", "٣ش", "٤ش", "٥ش", "ھ", "ش"},
+		daysWide:               []string{"یەکشەممە", "دووشەممە", "سێشەممە", "چوارشەممە", "پێنجشەممە", "ھەینی", "شەممە"},
+		periodsAbbreviated:     []string{"ب.ن", "د.ن"},
+		periodsNarrow:          []string{"ب.ن", "د.ن"},
+		periodsWide:            []string{"ب.ن", "د.ن"},
+		erasAbbreviated:        []string{"پێش زایین", "زایینی"},
+		erasNarrow:             []string{"پ.ن", "ز"},
+		erasWide:               []string{"پێش زایین", "زایینی"},
+		timezones:              map[string]string{"NZST": "NZST", "OEZ": "OEZ", "EST": "EST", "EDT": "EDT", "HEPMX": "HEPMX", "MEZ": "MEZ", "ARST": "ARST", "HNOG": "HNOG", "CHADT": "CHADT", "EAT": "EAT", "GYT": "GYT", "HNT": "HNT", "LHDT": "LHDT", "MDT": "MDT", "CDT": "CDT", "UYST": "UYST", "HKT": "HKT", "NZDT": "NZDT", "WARST": "WARST", "HNPM": "HNPM", "TMT": "TMT", "WAT": "WAT", "WART": "WART", "AKST": "AKST", "HEOG": "HEOG", "CHAST": "CHAST", "BOT": "BOT", "ACST": "ACST", "CAT": "CAT", "COT": "COT", "COST": "COST", "AWST": "AWST", "CLST": "CLST", "ACDT": "ACDT", "IST": "IST", "BT": "BT", "SRT": "SRT", "CLT": "CLT", "JDT": "JDT", "WAST": "WAST", "ECT": "ECT", "VET": "VET", "AEDT": "AEDT", "MESZ": "MESZ", "GMT": "GMT", "SGT": "SGT", "AKDT": "AKDT", "AST": "AST", "WEZ": "WEZ", "HEPM": "HEPM", "LHST": "LHST", "HECU": "HECU", "CST": "CST", "PST": "PST", "HAT": "HAT", "AEST": "AEST", "AWDT": "AWDT", "HKST": "HKST", "∅∅∅": "∅∅∅", "HEEG": "HEEG", "HNCU": "HNCU", "WIT": "WIT", "ADT": "ADT", "ART": "ART", "ChST": "ChST", "TMST": "TMST", "WIB": "WIB", "HADT": "HADT", "WITA": "WITA", "HNNOMX": "HNNOMX", "PDT": "PDT", "ACWST": "ACWST", "JST": "JST", "OESZ": "OESZ", "MST": "MST", "HAST": "HAST", "HENOMX": "HENOMX", "MYT": "MYT", "UYT": "UYT", "ACWDT": "ACWDT", "SAST": "SAST", "HNEG": "HNEG", "GFT": "GFT", "HNPMX": "HNPMX", "WESZ": "WESZ"},
 	}
 }
 
@@ -122,7 +135,7 @@ func (ckb *ckb_IQ) MonthNarrow(month time.Month) string {
 
 // MonthsNarrow returns the locales narrow months
 func (ckb *ckb_IQ) MonthsNarrow() []string {
-	return nil
+	return ckb.monthsNarrow[1:]
 }
 
 // MonthWide returns the locales wide month given the 'month' provided
@@ -178,13 +191,81 @@ func (ckb *ckb_IQ) WeekdaysWide() []string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'ckb_IQ' and handles both Whole and Real numbers based on 'v'
 func (ckb *ckb_IQ) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(ckb.decimal) - 1; j >= 0; j-- {
+				b = append(b, ckb.decimal[j])
+			}
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(ckb.group) - 1; j >= 0; j-- {
+					b = append(b, ckb.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ckb.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'ckb_IQ' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ckb *ckb_IQ) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 6
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(ckb.decimal) - 1; j >= 0; j-- {
+				b = append(b, ckb.decimal[j])
+			}
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ckb.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, ckb.percentSuffix...)
+
+	b = append(b, ckb.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'ckb_IQ'
@@ -192,7 +273,60 @@ func (ckb *ckb_IQ) FmtCurrency(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ckb.currencies[currency]
-	return string(append(append([]byte{}, symbol...), s...))
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(ckb.decimal) - 1; j >= 0; j-- {
+				b = append(b, ckb.decimal[j])
+			}
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(ckb.group) - 1; j >= 0; j-- {
+					b = append(b, ckb.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, ckb.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, ckb.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	b = append(b, ckb.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
+
+	return string(b)
 }
 
 // FmtAccounting returns the currency representation of 'num' with digits/precision of 'v' for 'ckb_IQ'
@@ -201,13 +335,95 @@ func (ckb *ckb_IQ) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ckb.currencies[currency]
-	return string(append(append([]byte{}, symbol...), s...))
+	l := len(s) + len(symbol) + 4 + 2*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			for j := len(ckb.decimal) - 1; j >= 0; j-- {
+				b = append(b, ckb.decimal[j])
+			}
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				for j := len(ckb.group) - 1; j >= 0; j-- {
+					b = append(b, ckb.group[j])
+				}
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+
+		b = append(b, ckb.minus[0])
+
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	if int(v) < 2 {
+
+		if v == 0 {
+			b = append(b, ckb.decimal...)
+		}
+
+		for i := 0; i < 2-int(v); i++ {
+			b = append(b, '0')
+		}
+	}
+
+	if num < 0 {
+		b = append(b, ckb.currencyNegativeSuffix...)
+		b = append(b, symbol...)
+	} else {
+
+		b = append(b, ckb.currencyPositiveSuffix...)
+		b = append(b, symbol...)
+	}
+
+	return string(b)
 }
 
 // FmtDateShort returns the short date representation of 't' for 'ckb_IQ'
 func (ckb *ckb_IQ) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
+	b = append(b, []byte{0x2d}...)
+
+	if t.Month() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Month()), 10)
+
+	b = append(b, []byte{0x2d}...)
+
+	if t.Day() < 10 {
+		b = append(b, '0')
+	}
+
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
 
 	return string(b)
 }
@@ -216,6 +432,17 @@ func (ckb *ckb_IQ) FmtDateShort(t time.Time) string {
 func (ckb *ckb_IQ) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
+	b = append(b, []byte{0x20}...)
+	b = append(b, ckb.monthsAbbreviated[t.Month()]...)
+	b = append(b, []byte{0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
 
 	return string(b)
 }
@@ -229,7 +456,12 @@ func (ckb *ckb_IQ) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0xdb, 0x8c, 0x20}...)
 	b = append(b, ckb.monthsWide[t.Month()]...)
 	b = append(b, []byte{0xdb, 0x8c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -238,6 +470,19 @@ func (ckb *ckb_IQ) FmtDateLong(t time.Time) string {
 func (ckb *ckb_IQ) FmtDateFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
+	b = append(b, []byte{0x20}...)
+	b = append(b, ckb.monthsWide[t.Month()]...)
+	b = append(b, []byte{0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2c, 0x20}...)
+	b = append(b, ckb.daysWide[t.Weekday()]...)
 
 	return string(b)
 }

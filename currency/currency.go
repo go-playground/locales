@@ -59,6 +59,7 @@ const (
 	BUK
 	BWP
 	BYB
+	BYN
 	BYR
 	BZD
 	CAD

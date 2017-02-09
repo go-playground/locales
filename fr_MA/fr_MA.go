@@ -57,7 +57,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
@@ -75,7 +75,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"av. J.-C.", "ap. J.-C."},
 		erasNarrow:             []string{"av. J.-C.", "ap. J.-C."},
 		erasWide:               []string{"avant Jésus-Christ", "après Jésus-Christ"},
-		timezones:              map[string]string{"EAT": "heure normale d’Afrique de l’Est", "SAST": "heure normale d’Afrique méridionale", "AKDT": "heure d’été de l’Alaska", "CST": "heure normale du centre nord-américain", "ART": "heure normale d’Argentine", "HKT": "heure normale de Hong Kong", "SGT": "heure de Singapour", "VET": "heure du Venezuela", "AEST": "heure normale de l’Est de l’Australie", "NZST": "heure normale de la Nouvelle-Zélande", "OEZ": "heure normale d’Europe de l’Est", "MESZ": "heure d’été d’Europe centrale", "AST": "heure normale de l’Atlantique", "MST": "heure normale des Rocheuses", "MYT": "heure de la Malaisie", "BT": "heure du Bhoutan", "LHST": "heure normale de Lord Howe", "ChST": "heure des Chamorro", "ECT": "heure de l’Équateur", "HNT": "heure normale de Terre-Neuve", "CDT": "heure d’été du Centre", "JST": "heure normale du Japon", "CHADT": "heure d’été des îles Chatham", "MDT": "heure d’été des Rocheuses", "CAT": "heure normale d’Afrique centrale", "UYT": "heure normale de l’Uruguay", "ACWDT": "heure d’été du centre-ouest de l’Australie", "PST": "heure normale du Pacifique nord-américain", "HKST": "heure d’été de Hong Kong", "GFT": "heure de la Guyane française", "ACST": "heure normale du centre de l’Australie", "ACWST": "heure normale du centre-ouest de l’Australie", "WEZ": "heure normale d’Europe de l’Ouest", "WIB": "heure de l’Ouest indonésien", "HADT": "heure d’été d’Hawaii - Aléoutiennes", "WART": "heure normale de l’Ouest argentin", "EDT": "heure d’été de l’Est", "COT": "heure normale de Colombie", "HAT": "heure d’été de Terre-Neuve", "CLT": "heure normale du Chili", "IST": "heure de l’Inde", "CHAST": "heure normale des îles Chatham", "COST": "heure d’été de Colombie", "ARST": "heure d’été de l’Argentine", "WAST": "heure d’été d’Afrique de l’Ouest", "BOT": "heure de Bolivie", "WIT": "heure de l’Est indonésien", "∅∅∅": "heure d’été de Brasilia", "MEZ": "heure normale d’Europe centrale", "WARST": "heure d’été de l’Ouest argentin", "ADT": "heure d’été de l’Atlantique", "WAT": "heure normale d’Afrique de l’Ouest", "NZDT": "heure d’été de la Nouvelle-Zélande", "AWDT": "heure d’été de l’Ouest de l’Australie", "LHDT": "heure d’été de Lord Howe", "SRT": "heure du Suriname", "ACDT": "heure d’été du centre de l’Australie", "AKST": "heure normale de l’Alaska", "WITA": "heure du Centre indonésien", "GYT": "heure du Guyana", "GMT": "heure moyenne de Greenwich", "JDT": "heure d’été du Japon", "OESZ": "heure d’été d’Europe de l’Est", "WESZ": "heure d’été d’Europe de l’Ouest", "HAST": "heure normale d’Hawaii - Aléoutiennes", "AEDT": "heure d’été de l’Est de l’Australie", "EST": "heure normale de l’Est nord-américain", "PDT": "heure d’été du Pacifique", "UYST": "heure d’été de l’Uruguay", "TMST": "heure d’été du Turkménistan", "AWST": "heure normale de l’Ouest de l’Australie", "CLST": "heure d’été du Chili", "TMT": "heure normale du Turkménistan"},
+		timezones:              map[string]string{"HEPMX": "heure d’été du Pacifique mexicain", "WIT": "heure de l’Est indonésien", "BT": "heure du Bhoutan", "PDT": "heure d’été du Pacifique", "WEZ": "heure normale d’Europe de l’Ouest", "AWST": "heure normale de l’Ouest de l’Australie", "SAST": "heure normale d’Afrique méridionale", "ChST": "heure des Chamorro", "WARST": "heure d’été de l’Ouest argentin", "COT": "heure normale de Colombie", "SRT": "heure du Suriname", "PST": "heure normale du Pacifique nord-américain", "LHDT": "heure d’été de Lord Howe", "∅∅∅": "heure d’été de l’Amazonie", "ECT": "heure de l’Équateur", "EST": "heure normale de l’Est nord-américain", "MYT": "heure de la Malaisie", "HAT": "heure d’été de Terre-Neuve", "LHST": "heure normale de Lord Howe", "TMST": "heure d’été du Turkménistan", "WAST": "heure d’été d’Afrique de l’Ouest", "AEDT": "heure d’été de l’Est de l’Australie", "IST": "heure de l’Inde", "JST": "heure normale du Japon", "EDT": "heure d’été de l’Est", "HAST": "heure normale d’Hawaii - Aléoutiennes", "HKT": "heure normale de Hong Kong", "NZST": "heure normale de la Nouvelle-Zélande", "CLT": "heure normale du Chili", "BOT": "heure de Bolivie", "COST": "heure d’été de Colombie", "HECU": "heure d’été de Cuba", "MST": "heure normale de Macao", "UYST": "heure d’été de l’Uruguay", "HEEG": "heure d’été de l’Est du Groenland", "HNNOMX": "heure normale du Nord-Ouest du Mexique", "ACWST": "heure normale du centre-ouest de l’Australie", "AEST": "heure normale de l’Est de l’Australie", "MDT": "heure d’été de Macao", "WIB": "heure de l’Ouest indonésien", "HEPM": "heure d’été de Saint-Pierre-et-Miquelon", "MEZ": "heure normale d’Europe centrale", "NZDT": "heure d’été de la Nouvelle-Zélande", "EAT": "heure normale d’Afrique de l’Est", "OEZ": "heure normale d’Europe de l’Est", "HNCU": "heure normale de Cuba", "HADT": "heure d’été d’Hawaii - Aléoutiennes", "WESZ": "heure d’été d’Europe de l’Ouest", "HNOG": "heure normale de l’Ouest du Groenland", "HEOG": "heure d’été de l’Ouest du Groenland", "HKST": "heure d’été de Hong Kong", "AWDT": "heure d’été de l’Ouest de l’Australie", "CHADT": "heure d’été des îles Chatham", "HNEG": "heure normale de l’Est du Groenland", "HENOMX": "heure d’été du Nord-Ouest du Mexique", "HNPMX": "heure normale du Pacifique mexicain", "CDT": "heure d’été du Centre", "UYT": "heure normale de l’Uruguay", "GFT": "heure de la Guyane française", "HNPM": "heure normale de Saint-Pierre-et-Miquelon", "JDT": "heure d’été du Japon", "TMT": "heure normale du Turkménistan", "OESZ": "heure d’été d’Europe de l’Est", "WITA": "heure du Centre indonésien", "MESZ": "heure d’été d’Europe centrale", "AKST": "heure normale de l’Alaska", "CST": "heure normale du centre nord-américain", "VET": "heure du Venezuela", "CLST": "heure d’été du Chili", "WART": "heure normale de l’Ouest argentin", "AST": "heure normale de l’Atlantique", "ADT": "heure d’été de l’Atlantique", "ARST": "heure d’été de l’Argentine", "AKDT": "heure d’été de l’Alaska", "GYT": "heure du Guyana", "CHAST": "heure normale des îles Chatham", "ACST": "heure normale du centre de l’Australie", "ACDT": "heure d’été du centre de l’Australie", "CAT": "heure normale d’Afrique centrale", "WAT": "heure normale d’Afrique de l’Ouest", "SGT": "heure de Singapour", "ACWDT": "heure d’été du centre-ouest de l’Australie", "ART": "heure normale d’Argentine", "GMT": "heure moyenne de Greenwich", "HNT": "heure normale de Terre-Neuve"},
 	}
 }
 
@@ -425,7 +425,12 @@ func (fr *fr_MA) FmtDateShort(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 
 	b = append(b, []byte{0x2f}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -439,7 +444,12 @@ func (fr *fr_MA) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, fr.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -453,7 +463,12 @@ func (fr *fr_MA) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, fr.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -469,7 +484,12 @@ func (fr *fr_MA) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, fr.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

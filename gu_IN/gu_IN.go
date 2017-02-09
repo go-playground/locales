@@ -10,68 +10,64 @@ import (
 )
 
 type gu_IN struct {
-	locale                 string
-	pluralsCardinal        []locales.PluralRule
-	pluralsOrdinal         []locales.PluralRule
-	pluralsRange           []locales.PluralRule
-	decimal                string
-	group                  string
-	minus                  string
-	percent                string
-	perMille               string
-	timeSeparator          string
-	inifinity              string
-	currencies             []string // idx = enum of currency code
-	currencyNegativePrefix string
-	currencyNegativeSuffix string
-	monthsAbbreviated      []string
-	monthsNarrow           []string
-	monthsWide             []string
-	daysAbbreviated        []string
-	daysNarrow             []string
-	daysShort              []string
-	daysWide               []string
-	periodsAbbreviated     []string
-	periodsNarrow          []string
-	periodsShort           []string
-	periodsWide            []string
-	erasAbbreviated        []string
-	erasNarrow             []string
-	erasWide               []string
-	timezones              map[string]string
+	locale             string
+	pluralsCardinal    []locales.PluralRule
+	pluralsOrdinal     []locales.PluralRule
+	pluralsRange       []locales.PluralRule
+	decimal            string
+	group              string
+	minus              string
+	percent            string
+	perMille           string
+	timeSeparator      string
+	inifinity          string
+	currencies         []string // idx = enum of currency code
+	monthsAbbreviated  []string
+	monthsNarrow       []string
+	monthsWide         []string
+	daysAbbreviated    []string
+	daysNarrow         []string
+	daysShort          []string
+	daysWide           []string
+	periodsAbbreviated []string
+	periodsNarrow      []string
+	periodsShort       []string
+	periodsWide        []string
+	erasAbbreviated    []string
+	erasNarrow         []string
+	erasWide           []string
+	timezones          map[string]string
 }
 
 // New returns a new instance of translator for the 'gu_IN' locale
 func New() locales.Translator {
 	return &gu_IN{
-		locale:                 "gu_IN",
-		pluralsCardinal:        []locales.PluralRule{2, 6},
-		pluralsOrdinal:         []locales.PluralRule{2, 3, 4, 5, 6},
-		pluralsRange:           []locales.PluralRule{2, 6},
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "-",
-		percent:                "%",
-		perMille:               "‰",
-		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyNegativePrefix: "(",
-		currencyNegativeSuffix: ")",
-		monthsAbbreviated:      []string{"", "જાન્યુ", "ફેબ્રુ", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટે", "ઑક્ટો", "નવે", "ડિસે"},
-		monthsNarrow:           []string{"", "જા", "ફે", "મા", "એ", "મે", "જૂ", "જુ", "ઑ", "સ", "ઑ", "ન", "ડિ"},
-		monthsWide:             []string{"", "જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"},
-		daysAbbreviated:        []string{"રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"},
-		daysNarrow:             []string{"ર", "સો", "મં", "બુ", "ગુ", "શુ", "શ"},
-		daysShort:              []string{"ર", "સો", "મં", "બુ", "ગુ", "શુ", "શ"},
-		daysWide:               []string{"રવિવાર", "સોમવાર", "મંગળવાર", "બુધવાર", "ગુરુવાર", "શુક્રવાર", "શનિવાર"},
-		periodsAbbreviated:     []string{"AM", "PM"},
-		periodsNarrow:          []string{"AM", "PM"},
-		periodsWide:            []string{"AM", "PM"},
-		erasAbbreviated:        []string{"ઈ.સ.પૂર્વે", "ઈ.સ."},
-		erasNarrow:             []string{"ઇ સ પુ", "ઇસ"},
-		erasWide:               []string{"ઈસવીસન પૂર્વે", "ઇસવીસન"},
-		timezones:              map[string]string{"BT": "ભૂટાન સમય", "MESZ": "મધ્ય યુરોપિયન ગ્રીષ્મ સમય", "COST": "કોલંબિયા ગ્રીષ્મ સમય", "WIB": "પશ્ચિમી ઇન્ડોનેશિયા સમય", "WART": "પશ્ચિમી અર્જેન્ટીના માનક સમય", "EAT": "પૂર્વ આફ્રિકા સમય", "CDT": "ઉત્તર અમેરિકન મધ્ય દિવસ સમય", "BOT": "બોલિવિયા સમય", "UYST": "ઉરૂગ્વે ગ્રીષ્મ સમય", "ART": "અર્જેન્ટીના માનક સમય", "SAST": "દક્ષિણ આફ્રિકા માનક સમય", "LHST": "લોર્ડ હોવ પ્રમાણભૂત સમય", "JST": "જાપાન માનક સમય", "SRT": "સૂરીનામ સમય", "WARST": "પશ્ચિમી અર્જેન્ટીના ગ્રીષ્મ સમય", "PST": "ઉત્તર અમેરિકન પેસિફિક પ્રમાણભૂત સમય", "GYT": "ગયાના સમય", "∅∅∅": "એઝોર્સ ગ્રીષ્મ સમય", "OESZ": "પૂર્વી યુરોપીયન ગ્રીષ્મ સમય", "ACST": "ઓસ્ટ્રેલિયન મધ્ય પ્રમાણભૂત સમય", "ACWDT": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી દિવસ સમય", "AKST": "અલાસ્કા પ્રમાણભૂત સમય", "NZDT": "ન્યુઝીલેન્ડ દિવસ સમય", "HNT": "ન્યૂફાઉન્ડલેન્ડ પ્રમાણભૂત સમય", "WAT": "પશ્ચિમ આફ્રિકા માનક સમય", "MST": "ઉત્તર અમેરિકન માઉન્ટન પ્રમાણભૂત સમય", "VET": "વેનેઝુએલા સમય", "HADT": "હવાઇ-એલ્યુશિઅન દિવસ સમય", "AKDT": "અલાસ્કા દિવસ સમય", "ChST": "કેમોરો માનક સમય", "WIT": "પૂર્વીય ઇન્ડોનેશિયા સમય", "OEZ": "પૂર્વી યુરોપિયન માનક સમય", "CHADT": "ચેતહામ દિવસ સમય", "CST": "ઉત્તર અમેરિકન કેન્દ્રિય પ્રમાણભૂત સમય", "MDT": "ઉત્તર અમેરિકન માઉન્ટન દિવસ સમય", "NZST": "ન્યુઝીલેન્ડ માનક સમય", "UYT": "ઉરૂગ્વે માનક સમય", "COT": "કોલંબિયા માનક સમય", "EST": "ઉત્તર અમેરિકન પૂર્વી પ્રમાણભૂત સમય", "EDT": "ઉત્તર અમેરિકન પૂર્વી દિવસ સમય", "TMT": "તુર્કમેનિસ્તાન માનક સમય", "AWST": "ઓસ્ટ્રેલિયન પશ્ચિમી પ્રમાણભૂત સમય", "HAT": "ન્યૂફાઉન્ડલેન્ડ દિવસ સમય", "CLT": "ચિલી માનક સમય", "HKST": "હોંગ કોંગ ગ્રીષ્મ સમય", "SGT": "સિંગાપુર માનક સમય", "AWDT": "ઓસ્ટ્રેલિયન પશ્ચિમી દિવસ સમય", "ACDT": "ઓસ્ટ્રેલિયન મધ્ય દિવસ સમય", "HAST": "હવાઇ-એલ્યુશિઅન માનક સમય", "ADT": "અટલાન્ટિક દિવસ સમય", "CHAST": "ચેતહામ માનક સમય", "ECT": "એક્વાડોર સમય", "IST": "ભારતીય માનક સમય", "MYT": "મલેશિયા સમય", "ARST": "આર્જેન્ટીના ગ્રીષ્મ સમય", "WAST": "પશ્ચિમ આફ્રિકા ગ્રીષ્મ સમય", "AST": "અટલાન્ટિક પ્રમાણભૂત સમય", "TMST": "તુર્કમેનિસ્તાન ગ્રીષ્મ સમય", "JDT": "જાપાન દિવસ સમય", "WEZ": "પશ્ચિમી યુરોપિયન માનક સમય", "WESZ": "પશ્ચિમી યુરોપિયન ગ્રીષ્મ સમય", "GFT": "ફ્રેન્ચ ગયાના સમય", "AEST": "ઓસ્ટ્રેલિયન પૂર્વીય પ્રમાણભૂત સમય", "WITA": "મધ્ય ઇન્ડોનેશિયા સમય", "CAT": "મધ્ય આફ્રિકા સમય", "CLST": "ચિલી ગ્રીષ્મ સમય", "GMT": "ગ્રીનવિચ મધ્યમ સમય", "LHDT": "લોર્ડ હોવ દિવસ સમય", "HKT": "હોંગ કોંગ માનક સમય", "MEZ": "મધ્ય યુરોપિયન માનક સમય", "ACWST": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી પ્રમાણભૂત સમય", "AEDT": "ઓસ્ટ્રેલિયન પૂર્વીય દિવસ સમય", "PDT": "ઉત્તર અમેરિકન પેસિફિક દિવસ સમય"},
+		locale:             "gu_IN",
+		pluralsCardinal:    []locales.PluralRule{2, 6},
+		pluralsOrdinal:     []locales.PluralRule{2, 3, 4, 5, 6},
+		pluralsRange:       []locales.PluralRule{2, 6},
+		decimal:            ".",
+		group:              ",",
+		minus:              "-",
+		percent:            "%",
+		perMille:           "‰",
+		timeSeparator:      ":",
+		inifinity:          "∞",
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		monthsAbbreviated:  []string{"", "જાન્યુ", "ફેબ્રુ", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટે", "ઑક્ટો", "નવે", "ડિસે"},
+		monthsNarrow:       []string{"", "જા", "ફે", "મા", "એ", "મે", "જૂ", "જુ", "ઑ", "સ", "ઑ", "ન", "ડિ"},
+		monthsWide:         []string{"", "જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"},
+		daysAbbreviated:    []string{"રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"},
+		daysNarrow:         []string{"ર", "સો", "મં", "બુ", "ગુ", "શુ", "શ"},
+		daysShort:          []string{"ર", "સો", "મં", "બુ", "ગુ", "શુ", "શ"},
+		daysWide:           []string{"રવિવાર", "સોમવાર", "મંગળવાર", "બુધવાર", "ગુરુવાર", "શુક્રવાર", "શનિવાર"},
+		periodsAbbreviated: []string{"AM", "PM"},
+		periodsNarrow:      []string{"AM", "PM"},
+		periodsWide:        []string{"AM", "PM"},
+		erasAbbreviated:    []string{"ઈ.સ.પૂર્વે", "ઈ.સ."},
+		erasNarrow:         []string{"ઇ સ પુ", "ઇસ"},
+		erasWide:           []string{"ઈસવીસન પૂર્વે", "ઇસવીસન"},
+		timezones:          map[string]string{"WIB": "પશ્ચિમી ઇન્ડોનેશિયા સમય", "HADT": "હવાઇ-એલ્યુશિઅન દિવસ સમય", "ARST": "આર્જેન્ટીના ગ્રીષ્મ સમય", "AWST": "ઓસ્ટ્રેલિયન પશ્ચિમી પ્રમાણભૂત સમય", "CLT": "ચિલી માનક સમય", "GFT": "ફ્રેન્ચ ગયાના સમય", "EST": "ઉત્તર અમેરિકન પૂર્વી પ્રમાણભૂત સમય", "MST": "મકાઉ પ્રમાણભૂત સમય", "JST": "જાપાન માનક સમય", "CDT": "ઉત્તર અમેરિકન મધ્ય દિવસ સમય", "HNT": "ન્યૂફાઉન્ડલેન્ડ પ્રમાણભૂત સમય", "HEPM": "સેંટ પીએરે એન્ડ મિકીલોન દિવસ સમય", "LHDT": "લોર્ડ હોવ દિવસ સમય", "ECT": "એક્વાડોર સમય", "BT": "ભૂટાન સમય", "WESZ": "પશ્ચિમી યુરોપિયન ગ્રીષ્મ સમય", "ACWDT": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી દિવસ સમય", "PST": "ઉત્તર અમેરિકન પેસિફિક પ્રમાણભૂત સમય", "IST": "ભારતીય માનક સમય", "CAT": "મધ્ય આફ્રિકા સમય", "COST": "કોલંબિયા ગ્રીષ્મ સમય", "ADT": "અટલાન્ટિક દિવસ સમય", "GYT": "ગયાના સમય", "HNPM": "સેંટ પીએરે એન્ડ મિકીલોન માનક સમય", "TMST": "તુર્કમેનિસ્તાન ગ્રીષ્મ સમય", "AKDT": "અલાસ્કા દિવસ સમય", "HAST": "હવાઇ-એલ્યુશિઅન માનક સમય", "WEZ": "પશ્ચિમી યુરોપિયન માનક સમય", "HECU": "ક્યૂબા દિવસ સમય", "MYT": "મલેશિયા સમય", "HAT": "ન્યૂફાઉન્ડલેન્ડ દિવસ સમય", "HKST": "હોંગ કોંગ ગ્રીષ્મ સમય", "CHAST": "ચેતહામ માનક સમય", "CHADT": "ચેતહામ દિવસ સમય", "SAST": "દક્ષિણ આફ્રિકા માનક સમય", "ACST": "ઓસ્ટ્રેલિયન મધ્ય પ્રમાણભૂત સમય", "AEDT": "ઓસ્ટ્રેલિયન પૂર્વીય દિવસ સમય", "LHST": "લોર્ડ હોવ પ્રમાણભૂત સમય", "JDT": "જાપાન દિવસ સમય", "WITA": "મધ્ય ઇન્ડોનેશિયા સમય", "NZST": "ન્યુઝીલેન્ડ માનક સમય", "NZDT": "ન્યુઝીલેન્ડ દિવસ સમય", "WAST": "પશ્ચિમ આફ્રિકા ગ્રીષ્મ સમય", "EAT": "પૂર્વ આફ્રિકા સમય", "WARST": "પશ્ચિમી અર્જેન્ટીના ગ્રીષ્મ સમય", "MDT": "મકાઉ ગ્રીષ્મ સમય", "∅∅∅": "એમેઝોન ગ્રીષ્મ સમય", "CLST": "ચિલી ગ્રીષ્મ સમય", "ChST": "કેમોરો માનક સમય", "WAT": "પશ્ચિમ આફ્રિકા માનક સમય", "HEPMX": "મેક્સીકન પેસિફિક દિવસ સમય", "HEOG": "પશ્ચિમ ગ્રીનલેન્ડ ગ્રીષ્મ સમય", "AWDT": "ઓસ્ટ્રેલિયન પશ્ચિમી દિવસ સમય", "MEZ": "મધ્ય યુરોપિયન માનક સમય", "MESZ": "મધ્ય યુરોપિયન ગ્રીષ્મ સમય", "OESZ": "પૂર્વી યુરોપીયન ગ્રીષ્મ સમય", "HNNOMX": "ઉત્તરપશ્ચિમ મેક્સિકો માનક સમય", "HEEG": "પૂર્વ ગ્રીનલેન્ડ ગ્રીષ્મ સમય", "SGT": "સિંગાપુર માનક સમય", "AKST": "અલાસ્કા પ્રમાણભૂત સમય", "UYST": "ઉરૂગ્વે ગ્રીષ્મ સમય", "UYT": "ઉરૂગ્વે માનક સમય", "ACWST": "ઓસ્ટ્રેલિયન મધ્ય પશ્ચિમી પ્રમાણભૂત સમય", "ART": "અર્જેન્ટીના માનક સમય", "BOT": "બોલિવિયા સમય", "OEZ": "પૂર્વી યુરોપિયન માનક સમય", "HNCU": "ક્યૂબા માનક સમય", "HNPMX": "મેક્સીકન પેસિફિક માનક સમય", "AST": "અટલાન્ટિક પ્રમાણભૂત સમય", "SRT": "સૂરીનામ સમય", "PDT": "ઉત્તર અમેરિકન પેસિફિક દિવસ સમય", "WART": "પશ્ચિમી અર્જેન્ટીના માનક સમય", "COT": "કોલંબિયા માનક સમય", "EDT": "ઉત્તર અમેરિકન પૂર્વી દિવસ સમય", "CST": "ઉત્તર અમેરિકન કેન્દ્રિય પ્રમાણભૂત સમય", "HNOG": "પશ્ચિમ ગ્રીનલેન્ડ માનક સમય", "AEST": "ઓસ્ટ્રેલિયન પૂર્વીય પ્રમાણભૂત સમય", "TMT": "તુર્કમેનિસ્તાન માનક સમય", "ACDT": "ઓસ્ટ્રેલિયન મધ્ય દિવસ સમય", "WIT": "પૂર્વીય ઇન્ડોનેશિયા સમય", "VET": "વેનેઝુએલા સમય", "HNEG": "પૂર્વ ગ્રીનલેન્ડ માનક સમય", "HENOMX": "ઉત્તરપશ્ચિમ મેક્સિકો દિવસ સમય", "GMT": "ગ્રીનવિચ મધ્યમ સમય", "HKT": "હોંગ કોંગ માનક સમય"},
 	}
 }
 
@@ -301,9 +297,6 @@ func (gu *gu_IN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
-	inSecondary := false
-	groupThreshold := 3
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -315,15 +308,9 @@ func (gu *gu_IN) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 		}
 
 		if inWhole {
-
-			if count == groupThreshold {
+			if count == 3 {
 				b = append(b, gu.group[0])
 				count = 1
-
-				if !inSecondary {
-					inSecondary = true
-					groupThreshold = 2
-				}
 			} else {
 				count++
 			}
@@ -365,12 +352,9 @@ func (gu *gu_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := gu.currencies[currency]
-	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
-	inSecondary := false
-	groupThreshold := 3
-
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -382,15 +366,9 @@ func (gu *gu_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		}
 
 		if inWhole {
-
-			if count == groupThreshold {
+			if count == 3 {
 				b = append(b, gu.group[0])
 				count = 1
-
-				if !inSecondary {
-					inSecondary = true
-					groupThreshold = 2
-				}
 			} else {
 				count++
 			}
@@ -405,7 +383,7 @@ func (gu *gu_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 			b = append(b, symbol[j])
 		}
 
-		b = append(b, gu.currencyNegativePrefix[0])
+		b = append(b, gu.minus[0])
 
 	} else {
 
@@ -429,10 +407,6 @@ func (gu *gu_IN) FmtAccounting(num float64, v uint64, currency currency.Type) st
 		for i := 0; i < 2-int(v); i++ {
 			b = append(b, '0')
 		}
-	}
-
-	if num < 0 {
-		b = append(b, gu.currencyNegativeSuffix...)
 	}
 
 	return string(b)
@@ -466,7 +440,12 @@ func (gu *gu_IN) FmtDateMedium(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, gu.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -480,7 +459,12 @@ func (gu *gu_IN) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, gu.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -496,7 +480,12 @@ func (gu *gu_IN) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, gu.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

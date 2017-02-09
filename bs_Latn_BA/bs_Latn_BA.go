@@ -18,6 +18,7 @@ type bs_Latn_BA struct {
 	group                  string
 	minus                  string
 	percent                string
+	percentSuffix          string
 	perMille               string
 	timeSeparator          string
 	inifinity              string
@@ -55,23 +56,24 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		percentSuffix:          " ",
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
-		monthsAbbreviated:      []string{"", "jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"},
+		monthsAbbreviated:      []string{"", "jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec"},
 		monthsNarrow:           []string{"", "j", "f", "m", "a", "m", "j", "j", "a", "s", "o", "n", "d"},
-		monthsWide:             []string{"", "januar", "februar", "mart", "april", "maj", "juni", "juli", "august", "septembar", "oktobar", "novembar", "decembar"},
+		monthsWide:             []string{"", "januar", "februar", "mart", "april", "maj", "juni", "juli", "avgust", "septembar", "oktobar", "novembar", "decembar"},
 		daysAbbreviated:        []string{"ned", "pon", "uto", "sri", "čet", "pet", "sub"},
 		daysNarrow:             []string{"N", "P", "U", "S", "Č", "P", "S"},
 		daysShort:              []string{"ned", "pon", "uto", "sri", "čet", "pet", "sub"},
 		daysWide:               []string{"nedjelja", "ponedjeljak", "utorak", "srijeda", "četvrtak", "petak", "subota"},
 		periodsAbbreviated:     []string{"prijepodne", "popodne"},
 		periodsNarrow:          []string{"prijepodne", "popodne"},
-		periodsWide:            []string{"prije podne", "popodne"},
+		periodsWide:            []string{"prijepodne", "popodne"},
 		erasAbbreviated:        []string{"p. n. e.", "n. e."},
 		erasNarrow:             []string{"pr.n.e.", "AD"},
-		erasWide:               []string{"Prije nove ere", "Nove ere"},
-		timezones:              map[string]string{"EAT": "Istočnoafričko vrijeme", "MDT": "Ljetno računanje planinskog vremena (SAD)", "ChST": "Standardno čamorsko vrijeme", "HKT": "Standardno hongkonško vrijeme", "AEDT": "Istočnoaustralijsko ljetno računanje vremena", "GYT": "Gvajansko vrijeme", "CLT": "Standardno čileansko vrijeme", "CLST": "Čileansko ljetno računanje vremena", "LHDT": "Ljetno računanje vremena na Ostrvu Lord Hau", "JDT": "Japansko ljetno računanje vremena", "GFT": "Vrijeme Francuske Gvajane", "ART": "Standardno argentinsko vrijeme", "AST": "Standardno atlantsko vrijeme", "EDT": "Ljetno računanje istočnog vremena (SAD)", "OESZ": "Istočnoevropsko ljetno računanje vremena", "HKST": "Hongkonško ljetno računanje vremena", "MEZ": "Standardno centralnoevropsko vrijeme", "COT": "Standardno kolumbijsko vrijeme", "HAST": "Standardno havajsko-aleućansko vrijeme", "WAT": "Standardno zapadnoafričko vrijeme", "AKDT": "Aljaskansko ljetno računanje vremena", "PST": "Standardno pacifičko vrijeme (SAD)", "AWST": "Standardno zapadnoaustralijsko vrijeme", "ADT": "Ljetno računanje atlantskog vremena", "ARST": "Argentinsko ljetno računanje vremena", "PDT": "Ljetno računanje pacifičkog vremena (SAD)", "LHST": "Standardno vrijeme na Ostrvu Lord Hau", "NZDT": "Novozelandsko ljetno računanje vremena", "WESZ": "Zapadnoevropsko ljetno računanje vremena", "CHADT": "Čatamsko ljetno računanje vremena", "AEST": "Standardno istočnoaustralijsko vrijeme", "IST": "Standardno indijsko vrijeme", "∅∅∅": "Peruansko ljetno računanje vremena", "CHAST": "Standardno čatamsko vrijeme", "MESZ": "Centralnoevropsko ljetno računanje vremena", "SGT": "Standardno singapursko vrijeme", "COST": "Kolumbijsko ljetno računanje vremena", "ECT": "Ekvadorsko vrijeme", "HAT": "Njufaundlendsko ljetno računanje vremena", "WAST": "Zapadnoafričko ljetno računanje vremena", "AWDT": "Zapadnoaustralijsko ljetno računanje vremena", "HNT": "Standardno njufaundlendsko vrijeme", "JST": "Standardno japansko vrijeme", "ACDT": "Centralnoaustralijsko ljetno računanje vremena", "VET": "Venecuelansko vrijeme", "HADT": "Havajsko-aleućansko ljetno rečunanje vremena", "EST": "Standardno istočno vrijeme (SAD)", "WITA": "Centralnoindonezijsko vrijeme", "BT": "Butansko vrijeme", "WIT": "Istočnoindonezijsko vrijeme", "UYT": "Standardno urugvajsko vrijeme", "AKST": "Standardno aljaskansko vrijeme", "MST": "Standardno planinsko vrijeme (SAD)", "MYT": "Malezijsko vrijeme", "CAT": "Centralnoafričko vrijeme", "UYST": "Urugvajsko ljetno računanje vremena", "WIB": "Zapadnoindonezijsko vrijeme", "WART": "Standardno zapadnoargentinsko vrijeme", "TMST": "Turkmenistansko ljetno računanje vremena", "NZST": "Standardno novozelandsko vrijeme", "GMT": "Vrijeme po Grinviču", "ACST": "Standardno centralnoaustralijsko vrijeme", "ACWST": "Standardno australijsko centralno zapadno vrijeme", "WARST": "Zapadnoargentinsko ljetno računanje vremena", "SAST": "Standardno južnoafričko vrijeme", "CDT": "Ljetno računanje centralnog vremena (SAD)", "BOT": "Bolivijsko vrijeme", "WEZ": "Standardno zapadnoevropsko vrijeme", "TMT": "Standardno turkmenistansko vrijeme", "CST": "Standardno centralno vrijeme (SAD)", "OEZ": "Standardno istočnoevropsko vrijeme", "SRT": "Surinamsko vrijeme", "ACWDT": "Australijsko centralno zapadno ljetno računanje vremena"},
+		erasWide:               []string{"prije nove ere", "nove ere"},
+		timezones:              map[string]string{"AKDT": "Aljaskansko ljetno vrijeme", "MEZ": "Centralnoevropsko standardno vrijeme", "CHAST": "Čatamsko standardno vrijeme", "UYST": "Urugvajsko ljetno vrijeme", "CHADT": "Čatamsko ljetno vrijeme", "HAST": "Havajsko-aleućansko standardno vrijeme", "CLT": "Čileansko standardno vrijeme", "JST": "Japansko standardno vrijeme", "GFT": "Francuskogvajansko vrijeme", "OEZ": "Istočnoevropsko standardno vrijeme", "SAST": "Južnoafričko standardno vrijeme", "HNEG": "Istočnogrenlandsko standardno vrijeme", "OESZ": "Istočnoevropsko ljetno vrijeme", "MESZ": "Centralnoevropsko ljetno vrijeme", "CDT": "Sjevernoameričko centralno ljetno vrijeme", "PDT": "Sjevernoameričko pacifičko ljetno vrijeme", "ACWST": "Australijsko centralnozapadno standardno vrijeme", "HNOG": "Zapadnogrenlandsko standardno vrijeme", "HKST": "Hongkonško ljetno vrijeme", "BOT": "Bolivijsko vrijeme", "ACDT": "Centralnoaustralijsko ljetno vrijeme", "UYT": "Urugvajsko standardno vrijeme", "EAT": "Istočnoafričko vrijeme", "ADT": "Sjevernoameričko atlantsko ljetno vrijeme", "AEST": "Istočnoaustralijsko standardno vrijeme", "AWDT": "Zapadnoaustralijsko ljetno vrijeme", "HNPM": "Standardno vrijeme na Ostrvima Sen Pjer i Mikelon", "NZST": "Novozelandsko standardno vrijeme", "HECU": "Kubansko ljetno vrijeme", "GMT": "Griničko vrijeme", "WIB": "Zapadnoindonezijsko vrijeme", "PST": "Sjevernoameričko pacifičko standardno vrijeme", "WEZ": "Zapadnoevropsko standardno vrijeme", "NZDT": "Novozelandsko ljetno vrijeme", "ACST": "Centralnoaustralijsko standardno vrijeme", "HENOMX": "Sjeverozapadno meksičko ljetno vrijeme", "HEPM": "Ljetno vrijeme na Ostrvima Sen Pjer i Mikelon", "IST": "Indijsko standardno vrijeme", "TMST": "Turkmenistansko ljetno vrijeme", "HNT": "Njufaundlendsko standardno vrijeme", "AST": "Sjevernoameričko atlantsko standardno vrijeme", "HADT": "Havajsko-aleućansko ljetno vrijeme", "WESZ": "Zapadnoevropsko ljetno vrijeme", "WAT": "Zapadnoafričko standardno vrijeme", "HNPMX": "Meksičko pacifičko standardno vrijeme", "HNCU": "Kubansko standardno vrijeme", "∅∅∅": "Brazilijsko ljetno vrijeme", "HEPMX": "Meksičko pacifičko ljetno vrijeme", "AKST": "Aljaskansko standardno vrijeme", "WITA": "Centralnoindonezijsko vrijeme", "COST": "Kolumbijsko ljetno vrijeme", "HNNOMX": "Sjeverozapadno meksičko standardno vrijeme", "EST": "Sjevernoameričko istočno standardno vrijeme", "MDT": "Makao letnje računanje vremena", "CST": "Sjevernoameričko centralno standardno vrijeme", "VET": "Venecuelansko vrijeme", "LHDT": "Ljetno vrijeme na Ostrvu Lord Hau", "WART": "Zapadnoargentinsko standardno vrijeme", "HEOG": "Zapadnogrenlandsko ljetno vrijeme", "AEDT": "Istočnoaustralijsko ljetno vrijeme", "TMT": "Turkmenistansko standardno vrijeme", "SGT": "Singapursko standardno vrijeme", "EDT": "Sjevernoameričko istočno ljetno vrijeme", "BT": "Butansko vrijeme", "JDT": "Japansko ljetno vrijeme", "WAST": "Zapadnoafričko ljetno vrijeme", "COT": "Kolumbijsko standardno vrijeme", "GYT": "Gvajansko vrijeme", "MYT": "Malezijsko vrijeme", "AWST": "Zapadnoaustralijsko standardno vrijeme", "MST": "Makao standardno vreme", "ACWDT": "Australijsko centralnozapadno ljetno vrijeme", "HAT": "Njufaundlendsko ljetno vrijeme", "ARST": "Argentinsko ljetno vrijeme", "HKT": "Hongkonško standardno vrijeme", "LHST": "Standardno vrijeme na Ostrvu Lord Hau", "CLST": "Čileansko ljetno vrijeme", "CAT": "Centralnoafričko vrijeme", "WIT": "Istočnoindonezijsko vrijeme", "ECT": "Ekvadorsko vrijeme", "SRT": "Surinamsko vrijeme", "ART": "Argentinsko standardno vrijeme", "ChST": "Čamorsko standardno vrijeme", "HEEG": "Istočnogrenlandsko ljetno vrijeme", "WARST": "Zapadnoargentinsko ljetno vrijeme"},
 	}
 }
 
@@ -263,7 +265,7 @@ func (bs *bs_Latn_BA) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (bs *bs_Latn_BA) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 3
+	l := len(s) + 5
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -284,6 +286,8 @@ func (bs *bs_Latn_BA) FmtPercent(num float64, v uint64) string {
 	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
 		b[i], b[j] = b[j], b[i]
 	}
+
+	b = append(b, bs.percentSuffix...)
 
 	b = append(b, bs.percent...)
 
@@ -417,19 +421,9 @@ func (bs *bs_Latn_BA) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x2e}...)
-
-	if t.Month() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
-
 	b = append(b, []byte{0x2e}...)
 
 	if t.Year() > 9 {
@@ -448,15 +442,17 @@ func (bs *bs_Latn_BA) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, bs.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x2e, 0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e}...)
 
 	return string(b)
@@ -467,15 +463,17 @@ func (bs *bs_Latn_BA) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, bs.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e}...)
 
 	return string(b)
@@ -488,16 +486,17 @@ func (bs *bs_Latn_BA) FmtDateFull(t time.Time) string {
 
 	b = append(b, bs.daysWide[t.Weekday()]...)
 	b = append(b, []byte{0x2c, 0x20}...)
-
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, bs.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e}...)
 
 	return string(b)

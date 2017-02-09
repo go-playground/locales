@@ -55,7 +55,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AU$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "元", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "￥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "฿", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "A$", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "R$", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CA$", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "元", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "€", "FIM", "FJD", "FKP", "FRF", "£", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HK$", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "₪", "₹", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "￥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "₩", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MX$", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZ$", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "NT$", "TZS", "UAH", "UAK", "UGS", "UGX", "$", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "₫", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "EC$", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"紀元前", "西暦"},
 		erasNarrow:             []string{"BC", "AD"},
 		erasWide:               []string{"紀元前", "西暦"},
-		timezones:              map[string]string{"WART": "西部アルゼンチン標準時", "WAST": "西アフリカ夏時間", "TMST": "トルクメニスタン夏時間", "WESZ": "西ヨーロッパ夏時間", "SRT": "スリナム時間", "WARST": "西部アルゼンチン夏時間", "TMT": "トルクメニスタン標準時", "WIT": "インドネシア東部時間", "BT": "ブータン時間", "HAST": "ハワイ・アリューシャン標準時", "SAST": "南アフリカ標準時", "MST": "マカオ標準時", "CLST": "チリ夏時間", "ARST": "アルゼンチン夏時間", "WAT": "西アフリカ標準時", "EST": "アメリカ東部標準時", "CST": "アメリカ中部標準時", "CAT": "中央アフリカ時間", "ACST": "オーストラリア中部標準時", "BOT": "ボリビア時間", "AKST": "アラスカ標準時", "AST": "大西洋標準時", "LHDT": "ロードハウ夏時間", "SGT": "シンガポール標準時", "WIB": "インドネシア西部時間", "HADT": "ハワイ・アリューシャン夏時間", "ART": "アルゼンチン標準時", "GYT": "ガイアナ時間", "NZDT": "ニュージーランド夏時間", "AEST": "オーストラリア東部標準時", "IST": "インド標準時", "WITA": "インドネシア中部時間", "MESZ": "中央ヨーロッパ夏時間", "CLT": "チリ標準時", "UYT": "ウルグアイ標準時", "OESZ": "東ヨーロッパ夏時間", "VET": "ベネズエラ時間", "ACWST": "オーストラリア中西部標準時", "MDT": "マカオ夏時間", "AWDT": "オーストラリア西部夏時間", "EAT": "東アフリカ時間", "NZST": "ニュージーランド標準時", "HAT": "ニューファンドランド夏時間", "JST": "日本標準時", "OEZ": "東ヨーロッパ標準時", "HKT": "香港標準時", "COST": "コロンビア夏時間", "AKDT": "アラスカ夏時間", "CDT": "アメリカ中部夏時間", "HNT": "ニューファンドランド標準時", "COT": "コロンビア標準時", "GMT": "グリニッジ標準時", "LHST": "ロードハウ標準時", "WEZ": "西ヨーロッパ標準時", "ACDT": "オーストラリア中部夏時間", "ACWDT": "オーストラリア中西部夏時間", "AEDT": "オーストラリア東部夏時間", "ChST": "チャモロ時間", "CHAST": "チャタム標準時", "MEZ": "中央ヨーロッパ標準時", "ECT": "エクアドル時間", "PST": "アメリカ太平洋標準時", "MYT": "マレーシア時間", "AWST": "オーストラリア西部標準時", "∅∅∅": "ブラジリア夏時間", "HKST": "香港夏時間", "JDT": "日本夏時間", "CHADT": "チャタム夏時間", "GFT": "仏領ギアナ時間", "ADT": "大西洋夏時間", "EDT": "アメリカ東部夏時間", "PDT": "アメリカ太平洋夏時間", "UYST": "ウルグアイ夏時間"},
+		timezones:              map[string]string{"CLT": "チリ標準時", "HAT": "ニューファンドランド夏時間", "AWST": "オーストラリア西部標準時", "WITA": "インドネシア中部時間", "GYT": "ガイアナ時間", "UYST": "ウルグアイ夏時間", "CDT": "アメリカ中部夏時間", "ADT": "大西洋夏時間", "HNNOMX": "メキシコ北西部標準時", "SGT": "シンガポール標準時", "MST": "マカオ標準時", "WART": "西部アルゼンチン標準時", "AKST": "アラスカ標準時", "AEST": "オーストラリア東部標準時", "AEDT": "オーストラリア東部夏時間", "IST": "インド標準時", "SRT": "スリナム時間", "BOT": "ボリビア時間", "HNEG": "グリーンランド東部標準時", "CLST": "チリ夏時間", "GFT": "仏領ギアナ時間", "AKDT": "アラスカ夏時間", "AST": "大西洋標準時", "HNT": "ニューファンドランド標準時", "NZST": "ニュージーランド標準時", "CHAST": "チャタム標準時", "EST": "アメリカ東部標準時", "UYT": "ウルグアイ標準時", "HKST": "香港夏時間", "WAST": "西アフリカ夏時間", "HNCU": "キューバ標準時", "GMT": "グリニッジ標準時", "EDT": "アメリカ東部夏時間", "MYT": "マレーシア時間", "MEZ": "中央ヨーロッパ標準時", "JDT": "日本夏時間", "WARST": "西部アルゼンチン夏時間", "WAT": "西アフリカ標準時", "∅∅∅": "アマゾン夏時間", "TMT": "トルクメニスタン標準時", "TMST": "トルクメニスタン夏時間", "MESZ": "中央ヨーロッパ夏時間", "NZDT": "ニュージーランド夏時間", "CHADT": "チャタム夏時間", "ACST": "オーストラリア中部標準時", "CAT": "中央アフリカ時間", "WIT": "インドネシア東部時間", "BT": "ブータン時間", "HNOG": "グリーンランド西部標準時", "EAT": "東アフリカ時間", "COT": "コロンビア標準時", "HENOMX": "メキシコ北西部夏時間", "MDT": "マカオ夏時間", "HNPMX": "メキシコ太平洋標準時", "PDT": "アメリカ太平洋夏時間", "WEZ": "西ヨーロッパ標準時", "OESZ": "東ヨーロッパ夏時間", "HKT": "香港標準時", "COST": "コロンビア夏時間", "ACWST": "オーストラリア中西部標準時", "AWDT": "オーストラリア西部夏時間", "HEPMX": "メキシコ太平洋夏時間", "CST": "アメリカ中部標準時", "HAST": "ハワイ・アリューシャン標準時", "ACWDT": "オーストラリア中西部夏時間", "OEZ": "東ヨーロッパ標準時", "PST": "アメリカ太平洋標準時", "JST": "日本標準時", "ChST": "チャモロ時間", "LHST": "ロードハウ標準時", "SAST": "南アフリカ標準時", "ACDT": "オーストラリア中部夏時間", "HECU": "キューバ夏時間", "WIB": "インドネシア西部時間", "VET": "ベネズエラ時間", "WESZ": "西ヨーロッパ夏時間", "HNPM": "サンピエール・ミクロン標準時", "ARST": "アルゼンチン夏時間", "HEPM": "サンピエール・ミクロン夏時間", "LHDT": "ロードハウ夏時間", "HEEG": "グリーンランド東部夏時間", "ECT": "エクアドル時間", "HADT": "ハワイ・アリューシャン夏時間", "HEOG": "グリーンランド西部夏時間", "ART": "アルゼンチン標準時"},
 	}
 }
 
@@ -384,7 +384,12 @@ func (ja *ja) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2f}...)
 
 	if t.Month() < 10 {
@@ -409,7 +414,12 @@ func (ja *ja) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2f}...)
 
 	if t.Month() < 10 {
@@ -434,7 +444,12 @@ func (ja *ja) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0xe5, 0xb9, 0xb4}...)
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 	b = append(b, []byte{0xe6, 0x9c, 0x88}...)
@@ -449,7 +464,12 @@ func (ja *ja) FmtDateFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0xe5, 0xb9, 0xb4}...)
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 	b = append(b, []byte{0xe6, 0x9c, 0x88}...)

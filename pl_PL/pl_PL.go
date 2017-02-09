@@ -56,7 +56,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
 		currencyNegativePrefix: "(",
 		currencyNegativeSuffix: " )",
@@ -64,7 +64,7 @@ func New() locales.Translator {
 		monthsNarrow:           []string{"", "s", "l", "m", "k", "m", "c", "l", "s", "w", "p", "l", "g"},
 		monthsWide:             []string{"", "stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"},
 		daysAbbreviated:        []string{"niedz.", "pon.", "wt.", "śr.", "czw.", "pt.", "sob."},
-		daysNarrow:             []string{"N", "P", "W", "Ś", "C", "P", "S"},
+		daysNarrow:             []string{"n", "p", "w", "ś", "c", "p", "s"},
 		daysShort:              []string{"nie", "pon", "wto", "śro", "czw", "pią", "sob"},
 		daysWide:               []string{"niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"},
 		periodsAbbreviated:     []string{"AM", "PM"},
@@ -72,8 +72,8 @@ func New() locales.Translator {
 		periodsWide:            []string{"AM", "PM"},
 		erasAbbreviated:        []string{"p.n.e.", "n.e."},
 		erasNarrow:             []string{"", ""},
-		erasWide:               []string{"p.n.e.", "n.e."},
-		timezones:              map[string]string{"CAT": "Czas środkowoafrykański", "∅∅∅": "Brasília (czas letni)", "GFT": "Gujana Francuska", "ACDT": "Czas środkowoaustralijski letni", "AEST": "Czas standardowy wschodnioaustraliski", "AEDT": "Czas wschodnioaustraliski letni", "AKST": "Alaska (czas standardowy)", "HKST": "Hongkong (czas letni)", "WITA": "Indonezja Środkowa", "MST": "Czas górski standardowy", "BT": "Bhutan", "HAT": "Nowa Fundlandia (czas letni)", "OESZ": "Czas wschodnioeuropejski letni", "ACST": "Czas środkowoaustralijski standardowy", "WIB": "Indonezja Zachodnia", "AKDT": "Alaska (czas letni)", "PST": "Czas pacyficzny standardowy", "TMT": "Turkmenistan (czas standardowy)", "GMT": "Czas uniwersalny", "UYT": "Urugwaj (czas standardowy)", "SGT": "Singapur", "WAST": "Czas zachodnioafrykański letni", "EDT": "Czas wschodnioamerykański letni", "ARST": "Argentyna (czas letni)", "OEZ": "Czas wschodnioeuropejski standardowy", "GYT": "Gujana", "HKT": "Hongkong (czas standardowy)", "WIT": "Indonezja Wschodnia", "LHST": "Lord Howe (czas standardowy)", "JDT": "Japonia (czas letni)", "ART": "Argentyna (czas standardowy)", "WART": "Argentyna Zachodnia (czas standardowy)", "BOT": "Boliwia", "AWST": "Czas zachodnioaustralijski standardowy", "LHDT": "Lord Howe (czas letni)", "COST": "Kolumbia (czas letni)", "ChST": "Czamorro", "AWDT": "Czas zachodnioaustralijski letni", "HNT": "Nowa Fundlandia (czas standardowy)", "CLST": "Chile (czas letni)", "CHADT": "Chatham (czas letni)", "SRT": "Surinam", "WARST": "Argentyna Zachodnia (czas letni)", "EAT": "Czas wschodnioafrykański", "WAT": "Czas zachodnioafrykański standardowy", "CDT": "Czas środkowoamerykański letni", "JST": "Japonia (czas standardowy)", "MEZ": "Czas środkowoeuropejski standardowy", "SAST": "Czas południowoafrykański", "IST": "Czas indyjski", "ADT": "Czas atlantycki letni", "MESZ": "Czas środkowoeuropejski letni", "EST": "Czas wschodnioamerykański standardowy", "TMST": "Turkmenistan (czas letni)", "NZST": "Nowa Zelandia (czas standardowy)", "MYT": "Malezja", "WEZ": "Czas zachodnioeuropejski standardowy", "CHAST": "Chatham (czas standardowy)", "VET": "Wenezuela", "HAST": "Hawaje-Aleuty (czas standardowy)", "ACWDT": "Czas środkowo-zachodnioaustralijski letni", "MDT": "Czas górski letni", "ACWST": "Czas środkowo-zachodnioaustralijski standardowy", "WESZ": "Czas zachodnioeuropejski letni", "COT": "Kolumbia (czas standardowy)", "HADT": "Hawaje-Aleuty (czas letni)", "PDT": "Czas pacyficzny letni", "AST": "Czas standardowy atlantycki", "NZDT": "Nowa Zelandia (czas letni)", "UYST": "Urugwaj (czas letni)", "ECT": "Ekwador", "CST": "Czas środkowoamerykański standardowy", "CLT": "Chile (czas standardowy)"},
+		erasWide:               []string{"przed naszą erą", "naszej ery"},
+		timezones:              map[string]string{"HKST": "Hongkong (czas letni)", "NZDT": "Nowa Zelandia (czas letni)", "∅∅∅": "Czas amazoński letni", "OESZ": "Czas wschodnioeuropejski letni", "ECT": "Ekwador", "COST": "Kolumbia (czas letni)", "BT": "Bhutan", "SRT": "Surinam", "CHADT": "Chatham (czas letni)", "JST": "Japonia (czas standardowy)", "UYT": "Urugwaj (czas standardowy)", "AKDT": "Alaska (czas letni)", "HAT": "Nowa Fundlandia (czas letni)", "HKT": "Hongkong (czas standardowy)", "SAST": "Czas południowoafrykański", "WAT": "Czas zachodnioafrykański standardowy", "HNCU": "Kuba (czas standardowy)", "MDT": "MDT", "HNPM": "Saint-Pierre i Miquelon (czas standardowy)", "BOT": "Boliwia", "AKST": "Alaska (czas standardowy)", "AWST": "Czas zachodnioaustralijski standardowy", "MEZ": "Czas środkowoeuropejski standardowy", "HNEG": "Grenlandia Wschodnia (czas standardowy)", "ACST": "Czas środkowoaustralijski standardowy", "UYST": "Urugwaj (czas letni)", "ARST": "Argentyna (czas letni)", "AEDT": "Czas wschodnioaustralijski letni", "CHAST": "Chatham (czas standardowy)", "EAT": "Czas wschodnioafrykański", "GMT": "Czas uniwersalny", "PST": "Czas pacyficzny standardowy", "IST": "Czas indyjski", "HEEG": "Grenlandia Wschodnia (czas letni)", "WART": "Argentyna Zachodnia (czas standardowy)", "SGT": "Singapur", "MST": "MST", "WESZ": "Czas zachodnioeuropejski letni", "HEOG": "Grenlandia Zachodnia (czas letni)", "WEZ": "Czas zachodnioeuropejski standardowy", "ACWST": "Czas środkowo-zachodnioaustralijski standardowy", "ChST": "Czamorro", "WAST": "Czas zachodnioafrykański letni", "COT": "Kolumbia (czas standardowy)", "HENOMX": "Meksyk Północno-Zachodni (czas letni)", "GYT": "Gujana", "WIT": "Indonezja Wschodnia", "MESZ": "Czas środkowoeuropejski letni", "HAST": "Hawaje-Aleuty (czas standardowy)", "PDT": "Czas pacyficzny letni", "CLT": "Chile (czas standardowy)", "JDT": "Japonia (czas letni)", "HNNOMX": "Meksyk Północno-Zachodni (czas standardowy)", "EST": "Czas wschodnioamerykański standardowy", "ADT": "Czas atlantycki letni", "MYT": "Malezja", "HNPMX": "Meksyk (czas pacyficzny standardowy)", "HADT": "Hawaje-Aleuty (czas letni)", "ART": "Argentyna (czas standardowy)", "CLST": "Chile (czas letni)", "CST": "Czas środkowoamerykański standardowy", "VET": "Wenezuela", "AST": "Czas atlantycki standardowy", "WIB": "Indonezja Zachodnia", "GFT": "Gujana Francuska", "TMT": "Turkmenistan (czas standardowy)", "AWDT": "Czas zachodnioaustralijski letni", "WITA": "Indonezja Środkowa", "NZST": "Nowa Zelandia (czas standardowy)", "CAT": "Czas środkowoafrykański", "OEZ": "Czas wschodnioeuropejski standardowy", "EDT": "Czas wschodnioamerykański letni", "HEPMX": "Meksyk (czas pacyficzny letni)", "ACWDT": "Czas środkowo-zachodnioaustralijski letni", "HNOG": "Grenlandia Zachodnia (czas standardowy)", "ACDT": "Czas środkowoaustralijski letni", "WARST": "Argentyna Zachodnia (czas letni)", "LHDT": "Lord Howe (czas letni)", "LHST": "Lord Howe (czas standardowy)", "TMST": "Turkmenistan (czas letni)", "HECU": "Kuba (czas letni)", "CDT": "Czas środkowoamerykański letni", "HNT": "Nowa Fundlandia (czas standardowy)", "AEST": "Czas wschodnioaustralijski standardowy", "HEPM": "Saint-Pierre i Miquelon (czas letni)"},
 	}
 }
 
@@ -102,8 +102,8 @@ func (pl *pl_PL) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
-	iMod10 := i % 10
 	iMod100 := i % 100
+	iMod10 := i % 10
 
 	if i == 1 && v == 0 {
 		return locales.PluralRuleOne
@@ -448,7 +448,12 @@ func (pl *pl_PL) FmtDateShort(t time.Time) string {
 	b = strconv.AppendInt(b, int64(t.Month()), 10)
 
 	b = append(b, []byte{0x2e}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -458,21 +463,16 @@ func (pl *pl_PL) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	if t.Day() < 10 {
-		b = append(b, '0')
-	}
-
 	b = strconv.AppendInt(b, int64(t.Day()), 10)
-	b = append(b, []byte{0x2e}...)
+	b = append(b, []byte{0x20}...)
+	b = append(b, pl.monthsAbbreviated[t.Month()]...)
+	b = append(b, []byte{0x20}...)
 
-	if t.Month() < 10 {
-		b = append(b, '0')
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
 	}
-
-	b = strconv.AppendInt(b, int64(t.Month()), 10)
-
-	b = append(b, []byte{0x2e}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
 
 	return string(b)
 }
@@ -486,7 +486,12 @@ func (pl *pl_PL) FmtDateLong(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, pl.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }
@@ -502,7 +507,12 @@ func (pl *pl_PL) FmtDateFull(t time.Time) string {
 	b = append(b, []byte{0x20}...)
 	b = append(b, pl.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
 
 	return string(b)
 }

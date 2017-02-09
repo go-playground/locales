@@ -1485,7 +1485,15 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 				`
 			} else {
 				// four digit year
-				results += "b = strconv.AppendInt(b, int64(t.Year()), 10)\n"
+				results += `
+
+					if t.Year() > 0 {
+						b = strconv.AppendInt(b, int64(t.Year()), 10)
+					} else {
+						b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+					}
+
+				`
 			}
 
 		// weekday

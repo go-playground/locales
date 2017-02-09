@@ -55,7 +55,7 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "Ft", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "Ft", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "¥", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "FCFA", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "CFA", "XPD", "CFPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositiveSuffix: " ",
 		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "jan.", "febr.", "márc.", "ápr.", "máj.", "jún.", "júl.", "aug.", "szept.", "okt.", "nov.", "dec."},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"i. e.", "i. sz."},
 		erasNarrow:             []string{"ie.", "isz."},
 		erasWide:               []string{"időszámításunk előtt", "időszámításunk szerint"},
-		timezones:              map[string]string{"PST": "csendes-óceáni zónaidő", "ADT": "atlanti-óceáni nyári idő", "UYT": "uruguayi téli idő", "CHAST": "chathami téli idő", "MST": "hegyvidéki zónaidő", "OEZ": "kelet-európai téli idő", "COT": "kolumbiai téli idő", "ACWST": "közép-nyugat-ausztráliai téli idő", "AKDT": "alaszkai nyári idő", "WAST": "nyugat-afrikai nyári idő", "CDT": "középső államokbeli nyári idő", "ART": "argentínai téli idő", "ACWDT": "közép-nyugat-ausztráliai nyári idő", "TMST": "türkmenisztáni nyári idő", "WARST": "nyugat-argentínai nyári idő", "BOT": "bolíviai téli idő", "IST": "indiai téli idő", "CLST": "chilei nyári idő", "BT": "butáni idő", "SRT": "szurinámi idő", "GMT": "greenwichi középidő, téli idő", "WEZ": "nyugat-európai téli idő", "ARST": "Argentínai nyári idő", "SAST": "dél-afrikai téli idő", "MDT": "hegyvidéki nyári idő", "HNT": "új-fundlandi zónaidő", "CLT": "chilei téli idő", "HKST": "hongkongi nyári idő", "AEST": "kelet-ausztráliai téli idő", "AST": "atlanti-óceáni zónaidő", "MYT": "malajziai idő", "LHDT": "Lord Howe-szigeti nyári idő", "CHADT": "chathami nyári idő", "ACST": "közép-ausztráliai téli idő", "WART": "nyugat-argentínai téli idő", "EST": "keleti államokbeli zónaidő", "WITA": "közép-indonéziai idő", "CST": "középső államokbeli zónaidő", "WIB": "nyugat-indonéziai téli idő", "TMT": "türkmenisztáni téli idő", "HKT": "hongkongi téli idő", "COST": "kolumbiai nyári idő", "LHST": "Lord Howe-szigeti téli idő", "MESZ": "közép-európai nyári idő", "NZST": "új-zélandi téli idő", "JDT": "japán nyári idő", "UYST": "uruguayi nyári idő", "VET": "venezuelai idő", "JST": "japán téli idő", "WAT": "nyugat-afrikai téli idő", "∅∅∅": "azori nyári idő", "OESZ": "kelet-európai nyári idő", "ACDT": "közép-ausztráliai nyári idő", "SGT": "szingapúri téli idő", "HADT": "hawaii-aleuti nyári idő", "EDT": "keleti államokbeli nyári idő", "PDT": "csendes-óceáni nyári idő", "EAT": "kelet-afrikai téli idő", "GYT": "guyanai téli idő", "CAT": "közép-afrikai téli idő", "GFT": "francia-guianai idő", "HAT": "új-fundlandi nyári idő", "WIT": "kelet-indonéziai idő", "AWST": "nyugat-ausztráliai téli idő", "MEZ": "közép-európai téli idő", "HAST": "hawaii-aleuti téli idő", "AEDT": "kelet-ausztráliai nyári idő", "AKST": "alaszkai zónaidő", "ChST": "chamorrói téli idő", "WESZ": "nyugat-európai nyári idő", "ECT": "ecuadori téli idő", "NZDT": "új-zélandi nyári idő", "AWDT": "nyugat-ausztráliai nyári idő"},
+		timezones:              map[string]string{"HNOG": "nyugat-grönlandi téli idő", "CDT": "középső államokbeli nyári idő", "UYST": "uruguayi nyári idő", "TMST": "türkmenisztáni nyári idő", "WAT": "nyugat-afrikai téli idő", "OEZ": "kelet-európai téli idő", "HENOMX": "északnyugat-mexikói nyári idő", "AKST": "alaszkai zónaidő", "AKDT": "alaszkai nyári idő", "WIT": "kelet-indonéziai idő", "ACWDT": "közép-nyugat-ausztráliai nyári idő", "WITA": "közép-indonéziai idő", "MEZ": "közép-európai téli idő", "IST": "indiai téli idő", "JDT": "japán nyári idő", "ACWST": "közép-nyugat-ausztráliai téli idő", "HNT": "új-fundlandi zónaidő", "NZST": "új-zélandi téli idő", "EAT": "kelet-afrikai téli idő", "ECT": "ecuadori téli idő", "MYT": "malajziai idő", "UYT": "uruguayi téli idő", "WEZ": "nyugat-európai téli idő", "HAT": "új-fundlandi nyári idő", "HNPM": "Saint Pierre és Miquelon-i zónaidő", "MESZ": "közép-európai nyári idő", "COT": "kolumbiai téli idő", "EDT": "keleti államokbeli nyári idő", "HAST": "hawaii-aleuti téli idő", "SRT": "szurinámi idő", "HNPMX": "mexikói csendes-óceáni zónaidő", "PDT": "csendes-óceáni nyári idő", "HKT": "hongkongi téli idő", "HKST": "hongkongi nyári idő", "CHADT": "chathami nyári idő", "CLST": "chilei nyári idő", "HNEG": "kelet-grönlandi téli idő", "WAST": "nyugat-afrikai nyári idő", "GMT": "greenwichi középidő, téli idő", "PST": "csendes-óceáni zónaidő", "ART": "argentínai téli idő", "OESZ": "kelet-európai nyári idő", "∅∅∅": "perui nyári idő", "HNNOMX": "északnyugat-mexikói zónaidő", "CST": "középső államokbeli zónaidő", "AWST": "nyugat-ausztráliai téli idő", "AWDT": "nyugat-ausztráliai nyári idő", "ChST": "chamorrói téli idő", "AST": "atlanti-óceáni zónaidő", "LHDT": "Lord Howe-szigeti nyári idő", "JST": "japán téli idő", "SGT": "szingapúri téli idő", "HADT": "hawaii-aleuti nyári idő", "AEST": "kelet-ausztráliai téli idő", "CLT": "chilei téli idő", "ACST": "közép-ausztráliai téli idő", "GYT": "guyanai téli idő", "VET": "venezuelai idő", "HEOG": "nyugat-grönlandi nyári idő", "LHST": "Lord Howe-szigeti téli idő", "SAST": "dél-afrikai téli idő", "BOT": "bolíviai téli idő", "HEEG": "kelet-grönlandi nyári idő", "WART": "nyugat-argentínai téli idő", "WARST": "nyugat-argentínai nyári idő", "HECU": "kubai nyári idő", "EST": "keleti államokbeli zónaidő", "MST": "Macaui zónaidő", "MDT": "Macaui nyári idő", "WIB": "nyugat-indonéziai téli idő", "BT": "butáni idő", "ARST": "Argentínai nyári idő", "ACDT": "közép-ausztráliai nyári idő", "HNCU": "kubai téli idő", "AEDT": "kelet-ausztráliai nyári idő", "CHAST": "chathami téli idő", "TMT": "türkmenisztáni téli idő", "CAT": "közép-afrikai téli idő", "COST": "kolumbiai nyári idő", "HEPMX": "mexikói csendes-óceáni nyári idő", "WESZ": "nyugat-európai nyári idő", "NZDT": "új-zélandi nyári idő", "GFT": "francia-guianai idő", "ADT": "atlanti-óceáni nyári idő", "HEPM": "Saint Pierre és Miquelon-i nyári idő"},
 	}
 }
 
@@ -410,7 +410,12 @@ func (hu *hu) FmtDateShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e, 0x20}...)
 
 	if t.Month() < 10 {
@@ -436,7 +441,12 @@ func (hu *hu) FmtDateMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, hu.monthsAbbreviated[t.Month()]...)
 	b = append(b, []byte{0x20}...)
@@ -451,7 +461,12 @@ func (hu *hu) FmtDateLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, hu.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
@@ -466,7 +481,12 @@ func (hu *hu) FmtDateFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	b = strconv.AppendInt(b, int64(t.Year()), 10)
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(t.Year()*-1), 10)
+	}
+
 	b = append(b, []byte{0x2e, 0x20}...)
 	b = append(b, hu.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
