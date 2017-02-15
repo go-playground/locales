@@ -71,11 +71,16 @@ var (
 	secondaryGroupLenRegex = regexp.MustCompile(",([0-9#]+),")
 	requiredNumRegex       = regexp.MustCompile("([0-9]+)\\.")
 	requiredDecimalRegex   = regexp.MustCompile("\\.([0-9]+)")
+
+	enInheritance = map[string]string{
+		"en_AG": "en_001", "en_AI": "en_001", "en_AS": "en", "en_AU": "en_GB", "en_BB": "en_001", "en_BE": "en_GB", "en_BM": "en_001", "en_BS": "en_001", "en_BW": "en_001", "en_BZ": "en_001", "en_CA": "en_001", "en_CC": "en_001", "en_CK": "en_001", "en_CM": "en_001", "en_CX": "en_001", "en_DG": "en_GB", "en_DM": "en_001", "en_ER": "en_001", "en_FJ": "en_001", "en_FK": "en_GB", "en_FM": "en_001", "en_GB": "en_001", "en_GD": "en_001", "en_GG": "en_GB", "en_GH": "en_001", "en_GI": "en_GB", "en_GM": "en_001", "en_GU": "en", "en_GY": "en_001", "en_HK": "en_GB", "en_IE": "en_GB", "en_IM": "en_GB", "en_IN": "en_GB", "en_IO": "en_GB", "en_JE": "en_GB", "en_JM": "en_001", "en_KE": "en_001", "en_KI": "en_001", "en_KN": "en_001", "en_KY": "en_001", "en_LC": "en_001", "en_LR": "en_001", "en_LS": "en_001", "en_MG": "en_001", "en_MH": "en", "en_MO": "en_GB", "en_MP": "en", "en_MS": "en_001", "en_MT": "en_GB", "en_MU": "en_001", "en_MW": "en_001", "en_MY": "en_001", "en_NA": "en_001", "en_NF": "en_001", "en_NG": "en_001", "en_NR": "en_001", "en_NU": "en_001", "en_NZ": "en_GB", "en_PG": "en_001", "en_PH": "en_001", "en_PK": "en_GB", "en_PN": "en_001", "en_PR": "en", "en_PW": "en_001", "en_RW": "en_001", "en_SB": "en_001", "en_SC": "en_001", "en_SD": "en_001", "en_SG": "en_GB", "en_SH": "en_GB", "en_SL": "en_001", "en_SS": "en_001", "en_SX": "en_001", "en_SZ": "en_001", "en_TC": "en_001", "en_TK": "en_001", "en_TO": "en_001", "en_TT": "en_001", "en_TV": "en_001", "en_TZ": "en_001", "en_UG": "en_001", "en_UM": "en", "en_US": "en", "en_VC": "en_001", "en_VG": "en_GB", "en_VI": "en", "en_VU": "en_001", "en_WS": "en_001", "en_ZA": "en_001", "en_ZM": "en_001", "en_ZW": "en_001",
+	}
 )
 
 type translator struct {
-	Locale         string
-	BaseLocale     string
+	Locale     string
+	BaseLocale string
+	// InheritedLocale string
 	Plurals        string
 	CardinalFunc   string
 	PluralsOrdinal string
@@ -308,7 +313,7 @@ func main() {
 	}
 }
 
-func ApplyOverrides(trans *translator) {
+func applyOverrides(trans *translator) {
 
 	if trans.BaseLocale == "ru" {
 		trans.PercentNumberFormat = "#,##0%"
@@ -325,15 +330,16 @@ func postProcess(cldr *cldr.CLDR) {
 		}
 	}
 
+	var inherited *translator
 	var base *translator
-	var found bool
+	var inheritedFound, baseFound bool
 
 	for _, trans := range translators {
 
 		fmt.Println("Post Processing:", trans.Locale)
 
 		// cardinal plural rules
-		trans.CardinalFunc, trans.Plurals = parseCardinalPluralRuleFunc(cldr, trans.BaseLocale)
+		trans.CardinalFunc, trans.Plurals = parseCardinalPluralRuleFunc(cldr, trans.Locale, trans.BaseLocale)
 
 		//ordinal plural rules
 		trans.OrdinalFunc, trans.PluralsOrdinal = parseOrdinalPluralRuleFunc(cldr, trans.BaseLocale)
@@ -343,17 +349,30 @@ func postProcess(cldr *cldr.CLDR) {
 
 		// ignore base locales
 		if trans.BaseLocale == trans.Locale {
-			found = false
+			inheritedFound = false
+			baseFound = false
 		} else {
 
-			base, found = baseTranslators[trans.BaseLocale]
+			inheritedFound = false
+
+			if trans.BaseLocale == "en" {
+				if inherit, found := enInheritance[trans.Locale]; found {
+					inherited, inheritedFound = translators[inherit]
+				}
+			}
+
+			base, baseFound = baseTranslators[trans.BaseLocale]
 		}
 
 		// Numbers
 
 		if len(trans.Decimal) == 0 {
 
-			if found {
+			if inheritedFound {
+				trans.Decimal = inherited.Decimal
+			}
+
+			if len(trans.Decimal) == 0 && baseFound {
 				trans.Decimal = base.Decimal
 			}
 
@@ -364,7 +383,11 @@ func postProcess(cldr *cldr.CLDR) {
 
 		if len(trans.Group) == 0 {
 
-			if found {
+			if inheritedFound {
+				trans.Group = inherited.Group
+			}
+
+			if len(trans.Group) == 0 && baseFound {
 				trans.Group = base.Group
 			}
 
@@ -375,7 +398,11 @@ func postProcess(cldr *cldr.CLDR) {
 
 		if len(trans.Minus) == 0 {
 
-			if found {
+			if inheritedFound {
+				trans.Minus = inherited.Minus
+			}
+
+			if len(trans.Minus) == 0 && baseFound {
 				trans.Minus = base.Minus
 			}
 
@@ -386,7 +413,11 @@ func postProcess(cldr *cldr.CLDR) {
 
 		if len(trans.Percent) == 0 {
 
-			if found {
+			if inheritedFound {
+				trans.Percent = inherited.Percent
+			}
+
+			if len(trans.Percent) == 0 && baseFound {
 				trans.Percent = base.Percent
 			}
 
@@ -397,7 +428,11 @@ func postProcess(cldr *cldr.CLDR) {
 
 		if len(trans.PerMille) == 0 {
 
-			if found {
+			if inheritedFound {
+				trans.PerMille = inherited.PerMille
+			}
+
+			if len(trans.PerMille) == 0 && baseFound {
 				trans.PerMille = base.PerMille
 			}
 
@@ -406,11 +441,19 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
-		if len(trans.TimeSeparator) == 0 && found {
+		if len(trans.TimeSeparator) == 0 && inheritedFound {
+			trans.TimeSeparator = inherited.TimeSeparator
+		}
+
+		if len(trans.TimeSeparator) == 0 && baseFound {
 			trans.TimeSeparator = base.TimeSeparator
 		}
 
-		if len(trans.Infinity) == 0 && found {
+		if len(trans.Infinity) == 0 && inheritedFound {
+			trans.Infinity = inherited.Infinity
+		}
+
+		if len(trans.Infinity) == 0 && baseFound {
 			trans.Infinity = base.Infinity
 		}
 
@@ -418,119 +461,223 @@ func postProcess(cldr *cldr.CLDR) {
 
 		// number values
 
-		if len(trans.DecimalNumberFormat) == 0 && found {
+		if len(trans.DecimalNumberFormat) == 0 && inheritedFound {
+			trans.DecimalNumberFormat = inherited.DecimalNumberFormat
+		}
+
+		if len(trans.DecimalNumberFormat) == 0 && baseFound {
 			trans.DecimalNumberFormat = base.DecimalNumberFormat
 		}
 
-		if len(trans.PercentNumberFormat) == 0 && found {
+		if len(trans.PercentNumberFormat) == 0 && inheritedFound {
+			trans.PercentNumberFormat = inherited.PercentNumberFormat
+		}
+
+		if len(trans.PercentNumberFormat) == 0 && baseFound {
 			trans.PercentNumberFormat = base.PercentNumberFormat
 		}
 
-		if len(trans.CurrencyNumberFormat) == 0 && found {
+		if len(trans.CurrencyNumberFormat) == 0 && inheritedFound {
+			trans.CurrencyNumberFormat = inherited.CurrencyNumberFormat
+		}
+
+		if len(trans.CurrencyNumberFormat) == 0 && baseFound {
 			trans.CurrencyNumberFormat = base.CurrencyNumberFormat
 		}
 
-		if len(trans.NegativeCurrencyNumberFormat) == 0 && found {
+		if len(trans.NegativeCurrencyNumberFormat) == 0 && inheritedFound {
+			trans.NegativeCurrencyNumberFormat = inherited.NegativeCurrencyNumberFormat
+		}
+
+		if len(trans.NegativeCurrencyNumberFormat) == 0 && baseFound {
 			trans.NegativeCurrencyNumberFormat = base.NegativeCurrencyNumberFormat
 		}
 
 		// date values
 
-		if len(trans.FmtDateFull) == 0 && found {
+		if len(trans.FmtDateFull) == 0 && inheritedFound {
+			trans.FmtDateFull = inherited.FmtDateFull
+		}
+
+		if len(trans.FmtDateFull) == 0 && baseFound {
 			trans.FmtDateFull = base.FmtDateFull
 		}
 
-		if len(trans.FmtDateLong) == 0 && found {
+		if len(trans.FmtDateLong) == 0 && inheritedFound {
+			trans.FmtDateLong = inherited.FmtDateLong
+		}
+
+		if len(trans.FmtDateLong) == 0 && baseFound {
 			trans.FmtDateLong = base.FmtDateLong
 		}
 
-		if len(trans.FmtDateMedium) == 0 && found {
+		if len(trans.FmtDateMedium) == 0 && inheritedFound {
+			trans.FmtDateMedium = inherited.FmtDateMedium
+		}
+
+		if len(trans.FmtDateMedium) == 0 && baseFound {
 			trans.FmtDateMedium = base.FmtDateMedium
 		}
 
-		if len(trans.FmtDateShort) == 0 && found {
+		if len(trans.FmtDateShort) == 0 && inheritedFound {
+			trans.FmtDateShort = inherited.FmtDateShort
+		}
+
+		if len(trans.FmtDateShort) == 0 && baseFound {
 			trans.FmtDateShort = base.FmtDateShort
 		}
 
 		// time values
 
-		if len(trans.FmtTimeFull) == 0 && found {
+		if len(trans.FmtTimeFull) == 0 && inheritedFound {
+			trans.FmtTimeFull = inherited.FmtTimeFull
+		}
+
+		if len(trans.FmtTimeFull) == 0 && baseFound {
 			trans.FmtTimeFull = base.FmtTimeFull
 		}
 
-		if len(trans.FmtTimeLong) == 0 && found {
+		if len(trans.FmtTimeLong) == 0 && inheritedFound {
+			trans.FmtTimeLong = inherited.FmtTimeLong
+		}
+
+		if len(trans.FmtTimeLong) == 0 && baseFound {
 			trans.FmtTimeLong = base.FmtTimeLong
 		}
 
-		if len(trans.FmtTimeMedium) == 0 && found {
+		if len(trans.FmtTimeMedium) == 0 && inheritedFound {
+			trans.FmtTimeMedium = inherited.FmtTimeMedium
+		}
+
+		if len(trans.FmtTimeMedium) == 0 && baseFound {
 			trans.FmtTimeMedium = base.FmtTimeMedium
 		}
 
-		if len(trans.FmtTimeShort) == 0 && found {
+		if len(trans.FmtTimeShort) == 0 && inheritedFound {
+			trans.FmtTimeShort = inherited.FmtTimeShort
+		}
+
+		if len(trans.FmtTimeShort) == 0 && baseFound {
 			trans.FmtTimeShort = base.FmtTimeShort
 		}
 
 		// month values
 
-		if len(trans.FmtMonthsAbbreviated) == 0 && found {
+		if len(trans.FmtMonthsAbbreviated) == 0 && inheritedFound {
+			trans.FmtMonthsAbbreviated = inherited.FmtMonthsAbbreviated
+		}
+
+		if len(trans.FmtMonthsAbbreviated) == 0 && baseFound {
 			trans.FmtMonthsAbbreviated = base.FmtMonthsAbbreviated
 		}
 
-		if len(trans.FmtMonthsNarrow) == 0 && found {
+		if len(trans.FmtMonthsNarrow) == 0 && inheritedFound {
+			trans.FmtMonthsNarrow = inherited.FmtMonthsNarrow
+		}
+
+		if len(trans.FmtMonthsNarrow) == 0 && baseFound {
 			trans.FmtMonthsNarrow = base.FmtMonthsNarrow
 		}
 
-		if len(trans.FmtMonthsWide) == 0 && found {
+		if len(trans.FmtMonthsWide) == 0 && inheritedFound {
+			trans.FmtMonthsWide = inherited.FmtMonthsWide
+		}
+
+		if len(trans.FmtMonthsWide) == 0 && baseFound {
 			trans.FmtMonthsWide = base.FmtMonthsWide
 		}
 
 		// day values
 
-		if len(trans.FmtDaysAbbreviated) == 0 && found {
+		if len(trans.FmtDaysAbbreviated) == 0 && inheritedFound {
+			trans.FmtDaysAbbreviated = inherited.FmtDaysAbbreviated
+		}
+
+		if len(trans.FmtDaysAbbreviated) == 0 && baseFound {
 			trans.FmtDaysAbbreviated = base.FmtDaysAbbreviated
 		}
 
-		if len(trans.FmtDaysNarrow) == 0 && found {
+		if len(trans.FmtDaysNarrow) == 0 && inheritedFound {
+			trans.FmtDaysNarrow = inherited.FmtDaysNarrow
+		}
+
+		if len(trans.FmtDaysNarrow) == 0 && baseFound {
 			trans.FmtDaysNarrow = base.FmtDaysNarrow
 		}
 
-		if len(trans.FmtDaysShort) == 0 && found {
+		if len(trans.FmtDaysShort) == 0 && inheritedFound {
+			trans.FmtDaysShort = inherited.FmtDaysShort
+		}
+
+		if len(trans.FmtDaysShort) == 0 && baseFound {
 			trans.FmtDaysShort = base.FmtDaysShort
 		}
 
-		if len(trans.FmtDaysWide) == 0 && found {
+		if len(trans.FmtDaysWide) == 0 && inheritedFound {
+			trans.FmtDaysWide = inherited.FmtDaysWide
+		}
+
+		if len(trans.FmtDaysWide) == 0 && baseFound {
 			trans.FmtDaysWide = base.FmtDaysWide
 		}
 
 		// period values
 
-		if len(trans.FmtPeriodsAbbreviated) == 0 && found {
+		if len(trans.FmtPeriodsAbbreviated) == 0 && inheritedFound {
+			trans.FmtPeriodsAbbreviated = inherited.FmtPeriodsAbbreviated
+		}
+
+		if len(trans.FmtPeriodsAbbreviated) == 0 && baseFound {
 			trans.FmtPeriodsAbbreviated = base.FmtPeriodsAbbreviated
 		}
 
-		if len(trans.FmtPeriodsNarrow) == 0 && found {
+		if len(trans.FmtPeriodsNarrow) == 0 && inheritedFound {
+			trans.FmtPeriodsNarrow = inherited.FmtPeriodsNarrow
+		}
+
+		if len(trans.FmtPeriodsNarrow) == 0 && baseFound {
 			trans.FmtPeriodsNarrow = base.FmtPeriodsNarrow
 		}
 
-		if len(trans.FmtPeriodsShort) == 0 && found {
+		if len(trans.FmtPeriodsShort) == 0 && inheritedFound {
+			trans.FmtPeriodsShort = inherited.FmtPeriodsShort
+		}
+
+		if len(trans.FmtPeriodsShort) == 0 && baseFound {
 			trans.FmtPeriodsShort = base.FmtPeriodsShort
 		}
 
-		if len(trans.FmtPeriodsWide) == 0 && found {
+		if len(trans.FmtPeriodsWide) == 0 && inheritedFound {
+			trans.FmtPeriodsWide = inherited.FmtPeriodsWide
+		}
+
+		if len(trans.FmtPeriodsWide) == 0 && baseFound {
 			trans.FmtPeriodsWide = base.FmtPeriodsWide
 		}
 
 		// era values
 
-		if len(trans.FmtErasAbbreviated) == 0 && found {
+		if len(trans.FmtErasAbbreviated) == 0 && inheritedFound {
+			trans.FmtErasAbbreviated = inherited.FmtErasAbbreviated
+		}
+
+		if len(trans.FmtErasAbbreviated) == 0 && baseFound {
 			trans.FmtErasAbbreviated = base.FmtErasAbbreviated
 		}
 
-		if len(trans.FmtErasNarrow) == 0 && found {
+		if len(trans.FmtErasNarrow) == 0 && inheritedFound {
+			trans.FmtErasNarrow = inherited.FmtErasNarrow
+		}
+
+		if len(trans.FmtErasNarrow) == 0 && baseFound {
 			trans.FmtErasNarrow = base.FmtErasNarrow
 		}
 
-		if len(trans.FmtErasWide) == 0 && found {
+		if len(trans.FmtErasWide) == 0 && inheritedFound {
+			trans.FmtErasWide = inherited.FmtErasWide
+		}
+
+		if len(trans.FmtErasWide) == 0 && baseFound {
 			trans.FmtErasWide = base.FmtErasWide
 		}
 
@@ -577,12 +724,31 @@ func postProcess(cldr *cldr.CLDR) {
 
 		// timezones
 
-		if (trans.timezones == nil || len(trans.timezones) == 0) && found {
+		if (trans.timezones == nil || len(trans.timezones) == 0) && inheritedFound {
+			trans.timezones = inherited.timezones
+		}
+
+		if (trans.timezones == nil || len(trans.timezones) == 0) && baseFound {
 			trans.timezones = base.timezones
 		}
 
+		// make sure all inherited timezones are part of sub locale timezones
+		if inheritedFound {
+
+			var ok bool
+
+			for k, v := range inherited.timezones {
+
+				if _, ok = trans.timezones[k]; ok {
+					continue
+				}
+
+				trans.timezones[k] = v
+			}
+		}
+
 		// make sure all base timezones are part of sub locale timezones
-		if found {
+		if baseFound {
 
 			var ok bool
 
@@ -596,7 +762,7 @@ func postProcess(cldr *cldr.CLDR) {
 			}
 		}
 
-		ApplyOverrides(trans)
+		applyOverrides(trans)
 
 		parseDecimalNumberFormat(trans)
 		parsePercentNumberFormat(trans)
@@ -646,10 +812,18 @@ func preProcess(cldrVar *cldr.CLDR) {
 
 		split := strings.SplitN(l, "_", 2)
 		baseLocale := split[0]
+		// inheritedLocale := baseLocale
+
+		// // one of the inherited english locales
+		// // http://cldr.unicode.org/development/development-process/design-proposals/english-inheritance
+		// if l == "en_001" || l == "en_GB" {
+		// 	inheritedLocale = l
+		// }
 
 		trans := &translator{
 			Locale:     l,
 			BaseLocale: baseLocale,
+			// InheritedLocale: inheritedLocale,
 		}
 
 		// if is a base locale
@@ -657,6 +831,8 @@ func preProcess(cldrVar *cldr.CLDR) {
 			baseTranslators[baseLocale] = trans
 		}
 
+		// baseTranslators[l] = trans
+		// baseTranslators[baseLocale] = trans // allowing for unofficial fallback if none exists
 		translators[l] = trans
 
 		// get number, currency and datetime symbols
@@ -2268,7 +2444,9 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 
 // TODO: cleanup function logic perhaps write a lexer... but it's working right now, and
 // I'm already farther down the rabbit hole than I'd like and so pulling the chute here.
-func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results string, plurals string) {
+//
+// updated to also accept actual locale as 'pt_PT' exists in cardinal rules different from 'pt'
+func parseCardinalPluralRuleFunc(current *cldr.CLDR, locale, baseLocale string) (results string, plurals string) {
 
 	var prCardinal *struct {
 		cldr.Common
@@ -2280,7 +2458,10 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 	}
 
 	var pluralArr []locales.PluralRule
+	var inBaseLocale bool
+	l := locale
 
+FIND:
 	// idx 2 is cardinal rules
 	for _, pr := range current.Supplemental().Plurals[2].PluralRules {
 
@@ -2288,7 +2469,7 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 
 		for _, loc := range locs {
 
-			if loc == baseLocale {
+			if loc == l {
 				prCardinal = pr
 			}
 		}
@@ -2296,6 +2477,13 @@ func parseCardinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results
 
 	// no plural rules for locale
 	if prCardinal == nil {
+
+		if !inBaseLocale {
+			inBaseLocale = true
+			l = baseLocale
+			goto FIND
+		}
+
 		plurals = "nil"
 		results = "return locales.PluralRuleUnknown"
 		return

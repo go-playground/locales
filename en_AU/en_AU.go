@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"B", "A"},
 		erasWide:               []string{"Before Christ", "Anno Domini"},
-		timezones:              map[string]string{"ChST": "Chamorro Standard Time", "COT": "Colombia Standard Time", "HNPMX": "Mexican Pacific Standard Time", "AST": "Atlantic Standard Time", "PST": "Pacific Standard Time", "HEEG": "East Greenland Summer Time", "GFT": "French Guiana Time", "CDT": "Central Daylight Time", "HAT": "Newfoundland Daylight Time", "AEST": "Australian Eastern Standard Time", "SAST": "South Africa Standard Time", "LHST": "Lord Howe Standard Time", "GMT": "Greenwich Mean Time", "HAST": "Hawaii-Aleutian Standard Time", "WEZ": "Western European Standard Time", "AEDT": "Australian Eastern Daylight Time", "AWST": "Australian Western Standard Time", "MEZ": "Central European Standard Time", "∅∅∅": "Amazon Summer Time", "OESZ": "Eastern European Summer Time", "HECU": "Cuba Daylight Time", "ADT": "Atlantic Daylight Time", "HNT": "Newfoundland Standard Time", "WITA": "Central Indonesia Time", "CHAST": "Chatham Standard Time", "ARST": "Argentina Summer Time", "MYT": "Malaysia Time", "WIB": "Western Indonesia Time", "HNOG": "West Greenland Standard Time", "CLST": "Chile Summer Time", "WAST": "West Africa Summer Time", "BOT": "Bolivia Time", "WARST": "Western Argentina Summer Time", "SRT": "Suriname Time", "ART": "Argentina Standard Time", "AWDT": "Australian Western Daylight Time", "CHADT": "Chatham Daylight Time", "CST": "Central Standard Time", "WAT": "West Africa Standard Time", "COST": "Colombia Summer Time", "EDT": "Eastern Daylight Time", "AKDT": "Alaska Daylight Time", "HADT": "Hawaii-Aleutian Daylight Time", "JDT": "Japan Summer Time", "ACDT": "Australian Central Daylight Time", "JST": "Japan Standard Time", "CLT": "Chile Standard Time", "EAT": "Eastern Africa Time", "SGT": "Singapore Standard Time", "HKT": "Hong Kong Standard Time", "HKST": "Hong Kong Summer Time", "HNNOMX": "Northwest Mexico Standard Time", "PDT": "Pacific Daylight Time", "MDT": "Macau Summer Time", "WIT": "Eastern Indonesia Time", "BT": "Bhutan Time", "HEOG": "West Greenland Summer Time", "ACST": "Australian Central Standard Time", "MST": "Macau Standard Time", "WESZ": "Western European Summer Time", "NZDT": "New Zealand Daylight Time", "IST": "India Standard Time", "TMST": "Turkmenistan Summer Time", "ECT": "Ecuador Time", "HEPMX": "Mexican Pacific Daylight Time", "AKST": "Alaska Standard Time", "HNPM": "St. Pierre & Miquelon Standard Time", "HEPM": "St. Pierre & Miquelon Daylight Time", "ACWDT": "Australian Central Western Daylight Time", "MESZ": "Central European Summer Time", "ACWST": "Australian Central Western Standard Time", "HNCU": "Cuba Standard Time", "GYT": "Guyana Time", "NZST": "New Zealand Standard Time", "OEZ": "Eastern European Standard Time", "TMT": "Turkmenistan Standard Time", "CAT": "Central Africa Time", "HENOMX": "Northwest Mexico Daylight Time", "WART": "Western Argentina Standard Time", "EST": "Eastern Standard Time", "UYT": "Uruguay Standard Time", "LHDT": "Lord Howe Daylight Time", "HNEG": "East Greenland Standard Time", "UYST": "Uruguay Summer Time", "VET": "Venezuela Time"},
+		timezones:              map[string]string{"AWDT": "Australian Western Daylight Time", "HNT": "Newfoundland Standard Time", "WITA": "Central Indonesia Time", "PDT": "Pacific Daylight Time", "CAT": "Central Africa Time", "WAST": "West Africa Summer Time", "AEDT": "Australian Eastern Daylight Time", "WART": "Western Argentina Standard Time", "MDT": "Macau Summer Time", "CLT": "Chile Standard Time", "HAT": "Newfoundland Daylight Time", "GYT": "Guyana Time", "SGT": "Singapore Standard Time", "HADT": "Hawaii-Aleutian Daylight Time", "∅∅∅": "Amazon Summer Time", "JST": "Japan Standard Time", "HEPM": "St. Pierre & Miquelon Daylight Time", "LHDT": "Lord Howe Daylight Time", "ACWST": "Australian Central Western Standard Time", "TMST": "Turkmenistan Summer Time", "HNNOMX": "Northwest Mexico Standard Time", "ChST": "Chamorro Standard Time", "CHADT": "Chatham Daylight Time", "JDT": "Japan Summer Time", "GMT": "Greenwich Mean Time", "HNPM": "St. Pierre & Miquelon Standard Time", "WEZ": "Western European Standard Time", "MYT": "Malaysia Time", "WAT": "West Africa Standard Time", "BT": "Bhutan Time", "HKST": "Hong Kong Summer Time", "UYT": "Uruguay Standard Time", "HNCU": "Cuba Standard Time", "CDT": "Central Daylight Time", "MEZ": "Central European Standard Time", "VET": "Venezuela Time", "HEOG": "West Greenland Summer Time", "HKT": "Hong Kong Standard Time", "GFT": "French Guiana Time", "AKST": "Alaska Standard Time", "SAST": "South Africa Standard Time", "CST": "Central Standard Time", "HNOG": "West Greenland Standard Time", "MST": "Macau Standard Time", "EST": "Eastern Standard Time", "COST": "Colombia Summer Time", "AEST": "Australian Eastern Standard Time", "HNPMX": "Mexican Pacific Standard Time", "WIT": "Eastern Indonesia Time", "BOT": "Bolivia Time", "NZST": "New Zealand Standard Time", "WESZ": "Western European Summer Time", "TMT": "Turkmenistan Standard Time", "SRT": "Suriname Time", "EAT": "Eastern Africa Time", "ECT": "Ecuador Time", "NZDT": "New Zealand Daylight Time", "HNEG": "East Greenland Standard Time", "AKDT": "Alaska Daylight Time", "CLST": "Chile Summer Time", "OEZ": "Eastern European Standard Time", "COT": "Colombia Standard Time", "AWST": "Australian Western Standard Time", "CHAST": "Chatham Standard Time", "PST": "Pacific Standard Time", "MESZ": "Central European Summer Time", "IST": "India Standard Time", "HENOMX": "Northwest Mexico Daylight Time", "LHST": "Lord Howe Standard Time", "HEPMX": "Mexican Pacific Daylight Time", "HECU": "Cuba Daylight Time", "ADT": "Atlantic Daylight Time", "ARST": "Argentina Summer Time", "EDT": "Eastern Daylight Time", "HEEG": "East Greenland Summer Time", "ART": "Argentina Standard Time", "ACST": "Australian Central Standard Time", "UYST": "Uruguay Summer Time", "HAST": "Hawaii-Aleutian Standard Time", "AST": "Atlantic Standard Time", "OESZ": "Eastern European Summer Time", "WARST": "Western Argentina Summer Time", "ACWDT": "Australian Central Western Daylight Time", "ACDT": "Australian Central Daylight Time", "WIB": "Western Indonesia Time"},
 	}
 }
 
@@ -112,8 +112,8 @@ func (en *en_AU) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 func (en *en_AU) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
+	nMod10 := math.Mod(n, 10)
 
 	if nMod10 == 1 && nMod100 != 11 {
 		return locales.PluralRuleOne
@@ -483,13 +483,11 @@ func (en *en_AU) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, en.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -497,13 +495,6 @@ func (en *en_AU) FmtTimeShort(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Minute()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, en.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, en.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -513,13 +504,11 @@ func (en *en_AU) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, en.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -534,13 +523,6 @@ func (en *en_AU) FmtTimeMedium(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, en.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, en.periodsAbbreviated[1]...)
-	}
 
 	return string(b)
 }
@@ -550,13 +532,11 @@ func (en *en_AU) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, en.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -571,14 +551,6 @@ func (en *en_AU) FmtTimeLong(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, en.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, en.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()
@@ -592,13 +564,11 @@ func (en *en_AU) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	if t.Hour() < 10 {
+		b = append(b, '0')
 	}
 
-	b = strconv.AppendInt(b, int64(h), 10)
+	b = strconv.AppendInt(b, int64(t.Hour()), 10)
 	b = append(b, en.timeSeparator...)
 
 	if t.Minute() < 10 {
@@ -613,14 +583,6 @@ func (en *en_AU) FmtTimeFull(t time.Time) string {
 	}
 
 	b = strconv.AppendInt(b, int64(t.Second()), 10)
-	b = append(b, []byte{0x20}...)
-
-	if t.Hour() < 12 {
-		b = append(b, en.periodsAbbreviated[0]...)
-	} else {
-		b = append(b, en.periodsAbbreviated[1]...)
-	}
-
 	b = append(b, []byte{0x20}...)
 
 	tz, _ := t.Zone()
