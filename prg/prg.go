@@ -67,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"BC", "AD"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"", ""},
-		timezones:              map[string]string{"LHDT": "LHDT", "ACDT": "ACDT", "COST": "COST", "MST": "MST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "HNT": "HNT", "TMT": "TMT", "UYST": "UYST", "AWDT": "AWDT", "HNPM": "HNPM", "NZST": "NZST", "SAST": "SAST", "AKDT": "AKDT", "HADT": "HADT", "HNOG": "HNOG", "JDT": "JDT", "HNEG": "HNEG", "BT": "BT", "PDT": "Pacīfiskas Amērikas daggas kerdā", "MEZ": "Centrālas Eurōpas zēimas kerdā", "GFT": "GFT", "WAT": "WAT", "AKST": "AKST", "ACWDT": "ACWDT", "IST": "IST", "NZDT": "NZDT", "TMST": "TMST", "WART": "WART", "WARST": "WARST", "EDT": "Dēiniskas Amērikas daggas kerdā", "CDT": "Centrālas Amērikas daggas kerdā", "ART": "ART", "ECT": "ECT", "CAT": "CAT", "HAST": "HAST", "CLST": "CLST", "ChST": "ChST", "WITA": "WITA", "CHAST": "CHAST", "BOT": "BOT", "HEEG": "HEEG", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "HNCU": "HNCU", "UYT": "UYT", "ACWST": "ACWST", "HENOMX": "HENOMX", "CLT": "CLT", "HEPMX": "HEPMX", "ADT": "Atlāntiska daggas kerdā", "HEPM": "HEPM", "SRT": "SRT", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "AWST": "AWST", "CHADT": "CHADT", "WAST": "WAST", "CST": "Centrālas Amērikas zēimas kerdā", "WIB": "WIB", "VET": "VET", "GYT": "GYT", "HNNOMX": "HNNOMX", "HECU": "HECU", "∅∅∅": "∅∅∅", "MDT": "MDT", "HKST": "HKST", "SGT": "SGT", "HAT": "HAT", "PST": "Pacīfiskas Amērikas zēimas kerdā", "LHST": "LHST", "AST": "Atlāntiska zēimas kerdā", "ARST": "ARST", "HKT": "HKT", "JST": "JST", "EAT": "EAT", "MYT": "MYT", "HEOG": "HEOG", "AEST": "AEST", "WIT": "WIT", "AEDT": "AEDT", "MESZ": "Centrālas Eurōpas daggas kerdā", "ACST": "ACST", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "GMT": "Greenwich kerdā", "HNPMX": "HNPMX", "EST": "Dēiniskas Amērikas zēimas kerdā", "COT": "COT"},
+		timezones:              map[string]string{"AEDT": "AEDT", "WIT": "WIT", "CAT": "CAT", "CLST": "CLST", "HNPMX": "HNPMX", "HAST": "HAST", "HEPMX": "HEPMX", "HNCU": "HNCU", "ECT": "ECT", "WARST": "WARST", "HNPM": "HNPM", "HECU": "HECU", "HADT": "HADT", "ADT": "Atlāntiska daggas kerdā", "OESZ": "Dēiniskas Eurōpas daggas kerdā", "NZST": "NZST", "WESZ": "Wakkariskas Eurōpas daggas kerdā", "WART": "WART", "TMT": "TMT", "HEOG": "HEOG", "HKT": "HKT", "COST": "COST", "HEEG": "HEEG", "AKDT": "AKDT", "ChST": "ChST", "LHST": "LHST", "SGT": "SGT", "MDT": "MDT", "EST": "Dēiniskas Amērikas zēimas kerdā", "IST": "IST", "OEZ": "Dēiniskas Eurōpas zēimas kerdā", "AST": "Atlāntiska zēimas kerdā", "EDT": "Dēiniskas Amērikas daggas kerdā", "∅∅∅": "∅∅∅", "WITA": "WITA", "AWDT": "AWDT", "ACWST": "ACWST", "MEZ": "Centrālas Eurōpas zēimas kerdā", "JST": "JST", "MYT": "MYT", "HNOG": "HNOG", "HENOMX": "HENOMX", "AKST": "AKST", "HEPM": "HEPM", "PST": "Pacīfiskas Amērikas zēimas kerdā", "PDT": "Pacīfiskas Amērikas daggas kerdā", "ARST": "ARST", "BT": "BT", "HNEG": "HNEG", "AEST": "AEST", "UYST": "UYST", "AWST": "AWST", "CHADT": "CHADT", "WEZ": "Wakkariskas Eurōpas zēimas kerdā", "TMST": "TMST", "GFT": "GFT", "NZDT": "NZDT", "VET": "VET", "CLT": "CLT", "SAST": "SAST", "WIB": "WIB", "CST": "Centrālas Amērikas zēimas kerdā", "BOT": "BOT", "ART": "ART", "HAT": "HAT", "CDT": "Centrālas Amērikas daggas kerdā", "CHAST": "CHAST", "MST": "MST", "WAT": "WAT", "WAST": "WAST", "HNT": "HNT", "GMT": "Greenwich kerdā", "HKST": "HKST", "SRT": "SRT", "ACWDT": "ACWDT", "MESZ": "Centrālas Eurōpas daggas kerdā", "JDT": "JDT", "EAT": "EAT", "ACST": "ACST", "ACDT": "ACDT", "COT": "COT", "HNNOMX": "HNNOMX", "UYT": "UYT", "LHDT": "LHDT", "GYT": "GYT"},
 	}
 }
 
@@ -96,10 +96,10 @@ func (prg *prg) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	f := locales.F(n, v)
-	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
-	fMod100 := f % 100
+	nMod10 := math.Mod(n, 10)
 	fMod10 := f % 10
+	fMod100 := f % 100
 
 	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
