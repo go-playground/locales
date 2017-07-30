@@ -681,7 +681,7 @@ func TestFmtTimeFull(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
-			expected: "北美東部時區 上午9:05:01",
+			expected: "北美东部标准时间 上午9:05:01",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, fixed),
