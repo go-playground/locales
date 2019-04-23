@@ -534,54 +534,54 @@ func TestMonthsNarrow(t *testing.T) {
 		idx      int
 		expected string
 	}{
-		// {
-		// 	idx:      1,
-		// 	expected: "J",
-		// },
-		// {
-		// 	idx:      2,
-		// 	expected: "F",
-		// },
-		// {
-		// 	idx:      3,
-		// 	expected: "M",
-		// },
-		// {
-		// 	idx:      4,
-		// 	expected: "A",
-		// },
-		// {
-		// 	idx:      5,
-		// 	expected: "M",
-		// },
-		// {
-		// 	idx:      6,
-		// 	expected: "J",
-		// },
-		// {
-		// 	idx:      7,
-		// 	expected: "J",
-		// },
-		// {
-		// 	idx:      8,
-		// 	expected: "A",
-		// },
-		// {
-		// 	idx:      9,
-		// 	expected: "S",
-		// },
-		// {
-		// 	idx:      10,
-		// 	expected: "O",
-		// },
-		// {
-		// 	idx:      11,
-		// 	expected: "N",
-		// },
-		// {
-		// 	idx:      12,
-		// 	expected: "D",
-		// },
+		{
+			idx:      1,
+			expected: "1",
+		},
+		{
+			idx:      2,
+			expected: "2",
+		},
+		{
+			idx:      3,
+			expected: "3",
+		},
+		{
+			idx:      4,
+			expected: "4",
+		},
+		{
+			idx:      5,
+			expected: "5",
+		},
+		{
+			idx:      6,
+			expected: "6",
+		},
+		{
+			idx:      7,
+			expected: "7",
+		},
+		{
+			idx:      8,
+			expected: "8",
+		},
+		{
+			idx:      9,
+			expected: "9",
+		},
+		{
+			idx:      10,
+			expected: "10",
+		},
+		{
+			idx:      11,
+			expected: "11",
+		},
+		{
+			idx:      12,
+			expected: "12",
+		},
 	}
 
 	for _, tt := range tests {
