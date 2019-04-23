@@ -608,54 +608,54 @@ func TestMonthsWide(t *testing.T) {
 		idx      int
 		expected string
 	}{
-		// {
-		// 	idx:      1,
-		// 	expected: "January",
-		// },
-		// {
-		// 	idx:      2,
-		// 	expected: "February",
-		// },
-		// {
-		// 	idx:      3,
-		// 	expected: "March",
-		// },
-		// {
-		// 	idx:      4,
-		// 	expected: "April",
-		// },
-		// {
-		// 	idx:      5,
-		// 	expected: "May",
-		// },
-		// {
-		// 	idx:      6,
-		// 	expected: "June",
-		// },
-		// {
-		// 	idx:      7,
-		// 	expected: "July",
-		// },
-		// {
-		// 	idx:      8,
-		// 	expected: "August",
-		// },
-		// {
-		// 	idx:      9,
-		// 	expected: "September",
-		// },
-		// {
-		// 	idx:      10,
-		// 	expected: "October",
-		// },
-		// {
-		// 	idx:      11,
-		// 	expected: "November",
-		// },
-		// {
-		// 	idx:      12,
-		// 	expected: "December",
-		// },
+		{
+			idx:      1,
+			expected: "1月",
+		},
+		{
+			idx:      2,
+			expected: "2月",
+		},
+		{
+			idx:      3,
+			expected: "3月",
+		},
+		{
+			idx:      4,
+			expected: "4月",
+		},
+		{
+			idx:      5,
+			expected: "5月",
+		},
+		{
+			idx:      6,
+			expected: "6月",
+		},
+		{
+			idx:      7,
+			expected: "7月",
+		},
+		{
+			idx:      8,
+			expected: "8月",
+		},
+		{
+			idx:      9,
+			expected: "9月",
+		},
+		{
+			idx:      10,
+			expected: "10月",
+		},
+		{
+			idx:      11,
+			expected: "11月",
+		},
+		{
+			idx:      12,
+			expected: "12月",
+		},
 	}
 
 	for _, tt := range tests {
