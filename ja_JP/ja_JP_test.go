@@ -460,54 +460,54 @@ func TestMonthsAbbreviated(t *testing.T) {
 		idx      int
 		expected string
 	}{
-		// {
-		// 	idx:      1,
-		// 	expected: "Jan",
-		// },
-		// {
-		// 	idx:      2,
-		// 	expected: "Feb",
-		// },
-		// {
-		// 	idx:      3,
-		// 	expected: "Mar",
-		// },
-		// {
-		// 	idx:      4,
-		// 	expected: "Apr",
-		// },
-		// {
-		// 	idx:      5,
-		// 	expected: "May",
-		// },
-		// {
-		// 	idx:      6,
-		// 	expected: "Jun",
-		// },
-		// {
-		// 	idx:      7,
-		// 	expected: "Jul",
-		// },
-		// {
-		// 	idx:      8,
-		// 	expected: "Aug",
-		// },
-		// {
-		// 	idx:      9,
-		// 	expected: "Sep",
-		// },
-		// {
-		// 	idx:      10,
-		// 	expected: "Oct",
-		// },
-		// {
-		// 	idx:      11,
-		// 	expected: "Nov",
-		// },
-		// {
-		// 	idx:      12,
-		// 	expected: "Dec",
-		// },
+		{
+			idx:      1,
+			expected: "1月",
+		},
+		{
+			idx:      2,
+			expected: "2月",
+		},
+		{
+			idx:      3,
+			expected: "3月",
+		},
+		{
+			idx:      4,
+			expected: "4月",
+		},
+		{
+			idx:      5,
+			expected: "5月",
+		},
+		{
+			idx:      6,
+			expected: "6月",
+		},
+		{
+			idx:      7,
+			expected: "7月",
+		},
+		{
+			idx:      8,
+			expected: "8月",
+		},
+		{
+			idx:      9,
+			expected: "9月",
+		},
+		{
+			idx:      10,
+			expected: "10月",
+		},
+		{
+			idx:      11,
+			expected: "11月",
+		},
+		{
+			idx:      12,
+			expected: "12月",
+		},
 	}
 
 	for _, tt := range tests {
