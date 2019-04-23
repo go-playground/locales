@@ -406,34 +406,34 @@ func TestDaysWide(t *testing.T) {
 		idx      int
 		expected string
 	}{
-		// {
-		// 	idx:      0,
-		// 	expected: "Sunday",
-		// },
-		// {
-		// 	idx:      1,
-		// 	expected: "Monday",
-		// },
-		// {
-		// 	idx:      2,
-		// 	expected: "Tuesday",
-		// },
-		// {
-		// 	idx:      3,
-		// 	expected: "Wednesday",
-		// },
-		// {
-		// 	idx:      4,
-		// 	expected: "Thursday",
-		// },
-		// {
-		// 	idx:      5,
-		// 	expected: "Friday",
-		// },
-		// {
-		// 	idx:      6,
-		// 	expected: "Saturday",
-		// },
+		{
+			idx:      0,
+			expected: "日曜日",
+		},
+		{
+			idx:      1,
+			expected: "月曜日",
+		},
+		{
+			idx:      2,
+			expected: "火曜日",
+		},
+		{
+			idx:      3,
+			expected: "水曜日",
+		},
+		{
+			idx:      4,
+			expected: "木曜日",
+		},
+		{
+			idx:      5,
+			expected: "金曜日",
+		},
+		{
+			idx:      6,
+			expected: "土曜日",
+		},
 	}
 
 	for _, tt := range tests {
