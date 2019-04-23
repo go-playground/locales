@@ -352,34 +352,34 @@ func TestDaysShort(t *testing.T) {
 		idx      int
 		expected string
 	}{
-		// {
-		// 	idx:      0,
-		// 	expected: "Su",
-		// },
-		// {
-		// 	idx:      1,
-		// 	expected: "Mo",
-		// },
-		// {
-		// 	idx:      2,
-		// 	expected: "Tu",
-		// },
-		// {
-		// 	idx:      3,
-		// 	expected: "We",
-		// },
-		// {
-		// 	idx:      4,
-		// 	expected: "Th",
-		// },
-		// {
-		// 	idx:      5,
-		// 	expected: "Fr",
-		// },
-		// {
-		// 	idx:      6,
-		// 	expected: "Sa",
-		// },
+		{
+			idx:      0,
+			expected: "日",
+		},
+		{
+			idx:      1,
+			expected: "月",
+		},
+		{
+			idx:      2,
+			expected: "火",
+		},
+		{
+			idx:      3,
+			expected: "水",
+		},
+		{
+			idx:      4,
+			expected: "木",
+		},
+		{
+			idx:      5,
+			expected: "金",
+		},
+		{
+			idx:      6,
+			expected: "土",
+		},
 	}
 
 	for _, tt := range tests {
