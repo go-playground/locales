@@ -669,23 +669,23 @@ func TestFmtTimeFull(t *testing.T) {
 
 func TestFmtTimeLong(t *testing.T) {
 
-	// loc, err := time.LoadLocation("America/Toronto")
-	// if err != nil {
-	// 	t.Errorf("Expected '<nil>' Got '%s'", err)
-	// }
+	loc, err := time.LoadLocation("Asia/Tokyo")
+	if err != nil {
+		t.Errorf("Expected '<nil>' Got '%s'", err)
+	}
 
 	tests := []struct {
 		t        time.Time
 		expected string
 	}{
-		// {
-		// 	t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
-		// 	expected: "9:05:01 am EST",
-		// },
-		// {
-		// 	t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
-		// 	expected: "8:05:01 pm EST",
-		// },
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
+			expected: "9:05:01 JST",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
+			expected: "20:05:01 JST",
+		},
 	}
 
 	trans := New()
