@@ -756,10 +756,10 @@ func TestFmtDateFull(t *testing.T) {
 		t        time.Time
 		expected string
 	}{
-		// {
-		// 	t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-		// 	expected: "Wednesday, February 3, 2016",
-		// },
+		{
+			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
+			expected: "2016年2月3日水曜日",
+		},
 	}
 
 	trans := New()
