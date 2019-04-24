@@ -730,14 +730,14 @@ func TestFmtTimeShort(t *testing.T) {
 		t        time.Time
 		expected string
 	}{
-		// {
-		// 	t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-		// 	expected: "9:05 am",
-		// },
-		// {
-		// 	t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
-		// 	expected: "8:05 pm",
-		// },
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
+			expected: "9:05",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
+			expected: "20:05",
+		},
 	}
 
 	trans := New()
