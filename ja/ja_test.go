@@ -59,25 +59,16 @@ func TestPluralsOrdinal(t *testing.T) {
 	tests := []struct {
 		expected locales.PluralRule
 	}{
-		// {
-		// 	expected: locales.PluralRuleOne,
-		// },
-		// {
-		// 	expected: locales.PluralRuleTwo,
-		// },
-		// {
-		// 	expected: locales.PluralRuleFew,
-		// },
-		// {
-		// 	expected: locales.PluralRuleOther,
-		// },
+		{
+			expected: locales.PluralRuleOther,
+		},
 	}
 
 	rules := trans.PluralsOrdinal()
-	// expected := 4
-	// if len(rules) != expected {
-	// 	t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
-	// }
+	expected := 1
+	if len(rules) != expected {
+		t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
+	}
 
 	for _, tt := range tests {
 
