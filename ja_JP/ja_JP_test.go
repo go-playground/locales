@@ -704,14 +704,14 @@ func TestFmtTimeMedium(t *testing.T) {
 		t        time.Time
 		expected string
 	}{
-		// {
-		// 	t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-		// 	expected: "9:05:01 am",
-		// },
-		// {
-		// 	t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
-		// 	expected: "8:05:01 pm",
-		// },
+		{
+			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
+			expected: "9:05:01",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
+			expected: "20:05:01",
+		},
 	}
 
 	trans := New()
