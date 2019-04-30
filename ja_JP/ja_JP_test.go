@@ -131,13 +131,13 @@ func TestRangePlurals(t *testing.T) {
 		v2       uint64
 		expected locales.PluralRule
 	}{
-		// {
-		// 	num1:     1,
-		// 	v1:       1,
-		// 	num2:     2,
-		// 	v2:       2,
-		// 	expected: locales.PluralRuleOther,
-		// },
+		{
+			num1:     1,
+			v1:       1,
+			num2:     2,
+			v2:       2,
+			expected: locales.PluralRuleOther,
+		},
 	}
 
 	for _, tt := range tests {
