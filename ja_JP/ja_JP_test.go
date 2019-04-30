@@ -778,10 +778,10 @@ func TestFmtDateLong(t *testing.T) {
 		t        time.Time
 		expected string
 	}{
-		// {
-		// 	t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-		// 	expected: "February 3, 2016",
-		// },
+		{
+			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
+			expected: "2016年2月3日",
+		},
 	}
 
 	trans := New()
