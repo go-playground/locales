@@ -25,16 +25,16 @@ func TestPluralsRange(t *testing.T) {
 	tests := []struct {
 		expected locales.PluralRule
 	}{
-		// {
-		// 	expected: locales.PluralRuleOther,
-		// },
+		{
+			expected: locales.PluralRuleOther,
+		},
 	}
 
 	rules := trans.PluralsRange()
-	// expected := 1
-	// if len(rules) != expected {
-	// 	t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
-	// }
+	expected := 1
+	if len(rules) != expected {
+		t.Errorf("Expected '%d' Got '%d'", expected, len(rules))
+	}
 
 	for _, tt := range tests {
 
