@@ -1021,31 +1021,31 @@ func TestFmtPercent(t *testing.T) {
 		v        uint64
 		expected string
 	}{
-		// {
-		// 	num:      15,
-		// 	v:        0,
-		// 	expected: "15%",
-		// },
-		// {
-		// 	num:      15,
-		// 	v:        2,
-		// 	expected: "15.00%",
-		// },
-		// {
-		// 	num:      434.45,
-		// 	v:        0,
-		// 	expected: "434%",
-		// },
-		// {
-		// 	num:      34.4,
-		// 	v:        2,
-		// 	expected: "34.40%",
-		// },
-		// {
-		// 	num:      -34,
-		// 	v:        0,
-		// 	expected: "-34%",
-		// },
+		{
+			num:      15,
+			v:        0,
+			expected: "15%",
+		},
+		{
+			num:      15,
+			v:        2,
+			expected: "15.00%",
+		},
+		{
+			num:      434.45,
+			v:        0,
+			expected: "434%",
+		},
+		{
+			num:      34.4,
+			v:        2,
+			expected: "34.40%",
+		},
+		{
+			num:      -34,
+			v:        0,
+			expected: "-34%",
+		},
 	}
 
 	trans := New()
