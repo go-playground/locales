@@ -822,14 +822,14 @@ func TestFmtDateShort(t *testing.T) {
 		t        time.Time
 		expected string
 	}{
-		// {
-		// 	t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
-		// 	expected: "2/3/16",
-		// },
-		// {
-		// 	t:        time.Date(-500, 02, 03, 9, 0, 1, 0, time.UTC),
-		// 	expected: "2/3/500",
-		// },
+		{
+			t:        time.Date(2016, 02, 03, 9, 0, 1, 0, time.UTC),
+			expected: "2016/02/03",
+		},
+		{
+			t:        time.Date(-500, 02, 03, 9, 0, 1, 0, time.UTC),
+			expected: "500/02/03",
+		},
 	}
 
 	trans := New()
