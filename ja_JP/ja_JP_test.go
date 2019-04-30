@@ -181,16 +181,11 @@ func TestCardinalPlurals(t *testing.T) {
 		v        uint64
 		expected locales.PluralRule
 	}{
-		// {
-		// 	num:      1,
-		// 	v:        0,
-		// 	expected: locales.PluralRuleOne,
-		// },
-		// {
-		// 	num:      4,
-		// 	v:        0,
-		// 	expected: locales.PluralRuleOther,
-		// },
+		{
+			num:      1,
+			v:        0,
+			expected: locales.PluralRuleOther,
+		},
 	}
 
 	for _, tt := range tests {
