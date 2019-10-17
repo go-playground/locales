@@ -13,17 +13,14 @@ notifications:
     on_failure: always
 
 before_install:
-  - go get -u github.com/go-playground/overalls
-  - go get -u github.com/mattn/goveralls
+  - go install github.com/mattn/goveralls
 
 # Only clone the most recent commit.
 git:
   depth: 1
 
 script:
-  - go test -v -race ./...
+  - go test -v -race -covermode=atomic -coverprofile=coverage.coverprofile ./...
 
 after_success: |
-  [ $TRAVIS_GO_VERSION = 1.13.1 ] &&
-  overalls -project="github.com/go-playground/errors" -covermode=count -ignore=.git,examples -debug &&
-  goveralls -coverprofile=overalls.coverprofile -service travis-ci -repotoken $COVERALLS_TOKEN
+  goveralls -coverprofile=coverage.coverprofile -service travis-ci -repotoken $COVERALLS_TOKEN
