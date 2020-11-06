@@ -842,7 +842,7 @@ func TestFmtTimeFull(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
-			expected: "9:05:01 Восточная Америка, стандартное время",
+			expected: "09:05:01 Восточная Америка, стандартное время",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, fixed),
@@ -873,7 +873,7 @@ func TestFmtTimeLong(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, loc),
-			expected: "9:05:01 EST",
+			expected: "09:05:01 EST",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
@@ -899,7 +899,7 @@ func TestFmtTimeMedium(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-			expected: "9:05:01",
+			expected: "09:05:01",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
@@ -925,7 +925,7 @@ func TestFmtTimeShort(t *testing.T) {
 	}{
 		{
 			t:        time.Date(2016, 02, 03, 9, 5, 1, 0, time.UTC),
-			expected: "9:05",
+			expected: "09:05",
 		},
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
