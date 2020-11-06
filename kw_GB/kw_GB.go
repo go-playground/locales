@@ -43,11 +43,11 @@ type kw_GB struct {
 func New() locales.Translator {
 	return &kw_GB{
 		locale:             "kw_GB",
-		pluralsCardinal:    []locales.PluralRule{2, 3, 6},
-		pluralsOrdinal:     nil,
+		pluralsCardinal:    []locales.PluralRule{1, 2, 3, 4, 5, 6},
+		pluralsOrdinal:     []locales.PluralRule{2, 5, 6},
 		pluralsRange:       nil,
 		timeSeparator:      ":",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		monthsAbbreviated:  []string{"", "Gen", "Hwe", "Meu", "Ebr", "Me", "Met", "Gor", "Est", "Gwn", "Hed", "Du", "Kev"},
 		monthsWide:         []string{"", "mis Genver", "mis Hwevrer", "mis Meurth", "mis Ebrel", "mis Me", "mis Metheven", "mis Gortheren", "mis Est", "mis Gwynngala", "mis Hedra", "mis Du", "mis Kevardhu"},
 		daysAbbreviated:    []string{"Sul", "Lun", "Mth", "Mhr", "Yow", "Gwe", "Sad"},
@@ -57,7 +57,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"RC", "AD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"", ""},
-		timezones:          map[string]string{"HAT": "HAT", "UYT": "UYT", "HNPMX": "HNPMX", "WESZ": "WESZ", "EST": "EST", "HNOG": "HNOG", "IST": "IST", "HNNOMX": "HNNOMX", "∅∅∅": "∅∅∅", "GMT": "GMT", "GFT": "GFT", "HKST": "HKST", "HKT": "HKT", "WARST": "WARST", "COT": "COT", "UYST": "UYST", "AKDT": "AKDT", "SGT": "SGT", "HNEG": "HNEG", "ECT": "ECT", "ACDT": "ACDT", "HEOG": "HEOG", "MST": "MST", "CLT": "CLT", "TMT": "TMT", "ADT": "ADT", "MYT": "MYT", "ARST": "ARST", "AEST": "AEST", "JST": "JST", "EDT": "EDT", "HEEG": "HEEG", "HENOMX": "HENOMX", "ChST": "ChST", "AWST": "AWST", "WEZ": "WEZ", "NZDT": "NZDT", "WITA": "WITA", "TMST": "TMST", "OESZ": "OESZ", "AST": "AST", "WART": "WART", "VET": "VET", "LHDT": "LHDT", "CAT": "CAT", "AWDT": "AWDT", "HEPMX": "HEPMX", "BOT": "BOT", "MEZ": "MEZ", "PST": "PST", "JDT": "JDT", "MESZ": "MESZ", "MDT": "MDT", "SRT": "SRT", "WIT": "WIT", "HADT": "HADT", "HNCU": "HNCU", "CDT": "CDT", "WAST": "WAST", "ACST": "ACST", "GYT": "GYT", "CHADT": "CHADT", "WAT": "WAT", "ACWDT": "ACWDT", "HNPM": "HNPM", "ACWST": "ACWST", "CHAST": "CHAST", "HECU": "HECU", "PDT": "PDT", "WIB": "WIB", "AKST": "AKST", "BT": "BT", "HNT": "HNT", "HEPM": "HEPM", "EAT": "EAT", "CLST": "CLST", "ART": "ART", "CST": "CST", "AEDT": "AEDT", "HAST": "HAST", "COST": "COST", "NZST": "NZST", "LHST": "LHST", "OEZ": "OEZ", "SAST": "SAST"},
+		timezones:          map[string]string{"ACDT": "ACDT", "ACST": "ACST", "ACWDT": "ACWDT", "ACWST": "ACWST", "ADT": "ADT", "AEDT": "AEDT", "AEST": "AEST", "AKDT": "AKDT", "AKST": "AKST", "ARST": "ARST", "ART": "ART", "AST": "AST", "AWDT": "AWDT", "AWST": "AWST", "BOT": "BOT", "BT": "BT", "CAT": "CAT", "CDT": "CDT", "CHADT": "CHADT", "CHAST": "CHAST", "CLST": "CLST", "CLT": "CLT", "COST": "COST", "COT": "COT", "CST": "CST", "ChST": "ChST", "EAT": "EAT", "ECT": "ECT", "EDT": "EDT", "EST": "EST", "GFT": "GFT", "GMT": "GMT", "GST": "GST", "GYT": "GYT", "HADT": "HADT", "HAST": "HAST", "HAT": "HAT", "HECU": "HECU", "HEEG": "HEEG", "HENOMX": "HENOMX", "HEOG": "HEOG", "HEPM": "HEPM", "HEPMX": "HEPMX", "HKST": "HKST", "HKT": "HKT", "HNCU": "HNCU", "HNEG": "HNEG", "HNNOMX": "HNNOMX", "HNOG": "HNOG", "HNPM": "HNPM", "HNPMX": "HNPMX", "HNT": "HNT", "IST": "IST", "JDT": "JDT", "JST": "JST", "LHDT": "LHDT", "LHST": "LHST", "MDT": "MDT", "MESZ": "MESZ", "MEZ": "MEZ", "MST": "MST", "MYT": "MYT", "NZDT": "NZDT", "NZST": "NZST", "OESZ": "OESZ", "OEZ": "OEZ", "PDT": "PDT", "PST": "PST", "SAST": "SAST", "SGT": "SGT", "SRT": "SRT", "TMST": "TMST", "TMT": "TMT", "UYST": "UYST", "UYT": "UYT", "VET": "VET", "WARST": "WARST", "WART": "WART", "WAST": "WAST", "WAT": "WAT", "WESZ": "WESZ", "WEZ": "WEZ", "WIB": "WIB", "WIT": "WIT", "WITA": "WITA", "∅∅∅": "∅∅∅"},
 	}
 }
 
@@ -85,11 +85,21 @@ func (kw *kw_GB) PluralsRange() []locales.PluralRule {
 func (kw *kw_GB) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
+	nMod100 := math.Mod(n, 100)
+	nMod1000 := math.Mod(n, 1000)
+	nMod100000 := math.Mod(n, 100000)
+	nMod1000000 := math.Mod(n, 1000000)
 
-	if n == 1 {
+	if n == 0 {
+		return locales.PluralRuleZero
+	} else if n == 1 {
 		return locales.PluralRuleOne
-	} else if n == 2 {
+	} else if (nMod100 == 2 || nMod100 == 22 || nMod100 == 42 || nMod100 == 62 || nMod100 == 82) || (nMod1000 == 0 && nMod100000 >= 1000 && nMod100000 <= 20000 && (nMod100000 == 40000 || nMod100000 == 60000 || nMod100000 == 80000)) || (n != 0 && nMod1000000 == 100000) {
 		return locales.PluralRuleTwo
+	} else if nMod100 == 3 || nMod100 == 23 || nMod100 == 43 || nMod100 == 63 || nMod100 == 83 {
+		return locales.PluralRuleFew
+	} else if n != 1 && (nMod100 == 1 || nMod100 == 21 || nMod100 == 41 || nMod100 == 61 || nMod100 == 81) {
+		return locales.PluralRuleMany
 	}
 
 	return locales.PluralRuleOther
@@ -97,7 +107,17 @@ func (kw *kw_GB) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 // OrdinalPluralRule returns the ordinal PluralRule given 'num' and digits/precision of 'v' for 'kw_GB'
 func (kw *kw_GB) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
-	return locales.PluralRuleUnknown
+
+	n := math.Abs(num)
+	nMod100 := math.Mod(n, 100)
+
+	if (n >= 1 && n <= 4) || ((nMod100 >= 1 && nMod100 <= 4) || (nMod100 >= 21 && nMod100 <= 24) || (nMod100 >= 41 && nMod100 <= 44) || (nMod100 >= 61 && nMod100 <= 64) || (nMod100 >= 81 && nMod100 <= 84)) {
+		return locales.PluralRuleOne
+	} else if (n == 5) || (nMod100 == 5) {
+		return locales.PluralRuleMany
+	}
+
+	return locales.PluralRuleOther
 }
 
 // RangePluralRule returns the ordinal PluralRule given 'num1', 'num2' and digits/precision of 'v1' and 'v2' for 'kw_GB'
