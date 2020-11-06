@@ -22,8 +22,8 @@ type az_Cyrl struct {
 	timeSeparator          string
 	inifinity              string
 	currencies             []string // idx = enum of currency code
-	currencyPositivePrefix string
-	currencyNegativePrefix string
+	currencyPositiveSuffix string
+	currencyNegativeSuffix string
 	monthsAbbreviated      []string
 	monthsNarrow           []string
 	monthsWide             []string
@@ -55,9 +55,9 @@ func New() locales.Translator {
 		perMille:               "‰",
 		timeSeparator:          ":",
 		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "₼", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		currencyPositivePrefix: " ",
-		currencyNegativePrefix: " ",
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "₼", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencyPositiveSuffix: " ",
+		currencyNegativeSuffix: " ",
 		monthsAbbreviated:      []string{"", "јан", "фев", "мар", "апр", "май", "ијн", "ијл", "авг", "сен", "окт", "ној", "дек"},
 		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
 		monthsWide:             []string{"", "јанвар", "феврал", "март", "апрел", "май", "ијун", "ијул", "август", "сентјабр", "октјабр", "нојабр", "декабр"},
@@ -71,7 +71,7 @@ func New() locales.Translator {
 		erasAbbreviated:        []string{"е.ә.", "ј.е."},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"ерамыздан әввәл", "јени ера"},
-		timezones:              map[string]string{"WIT": "Şərqi İndoneziya Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "HEEG": "Şərqi Qrenlandiya Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "HEOG": "Qərbi Qrenlandiya Yay Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "ECT": "Ekvador Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "HNPM": "Müqəddəs Pyer və Mikelon Standart Vaxtı", "HNNOMX": "Şimal-Qərbi Meksika Standart Vaxtı", "ARST": "Argentina Yay Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "GYT": "Qayana Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "AKST": "Alyaska Standart Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "IST": "Hindistan Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "AST": "Atlantik Standart Vaxt", "WEZ": "Qərbi Avropa Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "HNEG": "Şərqi Qrenlandiya Standart Vaxtı", "ART": "Argentina Standart Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "HNCU": "Kuba Standart Vaxtı", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı", "VET": "Venesuela Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "JST": "Yaponiya Standart Vaxtı", "HNOG": "Qərbi Qrenlandiya Standart Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "SRT": "Surinam Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "HEPMX": "Meksika Sakit Okean Yay Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "CHAST": "Çatham Standart Vaxtı", "HNPMX": "Meksika Sakit Okean Standart Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "CLT": "Çili Standart Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "MYT": "Malayziya Vaxtı", "BOT": "Boliviya Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "ADT": "Atlantik Yay Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "HEPM": "Müqəddəs Pyer və Mikelon Yay Vaxtı", "CLST": "Çili Yay Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "SGT": "Sinqapur Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "LHST": "Lord Hau Standart Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "∅∅∅": "Amazon Yay Vaxtı", "ChST": "Çamorro Vaxtı", "HECU": "Kuba Yay Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "HENOMX": "Şimal-Qərbi Meksika Yay Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "BT": "Butan Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "CHADT": "Çatham Yay Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı"},
+		timezones:              map[string]string{"ACDT": "Mərkəzi Avstraliya Yay Vaxtı", "ACST": "Mərkəzi Avstraliya Standart Vaxtı", "ACWDT": "Mərkəzi Qərbi Avstraliya Yay Vaxtı", "ACWST": "Mərkəzi Qərbi Avstraliya Standart Vaxtı", "ADT": "Atlantik Yay Vaxtı", "AEDT": "Şərqi Avstraliya Yay Vaxtı", "AEST": "Şərqi Avstraliya Standart Vaxtı", "AKDT": "Alyaska Yay Vaxtı", "AKST": "Alyaska Standart Vaxtı", "ARST": "Argentina Yay Vaxtı", "ART": "Argentina Standart Vaxtı", "AST": "Atlantik Standart Vaxt", "AWDT": "Qərbi Avstraliya Yay Vaxtı", "AWST": "Qərbi Avstraliya Standart Vaxtı", "BOT": "Boliviya Vaxtı", "BT": "Butan Vaxtı", "CAT": "Mərkəzi Afrika Vaxtı", "CDT": "Şimali Mərkəzi Amerika Yay Vaxtı", "CHADT": "Çatham Yay Vaxtı", "CHAST": "Çatham Standart Vaxtı", "CLST": "Çili Yay Vaxtı", "CLT": "Çili Standart Vaxtı", "COST": "Kolumbiya Yay Vaxtı", "COT": "Kolumbiya Standart Vaxtı", "CST": "Şimali Mərkəzi Amerika Standart Vaxtı", "ChST": "Çamorro Vaxtı", "EAT": "Şərqi Afrika Vaxtı", "ECT": "Ekvador Vaxtı", "EDT": "Şimali Şərqi Amerika Yay Vaxtı", "EST": "Şimali Şərqi Amerika Standart Vaxtı", "GFT": "Fransız Qvianası Vaxtı", "GMT": "Qrinviç Orta Vaxtı", "GST": "Körfəz Vaxtı", "GYT": "Qayana Vaxtı", "HADT": "Havay-Aleut Yay Vaxtı", "HAST": "Havay-Aleut Standart Vaxtı", "HAT": "Nyufaundlend Yay Vaxtı", "HECU": "Kuba Yay Vaxtı", "HEEG": "Şərqi Qrenlandiya Yay Vaxtı", "HENOMX": "Şimal-Qərbi Meksika Yay Vaxtı", "HEOG": "Qərbi Qrenlandiya Yay Vaxtı", "HEPM": "Müqəddəs Pyer və Mikelon Yay Vaxtı", "HEPMX": "Meksika Sakit Okean Yay Vaxtı", "HKST": "Honq Konq Yay Vaxtı", "HKT": "Honq Konq Standart Vaxtı", "HNCU": "Kuba Standart Vaxtı", "HNEG": "Şərqi Qrenlandiya Standart Vaxtı", "HNNOMX": "Şimal-Qərbi Meksika Standart Vaxtı", "HNOG": "Qərbi Qrenlandiya Standart Vaxtı", "HNPM": "Müqəddəs Pyer və Mikelon Standart Vaxtı", "HNPMX": "Meksika Sakit Okean Standart Vaxtı", "HNT": "Nyufaundlend Standart Vaxtı", "IST": "Hindistan Vaxtı", "JDT": "Yaponiya Yay Vaxtı", "JST": "Yaponiya Standart Vaxtı", "LHDT": "Lord Hau Yay vaxtı", "LHST": "Lord Hau Standart Vaxtı", "MDT": "Şimali Dağlıq Amerika Yay Vaxtı", "MESZ": "Mərkəzi Avropa Yay Vaxtı", "MEZ": "Mərkəzi Avropa Standart Vaxtı", "MST": "Şimali Dağlıq Amerika Standart Vaxtı", "MYT": "Malayziya Vaxtı", "NZDT": "Yeni Zelandiya Yay Vaxtı", "NZST": "Yeni Zelandiya Standart Vaxtı", "OESZ": "Şərqi Avropa Yay Vaxtı", "OEZ": "Şərqi Avropa Standart Vaxtı", "PDT": "Şimali Amerika Sakit Okean Yay Vaxtı", "PST": "Şimali Amerika Sakit Okean Standart Vaxtı", "SAST": "Cənubi Afrika Vaxtı", "SGT": "Sinqapur Vaxtı", "SRT": "Surinam Vaxtı", "TMST": "Türkmənistan Yay Vaxtı", "TMT": "Türkmənistan Standart Vaxtı", "UYST": "Uruqvay Yay Vaxtı", "UYT": "Uruqvay Standart Vaxtı", "VET": "Venesuela Vaxtı", "WARST": "Qərbi Argentina Yay Vaxtı", "WART": "Qərbi Argentina Standart Vaxtı", "WAST": "Qərbi Afrika Yay Vaxtı", "WAT": "Qərbi Afrika Standart Vaxtı", "WESZ": "Qərbi Avropa Yay Vaxtı", "WEZ": "Qərbi Avropa Standart Vaxtı", "WIB": "Qərbi İndoneziya Vaxtı", "WIT": "Şərqi İndoneziya Vaxtı", "WITA": "Mərkəzi İndoneziya Vaxtı", "∅∅∅": "Azor Yay Vaxtı"},
 	}
 }
 
@@ -112,9 +112,9 @@ func (az *az_Cyrl) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 	i := int64(n)
-	iMod1000 := i % 1000
 	iMod10 := i % 10
 	iMod100 := i % 100
+	iMod1000 := i % 1000
 
 	if (iMod10 == 1 || iMod10 == 2 || iMod10 == 5 || iMod10 == 7 || iMod10 == 8) || (iMod100 == 20 || iMod100 == 50 || iMod100 == 70 || iMod100 == 80) {
 		return locales.PluralRuleOne
@@ -330,14 +330,6 @@ func (az *az_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) st
 		b = append(b, s[i])
 	}
 
-	for j := len(symbol) - 1; j >= 0; j-- {
-		b = append(b, symbol[j])
-	}
-
-	for j := len(az.currencyPositivePrefix) - 1; j >= 0; j-- {
-		b = append(b, az.currencyPositivePrefix[j])
-	}
-
 	if num < 0 {
 		b = append(b, az.minus[0])
 	}
@@ -357,6 +349,10 @@ func (az *az_Cyrl) FmtCurrency(num float64, v uint64, currency currency.Type) st
 			b = append(b, '0')
 		}
 	}
+
+	b = append(b, az.currencyPositiveSuffix...)
+
+	b = append(b, symbol...)
 
 	return string(b)
 }
@@ -394,25 +390,7 @@ func (az *az_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) 
 
 	if num < 0 {
 
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(az.currencyNegativePrefix) - 1; j >= 0; j-- {
-			b = append(b, az.currencyNegativePrefix[j])
-		}
-
 		b = append(b, az.minus[0])
-
-	} else {
-
-		for j := len(symbol) - 1; j >= 0; j-- {
-			b = append(b, symbol[j])
-		}
-
-		for j := len(az.currencyPositivePrefix) - 1; j >= 0; j-- {
-			b = append(b, az.currencyPositivePrefix[j])
-		}
 
 	}
 
@@ -430,6 +408,15 @@ func (az *az_Cyrl) FmtAccounting(num float64, v uint64, currency currency.Type) 
 		for i := 0; i < 2-int(v); i++ {
 			b = append(b, '0')
 		}
+	}
+
+	if num < 0 {
+		b = append(b, az.currencyNegativeSuffix...)
+		b = append(b, symbol...)
+	} else {
+
+		b = append(b, az.currencyPositiveSuffix...)
+		b = append(b, symbol...)
 	}
 
 	return string(b)

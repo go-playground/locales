@@ -48,25 +48,19 @@ func New() locales.Translator {
 		pluralsCardinal:        []locales.PluralRule{2, 6},
 		pluralsOrdinal:         nil,
 		pluralsRange:           nil,
-		decimal:                ".",
-		group:                  ",",
-		minus:                  "‎-",
-		percent:                "%",
-		perMille:               "‰",
 		timeSeparator:          ":",
-		inifinity:              "∞",
-		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		currencies:             []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "DJF", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
 		currencyPositivePrefix: " ",
 		currencyNegativePrefix: " ",
 		monthsNarrow:           []string{"", "ج", "ف", "م", "ا", "م", "ج", "ج", "ا", "س", "س", "ا", "ن"},
 		monthsWide:             []string{"", "جنؤری", "فرؤری", "مارٕچ", "اپریل", "میٔ", "جوٗن", "جوٗلایی", "اگست", "ستمبر", "اکتوٗبر", "نومبر", "دسمبر"},
-		daysAbbreviated:        []string{"آتھوار", "ژٔنٛدٕروار", "بوٚموار", "بودوار", "برٛٮ۪سوار", "جُمہ", "بٹوار"},
+		daysAbbreviated:        []string{"آتھوار", "ژٔندٕروار", "بۆموار", "بودوار", "برؠسوار", "جُمہ", "بٹوار"},
 		daysNarrow:             []string{"ا", "ژ", "ب", "ب", "ب", "ج", "ب"},
-		daysWide:               []string{"اَتھوار", "ژٔنٛدرٕروار", "بوٚموار", "بودوار", "برٛٮ۪سوار", "جُمہ", "بٹوار"},
+		daysWide:               []string{"اَتھوار", "ژٔندرٕروار", "بۆموار", "بودوار", "برؠسوار", "جُمہ", "بٹوار"},
 		erasAbbreviated:        []string{"بی سی", "اے ڈی"},
 		erasNarrow:             []string{"", ""},
 		erasWide:               []string{"قبٕل مسیٖح", "عیٖسوی سنہٕ"},
-		timezones:              map[string]string{"UYST": "یوٗرٮ۪گوَے سَمَر ٹایِم", "CHAST": "کٮ۪تھَم سٹینڑاڑ ٹایِم", "ECT": "اِکویڑَر ٹایِم", "EST": "مشرقی سٹینڑاڑ ٹایِم", "WART": "مغربی ارجٮ۪نٹیٖنا سٹینڑاڑ ٹایِم", "EAT": "مشرقی افریٖقا ٹایِم", "HAST": "حَواے اٮ۪لیوٗٹِیَن سٹینڑاڑ ٹایِم", "COT": "کولومبِیا سٹینڑاڑ ٹایِم", "AEST": "آسٹریلِیَن مشرقی سٹینڑاڑ ٹایِم", "MST": "ماونٹین سٹینڑاڑ ٹایِم", "HNOG": "مغرِبی گریٖن لینڑُک سٹینڑاڑ ٹایِم", "IST": "ہِنٛدوستان", "COST": "کولومبِیا سَمَر ٹایِم", "CHADT": "چٮ۪تھَم سَمَر ٹایِم", "PST": "پیسِفِک سٹینڑاڑ ٹایِم", "BT": "بوٗٹان ٹایِم", "LHST": "لعاڑ حووے سٹینڑاڑ ٹایِم", "ART": "ارجٮ۪نٹیٖنا سٹینڑاڑ ٹایِم", "GYT": "گُیَنا ٹایِم", "CDT": "مرکزی ڈےلایِٔٹ ٹایِم", "NZST": "نِوزِلینڑ سٹینڑاڑ ٹایِم", "NZDT": "نِوزِلینڑ ڑےلایٔٹ ٹایِم", "MYT": "مَلیشِیا ٹایِم", "GFT": "فرٛٮ۪نٛچ گیوٗٮ۪نا ٹایِم", "JST": "جاپٲنۍ سٹینڑاڑ ٹایِم", "∅∅∅": "اٮ۪مَزَن سَمَر ٹایِم", "ChST": "کٮ۪مورو سٹینڑاڑ ٹایِم", "MESZ": "مرکزی یوٗرپی سَمَر ٹایِم", "HAT": "نیوٗ فاونڑ لینڑ ڑےلایِٔٹ ٹایِم", "ACWDT": "آسٹریلِیَن مرکزی مغربی ڈےلایِٔٹ ٹایِم", "HEOG": "مغرِبی گریٖن لینڑُک سَمَر ٹایِم", "SRT": "سُرِنام ٹایِم", "HECU": "کیوٗبا ڈےلایِٔٹ ٹایِم", "SGT": "سِنٛگاپوٗر ٹایِم", "JDT": "جاپٲنۍ ڑےلایِٔٹ ٹایِم", "EDT": "مشرقی ڈےلایِٔٹ ٹایِم", "HKST": "حانٛگ کانٛگ سَمَر ٹایِم", "PDT": "پیسِفِک ڈےلایِٔٹ ٹایِم", "MDT": "ماونٹین ڈےلایِٔٹ ٹایِم", "AEDT": "آسٹریلِیَن مشرقی ڈےلایِٔٹ ٹایِم", "TMT": "تُرکمٮ۪نِستان سٹینڑاڑ ٹایِم", "AKST": "اٮ۪لاسکا سٹینڑاڑ ٹایِم", "WITA": "مرکزی اِنڑونیشِیا ٹایِم", "HNNOMX": "HNNOMX", "CLT": "چِلی سٹینڑاڑ ٹایِم", "HEPMX": "HEPMX", "WEZ": "مغرِبی یوٗرپی سٹینڑاڑ ٹایِم", "AWDT": "آسٹریلِیَن مغرِبیٖ ڈےلایٔٹ ٹایِم", "SAST": "جنوٗبی افریقا ٹایِم", "VET": "وٮ۪نٮ۪زیوٗلا ٹایِم", "WIT": "مشرِقی اِنڑونیشِیا ٹایِم", "ARST": "ارجٮ۪نٹیٖنا سَمَر ٹایِم", "AWST": "آسٹریلِیَن مغرِبی سٹینڑاڑ ٹایِم", "HNPMX": "HNPMX", "WAST": "مغربی افریٖقا سَمَر ٹایِم", "ACST": "آسٹریلِیَن مرکزی سٹینڑاڑ ٹایِم", "HNT": "نیوٗ فاونڑلینڑ سٹینڑاڑ ٹایِم", "HENOMX": "HENOMX", "CAT": "مرکزی افریٖقا ٹایِم", "OESZ": "مشرقی یوٗرپی سَمَر ٹایِم", "GMT": "گرٛیٖن وِچ میٖن ٹایِم", "BOT": "بولِوِیا ٹایِم", "CST": "مرکزی سٹینڑاڑ ٹایِم", "AST": "اٮ۪ٹلانٹِک سٹینڑاڑ ٹایِم", "WIB": "مغرِبی اِنڑونیشِیا ٹایِم", "AKDT": "اٮ۪لاسکا ڈےلایِٔٹ ٹایِم", "MEZ": "مرکزی یوٗرپی سٹینڑاڑ ٹایِم", "HNPM": "سینٛٹ پَیری مِقیوٗلَن سٹینڑاڑ ٹایِم", "OEZ": "مشرقی یوٗرپی سٹینڑاڑ ٹایِم", "WESZ": "مغرِبی یوٗرِپی سَمَر ٹایِم", "ACDT": "آسٹریلِیَن مرکزی ڈےلایِٔٹ ٹایِم", "HNEG": "مشرِقی گریٖن لینڑُک سٹینڑاڑ ٹایِم", "LHDT": "لعاڑ ڑےلایٔٹ ٹایِم", "CLST": "چِلی سَمَر ٹایِم", "UYT": "یوٗرٮ۪گوَے سٹینڑاڑ ٹایِم", "ADT": "اٮ۪ٹلانٹِک ڈےلایِٔٹ ٹایِم", "TMST": "تُرکمٮ۪نِستان سَمَر ٹایِم", "HNCU": "کیوٗبا سٹینڑاڑ ٹایِم", "WARST": "مغربی ارجٮ۪نٹیٖنا سَمَر ٹایِم", "HKT": "حانگ کانٛگ سٹینڑاڑ ٹایِم", "HADT": "حَواے اٮ۪لیوٗٹِیَن سَمَر ٹایِم", "WAT": "مغربی افریٖقا سٹینڑاڑ ٹایِم", "HEPM": "سینٛٹ پَیری مِقیوٗلَن ڑےلایِٔٹ ٹایِم", "ACWST": "آسٹریلِیَن مرکزی مغربی سٹینڑاڑ ٹایِم", "HEEG": "مشرِقی گریٖن لینڑُک سَمَر ٹایِم"},
+		timezones:              map[string]string{"ACDT": "آسٹریلِیَن مرکزی ڈےلایِٔٹ ٹایِم", "ACST": "آسٹریلِیَن مرکزی سٹینڑاڑ ٹایِم", "ACWDT": "آسٹریلِیَن مرکزی مغربی ڈےلایِٔٹ ٹایِم", "ACWST": "آسٹریلِیَن مرکزی مغربی سٹینڑاڑ ٹایِم", "ADT": "اؠٹلانٹِک ڈےلایِٔٹ ٹایِم", "AEDT": "آسٹریلِیَن مشرقی ڈےلایِٔٹ ٹایِم", "AEST": "آسٹریلِیَن مشرقی سٹینڑاڑ ٹایِم", "AKDT": "اؠلاسکا ڈےلایِٔٹ ٹایِم", "AKST": "اؠلاسکا سٹینڑاڑ ٹایِم", "ARST": "ارجؠنٹیٖنا سَمَر ٹایِم", "ART": "ارجؠنٹیٖنا سٹینڑاڑ ٹایِم", "AST": "اؠٹلانٹِک سٹینڑاڑ ٹایِم", "AWDT": "آسٹریلِیَن مغرِبیٖ ڈےلایٔٹ ٹایِم", "AWST": "آسٹریلِیَن مغرِبی سٹینڑاڑ ٹایِم", "BOT": "بولِوِیا ٹایِم", "BT": "بوٗٹان ٹایِم", "CAT": "مرکزی افریٖقا ٹایِم", "CDT": "مرکزی ڈےلایِٔٹ ٹایِم", "CHADT": "چؠتھَم سَمَر ٹایِم", "CHAST": "کؠتھَم سٹینڑاڑ ٹایِم", "CLST": "چِلی سَمَر ٹایِم", "CLT": "چِلی سٹینڑاڑ ٹایِم", "COST": "کولومبِیا سَمَر ٹایِم", "COT": "کولومبِیا سٹینڑاڑ ٹایِم", "CST": "مرکزی سٹینڑاڑ ٹایِم", "ChST": "کؠمورو سٹینڑاڑ ٹایِم", "EAT": "مشرقی افریٖقا ٹایِم", "ECT": "اِکویڑَر ٹایِم", "EDT": "مشرقی ڈےلایِٔٹ ٹایِم", "EST": "مشرقی سٹینڑاڑ ٹایِم", "GFT": "فرؠنچ گیوٗؠنا ٹایِم", "GMT": "گریٖن وِچ میٖن ٹایِم", "GST": "گَلف سٹینڑاڑ ٹایِم", "GYT": "گُیَنا ٹایِم", "HADT": "حَواے اؠلیوٗٹِیَن سَمَر ٹایِم", "HAST": "حَواے اؠلیوٗٹِیَن سٹینڑاڑ ٹایِم", "HAT": "نیوٗ فاونڑ لینڑ ڑےلایِٔٹ ٹایِم", "HECU": "کیوٗبا ڈےلایِٔٹ ٹایِم", "HEEG": "مشرِقی گریٖن لینڑُک سَمَر ٹایِم", "HENOMX": "HENOMX", "HEOG": "مغرِبی گریٖن لینڑُک سَمَر ٹایِم", "HEPM": "سینٹ پَیری مِقیوٗلَن ڑےلایِٔٹ ٹایِم", "HEPMX": "HEPMX", "HKST": "حانگ کانگ سَمَر ٹایِم", "HKT": "حانگ کانگ سٹینڑاڑ ٹایِم", "HNCU": "کیوٗبا سٹینڑاڑ ٹایِم", "HNEG": "مشرِقی گریٖن لینڑُک سٹینڑاڑ ٹایِم", "HNNOMX": "HNNOMX", "HNOG": "مغرِبی گریٖن لینڑُک سٹینڑاڑ ٹایِم", "HNPM": "سینٹ پَیری مِقیوٗلَن سٹینڑاڑ ٹایِم", "HNPMX": "HNPMX", "HNT": "نیوٗ فاونڑلینڑ سٹینڑاڑ ٹایِم", "IST": "ہِندوستان", "JDT": "جاپٲنۍ ڑےلایِٔٹ ٹایِم", "JST": "جاپٲنۍ سٹینڑاڑ ٹایِم", "LHDT": "لعاڑ ڑےلایٔٹ ٹایِم", "LHST": "لعاڑ حووے سٹینڑاڑ ٹایِم", "MDT": "مَکَعوٗ سَمَر ٹایِم", "MESZ": "مرکزی یوٗرپی سَمَر ٹایِم", "MEZ": "مرکزی یوٗرپی سٹینڑاڑ ٹایِم", "MST": "مَکَعوٗ سٹینڑاڑ ٹایِم", "MYT": "مَلیشِیا ٹایِم", "NZDT": "نِوزِلینڑ ڑےلایٔٹ ٹایِم", "NZST": "نِوزِلینڑ سٹینڑاڑ ٹایِم", "OESZ": "مشرقی یوٗرپی سَمَر ٹایِم", "OEZ": "مشرقی یوٗرپی سٹینڑاڑ ٹایِم", "PDT": "پیسِفِک ڈےلایِٔٹ ٹایِم", "PST": "پیسِفِک سٹینڑاڑ ٹایِم", "SAST": "جنوٗبی افریقا ٹایِم", "SGT": "سِنگاپوٗر ٹایِم", "SRT": "سُرِنام ٹایِم", "TMST": "تُرکمؠنِستان سَمَر ٹایِم", "TMT": "تُرکمؠنِستان سٹینڑاڑ ٹایِم", "UYST": "یوٗرؠگوَے سَمَر ٹایِم", "UYT": "یوٗرؠگوَے سٹینڑاڑ ٹایِم", "VET": "وؠنؠزیوٗلا ٹایِم", "WARST": "مغربی ارجؠنٹیٖنا سَمَر ٹایِم", "WART": "مغربی ارجؠنٹیٖنا سٹینڑاڑ ٹایِم", "WAST": "مغربی افریٖقا سَمَر ٹایِم", "WAT": "مغربی افریٖقا سٹینڑاڑ ٹایِم", "WESZ": "مغرِبی یوٗرِپی سَمَر ٹایِم", "WEZ": "مغرِبی یوٗرپی سٹینڑاڑ ٹایِم", "WIB": "مغرِبی اِنڑونیشِیا ٹایِم", "WIT": "مشرِقی اِنڑونیشِیا ٹایِم", "WITA": "مرکزی اِنڑونیشِیا ٹایِم", "∅∅∅": "پٔروٗ سَمَر ٹایِم"},
 	}
 }
 
@@ -201,7 +195,7 @@ func (ks *ks) Minus() string {
 func (ks *ks) FmtNumber(num float64, v uint64) string {
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 5 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + 0
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -236,9 +230,7 @@ func (ks *ks) FmtNumber(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		for j := len(ks.minus) - 1; j >= 0; j-- {
-			b = append(b, ks.minus[j])
-		}
+		b = append(b, ks.minus[0])
 	}
 
 	// reverse
@@ -253,7 +245,7 @@ func (ks *ks) FmtNumber(num float64, v uint64) string {
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (ks *ks) FmtPercent(num float64, v uint64) string {
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
-	l := len(s) + 6
+	l := len(s) + 0
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -267,9 +259,7 @@ func (ks *ks) FmtPercent(num float64, v uint64) string {
 	}
 
 	if num < 0 {
-		for j := len(ks.minus) - 1; j >= 0; j-- {
-			b = append(b, ks.minus[j])
-		}
+		b = append(b, ks.minus[0])
 	}
 
 	// reverse
@@ -287,7 +277,7 @@ func (ks *ks) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ks.currencies[currency]
-	l := len(s) + len(symbol) + 7 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -330,9 +320,7 @@ func (ks *ks) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 	}
 
 	if num < 0 {
-		for j := len(ks.minus) - 1; j >= 0; j-- {
-			b = append(b, ks.minus[j])
-		}
+		b = append(b, ks.minus[0])
 	}
 
 	// reverse
@@ -360,7 +348,7 @@ func (ks *ks) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := ks.currencies[currency]
-	l := len(s) + len(symbol) + 7 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2
 	count := 0
 	inWhole := v == 0
 	inSecondary := false
@@ -404,9 +392,7 @@ func (ks *ks) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 			b = append(b, ks.currencyNegativePrefix[j])
 		}
 
-		for j := len(ks.minus) - 1; j >= 0; j-- {
-			b = append(b, ks.minus[j])
-		}
+		b = append(b, ks.minus[0])
 
 	} else {
 
