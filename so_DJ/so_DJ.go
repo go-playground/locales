@@ -48,9 +48,13 @@ func New() locales.Translator {
 		pluralsRange:       nil,
 		decimal:            ".",
 		group:              ",",
+		minus:              "-",
+		percent:            "%",
+		perMille:           "‰",
 		timeSeparator:      ":",
-		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "Fdj", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UZS", "VEB", "VEF", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
-		monthsAbbreviated:  []string{"", "Kob", "Lab", "Sad", "Afr", "Sha", "Lix", "Tod", "Sid", "Sag", "Tob", "KIT", "LIT"},
+		inifinity:          "∞",
+		currencies:         []string{"ADP", "AED", "AFA", "AFN", "ALK", "ALL", "AMD", "ANG", "AOA", "AOK", "AON", "AOR", "ARA", "ARL", "ARM", "ARP", "ARS", "ATS", "AUD", "AWG", "AZM", "AZN", "BAD", "BAM", "BAN", "BBD", "BDT", "BEC", "BEF", "BEL", "BGL", "BGM", "BGN", "BGO", "BHD", "BIF", "BMD", "BND", "BOB", "BOL", "BOP", "BOV", "BRB", "BRC", "BRE", "BRL", "BRN", "BRR", "BRZ", "BSD", "BTN", "BUK", "BWP", "BYB", "BYN", "BYR", "BZD", "CAD", "CDF", "CHE", "CHF", "CHW", "CLE", "CLF", "CLP", "CNH", "CNX", "CNY", "COP", "COU", "CRC", "CSD", "CSK", "CUC", "CUP", "CVE", "CYP", "CZK", "DDM", "DEM", "Fdj", "DKK", "DOP", "DZD", "ECS", "ECV", "EEK", "EGP", "ERN", "ESA", "ESB", "ESP", "ETB", "EUR", "FIM", "FJD", "FKP", "FRF", "GBP", "GEK", "GEL", "GHC", "GHS", "GIP", "GMD", "GNF", "GNS", "GQE", "GRD", "GTQ", "GWE", "GWP", "GYD", "HKD", "HNL", "HRD", "HRK", "HTG", "HUF", "IDR", "IEP", "ILP", "ILR", "ILS", "INR", "IQD", "IRR", "ISJ", "ISK", "ITL", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRH", "KRO", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LTT", "LUC", "LUF", "LUL", "LVL", "LVR", "LYD", "MAD", "MAF", "MCF", "MDC", "MDL", "MGA", "MGF", "MKD", "MKN", "MLF", "MMK", "MNT", "MOP", "MRO", "MRU", "MTL", "MTP", "MUR", "MVP", "MVR", "MWK", "MXN", "MXP", "MXV", "MYR", "MZE", "MZM", "MZN", "NAD", "NGN", "NIC", "NIO", "NLG", "NOK", "NPR", "NZD", "OMR", "PAB", "PEI", "PEN", "PES", "PGK", "PHP", "PKR", "PLN", "PLZ", "PTE", "PYG", "QAR", "RHD", "ROL", "RON", "RSD", "RUB", "RUR", "RWF", "SAR", "SBD", "SCR", "SDD", "SDG", "SDP", "SEK", "SGD", "SHP", "SIT", "SKK", "SLL", "SOS", "SRD", "SRG", "SSP", "STD", "STN", "SUR", "SVC", "SYP", "SZL", "THB", "TJR", "TJS", "TMM", "TMT", "TND", "TOP", "TPE", "TRL", "TRY", "TTD", "TWD", "TZS", "UAH", "UAK", "UGS", "UGX", "USD", "USN", "USS", "UYI", "UYP", "UYU", "UYW", "UZS", "VEB", "VEF", "VES", "VND", "VNN", "VUV", "WST", "XAF", "XAG", "XAU", "XBA", "XBB", "XBC", "XBD", "XCD", "XDR", "XEU", "XFO", "XFU", "XOF", "XPD", "XPF", "XPT", "XRE", "XSU", "XTS", "XUA", "XXX", "YDD", "YER", "YUD", "YUM", "YUN", "YUR", "ZAL", "ZAR", "ZMK", "ZMW", "ZRN", "ZRZ", "ZWD", "ZWL", "ZWR"},
+		monthsAbbreviated:  []string{"", "Kob", "Lab", "Sad", "Afr", "May", "Juun", "Luuliyo", "Og", "Sebtembar", "Oktoobar", "Nofembar", "Dec"},
 		monthsNarrow:       []string{"", "K", "L", "S", "A", "S", "L", "T", "S", "S", "T", "K", "L"},
 		monthsWide:         []string{"", "Bisha Koobaad", "Bisha Labaad", "Bisha Saddexaad", "Bisha Afraad", "Bisha Shanaad", "Bisha Lixaad", "Bisha Todobaad", "Bisha Sideedaad", "Bisha Sagaalaad", "Bisha Tobnaad", "Bisha Kow iyo Tobnaad", "Bisha Laba iyo Tobnaad"},
 		daysAbbreviated:    []string{"Axd", "Isn", "Tal", "Arb", "Kha", "Jim", "Sab"},
@@ -63,7 +67,7 @@ func New() locales.Translator {
 		erasAbbreviated:    []string{"CK", "CD"},
 		erasNarrow:         []string{"", ""},
 		erasWide:           []string{"CK", "CD"},
-		timezones:          map[string]string{"∅∅∅": "∅∅∅", "AEDT": "AEDT", "HADT": "HADT", "CHAST": "CHAST", "WESZ": "WESZ", "GFT": "GFT", "EAT": "EAT", "MEZ": "MEZ", "HEPMX": "HEPMX", "CLT": "CLT", "ART": "ART", "COST": "Waqtiyada Xagaaga Kolambiya", "ChST": "ChST", "NZDT": "NZDT", "ACDT": "ACDT", "CAT": "CAT", "AWDT": "AWDT", "WITA": "WITA", "CHADT": "CHADT", "OESZ": "OESZ", "WARST": "WARST", "HNPM": "HNPM", "CLST": "CLST", "ADT": "ADT", "AEST": "AEST", "BOT": "BOT", "JST": "JST", "HNEG": "HNEG", "HEEG": "HEEG", "HAT": "HAT", "UYST": "UYST", "HNNOMX": "HNNOMX", "CDT": "CDT", "PST": "PST", "SGT": "SGT", "EST": "EST", "HAST": "HAST", "AWST": "AWST", "MST": "MST", "WAT": "WAT", "WAST": "WAST", "AKST": "AKST", "EDT": "EDT", "WART": "WART", "ARST": "ARST", "HEPM": "HEPM", "HNCU": "HNCU", "PDT": "PDT", "AST": "AST", "ACWST": "ACWST", "HKT": "HKT", "VET": "VET", "TMT": "TMT", "CST": "CST", "AKDT": "AKDT", "MESZ": "MESZ", "HENOMX": "HENOMX", "UYT": "UYT", "HECU": "HECU", "ACST": "ACST", "HNT": "HNT", "WIT": "WIT", "COT": "Waqtiyada Caadiga ah ee kolambiya", "HEOG": "HEOG", "LHDT": "LHDT", "SRT": "SRT", "TMST": "TMST", "GMT": "GMT", "HNPMX": "HNPMX", "SAST": "SAST", "WEZ": "WEZ", "WIB": "WIB", "JDT": "JDT", "HKST": "HKST", "OEZ": "OEZ", "NZST": "NZST", "HNOG": "HNOG", "MDT": "MDT", "BT": "BT", "MYT": "MYT", "ECT": "ECT", "ACWDT": "ACWDT", "IST": "IST", "LHST": "LHST", "GYT": "GYT"},
+		timezones:          map[string]string{"ACDT": "Waqtiyada Dharaarta ee Bartamaha Astaraaliya", "ACST": "Waqtiyada Caadiga ah ee Bartamaha Astaraaliya", "ACWDT": "Waqtiyada Dharaarta Bartamaha Galbeedka Australiya", "ACWST": "Waqtiyada Caadiga ah ee Bartamaha Galbeedka Astaraaliya", "ADT": "Waqtiga Dharaarta ee Atlantik", "AEDT": "Waqtiyada Dharaarta ee Bariga Australiya", "AEST": "Waqtiyada Caadiga ah ee Bariga Australiya", "AKDT": "Waqtiga Dharaarta ee Alaska", "AKST": "Waqtiga Caadiga ah ee Alaska", "ARST": "Waqtiga Xagaaga ee Arjentiina", "ART": "Waqtiga istaandarka ee Arjentiina", "AST": "Waqtiga Istaandarka ee Atlantik", "AWDT": "Waqtiyada Dharaarta ee Galbeedka Australiya", "AWST": "Waqtiyada Caadiga ah ee Galbeedka Australiya", "BOT": "Waqtiga Boliifiya", "BT": "Waqtiga Futan", "CAT": "Waqtiga Bartamaha Afrika", "CDT": "Waqtiga Dharaarta ee Bartamaha", "CHADT": "Waqtiyada Dharaarta ee Jaatam", "CHAST": "Waqtiyada Caadiga ah ee Jaatam", "CLST": "Waqtiga Xagaaga ee Jili", "CLT": "Waqtiyada Caadiga ah ee Jili", "COST": "Waqtiyada Xagaaga Kolambiya", "COT": "Waqtiyada Caadiga ah ee kolambiya", "CST": "Waqtiga Caadiga ah ee Bartamaha", "ChST": "Waqtiyada Caadiga ah ee Jamoro", "EAT": "Waqtiga Bariga Afrika", "ECT": "Waqtiga Ekuwador", "EDT": "Waqtiga Dharaarta ee Bariga", "EST": "Waqtiga Caadiga ah ee Bariga", "GFT": "Waqtiga French Guiana", "GMT": "Waqtiga Celceliska Giriinwij", "GYT": "Waqtiga Guyaana", "HADT": "Waqtiga Dharaarta ee Hawaii=Alutin", "HAST": "Waqtiga Istaandarka Hawaii-Alutin", "HAT": "Waqtiga Dharaarta ee Newfoundland", "HECU": "Waqtiga Dharaarta ee Kuuba", "HEEG": "Waqtiga Istaandarda ee Dhulka cagaaran", "HENOMX": "Waqtiga Dharaarta ee Waqooyigalbeed Meksiko", "HEOG": "Waqtiga Xagaaga ee Dhulka cagaaran", "HEPM": "Waqtiga Dharaarta ee St. Pierre & Miquelon", "HEPMX": "Waqtiga Dharaarta ee Baasifikada Meksiko", "HKST": "Waqtiyada Xagaaga ee Hong Kong", "HKT": "Waqtiyada Caadiga ah ee Hong Kong", "HNCU": "Waqtiga Istaandarka ee Kuuba", "HNEG": "Waqtiga Istaandarka ee Bariga Dhulka cagaaran", "HNNOMX": "waqtiga Istandardka ee waqooyi galbeet meksiko", "HNOG": "Waqtiga Istaandarka ee Galbeedka Dhulka cagaaran", "HNPM": "Waqtiga Istaandarka ee St. Pierre & Miquelon", "HNPMX": "waqtiga standardka Baasifikada Meksiko", "HNT": "Waqtiga Istaandarka ee Newfoundland", "IST": "Waqtiyada Caadiga ah ee Hindiya", "JDT": "Waqtiyada Dharaarta ee Jabaan", "JST": "Waqtiyada Caadiga ah ee Jabaan", "LHDT": "Waqtiyada Dharaarta ee Lord Howe", "LHST": "Waqtiyada Caadiga ah ee Lord Howe", "MDT": "Waqtiga Dharaarta ee Buurleyda", "MESZ": "Waqtiyada Xagaaga ee Bartamaha Yurub", "MEZ": "Waqtiyada Caadiga ah ee Bartamaha Yurub", "MST": "Waqtiga Caadiga ah ee Buuraleyda", "MYT": "Waqtiga Maleyshiya", "NZDT": "Waqtiyada Dharaarta ee Niyuu Si’aland", "NZST": "Waqtiyada Caadiga ah ee Niyuu si’lan", "OESZ": "Waqtiyada Xagaaga ee Bariga Yurub", "OEZ": "Waqtiyada Caadiga ah ee Bariga Yurub", "PDT": "Waqtiga Dharaarta ee Basifika", "PST": "Waqtiga Caadiga ah ee Basifika", "SAST": "Waqtiyada Caadiga ah ee Koonfur Afrika", "SGT": "Waqtiyada Caadiga ah ee Singabuur", "SRT": "Waqtiga Surineym", "TMST": "Waqtiayda Xagaaga ee Turkmenistan", "TMT": "Waqtiyada Caadiga ah ee Turkeminstan", "UYST": "Waqtiyada Xagaaga ee Urugway", "UYT": "Waqtiyada Caadiga ah ee Urugway", "VET": "Waqtiga Fenezuela", "WARST": "Waqtiyada Xagaaga ee Galbeedka Arjentiina", "WART": "Waqtiyada Caadiga ah ee Arjentiina", "WAST": "Waqtiyada Xagaaga ee Galbeedka Afrika", "WAT": "Waqtiyada Caadiga ah ee Galbeedka Afrika", "WESZ": "Waqtiyada Xagaaga ee Galbeedka Yurub", "WEZ": "Waqtiyada Caadiga ah ee Galbeedka Yurub", "WIB": "Waqtiga Galbeedka Indoneysiya", "WIT": "Waqtiga Indoneysiya", "WITA": "Waqtiga Bartamaha Indoneysiya", "∅∅∅": "Waqtiyada Xagaaga ee Baraasiliya"},
 	}
 }
 
@@ -197,13 +201,73 @@ func (so *so_DJ) Minus() string {
 // FmtNumber returns 'num' with digits/precision of 'v' for 'so_DJ' and handles both Whole and Real numbers based on 'v'
 func (so *so_DJ) FmtNumber(num float64, v uint64) string {
 
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
+	count := 0
+	inWhole := v == 0
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, so.decimal[0])
+			inWhole = true
+			continue
+		}
+
+		if inWhole {
+			if count == 3 {
+				b = append(b, so.group[0])
+				count = 1
+			} else {
+				count++
+			}
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, so.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	return string(b)
 }
 
 // FmtPercent returns 'num' with digits/precision of 'v' for 'so_DJ' and handles both Whole and Real numbers based on 'v'
 // NOTE: 'num' passed into FmtPercent is assumed to be in percent already
 func (so *so_DJ) FmtPercent(num float64, v uint64) string {
-	return strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
+	l := len(s) + 3
+	b := make([]byte, 0, l)
+
+	for i := len(s) - 1; i >= 0; i-- {
+
+		if s[i] == '.' {
+			b = append(b, so.decimal[0])
+			continue
+		}
+
+		b = append(b, s[i])
+	}
+
+	if num < 0 {
+		b = append(b, so.minus[0])
+	}
+
+	// reverse
+	for i, j := 0, len(b)-1; i < j; i, j = i+1, j-1 {
+		b[i], b[j] = b[j], b[i]
+	}
+
+	b = append(b, so.percent...)
+
+	return string(b)
 }
 
 // FmtCurrency returns the currency representation of 'num' with digits/precision of 'v' for 'so_DJ'
@@ -211,7 +275,7 @@ func (so *so_DJ) FmtCurrency(num float64, v uint64, currency currency.Type) stri
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := so.currencies[currency]
-	l := len(s) + len(symbol) + 1 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)
@@ -269,7 +333,7 @@ func (so *so_DJ) FmtAccounting(num float64, v uint64, currency currency.Type) st
 
 	s := strconv.FormatFloat(math.Abs(num), 'f', int(v), 64)
 	symbol := so.currencies[currency]
-	l := len(s) + len(symbol) + 1 + 1*len(s[:len(s)-int(v)-1])/3
+	l := len(s) + len(symbol) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
 	b := make([]byte, 0, l)

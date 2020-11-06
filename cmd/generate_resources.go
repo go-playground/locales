@@ -1341,7 +1341,7 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 				results += "b = append(b, " + fmt.Sprintf("%#v", []byte(format[start:i])) + "...)\n"
 			}
 
-			results += "b = append(b, " + baseLocale + ".timeSeparator...)"
+			results += "b = append(b, " + baseLocale + ".timeSeparator...)\n"
 		case '\'':
 
 			i++
@@ -1622,7 +1622,7 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 				if t.Month() < 10 {
 					b = append(b, '0')
 				}
-					
+
 				b = strconv.AppendInt(b, int64(t.Month()), 10)
 
 				`
