@@ -227,6 +227,9 @@ func (ne *ne) FmtNumber(num float64, v uint64) string {
 	l := len(s) + 2 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
+	inSecondary := false
+	groupThreshold := 3
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -238,9 +241,15 @@ func (ne *ne) FmtNumber(num float64, v uint64) string {
 		}
 
 		if inWhole {
-			if count == 3 {
+
+			if count == groupThreshold {
 				b = append(b, ne.group[0])
 				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = 2
+				}
 			} else {
 				count++
 			}
@@ -300,6 +309,9 @@ func (ne *ne) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
+	inSecondary := false
+	groupThreshold := 3
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -311,9 +323,15 @@ func (ne *ne) FmtCurrency(num float64, v uint64, currency currency.Type) string 
 		}
 
 		if inWhole {
-			if count == 3 {
+
+			if count == groupThreshold {
 				b = append(b, ne.group[0])
 				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = 2
+				}
 			} else {
 				count++
 			}
@@ -362,6 +380,9 @@ func (ne *ne) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 	l := len(s) + len(symbol) + 4 + 1*len(s[:len(s)-int(v)-1])/3
 	count := 0
 	inWhole := v == 0
+	inSecondary := false
+	groupThreshold := 3
+
 	b := make([]byte, 0, l)
 
 	for i := len(s) - 1; i >= 0; i-- {
@@ -373,9 +394,15 @@ func (ne *ne) FmtAccounting(num float64, v uint64, currency currency.Type) strin
 		}
 
 		if inWhole {
-			if count == 3 {
+
+			if count == groupThreshold {
 				b = append(b, ne.group[0])
 				count = 1
+
+				if !inSecondary {
+					inSecondary = true
+					groupThreshold = 2
+				}
 			} else {
 				count++
 			}

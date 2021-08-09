@@ -58,7 +58,7 @@ func New() locales.Translator {
 		currencyPositiveSuffix: "K",
 		currencyNegativePrefix: " ",
 		currencyNegativeSuffix: "K",
-		monthsWide:             []string{"", "pamba", "wanja", "mbiyɔ mɛndoŋgɔ", "Nyɔlɔmbɔŋgɔ", "Mɔnɔ ŋgbanja", "Nyaŋgwɛ ŋgbanja", "kuŋgwɛ", "fɛ", "njapi", "nyukul", "11", "ɓulɓusɛ"},
+		monthsWide:             []string{"", "pamba", "wanja", "mbiyɔ mɛndoŋgɔ", "Nyɔlɔmbɔŋgɔ", "Mɔnɔ ŋgbanja", "Nyaŋgwɛ ŋgbanja", "kuŋgwɛ", "fɛ", "njapi", "nyukul", "M11", "ɓulɓusɛ"},
 		daysAbbreviated:        []string{"sɔndi", "lundi", "mardi", "mɛrkɛrɛdi", "yedi", "vaŋdɛrɛdi", "mɔnɔ sɔndi"},
 		daysNarrow:             []string{"so", "lu", "ma", "mɛ", "ye", "va", "ms"},
 		daysShort:              []string{"sɔndi", "lundi", "mardi", "mɛrkɛrɛdi", "yedi", "vaŋdɛrɛdi", "mɔnɔ sɔndi"},
