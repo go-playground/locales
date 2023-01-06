@@ -60,7 +60,7 @@ func New() locales.Translator {
 		currencyNegativeSuffix: ")",
 		monthsAbbreviated:      []string{"", "ꖨꖕꔞ", "ꕒꕡ", "ꕾꖺ", "ꖢꖕ", "ꖑꕱ", "ꖱꘋ", "ꖱꕞ", "ꗛꔕ", "ꕢꕌ", "ꕭꖃ", "ꔞꘋ", "ꖨꖕꗏ"},
 		monthsNarrow:           []string{"", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"},
-		monthsWide:             []string{"", "luukao kemã", "ɓandaɓu", "vɔɔ", "fulu", "goo", "6", "7", "kɔnde", "saah", "galo", "kenpkato ɓololɔ", "luukao lɔma"},
+		monthsWide:             []string{"", "M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12"},
 		daysNarrow:             []string{"S", "M", "T", "W", "T", "F", "S"},
 		daysWide:               []string{"lahadi", "tɛɛnɛɛ", "talata", "alaba", "aimisa", "aijima", "siɓiti"},
 		periodsAbbreviated:     []string{"AM", "PM"},
