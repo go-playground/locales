@@ -687,6 +687,10 @@ func TestFmtTimeFull(t *testing.T) {
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, fixed),
 			expected: "8:05:01 pm OTHER",
 		},
+		{
+			t:        time.Date(2016, 02, 03, 0, 0, 1, 0, loc),
+			expected: "12:00:01 am Eastern Standard Time",
+		},
 	}
 
 	trans := New()
@@ -718,6 +722,10 @@ func TestFmtTimeLong(t *testing.T) {
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, loc),
 			expected: "8:05:01 pm EST",
 		},
+		{
+			t:        time.Date(2016, 02, 03, 0, 0, 1, 0, loc),
+			expected: "12:00:01 am EST",
+		},
 	}
 
 	trans := New()
@@ -744,6 +752,10 @@ func TestFmtTimeMedium(t *testing.T) {
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
 			expected: "8:05:01 pm",
 		},
+		{
+			t:        time.Date(2016, 02, 03, 0, 0, 1, 0, time.UTC),
+			expected: "12:00:01 am",
+		},
 	}
 
 	trans := New()
@@ -769,6 +781,10 @@ func TestFmtTimeShort(t *testing.T) {
 		{
 			t:        time.Date(2016, 02, 03, 20, 5, 1, 0, time.UTC),
 			expected: "8:05 pm",
+		},
+		{
+			t:        time.Date(2016, 02, 03, 0, 0, 1, 0, time.UTC),
+			expected: "12:00 am",
 		},
 	}
 
