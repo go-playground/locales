@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-playground/locales"
-	"github.com/go-playground/locales/currency"
+	"github.com/EverlongProject/locales"
+	"github.com/EverlongProject/locales/currency"
 )
 
 type fil struct {
@@ -503,6 +503,34 @@ func (fil *fil) FmtDateFull(t time.Time) string {
 	return string(b)
 }
 
+// FmtDateMedium returns the medium date month and day representation of 't' for 'fil'
+func (fil *fil) FmtMonthDayMedium(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	b = append(b, fil.monthsAbbreviated[t.Month()]...)
+	b = append(b, []byte{0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+
+	return string(b)
+}
+
+// FmtDateMedium returns the medium date month and day representation of 't' for 'fil'
+func (fil *fil) FmtMonthYearMedium(t time.Time) string {
+	b := make([]byte, 0, 32)
+
+	b = append(b, fil.monthsAbbreviated[t.Month()]...)
+	b = append(b, []byte{0x20}...)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
+	}
+
+	return string(b)
+}
+
 // FmtTimeShort returns the short time representation of 't' for 'fil'
 func (fil *fil) FmtTimeShort(t time.Time) string {
 
@@ -512,6 +540,8 @@ func (fil *fil) FmtTimeShort(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -542,6 +572,8 @@ func (fil *fil) FmtTimeMedium(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -579,6 +611,8 @@ func (fil *fil) FmtTimeLong(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -621,6 +655,8 @@ func (fil *fil) FmtTimeFull(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)

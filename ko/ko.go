@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-playground/locales"
-	"github.com/go-playground/locales/currency"
+	"github.com/EverlongProject/locales"
+	"github.com/EverlongProject/locales/currency"
 )
 
 type ko struct {
@@ -454,6 +454,34 @@ func (ko *ko) FmtDateLong(t time.Time) string {
 	return string(b)
 }
 
+// FmtDateMedium returns the medium date month and day representation of 't' for 'ko'
+func (ko *ko) FmtMonthDayMedium(t time.Time) string {
+	b := make([]byte, 0, 32)
+	b = strconv.AppendInt(b, int64(t.Month()), 10)
+	b = append(b, []byte{0x2e, 0x20}...)
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x2e}...)
+	return string(b)
+}
+
+// FmtDateMedium returns the medium date month and day representation of 't' for 'ko'
+func (ko *ko) FmtMonthYearMedium(t time.Time) string {
+
+	b := make([]byte, 0, 32)
+
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
+	}
+
+	b = append(b, []byte{0x2e, 0x20}...)
+	b = strconv.AppendInt(b, int64(t.Month()), 10)
+	b = append(b, []byte{0x2e}...)
+
+	return string(b)
+}
+
 // FmtDateFull returns the full date representation of 't' for 'ko'
 func (ko *ko) FmtDateFull(t time.Time) string {
 
@@ -492,6 +520,8 @@ func (ko *ko) FmtTimeShort(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -523,6 +553,8 @@ func (ko *ko) FmtTimeMedium(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -561,6 +593,8 @@ func (ko *ko) FmtTimeLong(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -593,6 +627,8 @@ func (ko *ko) FmtTimeFull(t time.Time) string {
 
 	if h > 12 {
 		h -= 12
+	} else if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)

@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-playground/locales"
-	"github.com/go-playground/locales/currency"
+	"github.com/EverlongProject/locales"
+	"github.com/EverlongProject/locales/currency"
 )
 
 type fr struct {
@@ -506,6 +506,31 @@ func (fr *fr) FmtDateFull(t time.Time) string {
 	b = append(b, fr.monthsWide[t.Month()]...)
 	b = append(b, []byte{0x20}...)
 
+	if t.Year() > 0 {
+		b = strconv.AppendInt(b, int64(t.Year()), 10)
+	} else {
+		b = strconv.AppendInt(b, int64(-t.Year()), 10)
+	}
+
+	return string(b)
+}
+
+// FmtDateMedium returns the medium date month and day representation of 't' for 'fr_CA' e.g 1 janv.
+func (fr *fr) FmtMonthDayMedium(t time.Time) string {
+	b := make([]byte, 0, 32)
+
+	b = strconv.AppendInt(b, int64(t.Day()), 10)
+	b = append(b, []byte{0x20}...)
+	b = append(b, fr.monthsAbbreviated[t.Month()]...)
+	return string(b)
+}
+
+// FmtDateMedium returns the medium date month and day representation of 't' for 'fr_CA' e.g janv. 2025
+func (fr *fr) FmtMonthYearMedium(t time.Time) string {
+	b := make([]byte, 0, 32)
+
+	b = append(b, fr.monthsAbbreviated[t.Month()]...)
+	b = append(b, []byte{0x20}...)
 	if t.Year() > 0 {
 		b = strconv.AppendInt(b, int64(t.Year()), 10)
 	} else {

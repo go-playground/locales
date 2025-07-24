@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-playground/locales/currency"
+	"github.com/EverlongProject/locales/currency"
 )
 
 func BenchmarkFmtNumber(b *testing.B) {

@@ -1,7 +1,7 @@
 ## locales
 <img align="right" src="https://raw.githubusercontent.com/go-playground/locales/master/logo.png">![Project status](https://img.shields.io/badge/version-0.14.1-green.svg)
 [![Build Status](https://travis-ci.org/go-playground/locales.svg?branch=master)](https://travis-ci.org/go-playground/locales)
-[![GoDoc](https://godoc.org/github.com/go-playground/locales?status.svg)](https://godoc.org/github.com/go-playground/locales)
+[![GoDoc](https://godoc.org/github.com/EverlongProject/locales?status.svg)](https://godoc.org/github.com/EverlongProject/locales)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
 Locales is a set of locales generated from the [Unicode CLDR Project](http://cldr.unicode.org/) which can be used independently or within
@@ -19,7 +19,7 @@ Features
 Full Tests
 --------------------
 I could sure use your help adding tests for every locale, it is a huge undertaking and I just don't have the free time to do it all at the moment;
-any help would be **greatly appreciated!!!!** please see [issue](https://github.com/go-playground/locales/issues/1) for details.
+any help would be **greatly appreciated!!!!** please see [issue](https://github.com/EverlongProject/locales/issues/1) for details.
 
 Installation
 -----------
@@ -27,7 +27,7 @@ Installation
 Use go get 
 
 ```shell
-go get github.com/go-playground/locales
+go get github.com/EverlongProject/locales
 ```  
 
 NOTES
@@ -44,8 +44,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/go-playground/locales/currency"
-	"github.com/go-playground/locales/en_CA"
+	"github.com/EverlongProject/locales/currency"
+	"github.com/EverlongProject/locales/en_CA"
 )
 
 func main() {
@@ -60,6 +60,8 @@ func main() {
 	fmt.Println(l.FmtDateLong(datetime))
 	fmt.Println(l.FmtDateMedium(datetime))
 	fmt.Println(l.FmtDateShort(datetime))
+	fmt.Println(l.FmtMonthDayMedium(datetime))
+	fmt.Println(l.FmtMonthYearMedium(datetime))
 
 	// Times
 	fmt.Println(l.FmtTimeFull(datetime))
