@@ -1118,3 +1118,12 @@ func TestFmtPercent(t *testing.T) {
 		}
 	}
 }
+
+
+func TestFmtTimeShortMidnight(t *testing.T) {
+	trans := New()
+	got := trans.FmtTimeShort(time.Date(2016, 2, 3, 0, 0, 1, 0, time.UTC))
+	if got != "12:00 am" {
+		t.Fatalf("FmtTimeShort(midnight) = %q, want %q", got, "12:00 am")
+	}
+}

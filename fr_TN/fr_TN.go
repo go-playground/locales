@@ -520,10 +520,9 @@ func (fr *fr_TN) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -550,10 +549,9 @@ func (fr *fr_TN) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -587,10 +585,9 @@ func (fr *fr_TN) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -629,10 +626,9 @@ func (fr *fr_TN) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
