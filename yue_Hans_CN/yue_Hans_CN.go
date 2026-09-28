@@ -477,10 +477,9 @@ func (yue *yue_Hans_CN) FmtTimeShort(t time.Time) string {
 		b = append(b, yue.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -506,10 +505,9 @@ func (yue *yue_Hans_CN) FmtTimeMedium(t time.Time) string {
 		b = append(b, yue.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -542,10 +540,9 @@ func (yue *yue_Hans_CN) FmtTimeLong(t time.Time) string {
 		b = append(b, yue.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -584,10 +581,9 @@ func (yue *yue_Hans_CN) FmtTimeFull(t time.Time) string {
 		b = append(b, yue.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)

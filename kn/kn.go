@@ -488,10 +488,9 @@ func (kn *kn) FmtTimeShort(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	if h < 10 {
@@ -522,10 +521,9 @@ func (kn *kn) FmtTimeMedium(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	if h < 10 {
@@ -563,10 +561,9 @@ func (kn *kn) FmtTimeLong(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	if h < 10 {
@@ -609,10 +606,9 @@ func (kn *kn) FmtTimeFull(t time.Time) string {
 
 	b := make([]byte, 0, 32)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	if h < 10 {

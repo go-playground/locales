@@ -477,10 +477,9 @@ func (zh *zh_Hant_TW) FmtTimeShort(t time.Time) string {
 		b = append(b, zh.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -506,10 +505,9 @@ func (zh *zh_Hant_TW) FmtTimeMedium(t time.Time) string {
 		b = append(b, zh.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -547,10 +545,9 @@ func (zh *zh_Hant_TW) FmtTimeLong(t time.Time) string {
 		b = append(b, zh.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -593,10 +590,9 @@ func (zh *zh_Hant_TW) FmtTimeFull(t time.Time) string {
 		b = append(b, zh.periodsAbbreviated[1]...)
 	}
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)

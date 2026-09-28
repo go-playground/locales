@@ -512,10 +512,9 @@ func (ta *ta_IN) FmtTimeShort(t time.Time) string {
 
 	b = append(b, []byte{0x20}...)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -543,10 +542,9 @@ func (ta *ta_IN) FmtTimeMedium(t time.Time) string {
 
 	b = append(b, []byte{0x20}...)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -581,10 +579,9 @@ func (ta *ta_IN) FmtTimeLong(t time.Time) string {
 
 	b = append(b, []byte{0x20}...)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)
@@ -623,10 +620,9 @@ func (ta *ta_IN) FmtTimeFull(t time.Time) string {
 
 	b = append(b, []byte{0x20}...)
 
-	h := t.Hour()
-
-	if h > 12 {
-		h -= 12
+	h := t.Hour() % 12
+	if h == 0 {
+		h = 12
 	}
 
 	b = strconv.AppendInt(b, int64(h), 10)

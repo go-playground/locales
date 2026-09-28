@@ -1416,10 +1416,9 @@ func parseDateTimeFormat(baseLocale, format string, eraScore uint8) (results str
 			}
 
 			results += `
-				h := t.Hour()
-
-				if h > 12 {
-					h -= 12
+				h := t.Hour() % 12
+				if h == 0 {
+					h = 12
 				}
 
 			`
