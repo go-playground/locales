@@ -244,34 +244,34 @@ func TestDaysAbbreviated(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "Sun",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "Mon",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "Tue",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "Wed",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "Thu",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "Fri",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "Sat",
-	// },
+	{
+		idx:      0,
+		expected: "dom.",
+	},
+	{
+		idx:      1,
+		expected: "seg.",
+	},
+	{
+		idx:      2,
+		expected: "ter.",
+	},
+	{
+		idx:      3,
+		expected: "qua.",
+	},
+	{
+		idx:      4,
+		expected: "qui.",
+	},
+	{
+		idx:      5,
+		expected: "sex.",
+	},
+	{
+		idx:      6,
+		expected: "sáb.",
+	},
 	}
 
 	for _, tt := range tests {
@@ -298,34 +298,34 @@ func TestDaysNarrow(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "S",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "M",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "T",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "W",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "T",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "F",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "S",
-	// },
+	{
+		idx:      0,
+		expected: "D",
+	},
+	{
+		idx:      1,
+		expected: "S",
+	},
+	{
+		idx:      2,
+		expected: "T",
+	},
+	{
+		idx:      3,
+		expected: "Q",
+	},
+	{
+		idx:      4,
+		expected: "Q",
+	},
+	{
+		idx:      5,
+		expected: "S",
+	},
+	{
+		idx:      6,
+		expected: "S",
+	},
 	}
 
 	for _, tt := range tests {
@@ -352,34 +352,34 @@ func TestDaysShort(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "Su",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "Mo",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "Tu",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "We",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "Th",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "Fr",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "Sa",
-	// },
+	{
+		idx:      0,
+		expected: "domingo",
+	},
+	{
+		idx:      1,
+		expected: "segunda",
+	},
+	{
+		idx:      2,
+		expected: "terça",
+	},
+	{
+		idx:      3,
+		expected: "quarta",
+	},
+	{
+		idx:      4,
+		expected: "quinta",
+	},
+	{
+		idx:      5,
+		expected: "sexta",
+	},
+	{
+		idx:      6,
+		expected: "sábado",
+	},
 	}
 
 	for _, tt := range tests {
@@ -406,34 +406,34 @@ func TestDaysWide(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "Sunday",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "Monday",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "Tuesday",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "Wednesday",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "Thursday",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "Friday",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "Saturday",
-	// },
+	{
+		idx:      0,
+		expected: "domingo",
+	},
+	{
+		idx:      1,
+		expected: "segunda-feira",
+	},
+	{
+		idx:      2,
+		expected: "terça-feira",
+	},
+	{
+		idx:      3,
+		expected: "quarta-feira",
+	},
+	{
+		idx:      4,
+		expected: "quinta-feira",
+	},
+	{
+		idx:      5,
+		expected: "sexta-feira",
+	},
+	{
+		idx:      6,
+		expected: "sábado",
+	},
 	}
 
 	for _, tt := range tests {
@@ -460,54 +460,54 @@ func TestMonthsAbbreviated(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      1,
-	// 	expected: "Jan",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "Feb",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "Mar",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "Apr",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "May",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "Jun",
-	// },
-	// {
-	// 	idx:      7,
-	// 	expected: "Jul",
-	// },
-	// {
-	// 	idx:      8,
-	// 	expected: "Aug",
-	// },
-	// {
-	// 	idx:      9,
-	// 	expected: "Sep",
-	// },
-	// {
-	// 	idx:      10,
-	// 	expected: "Oct",
-	// },
-	// {
-	// 	idx:      11,
-	// 	expected: "Nov",
-	// },
-	// {
-	// 	idx:      12,
-	// 	expected: "Dec",
-	// },
+	{
+		idx:      1,
+		expected: "jan.",
+	},
+	{
+		idx:      2,
+		expected: "fev.",
+	},
+	{
+		idx:      3,
+		expected: "mar.",
+	},
+	{
+		idx:      4,
+		expected: "abr.",
+	},
+	{
+		idx:      5,
+		expected: "mai.",
+	},
+	{
+		idx:      6,
+		expected: "jun.",
+	},
+	{
+		idx:      7,
+		expected: "jul.",
+	},
+	{
+		idx:      8,
+		expected: "ago.",
+	},
+	{
+		idx:      9,
+		expected: "set.",
+	},
+	{
+		idx:      10,
+		expected: "out.",
+	},
+	{
+		idx:      11,
+		expected: "nov.",
+	},
+	{
+		idx:      12,
+		expected: "dez.",
+	},
 	}
 
 	for _, tt := range tests {
@@ -534,54 +534,54 @@ func TestMonthsNarrow(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      1,
-	// 	expected: "J",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "F",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "M",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "A",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "M",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "J",
-	// },
-	// {
-	// 	idx:      7,
-	// 	expected: "J",
-	// },
-	// {
-	// 	idx:      8,
-	// 	expected: "A",
-	// },
-	// {
-	// 	idx:      9,
-	// 	expected: "S",
-	// },
-	// {
-	// 	idx:      10,
-	// 	expected: "O",
-	// },
-	// {
-	// 	idx:      11,
-	// 	expected: "N",
-	// },
-	// {
-	// 	idx:      12,
-	// 	expected: "D",
-	// },
+	{
+		idx:      1,
+		expected: "J",
+	},
+	{
+		idx:      2,
+		expected: "F",
+	},
+	{
+		idx:      3,
+		expected: "M",
+	},
+	{
+		idx:      4,
+		expected: "A",
+	},
+	{
+		idx:      5,
+		expected: "M",
+	},
+	{
+		idx:      6,
+		expected: "J",
+	},
+	{
+		idx:      7,
+		expected: "J",
+	},
+	{
+		idx:      8,
+		expected: "A",
+	},
+	{
+		idx:      9,
+		expected: "S",
+	},
+	{
+		idx:      10,
+		expected: "O",
+	},
+	{
+		idx:      11,
+		expected: "N",
+	},
+	{
+		idx:      12,
+		expected: "D",
+	},
 	}
 
 	for _, tt := range tests {
@@ -608,54 +608,54 @@ func TestMonthsWide(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      1,
-	// 	expected: "January",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "February",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "March",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "April",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "May",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "June",
-	// },
-	// {
-	// 	idx:      7,
-	// 	expected: "July",
-	// },
-	// {
-	// 	idx:      8,
-	// 	expected: "August",
-	// },
-	// {
-	// 	idx:      9,
-	// 	expected: "September",
-	// },
-	// {
-	// 	idx:      10,
-	// 	expected: "October",
-	// },
-	// {
-	// 	idx:      11,
-	// 	expected: "November",
-	// },
-	// {
-	// 	idx:      12,
-	// 	expected: "December",
-	// },
+	{
+		idx:      1,
+		expected: "janeiro",
+	},
+	{
+		idx:      2,
+		expected: "fevereiro",
+	},
+	{
+		idx:      3,
+		expected: "março",
+	},
+	{
+		idx:      4,
+		expected: "abril",
+	},
+	{
+		idx:      5,
+		expected: "maio",
+	},
+	{
+		idx:      6,
+		expected: "junho",
+	},
+	{
+		idx:      7,
+		expected: "julho",
+	},
+	{
+		idx:      8,
+		expected: "agosto",
+	},
+	{
+		idx:      9,
+		expected: "setembro",
+	},
+	{
+		idx:      10,
+		expected: "outubro",
+	},
+	{
+		idx:      11,
+		expected: "novembro",
+	},
+	{
+		idx:      12,
+		expected: "dezembro",
+	},
 	}
 
 	for _, tt := range tests {

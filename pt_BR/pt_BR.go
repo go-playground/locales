@@ -63,6 +63,7 @@ func New() locales.Translator {
 		monthsWide:             []string{"", "janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"},
 		daysAbbreviated:        []string{"dom.", "seg.", "ter.", "qua.", "qui.", "sex.", "sáb."},
 		daysNarrow:             []string{"D", "S", "T", "Q", "Q", "S", "S"},
+		daysShort:              []string{"domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"},
 		daysWide:               []string{"domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"},
 		periodsAbbreviated:     []string{"AM", "PM"},
 		periodsNarrow:          []string{"AM", "PM"},
