@@ -298,34 +298,34 @@ func TestDaysNarrow(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "S",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "M",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "T",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "W",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "T",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "F",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "S",
-	// },
+	{
+		idx:      0,
+		expected: "র",
+	},
+	{
+		idx:      1,
+		expected: "সো",
+	},
+	{
+		idx:      2,
+		expected: "ম",
+	},
+	{
+		idx:      3,
+		expected: "বু",
+	},
+	{
+		idx:      4,
+		expected: "বৃ",
+	},
+	{
+		idx:      5,
+		expected: "শু",
+	},
+	{
+		idx:      6,
+		expected: "শ",
+	},
 	}
 
 	for _, tt := range tests {
@@ -352,34 +352,34 @@ func TestDaysShort(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "Su",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "Mo",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "Tu",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "We",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "Th",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "Fr",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "Sa",
-	// },
+	{
+		idx:      0,
+		expected: "রবি",
+	},
+	{
+		idx:      1,
+		expected: "সোম",
+	},
+	{
+		idx:      2,
+		expected: "মঙ্গল",
+	},
+	{
+		idx:      3,
+		expected: "বুধ",
+	},
+	{
+		idx:      4,
+		expected: "বৃহস্পতি",
+	},
+	{
+		idx:      5,
+		expected: "শুক্র",
+	},
+	{
+		idx:      6,
+		expected: "শনি",
+	},
 	}
 
 	for _, tt := range tests {
@@ -406,34 +406,34 @@ func TestDaysWide(t *testing.T) {
 		idx      int
 		expected string
 	}{
-	// {
-	// 	idx:      0,
-	// 	expected: "Sunday",
-	// },
-	// {
-	// 	idx:      1,
-	// 	expected: "Monday",
-	// },
-	// {
-	// 	idx:      2,
-	// 	expected: "Tuesday",
-	// },
-	// {
-	// 	idx:      3,
-	// 	expected: "Wednesday",
-	// },
-	// {
-	// 	idx:      4,
-	// 	expected: "Thursday",
-	// },
-	// {
-	// 	idx:      5,
-	// 	expected: "Friday",
-	// },
-	// {
-	// 	idx:      6,
-	// 	expected: "Saturday",
-	// },
+	{
+		idx:      0,
+		expected: "রবিবার",
+	},
+	{
+		idx:      1,
+		expected: "সোমবার",
+	},
+	{
+		idx:      2,
+		expected: "মঙ্গলবার",
+	},
+	{
+		idx:      3,
+		expected: "বুধবার",
+	},
+	{
+		idx:      4,
+		expected: "বৃহস্পতিবার",
+	},
+	{
+		idx:      5,
+		expected: "শুক্রবার",
+	},
+	{
+		idx:      6,
+		expected: "শনিবার",
+	},
 	}
 
 	for _, tt := range tests {
