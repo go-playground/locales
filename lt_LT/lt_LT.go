@@ -105,9 +105,9 @@ func (lt *lt_LT) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	nMod10 := math.Mod(n, 10)
 	nMod100 := math.Mod(n, 100)
 
-	if nMod10 == 1 && (nMod100 < 11 || nMod100 > 19) {
+	if nMod10 == 1 && (nMod100 < 11 || nMod100 > 19 || nMod100 != math.Floor(nMod100)) {
 		return locales.PluralRuleOne
-	} else if nMod10 >= 2 && nMod10 <= 9 && (nMod100 < 11 || nMod100 > 19) {
+	} else if nMod10 >= 2 && nMod10 <= 9 && nMod10 == math.Floor(nMod10) && (nMod100 < 11 || nMod100 > 19 || nMod100 != math.Floor(nMod100)) {
 		return locales.PluralRuleFew
 	} else if f != 0 {
 		return locales.PluralRuleMany

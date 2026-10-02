@@ -107,9 +107,9 @@ func (ar *ar_SD) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleOne
 	} else if n == 2 {
 		return locales.PluralRuleTwo
-	} else if nMod100 >= 3 && nMod100 <= 10 {
+	} else if nMod100 >= 3 && nMod100 <= 10 && nMod100 == math.Floor(nMod100) {
 		return locales.PluralRuleFew
-	} else if nMod100 >= 11 && nMod100 <= 99 {
+	} else if nMod100 >= 11 && nMod100 <= 99 && nMod100 == math.Floor(nMod100) {
 		return locales.PluralRuleMany
 	}
 

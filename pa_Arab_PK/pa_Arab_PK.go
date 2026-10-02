@@ -96,7 +96,7 @@ func (pa *pa_Arab_PK) CardinalPluralRule(num float64, v uint64) locales.PluralRu
 
 	n := math.Abs(num)
 
-	if n >= 0 && n <= 1 {
+	if n >= 0 && n <= 1 && n == math.Floor(n) {
 		return locales.PluralRuleOne
 	}
 

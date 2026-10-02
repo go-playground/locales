@@ -116,7 +116,7 @@ func (ka *ka_GE) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	if i == 1 {
 		return locales.PluralRuleOne
-	} else if (i == 0) || (iMod100 >= 2 && iMod100 <= 20 && (iMod100 == 40 || iMod100 == 60 || iMod100 == 80)) {
+	} else if (i == 0) || ((iMod100 >= 2 && iMod100 <= 20) || iMod100 == 40 || iMod100 == 60 || iMod100 == 80) {
 		return locales.PluralRuleMany
 	}
 

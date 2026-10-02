@@ -92,7 +92,7 @@ func (shi *shi) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	if (i == 0) || (n == 1) {
 		return locales.PluralRuleOne
-	} else if n >= 2 && n <= 10 {
+	} else if n >= 2 && n <= 10 && n == math.Floor(n) {
 		return locales.PluralRuleFew
 	}
 

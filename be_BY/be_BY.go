@@ -106,9 +106,9 @@ func (be *be_BY) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	if nMod10 == 1 && nMod100 != 11 {
 		return locales.PluralRuleOne
-	} else if nMod10 >= 2 && nMod10 <= 4 && (nMod100 < 12 || nMod100 > 14) {
+	} else if nMod10 >= 2 && nMod10 <= 4 && nMod10 == math.Floor(nMod10) && (nMod100 < 12 || nMod100 > 14 || nMod100 != math.Floor(nMod100)) {
 		return locales.PluralRuleFew
-	} else if (nMod10 == 0) || (nMod10 >= 5 && nMod10 <= 9) || (nMod100 >= 11 && nMod100 <= 14) {
+	} else if (nMod10 == 0) || (nMod10 >= 5 && nMod10 <= 9 && nMod10 == math.Floor(nMod10)) || (nMod100 >= 11 && nMod100 <= 14 && nMod100 == math.Floor(nMod100)) {
 		return locales.PluralRuleMany
 	}
 

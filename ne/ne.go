@@ -112,7 +112,7 @@ func (ne *ne) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 
-	if n >= 1 && n <= 4 {
+	if n >= 1 && n <= 4 && n == math.Floor(n) {
 		return locales.PluralRuleOne
 	}
 

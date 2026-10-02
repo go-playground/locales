@@ -99,9 +99,9 @@ func (mt *mt) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	if n == 1 {
 		return locales.PluralRuleOne
-	} else if (n == 0) || (nMod100 >= 2 && nMod100 <= 10) {
+	} else if (n == 0) || (nMod100 >= 2 && nMod100 <= 10 && nMod100 == math.Floor(nMod100)) {
 		return locales.PluralRuleFew
-	} else if nMod100 >= 11 && nMod100 <= 19 {
+	} else if nMod100 >= 11 && nMod100 <= 19 && nMod100 == math.Floor(nMod100) {
 		return locales.PluralRuleMany
 	}
 

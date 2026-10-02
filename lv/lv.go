@@ -105,7 +105,7 @@ func (lv *lv) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 	fMod100 := f % 100
 	fMod10 := f % 10
 
-	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
+	if (nMod10 == 0) || (nMod100 >= 11 && nMod100 <= 19 && nMod100 == math.Floor(nMod100)) || (v == 2 && fMod100 >= 11 && fMod100 <= 19) {
 		return locales.PluralRuleZero
 	} else if (nMod10 == 1 && nMod100 != 11) || (v == 2 && fMod10 == 1 && fMod100 != 11) || (v != 2 && fMod10 == 1) {
 		return locales.PluralRuleOne

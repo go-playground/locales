@@ -109,7 +109,7 @@ func (br *br_FR) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleOne
 	} else if nMod10 == 2 && (nMod100 != 12 && nMod100 != 72 && nMod100 != 92) {
 		return locales.PluralRuleTwo
-	} else if nMod10 >= 3 && nMod10 <= 4 && (nMod10 == 9) && (nMod100 < 10 || nMod100 > 19) || (nMod100 < 70 || nMod100 > 79) || (nMod100 < 90 || nMod100 > 99) {
+	} else if ((nMod10 >= 3 && nMod10 <= 4 && nMod10 == math.Floor(nMod10)) || nMod10 == 9) && ((nMod100 < 10 || nMod100 > 19 || nMod100 != math.Floor(nMod100)) && (nMod100 < 70 || nMod100 > 79 || nMod100 != math.Floor(nMod100)) && (nMod100 < 90 || nMod100 > 99 || nMod100 != math.Floor(nMod100))) {
 		return locales.PluralRuleFew
 	} else if n != 0 && nMod1000000 == 0 {
 		return locales.PluralRuleMany

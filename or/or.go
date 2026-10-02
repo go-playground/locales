@@ -112,7 +112,7 @@ func (or *or) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 
-	if n == 1 || n == 5 || n >= 7 && n <= 9 {
+	if n == 1 || n == 5 || (n >= 7 && n <= 9 && n == math.Floor(n)) {
 		return locales.PluralRuleOne
 	} else if n == 2 || n == 3 {
 		return locales.PluralRuleTwo

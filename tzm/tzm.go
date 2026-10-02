@@ -94,7 +94,7 @@ func (tzm *tzm) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 
-	if (n >= 0 && n <= 1) || (n >= 11 && n <= 99) {
+	if (n >= 0 && n <= 1 && n == math.Floor(n)) || (n >= 11 && n <= 99 && n == math.Floor(n)) {
 		return locales.PluralRuleOne
 	}
 

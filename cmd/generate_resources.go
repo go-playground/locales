@@ -2292,70 +2292,7 @@ func parseOrdinalPluralRuleFunc(current *cldr.CLDR, baseLocale string) (results 
 				for _, a := range args {
 
 					if inArg {
-						// check to see if is a value range 2..9
-
-						multiRange := strings.Count(a, "..") > 1
-						cargs := strings.Split(strings.TrimSpace(a), ",")
-						hasBracket := len(cargs) > 1
-						bracketAdded := false
-						lastWasRange := false
-
-						for _, carg := range cargs {
-
-							if rng := strings.Split(carg, ".."); len(rng) > 1 {
-
-								if multiRange {
-									pre += " ("
-								} else {
-									pre += " "
-								}
-
-								switch preOperator {
-								case "==":
-									pre += lft + " >= " + rng[0] + " && " + lft + "<=" + rng[1]
-								case "!=":
-									pre += "(" + lft + " < " + rng[0] + " || " + lft + " > " + rng[1] + ")"
-								}
-
-								if multiRange {
-									pre += ") || "
-								} else {
-									pre += " || "
-								}
-
-								lastWasRange = true
-								continue
-							}
-
-							if lastWasRange {
-								pre = strings.TrimRight(pre, " || ") + " && "
-							}
-
-							lastWasRange = false
-
-							if hasBracket && !bracketAdded {
-								pre += "("
-								bracketAdded = true
-							}
-
-							// single comma separated values
-							switch preOperator {
-							case "==":
-								pre += " " + lft + preOperator + carg + " || "
-							case "!=":
-								pre += " " + lft + preOperator + carg + " && "
-							}
-
-						}
-
-						pre = strings.TrimRight(pre, " || ")
-						pre = strings.TrimRight(pre, " && ")
-						pre = strings.TrimRight(pre, " || ")
-
-						if hasBracket && bracketAdded {
-							pre += ")"
-						}
-
+						pre += " " + pluralValueList(lft, preOperator, a)
 						continue
 					}
 
@@ -2582,70 +2519,7 @@ FIND:
 				for _, a := range args {
 
 					if inArg {
-						// check to see if is a value range 2..9
-
-						multiRange := strings.Count(a, "..") > 1
-						cargs := strings.Split(strings.TrimSpace(a), ",")
-						hasBracket := len(cargs) > 1
-						bracketAdded := false
-						lastWasRange := false
-
-						for _, carg := range cargs {
-
-							if rng := strings.Split(carg, ".."); len(rng) > 1 {
-
-								if multiRange {
-									pre += " ("
-								} else {
-									pre += " "
-								}
-
-								switch preOperator {
-								case "==":
-									pre += lft + " >= " + rng[0] + " && " + lft + "<=" + rng[1]
-								case "!=":
-									pre += "(" + lft + " < " + rng[0] + " || " + lft + " > " + rng[1] + ")"
-								}
-
-								if multiRange {
-									pre += ") || "
-								} else {
-									pre += " || "
-								}
-
-								lastWasRange = true
-								continue
-							}
-
-							if lastWasRange {
-								pre = strings.TrimRight(pre, " || ") + " && "
-							}
-
-							lastWasRange = false
-
-							if hasBracket && !bracketAdded {
-								pre += "("
-								bracketAdded = true
-							}
-
-							// single comma separated values
-							switch preOperator {
-							case "==":
-								pre += " " + lft + preOperator + carg + " || "
-							case "!=":
-								pre += " " + lft + preOperator + carg + " && "
-							}
-
-						}
-
-						pre = strings.TrimRight(pre, " || ")
-						pre = strings.TrimRight(pre, " && ")
-						pre = strings.TrimRight(pre, " || ")
-
-						if hasBracket && bracketAdded {
-							pre += ")"
-						}
-
+						pre += " " + pluralValueList(lft, preOperator, a)
 						continue
 					}
 
@@ -2738,6 +2612,53 @@ FIND:
 	}
 
 	return
+}
+
+// pluralValueList converts a plural rule value list such as "3..4,9" into a
+// condition that matches any of its values for "==" and none of them for "!=".
+// A range on n only contains integers, so a fractional n is never in it.
+func pluralValueList(lft, operator, list string) string {
+
+	vals := strings.Split(strings.TrimSpace(list), ",")
+	conds := make([]string, 0, len(vals))
+
+	for _, val := range vals {
+
+		rng := strings.Split(val, "..")
+		if len(rng) == 1 {
+			conds = append(conds, lft+" "+operator+" "+val)
+			continue
+		}
+
+		switch operator {
+		case "==":
+			cond := lft + " >= " + rng[0] + " && " + lft + " <= " + rng[1]
+			if strings.HasPrefix(lft, "n") {
+				cond += " && " + lft + " == math.Floor(" + lft + ")"
+			}
+			if len(vals) > 1 {
+				cond = "(" + cond + ")"
+			}
+			conds = append(conds, cond)
+		case "!=":
+			cond := lft + " < " + rng[0] + " || " + lft + " > " + rng[1]
+			if strings.HasPrefix(lft, "n") {
+				cond += " || " + lft + " != math.Floor(" + lft + ")"
+			}
+			conds = append(conds, "("+cond+")")
+		}
+	}
+
+	if len(conds) == 1 {
+		return conds[0]
+	}
+
+	sep := " || "
+	if operator == "!=" {
+		sep = " && "
+	}
+
+	return "(" + strings.Join(conds, sep) + ")"
 }
 
 func manyToSingleVars(input string) (results string) {
