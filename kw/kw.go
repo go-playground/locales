@@ -94,7 +94,7 @@ func (kw *kw) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleZero
 	} else if n == 1 {
 		return locales.PluralRuleOne
-	} else if (nMod100 == 2 || nMod100 == 22 || nMod100 == 42 || nMod100 == 62 || nMod100 == 82) || (nMod1000 == 0 && nMod100000 >= 1000 && nMod100000 <= 20000 && (nMod100000 == 40000 || nMod100000 == 60000 || nMod100000 == 80000)) || (n != 0 && nMod1000000 == 100000) {
+	} else if (nMod100 == 2 || nMod100 == 22 || nMod100 == 42 || nMod100 == 62 || nMod100 == 82) || (nMod1000 == 0 && ((nMod100000 >= 1000 && nMod100000 <= 20000 && nMod100000 == math.Floor(nMod100000)) || nMod100000 == 40000 || nMod100000 == 60000 || nMod100000 == 80000)) || (n != 0 && nMod1000000 == 100000) {
 		return locales.PluralRuleTwo
 	} else if nMod100 == 3 || nMod100 == 23 || nMod100 == 43 || nMod100 == 63 || nMod100 == 83 {
 		return locales.PluralRuleFew
@@ -111,7 +111,7 @@ func (kw *kw) OrdinalPluralRule(num float64, v uint64) locales.PluralRule {
 	n := math.Abs(num)
 	nMod100 := math.Mod(n, 100)
 
-	if (n >= 1 && n <= 4) || ((nMod100 >= 1 && nMod100 <= 4) || (nMod100 >= 21 && nMod100 <= 24) || (nMod100 >= 41 && nMod100 <= 44) || (nMod100 >= 61 && nMod100 <= 64) || (nMod100 >= 81 && nMod100 <= 84)) {
+	if (n >= 1 && n <= 4 && n == math.Floor(n)) || ((nMod100 >= 1 && nMod100 <= 4 && nMod100 == math.Floor(nMod100)) || (nMod100 >= 21 && nMod100 <= 24 && nMod100 == math.Floor(nMod100)) || (nMod100 >= 41 && nMod100 <= 44 && nMod100 == math.Floor(nMod100)) || (nMod100 >= 61 && nMod100 <= 64 && nMod100 == math.Floor(nMod100)) || (nMod100 >= 81 && nMod100 <= 84 && nMod100 == math.Floor(nMod100))) {
 		return locales.PluralRuleOne
 	} else if (n == 5) || (nMod100 == 5) {
 		return locales.PluralRuleMany

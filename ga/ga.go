@@ -102,9 +102,9 @@ func (ga *ga) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleOne
 	} else if n == 2 {
 		return locales.PluralRuleTwo
-	} else if n >= 3 && n <= 6 {
+	} else if n >= 3 && n <= 6 && n == math.Floor(n) {
 		return locales.PluralRuleFew
-	} else if n >= 7 && n <= 10 {
+	} else if n >= 7 && n <= 10 && n == math.Floor(n) {
 		return locales.PluralRuleMany
 	}
 

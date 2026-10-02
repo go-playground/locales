@@ -104,7 +104,7 @@ func (gd *gd_GB) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleOne
 	} else if n == 2 || n == 12 {
 		return locales.PluralRuleTwo
-	} else if (n >= 3 && n <= 10) || (n >= 13 && n <= 19) {
+	} else if (n >= 3 && n <= 10 && n == math.Floor(n)) || (n >= 13 && n <= 19 && n == math.Floor(n)) {
 		return locales.PluralRuleFew
 	}
 

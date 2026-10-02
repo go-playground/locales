@@ -108,7 +108,7 @@ func (ro *ro) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	if i == 1 && v == 0 {
 		return locales.PluralRuleOne
-	} else if (v != 0) || (n == 0) || (nMod100 >= 2 && nMod100 <= 19) {
+	} else if (v != 0) || (n == 0) || (nMod100 >= 2 && nMod100 <= 19 && nMod100 == math.Floor(nMod100)) {
 		return locales.PluralRuleFew
 	}
 

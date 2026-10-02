@@ -106,7 +106,7 @@ func (he *he) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 		return locales.PluralRuleOne
 	} else if i == 2 && v == 0 {
 		return locales.PluralRuleTwo
-	} else if v == 0 && (n < 0 || n > 10) && nMod10 == 0 {
+	} else if v == 0 && (n < 0 || n > 10 || n != math.Floor(n)) && nMod10 == 0 {
 		return locales.PluralRuleMany
 	}
 

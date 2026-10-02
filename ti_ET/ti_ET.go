@@ -96,7 +96,7 @@ func (ti *ti_ET) CardinalPluralRule(num float64, v uint64) locales.PluralRule {
 
 	n := math.Abs(num)
 
-	if n >= 0 && n <= 1 {
+	if n >= 0 && n <= 1 && n == math.Floor(n) {
 		return locales.PluralRuleOne
 	}
 
